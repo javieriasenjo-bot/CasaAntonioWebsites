@@ -4,10 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "postinstall": "vite build",
+    "build": "vite build && node scripts/strip-redirects.mjs",
+    "postinstall": "vite build && node scripts/strip-redirects.mjs",
     "preview": "vite preview",
-    "deploy": "vite build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

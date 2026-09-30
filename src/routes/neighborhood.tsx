@@ -6,11 +6,11 @@ import { useLang } from "@/lib/i18n";
 export const Route = createFileRoute("/neighborhood")({
   head: () => ({
     meta: [
-      { title: "Neighborhood · Casa Antonio Sapporo" },
+      { title: "Around · Casa Antonio Sapporo" },
       {
         name: "description",
         content:
-          "Asabu, AEON Sapporo Asabu, calma, and Sapporo Teine. Casa Antonio is in Kita 38-jo, Kita-ku, a short walk from Asabu Station.",
+          "A day in Asabu, then one direction: the subway south, or Sapporo Teine by car. Places from Casa Antonio in Kita 38-jo.",
       },
     ],
   }),
@@ -35,17 +35,104 @@ function Neighborhood() {
       <section className="place-photos">
         <div className="wrap place-photo-row">
           <figure>
-            <img src="/photos/exterior.jpg" alt={c.privateDoors} />
-            <figcaption>{c.houseOnStreet}</figcaption>
-          </figure>
-          <figure>
             <img src="/photos/street.jpg" alt={c.fromStreet} />
-            <figcaption>{c.residential}</figcaption>
+            <figcaption>{c.fromStreet}</figcaption>
           </figure>
           <figure>
-            <img src="/photos/entry.jpg" alt={c.parking} />
-            <figcaption>{c.parkingCaption}</figcaption>
+            <img src="/photos/dining.jpg" alt={c.table} />
+            <figcaption>{c.table}</figcaption>
           </figure>
+          <figure>
+            <img src="/photos/teine.jpg" alt={t.trips[2].title} />
+            <figcaption>{t.trips[2].title}</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="card-section">
+        <div className="wrap narrow-guide">
+          <p className="eyebrow">{t.localEyebrow}</p>
+          <h2 className="block-title">{t.localTitle}</h2>
+          <p className="lede">{t.localLede}</p>
+          <ul className="guide-list">
+            {t.local.map((item) => (
+              <li key={item.title}>
+                <p className="guide-time">{item.time}</p>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="ski-section" id="ski">
+        <div className="wrap">
+          <p className="eyebrow">{t.tripsEyebrow}</p>
+          <h2>{t.tripsTitle}</h2>
+          <p className="lede">{t.tripsLede}</p>
+          <figure className="ski-figure">
+            <img src="/photos/teine.jpg" alt={t.trips[2].title} />
+            <figcaption>{t.skiPhoto}</figcaption>
+          </figure>
+          <div className="cards">
+            {t.trips.map((item) => (
+              <article key={item.title} className="info-card">
+                <p className="guide-time">{item.time}</p>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="card-section">
+        <div className="wrap narrow-guide">
+          <p className="eyebrow">{t.planEyebrow}</p>
+          <h2 className="block-title">{t.planTitle}</h2>
+          <div className="plan-list">
+            {t.plan.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="card-section card-section-alt">
+        <div className="wrap narrow-guide">
+          <p className="eyebrow">{t.guideEyebrow}</p>
+          <h2 className="block-title">{t.guideTitle}</h2>
+          <p className="lede">{t.guideLede}</p>
+          {t.guide.map((group) => (
+            <div key={group.title}>
+              <h3 className="guide-cat">{group.title}</h3>
+              <ul className="guide-list">
+                {group.items.map((item) => (
+                  <li key={item.name}>
+                    <p className="guide-time">{item.time}</p>
+                    <div>
+                      <h3>{item.name}</h3>
+                      <p>{item.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="card-section">
+        <div className="wrap narrow-guide">
+          <p className="eyebrow">{t.seasonEyebrow}</p>
+          <h2 className="block-title">{t.seasonTitle}</h2>
+          <p>{t.seasonBody}</p>
         </div>
       </section>
 
@@ -62,83 +149,6 @@ function Neighborhood() {
             <a className="button button-dark" href={MAP.google} target="_blank" rel="noreferrer">
               {t.openMap}
             </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="card-section">
-        <div className="wrap">
-          <h2 className="block-title">{t.aroundTitle}</h2>
-          <div className="cards">
-            {t.around.map((item) => (
-              <article key={item.title} className="info-card">
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="card-section card-section-alt">
-        <div className="wrap">
-          <h2 className="block-title">{t.placesTitle}</h2>
-          <div className="places">
-            {t.places.map((item) => (
-              <article key={item.title} className="place-card">
-                <h3>{item.title}</h3>
-                <p className="place-meta">{item.meta}</p>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ski-section" id="ski">
-        <div className="wrap">
-          <p className="eyebrow">{t.skiEyebrow}</p>
-          <h2>{t.skiTitle}</h2>
-          <p className="lede">{t.skiLede}</p>
-          <figure className="ski-figure">
-            <img src="/photos/teine.jpg" alt={t.skiTitle} />
-            <figcaption>{t.skiPhoto}</figcaption>
-          </figure>
-          <div className="prose ski-prose">
-            {t.ski.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-          <h3 className="block-title">{t.resortsTitle}</h3>
-          <div className="cards">
-            {t.resorts.map((item) => (
-              <article key={item.title} className="info-card">
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="card-section">
-        <div className="wrap">
-          <h2 className="block-title">{t.dayTitle}</h2>
-          <div className="cards">
-            {t.day.map((item) => (
-              <article key={item.title} className="info-card">
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="distance-panel">
-            <h2>{t.distancesTitle}</h2>
-            <ul>
-              {t.distances.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>

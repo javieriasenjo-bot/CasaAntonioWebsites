@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArrivalRouteImport } from './routes/arrival'
 import { Route as CasaAntonioARouteImport } from './routes/casa-antonio-a'
 import { Route as CasaAntonioBRouteImport } from './routes/casa-antonio-b'
+import { Route as DayTripsRouteImport } from './routes/day-trips'
 import { Route as NeighborhoodRouteImport } from './routes/neighborhood'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const CasaAntonioBRoute = CasaAntonioBRouteImport.update({
   path: '/casa-antonio-b',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DayTripsRoute = DayTripsRouteImport.update({
+  id: '/day-trips',
+  path: '/day-trips',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NeighborhoodRoute = NeighborhoodRouteImport.update({
   id: '/neighborhood',
   path: '/neighborhood',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/arrival': typeof ArrivalRoute
   '/casa-antonio-a': typeof CasaAntonioARoute
   '/casa-antonio-b': typeof CasaAntonioBRoute
+  '/day-trips': typeof DayTripsRoute
   '/neighborhood': typeof NeighborhoodRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/arrival': typeof ArrivalRoute
   '/casa-antonio-a': typeof CasaAntonioARoute
   '/casa-antonio-b': typeof CasaAntonioBRoute
+  '/day-trips': typeof DayTripsRoute
   '/neighborhood': typeof NeighborhoodRoute
 }
 export interface FileRoutesById {
@@ -61,20 +69,33 @@ export interface FileRoutesById {
   '/arrival': typeof ArrivalRoute
   '/casa-antonio-a': typeof CasaAntonioARoute
   '/casa-antonio-b': typeof CasaAntonioBRoute
+  '/day-trips': typeof DayTripsRoute
   '/neighborhood': typeof NeighborhoodRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/arrival' | '/casa-antonio-a' | '/casa-antonio-b' | '/neighborhood'
+    | '/'
+    | '/arrival'
+    | '/casa-antonio-a'
+    | '/casa-antonio-b'
+    | '/day-trips'
+    | '/neighborhood'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/arrival' | '/casa-antonio-a' | '/casa-antonio-b' | '/neighborhood'
+  to:
+    | '/'
+    | '/arrival'
+    | '/casa-antonio-a'
+    | '/casa-antonio-b'
+    | '/day-trips'
+    | '/neighborhood'
   id:
     | '__root__'
     | '/'
     | '/arrival'
     | '/casa-antonio-a'
     | '/casa-antonio-b'
+    | '/day-trips'
     | '/neighborhood'
   fileRoutesById: FileRoutesById
 }
@@ -83,6 +104,7 @@ export interface RootRouteChildren {
   ArrivalRoute: typeof ArrivalRoute
   CasaAntonioARoute: typeof CasaAntonioARoute
   CasaAntonioBRoute: typeof CasaAntonioBRoute
+  DayTripsRoute: typeof DayTripsRoute
   NeighborhoodRoute: typeof NeighborhoodRoute
 }
 
@@ -116,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasaAntonioBRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/day-trips': {
+      id: '/day-trips'
+      path: '/day-trips'
+      fullPath: '/day-trips'
+      preLoaderRoute: typeof DayTripsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/neighborhood': {
       id: '/neighborhood'
       path: '/neighborhood'
@@ -131,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArrivalRoute: ArrivalRoute,
   CasaAntonioARoute: CasaAntonioARoute,
   CasaAntonioBRoute: CasaAntonioBRoute,
+  DayTripsRoute: DayTripsRoute,
   NeighborhoodRoute: NeighborhoodRoute,
 }
 export const routeTree = rootRouteImport

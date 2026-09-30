@@ -189,6 +189,17 @@ function Home() {
         </div>
       </section>
 
+      <section className="card-section">
+        <div className="wrap narrow">
+          <p className="eyebrow">{t.dayTrips.eyebrow}</p>
+          <h2>{t.dayTrips.homeTitle}</h2>
+          <p>{t.dayTrips.homeBody}</p>
+          <Link to="/day-trips" className="button button-dark">
+            {t.dayTrips.homeCta}
+          </Link>
+        </div>
+      </section>
+
       <section className="practical">
         <div className="wrap">
           <div className="section-head">

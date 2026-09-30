@@ -747,10 +747,61 @@
   font-size: 0.82rem;
 }
 
-.places {
+.narrow-guide {
+  max-width: 52rem;
+}
+
+.guide-list {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.guide-list li {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.8rem;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.guide-time {
+  margin: 0.15rem 0 0;
+  color: var(--color-wood);
+  font-size: 0.86rem;
+}
+
+.guide-list h3,
+.plan-list h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+}
+
+.guide-list p,
+.plan-list p {
+  margin: 0;
+}
+
+.guide-cat {
+  margin: 2.2rem 0 0;
+  font-size: 1.55rem;
+  color: var(--color-pine);
+}
+
+.plan-list {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.trips-more {
+  margin: 1.2rem 0 0;
+}
+
+.trips-more a {
+  color: var(--color-wood);
+  border-bottom: 1px solid var(--color-wood);
 }
 
 .place-card {
@@ -1152,8 +1203,9 @@ body.lightbox-open .quick-reserve {
     background: linear-gradient(180deg, rgb(20 24 22 / 0.2), rgb(20 24 22 / 0.78));
   }
 
-  .gallery {
-    grid-template-columns: 1fr 1fr;
+  .guide-list li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
   }
 
   .map-caption {

@@ -71,7 +71,8 @@ export const copy = {
     nav: {
       a: "Antonio A",
       b: "Antonio B",
-      neighborhood: "Neighborhood",
+      neighborhood: "Around",
+      trips: "Trips",
       arrival: "Arrival",
       book: "Book",
     },
@@ -120,12 +121,12 @@ export const copy = {
     photos: "All photographs",
     photoNoteA: "Photographs of Casa Antonio A, taken in the apartment, plus the shared house outside.",
     photoNoteB:
-      "These photographs are of the house. Interior pictures of the second-floor apartment are on the Airbnb listing — send them over and they can take this page.",
+      "These photographs are of the house. Photographs of the upstairs rooms are on the Airbnb listing.",
     neighborhoodTeaser: {
       eyebrow: "Asabu",
       title: "South to the city when you want it.",
       body: "The Namboku line runs from Asabu through Sapporo Station to Odori and Susukino. Day to day, the useful places are closer: AEON over the station, and calma a few blocks south.",
-      cta: "The neighborhood",
+      cta: "Around Asabu",
     },
     nomad: {
       eyebrow: "Working from Sapporo",
@@ -133,7 +134,7 @@ export const copy = {
       lede: "Casa Antonio A is a residential apartment with a table by the window, a kitchen, and heat. It is a base for working in the city, not a coworking lobby.",
       body: [
         "The day can stay inside. Wi-Fi runs through the apartment, the dining table has chairs and daylight, and the sofa is there when the afternoon is calls rather than typing. The street is houses, not a reception desk. In winter the heating is the point: you can work through a snowfall without negotiating a cafe for a seat.",
-        "When the room is too quiet, Asabu Station is the walk the host describes as about five minutes. Sapporo Station is a short ride south, which is where the larger cafes are. AEON Sapporo Asabu, built over the station, has a Tully’s if you only want coffee. Japan Standard Time sits cleanly against Korea, China, and much of Southeast Asia. Europe arrives in the afternoon. The American West is a late night.",
+        "When the apartment feels too quiet, Asabu Station is about a five-minute walk. Sapporo Station is a short ride south, and that is where the larger cafes are. AEON, over Asabu Station, has a Tully’s if all you want is coffee. Japan is an hour ahead of Korea and China, which makes a morning call straightforward. Much of Southeast Asia sits in the same part of the day. Europe is the afternoon. The American West is late at night.",
         "In ski season the rhythm that suits this house is a morning of work and an afternoon at Sapporo Teine, then the same door at the end of it. The kitchen means you are not buying every meal out. Bring the charger you actually use. There is no separate office and no second monitor, and this page does not promise a particular internet speed — the apartment has Wi-Fi, and that is the claim.",
       ],
       cta: "Teine and the neighborhood",
@@ -269,98 +270,289 @@ export const copy = {
       "Quiet residential street — keep voices and music down, especially after dark.",
     ],
     neighborhood: {
-      eyebrow: "Kita 38-jo",
-      title: "Far enough north to be quiet. Close enough to be useful.",
-      lede: "The house is Kita 38-jo Nishi 3-chome 1-7. Asabu Station is a few minutes north. The shops and the one restaurant worth naming sit around that walk, not in a tourist strip.",
-      aroundTitle: "Getting here",
-      around: [
+      eyebrow: "Asabu",
+      title: "Slow days between the station, the kitchen, and the mountain.",
+      lede: "Casa Antonio is a quiet house in Kita 38-jo, not a base in Susukino. Most useful things are a walk to Asabu Station. The city and the ski hill are one choice each, not both in the same afternoon.",
+      localEyebrow: "Stay local",
+      localTitle: "A day in Asabu",
+      localLede: "The street, the station mall, and one small restaurant. That is the neighborhood. It is enough for a day that does not need a plan.",
+      local: [
+        {
+          title: "The house",
+          time: "The door",
+          body: "Two wooden doors under a brick porch, and free parking on the apron in front. The street is houses. Come back here between the station and a longer outing.",
+        },
         {
           title: "Asabu Station",
-          body: "Namboku subway line, about five minutes on foot, the timing the host gives. Southbound trains run through Kita 24-jo and Sapporo Station toward Odori and Susukino. Asabu is the north end of the line.",
+          time: "About 5 min",
+          body: "Namboku line, the north end. Southbound trains go through Kita 24-jo and Sapporo Station toward Odori and Susukino. The host’s timing is about five minutes on foot.",
         },
-        {
-          title: "The city center",
-          body: "Sapporo Station is about 4.9 km by road, and a short subway ride — the listing says about seven minutes. Odori and Susukino are further down the same line, so a longer dinner does not need the car.",
-        },
-        {
-          title: "Airport",
-          body: "New Chitose is the airport that matters for almost every flight. Okadama, the small city airport, is about 4 km away. If you are connecting to a ski bus, check the current stop before you land. Routes move with the season.",
-        },
-        {
-          title: "By car",
-          body: "Free private parking is on the apron in front of the two doors. It is the practical way to Teine with skis in the back, and the slower way on an icy morning. The white line in the photographs is the edge of that space.",
-        },
-      ],
-      placesTitle: "Within a short walk",
-      places: [
         {
           title: "AEON Sapporo Asabu",
-          meta: "Kita 39-jo Nishi 4 · over Asabu Station",
-          body: "The general store is built on top of the station, a short walk north of the house. This is the supermarket for a stay: groceries on the food floor, which is the one that stays open later, plus ordinary places inside the building — Saizeriya, Tully’s Coffee, McDonald’s. It is not a destination mall. Hours differ by floor, so check the day you go. About 570 parking spaces if you would rather drive the last block.",
+          time: "A short walk",
+          body: "Built on top of the station, Kita 39-jo Nishi 4. Groceries are on the food floor, which stays open later than the rest. Saizeriya, Tully’s Coffee, and McDonald’s are inside. Not a destination mall. Hours differ by floor. About 570 parking spaces if you drive the last block.",
         },
         {
           title: "calma",
-          meta: "Kita 35-jo Nishi 3 · a few blocks south",
-          body: "A small Italian counter, eleven seats, on the ground floor of Sepia 35. Lunch from 11:00 to 13:30 and dinner from 17:00 to 21:00, closed Sunday, with the occasional extra closure — call before you count on it. It is the neighborhood meal: close enough to walk home, quiet enough that you do not need Susukino.",
-        },
-        {
-          title: "Hokkaido University and Odori",
-          meta: "South on the same subway line",
-          body: "The campus is about 4.7 km south, a good hour if the ginkgo or the snow is the reason for going. Sapporo Clock Tower is about 5.5 km. Odori is the long park: the snow festival in February, beer gardens in summer, the TV tower at the east end.",
+          time: "A few blocks",
+          body: "A small Italian counter, eleven seats, on the ground floor of Sepia 35 at Kita 35-jo Nishi 3. Lunch 11:00–13:30, dinner 17:00–21:00, closed Sunday, with the occasional extra closure. Call before you count on it. Close enough to walk home.",
         },
       ],
-      skiEyebrow: "Teine",
-      skiTitle: "The mountain is to the west.",
-      skiLede: "Sapporo Teine is the ski day from this side of the city. The house has parking, which is the difference between a plan and a theory when you are carrying skis.",
-      ski: [
-        "Sapporo Teine is on the northwest face of Mount Teine, in Teine-ku. It was a venue for the 1972 Winter Olympics. There are two zones: Olympia, lower and broader, and Highland, higher up, where the old Olympic courses are. From the top the view is back across the city and out to Ishikari Bay. The resort puts central Sapporo at about forty minutes by car, and the Teine interchange at about ten. From Kita-ku you drive west on the Sasson Expressway. In clear conditions it is not a longer trip than that. Parking at the mountain is free, on the order of 2,800 cars.",
-        "Without a car, the ordinary route is the JR train to Teine Station and the bus up to the slopes. It works, and it is slower than driving from this house. Worth knowing if the parking space is already taken.",
+      tripsEyebrow: "Easy day trips",
+      tripsTitle: "One direction, then home.",
+      tripsLede: "South is the subway. West is the car, with skis in the back. Pick one.",
+      trips: [
+        {
+          title: "Sapporo Station and Odori",
+          time: "Subway",
+          body: "Sapporo Station is about 4.9 km by road. The listing says about seven minutes on the train. Odori is the long park further down the same line: the snow festival in February, beer gardens in summer, the TV tower at the east end. Susukino is the late night, if you want one.",
+        },
+        {
+          title: "Hokkaido University",
+          time: "About 4.7 km",
+          body: "The campus is south of here. A good hour on foot when the ginkgo or the snow is the reason for going. Sapporo Clock Tower is about 5.5 km, on the same general ride.",
+        },
+        {
+          title: "Sapporo Teine",
+          time: "By car",
+          body: "The ski day from this side of the city. Northwest face of Mount Teine, a 1972 Olympic venue. Olympia is the lower, broader zone. Highland is higher, where the old Olympic courses are. The resort puts central Sapporo at about forty minutes by car. From Kita-ku you drive west on the Sasson Expressway. Parking at the mountain is free, on the order of 2,800 cars. Without a car: JR to Teine Station, then the bus up. Slower.",
+        },
       ],
       skiPhoto: "Sapporo Teine, looking back toward the city. Photograph by Miki Yoshihito, CC BY 2.0.",
-      resortsTitle: "If Teine is not the day",
-      resorts: [
+      planEyebrow: "A simple two-day plan",
+      planTitle: "Keep the itinerary spacious.",
+      plan: [
         {
-          title: "Sapporo Bankei",
-          body: "A smaller city ski area in the southwestern hills. Often a short family session rather than a full mountain day. Closer to central Sapporo than to this house.",
+          title: "Day one: stay near the house",
+          body: "Walk to AEON for coffee and groceries. Lunch at calma if it is open. Work at the window table, or do nothing. The kitchen means dinner does not have to be a trip.",
         },
         {
-          title: "Fu’s Snow Area",
-          body: "Also on the Teine side of the city. A local hill, for when you want turns without giving the whole day to a large resort.",
-        },
-        {
-          title: "Sapporo Kokusai",
-          body: "Further northwest, about an hour from the city in ordinary traffic. A longer ski day, and more of a mountain, if Teine feels too close.",
-        },
-        {
-          title: "Further out",
-          body: "Niseko and Kiroro are trips, not errands. If that is the week, leave early. Casa Antonio is the quiet night afterward, not a lodge at the base of the hill.",
+          title: "Day two: choose one direction",
+          body: "South on the subway for Odori, the university, or a longer dinner. Or west by car for Teine, and the same door at the end of it. Not both.",
         },
       ],
-      dayTitle: "The ordinary winter",
-      day: [
+      guideEyebrow: "From the house",
+      guideTitle: "Places worth naming.",
+      guideLede: "Times are from this house, on foot unless the line says otherwise. Hours change. Check the day you go.",
+      guide: [
         {
-          title: "Snow on the street",
-          body: "Both apartments have heating. The subway does not care about the snowfall. Side streets are plowed, then they ice. Shoes with a grip matter more than a new jacket. The parking apron in front of the doors is flat enough in the photographs and slower when it glazes.",
+          title: "Eat and drink",
+          items: [
+            {
+              name: "calma",
+              time: "A few blocks south",
+              body: "Eleven-seat Italian at Kita 35-jo. Lunch and dinner, closed Sunday. The neighborhood meal.",
+            },
+            {
+              name: "Saizeriya",
+              time: "Inside AEON",
+              body: "The ordinary family Italian in the station building. Useful when calma is closed.",
+            },
+            {
+              name: "Tully’s Coffee",
+              time: "Inside AEON",
+              body: "Coffee without going into the city. Enough for a work morning.",
+            },
+            {
+              name: "McDonald’s",
+              time: "Inside AEON",
+              body: "In the same building as the supermarket, over Asabu Station.",
+            },
+            {
+              name: "Susukino",
+              time: "Subway south",
+              body: "The late dinner and the nightlife, at the other end of the Namboku line. Not the neighborhood.",
+            },
+          ],
         },
         {
-          title: "A working day",
-          body: "The table in Casa Antonio A faces the window. Wi-Fi, a kitchen, and a quiet street are the actual setup — not a coworking desk. The neighborhood page of the work is AEON and the station. The mountain page is Teine in the afternoon.",
+          title: "Everyday shopping",
+          items: [
+            {
+              name: "AEON Sapporo Asabu, food floor",
+              time: "A short walk north",
+              body: "The supermarket for a stay. This is the floor that stays open later. Check the day’s hours.",
+            },
+            {
+              name: "AEON parking",
+              time: "Same building",
+              body: "About 570 spaces if the last block is easier by car. The house also has its own free space out front.",
+            },
+          ],
+        },
+        {
+          title: "Sights",
+          items: [
+            {
+              name: "Asabu Station",
+              time: "About 5 min on foot",
+              body: "North end of the Namboku line. The useful walk.",
+            },
+            {
+              name: "Hokkaido University",
+              time: "About 4.7 km",
+              body: "Campus to the south. Worth the hour if the trees or the snow are the point.",
+            },
+            {
+              name: "Odori Park",
+              time: "Same subway line",
+              body: "Snow festival in February. Beer gardens in summer. TV tower at the east end.",
+            },
+            {
+              name: "Sapporo Clock Tower",
+              time: "About 5.5 km",
+              body: "The small wooden clock in the center. A stop, not a day.",
+            },
+            {
+              name: "Sapporo Station",
+              time: "About 4.9 km",
+              body: "The listing’s train time is about seven minutes. Larger cafes are here, not in Asabu.",
+            },
+          ],
+        },
+        {
+          title: "Ski",
+          items: [
+            {
+              name: "Sapporo Teine",
+              time: "West by car",
+              body: "Olympia and Highland. Often under 40 minutes in clear conditions. Free parking at the mountain.",
+            },
+            {
+              name: "Sapporo Bankei",
+              time: "Southwest of the center",
+              body: "A smaller city hill. Often a short family session. Closer to central Sapporo than to this house.",
+            },
+            {
+              name: "Fu’s Snow Area",
+              time: "Teine side",
+              body: "A local hill, for turns without giving the whole day to a large resort.",
+            },
+            {
+              name: "Sapporo Kokusai",
+              time: "About an hour",
+              body: "Further northwest. A longer ski day if Teine feels too close.",
+            },
+            {
+              name: "Niseko or Kiroro",
+              time: "A trip",
+              body: "Not an errand. If that is the week, leave early. This house is the quiet night afterward.",
+            },
+          ],
         },
       ],
-      distancesTitle: "Distances published with the listings",
-      distances: [
-        "Asabu Station — about 5 minutes on foot",
-        "AEON Sapporo Asabu — a short walk north, over the station",
-        "calma — Kita 35-jo, a few blocks south",
-        "Sapporo Station — about 4.9 km, a short subway ride",
-        "Hokkaido University — about 4.7 km",
-        "Sapporo Clock Tower — about 5.5 km",
-        "Sapporo Teine — west by car, often under 40 minutes",
-        "Okadama Airport — about 4 km",
-      ],
+      seasonEyebrow: "October to March",
+      seasonTitle: "Visiting in the snow.",
+      seasonBody:
+        "Both apartments have heating. The subway does not care about the snowfall. Side streets are plowed, then they ice, and shoes with a grip matter more than a new jacket. The parking apron in front of the doors is slower when it glazes. Teine is the afternoon that suits this house. Restaurant and shop hours move in winter, so check before you go.",
       mapTitle: "The house",
       mapNote: "Pin is the published coordinate for Kita 38-jo Nishi 3-chome 1-7. Open it in Google Maps if you are navigating in.",
       openMap: "Open in Google Maps",
+    },
+    dayTrips: {
+      eyebrow: "From the house",
+      title: "One day, one direction.",
+      lede: "These are days out from Kita 38-jo, not a tour of Hokkaido. Leave after breakfast, and be home for a late dinner. One town is enough.",
+      homeTitle: "A day away, then the same door.",
+      homeBody: "Otaru by train. Biei or Furano by car, not both. Teine when the day should stay short.",
+      homeCta: "Day trips",
+      note: "Times are in clear weather, from central Sapporo, plus the few minutes from this house to the station or the expressway. Snow, flower season, and road closures change the day. Check that morning. This page does not sell tickets.",
+      ideas: [
+        {
+          eyebrow: "No car · about 35–45 minutes from Sapporo Station",
+          title: "Otaru, and back for dinner.",
+          lede: "The easy day. The canal, one lunch, and the train home.",
+          steps: [
+            {
+              time: "Morning",
+              title: "Asabu, then the train",
+              body: "Walk to Asabu and take the subway to Sapporo Station, about the seven minutes in the listing. From there the JR Hakodate line runs to Otaru. The faster trains take about 35 to 45 minutes.",
+            },
+            {
+              time: "Late morning",
+              title: "The canal, and not the whole town",
+              body: "Walk the canal and the stone warehouses. That is the day. The covered shopping street is there if you want one more lane, not a checklist.",
+            },
+            {
+              time: "Lunch",
+              title: "Eat once",
+              body: "Otaru is a sushi town. Pick one place when you are there. This page does not hold a table.",
+            },
+            {
+              time: "Afternoon",
+              title: "Turn around",
+              body: "The same trains come back. You can be at the house in time to cook. The car can stay in front of the doors.",
+            },
+          ],
+        },
+        {
+          eyebrow: "Car · about 2 hours 30 minutes",
+          title: "Biei. Not also Furano.",
+          lede: "A long day north. The photograph is the Blue Pond. The hills are the reason in summer.",
+          steps: [
+            {
+              time: "After breakfast",
+              title: "The expressway, then the local road",
+              body: "Drive toward Asahikawa on the expressway, then on to Biei. In clear weather allow about two and a half hours from Sapporo, and a little more from this house. The toll is a few thousand yen each way. If the hills would be in the dark on the way home, do not start.",
+            },
+            {
+              time: "The stop",
+              title: "Shirogane Blue Pond",
+              body: "The pond is at Shirogane, toward Tokachidake, not in the middle of Biei town. In summer the patchwork fields are the other walk. In winter the pond is still visited, and some roads close. Check that morning before you commit the day.",
+            },
+            {
+              time: "Then",
+              title: "One meal, then back",
+              body: "Eat in Biei and turn around. Furano is a different day. Adding it means you are driving more than looking.",
+            },
+          ],
+        },
+        {
+          eyebrow: "Car · about 2 hours",
+          title: "Furano. Flowers, or snow.",
+          lede: "Another long day, in the other valley. Pick the season you actually want.",
+          steps: [
+            {
+              time: "After breakfast",
+              title: "Toward Takikawa, then into the valley",
+              body: "In ordinary conditions the drive is about two hours and ten minutes: the expressway toward Takikawa, then the road into Furano. Winter is slower. The toll is a few thousand yen each way.",
+            },
+            {
+              time: "Summer",
+              title: "The fields, if they are in flower",
+              body: "Mid-July is the lavender at Farm Tomita, and it is crowded. Go early. Outside that window the town is cheese, the station street, and a walk. It is not a flower spectacle all summer.",
+            },
+            {
+              time: "Winter",
+              title: "Ski only if Teine is too small",
+              body: "Furano’s ski area can be the day. It is a longer drive than Teine for the same pair of skis. If the point is only to ski, stay at Teine and keep Furano for a day when the valley is the point.",
+            },
+          ],
+        },
+        {
+          eyebrow: "Car · often under 40 minutes",
+          title: "The short day is Teine.",
+          lede: "When Biei is too far, the mountain to the west is already enough.",
+          steps: [
+            {
+              time: "Morning",
+              title: "Stay in",
+              body: "Work at the table, or don’t. The kitchen is there. Leave after lunch.",
+            },
+            {
+              time: "Afternoon",
+              title: "Olympia or Highland",
+              body: "Sapporo Teine is the 1972 Olympic hill. Olympia is the lower, easier area. Highland is higher, where the old courses are. Parking at the mountain is free.",
+            },
+            {
+              time: "Evening",
+              title: "The same door",
+              body: "This is the day the space in front of the house is for. Dinner does not have to be in the city.",
+            },
+          ],
+        },
+      ],
+      more: "Teine, in more detail",
     },
     arrival: {
       eyebrow: "Good to know",
@@ -413,6 +605,7 @@ export const copy = {
       a: "アントニオ A",
       b: "アントニオ B",
       neighborhood: "周辺",
+      trips: "日帰り",
       arrival: "ご案内",
       book: "予約",
     },
@@ -610,98 +803,221 @@ export const copy = {
       "静かな住宅街です。夜は声と音楽をおさえてください。",
     ],
     neighborhood: {
-      eyebrow: "北38条",
-      title: "静かな北区。歩く範囲に、必要な店がある。",
-      lede: "家は北38条西3丁目1-7です。麻生駅は北へ数分。名前を挙げる店とレストランは、その歩きのまわりにあります。観光地の通りではありません。",
-      aroundTitle: "アクセス",
-      around: [
+      eyebrow: "麻生",
+      title: "駅とキッチンと、山とのあいだの、ゆっくりした日。",
+      lede: "Casa Antonioは北38条の静かな家で、すすき野の拠点ではありません。役に立つものは、だいたい麻生駅までの歩きです。街とスキー場は、午後にひとつずつ。同じ午後に両方ではありません。",
+      localEyebrow: "近くで過ごす",
+      localTitle: "麻生の一日",
+      localLede: "通りと、駅の上の店と、小さなレストランがひとつ。それが近所です。計画がなくても一日は足ります。",
+      local: [
+        {
+          title: "この家",
+          time: "扉の前",
+          body: "レンガのポーチの下に木の扉がふたつ。前の空地は無料の駐車場です。通りは住宅です。駅と、少し遠い用事とのあいだに、ここに戻ってきます。",
+        },
         {
           title: "麻生駅",
-          body: "地下鉄南北線。ホストの案内では徒歩およそ5分です。南行きは北24条、札幌駅を経て大通、すすき野へ。麻生は路線の北の端です。",
+          time: "およそ5分",
+          body: "南北線の北の端です。南行きは北24条、札幌駅を経て大通、すすき野へ。ホストの案内は徒歩およそ5分です。",
         },
-        {
-          title: "都心",
-          body: "札幌駅までは道路で約4.9km。地下鉄なら短い乗車で、リスティングではおよそ7分とされています。大通やすすき野も同じ路線の先なので、長い夕食に車は要りません。",
-        },
-        {
-          title: "空港",
-          body: "ほぼすべての便は新千歳空港です。市内の丘珠空港までは約4km。スキーバスへ乗り継ぐ場合は、到着前にその便の停留所を確認してください。季節で変わります。",
-        },
-        {
-          title: "車",
-          body: "無料の専用駐車場が、ふたつの扉の前にあります。スキーを積んで手稲へ行くときの実用的な方法です。凍結した朝は、ゆっくり出てください。写真の白線が、その駐車スペースの縁です。",
-        },
-      ],
-      placesTitle: "歩いて行けるところ",
-      places: [
         {
           title: "イオン札幌麻生店",
-          meta: "北39条西4丁目 · 麻生駅の上",
-          body: "総合スーパーは駅の建物の上にあり、家から北へ短い歩きです。滞在中の買い出しはここです。食品のフロアが遅くまで開いています。建物の中にはサイゼリヤ、タリーズコーヒー、マクドナルドといった日常の店があります。目的地のモールではありません。階によって時間が違うので、行く日に確認してください。駐車場は約570台です。",
+          time: "短い歩き",
+          body: "駅の上、北39条西4丁目。買い出しは食品フロアで、ほかの階より遅くまで開いています。中にサイゼリヤ、タリーズコーヒー、マクドナルドがあります。目的地のモールではありません。階で時間が違います。最後の一ブロックを車にするなら、駐車場は約570台です。",
         },
         {
           title: "calma",
-          meta: "北35条西3丁目 · 南へ数ブロック",
-          body: "セピア35の1階にある、11席の小さなイタリアンです。ランチは11:00–13:30、ディナーは17:00–21:00。日曜定休で、そのほかに休む日もあります。行く前に確認してください。歩いて帰れる距離の、近所の食事です。すすき野まで出なくてよい夜のための店です。",
-        },
-        {
-          title: "北海道大学と大通",
-          meta: "同じ地下鉄で南へ",
-          body: "キャンパスは南へ約4.7km。いちょうや雪が目的なら、歩いてもよい距離です。札幌時計台までは約5.5km。大通は長い公園で、2月は雪まつり、夏はビアガーデン、東端にテレビ塔があります。",
+          time: "数ブロック",
+          body: "北35条西3丁目、セピア35の1階。11席の小さなイタリアンです。ランチ11:00–13:30、ディナー17:00–21:00、日曜定休。ほかに休む日もあります。行く前に確認してください。歩いて帰れる距離です。",
         },
       ],
-      skiEyebrow: "手稲",
-      skiTitle: "山は、西にあります。",
-      skiLede: "このあたりから行くスキーの一日は、サッポロテイネです。家に駐車場があることが、スキーを積む計画と、ただの話との違いになります。",
-      ski: [
-        "サッポロテイネは手稲山の北西斜面、手稲区にあります。1972年の札幌オリンピックの会場です。ゾーンはふたつ。低くて広いオリンピアと、山の上のハイランド。ハイランドには当時のオリンピックコースがあります。頂上からは札幌の街と石狩湾が見えます。公式の案内では、札幌中心部から車で約40分、手稲ICから約10分です。北区からは札樽自動車道を西へ向かいます。道が乾いていれば、それより長い旅にはなりません。ゲレンデの駐車場は無料で、およそ2,800台です。",
-        "車を使わない場合は、JRで手稲駅へ出て、そこからバスで斜面へ上がるのが普通の経路です。家から車で行くより時間がかかります。駐車場が埋まっているときの覚え書きです。",
+      tripsEyebrow: "気軽な遠出",
+      tripsTitle: "行き先は、ひとつ。それから家へ。",
+      tripsLede: "南は地下鉄です。西は、スキーを積んだ車です。どちらかを選んでください。",
+      trips: [
+        {
+          title: "札幌駅と大通",
+          time: "地下鉄",
+          body: "札幌駅までは道路で約4.9km。掲載の乗車時間はおよそ7分です。大通はその先の長い公園です。2月は雪まつり、夏はビアガーデン、東端にテレビ塔。遅い夜が欲しければ、すすき野です。",
+        },
+        {
+          title: "北海道大学",
+          time: "約4.7km",
+          body: "キャンパスは南にあります。いちょうや雪が目的なら、歩いて一時間でもよい距離です。札幌時計台は約5.5km。同じあたりの乗車です。",
+        },
+        {
+          title: "サッポロテイネ",
+          time: "車",
+          body: "こちら側からのスキーの一日です。手稲山の北西斜面、1972年のオリンピック会場。オリンピアは低くて広いゾーン。ハイランドは高く、当時のコースがあります。公式の案内では札幌中心部から約40分。北区からは札樽自動車道を西へ。ゲレンデの駐車場は無料で、およそ2,800台。車がなければJRで手稲駅、そこからバス。その方が遅いです。",
+        },
       ],
       skiPhoto: "サッポロテイネから街を見下ろす。写真: Miki Yoshihito, CC BY 2.0。",
-      resortsTitle: "手稲ではない日",
-      resorts: [
+      planEyebrow: "二日の、簡単な計画",
+      planTitle: "予定は、詰めたくない。",
+      plan: [
         {
-          title: "札幌ばんけい",
-          body: "南西の丘にある、小さめの市民スキー場です。一日山にこもるというより、短い滑りの日によく使われます。この家より、都心に近い場所です。",
+          title: "一日目: 家の近く",
+          body: "イオンまで歩いて、コーヒーと買い出し。開いていればcalmaで昼。窓際のテーブルで仕事をするか、何もしない。キッチンがあるので、夕食は遠出しなくてよい。",
         },
         {
-          title: "Fu's Snow Area",
-          body: "同じく手稲側の、地元のゲレンデです。大きなリゾートに一日を預けずに、滑りたいときの選択肢です。",
-        },
-        {
-          title: "札幌国際スキー場",
-          body: "さらに北西です。普段の交通なら街から約1時間。手稲では近く感じる日に、もう少し山らしい一日を取る場所です。",
-        },
-        {
-          title: "もっと遠く",
-          body: "ニセコもキロロも、用事ではなく旅です。その週にするなら、早く出てください。Casa Antonioは、その夜に静かに戻る家であって、ゲレンデの麓のロッジではありません。",
+          title: "二日目: 方角をひとつ",
+          body: "南へ地下鉄で、大通か大学か、長い夕食。あるいは西へ車で手稲へ行き、終わりは同じ扉です。両方ではありません。",
         },
       ],
-      dayTitle: "いつもの冬",
-      day: [
+      guideEyebrow: "家から",
+      guideTitle: "名前を挙げる場所。",
+      guideLede: "時間は、この家からです。徒歩と書いていないものは、その行の通りです。営業時間は変わります。行く日に確認してください。",
+      guide: [
         {
-          title: "通りの雪",
-          body: "どちらの部屋にも暖房があります。地下鉄は雪を気にしません。脇道は除雪されたあと、凍ります。新しい上着より、滑りにくい靴の方が大事です。扉の前の駐車場は写真では平坦に見えます。凍結すると、ゆっくり進めてください。",
+          title: "食べる、飲む",
+          items: [
+            { name: "calma", time: "南へ数ブロック", body: "北35条の、11席のイタリアン。昼と夜。日曜は休み。近所の食事です。" },
+            { name: "サイゼリヤ", time: "イオンの中", body: "駅ビルの、普通のファミリー向けイタリアン。calmaが休みのときに役立ちます。" },
+            { name: "タリーズコーヒー", time: "イオンの中", body: "都心へ出ずにコーヒー。仕事の朝には足ります。" },
+            { name: "マクドナルド", time: "イオンの中", body: "麻生駅の上、スーパーと同じ建物です。" },
+            { name: "すすき野", time: "地下鉄で南", body: "遅い夕食と夜の街。南北線の反対側です。近所ではありません。" },
+          ],
         },
         {
-          title: "仕事の一日",
-          body: "Casa Antonio Aのテーブルは窓に向いています。Wi-Fiとキッチンと静かな通りが、実際の仕事環境です。コワーキングの机ではありません。近所のページはイオンと駅。山のページは、午後の手稲です。",
+          title: "日常の買い物",
+          items: [
+            { name: "イオン札幌麻生店の食品フロア", time: "北へ短い歩き", body: "滞在のスーパーです。遅くまで開いているのはこの階です。その日の時間を確認してください。" },
+            { name: "イオンの駐車場", time: "同じ建物", body: "約570台。最後の一ブロックを車にするとき。家の前にも、無料の場所があります。" },
+          ],
+        },
+        {
+          title: "見るところ",
+          items: [
+            { name: "麻生駅", time: "徒歩およそ5分", body: "南北線の北の端。役に立つ歩きです。" },
+            { name: "北海道大学", time: "約4.7km", body: "南のキャンパス。木や雪が目的なら、一時間歩いてもよい場所です。" },
+            { name: "大通公園", time: "同じ地下鉄", body: "2月は雪まつり。夏はビアガーデン。東端にテレビ塔。" },
+            { name: "札幌時計台", time: "約5.5km", body: "都心の、小さな木の時計。立ち寄りであって、一日ではありません。" },
+            { name: "札幌駅", time: "約4.9km", body: "掲載の乗車はおよそ7分。大きなカフェは麻生ではなく、こちらです。" },
+          ],
+        },
+        {
+          title: "スキー",
+          items: [
+            { name: "サッポロテイネ", time: "西へ車", body: "オリンピアとハイランド。道が乾いていれば、40分以内が多いです。ゲレンデの駐車は無料。" },
+            { name: "札幌ばんけい", time: "都心の南西", body: "小さめの市民ゲレンデ。短い家族の滑りによく使われます。この家より都心に近いです。" },
+            { name: "Fu's Snow Area", time: "手稲側", body: "大きなリゾートに一日を預けずに滑る、地元の丘です。" },
+            { name: "札幌国際スキー場", time: "およそ1時間", body: "さらに北西。手稲では近く感じる日の、長いスキーです。" },
+            { name: "ニセコ、またはキロロ", time: "旅", body: "用事ではありません。その週にするなら、早く出てください。この家は、戻ったあとの静かな夜です。" },
+          ],
         },
       ],
-      distancesTitle: "距離の目安",
-      distances: [
-        "麻生駅 — 徒歩およそ5分",
-        "イオン札幌麻生店 — 駅の上まで、北へ短い歩き",
-        "calma — 北35条、南へ数ブロック",
-        "札幌駅 — 約4.9km、地下鉄で短い乗車",
-        "北海道大学 — 約4.7km",
-        "札幌時計台 — 約5.5km",
-        "サッポロテイネ — 西へ車で、晴れれば40分以内が多い",
-        "丘珠空港 — 約4km",
-      ],
+      seasonEyebrow: "10月から3月",
+      seasonTitle: "雪の季節に来るとき。",
+      seasonBody:
+        "どちらの部屋にも暖房があります。地下鉄は雪を気にしません。脇道は除雪されたあと凍ります。新しい上着より、滑りにくい靴です。扉の前の駐車場は、凍結すると遅くなります。この家に合う午後は手稲です。冬は店の時間も動くので、行く前に確認してください。",
       mapTitle: "家の位置",
       mapNote: "ピンは、北38条西3丁目1-7として公開されている座標です。ナビにはGoogleマップを開いてください。",
       openMap: "Googleマップで開く",
+    },
+    dayTrips: {
+      eyebrow: "この家から",
+      title: "一日に、行き先は一つ。",
+      lede: "北38条から出かける日帰りです。北海道を回る旅ではありません。朝食のあとに出て、遅い夕食には戻る。その日の町は、一つだけで十分です。",
+      homeTitle: "出かけて、同じ扉に戻る。",
+      homeBody: "小樽は列車。美瑛か富良野は車で、両方ではない。短くする日は手稲。",
+      homeCta: "日帰り",
+      note: "時間は、道が乾いているときの札幌中心部からの目安に、この家から駅か高速までの数分を足したものです。雪、花の季節、通行止めで一日は変わります。その朝に確認してください。このページでは切符を売りません。",
+      ideas: [
+        {
+          eyebrow: "車なし · 札幌駅からおよそ35–45分",
+          title: "小樽へ。夕食には戻る。",
+          lede: "いちばん楽な日です。運河と、昼ごはんと、帰りの列車。",
+          steps: [
+            {
+              time: "朝",
+              title: "麻生から、列車",
+              body: "麻生まで歩いて、地下鉄で札幌駅。掲載どおりおよそ7分です。そこからJR函館本線で小樽。速い列車でおよそ35分から45分。",
+            },
+            {
+              time: "昼前",
+              title: "運河。町ぜんぶではない",
+              body: "運河と、石の倉庫を歩きます。それがこの日です。アーケードは、もう一本だけ歩くときのもので、一覧ではありません。",
+            },
+            {
+              time: "昼",
+              title: "食事は一度",
+              body: "小樽は寿司の町です。着いてから一軒選んでください。このページでは席を取りません。",
+            },
+            {
+              time: "午後",
+              title: "引き返す",
+              body: "行きと同じ列車で戻ってこられます。自分で夕食を作れる時間に、家に着きます。車は扉の前に置いたままで構いません。",
+            },
+          ],
+        },
+        {
+          eyebrow: "車 · およそ2時間30分",
+          title: "美瑛。富良野は足さない。",
+          lede: "北への長い一日。写真は青い池。夏の理由は丘です。",
+          steps: [
+            {
+              time: "朝食のあと",
+              title: "高速、それから地道",
+              body: "高速で旭川方面へ出て、美瑛へ。道が乾いていれば札幌からおよそ2時間半。この家からはもう少しかかります。高速の料金は片道で数千円です。帰りが丘で暗くなるなら、出発しないでください。",
+            },
+            {
+              time: "立ち寄り",
+              title: "白金の青い池",
+              body: "池は美瑛の町なかではなく、十勝岳へ向かう白金にあります。夏はパッチワークの丘がもう一つの歩きです。冬も池は見に行かれますが、閉まる道があります。その朝、確認してから一日を決めてください。",
+            },
+            {
+              time: "それから",
+              title: "食事は一度。それから戻る",
+              body: "美瑛で食べたら、そのまま戻ります。富良野は別の日です。同じ日に足すと、景色を見ている時間より運転の方が長くなります。",
+            },
+          ],
+        },
+        {
+          eyebrow: "車 · およそ2時間",
+          title: "富良野。花か、雪か。",
+          lede: "もう一つの谷への、長い一日。欲しい季節を選ぶ。",
+          steps: [
+            {
+              time: "朝食のあと",
+              title: "滝川のほうへ、それから谷へ",
+              body: "普通の日ならおよそ2時間10分。滝川方面の高速から、富良野へ入る道です。冬は遅くなります。料金は片道で数千円です。",
+            },
+            {
+              time: "夏",
+              title: "花があるときだけ、畑",
+              body: "7月中旬はファーム富田のラベンダーで、混みます。早く着く。その時期を外すと、町はチーズと駅前と、散歩です。夏のあいだずっと花の見物ではありません。",
+            },
+            {
+              time: "冬",
+              title: "スキーは、手稲では足りないとき",
+              body: "富良野のゲレンデを一日にすることもできます。同じスキー板なら、手稲より長いドライブです。滑ることだけが目的なら手稲に残り、谷そのものが目的の日に富良野へ行ってください。",
+            },
+          ],
+        },
+        {
+          eyebrow: "車 · 晴れれば40分以内が多い",
+          title: "短い日は、手稲。",
+          lede: "美瑛が遠すぎる日は、西の山で足ります。",
+          steps: [
+            {
+              time: "朝",
+              title: "家にいる",
+              body: "テーブルで仕事をするか、しない。キッチンはある。昼のあと出ます。",
+            },
+            {
+              time: "午後",
+              title: "オリンピアか、ハイランド",
+              body: "サッポロテイネは1972年のオリンピックの山です。オリンピアは低くて易しい。ハイランドは高く、当時のコースがあります。ゲレンデの駐車は無料です。",
+            },
+            {
+              time: "夜",
+              title: "同じ扉",
+              body: "扉の前の場所は、この日のためのものです。夕食は都心でなくてよい。",
+            },
+          ],
+        },
+      ],
+      more: "手稲の詳細",
     },
     arrival: {
       eyebrow: "ご案内",

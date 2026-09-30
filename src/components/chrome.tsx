@@ -37,6 +37,9 @@ export function Shell({ children }: { children: ReactNode }) {
               <Link to="/neighborhood" data-active={path === "/neighborhood" ? "true" : undefined}>
                 {t.nav.neighborhood}
               </Link>
+              <Link to="/day-trips" data-active={path === "/day-trips" ? "true" : undefined}>
+                {t.nav.trips}
+              </Link>
               <Link to="/arrival" data-active={path === "/arrival" ? "true" : undefined}>
                 {t.nav.arrival}
               </Link>
