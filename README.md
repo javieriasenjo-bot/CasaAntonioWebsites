@@ -2,6 +2,10 @@
 
 Static site for casaantonio.jp. Deploy with `npm run build && npx wrangler deploy`.
 
+Workers Builds is set to run only `npx wrangler deploy`. That command does not create `dist`, which is why deploy failed with "assets.directory does not exist". On that builder (`WORKERS_CI=1`), `postinstall` runs the Vite build and prerender before Wrangler starts. A normal `npm install` on your own machine does not.
+
+Do not also set a dashboard build command unless you remove `postinstall`. Either one is enough. Leave the deploy command as `npx wrangler deploy`.
+
 The build prerenders every page in English, Japanese, Simplified Chinese, and Korean. `www` already redirects to the apex in Cloudflare DNS. This assets-only project does not add a second host redirect.
 
 ## Social links
