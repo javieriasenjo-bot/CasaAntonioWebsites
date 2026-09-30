@@ -6,7 +6,12 @@
     "dev": "vite",
     "build": "vite build && node scripts/prerender.mjs && node scripts/strip-redirects.mjs",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "postinstall": "node scripts/cf-postinstall.mjs"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "workerd": true
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
