@@ -1,0 +1,12 @@
+{
+  "name": "Casa Antonio",
+  "short_name": "Casa Antonio",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4efe8",
+  "theme_color": "#243833",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

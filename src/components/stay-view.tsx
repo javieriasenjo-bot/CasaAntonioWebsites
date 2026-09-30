@@ -1,23 +1,29 @@
-import { Link } from "@tanstack/react-router";
 import { Gallery } from "@/components/gallery";
 import { Shell } from "@/components/chrome";
-import { AIRBNB, apartmentAPhotos, copy, housePhotos, type Photo } from "@/data/content";
+import { AirbnbLink } from "@/components/airbnb-link";
+import { PageLink } from "@/components/page-link";
+import { Photo } from "@/components/photo";
+import { apartmentAPhotos, copy, housePhotos, type Photo as HousePhoto } from "@/data/content";
+import { guides } from "@/data/guides";
 import { useLang } from "@/lib/i18n";
 
 export function StayView({ id }: { id: "a" | "b" }) {
   const { lang } = useLang();
   const t = copy[lang];
   const page = id === "a" ? t.aPage : t.bPage;
-  const photos: readonly Photo[] = id === "a" ? apartmentAPhotos : housePhotos;
-  const airbnb = id === "a" ? AIRBNB.a : AIRBNB.b;
+  const hero = id === "a" ? "/photos/living.jpg" : "/photos/entry.jpg";
+  const photos: readonly HousePhoto[] = (id === "a" ? apartmentAPhotos : housePhotos).filter((photo) => photo.src !== hero);
   const note = id === "a" ? t.photoNoteA : t.photoNoteB;
+  const g = guides[lang];
 
   return (
     <Shell>
       <section className={`page-hero page-hero-${id}`}>
-        <img
+        <Photo
           src={id === "a" ? "/photos/living.jpg" : "/photos/entry.jpg"}
           alt={page.title}
+          priority
+          sizes="100vw"
         />
         <div className="page-hero-copy">
           <p className="eyebrow">{page.eyebrow}</p>
@@ -43,17 +49,27 @@ export function StayView({ id }: { id: "a" | "b" }) {
               <p key={paragraph}>{paragraph}</p>
             ))}
             <div className="stay-actions">
-              <a className={id === "a" ? "button button-dark" : "button button-wood"} href={airbnb} target="_blank" rel="noreferrer">
+              <AirbnbLink cabin={id} location={id === "a" ? "stay-a" : "stay-b"} className={id === "a" ? "button button-dark" : "button button-wood"}>
                 {t.stayShared.book}
-              </a>
-              <Link to="/" className="button button-line">
+              </AirbnbLink>
+              <PageLink page="home" className="button button-line">
                 {t.stayShared.back}
-              </Link>
+              </PageLink>
             </div>
           </div>
 
           <h2 className="block-title">{t.photos}</h2>
           <Gallery photos={photos} lang={lang} labels={t.lightbox} />
+          {id === "b" ? (
+            <>
+              <p className="photo-note">{g.bNote}</p>
+              <ul className="slot-grid">
+                {g.bSlots.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </>
+          ) : null}
           <p className="photo-note">{note}</p>
 
           <div className="two-col">

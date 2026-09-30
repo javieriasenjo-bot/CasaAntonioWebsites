@@ -1,23 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Shell } from "@/components/chrome";
-import { AIRBNB, copy } from "@/data/content";
+import { AirbnbLink } from "@/components/airbnb-link";
+import { FaqList } from "@/components/guide-view";
+import { PageLink } from "@/components/page-link";
+import { copy } from "@/data/content";
+import { guides } from "@/data/guides";
 import { useLang } from "@/lib/i18n";
+import { headFor } from "@/lib/seo";
 
 export const Route = createFileRoute("/arrival")({
-  head: () => ({
-    meta: [
-      { title: "Arrival · Casa Antonio Sapporo" },
-      {
-        name: "description",
-        content:
-          "Check-in 16:00–23:00, check-out by 10:00. House rules, parking, and notification numbers for Casa Antonio A and B in Sapporo.",
-      },
-    ],
-  }),
+  head: () => headFor("arrival", "en"),
   component: Arrival,
 });
 
-function Arrival() {
+export function Arrival() {
   const { lang } = useLang();
   const t = copy[lang];
   const page = t.arrival;
@@ -69,16 +65,26 @@ function Arrival() {
                 <h2>{page.payTitle}</h2>
                 <p>{page.payBody}</p>
                 <div className="stay-actions">
-                  <a className="button button-dark" href={AIRBNB.a} target="_blank" rel="noreferrer">
+                  <AirbnbLink cabin="a" location="arrival" className="button button-dark">
                     {t.bookA}
-                  </a>
-                  <a className="button button-wood" href={AIRBNB.b} target="_blank" rel="noreferrer">
+                  </AirbnbLink>
+                  <AirbnbLink cabin="b" location="arrival" className="button button-wood">
                     {t.bookB}
-                  </a>
+                  </AirbnbLink>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="stay-body">
+        <div className="wrap narrow">
+          <FaqList />
+          <p>
+            <PageLink page="access" className="text-link">
+              {guides[lang].footerLinks[0]?.label}
+            </PageLink>
+          </p>
         </div>
       </section>
     </Shell>

@@ -9,14 +9,21 @@
   --color-line: #e3dbd1;
   --color-foam: #ebe4da;
   --color-card: #fbf8f4;
-  --font-sans: "Zen Kaku Gothic New", "Noto Sans SC", "Noto Sans KR", "Hiragino Sans", "Noto Sans JP", sans-serif;
-  --font-display: "Shippori Mincho", "Noto Serif SC", "Noto Serif KR", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "PingFang SC", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display: "Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", "Yu Mincho", serif;
 }
 
 @layer base {
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--color-pine);
+    outline-offset: 3px;
   }
 
   html {
@@ -33,8 +40,13 @@
     line-height: 1.7;
   }
 
-  img {
+  img,
+  picture {
     max-width: 100%;
+  }
+
+  picture {
+    display: contents;
   }
 
   a {
@@ -50,6 +62,18 @@
     line-height: 1.2;
     letter-spacing: 0.01em;
   }
+}
+
+html[lang="ja"] {
+  --font-display: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+html[lang="zh-Hans"] {
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", serif;
+}
+
+html[lang="ko"] {
+  --font-display: "Noto Serif KR", "Apple Myungjo", Batang, serif;
 }
 
 .skip-link {
@@ -114,8 +138,8 @@
 
 .logo span {
   font-family: var(--font-sans);
-  font-weight: 400;
-  opacity: 0.55;
+  font-weight: 500;
+  color: #4e4944;
   margin-left: 0.35rem;
   font-size: 0.82rem;
   letter-spacing: 0.08em;
@@ -146,33 +170,133 @@
 
 .language-switcher {
   display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   border: 1px solid var(--color-line);
   border-radius: 999px;
   padding: 0.15rem;
   background: color-mix(in srgb, white 55%, transparent);
 }
 
-.language-switcher button {
-  border: 0;
-  background: transparent;
+.language-switcher a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-muted);
   border-radius: 999px;
-  min-height: 2rem;
-  min-width: 2rem;
-  padding: 0 0.5rem;
-  font: inherit;
-  font-size: 0.78rem;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  font-size: 0.92rem;
 }
 
-.language-switcher button.active {
+.language-switcher a.active {
   background: var(--color-ink);
   color: var(--color-paper);
 }
 
+.menu-toggle {
+  display: none;
+}
+
+.lang-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 1rem 0.55rem;
+  background: var(--color-pine);
+  color: var(--color-paper);
+  font-size: 0.92rem;
+}
+
+.lang-banner p {
+  margin: 0;
+}
+
+.lang-banner a,
+.lang-banner button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgb(255 255 255 / 0.45);
+  background: transparent;
+  color: inherit;
+  padding: 0 0.8rem;
+  font: inherit;
+}
+
+.footer-label {
+  margin: 1.2rem 0 0.2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.coast-line a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+}
+
+.slot-grid li {
+  min-height: 7.5rem;
+  border: 1px dashed var(--color-line);
+  background: var(--color-foam);
+  display: flex;
+  align-items: flex-end;
+  padding: 0.9rem 1rem;
+  color: var(--color-ink);
+}
+
+.faq-list details {
+  border-top: 1px solid var(--color-line);
+  padding: 0.35rem 0;
+}
+
+.faq-list details:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.faq-list summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.faq-list p {
+  margin: 0 0 0.8rem;
+}
+
+a.quick-reserve-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .hero {
   position: relative;
-  height: min(86vh, 52rem);
-  min-height: 34rem;
+  height: calc(100svh - 4.5rem);
+  min-height: 28rem;
+  max-height: 52rem;
   background: var(--color-pine);
   overflow: hidden;
 }
@@ -417,11 +541,13 @@
 }
 
 .choice-a {
-  background-image: url("/photos/living.jpg");
+  background-image: url("/photos/open-800.webp");
+  background-image: image-set(url("/photos/open-800.webp") 1x, url("/photos/open-1600.webp") 2x);
 }
 
 .choice-b {
-  background-image: url("/photos/entry.jpg");
+  background-image: url("/photos/hall-800.webp");
+  background-image: image-set(url("/photos/hall-800.webp") 1x, url("/photos/hall-1600.webp") 2x);
 }
 
 .choice-kicker {
@@ -797,11 +923,34 @@
 
 .trips-more {
   margin: 1.2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
 }
 
 .trips-more a {
   color: var(--color-wood);
   border-bottom: 1px solid var(--color-wood);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.trip-figure {
+  margin: 0 0 1.4rem;
+}
+
+.trip-figure img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  display: block;
+}
+
+.trip-figure figcaption {
+  margin-top: 0.4rem;
+  color: var(--color-muted);
+  font-size: 0.82rem;
 }
 
 .place-card {
@@ -957,8 +1106,9 @@
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 0.2rem 1.1rem;
   margin-top: 1rem !important;
 }
 
@@ -987,7 +1137,7 @@
 }
 
 .quick-reserve-trigger {
-  min-height: 3rem;
+  min-height: 44px;
   border: 0;
   border-radius: 999px;
   padding: 0 1.2rem;
@@ -1014,8 +1164,8 @@
 }
 
 .quick-reserve-close {
-  width: 2.2rem;
-  height: 2.2rem;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 999px;
   border: 1px solid var(--color-line);
   background: transparent;
@@ -1025,7 +1175,7 @@
 .quick-reserve-menu a {
   display: flex;
   align-items: center;
-  min-height: 2.9rem;
+  min-height: 44px;
   margin-top: 0.4rem;
   padding: 0 0.8rem;
   background: var(--color-foam);
@@ -1121,25 +1271,42 @@ body.lightbox-open .quick-reserve {
     gap: 0.35rem;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    border: 1px solid var(--color-line);
+    background: transparent;
+    color: var(--color-ink);
+    padding: 0 0.8rem;
+    font: inherit;
+  }
+
   .header-tools {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
 
   .site-header nav {
-    min-width: 0;
-    overflow-x: auto;
-    gap: 0.9rem;
-    scrollbar-width: none;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
   }
 
-  .site-header nav::-webkit-scrollbar {
-    display: none;
+  .site-header nav[data-open="true"] {
+    display: flex;
   }
 
   .site-header nav a {
-    white-space: nowrap;
-    font-size: 0.84rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
   }
 
   .wrap,
@@ -1148,8 +1315,8 @@ body.lightbox-open .quick-reserve {
   }
 
   .hero {
-    min-height: 32rem;
-    height: calc(100svh - 6.4rem);
+    min-height: 24rem;
+    height: calc(100svh - 8.5rem);
   }
 
   .page-hero {
@@ -1175,6 +1342,10 @@ body.lightbox-open .quick-reserve {
     direction: ltr;
   }
 
+  .fact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .mosaic {
     grid-template-rows: none;
   }
@@ -1191,7 +1362,8 @@ body.lightbox-open .quick-reserve {
 
   .home-stay img,
   .stay-split img,
-  .place-photo-row img {
+  .place-photo-row img,
+  .trip-figure img {
     height: 16rem;
   }
 
@@ -1227,12 +1399,6 @@ body.lightbox-open .quick-reserve {
 }
 
 @media (max-width: 460px) {
-  .language-switcher {
-    position: absolute;
-    right: 0.7rem;
-    top: 0.65rem;
-  }
-
   .hero-overlay h1,
   .page-hero-copy h1 {
     font-size: 2.35rem;
@@ -1253,6 +1419,13 @@ body.lightbox-open .quick-reserve {
   .quick-reserve-trigger,
   .quick-reserve-menu {
     width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .fact-grid,
+  .slot-grid {
+    grid-template-columns: 1fr;
   }
 }
 

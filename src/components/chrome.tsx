@@ -1,20 +1,38 @@
-import { Link, useRouterState } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
-import { AIRBNB, copy } from "@/data/content";
-import { useLang, type Lang } from "@/lib/i18n";
+import { useRouterState } from "@tanstack/react-router";
+import { useEffect, useState, type ReactNode } from "react";
+import { AirbnbLink } from "@/components/airbnb-link";
+import { PageLink } from "@/components/page-link";
+import { copy } from "@/data/content";
+import { guides, LANG_NAME } from "@/data/guides";
+import { trackLanguageChange } from "@/lib/analytics";
+import { rememberLang, useLang, type Lang } from "@/lib/i18n";
+import { HTML_LANG, pagePath, parsePath, type PageId } from "@/lib/paths";
 
-const LANGS: { id: Lang; short: string; name: string }[] = [
-  { id: "en", short: "EN", name: "English" },
-  { id: "ja", short: "日", name: "日本語" },
-  { id: "zh", short: "中", name: "中文" },
-  { id: "ko", short: "한", name: "한국어" },
+const LANGS: Lang[] = ["en", "ja", "zh", "ko"];
+
+const NAV: { page: PageId; key: "a" | "b" | "neighborhood" | "trips" | "arrival" }[] = [
+  { page: "a", key: "a" },
+  { page: "b", key: "b" },
+  { page: "neighborhood", key: "neighborhood" },
+  { page: "day-trips", key: "trips" },
+  { page: "arrival", key: "arrival" },
 ];
 
 export function Shell({ children }: { children: ReactNode }) {
-  const { lang, setLang } = useLang();
+  const { lang, suggestion, dismissSuggestion } = useLang();
   const t = copy[lang];
+  const g = guides[lang];
   const path = useRouterState({ select: (state) => state.location.pathname });
-  const [open, setOpen] = useState(false);
+  const page = parsePath(path)?.page ?? "home";
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [reserveOpen, setReserveOpen] = useState(false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+    setReserveOpen(false);
+  }, [path]);
+
+  const directCabin = page === "a" || page === "b" ? page : null;
 
   return (
     <>
@@ -23,43 +41,76 @@ export function Shell({ children }: { children: ReactNode }) {
       </a>
       <header className="site-header">
         <div className="nav-inner">
-          <Link to="/" className="logo">
+          <PageLink page="home" className="logo">
             Casa Antonio <span>Sapporo</span>
-          </Link>
+          </PageLink>
           <div className="header-tools">
-            <nav aria-label={t.chrome.nav}>
-              <Link to="/casa-antonio-a" data-active={path === "/casa-antonio-a" ? "true" : undefined}>
-                {t.nav.a}
-              </Link>
-              <Link to="/casa-antonio-b" data-active={path === "/casa-antonio-b" ? "true" : undefined}>
-                {t.nav.b}
-              </Link>
-              <Link to="/neighborhood" data-active={path === "/neighborhood" ? "true" : undefined}>
-                {t.nav.neighborhood}
-              </Link>
-              <Link to="/day-trips" data-active={path === "/day-trips" ? "true" : undefined}>
-                {t.nav.trips}
-              </Link>
-              <Link to="/arrival" data-active={path === "/arrival" ? "true" : undefined}>
-                {t.nav.arrival}
-              </Link>
-            </nav>
-            <div className="language-switcher" role="group" aria-label={t.chrome.language}>
-              {LANGS.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  className={lang === item.id ? "active" : ""}
-                  aria-label={item.name}
-                  aria-pressed={lang === item.id}
-                  onClick={() => setLang(item.id)}
+            <button
+              type="button"
+              className="menu-toggle"
+              aria-expanded={menuOpen}
+              aria-controls="site-nav"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? g.closeMenu : g.menu}
+            </button>
+            <nav id="site-nav" aria-label={t.chrome.nav} data-open={menuOpen ? "true" : "false"}>
+              {NAV.map((item) => (
+                <PageLink
+                  key={item.page}
+                  page={item.page}
+                  data-active={page === item.page ? "true" : undefined}
+                  aria-current={page === item.page ? "page" : undefined}
                 >
-                  {item.short}
-                </button>
+                  {t.nav[item.key]}
+                </PageLink>
               ))}
+            </nav>
+            <div className="language-switcher" role="navigation" aria-label={t.chrome.language}>
+              {LANGS.map((id) => {
+                const href = pagePath(page, id);
+                return (
+                  <a
+                    key={id}
+                    href={href}
+                    hrefLang={HTML_LANG[id]}
+                    lang={HTML_LANG[id]}
+                    className={lang === id ? "active" : undefined}
+                    aria-current={lang === id ? "true" : undefined}
+                    onClick={() => {
+                      rememberLang(id);
+                      if (id !== lang) {
+                        trackLanguageChange(id, new URL(href, window.location.origin).href);
+                      }
+                    }}
+                  >
+                    {LANG_NAME[id]}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
+        {suggestion ? (
+          <div className="lang-banner">
+            <p>
+              {g.banner} {LANG_NAME[suggestion]}.
+            </p>
+            <a
+              href={pagePath(page, suggestion)}
+              hrefLang={HTML_LANG[suggestion]}
+              onClick={() => {
+                rememberLang(suggestion);
+                trackLanguageChange(suggestion, new URL(pagePath(page, suggestion), window.location.origin).href);
+              }}
+            >
+              {g.bannerOpen} {LANG_NAME[suggestion]}
+            </a>
+            <button type="button" onClick={dismissSuggestion}>
+              {g.bannerStay}
+            </button>
+          </div>
+        ) : null}
       </header>
       <main id="content">{children}</main>
       <footer className="site-footer">
@@ -69,37 +120,69 @@ export function Shell({ children }: { children: ReactNode }) {
           <p>{t.footer.address}</p>
           <p className="small">{t.footer.licenses}</p>
           <p className="footer-links">
-            <a href={AIRBNB.a} target="_blank" rel="noreferrer">
+            <AirbnbLink cabin="a" location="footer">
               Airbnb · A
-            </a>
-            <a href={AIRBNB.b} target="_blank" rel="noreferrer">
+            </AirbnbLink>
+            <AirbnbLink cabin="b" location="footer">
               Airbnb · B
+            </AirbnbLink>
+            <PageLink page="arrival">{t.nav.arrival}</PageLink>
+          </p>
+          <p className="footer-label">{g.footerGuides}</p>
+          <p className="footer-links">
+            {g.footerLinks.map((item) => (
+              <PageLink key={item.page} page={item.page}>
+                {item.label}
+              </PageLink>
+            ))}
+          </p>
+          <p className="coast-line">
+            <strong>{g.coastTitle}.</strong> {g.coastBody}{" "}
+            <a href="https://kojohamacabins.jp/" rel="noopener noreferrer">
+              {g.coastCta}
             </a>
-            <Link to="/arrival">{t.nav.arrival}</Link>
           </p>
           <p className="small credit">{t.footer.photo}</p>
         </div>
       </footer>
       <div className="quick-reserve">
-        {open ? (
-          <div className="quick-reserve-menu">
-            <div className="quick-reserve-menu-head">
-              <strong>{t.reserve.title}</strong>
-              <button type="button" className="quick-reserve-close" onClick={() => setOpen(false)} aria-label={t.reserve.close}>
-                ×
-              </button>
-            </div>
-            <a href={AIRBNB.a} target="_blank" rel="noreferrer">
-              {t.reserve.a}
-            </a>
-            <a href={AIRBNB.b} target="_blank" rel="noreferrer">
-              {t.reserve.b}
-            </a>
-          </div>
-        ) : null}
-        <button type="button" className="quick-reserve-trigger" onClick={() => setOpen((value) => !value)}>
-          {t.reserve.label}
-        </button>
+        {directCabin ? (
+          <AirbnbLink
+            cabin={directCabin}
+            location={directCabin === "a" ? "stay-a" : "stay-b"}
+            className="quick-reserve-trigger"
+          >
+            {t.reserve.label}
+          </AirbnbLink>
+        ) : (
+          <>
+            {reserveOpen ? (
+              <div className="quick-reserve-menu" id="reserve-menu">
+                <div className="quick-reserve-menu-head">
+                  <strong>{t.reserve.title}</strong>
+                  <button type="button" className="quick-reserve-close" onClick={() => setReserveOpen(false)} aria-label={t.reserve.close}>
+                    ×
+                  </button>
+                </div>
+                <AirbnbLink cabin="a" location="quick-reserve">
+                  {t.reserve.a}
+                </AirbnbLink>
+                <AirbnbLink cabin="b" location="quick-reserve">
+                  {t.reserve.b}
+                </AirbnbLink>
+              </div>
+            ) : null}
+            <button
+              type="button"
+              className="quick-reserve-trigger"
+              aria-expanded={reserveOpen}
+              aria-controls="reserve-menu"
+              onClick={() => setReserveOpen((value) => !value)}
+            >
+              {t.reserve.label}
+            </button>
+          </>
+        )}
       </div>
     </>
   );

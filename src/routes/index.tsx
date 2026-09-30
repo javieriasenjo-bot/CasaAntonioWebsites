@@ -1,32 +1,39 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Shell } from "@/components/chrome";
-import { AIRBNB, copy } from "@/data/content";
+import { AirbnbLink } from "@/components/airbnb-link";
+import { PageLink } from "@/components/page-link";
+import { Photo } from "@/components/photo";
+import { copy } from "@/data/content";
+import { guides } from "@/data/guides";
 import { useLang } from "@/lib/i18n";
+import { headFor } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
+  head: () => headFor("home", "en"),
   component: Home,
 });
 
-function Home() {
+export function Home() {
   const { lang } = useLang();
   const t = copy[lang];
+  const g = guides[lang];
   const c = t.captions;
 
   return (
     <Shell>
       <section className="hero">
-        <img className="hero-img" src="/photos/entry.jpg" alt={t.intro.title} />
+        <Photo className="hero-img" src="/photos/living.jpg" alt={t.hero.title} priority sizes="100vw" />
         <div className="hero-overlay">
           <p className="eyebrow">{t.hero.eyebrow}</p>
           <h1>{t.hero.title}</h1>
           <p>{t.hero.lede}</p>
           <div className="hero-actions">
-            <Link to="/casa-antonio-a" className="button button-light">
+            <PageLink page="a" className="button button-light">
               {t.hero.a}
-            </Link>
-            <Link to="/casa-antonio-b" className="button button-quiet">
+            </PageLink>
+            <PageLink page="b" className="button button-quiet">
               {t.hero.b}
-            </Link>
+            </PageLink>
           </div>
         </div>
       </section>
@@ -41,34 +48,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="mosaic-section">
-        <div className="wrap">
-          <div className="mosaic">
-            <figure>
-              <img src="/photos/entry.jpg" alt={c.doors} />
-              <figcaption>{c.doors}</figcaption>
-            </figure>
-            <figure>
-              <img src="/photos/living.jpg" alt={c.living} />
-              <figcaption>Antonio A</figcaption>
-            </figure>
-            <figure>
-              <img src="/photos/bedroom.jpg" alt={c.bedroom} />
-              <figcaption>{c.bedroom}</figcaption>
-            </figure>
-            <figure>
-              <img src="/photos/kitchen.jpg" alt={c.kitchen} />
-              <figcaption>{c.kitchen}</figcaption>
-            </figure>
-            <figure>
-              <img src="/photos/dining.jpg" alt={c.table} />
-              <figcaption>{c.table}</figcaption>
-            </figure>
-          </div>
-          <p className="photo-note">{t.mosaicCaption}</p>
-        </div>
-      </section>
-
       <section className="choices-section">
         <div className="wrap">
           <div className="section-head">
@@ -76,19 +55,47 @@ function Home() {
             <p>{t.choicesLede}</p>
           </div>
           <div className="choices">
-            <Link to="/casa-antonio-a" className="choice choice-a">
+            <PageLink page="a" className="choice choice-a">
               <span className="choice-kicker">A</span>
               <span className="choice-name">{t.aCard.name}</span>
               <span className="choice-line">{t.aCard.line}</span>
               <span className="choice-link">{t.aCard.cta}</span>
-            </Link>
-            <Link to="/casa-antonio-b" className="choice choice-b">
+            </PageLink>
+            <PageLink page="b" className="choice choice-b">
               <span className="choice-kicker">B</span>
               <span className="choice-name">{t.bCard.name}</span>
               <span className="choice-line">{t.bCard.line}</span>
               <span className="choice-link">{t.bCard.cta}</span>
-            </Link>
+            </PageLink>
           </div>
+        </div>
+      </section>
+
+      <section className="mosaic-section">
+        <div className="wrap">
+          <div className="mosaic">
+            <figure>
+              <Photo src="/photos/entry.jpg" alt={c.doors} sizes="(max-width: 900px) 100vw, 46vw" />
+              <figcaption>{c.doors}</figcaption>
+            </figure>
+            <figure>
+              <Photo src="/photos/kitchen-living.jpg" alt={c.living} sizes="(max-width: 900px) 100vw, 27vw" />
+              <figcaption>Antonio A</figcaption>
+            </figure>
+            <figure>
+              <Photo src="/photos/bedroom.jpg" alt={c.bedroom} sizes="(max-width: 900px) 100vw, 27vw" />
+              <figcaption>{c.bedroom}</figcaption>
+            </figure>
+            <figure>
+              <Photo src="/photos/kitchen.jpg" alt={c.kitchen} sizes="(max-width: 900px) 100vw, 27vw" />
+              <figcaption>{c.kitchen}</figcaption>
+            </figure>
+            <figure>
+              <Photo src="/photos/dining.jpg" alt={c.table} sizes="(max-width: 900px) 100vw, 27vw" />
+              <figcaption>{c.table}</figcaption>
+            </figure>
+          </div>
+          <p className="photo-note">{t.mosaicCaption}</p>
         </div>
       </section>
 
@@ -100,15 +107,15 @@ function Home() {
             <p className="tagline">{t.aHome.tag}</p>
             <p>{t.aHome.body}</p>
             <div className="stay-actions">
-              <Link to="/casa-antonio-a" className="button button-dark">
+              <PageLink page="a" className="button button-dark">
                 {t.aCard.cta}
-              </Link>
-              <a className="button button-line" href="https://www.airbnb.com/rooms/1248284267045468378" target="_blank" rel="noreferrer">
-                Airbnb
-              </a>
+              </PageLink>
+              <AirbnbLink cabin="a" location="home-a" className="button button-line">
+                {t.bookA}
+              </AirbnbLink>
             </div>
           </div>
-          <img src="/photos/living.jpg" alt={c.livingAlt} />
+          <Photo src="/photos/sofa.jpg" alt={c.livingAlt} sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </section>
 
@@ -120,15 +127,15 @@ function Home() {
             <p className="tagline">{t.bHome.tag}</p>
             <p>{t.bHome.body}</p>
             <div className="stay-actions">
-              <Link to="/casa-antonio-b" className="button button-wood">
+              <PageLink page="b" className="button button-wood">
                 {t.bCard.cta}
-              </Link>
-              <a className="button button-line" href="https://www.airbnb.com/rooms/1248260873560502499" target="_blank" rel="noreferrer">
-                Airbnb
-              </a>
+              </PageLink>
+              <AirbnbLink cabin="b" location="home-b" className="button button-line">
+                {t.bookB}
+              </AirbnbLink>
             </div>
           </div>
-          <img src="/photos/doors.jpg" alt={c.woodDoors} />
+          <Photo src="/photos/exterior.jpg" alt={c.woodDoors} sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </section>
 
@@ -141,11 +148,11 @@ function Home() {
             {t.nomad.body.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <Link to="/neighborhood" hash="ski" className="button button-dark">
+            <PageLink page="teine-ski" className="button button-dark">
               {t.nomad.cta}
-            </Link>
+            </PageLink>
           </div>
-          <img src="/photos/dining.jpg" alt={c.workTable} />
+          <Photo src="/photos/dining-2.jpg" alt={c.workTable} sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </section>
 
@@ -154,38 +161,22 @@ function Home() {
           <p className="eyebrow">{t.longStay.eyebrow}</p>
           <h2>{t.longStay.title}</h2>
           <p className="lede">{t.longStay.lede}</p>
-          {t.longStay.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-          <dl className="fact-grid">
-            {t.longStay.points.map((item) => (
-              <div key={item.k}>
-                <dt>{item.k}</dt>
-                <dd>{item.v}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="photo-note">{t.longStay.note}</p>
-          <div className="stay-actions">
-            <a className="button button-dark" href={AIRBNB.a} target="_blank" rel="noreferrer">
-              {t.longStay.ctaA}
-            </a>
-            <a className="button button-wood" href={AIRBNB.b} target="_blank" rel="noreferrer">
-              {t.longStay.ctaB}
-            </a>
-          </div>
+          <p>{t.longStay.body[0]}</p>
+          <PageLink page="long-stay" className="button button-dark">
+            {g.longCta}
+          </PageLink>
         </div>
       </section>
 
       <section className="ambient">
-        <img src="/photos/entry.jpg" alt="" />
+        <Photo src="/photos/street.jpg" alt="" sizes="100vw" />
         <div className="ambient-copy">
           <p className="eyebrow">{t.neighborhoodTeaser.eyebrow}</p>
           <h2>{t.neighborhoodTeaser.title}</h2>
           <p>{t.neighborhoodTeaser.body}</p>
-          <Link to="/neighborhood" className="button button-light">
+          <PageLink page="neighborhood" className="button button-light">
             {t.neighborhoodTeaser.cta}
-          </Link>
+          </PageLink>
         </div>
       </section>
 
@@ -194,9 +185,9 @@ function Home() {
           <p className="eyebrow">{t.dayTrips.eyebrow}</p>
           <h2>{t.dayTrips.homeTitle}</h2>
           <p>{t.dayTrips.homeBody}</p>
-          <Link to="/day-trips" className="button button-dark">
+          <PageLink page="day-trips" className="button button-dark">
             {t.dayTrips.homeCta}
-          </Link>
+          </PageLink>
         </div>
       </section>
 
@@ -214,9 +205,9 @@ function Home() {
               </div>
             ))}
           </dl>
-          <Link to="/arrival" className="text-link">
+          <PageLink page="arrival" className="text-link">
             {t.practical.cta}
-          </Link>
+          </PageLink>
         </div>
       </section>
     </Shell>

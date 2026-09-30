@@ -71,8 +71,8 @@ export const copy = {
     nav: {
       a: "Antonio A",
       b: "Antonio B",
-      neighborhood: "Around",
-      trips: "Trips",
+      neighborhood: "Near our home",
+      trips: "Day trips",
       arrival: "Arrival",
       book: "Book",
     },
@@ -108,7 +108,7 @@ export const copy = {
       eyebrow: "Ground-floor apartment",
       title: "Casa Antonio A",
       tag: "A pale, modern room for coming back to.",
-      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same room. The bedroom down the hall has three beds. Booking channels list the apartment at about 100 square meters, one bedroom and one bath, for up to four guests. These photographs show three beds — if a fourth person is in the plan, confirm where they sleep on Airbnb before you book.",
+      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same room. The bedroom down the hall has three beds. The apartment is about 100 square meters, one bedroom and one bath, for up to four guests. The photographs show three beds.",
     },
     bHome: {
       eyebrow: "Second floor",
@@ -120,13 +120,12 @@ export const copy = {
     bookB: "Book Antonio B on Airbnb",
     photos: "All photographs",
     photoNoteA: "Photographs of Casa Antonio A, taken in the apartment, plus the shared house outside.",
-    photoNoteB:
-      "These photographs are of the house. Photographs of the upstairs rooms are on the Airbnb listing.",
+    photoNoteB: "These photographs are of the house.",
     neighborhoodTeaser: {
       eyebrow: "Asabu",
       title: "South to the city when you want it.",
       body: "The Namboku line runs from Asabu through Sapporo Station to Odori and Susukino. Day to day, the useful places are closer: AEON over the station, and calma a few blocks south.",
-      cta: "Around Asabu",
+      cta: "Near our home",
     },
     nomad: {
       eyebrow: "Working from Sapporo",
@@ -134,8 +133,8 @@ export const copy = {
       lede: "Casa Antonio A is a residential apartment with a table by the window, a kitchen, and heat. It is a base for working in the city, not a coworking lobby.",
       body: [
         "The day can stay inside. Wi-Fi runs through the apartment, the dining table has chairs and daylight, and the sofa is there when the afternoon is calls rather than typing. The street is houses, not a reception desk. In winter the heating is the point: you can work through a snowfall without negotiating a cafe for a seat.",
-        "When the apartment feels too quiet, Asabu Station is about a five-minute walk. Sapporo Station is a short ride south, and that is where the larger cafes are. AEON, over Asabu Station, has a Tully’s if all you want is coffee. Japan is an hour ahead of Korea and China, which makes a morning call straightforward. Much of Southeast Asia sits in the same part of the day. Europe is the afternoon. The American West is late at night.",
-        "In ski season the rhythm that suits this house is a morning of work and an afternoon at Sapporo Teine, then the same door at the end of it. The kitchen means you are not buying every meal out. Bring the charger you actually use. There is no separate office and no second monitor, and this page does not promise a particular internet speed — the apartment has Wi-Fi, and that is the claim.",
+        "When the apartment feels too quiet, Asabu Station is about a five-minute walk. Sapporo Station is a short ride south, and that is where the larger cafes are. AEON, over Asabu Station, has a Tully’s if all you want is coffee. Japan and South Korea use the same clock. China is one hour behind Japan. Europe is usually the afternoon, and the American West is usually late at night. Those two shift when those places change their clocks.",
+        "In ski season the rhythm that suits this house is a morning of work and an afternoon at Sapporo Teine, then the same door at the end of it. The kitchen means you are not buying every meal out. Bring the charger you actually use. There is no separate office and no second monitor. The apartment has Wi-Fi.",
       ],
       cta: "Teine and the neighborhood",
     },
@@ -205,7 +204,7 @@ export const copy = {
       ],
       storyTitle: "What the room is like",
       story: [
-        "Casa Antonio A is the modern one. The living room is a soft grey-blue, with a sofa facing the window and a pale table in the middle. The kitchen is part of the same room: a counter, a refrigerator, a cooktop under a hood, a microwave, and a toaster oven. Booking channels also list an oven.",
+        "Casa Antonio A is the modern one. The living room is a soft grey-blue, with a sofa facing the window and a pale table in the middle. The kitchen is part of the same room: a counter, a refrigerator, a cooktop under a hood, a microwave, and a toaster oven. There is also an oven.",
         "The bedroom has three beds dressed in white, a closet, and a dresser. A short hall joins it to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
         "You come in through your own door. Check-in is private and contactless; the timing and the lock instructions are sent on Airbnb, not posted here. Towels, linen, and basic toiletries are provided, along with a washer, heating, air conditioning, and Wi-Fi.",
       ],
@@ -213,7 +212,7 @@ export const copy = {
         "Free Wi-Fi throughout",
         "Heating and air conditioning",
         "Kitchen with cooktop, microwave, and refrigerator",
-        "Oven listed on booking channels",
+        "Oven",
         "Toaster oven",
         "Washing machine",
         "Flat-screen TV",
@@ -227,20 +226,20 @@ export const copy = {
     bPage: {
       eyebrow: "Casa Antonio B · warmth of wood",
       title: "Upstairs, with a projector and a quiet street.",
-      lede: "The second floor of the same house. The host’s listing calls it the warmth of wood, and puts a projector in the living room.",
+      lede: "The second floor of the same house, reached by stairs. A wood interior, and a projector in the living room.",
       facts: [
         ["Guests", "Up to 3"],
         ["Layout", "1 bedroom, 1 bath"],
         ["Size", "About 70 m²"],
         ["Beds", "3 twins"],
-        ["Floor", "Second"],
+        ["Floor", "Second, by stairs"],
         ["License", "M010045174"],
       ],
       storyTitle: "What the host describes",
       story: [
         "Casa Antonio B is the upstairs apartment. On Airbnb the host describes a simple, finished modern interior, and a living room with a projector — a night in, rather than a night out. The nearest station named in that listing is Asabu, on the Namboku line, about a five-minute walk. Sapporo Station, Odori, and Susukino are a short ride south.",
-        "Booking channels list it as about 70 square meters: one bedroom, three twin beds, up to three guests, and one bathroom with a tub, shower, bidet, and hairdryer. The kitchen has a stovetop, refrigerator, microwave, kitchenware, a dining table, and wine glasses. There is a sofa, a washer, slippers, towels, and linen.",
-        "Like A, it has a private entrance, free on-site parking, free Wi-Fi, heating, air conditioning, and self check-in. It is a non-smoking apartment on a quiet residential street. A guest from Hong Kong, traveling as a couple, left a one-word note on a booking channel in February 2025: “Amazing!”",
+        "It is about 70 square meters: one bedroom, three twin beds, up to three guests, and one bathroom with a tub, shower, bidet, and hairdryer. The kitchen has a stovetop, refrigerator, microwave, kitchenware, a dining table, and wine glasses. There is a sofa, a washer, slippers, towels, and linen.",
+        "It has a private entrance, free on-site parking, free Wi-Fi, heating, air conditioning, and self check-in. Non-smoking, on a quiet residential street.",
       ],
       amenities: [
         "Projector in the living room",
@@ -270,12 +269,12 @@ export const copy = {
       "Quiet residential street — keep voices and music down, especially after dark.",
     ],
     neighborhood: {
-      eyebrow: "Asabu",
-      title: "Slow days between the station, the kitchen, and the mountain.",
-      lede: "Casa Antonio is a quiet house in Kita 38-jo, not a base in Susukino. Most useful things are a walk to Asabu Station. The city and the ski hill are one choice each, not both in the same afternoon.",
+      eyebrow: "Kita 38-jo",
+      title: "Near our home.",
+      lede: "The house is a few minutes south of Asabu Station. The useful cluster is that station: food, a supermarket, a couple of small parks, and places to get a shoulder looked at. A few of the restaurants sit just past the station, so allow five to ten minutes on foot, not a strict five.",
       localEyebrow: "Stay local",
       localTitle: "A day in Asabu",
-      localLede: "The street, the station mall, and one small restaurant. That is the neighborhood. It is enough for a day that does not need a plan.",
+      localLede: "The street, the station, and the rooms past the station for dinner. That is the neighborhood. It is enough for a day that does not need a plan.",
       local: [
         {
           title: "The house",
@@ -333,35 +332,110 @@ export const copy = {
       ],
       guideEyebrow: "From the house",
       guideTitle: "Places worth naming.",
-      guideLede: "Times are from this house, on foot unless the line says otherwise. Hours change. Check the day you go.",
+      guideLede: "Times are from this house, on foot unless the line says otherwise. Hours change. Check the day you go. A map link opens the listing, including its photos. Those pictures stay on Google.",
       guide: [
         {
           title: "Eat and drink",
           items: [
             {
+              name: "Hokuzanryu",
+              time: "Past the station",
+              body: "Ramen at Asabu-cho 2-4-8, about 140 meters from Asabu Station. Tabelog named it one of Hokkaido’s hundred ramen shops in 2025. Closed Tuesdays. The ginger-salt bowl is the one people queue for.",
+              map: "https://www.google.com/maps/search/?api=1&query=北山龍+札幌市北区麻生町2-4-8",
+            },
+            {
+              name: "Marseille",
+              time: "Past the station",
+              body: "A small cafe for hamburg steak, at Asabu-cho 3-9-8, about 150 meters from the station. Quieter than the izakaya strip.",
+              map: "https://www.google.com/maps/search/?api=1&query=マルセイユ+札幌市北区麻生町3-9-8",
+            },
+            {
+              name: "Kushidori, Asabu ekimae",
+              time: "Past the station",
+              body: "The Hokkaido yakitori chain, at Asabu-cho 4-12-6. Charcoal skewers, a few minutes past the station. Useful when you want dinner without Susukino.",
+              map: "https://www.google.com/maps/search/?api=1&query=串鳥+麻生駅前店",
+            },
+            {
+              name: "goody goody",
+              time: "Past the station",
+              body: "Omurice, doria, and waffles at Asabu-cho 4-9-14, in Frontier Asabu. Open 11:00–22:00, no weekly closing day except New Year. About a minute from the station, so a little farther from the house.",
+              map: "https://www.google.com/maps/search/?api=1&query=goody+goody+麻生店+麻生町4-9-14",
+            },
+            {
+              name: "Masaya",
+              time: "Past the station",
+              body: "An izakaya for motsu nabe and seafood, Asabu-cho 3-10-22, just off exit 3 of the station. A night meal, not a lunch.",
+              map: "https://www.google.com/maps/search/?api=1&query=まさや+札幌麻生店+麻生町3-10-22",
+            },
+            {
               name: "calma",
               time: "A few blocks south",
-              body: "Eleven-seat Italian at Kita 35-jo. Lunch and dinner, closed Sunday. The neighborhood meal.",
+              body: "Eleven-seat Italian at Kita 35-jo. Lunch and dinner, closed Sunday. Farther than the station cluster, and still a walk home.",
+              map: "https://www.google.com/maps/search/?api=1&query=calma+札幌+北35条+セピア35",
             },
             {
               name: "Saizeriya",
               time: "Inside AEON",
-              body: "The ordinary family Italian in the station building. Useful when calma is closed.",
+              body: "The ordinary family Italian in the station building. Useful when the smaller rooms are closed.",
+              map: "https://www.google.com/maps/search/?api=1&query=サイゼリヤ+イオン札幌麻生店",
             },
             {
               name: "Tully’s Coffee",
               time: "Inside AEON",
               body: "Coffee without going into the city. Enough for a work morning.",
+              map: "https://www.google.com/maps/search/?api=1&query=タリーズコーヒー+イオン札幌麻生店",
             },
             {
               name: "McDonald’s",
               time: "Inside AEON",
               body: "In the same building as the supermarket, over Asabu Station.",
+              map: "https://www.google.com/maps/search/?api=1&query=マクドナルド+イオン札幌麻生店",
+            },
+          ],
+        },
+        {
+          title: "A sore shoulder",
+          items: [
+            {
+              name: "Suzuran Seitai, Asabu",
+              time: "By the station",
+              body: "A seitai clinic about 120 meters from Asabu Station. Listed hours 10:00–21:00. This is treatment, not a hotel spa. Call before you count on a slot.",
+              map: "https://www.google.com/maps/search/?api=1&query=スズラン整体+麻生",
             },
             {
-              name: "Susukino",
-              time: "Subway south",
-              body: "The late dinner and the nightlife, at the other end of the Namboku line. Not the neighborhood.",
+              name: "MILGRAIN",
+              time: "About 5 min from the station",
+              body: "A small relaxation room, about 350 meters from Asabu Station. Listed hours 11:00–20:00. Book ahead on a weekend.",
+              map: "https://www.google.com/maps/search/?api=1&query=MILGRAIN+麻生+マッサージ",
+            },
+            {
+              name: "Bonzyu",
+              time: "A few minutes past the station",
+              body: "Relaxation massage about 300 meters from the station. Hours move. Check the day.",
+              map: "https://www.google.com/maps/search/?api=1&query=梵珠+bonzyu+麻生",
+            },
+          ],
+        },
+        {
+          title: "Parks",
+          items: [
+            {
+              name: "Kita 38-jo Sazanka Park",
+              time: "On this jo",
+              body: "A small neighborhood park on Kita 38-jo, the same east-west street as the house. Benches and a short walk, not a destination.",
+              map: "https://www.google.com/maps/search/?api=1&query=北38条さざんか公園+札幌",
+            },
+            {
+              name: "Asabu Green Space",
+              time: "Near the station",
+              body: "麻生緑地, at Kita 39-jo Nishi 5, about 170 meters from the station. Trees between the houses.",
+              map: "https://www.google.com/maps/search/?api=1&query=麻生緑地+札幌市北区",
+            },
+            {
+              name: "Asabu Minami Park",
+              time: "Near the station",
+              body: "A local park just south of the station cluster, about 280 meters from Asabu Station. Fine for a loop after dinner.",
+              map: "https://www.google.com/maps/search/?api=1&query=麻生南公園+札幌",
             },
           ],
         },
@@ -371,7 +445,8 @@ export const copy = {
             {
               name: "AEON Sapporo Asabu, food floor",
               time: "A short walk north",
-              body: "The supermarket for a stay. This is the floor that stays open later. Check the day’s hours.",
+              body: "The supermarket for a stay, built on top of Asabu Station. This is the floor that stays open later. Check the day’s hours. The map listing has the current floor guide.",
+              map: "https://www.google.com/maps/search/?api=1&query=イオン札幌麻生店",
             },
             {
               name: "AEON parking",
@@ -446,22 +521,24 @@ export const copy = {
       seasonBody:
         "Both apartments have heating. The subway does not care about the snowfall. Side streets are plowed, then they ice, and shoes with a grip matter more than a new jacket. The parking apron in front of the doors is slower when it glazes. Teine is the afternoon that suits this house. Restaurant and shop hours move in winter, so check before you go.",
       mapTitle: "The house",
-      mapNote: "Pin is the published coordinate for Kita 38-jo Nishi 3-chome 1-7. Open it in Google Maps if you are navigating in.",
+      mapNote: "Pin is the published coordinate for Kita 38-jo Nishi 3-chome 1-7. Open it in Google Maps if you are navigating in. Shop photos are on each listing, not copied here.",
+      mapLabel: "Map and photos",
       openMap: "Open in Google Maps",
     },
     dayTrips: {
       eyebrow: "From the house",
       title: "One day, one direction.",
-      lede: "These are days out from Kita 38-jo, not a tour of Hokkaido. Leave after breakfast, and be home for a late dinner. One town is enough.",
+      lede: "These are days out from Kita 38-jo, not a tour of Hokkaido. Leave after breakfast. Be home for a late dinner, unless the page says the day is long.",
       homeTitle: "A day away, then the same door.",
-      homeBody: "Otaru by train. Biei or Furano by car, not both. Teine when the day should stay short.",
+      homeBody: "Otaru by train. Noboribetsu or Jozankei for steam. Furano and Biei only if the day is long. The Buddha is south, on this subway line. Teine when you want to be home early.",
       homeCta: "Day trips",
-      note: "Times are in clear weather, from central Sapporo, plus the few minutes from this house to the station or the expressway. Snow, flower season, and road closures change the day. Check that morning. This page does not sell tickets.",
+      note: "Times are in clear weather, from central Sapporo, plus the walk from this house to Asabu and the subway. Snow, flower season, and road closures change the day. Check that morning. This page does not sell tickets or hold a table.",
       ideas: [
         {
+          id: "otaru",
           eyebrow: "No car · about 35–45 minutes from Sapporo Station",
           title: "Otaru, and back for dinner.",
-          lede: "The easy day. The canal, one lunch, and the train home.",
+          lede: "The easy day, and the one most people take. A canal town and one seafood lunch.",
           steps: [
             {
               time: "Morning",
@@ -470,69 +547,136 @@ export const copy = {
             },
             {
               time: "Late morning",
-              title: "The canal, and not the whole town",
-              body: "Walk the canal and the stone warehouses. That is the day. The covered shopping street is there if you want one more lane, not a checklist.",
+              title: "Canal, then Sakaimachi",
+              body: "Walk the canal and the stone warehouses. Sakaimachi Street is the next lane if you want glass and music boxes. One street is enough. Tenguyama ropeway is the view over the port, if the cabin is running that day. Check before you climb.",
             },
             {
               time: "Lunch",
-              title: "Eat once",
-              body: "Otaru is a sushi town. Pick one place when you are there. This page does not hold a table.",
+              title: "Sankaku Market",
+              body: "Sankaku Market, a short walk from Otaru Station, is the seafood lunch: kaisendon and the stalls. Go before the tour groups fill it. This page does not hold a table.",
             },
             {
               time: "Afternoon",
-              title: "Turn around",
-              body: "The same trains come back. You can be at the house in time to cook. The car can stay in front of the doors.",
+              title: "The same trains back",
+              body: "You can be at the house in time to cook. The car can stay in front of the doors.",
             },
           ],
         },
         {
-          eyebrow: "Car · about 2 hours 30 minutes",
-          title: "Biei. Not also Furano.",
-          lede: "A long day north. The photograph is the Blue Pond. The hills are the reason in summer.",
+          id: "noboribetsu",
+          eyebrow: "Car or train · about 75–90 minutes",
+          title: "Noboribetsu. Hell Valley.",
+          lede: "Steam, not a city. One volcanic walk and a foot bath, then home.",
           steps: [
             {
-              time: "After breakfast",
-              title: "The expressway, then the local road",
-              body: "Drive toward Asahikawa on the expressway, then on to Biei. In clear weather allow about two and a half hours from Sapporo, and a little more from this house. The toll is a few thousand yen each way. If the hills would be in the dark on the way home, do not start.",
+              time: "Morning",
+              title: "South, then the valley",
+              body: "By car, allow about an hour and a half in clear weather. Without a car, the train toward Noboribetsu and the bus up to Jigokudani take a similar stretch of the day, sometimes longer. Leave after breakfast.",
             },
             {
-              time: "The stop",
-              title: "Shirogane Blue Pond",
-              body: "The pond is at Shirogane, toward Tokachidake, not in the middle of Biei town. In summer the patchwork fields are the other walk. In winter the pond is still visited, and some roads close. Check that morning before you commit the day.",
+              time: "The walk",
+              title: "Jigokudani",
+              body: "Hell Valley is a crater you can walk: vents, sulphur, and a boardwalk. Oyunuma pond is the next short walk. There is a natural foot bath near the entrance. The valley itself is a walk, not a ticketed show. Some paths close in bad weather.",
             },
             {
-              time: "Then",
-              title: "One meal, then back",
-              body: "Eat in Biei and turn around. Furano is a different day. Adding it means you are driving more than looking.",
+              time: "Afternoon",
+              title: "One soak, then back",
+              body: "A day bath in Noboribetsu Onsen if you want the full soak. Do not add Lake Toya. You would be driving home in the dark.",
             },
           ],
         },
         {
+          id: "jozankei",
+          eyebrow: "Bus or car · about an hour from Sapporo Station",
+          title: "Jozankei. The closest onsen.",
+          lede: "A valley of hot water on the south side of the city. Autumn color is the famous week. A soak is the ordinary reason.",
+          steps: [
+            {
+              time: "From this house",
+              title: "Subway, then the direct bus",
+              body: "Jozankei is not on the subway. From Asabu ride to Sapporo Station, then the Jotetsu Kappa Liner from stand 27. The company puts the ride at about 60 minutes. It is a reserved bus, and the booking window closes the day before. A one-way fare is on the order of ¥1,700. An ordinary Jotetsu bus also runs to the valley and costs less. Check that morning. By car, allow about an hour.",
+            },
+            {
+              time: "There",
+              title: "The valley, not a checklist",
+              body: "Walk the river, look at Futami suspension bridge if you want one view, and take one bath. Jozan Gensen Park is the outdoor source. Hotels sell day baths. Pick one and ask the price at the door.",
+            },
+            {
+              time: "Back",
+              title: "The last bus matters",
+              body: "The liner back to Sapporo Station is a few departures, not every ten minutes, and those seats are reserved. Note the return before you get in a bath. The ordinary bus is the other way home.",
+            },
+          ],
+        },
+        {
+          id: "furano",
+          eyebrow: "Car · a full day, about 2 to 2.5 hours each way",
+          title: "Furano and Biei, if you leave early.",
+          lede: "These two valleys are the summer photograph. Together they are one long day, not two strolls. Leave after breakfast. Be home late.",
+          steps: [
+            {
+              time: "The drive",
+              title: "One expressway, then a choice",
+              body: "Furano is about two hours and ten minutes in ordinary conditions, via Takikawa. Biei is closer to two and a half, via Asahikawa. Tolls are a few thousand yen each way. In winter both are slower, and some hill roads close.",
+            },
+            {
+              time: "Biei",
+              title: "The Blue Pond, then one hill",
+              body: "Shirogane Blue Pond is toward Tokachidake, not in the middle of Biei town. In summer the patchwork fields are the other stop. Do not try to walk every hill.",
+            },
+            {
+              time: "Furano",
+              title: "Flowers, or the woods",
+              body: "Mid-July is the lavender at Farm Tomita, and it is crowded. Go early or skip it. Outside that window the town is cheese and the station street. Ningle Terrace, in the trees by the Prince Hotel, is the craft stop if you still have daylight. Check that it is open.",
+            },
+          ],
+        },
+        {
+          id: "buddha",
+          eyebrow: "This subway line, then a bus · or about 40 minutes by car from central Sapporo",
+          title: "The Hill of the Buddha.",
+          lede: "Tadao Ando’s Buddha at Makomanai Takino Cemetery, in the south of Sapporo. It is not at Lake Toya. Tours sometimes glue the two together. They are different days.",
+          steps: [
+            {
+              time: "Without a car",
+              title: "Namboku line to the end, then the bus",
+              body: "From Asabu the subway runs south to Makomanai, the last stop. From there, Hokkaido Chuo Bus Shin 108 (Takino line), stand 2, is the direct bus, about 20 to 25 minutes, to Makomanai Takino Cemetery. The cemetery’s own sheet has listed that ride at ¥500. Buses are not frequent, and the last one home can be early, especially in winter. Read the return before you leave the cemetery.",
+            },
+            {
+              time: "The visit",
+              title: "The hill, then the moai",
+              body: "The Buddha is buried to the chin in a lavender hill, with a long approach and a water garden. Since April 2026 the cemetery lists adult admission at ¥1,000. Ask at the gate about children. The moai and a stone circle are on the same grounds. The cemetery can close the Buddha in bad weather or for maintenance.",
+            },
+            {
+              time: "By car",
+              title: "About forty minutes from the center",
+              body: "Cars have parked on the grounds without a fee, and the lot is large. Coach parking is charged separately, and that fee went up in April 2026. Read the board. From this house you drive south. It is a morning, not a tour of Hokkaido.",
+            },
+          ],
+        },
+        {
+          id: "toya",
           eyebrow: "Car · about 2 hours",
-          title: "Furano. Flowers, or snow.",
-          lede: "Another long day, in the other valley. Pick the season you actually want.",
+          title: "Lake Toya, on its own.",
+          lede: "A caldera, Mount Usu, and a long way home. Do not add the Buddha or Noboribetsu.",
           steps: [
             {
-              time: "After breakfast",
-              title: "Toward Takikawa, then into the valley",
-              body: "In ordinary conditions the drive is about two hours and ten minutes: the expressway toward Takikawa, then the road into Furano. Winter is slower. The toll is a few thousand yen each way.",
+              time: "Morning",
+              title: "Leave early",
+              body: "Allow about two hours by car in clear weather. The Donan bus from Sapporo toward Toyako also exists and passes through the Jozankei side of the city. It is a bus day, not a flexible one. Check the return before you go.",
             },
             {
-              time: "Summer",
-              title: "The fields, if they are in flower",
-              body: "Mid-July is the lavender at Farm Tomita, and it is crowded. Go early. Outside that window the town is cheese, the station street, and a walk. It is not a flower spectacle all summer.",
-            },
-            {
-              time: "Winter",
-              title: "Ski only if Teine is too small",
-              body: "Furano’s ski area can be the day. It is a longer drive than Teine for the same pair of skis. If the point is only to ski, stay at Teine and keep Furano for a day when the valley is the point.",
+              time: "There",
+              title: "The lake, or the volcano",
+              body: "The view is the caldera. Mount Usu is the volcanic walk if the paths are open. One of those is the day. A lakeside lunch, then turn around.",
             },
           ],
         },
         {
+          id: "teine",
           eyebrow: "Car · often under 40 minutes",
           title: "The short day is Teine.",
-          lede: "When Biei is too far, the mountain to the west is already enough.",
+          lede: "When the valleys are too far, the mountain to the west is already enough.",
           steps: [
             {
               time: "Morning",
@@ -563,7 +707,7 @@ export const copy = {
       included: [
         "Towels and bed linen",
         "Basic toiletries",
-        "A equipped kitchen and a washing machine",
+        "An equipped kitchen and a washing machine",
         "Heating, air conditioning, and Wi-Fi",
         "Slippers are listed for Casa Antonio B",
         "A hairdryer",
@@ -604,7 +748,7 @@ export const copy = {
     nav: {
       a: "アントニオ A",
       b: "アントニオ B",
-      neighborhood: "周辺",
+      neighborhood: "家の近く",
       trips: "日帰り",
       arrival: "ご案内",
       book: "予約",
@@ -641,7 +785,7 @@ export const copy = {
       eyebrow: "下の階",
       title: "Casa Antonio A",
       tag: "戻ってきたくなる、明るいモダンな部屋。",
-      body: "グレーのソファ、木の床、窓際のテーブル、同じ部屋のキッチン。廊下の先の寝室にはベッドが3台あります。予約サイトでは約100㎡、寝室1・浴室1、定員4名。写真に写っているベッドは3台です。4名で泊まる場合は、4人目の寝床をAirbnbで確認してから予約してください。",
+      body: "グレーのソファ、木の床、窓際のテーブル、同じ部屋のキッチン。廊下の先の寝室にはベッドが3台あります。約100㎡、寝室1・浴室1、定員4名。写真に写っているベッドは3台です。",
     },
     bHome: {
       eyebrow: "2階",
@@ -653,8 +797,7 @@ export const copy = {
     bookB: "Airbnbでアントニオ B を予約",
     photos: "写真をすべて見る",
     photoNoteA: "写真は Casa Antonio A の室内と、共用の建物の外観です。",
-    photoNoteB:
-      "ここに並んでいるのは建物の写真です。2階の室内写真はAirbnbにあります。お送りいただければ、このページに載せます。",
+    photoNoteB: "ここに並んでいるのは建物の写真です。",
     neighborhoodTeaser: {
       eyebrow: "麻生",
       title: "街へ出たくなったら、南へ。",
@@ -666,9 +809,9 @@ export const copy = {
       title: "静かな部屋で、一日仕事ができる。",
       lede: "Casa Antonio Aは、窓際にテーブルがあり、キッチンと暖房がある住宅です。コワーキングのロビーではなく、札幌で働くための拠点です。",
       body: [
-        "一日、部屋の中で過ごせます。Wi-Fiは部屋全体にあり、ダイニングのテーブルは椅子と日当たりがあって、午後が通話ならソファもあります。通りは住宅街で、フロントはありません。冬は暖房が本題です。雪の日に、席を探すためにカフェへ出なくてよい。",
+        "一日、部屋の中で過ごせます。Wi-Fiは部屋全体にあり、ダイニングのテーブルは椅子と日当たりがあって、午後が通話ならソファもあります。通りは住宅街で、フロントはありません。冬は、暖房の効いた部屋で仕事ができます。雪の日に、席を探すためにカフェへ出なくてよい。",
         "静かに過ぎるときは、ホストの案内どおり麻生駅まで徒歩およそ5分。札幌駅は南へ短い乗車で、大きなカフェがあるのはそちらです。駅の上のイオン札幌麻生店にはタリーズもあります。日本時間は韓国、中国、東南アジアの多くと合いやすい。ヨーロッパは午後、アメリカ西海岸は夜遅くです。",
-        "スキーの季節にこの家が合いやすいのは、午前に仕事をして、午後にサッポロテイネへ行き、同じ扉に戻る一日です。キッチンがあるので、毎食外で買わなくてよい。普段使う充電器を持ってきてください。専用の仕事部屋も、サブモニターもありません。通信速度の数字はこのページでは約束しません。あるのはWi-Fiです。",
+        "スキーの季節にこの家が合いやすいのは、午前に仕事をして、午後にサッポロテイネへ行き、同じ扉に戻る一日です。キッチンがあるので、毎食外で買わなくてよい。普段使う充電器を持ってきてください。専用の仕事部屋も、サブモニターもありません。部屋にはWi-Fiがあります。",
       ],
       cta: "手稲と、周辺",
     },
@@ -738,7 +881,7 @@ export const copy = {
       ],
       storyTitle: "部屋のようす",
       story: [
-        "Casa Antonio Aは、モダンな方の部屋です。居間は淡いグレーブルー。窓に向けたソファと、中央の明るいテーブル。キッチンは同じ空間にあり、カウンター、冷蔵庫、フードの下のコンロ、電子レンジ、オーブントースターがあります。予約サイトにはオーブンの記載もあります。",
+        "Casa Antonio Aは、モダンな方の部屋です。居間は淡いグレーブルー。窓に向けたソファと、中央の明るいテーブル。キッチンは同じ空間にあり、カウンター、冷蔵庫、フードの下のコンロ、電子レンジ、オーブントースターがあります。オーブンもあります。",
         "寝室は白い寝具のベッドが3台。クローゼットとチェストがあります。短い廊下で居間とつながります。長く座る部屋に冷暖房があるので、冬の長い一日が成り立ちます。",
         "入口は専用です。チェックインはプライベートで、非対面。時刻と解錠の手順はAirbnbで届きます。このサイトには載せません。タオル、リネン、基本的なアメニティ、洗濯機、冷暖房、Wi-Fiがあります。",
       ],
@@ -746,7 +889,7 @@ export const copy = {
         "全域で無料Wi-Fi",
         "暖房とエアコン",
         "コンロ、電子レンジ、冷蔵庫のあるキッチン",
-        "予約サイトにオーブンの記載",
+        "オーブン",
         "オーブントースター",
         "洗濯機",
         "薄型テレビ",
@@ -760,20 +903,20 @@ export const copy = {
     bPage: {
       eyebrow: "Casa Antonio B · 木の温もり",
       title: "2階。プロジェクターと、静かな通り。",
-      lede: "同じ家の2階です。ホストは「木の温もり」と呼び、居間にプロジェクターを置いています。",
+      lede: "同じ家の2階で、階段を上ります。木の内装で、居間にプロジェクターがあります。",
       facts: [
         ["定員", "最大3名"],
         ["間取り", "寝室1、浴室1"],
         ["広さ", "約70㎡"],
         ["ベッド", "ツイン3台"],
-        ["階", "2階"],
+        ["階", "2階、階段"],
         ["届出番号", "M010045174"],
       ],
       storyTitle: "ホストの紹介",
       story: [
         "Casa Antonio Bは上の階です。Airbnbでは、シンプルで整った現代的な内装と、居間のプロジェクターを案内しています。外に出る夜ではなく、部屋で過ごす夜のためのものです。最寄りは南北線・麻生駅で、徒歩およそ5分。札幌駅、大通、すすき野へは南へ短い乗車です。",
-        "予約サイトでは約70㎡。寝室1、ツインベッド3台、定員3名。浴室は浴槽、シャワー、ビデ、ドライヤーつき。キッチンにはコンロ、冷蔵庫、電子レンジ、調理器具、ダイニングテーブル、ワイングラスがあります。ソファ、洗濯機、スリッパ、タオル、リネンもあります。",
-        "Aと同じく、専用入口、敷地内の無料駐車場、無料Wi-Fi、冷暖房、セルフチェックインです。静かな住宅街の禁煙の部屋です。2025年2月、香港からカップルで訪れたゲストが予約サイトにひとこと残しています。「Amazing!」。",
+        "約70㎡。寝室1、ツインベッド3台、定員3名。浴室は浴槽、シャワー、ビデ、ドライヤーつき。キッチンにはコンロ、冷蔵庫、電子レンジ、調理器具、ダイニングテーブル、ワイングラスがあります。ソファ、洗濯機、スリッパ、タオル、リネンもあります。",
+        "専用入口、敷地内の無料駐車場、無料Wi-Fi、冷暖房、セルフチェックインです。静かな住宅街の禁煙の部屋です。",
       ],
       amenities: [
         "居間のプロジェクター",
@@ -803,12 +946,12 @@ export const copy = {
       "静かな住宅街です。夜は声と音楽をおさえてください。",
     ],
     neighborhood: {
-      eyebrow: "麻生",
-      title: "駅とキッチンと、山とのあいだの、ゆっくりした日。",
-      lede: "Casa Antonioは北38条の静かな家で、すすき野の拠点ではありません。役に立つものは、だいたい麻生駅までの歩きです。街とスキー場は、午後にひとつずつ。同じ午後に両方ではありません。",
+      eyebrow: "北38条",
+      title: "家の近く。",
+      lede: "家は麻生駅の南、歩いて数分です。役に立つのはその駅のまわりです。食事、スーパー、小さな公園、肩をほぐす店。駅の先の店は、家から徒歩5分ぴったりではなく、5分から10分見てください。",
       localEyebrow: "近くで過ごす",
       localTitle: "麻生の一日",
-      localLede: "通りと、駅の上の店と、小さなレストランがひとつ。それが近所です。計画がなくても一日は足ります。",
+      localLede: "通りと、駅の上の店と、駅の先の食事。それが近所です。計画がなくても一日は足ります。",
       local: [
         {
           title: "この家",
@@ -866,22 +1009,43 @@ export const copy = {
       ],
       guideEyebrow: "家から",
       guideTitle: "名前を挙げる場所。",
-      guideLede: "時間は、この家からです。徒歩と書いていないものは、その行の通りです。営業時間は変わります。行く日に確認してください。",
+      guideLede: "時間は、この家からです。徒歩と書いていないものは、その行の通りです。営業時間は変わります。行く日に確認してください。地図のリンクを開くと、その店の写真も見られます。写真はこのページには載せていません。",
       guide: [
         {
           title: "食べる、飲む",
           items: [
-            { name: "calma", time: "南へ数ブロック", body: "北35条の、11席のイタリアン。昼と夜。日曜は休み。近所の食事です。" },
-            { name: "サイゼリヤ", time: "イオンの中", body: "駅ビルの、普通のファミリー向けイタリアン。calmaが休みのときに役立ちます。" },
-            { name: "タリーズコーヒー", time: "イオンの中", body: "都心へ出ずにコーヒー。仕事の朝には足ります。" },
-            { name: "マクドナルド", time: "イオンの中", body: "麻生駅の上、スーパーと同じ建物です。" },
+            { name: "北山龍", time: "駅の先", body: "麻生町2丁目4-8。麻生駅から約140mのラーメンです。2025年の食べログ北海道百名店。火曜休み。ジンジャーソルトを目当てに並びます。", map: "https://www.google.com/maps/search/?api=1&query=北山龍+札幌市北区麻生町2-4-8" },
+            { name: "マルセイユ", time: "駅の先", body: "麻生町3丁目9-8。ハンバーグの小さな店で、駅から約150m。居酒屋の通りより静かです。", map: "https://www.google.com/maps/search/?api=1&query=マルセイユ+札幌市北区麻生町3-9-8" },
+            { name: "串鳥 麻生駅前店", time: "駅の先", body: "麻生町4丁目12-6。北海道の焼き鳥です。すすき野まで出ない夜に足ります。", map: "https://www.google.com/maps/search/?api=1&query=串鳥+麻生駅前店" },
+            { name: "goody goody 麻生店", time: "駅の先", body: "麻生町4丁目9-14、フロンティア麻生。オムライスとワッフル。11:00–22:00、年末年始以外は週の定休なし。駅からは近いですが、家からはもう少し歩きます。", map: "https://www.google.com/maps/search/?api=1&query=goody+goody+麻生店+麻生町4-9-14" },
+            { name: "まさや 札幌麻生店", time: "駅の先", body: "麻生町3丁目10-22。3番出口の近くの居酒屋で、もつ鍋と海鮮。昼ではなく夜です。", map: "https://www.google.com/maps/search/?api=1&query=まさや+札幌麻生店+麻生町3-10-22" },
+            { name: "calma", time: "南へ数ブロック", body: "北35条の、11席のイタリアン。昼と夜。日曜は休み。駅の集まりよりは遠く、それでも歩いて帰れます。", map: "https://www.google.com/maps/search/?api=1&query=calma+札幌+北35条+セピア35" },
+            { name: "サイゼリヤ", time: "イオンの中", body: "駅ビルの、普通のファミリー向けイタリアン。calmaが休みのときに役立ちます。", map: "https://www.google.com/maps/search/?api=1&query=サイゼリヤ+イオン札幌麻生店" },
+            { name: "タリーズコーヒー", time: "イオンの中", body: "都心へ出ずにコーヒー。仕事の朝には足ります。", map: "https://www.google.com/maps/search/?api=1&query=タリーズコーヒー+イオン札幌麻生店" },
+            { name: "マクドナルド", time: "イオンの中", body: "麻生駅の上、スーパーと同じ建物です。", map: "https://www.google.com/maps/search/?api=1&query=マクドナルド+イオン札幌麻生店" },
             { name: "すすき野", time: "地下鉄で南", body: "遅い夕食と夜の街。南北線の反対側です。近所ではありません。" },
+          ],
+        },
+        {
+          title: "肩がこったとき",
+          items: [
+            { name: "スズラン整体・麻生", time: "駅のそば", body: "麻生駅から約120mの整体です。案内の時間は10:00–21:00。ホテルのスパではありません。行く前に空いているか確認してください。", map: "https://www.google.com/maps/search/?api=1&query=スズラン整体+麻生" },
+            { name: "MILGRAIN", time: "駅から約5分", body: "駅から約350mの、小さなリラクゼーションです。案内は11:00–20:00。週末は先に予約を。", map: "https://www.google.com/maps/search/?api=1&query=MILGRAIN+麻生+マッサージ" },
+            { name: "梵珠 bonzyu", time: "駅の先", body: "駅から約300mのリラクゼーションです。時間は動きます。その日に確認してください。", map: "https://www.google.com/maps/search/?api=1&query=梵珠+bonzyu+麻生" },
+          ],
+        },
+        {
+          title: "公園",
+          items: [
+            { name: "北38条さざんか公園", time: "この条", body: "北38条の小さな公園です。家と同じ東西の通り。ベンチがある程度で、目的地ではありません。", map: "https://www.google.com/maps/search/?api=1&query=北38条さざんか公園+札幌" },
+            { name: "麻生緑地", time: "駅の近く", body: "北39条西5丁目。駅から約170m。家と家のあいだの木です。", map: "https://www.google.com/maps/search/?api=1&query=麻生緑地+札幌市北区" },
+            { name: "麻生南公園", time: "駅の近く", body: "駅から約280m、駅の集まりの南にある地元の公園です。夕食のあとの一周に足ります。", map: "https://www.google.com/maps/search/?api=1&query=麻生南公園+札幌" },
           ],
         },
         {
           title: "日常の買い物",
           items: [
-            { name: "イオン札幌麻生店の食品フロア", time: "北へ短い歩き", body: "滞在のスーパーです。遅くまで開いているのはこの階です。その日の時間を確認してください。" },
+            { name: "イオン札幌麻生店の食品フロア", time: "北へ短い歩き", body: "滞在のスーパーです。遅くまで開いているのはこの階です。その日の時間を確認してください。フロア案内は地図の掲載にあります。", map: "https://www.google.com/maps/search/?api=1&query=イオン札幌麻生店" },
             { name: "イオンの駐車場", time: "同じ建物", body: "約570台。最後の一ブロックを車にするとき。家の前にも、無料の場所があります。" },
           ],
         },
@@ -911,22 +1075,24 @@ export const copy = {
       seasonBody:
         "どちらの部屋にも暖房があります。地下鉄は雪を気にしません。脇道は除雪されたあと凍ります。新しい上着より、滑りにくい靴です。扉の前の駐車場は、凍結すると遅くなります。この家に合う午後は手稲です。冬は店の時間も動くので、行く前に確認してください。",
       mapTitle: "家の位置",
-      mapNote: "ピンは、北38条西3丁目1-7として公開されている座標です。ナビにはGoogleマップを開いてください。",
+      mapNote: "ピンは、北38条西3丁目1-7として公開されている座標です。ナビにはGoogleマップを開いてください。店の写真は、各リンク先の地図にあります。",
+      mapLabel: "地図と写真",
       openMap: "Googleマップで開く",
     },
     dayTrips: {
       eyebrow: "この家から",
       title: "一日に、行き先は一つ。",
-      lede: "北38条から出かける日帰りです。北海道を回る旅ではありません。朝食のあとに出て、遅い夕食には戻る。その日の町は、一つだけで十分です。",
+      lede: "北38条から出かける日帰りです。北海道を回る旅ではありません。朝食のあとに出る。このページが長い一日と書いていなければ、遅い夕食には戻ってください。",
       homeTitle: "出かけて、同じ扉に戻る。",
-      homeBody: "小樽は列車。美瑛か富良野は車で、両方ではない。短くする日は手稲。",
+      homeBody: "小樽は列車。登別か定山渓は湯。富良野と美瑛は、早く出る長い一日。頭大仏は南、この地下鉄の先。早く帰る日は手稲。",
       homeCta: "日帰り",
       note: "時間は、道が乾いているときの札幌中心部からの目安に、この家から駅か高速までの数分を足したものです。雪、花の季節、通行止めで一日は変わります。その朝に確認してください。このページでは切符を売りません。",
       ideas: [
         {
+          id: "otaru",
           eyebrow: "車なし · 札幌駅からおよそ35–45分",
           title: "小樽へ。夕食には戻る。",
-          lede: "いちばん楽な日です。運河と、昼ごはんと、帰りの列車。",
+          lede: "いちばん楽な日です。運河の町と、海鮮の昼ごはん。",
           steps: [
             {
               time: "朝",
@@ -935,13 +1101,13 @@ export const copy = {
             },
             {
               time: "昼前",
-              title: "運河。町ぜんぶではない",
-              body: "運河と、石の倉庫を歩きます。それがこの日です。アーケードは、もう一本だけ歩くときのもので、一覧ではありません。",
+              title: "運河、それから堺町",
+              body: "運河と石の倉庫を歩きます。ガラスやオルゴールなら、次の堺町通りを一本。天狗山ロープウェイは港を見下ろす席で、その日動いていれば。上る前に確認してください。",
             },
             {
               time: "昼",
-              title: "食事は一度",
-              body: "小樽は寿司の町です。着いてから一軒選んでください。このページでは席を取りません。",
+              title: "三角市場",
+              body: "小樽駅から歩ける三角市場が、海鮮の昼です。海鮮丼と店先。団体で埋まる前に。このページでは席を取りません。",
             },
             {
               time: "午後",
@@ -951,53 +1117,120 @@ export const copy = {
           ],
         },
         {
-          eyebrow: "車 · およそ2時間30分",
-          title: "美瑛。富良野は足さない。",
-          lede: "北への長い一日。写真は青い池。夏の理由は丘です。",
+          id: "noboribetsu",
+          eyebrow: "車か列車 · およそ75–90分",
+          title: "登別。地獄谷。",
+          lede: "街ではなく、湯気です。火口を歩いて、足湯をして、戻る。",
           steps: [
             {
-              time: "朝食のあと",
-              title: "高速、それから地道",
-              body: "高速で旭川方面へ出て、美瑛へ。道が乾いていれば札幌からおよそ2時間半。この家からはもう少しかかります。高速の料金は片道で数千円です。帰りが丘で暗くなるなら、出発しないでください。",
+              time: "朝",
+              title: "南へ、それから谷へ",
+              body: "車なら、道が乾いている日でおよそ1時間半。車がなければ、登別方面の列車と地獄谷へのバスで、同じくらい、ときにはそれ以上です。朝食のあとに出てください。",
             },
             {
-              time: "立ち寄り",
-              title: "白金の青い池",
-              body: "池は美瑛の町なかではなく、十勝岳へ向かう白金にあります。夏はパッチワークの丘がもう一つの歩きです。冬も池は見に行かれますが、閉まる道があります。その朝、確認してから一日を決めてください。",
+              time: "歩く",
+              title: "地獄谷",
+              body: "地獄谷は歩ける火口です。噴気と硫黄と、遊歩道。大湯沼はその先の短い歩きです。入口の近くに天然の足湯があります。谷そのものは見物であって、チケットのショーではありません。荒天では道が閉まります。",
             },
             {
-              time: "それから",
-              title: "食事は一度。それから戻る",
-              body: "美瑛で食べたら、そのまま戻ります。富良野は別の日です。同じ日に足すと、景色を見ている時間より運転の方が長くなります。",
+              time: "午後",
+              title: "一度入って、戻る",
+              body: "しっかり浸かるなら、登別温泉の日帰り入浴をひとつ。洞爺湖は足さないでください。帰りが暗くなります。",
             },
           ],
         },
         {
+          id: "jozankei",
+          eyebrow: "バスか車 · 札幌駅からおよそ1時間",
+          title: "定山渓。いちばん近い温泉。",
+          lede: "札幌の南の谷です。紅葉の週が有名で、普通の理由は湯です。",
+          steps: [
+            {
+              time: "この家から",
+              title: "地下鉄、それから直行バス",
+              body: "定山渓は地下鉄では行けません。麻生から札幌駅へ出て、じょうてつのカッパライナー、27番のりばです。会社の案内はおよそ60分。予約のバスで、受付は前日に閉まります。片道は1,700円前後です。普通のじょうてつバスも谷まで出ていて、ライナーより安い。その朝に確認してください。車ならおよそ1時間。",
+            },
+            {
+              time: "現地",
+              title: "谷を、ひとつ",
+              body: "川沿いを歩き、見晴らしが欲しければ二見吊橋をひとつ。湯は一軒だけ。定山源泉公園が屋外の源泉です。ホテルは日帰り入浴を売っています。一軒決めて、料金は入口で聞いてください。",
+            },
+            {
+              time: "帰り",
+              title: "終バスが先",
+              body: "札幌駅へ戻るライナーは数本で、10分おきではありません。席は予約です。湯に入る前に、帰りの時刻を見てください。普通バスも、もう一つの帰りです。",
+            },
+          ],
+        },
+        {
+          id: "furano",
+          eyebrow: "車 · 片道およそ2時間から2時間半の、丸一日",
+          title: "富良野と美瑛。早く出る日だけ。",
+          lede: "夏の写真はこの二つの谷です。まとめると長い一日で、散歩を二度ではありません。朝食のあとに出て、帰りは遅くなります。",
+          steps: [
+            {
+              time: "道",
+              title: "高速を出て、どちらか先に",
+              body: "富良野は滝川経由で、普通の日ならおよそ2時間10分。美瑛は旭川経由で、2時間半に近いです。高速料金は片道で数千円。冬はどちらも遅く、丘の道は閉まることがあります。",
+            },
+            {
+              time: "美瑛",
+              title: "青い池、それから丘をひとつ",
+              body: "白金の青い池は美瑛の町なかではなく、十勝岳のほうです。夏はパッチワークの丘がもう一か所。すべての丘は歩かないでください。",
+            },
+            {
+              time: "富良野",
+              title: "花か、森か",
+              body: "7月中旬はファーム富田のラベンダーで、混みます。早く着くか、やめるか。その時期を外すと、町はチーズと駅前です。まだ明るさが残っていれば、プリンスホテルの森にあるニングルテラスが工芸の立ち寄りです。開いているか確認してください。",
+            },
+          ],
+        },
+        {
+          id: "buddha",
+          eyebrow: "この地下鉄の先、バス · または札幌中心部から車でおよそ40分",
+          title: "頭大仏。",
+          lede: "真駒内滝野霊園の、安藤忠雄による大仏です。札幌の南にあります。洞爺湖ではありません。ツアーは二つを貼り合わせますが、別の日です。",
+          steps: [
+            {
+              time: "車なし",
+              title: "南北線の終点、それからバス",
+              body: "麻生から地下鉄で南へ、終点の真駒内まで。そこから北海道中央バスの真108（滝野線）、2番のりばが直行で、およそ20分から25分、真駒内滝野霊園です。霊園の案内ではそのバスは500円になっていました。本数は多くなく、帰りの最終は早いことがあります。とくに冬。霊園を離れる前に、帰りの時刻を読んでください。",
+            },
+            {
+              time: "境内",
+              title: "丘、それからモアイ",
+              body: "大仏はラベンダーの丘に、あごまで埋まっています。長いアプローチと、水庭。2026年4月から、霊園の掲載では大人の拝観料が1,000円です。子どもの料金は入口で聞いてください。モアイとストーンサークルは同じ敷地です。荒天や整備で、大仏を閉じることがあります。",
+            },
+            {
+              time: "車",
+              title: "都心からおよそ40分",
+              body: "乗用車は敷地に無料で止められたことがあります。広いです。バスの駐車は別料金で、2026年4月に上がりました。看板を見てください。この家からは南へ。午前で足ります。北海道一周ではありません。",
+            },
+          ],
+        },
+        {
+          id: "toya",
           eyebrow: "車 · およそ2時間",
-          title: "富良野。花か、雪か。",
-          lede: "もう一つの谷への、長い一日。欲しい季節を選ぶ。",
+          title: "洞爺湖。それだけで。",
+          lede: "カルデラと有珠山と、長い帰り道です。頭大仏も登別も足さないでください。",
           steps: [
             {
-              time: "朝食のあと",
-              title: "滝川のほうへ、それから谷へ",
-              body: "普通の日ならおよそ2時間10分。滝川方面の高速から、富良野へ入る道です。冬は遅くなります。料金は片道で数千円です。",
+              time: "朝",
+              title: "早く出る",
+              body: "道が乾いていれば、車でおよそ2時間。札幌から洞爺湖温泉へ向かう道南バスもあり、定山渓側を通ります。バスの一日であって、自由な一日ではありません。行く前に帰りを確認してください。",
             },
             {
-              time: "夏",
-              title: "花があるときだけ、畑",
-              body: "7月中旬はファーム富田のラベンダーで、混みます。早く着く。その時期を外すと、町はチーズと駅前と、散歩です。夏のあいだずっと花の見物ではありません。",
-            },
-            {
-              time: "冬",
-              title: "スキーは、手稲では足りないとき",
-              body: "富良野のゲレンデを一日にすることもできます。同じスキー板なら、手稲より長いドライブです。滑ることだけが目的なら手稲に残り、谷そのものが目的の日に富良野へ行ってください。",
+              time: "現地",
+              title: "湖か、火山か",
+              body: "景色はカルデラです。道が開いていれば、有珠山が火山の歩きです。どちらかひとつが、その日です。湖畔で昼を食べたら、引き返します。",
             },
           ],
         },
         {
+          id: "teine",
           eyebrow: "車 · 晴れれば40分以内が多い",
           title: "短い日は、手稲。",
-          lede: "美瑛が遠すぎる日は、西の山で足ります。",
+          lede: "谷が遠すぎる日は、西の山で足ります。",
           steps: [
             {
               time: "朝",

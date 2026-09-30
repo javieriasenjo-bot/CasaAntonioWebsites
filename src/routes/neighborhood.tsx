@@ -1,23 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Shell } from "@/components/chrome";
+import { PageLink } from "@/components/page-link";
+import { Photo } from "@/components/photo";
 import { copy, MAP } from "@/data/content";
+import { guides } from "@/data/guides";
 import { useLang } from "@/lib/i18n";
+import { headFor } from "@/lib/seo";
+import { trackMapClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/neighborhood")({
-  head: () => ({
-    meta: [
-      { title: "Around · Casa Antonio Sapporo" },
-      {
-        name: "description",
-        content:
-          "A day in Asabu, then one direction: the subway south, or Sapporo Teine by car. Places from Casa Antonio in Kita 38-jo.",
-      },
-    ],
-  }),
+  head: () => headFor("neighborhood", "en"),
   component: Neighborhood,
 });
 
-function Neighborhood() {
+export function Neighborhood() {
   const { lang } = useLang();
   const t = copy[lang].neighborhood;
   const c = copy[lang].captions;
@@ -35,15 +31,15 @@ function Neighborhood() {
       <section className="place-photos">
         <div className="wrap place-photo-row">
           <figure>
-            <img src="/photos/street.jpg" alt={c.fromStreet} />
+            <Photo src="/photos/street.jpg" alt={c.fromStreet} sizes="(max-width: 800px) 100vw, 40vw" />
             <figcaption>{c.fromStreet}</figcaption>
           </figure>
           <figure>
-            <img src="/photos/dining.jpg" alt={c.table} />
+            <Photo src="/photos/dining.jpg" alt={c.table} sizes="(max-width: 800px) 100vw, 30vw" />
             <figcaption>{c.table}</figcaption>
           </figure>
           <figure>
-            <img src="/photos/teine.jpg" alt={t.trips[2].title} />
+            <Photo src="/photos/teine.jpg" alt={t.trips[2].title} sizes="(max-width: 800px) 100vw, 30vw" />
             <figcaption>{t.trips[2].title}</figcaption>
           </figure>
         </div>
@@ -74,7 +70,7 @@ function Neighborhood() {
           <h2>{t.tripsTitle}</h2>
           <p className="lede">{t.tripsLede}</p>
           <figure className="ski-figure">
-            <img src="/photos/teine.jpg" alt={t.trips[2].title} />
+            <Photo src="/photos/teine.jpg" alt={t.trips[2].title} sizes="(max-width: 800px) 100vw, 1120px" />
             <figcaption>{t.skiPhoto}</figcaption>
           </figure>
           <div className="cards">
@@ -86,6 +82,10 @@ function Neighborhood() {
               </article>
             ))}
           </div>
+          <p className="trips-more">
+            <PageLink page="teine-ski">{guides[lang].teineMore}</PageLink>
+            <PageLink page="day-trips">{copy[lang].nav.trips}</PageLink>
+          </p>
         </div>
       </section>
 
@@ -119,6 +119,13 @@ function Neighborhood() {
                     <div>
                       <h3>{item.name}</h3>
                       <p>{item.body}</p>
+                      {"map" in item && item.map ? (
+                        <p className="trips-more">
+                          <a href={item.map} target="_blank" rel="noreferrer" onClick={() => trackMapClick("google")}>
+                            {t.mapLabel}
+                          </a>
+                        </p>
+                      ) : null}
                     </div>
                   </li>
                 ))}
@@ -146,7 +153,7 @@ function Neighborhood() {
               <h2>{t.mapTitle}</h2>
               <p>{t.mapNote}</p>
             </div>
-            <a className="button button-dark" href={MAP.google} target="_blank" rel="noreferrer">
+            <a className="button button-dark" href={MAP.google} target="_blank" rel="noreferrer" onClick={() => trackMapClick("google")}>
               {t.openMap}
             </a>
           </div>
