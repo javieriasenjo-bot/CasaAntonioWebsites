@@ -9,8 +9,8 @@
   --color-line: #e3dbd1;
   --color-foam: #ebe4da;
   --color-card: #fbf8f4;
-  --font-sans: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
-  --font-display: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-sans: "Zen Kaku Gothic New", "Noto Sans SC", "Noto Sans KR", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-display: "Shippori Mincho", "Noto Serif SC", "Noto Serif KR", "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
 @layer base {
@@ -158,9 +158,10 @@
   color: var(--color-muted);
   border-radius: 999px;
   min-height: 2rem;
-  padding: 0 0.7rem;
+  min-width: 2rem;
+  padding: 0 0.5rem;
   font: inherit;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
 }
 
 .language-switcher button.active {
@@ -677,6 +678,125 @@
   border-top: 1px solid rgb(255 255 255 / 0.16);
 }
 
+.long-stay {
+  padding: 4.5rem 0 4rem;
+  background: var(--color-foam);
+}
+
+.long-stay h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
+  color: var(--color-pine);
+}
+
+.long-stay .lede {
+  max-width: 40rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.long-stay .fact-grid {
+  margin: 1.5rem 0 1rem;
+}
+
+:lang(ko) {
+  word-break: keep-all;
+}
+
+.home-nomad {
+  padding: 4.5rem 0;
+  background: var(--color-card);
+}
+
+.home-nomad h2 {
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  margin: 0 0 0.6rem;
+  color: var(--color-pine);
+}
+
+.home-nomad .lede {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.place-photos {
+  padding: 0 0 1rem;
+}
+
+.place-photo-row {
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 0.9fr;
+  gap: 0.7rem;
+}
+
+.place-photo-row img,
+.ski-figure img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.place-photo-row img {
+  height: 22rem;
+}
+
+.place-photo-row figcaption,
+.ski-figure figcaption {
+  margin-top: 0.4rem;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+.places {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.place-card {
+  padding: 1.35rem 1.4rem 1.45rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+}
+
+.place-card h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.45rem;
+}
+
+.place-meta {
+  margin: 0 0 0.55rem;
+  color: var(--color-wood);
+  font-size: 0.88rem;
+}
+
+.place-card p:last-child {
+  margin: 0;
+}
+
+.ski-section {
+  padding: 4.2rem 0 3rem;
+  scroll-margin-top: 5rem;
+}
+
+.ski-section h2 {
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  margin: 0 0 0.5rem;
+  color: var(--color-pine);
+}
+
+.ski-figure {
+  margin: 1.4rem 0 1.2rem;
+}
+
+.ski-figure img {
+  height: min(36rem, 70vw);
+}
+
+.ski-prose {
+  margin-bottom: 0.4rem;
+}
+
 .fact-grid-tight {
   margin-bottom: 2.2rem;
 }
@@ -998,7 +1118,8 @@ body.lightbox-open .quick-reserve {
   .cards,
   .two-col,
   .fact-grid,
-  .distance-panel ul {
+  .distance-panel ul,
+  .place-photo-row {
     grid-template-columns: 1fr;
     direction: ltr;
   }
@@ -1018,7 +1139,8 @@ body.lightbox-open .quick-reserve {
   }
 
   .home-stay img,
-  .stay-split img {
+  .stay-split img,
+  .place-photo-row img {
     height: 16rem;
   }
 
@@ -1046,7 +1168,8 @@ body.lightbox-open .quick-reserve {
   .card-section,
   .page-intro,
   .map-section,
-  .home-stay {
+  .home-stay,
+  .long-stay {
     padding: 3.2rem 0;
   }
 }

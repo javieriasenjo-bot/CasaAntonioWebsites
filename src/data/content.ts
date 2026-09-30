@@ -1,4 +1,6 @@
 import type { Lang } from "@/lib/i18n";
+import { ko } from "./copy-ko";
+import { zh } from "./copy-zh";
 
 export const AIRBNB = {
   a: "https://www.airbnb.com/rooms/1248284267045468378",
@@ -17,31 +19,55 @@ type L = Record<Lang, string>;
 
 export type Photo = { src: string; alt: L };
 
-const p = (src: string, en: string, ja: string): Photo => ({ src, alt: { en, ja } });
+const p = (src: string, en: string, ja: string, zh: string, ko: string): Photo => ({
+  src,
+  alt: { en, ja, zh, ko },
+});
 
 export const housePhotos: Photo[] = [
-  p("/photos/exterior.jpg", "The house from the street, with parking in front", "通りからの外観。手前が駐車場"),
-  p("/photos/entry.jpg", "Two private wooden entrances and on-site parking", "木の扉がふたつ並ぶ専用入口と駐車場"),
-  p("/photos/doors.jpg", "The paired wooden doors under the brick porch", "レンガのポーチに並ぶ木の扉"),
+  p("/photos/exterior.jpg", "The two wooden doors under the brick porch", "レンガのポーチに並ぶ木の扉", "砖门廊下并排的两扇木门", "벽돌 포치 아래 나란히 선 나무 문 두 짝"),
+  p("/photos/entry.jpg", "Private entrances and the parking apron", "専用入口と駐車場", "独立入口与门前停车位", "전용 입구와 앞쪽 주차 공간"),
+  p("/photos/street.jpg", "The house from the street", "通りから見た家", "从街道看这栋房子", "길에서 본 집"),
 ];
 
 export const apartmentAPhotos: Photo[] = [
-  p("/photos/living.jpg", "Living room with sofa, window, and kitchen counter", "ソファと窓、キッチンカウンターのある居間"),
-  p("/photos/kitchen-living.jpg", "Kitchen, refrigerator, and a view through to the bedroom", "キッチンと冷蔵庫。奥に寝室"),
-  p("/photos/kitchen.jpg", "Kitchen with cooktop, microwave, and toaster oven", "コンロ、電子レンジ、オーブントースターのあるキッチン"),
-  p("/photos/dining.jpg", "Dining table beside the kitchen", "キッチン横のダイニング"),
-  p("/photos/bedroom.jpg", "Bedroom with two beds and an open closet", "ベッド2台とオープンクローゼットのある寝室"),
-  p("/photos/bedroom-2.jpg", "The bedroom from the closet side", "クローゼット側から見た寝室"),
-  p("/photos/bath-hall.jpg", "Japanese unit bath with a tub", "浴槽つきのユニットバス"),
-  p("/photos/sink.jpg", "Vessel sink in the bathroom", "洗面ボウル"),
-  p("/photos/hall.jpg", "Wood doors along the hallway", "木の扉が並ぶ廊下"),
-  p("/photos/genkan.jpg", "Private entrance and shoe cabinet", "専用玄関と下駄箱"),
-  p("/photos/sofa.jpg", "The living-room sofa", "居間のソファ"),
+  p("/photos/living.jpg", "Living room, sofa, and kitchen counter in Casa Antonio A", "Casa Antonio Aの居間。ソファとキッチンカウンター", "Casa Antonio A 的起居室、沙发与厨房台面", "Casa Antonio A의 거실. 소파와 주방 카운터"),
+  p("/photos/kitchen-living.jpg", "Sofa, coffee table, and the open kitchen", "ソファとテーブル、オープンキッチン", "沙发、茶几与开放式厨房", "소파, 테이블, 오픈 키친"),
+  p("/photos/dining.jpg", "Window-side dining table, long enough for a laptop", "窓際のダイニング。作業にも使えるテーブル", "靠窗的餐桌，放得下一台电脑", "창가 식탁. 노트북을 두기에도 충분한 테이블"),
+  p("/photos/dining-2.jpg", "The dining bench and the kitchen pass", "ダイニングのベンチとキッチン", "餐桌长椅与厨房", "식탁 벤치와 주방"),
+  p("/photos/kitchen.jpg", "Kitchen sink, cooktop, and refrigerator", "シンク、コンロ、冷蔵庫", "厨房水槽、炉灶与冰箱", "싱크, 가스레인지, 냉장고"),
+  p("/photos/open.jpg", "Looking from the living room toward the kitchen and hall", "居間からキッチンと廊下を見る", "从起居室望向厨房和走廊", "거실에서 주방과 복도를 바라본 모습"),
+  p("/photos/sofa.jpg", "The grey sofa under the high window", "高窓の下のグレーのソファ", "高窗下的灰色沙发", "높은 창 아래의 회색 소파"),
+  p("/photos/bedroom.jpg", "Bedroom with three beds", "ベッド3台の寝室", "三张床的卧室", "침대 세 개의 침실"),
+  p("/photos/bedroom-2.jpg", "The three beds from the window side", "窓側から見た3台のベッド", "从窗边看三张床", "창가에서 본 침대 세 개"),
+  p("/photos/bedroom-3.jpg", "Beds, closet, and the bedroom window", "ベッドとクローゼット、寝室の窓", "床、衣柜与卧室的窗", "침대, 옷장, 침실 창"),
+  p("/photos/hall.jpg", "Hall closet and the way through the apartment", "廊下の収納と部屋の奥", "走廊储物与房间深处", "복도 수납과 집 안쪽"),
   ...housePhotos,
 ];
 
 export const copy = {
   en: {
+    chrome: {
+      skip: "Skip to content",
+      nav: "Primary",
+      language: "Language",
+    },
+    captions: {
+      doors: "Two private doors",
+      living: "Living room in Antonio A",
+      bedroom: "Bedroom",
+      kitchen: "Kitchen",
+      table: "The table",
+      livingAlt: "Living room, Casa Antonio A",
+      woodDoors: "Wooden private entrances",
+      workTable: "Window-side table for a working day",
+      privateDoors: "The private doors",
+      houseOnStreet: "The house on Kita 38-jo",
+      fromStreet: "The house from the street",
+      residential: "A residential street",
+      parking: "Parking in front of the doors",
+      parkingCaption: "Parking at the door",
+    },
     nav: {
       a: "Antonio A",
       b: "Antonio B",
@@ -81,7 +107,7 @@ export const copy = {
       eyebrow: "Ground-floor apartment",
       title: "Casa Antonio A",
       tag: "A pale, modern room for coming back to.",
-      body: "Grey sofa, wood floor, a kitchen you can cook in, and a bedroom with two beds down a hallway of wood doors. Booking channels list it at about 100 square meters, one bedroom and one bath, for up to four guests. The photographs show two beds — if you are traveling as four, confirm the sleeping setup on Airbnb before you book.",
+      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same room. The bedroom down the hall has three beds. Booking channels list the apartment at about 100 square meters, one bedroom and one bath, for up to four guests. These photographs show three beds — if a fourth person is in the plan, confirm where they sleep on Airbnb before you book.",
     },
     bHome: {
       eyebrow: "Second floor",
@@ -92,14 +118,44 @@ export const copy = {
     bookA: "Book Antonio A on Airbnb",
     bookB: "Book Antonio B on Airbnb",
     photos: "All photographs",
-    photoNoteA: "Photographs are of Casa Antonio A and the shared house.",
+    photoNoteA: "Photographs of Casa Antonio A, taken in the apartment, plus the shared house outside.",
     photoNoteB:
       "These photographs are of the house. Interior pictures of the second-floor apartment are on the Airbnb listing — send them over and they can take this page.",
     neighborhoodTeaser: {
       eyebrow: "Asabu",
       title: "South to the city when you want it.",
-      body: "The Namboku line runs from Asabu through Sapporo Station to Odori and Susukino. The listings also point to an airport bus nearby. Day to day, this is a residential neighborhood: a supermarket, cafes, and ordinary Sapporo streets.",
+      body: "The Namboku line runs from Asabu through Sapporo Station to Odori and Susukino. Day to day, the useful places are closer: AEON over the station, and calma a few blocks south.",
       cta: "The neighborhood",
+    },
+    nomad: {
+      eyebrow: "Working from Sapporo",
+      title: "A quiet room for a real work day.",
+      lede: "Casa Antonio A is a residential apartment with a table by the window, a kitchen, and heat. It is a base for working in the city, not a coworking lobby.",
+      body: [
+        "The day can stay inside. Wi-Fi runs through the apartment, the dining table has chairs and daylight, and the sofa is there when the afternoon is calls rather than typing. The street is houses, not a reception desk. In winter the heating is the point: you can work through a snowfall without negotiating a cafe for a seat.",
+        "When the room is too quiet, Asabu Station is the walk the host describes as about five minutes. Sapporo Station is a short ride south, which is where the larger cafes are. AEON Sapporo Asabu, built over the station, has a Tully’s if you only want coffee. Japan Standard Time sits cleanly against Korea, China, and much of Southeast Asia. Europe arrives in the afternoon. The American West is a late night.",
+        "In ski season the rhythm that suits this house is a morning of work and an afternoon at Sapporo Teine, then the same door at the end of it. The kitchen means you are not buying every meal out. Bring the charger you actually use. There is no separate office and no second monitor, and this page does not promise a particular internet speed — the apartment has Wi-Fi, and that is the claim.",
+      ],
+      cta: "Teine and the neighborhood",
+    },
+    longStay: {
+      eyebrow: "Long-term rentals",
+      title: "Weeks and months, at a special rate.",
+      lede: "Both apartments can be taken for longer than a holiday. A stay of several weeks, or a few months, is priced below what those nights would cost one by one.",
+      body: [
+        "Casa Antonio A and Casa Antonio B are the same house, with separate doors. A long stay uses one of them as a home: cook, work, keep the car in the free space out front, and ride the subway when the city is the plan. It suits a work season in Sapporo, a university term, a family visit that runs long, or a winter built around Teine.",
+        "The discount is real, and it is not a figure printed on this page. Nightly prices on Airbnb are for shorter bookings. For a block of weeks or months, the host sets a special rate for those exact dates — lower than stacking the nightly price. What is included, and the total, are confirmed in writing before you pay. This site does not take the booking.",
+        "The house rules do not relax because the stay is long. No smoking, no pets, no parties, and a quiet street after dark. Check-in and check-out still apply at each end. Only the people on the booking live there.",
+      ],
+      points: [
+        { k: "Length", v: "Several weeks, or a number of months" },
+        { k: "Rate", v: "A special price, below stacked nightly rates" },
+        { k: "Which", v: "Antonio A, Antonio B, or one after the other" },
+        { k: "How", v: "Message the host on Airbnb with your dates" },
+      ],
+      ctaA: "Ask about Antonio A",
+      ctaB: "Ask about Antonio B",
+      note: "Write the dates, how many people, and which apartment. The host replies with the long-stay rate for that period.",
     },
     practical: {
       eyebrow: "Before you arrive",
@@ -118,7 +174,7 @@ export const copy = {
       line: "Two apartments in one house. Kita 38-jo Nishi 3-chome, Kita-ku, Sapporo.",
       address: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
       licenses: "Minpaku notification  M010045173 · A     M010045174 · B",
-      photo: "Interior photographs currently shown are from the Casa Antonio A listing.",
+      photo: "Interior photographs are of Casa Antonio A.",
     },
     reserve: {
       label: "Reserve",
@@ -142,14 +198,14 @@ export const copy = {
         ["Guests", "Up to 4"],
         ["Layout", "1 bedroom, 1 bath"],
         ["Size", "About 100 m²"],
-        ["Beds in photos", "Two"],
+        ["Beds in photos", "Three"],
         ["Entrance", "Private"],
         ["License", "M010045173"],
       ],
       storyTitle: "What the room is like",
       story: [
         "Casa Antonio A is the modern one. The living room is a soft grey-blue, with a sofa facing the window and a pale table in the middle. The kitchen is part of the same room: a counter, a refrigerator, a cooktop under a hood, a microwave, and a toaster oven. Booking channels also list an oven.",
-        "The bedroom has two beds dressed in white, an open closet, and a wood dresser. A short hallway of wooden doors connects the rooms. The bath is a Japanese unit bath — tub, shower, and a vessel sink on a wood counter.",
+        "The bedroom has three beds dressed in white, a closet, and a dresser. A short hall joins it to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
         "You come in through your own door. Check-in is private and contactless; the timing and the lock instructions are sent on Airbnb, not posted here. Towels, linen, and basic toiletries are provided, along with a washer, heating, air conditioning, and Wi-Fi.",
       ],
       amenities: [
@@ -214,55 +270,93 @@ export const copy = {
     ],
     neighborhood: {
       eyebrow: "Kita 38-jo",
-      title: "Far enough north to be quiet. Close enough to be easy.",
-      lede: "The house sits in Kita-ku, a few blocks south of Asabu Station. The address is Kita 38-jo Nishi 3-chome 1-7.",
+      title: "Far enough north to be quiet. Close enough to be useful.",
+      lede: "The house is Kita 38-jo Nishi 3-chome 1-7. Asabu Station is a few minutes north. The shops and the one restaurant worth naming sit around that walk, not in a tourist strip.",
       aroundTitle: "Getting here",
       around: [
         {
           title: "Asabu Station",
-          body: "Namboku subway line. The host’s Airbnb text puts the walk at about five minutes. From Asabu the train runs south through Kita 24-jo and Kita 12-jo into Sapporo Station.",
+          body: "Namboku subway line, about five minutes on foot, the timing the host gives. Southbound trains run through Kita 24-jo and Sapporo Station toward Odori and Susukino. Asabu is the north end of the line.",
         },
         {
           title: "The city center",
-          body: "Sapporo Station is about 4.9 km by road. On the subway it is a short ride — the listing says about seven minutes. Odori Park and Susukino are further down the same line, so dinner does not need a car.",
+          body: "Sapporo Station is about 4.9 km by road, and a short subway ride — the listing says about seven minutes. Odori and Susukino are further down the same line, so a longer dinner does not need the car.",
         },
         {
           title: "Airport",
-          body: "New Chitose is the airport that matters for almost every flight. The apartment titles advertise an airport bus nearby; confirm the current stop and timetable on Airbnb, because seasonal routes move. Okadama, the small city airport, is about 4 km away.",
+          body: "New Chitose is the airport that matters for almost every flight. Okadama, the small city airport, is about 4 km away. If you are connecting to a ski bus, check the current stop before you land. Routes move with the season.",
         },
         {
           title: "By car",
-          body: "Free private parking is on site, in front of the two doors. Useful in winter, and if you are driving on toward Otaru or the national parks.",
+          body: "Free private parking is on the apron in front of the two doors. It is the practical way to Teine with skis in the back, and the slower way on an icy morning. The white line in the photographs is the edge of that space.",
         },
       ],
-      dayTitle: "What is actually nearby",
+      placesTitle: "Within a short walk",
+      places: [
+        {
+          title: "AEON Sapporo Asabu",
+          meta: "Kita 39-jo Nishi 4 · over Asabu Station",
+          body: "The general store is built on top of the station, a short walk north of the house. This is the supermarket for a stay: groceries on the food floor, which is the one that stays open later, plus ordinary places inside the building — Saizeriya, Tully’s Coffee, McDonald’s. It is not a destination mall. Hours differ by floor, so check the day you go. About 570 parking spaces if you would rather drive the last block.",
+        },
+        {
+          title: "calma",
+          meta: "Kita 35-jo Nishi 3 · a few blocks south",
+          body: "A small Italian counter, eleven seats, on the ground floor of Sepia 35. Lunch from 11:00 to 13:30 and dinner from 17:00 to 21:00, closed Sunday, with the occasional extra closure — call before you count on it. It is the neighborhood meal: close enough to walk home, quiet enough that you do not need Susukino.",
+        },
+        {
+          title: "Hokkaido University and Odori",
+          meta: "South on the same subway line",
+          body: "The campus is about 4.7 km south, a good hour if the ginkgo or the snow is the reason for going. Sapporo Clock Tower is about 5.5 km. Odori is the long park: the snow festival in February, beer gardens in summer, the TV tower at the east end.",
+        },
+      ],
+      skiEyebrow: "Teine",
+      skiTitle: "The mountain is to the west.",
+      skiLede: "Sapporo Teine is the ski day from this side of the city. The house has parking, which is the difference between a plan and a theory when you are carrying skis.",
+      ski: [
+        "Sapporo Teine is on the northwest face of Mount Teine, in Teine-ku. It was a venue for the 1972 Winter Olympics. There are two zones: Olympia, lower and broader, and Highland, higher up, where the old Olympic courses are. From the top the view is back across the city and out to Ishikari Bay. The resort puts central Sapporo at about forty minutes by car, and the Teine interchange at about ten. From Kita-ku you drive west on the Sasson Expressway. In clear conditions it is not a longer trip than that. Parking at the mountain is free, on the order of 2,800 cars.",
+        "Without a car, the ordinary route is the JR train to Teine Station and the bus up to the slopes. It works, and it is slower than driving from this house. Worth knowing if the parking space is already taken.",
+      ],
+      skiPhoto: "Sapporo Teine, looking back toward the city. Photograph by Miki Yoshihito, CC BY 2.0.",
+      resortsTitle: "If Teine is not the day",
+      resorts: [
+        {
+          title: "Sapporo Bankei",
+          body: "A smaller city ski area in the southwestern hills. Often a short family session rather than a full mountain day. Closer to central Sapporo than to this house.",
+        },
+        {
+          title: "Fu’s Snow Area",
+          body: "Also on the Teine side of the city. A local hill, for when you want turns without giving the whole day to a large resort.",
+        },
+        {
+          title: "Sapporo Kokusai",
+          body: "Further northwest, about an hour from the city in ordinary traffic. A longer ski day, and more of a mountain, if Teine feels too close.",
+        },
+        {
+          title: "Further out",
+          body: "Niseko and Kiroro are trips, not errands. If that is the week, leave early. Casa Antonio is the quiet night afterward, not a lodge at the base of the hill.",
+        },
+      ],
+      dayTitle: "The ordinary winter",
       day: [
         {
-          title: "Supermarkets and dinner",
-          body: "The host mentions a large supermarket, cafes, and restaurants around the station — the ordinary, useful kind. Sapporo Station and Susukino cover soup curry, ramen, and a longer night.",
+          title: "Snow on the street",
+          body: "Both apartments have heating. The subway does not care about the snowfall. Side streets are plowed, then they ice. Shoes with a grip matter more than a new jacket. The parking apron in front of the doors is flat enough in the photographs and slower when it glazes.",
         },
         {
-          title: "Hokkaido University",
-          body: "About 4.7 km south. The campus is a good walk or a short subway-and-stroll if the ginkgo or the snow is the point of the day.",
-        },
-        {
-          title: "Clock tower and Odori",
-          body: "Sapporo Clock Tower is about 5.5 km away. Odori is the city’s long park: snow festival in February, beer gardens in summer, and the TV tower at the east end.",
-        },
-        {
-          title: "Winter",
-          body: "Both apartments have heating. Streets here are plowed, and the subway does not care about the snowfall. Bring shoes with a grip. The parking apron slopes gently toward the street — fine in the photos, slower when it ices.",
+          title: "A working day",
+          body: "The table in Casa Antonio A faces the window. Wi-Fi, a kitchen, and a quiet street are the actual setup — not a coworking desk. The neighborhood page of the work is AEON and the station. The mountain page is Teine in the afternoon.",
         },
       ],
       distancesTitle: "Distances published with the listings",
       distances: [
         "Asabu Station — about 5 minutes on foot",
+        "AEON Sapporo Asabu — a short walk north, over the station",
+        "calma — Kita 35-jo, a few blocks south",
         "Sapporo Station — about 4.9 km, a short subway ride",
         "Hokkaido University — about 4.7 km",
         "Sapporo Clock Tower — about 5.5 km",
+        "Sapporo Teine — west by car, often under 40 minutes",
         "Okadama Airport — about 4 km",
-        "Shin-Sapporo Station — about 16 km",
-        "Kita-Juni-Jo Station — about 4.2 km",
       ],
       mapTitle: "The house",
       mapNote: "Pin is the published coordinate for Kita 38-jo Nishi 3-chome 1-7. Open it in Google Maps if you are navigating in.",
@@ -283,7 +377,7 @@ export const copy = {
         "A hairdryer",
       ],
       languagesTitle: "Languages",
-      languages: "The host is listed as speaking English, Japanese, Korean, and Chinese.",
+      languages: "The host is listed as speaking English, Japanese, Korean, and Chinese. This site is written in those four languages.",
       licenseTitle: "Notification numbers",
       licenseBody:
         "These are private lodgings under Japan’s housing accommodation business. Casa Antonio A is M010045173. Casa Antonio B is M010045174.",
@@ -294,6 +388,27 @@ export const copy = {
     lightbox: { close: "Close", prev: "Previous photograph", next: "Next photograph" },
   },
   ja: {
+    chrome: {
+      skip: "本文へ",
+      nav: "主要",
+      language: "言語",
+    },
+    captions: {
+      doors: "専用の扉がふたつ",
+      living: "アントニオAの居間",
+      bedroom: "寝室",
+      kitchen: "キッチン",
+      table: "窓際のテーブル",
+      livingAlt: "アントニオAの居間",
+      woodDoors: "木の専用入口",
+      workTable: "仕事にも使える窓際のテーブル",
+      privateDoors: "専用の扉",
+      houseOnStreet: "北38条の家",
+      fromStreet: "通りからの家",
+      residential: "住宅街",
+      parking: "駐車場",
+      parkingCaption: "扉の前の駐車",
+    },
     nav: {
       a: "アントニオ A",
       b: "アントニオ B",
@@ -333,7 +448,7 @@ export const copy = {
       eyebrow: "下の階",
       title: "Casa Antonio A",
       tag: "戻ってきたくなる、明るいモダンな部屋。",
-      body: "グレーのソファ、木の床、自炊できるキッチン。木の扉が並ぶ廊下の先に、ベッド2台の寝室があります。予約サイトでは約100㎡、寝室1・浴室1、定員4名。写真に写っているベッドは2台です。4名で泊まる場合は、Airbnbで寝具の構成を確認してから予約してください。",
+      body: "グレーのソファ、木の床、窓際のテーブル、同じ部屋のキッチン。廊下の先の寝室にはベッドが3台あります。予約サイトでは約100㎡、寝室1・浴室1、定員4名。写真に写っているベッドは3台です。4名で泊まる場合は、4人目の寝床をAirbnbで確認してから予約してください。",
     },
     bHome: {
       eyebrow: "2階",
@@ -344,14 +459,44 @@ export const copy = {
     bookA: "Airbnbでアントニオ A を予約",
     bookB: "Airbnbでアントニオ B を予約",
     photos: "写真をすべて見る",
-    photoNoteA: "写真は Casa Antonio A と、共用の建物のものです。",
+    photoNoteA: "写真は Casa Antonio A の室内と、共用の建物の外観です。",
     photoNoteB:
       "ここに並んでいるのは建物の写真です。2階の室内写真はAirbnbにあります。お送りいただければ、このページに載せます。",
     neighborhoodTeaser: {
       eyebrow: "麻生",
       title: "街へ出たくなったら、南へ。",
-      body: "南北線は麻生から札幌駅、大通、すすき野へ続きます。リスティングでは近くの空港バスも案内されています。普段は住宅街です。スーパーとカフェと、札幌のいつもの通りがあります。",
+      body: "南北線は麻生から札幌駅、大通、すすき野へ続きます。日常の用事はもっと近くです。駅の上のイオンと、南へ数ブロックの calma。",
       cta: "周辺を見る",
+    },
+    nomad: {
+      eyebrow: "札幌で働く",
+      title: "静かな部屋で、一日仕事ができる。",
+      lede: "Casa Antonio Aは、窓際にテーブルがあり、キッチンと暖房がある住宅です。コワーキングのロビーではなく、札幌で働くための拠点です。",
+      body: [
+        "一日、部屋の中で過ごせます。Wi-Fiは部屋全体にあり、ダイニングのテーブルは椅子と日当たりがあって、午後が通話ならソファもあります。通りは住宅街で、フロントはありません。冬は暖房が本題です。雪の日に、席を探すためにカフェへ出なくてよい。",
+        "静かに過ぎるときは、ホストの案内どおり麻生駅まで徒歩およそ5分。札幌駅は南へ短い乗車で、大きなカフェがあるのはそちらです。駅の上のイオン札幌麻生店にはタリーズもあります。日本時間は韓国、中国、東南アジアの多くと合いやすい。ヨーロッパは午後、アメリカ西海岸は夜遅くです。",
+        "スキーの季節にこの家が合いやすいのは、午前に仕事をして、午後にサッポロテイネへ行き、同じ扉に戻る一日です。キッチンがあるので、毎食外で買わなくてよい。普段使う充電器を持ってきてください。専用の仕事部屋も、サブモニターもありません。通信速度の数字はこのページでは約束しません。あるのはWi-Fiです。",
+      ],
+      cta: "手稲と、周辺",
+    },
+    longStay: {
+      eyebrow: "長期滞在",
+      title: "数週間、数ヶ月。特別な料金で。",
+      lede: "どちらの部屋も、休暇より長い滞在ができます。数週間、あるいは数ヶ月の場合は、一泊料金を積み上げた額より低い料金になります。",
+      body: [
+        "Casa Antonio A と B は同じ家で、扉は別です。長い滞在は、そのどちらかを住まいとして使います。自炊し、仕事をし、扉の前の無料駐車場に車を置き、街へ出るときは地下鉄です。札幌での仕事の季節、学期、長めの家族の滞在、手稲を軸にした冬に向いています。",
+        "割引はあります。ただし、このページに数字は書きません。Airbnbの一泊料金は、短い予約のためのものです。数週間や数ヶ月のまとまった日程には、その期間だけの特別料金をホストが決めます。一泊ずつ足した額より低くなります。含まれるものと合計額は、支払う前に文面で確認します。このサイトでは予約を受け付けません。",
+        "滞在が長くても、ハウスルールはゆるみません。禁煙、ペット不可、パーティー不可。夜の通りは静かにしてください。始まりと終わりには、いつものチェックインとチェックアウトの時間が適用されます。泊まれるのは、予約に名前のある人だけです。",
+      ],
+      points: [
+        { k: "期間", v: "数週間、または数ヶ月" },
+        { k: "料金", v: "一泊料金の積み上げより低い特別料金" },
+        { k: "部屋", v: "アントニオ A、B、または続けて両方" },
+        { k: "申し込み", v: "Airbnbでホストに日程を送る" },
+      ],
+      ctaA: "アントニオ A を問い合わせる",
+      ctaB: "アントニオ B を問い合わせる",
+      note: "日程、人数、どちらの部屋かを書いてください。その期間の長期料金をホストが返します。",
     },
     practical: {
       eyebrow: "到着の前に",
@@ -370,7 +515,7 @@ export const copy = {
       line: "一軒家に、ふたつのアパートメント。札幌市北区北38条西3丁目。",
       address: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
       licenses: "住宅宿泊事業の届出番号　A · M010045173　　B · M010045174",
-      photo: "いま掲載している室内写真は、Casa Antonio A のリスティングのものです。",
+      photo: "室内写真は Casa Antonio A のものです。",
     },
     reserve: {
       label: "予約する",
@@ -394,14 +539,14 @@ export const copy = {
         ["定員", "最大4名"],
         ["間取り", "寝室1、浴室1"],
         ["広さ", "約100㎡"],
-        ["写真のベッド", "2台"],
+        ["写真のベッド", "3台"],
         ["入口", "専用"],
         ["届出番号", "M010045173"],
       ],
       storyTitle: "部屋のようす",
       story: [
         "Casa Antonio Aは、モダンな方の部屋です。居間は淡いグレーブルー。窓に向けたソファと、中央の明るいテーブル。キッチンは同じ空間にあり、カウンター、冷蔵庫、フードの下のコンロ、電子レンジ、オーブントースターがあります。予約サイトにはオーブンの記載もあります。",
-        "寝室は白い寝具のベッドが2台。オープンクローゼットと木のチェストがあります。短い廊下には木の扉が並びます。お風呂はユニットバスで、浴槽とシャワー、木のカウンターの上の洗面ボウルがあります。",
+        "寝室は白い寝具のベッドが3台。クローゼットとチェストがあります。短い廊下で居間とつながります。長く座る部屋に冷暖房があるので、冬の長い一日が成り立ちます。",
         "入口は専用です。チェックインはプライベートで、非対面。時刻と解錠の手順はAirbnbで届きます。このサイトには載せません。タオル、リネン、基本的なアメニティ、洗濯機、冷暖房、Wi-Fiがあります。",
       ],
       amenities: [
@@ -466,55 +611,93 @@ export const copy = {
     ],
     neighborhood: {
       eyebrow: "北38条",
-      title: "静かな北区。街までは、ちょうどいい距離。",
-      lede: "家は北区、麻生駅の数ブロック南にあります。住所は北38条西3丁目1-7です。",
+      title: "静かな北区。歩く範囲に、必要な店がある。",
+      lede: "家は北38条西3丁目1-7です。麻生駅は北へ数分。名前を挙げる店とレストランは、その歩きのまわりにあります。観光地の通りではありません。",
       aroundTitle: "アクセス",
       around: [
         {
           title: "麻生駅",
-          body: "地下鉄南北線。ホストのAirbnbでは徒歩およそ5分と案内されています。麻生から南へ、北24条、北12条を経て札幌駅へ向かいます。",
+          body: "地下鉄南北線。ホストの案内では徒歩およそ5分です。南行きは北24条、札幌駅を経て大通、すすき野へ。麻生は路線の北の端です。",
         },
         {
           title: "都心",
-          body: "札幌駅までは道路で約4.9km。地下鉄なら短い乗車で、リスティングではおよそ7分とされています。大通やすすき野も同じ路線の先なので、夕食に車は要りません。",
+          body: "札幌駅までは道路で約4.9km。地下鉄なら短い乗車で、リスティングではおよそ7分とされています。大通やすすき野も同じ路線の先なので、長い夕食に車は要りません。",
         },
         {
           title: "空港",
-          body: "ほぼすべての便は新千歳空港です。アパートメントのタイトルには近くの空港バスがうたわれています。季節で停留所が変わるため、最新の乗り場と時刻はAirbnbで確認してください。市内の丘珠空港までは約4kmです。",
+          body: "ほぼすべての便は新千歳空港です。市内の丘珠空港までは約4km。スキーバスへ乗り継ぐ場合は、到着前にその便の停留所を確認してください。季節で変わります。",
         },
         {
           title: "車",
-          body: "無料の専用駐車場が、ふたつの扉の前にあります。冬や、小樽・国立公園方面へ向かうときに便利です。",
+          body: "無料の専用駐車場が、ふたつの扉の前にあります。スキーを積んで手稲へ行くときの実用的な方法です。凍結した朝は、ゆっくり出てください。写真の白線が、その駐車スペースの縁です。",
         },
       ],
-      dayTitle: "実際に近いもの",
+      placesTitle: "歩いて行けるところ",
+      places: [
+        {
+          title: "イオン札幌麻生店",
+          meta: "北39条西4丁目 · 麻生駅の上",
+          body: "総合スーパーは駅の建物の上にあり、家から北へ短い歩きです。滞在中の買い出しはここです。食品のフロアが遅くまで開いています。建物の中にはサイゼリヤ、タリーズコーヒー、マクドナルドといった日常の店があります。目的地のモールではありません。階によって時間が違うので、行く日に確認してください。駐車場は約570台です。",
+        },
+        {
+          title: "calma",
+          meta: "北35条西3丁目 · 南へ数ブロック",
+          body: "セピア35の1階にある、11席の小さなイタリアンです。ランチは11:00–13:30、ディナーは17:00–21:00。日曜定休で、そのほかに休む日もあります。行く前に確認してください。歩いて帰れる距離の、近所の食事です。すすき野まで出なくてよい夜のための店です。",
+        },
+        {
+          title: "北海道大学と大通",
+          meta: "同じ地下鉄で南へ",
+          body: "キャンパスは南へ約4.7km。いちょうや雪が目的なら、歩いてもよい距離です。札幌時計台までは約5.5km。大通は長い公園で、2月は雪まつり、夏はビアガーデン、東端にテレビ塔があります。",
+        },
+      ],
+      skiEyebrow: "手稲",
+      skiTitle: "山は、西にあります。",
+      skiLede: "このあたりから行くスキーの一日は、サッポロテイネです。家に駐車場があることが、スキーを積む計画と、ただの話との違いになります。",
+      ski: [
+        "サッポロテイネは手稲山の北西斜面、手稲区にあります。1972年の札幌オリンピックの会場です。ゾーンはふたつ。低くて広いオリンピアと、山の上のハイランド。ハイランドには当時のオリンピックコースがあります。頂上からは札幌の街と石狩湾が見えます。公式の案内では、札幌中心部から車で約40分、手稲ICから約10分です。北区からは札樽自動車道を西へ向かいます。道が乾いていれば、それより長い旅にはなりません。ゲレンデの駐車場は無料で、およそ2,800台です。",
+        "車を使わない場合は、JRで手稲駅へ出て、そこからバスで斜面へ上がるのが普通の経路です。家から車で行くより時間がかかります。駐車場が埋まっているときの覚え書きです。",
+      ],
+      skiPhoto: "サッポロテイネから街を見下ろす。写真: Miki Yoshihito, CC BY 2.0。",
+      resortsTitle: "手稲ではない日",
+      resorts: [
+        {
+          title: "札幌ばんけい",
+          body: "南西の丘にある、小さめの市民スキー場です。一日山にこもるというより、短い滑りの日によく使われます。この家より、都心に近い場所です。",
+        },
+        {
+          title: "Fu's Snow Area",
+          body: "同じく手稲側の、地元のゲレンデです。大きなリゾートに一日を預けずに、滑りたいときの選択肢です。",
+        },
+        {
+          title: "札幌国際スキー場",
+          body: "さらに北西です。普段の交通なら街から約1時間。手稲では近く感じる日に、もう少し山らしい一日を取る場所です。",
+        },
+        {
+          title: "もっと遠く",
+          body: "ニセコもキロロも、用事ではなく旅です。その週にするなら、早く出てください。Casa Antonioは、その夜に静かに戻る家であって、ゲレンデの麓のロッジではありません。",
+        },
+      ],
+      dayTitle: "いつもの冬",
       day: [
         {
-          title: "スーパーと夕食",
-          body: "ホストは、駅のまわりに大きなスーパーとカフェ、レストランがあると書いています。日常に足る店です。スープカレーやラーメン、もう少し長い夜は札幌駅とすすき野へ。",
+          title: "通りの雪",
+          body: "どちらの部屋にも暖房があります。地下鉄は雪を気にしません。脇道は除雪されたあと、凍ります。新しい上着より、滑りにくい靴の方が大事です。扉の前の駐車場は写真では平坦に見えます。凍結すると、ゆっくり進めてください。",
         },
         {
-          title: "北海道大学",
-          body: "南へ約4.7km。いちょうや雪が目的なら、歩いても、地下鉄と散歩の組み合わせでもよい距離です。",
-        },
-        {
-          title: "時計台と大通",
-          body: "札幌時計台までは約5.5km。大通は街の長い公園です。2月は雪まつり、夏はビアガーデン、東端にテレビ塔があります。",
-        },
-        {
-          title: "冬",
-          body: "どちらの部屋にも暖房があります。通りは除雪され、地下鉄は雪を気にしません。滑りにくい靴を。駐車場は通りに向かってゆるやかに下がっています。写真では問題なくても、凍結するとゆっくり進めてください。",
+          title: "仕事の一日",
+          body: "Casa Antonio Aのテーブルは窓に向いています。Wi-Fiとキッチンと静かな通りが、実際の仕事環境です。コワーキングの机ではありません。近所のページはイオンと駅。山のページは、午後の手稲です。",
         },
       ],
-      distancesTitle: "リスティングに載っている距離",
+      distancesTitle: "距離の目安",
       distances: [
         "麻生駅 — 徒歩およそ5分",
+        "イオン札幌麻生店 — 駅の上まで、北へ短い歩き",
+        "calma — 北35条、南へ数ブロック",
         "札幌駅 — 約4.9km、地下鉄で短い乗車",
         "北海道大学 — 約4.7km",
         "札幌時計台 — 約5.5km",
+        "サッポロテイネ — 西へ車で、晴れれば40分以内が多い",
         "丘珠空港 — 約4km",
-        "新札幌駅 — 約16km",
-        "北12条駅 — 約4.2km",
       ],
       mapTitle: "家の位置",
       mapNote: "ピンは、北38条西3丁目1-7として公開されている座標です。ナビにはGoogleマップを開いてください。",
@@ -535,7 +718,7 @@ export const copy = {
         "ドライヤー",
       ],
       languagesTitle: "対応言語",
-      languages: "ホストの対応言語として、英語、日本語、韓国語、中国語が掲載されています。",
+      languages: "ホストの対応言語として、英語、日本語、韓国語、中国語が掲載されています。このサイトもその4言語です。",
       licenseTitle: "届出番号",
       licenseBody:
         "住宅宿泊事業の届出住宅です。Casa Antonio A は M010045173。Casa Antonio B は M010045174。",
@@ -545,6 +728,21 @@ export const copy = {
     },
     lightbox: { close: "閉じる", prev: "前の写真", next: "次の写真" },
   },
+  zh,
+  ko,
 } as const;
+
+type Loose<T> = T extends string
+  ? string
+  : T extends readonly (infer U)[]
+    ? Loose<U>[]
+    : T extends object
+      ? { [K in keyof T]: Loose<T[K]> }
+      : T;
+
+const _zhOk: Loose<(typeof copy)["en"]> = zh;
+const _koOk: Loose<(typeof copy)["en"]> = ko;
+void _zhOk;
+void _koOk;
 
 export type Copy = (typeof copy)[Lang];

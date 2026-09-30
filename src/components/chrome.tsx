@@ -1,7 +1,14 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { AIRBNB, copy } from "@/data/content";
-import { useLang } from "@/lib/i18n";
+import { useLang, type Lang } from "@/lib/i18n";
+
+const LANGS: { id: Lang; short: string; name: string }[] = [
+  { id: "en", short: "EN", name: "English" },
+  { id: "ja", short: "日", name: "日本語" },
+  { id: "zh", short: "中", name: "中文" },
+  { id: "ko", short: "한", name: "한국어" },
+];
 
 export function Shell({ children }: { children: ReactNode }) {
   const { lang, setLang } = useLang();
@@ -12,7 +19,7 @@ export function Shell({ children }: { children: ReactNode }) {
   return (
     <>
       <a className="skip-link" href="#content">
-        {lang === "ja" ? "本文へ" : "Skip to content"}
+        {t.chrome.skip}
       </a>
       <header className="site-header">
         <div className="nav-inner">
@@ -20,7 +27,7 @@ export function Shell({ children }: { children: ReactNode }) {
             Casa Antonio <span>Sapporo</span>
           </Link>
           <div className="header-tools">
-            <nav aria-label={lang === "ja" ? "主要" : "Primary"}>
+            <nav aria-label={t.chrome.nav}>
               <Link to="/casa-antonio-a" data-active={path === "/casa-antonio-a" ? "true" : undefined}>
                 {t.nav.a}
               </Link>
@@ -34,13 +41,19 @@ export function Shell({ children }: { children: ReactNode }) {
                 {t.nav.arrival}
               </Link>
             </nav>
-            <div className="language-switcher" role="group" aria-label={lang === "ja" ? "言語" : "Language"}>
-              <button type="button" className={lang === "en" ? "active" : ""} onClick={() => setLang("en")}>
-                EN
-              </button>
-              <button type="button" className={lang === "ja" ? "active" : ""} onClick={() => setLang("ja")}>
-                日本語
-              </button>
+            <div className="language-switcher" role="group" aria-label={t.chrome.language}>
+              {LANGS.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  className={lang === item.id ? "active" : ""}
+                  aria-label={item.name}
+                  aria-pressed={lang === item.id}
+                  onClick={() => setLang(item.id)}
+                >
+                  {item.short}
+                </button>
+              ))}
             </div>
           </div>
         </div>

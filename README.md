@@ -1,30 +1,14 @@
 # Casa Antonio
 
-Website for Casa Antonio A and Casa Antonio B in Kita-ku, Sapporo.
-Domain: https://casaantonio.jp
+Static site for casaantonio.jp. English, Japanese, Chinese, and Korean.
 
-English and Japanese. Booking links go to the Airbnb listings.
+## Cloudflare
 
-## Put it on GitHub
+This repo includes `wrangler.jsonc`, so `npx wrangler deploy` does not ask questions.
 
-1. Unzip this folder.
-2. Open https://github.com/javieriasenjo-bot/CasaAntonioWebsites
-3. If the repo is empty: **Add file → Upload files**, drag everything inside the unzipped folder (not the zip itself), then commit.
-4. Do not upload `node_modules`.
+In the Cloudflare project (Workers, not a blank prompt):
 
-GitHub Desktop also works: **File → Add local repository** on the unzipped folder, then **Publish repository**.
+- Build command: leave empty, or set `npm run build`
+- Deploy command: `npx wrangler deploy`
 
-## Host it on Cloudflare
-
-DNS for `casaantonio.jp` must already use Cloudflare nameservers (set at GoDaddy).
-
-1. Cloudflare → **Workers & Pages → Create → Pages → Connect to Git**.
-2. Choose `CasaAntonioWebsites`.
-3. Build settings:
-   - Framework preset: **Vite**
-   - Build command: `npm run build`
-   - Build output directory: `dist`
-4. Deploy.
-5. Project → **Custom domains** → add `casaantonio.jp`, then `www.casaantonio.jp`.
-
-Cloudflare writes the DNS records. Do not add an A record by hand.
+`npm install` already builds the `dist` folder. Wrangler uploads that folder. Do not add an A record by hand. After a green deploy, add custom domains `casaantonio.jp` and `www.casaantonio.jp`.
