@@ -84,9 +84,9 @@ const META: Record<PageId, Record<Lang, Meta>> = {
   },
   neighborhood: {
     en: {
-      title: "Asabu, Kita-ku Guide · Subway, AEON, Food · Casa Antonio",
+      title: "Nearby in Asabu · Food, Parks, Teine · Casa Antonio",
       description:
-        "A walk from the house: Asabu Station, AEON, calma, ramen, parks, and a seitai clinic. South on the subway when you want the city. Check the day’s hours.",
+        "Places worth naming from the house: meals, a supermarket, parks, a clinic, and the subway south. Map links open Google Maps. Check the day’s hours.",
     },
     ja: {
       title: "麻生・北区の案内｜地下鉄、イオン、食事｜Casa Antonio",
@@ -108,22 +108,22 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Day Trips from Sapporo: Otaru, Furano, Teine · Casa Antonio",
       description:
-        "One direction, then home: Otaru, Noboribetsu, Jozankei, Furano and Biei, the Hill of the Buddha, Lake Toya, or Sapporo Teine. Check the day.",
+        "One direction, then home: Otaru, Noboribetsu, Jozankei, Furano and Biei, Lake Toya, Teine, Upopoy in Shiraoi, or the Hill of the Buddha. Check the day.",
     },
     ja: {
       title: "札幌からの日帰り｜小樽、富良野、手稲｜Casa Antonio",
       description:
-        "行き先は一つにして、同じ扉に戻る。小樽、登別、定山渓、富良野と美瑛、頭大仏、洞爺湖、サッポロテイネ。北区の家から出る一日です。時刻と運賃はその日に確認を。 麻生の住宅街です。",
+        "行き先は一つにして、同じ扉に戻る。小樽、登別、定山渓、富良野と美瑛、洞爺湖、手稲、白老のウポポイ、頭大仏。北区の家から出る一日です。時刻と運賃はその日に確認を。",
     },
     zh: {
       title: "札幌一日游｜小樽、富良野、手稻｜Casa Antonio",
       description:
-        "选一个方向，再回到同一扇门。小樽、登别、定山溪、富良野与美瑛、头大佛、洞爷湖，或札幌手稻。从北区的家出发。时刻和票价请当天确认。 这是安静的住宅街。 厨房可以自己做饭。",
+        "选一个方向，再回到同一扇门。小樽、登别、定山溪、富良野与美瑛、洞爷湖、手稻、白老的 Upopoy，或头大佛。时刻和票价请当天确认。",
     },
     ko: {
       title: "삿포로 당일치기｜오타루, 후라노, 데이네｜Casa Antonio",
       description:
-        "방향은 하나, 그리고 같은 문으로. 오타루, 노보리베쓰, 조잔케이, 후라노와 비에이, 머리 대불, 도야호, 삿포로 데이네. 시간과 요금은 당일 확인.",
+        "방향은 하나, 그리고 같은 문으로. 오타루, 노보리베쓰, 조잔케이, 후라노와 비에이, 도야호, 데이네, 시라오이 우포포이, 머리 대불. 시간과 요금은 당일 확인.",
     },
   },
   arrival: {
@@ -345,7 +345,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     home: "Home",
     a: "Casa Antonio A",
     b: "Casa Antonio B",
-    neighborhood: "Near our home",
+    neighborhood: "Nearby",
     "day-trips": "Day trips",
     arrival: "Arrival",
     access: "From the airport",
@@ -360,7 +360,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     home: "ホーム",
     a: "Casa Antonio A",
     b: "Casa Antonio B",
-    neighborhood: "家の近く",
+    neighborhood: "周辺",
     "day-trips": "日帰り",
     arrival: "到着",
     access: "空港から",
@@ -375,7 +375,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     home: "首页",
     a: "Casa Antonio A",
     b: "Casa Antonio B",
-    neighborhood: "家附近",
+    neighborhood: "附近",
     "day-trips": "一日游",
     arrival: "入住",
     access: "从机场",
@@ -390,7 +390,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     home: "홈",
     a: "Casa Antonio A",
     b: "Casa Antonio B",
-    neighborhood: "집 근처",
+    neighborhood: "근처",
     "day-trips": "당일치기",
     arrival: "도착",
     access: "공항에서",

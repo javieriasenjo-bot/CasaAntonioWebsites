@@ -978,8 +978,81 @@ a.quick-reserve-trigger {
   align-items: center;
 }
 
-.trip-figure {
+.card-section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+.trip-index {
+  padding: 0 0 1.5rem;
+}
+
+.place-shot {
+  margin: 0.8rem 0 0.9rem;
+}
+
+.place-shot img {
+  width: 100%;
+  max-height: 22rem;
+  object-fit: cover;
+  display: block;
+}
+
+.place-shot figcaption {
+  margin-top: 0.35rem;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+.trip-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.trip-card {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.trip-card img {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  display: block;
+}
+
+.trip-card span {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--color-pine);
+}
+
+.trip-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
   margin: 0 0 1.4rem;
+}
+
+.trip-gallery-one {
+  grid-template-columns: 1fr;
+}
+
+.trip-gallery .trip-figure {
+  margin: 0;
+}
+
+.trip-gallery .trip-figure img {
+  height: 14rem;
+}
+
+.trip-gallery-one .trip-figure img {
+  height: 24rem;
 }
 
 .trip-figure img {
@@ -1391,7 +1464,9 @@ body.lightbox-open .quick-reserve {
   .two-col,
   .fact-grid,
   .distance-panel ul,
-  .place-photo-row {
+  .place-photo-row,
+  .trip-cards,
+  .trip-gallery {
     grid-template-columns: 1fr;
     direction: ltr;
   }
@@ -1417,7 +1492,9 @@ body.lightbox-open .quick-reserve {
   .home-stay img,
   .stay-split img,
   .place-photo-row img,
-  .trip-figure img {
+  .trip-figure img,
+  .trip-card img,
+  .place-shot img {
     height: 16rem;
   }
 

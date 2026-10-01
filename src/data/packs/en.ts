@@ -24,7 +24,7 @@ export const copy = {
     nav: {
       a: "Antonio A",
       b: "Antonio B",
-      neighborhood: "Near our home",
+      neighborhood: "Nearby",
       trips: "Day trips",
       arrival: "Arrival",
       book: "Book",
@@ -80,7 +80,7 @@ export const copy = {
       eyebrow: "Asabu",
       title: "South to the city when you want it.",
       body: "The Namboku line runs from Asabu through Sapporo Station to Odori and Susukino. Day to day, the useful places are closer: AEON over the station, and calma a few blocks south.",
-      cta: "Near our home",
+      cta: "Nearby",
     },
     nomad: {
       eyebrow: "Working from Sapporo",
@@ -224,9 +224,9 @@ export const copy = {
       "Quiet residential street — keep voices and music down, especially after dark.",
     ],
     neighborhood: {
-      eyebrow: "Kita 38-jo",
-      title: "Near our home.",
-      lede: "The house is a few minutes south of Asabu Station. The useful cluster is that station: food, a supermarket, a couple of small parks, and places to get a shoulder looked at. A few of the restaurants sit just past the station, so allow five to ten minutes on foot, not a strict five.",
+      eyebrow: "Nearby",
+      title: "Places worth naming.",
+      lede: "These are places a short walk, or a short ride, from the house. Times are on foot unless the line says otherwise. Hours change, so check the day you go. Each link opens Google Maps. Photographs of the smaller shops stay there. We do not copy them onto this page. The landmarks below use freely licensed photographs.",
       localEyebrow: "Stay local",
       localTitle: "A day in Asabu",
       localLede: "The street, the station, and the rooms past the station for dinner. That is the neighborhood. It is enough for a day that does not need a plan.",
@@ -313,13 +313,13 @@ export const copy = {
             {
               name: "goody goody",
               time: "Past the station",
-              body: "Omurice, doria, and waffles at Asabu-cho 4-9-14, in Frontier Asabu. Open 11:00–22:00, no weekly closing day except New Year. About a minute from the station, so a little farther from the house.",
+              body: "Omurice, doria, and waffles at Asabu-cho 4-9-14, in Frontier Asabu. Open 11:00–22:00, with no weekly closing day except New Year. About a minute from the station, which makes it a little farther from this house.",
               map: "https://www.google.com/maps/search/?api=1&query=goody+goody+麻生店+麻生町4-9-14",
             },
             {
               name: "Masaya",
               time: "Past the station",
-              body: "An izakaya for motsu nabe and seafood, Asabu-cho 3-10-22, just off exit 3 of the station. A night meal, not a lunch.",
+              body: "An izakaya for motsu nabe and seafood, Asabu-cho 3-10-22, just off exit 3 of the station. Dinner, not lunch.",
               map: "https://www.google.com/maps/search/?api=1&query=まさや+札幌麻生店+麻生町3-10-22",
             },
             {
@@ -331,7 +331,7 @@ export const copy = {
             {
               name: "Saizeriya",
               time: "Inside AEON",
-              body: "The ordinary family Italian in the station building. Useful when the smaller rooms are closed.",
+              body: "The ordinary family Italian inside the station building. Useful when the smaller restaurants are closed.",
               map: "https://www.google.com/maps/search/?api=1&query=サイゼリヤ+イオン札幌麻生店",
             },
             {
@@ -366,7 +366,7 @@ export const copy = {
             {
               name: "Bonzyu",
               time: "A few minutes past the station",
-              body: "Relaxation massage about 300 meters from the station. Hours move. Check the day.",
+              body: "Relaxation massage about 300 meters from the station. Hours change. Check the day you go.",
               map: "https://www.google.com/maps/search/?api=1&query=梵珠+bonzyu+麻生",
             },
           ],
@@ -406,7 +406,8 @@ export const copy = {
             {
               name: "AEON parking",
               time: "Same building",
-              body: "About 570 spaces if the last block is easier by car. The house also has one free space in front of each apartment.",
+              body: "About 570 spaces, if driving the last block is easier. The house also has one free space in front of each apartment.",
+              map: "https://www.google.com/maps/search/?api=1&query=イオン札幌麻生店",
             },
           ],
         },
@@ -414,29 +415,28 @@ export const copy = {
           title: "Sights",
           items: [
             {
-              name: "Asabu Station",
-              time: "About 5 min on foot",
-              body: "North end of the Namboku line. The useful walk.",
-            },
-            {
               name: "Hokkaido University",
               time: "About 4.7 km",
-              body: "Campus to the south. Worth the hour if the trees or the snow are the point.",
+              body: "The campus is south of here. Worth the hour on foot when the trees or the snow are the reason for going.",
+              map: "https://www.google.com/maps/search/?api=1&query=北海道大学+札幌",
             },
             {
               name: "Odori Park",
               time: "Same subway line",
-              body: "Snow festival in February. Beer gardens in summer. TV tower at the east end.",
+              body: "Snow festival in February. Beer gardens in summer. The TV tower stands at the east end.",
+              map: "https://www.google.com/maps/search/?api=1&query=大通公園+札幌",
             },
             {
               name: "Sapporo Clock Tower",
               time: "About 5.5 km",
-              body: "The small wooden clock in the center. A stop, not a day.",
+              body: "The small wooden clock in the center. A stop, not a whole day.",
+              map: "https://www.google.com/maps/search/?api=1&query=札幌市時計台",
             },
             {
               name: "Sapporo Station",
               time: "About 4.9 km",
-              body: "The subway takes about nine minutes, station to station. Larger cafes are here, not in Asabu.",
+              body: "The subway takes about nine minutes, station to station. The larger cafes are here, not in Asabu.",
+              map: "https://www.google.com/maps/search/?api=1&query=札幌駅",
             },
           ],
         },
@@ -446,27 +446,32 @@ export const copy = {
             {
               name: "Sapporo Teine",
               time: "West by car",
-              body: "Olympia and Highland. Often under 40 minutes in clear conditions. Free parking at the mountain.",
+              body: "Olympia and Highland. Often under 40 minutes in clear conditions. Parking at the mountain is free.",
+              map: "https://www.google.com/maps/search/?api=1&query=サッポロテイネ",
             },
             {
               name: "Sapporo Bankei",
               time: "Southwest of the center",
-              body: "A smaller city hill. Often a short family session. Closer to central Sapporo than to this house.",
+              body: "A smaller city hill, often a short session with children. It is closer to central Sapporo than to this house.",
+              map: "https://www.google.com/maps/search/?api=1&query=札幌ばんけいスキー場",
             },
             {
               name: "Fu’s Snow Area",
               time: "Teine side",
-              body: "A local hill, for turns without giving the whole day to a large resort.",
+              body: "A local hill, for a few runs without giving the whole day to a large resort.",
+              map: "https://www.google.com/maps/search/?api=1&query=フーズスノーエリア",
             },
             {
               name: "Sapporo Kokusai",
               time: "About an hour",
-              body: "Further northwest. A longer ski day if Teine feels too close.",
+              body: "Further northwest. A longer ski day, if Teine feels too close.",
+              map: "https://www.google.com/maps/search/?api=1&query=札幌国際スキー場",
             },
             {
               name: "Niseko or Kiroro",
-              time: "A trip",
-              body: "Not an errand. If that is the week, leave early. This house is the quiet night afterward.",
+              time: "A real trip",
+              body: "Not a quick errand. If that is the week, leave early. This house is the quiet night afterward.",
+              map: "https://www.google.com/maps/search/?api=1&query=ニセコユナイテッド",
             },
           ],
         },
@@ -481,11 +486,11 @@ export const copy = {
       openMap: "Open in Google Maps",
     },
     dayTrips: {
-      eyebrow: "From the house",
-      title: "One day, one direction.",
-      lede: "These are days out from Kita 38-jo, not a tour of Hokkaido. Leave after breakfast. Be home for a late dinner, unless the page says the day is long.",
+      eyebrow: "From Sapporo",
+      title: "Day trip ideas.",
+      lede: "We give you some day trip ideas from Sapporo. Check them out below.",
       homeTitle: "A day away, then the same door.",
-      homeBody: "Otaru by train. Noboribetsu or Jozankei for steam. Furano and Biei only if the day is long. The Buddha is south, on this subway line. Teine when you want to be home early.",
+      homeBody: "Otaru by train. Noboribetsu or Jozankei for steam. Furano and Biei, or Lake Toya, only if the day is long. Upopoy in Shiraoi is a full day at the Ainu museum. The Buddha is south, on this subway line. Teine when you want to ski or hike and still be home early.",
       homeCta: "Day trips",
       note: "Times are in clear weather, from central Sapporo, plus the walk from this house to Asabu and the subway. Snow, flower season, and road closures change the day. Check that morning. This page does not sell tickets or hold a table.",
       ideas: [
@@ -493,7 +498,7 @@ export const copy = {
           id: "otaru",
           eyebrow: "No car · about 35–45 minutes from Sapporo Station",
           title: "Otaru, and back for dinner.",
-          lede: "The easy day, and the one most people take. A canal town and one seafood lunch.",
+          lede: "The easy day, and the one most people take. A canal town and one seafood lunch. The aquarium and the Shukutsu coast are the extra, if the buses still leave you a train home.",
           steps: [
             {
               time: "Morning",
@@ -506,9 +511,14 @@ export const copy = {
               body: "Walk the canal and the stone warehouses. Sakaimachi Street is the next lane if you want glass and music boxes. One street is enough. Tenguyama ropeway is the view over the port, if the cabin is running that day. Check before you climb.",
             },
             {
+              time: "If you still have the afternoon",
+              title: "The aquarium, and the Shukutsu coast",
+              body: "Otaru Aquarium is not beside the canal. It sits at Shukutsu, a bus ride from Otaru Station. The coast there is a fishing harbor and a lighthouse, not a sandy swimming beach. Go only if the bus times still leave you a train home.",
+            },
+            {
               time: "Lunch",
-              title: "Sankaku Market",
-              body: "Sankaku Market, a short walk from Otaru Station, is the seafood lunch: kaisendon and the stalls. Go before the tour groups fill it. This page does not hold a table.",
+              title: "Sankaku Market, or a rated room",
+              body: "Sankaku Market, a short walk from Otaru Station, is the simple seafood lunch: kaisendon and the stalls. Go before the tour groups fill it. If you want a restaurant, TripAdvisor’s Otaru list in October 2026 had Sawasaki Suisan Kaisenshokudo and Isezushi at 4.4 (about 205 and 234 reviews), and the soba shop Yabuhan at 4.4 from about 166 reviews. Kita no Donburiya Takinami, at 4.2 from about 155 reviews, is the seafood-bowl counter. Ratings move. This page does not hold a table.",
             },
             {
               time: "Afternoon",
@@ -532,6 +542,11 @@ export const copy = {
               time: "The walk",
               title: "Jigokudani",
               body: "Hell Valley is a crater you can walk: vents, sulphur, and a boardwalk. Oyunuma pond is the next short walk. There is a natural foot bath near the entrance. The valley itself is a walk, not a ticketed show. Some paths close in bad weather.",
+            },
+            {
+              time: "A meal",
+              title: "Near the valley",
+              body: "TripAdvisor’s list beside Jigokudani is short. In October 2026 the top of it was Pizzeria Astra, a wood-fired pizza room (4.8 from 29 reviews), then Aji no Daio, the curry-ramen shop (3.8 from about 70 reviews), and Onsen Ichiba, the seafood hall (3.5 from about 114 reviews). The scores are not all high. Check that they are open, and that the road home is still in daylight.",
             },
             {
               time: "Afternoon",
@@ -613,7 +628,7 @@ export const copy = {
           id: "toya",
           eyebrow: "Car · about 2 hours",
           title: "Lake Toya, on its own.",
-          lede: "A caldera, Mount Usu, and a long way home. Do not add the Buddha or Noboribetsu.",
+          lede: "A caldera, Mount Usu, and a long way home. You can eat in the onsen town, take a day bath if a ryokan is selling one, or rent a bicycle and ride the shore. Do not add the Buddha or Noboribetsu.",
           steps: [
             {
               time: "Morning",
@@ -623,14 +638,24 @@ export const copy = {
             {
               time: "There",
               title: "The lake, or the volcano",
-              body: "The view is the caldera. Mount Usu is the volcanic walk if the paths are open. One of those is the day. A lakeside lunch, then turn around.",
+              body: "The view is the caldera. Mount Usu is the volcanic walk if the paths are open. One of those is enough for the day.",
+            },
+            {
+              time: "A meal",
+              title: "Eat in Toyako Onsen",
+              body: "The town is on the south shore, and you can eat there. The Toyako Onsen tourist association lists Sendoan, with a view of the lake (often 11:00–19:00, and the hours move with the season), Sushi Aikawa in the evening (about 18:00–23:00), and Yakiniku Kinjo from about 17:00. Look at the door, or call. This page does not hold a table.",
+            },
+            {
+              time: "If you want more than the view",
+              title: "A day bath, or a bicycle",
+              body: "Toyako Onsen is a hot-spring town. Some ryokan sell a day bath. Ask the price at the door that morning. Do not assume every hotel lets non-guests in. If you would rather be outside, Rental Bicycle Shop Takayanagi, at 144 Toyako-Onsen, rents bicycles from one hour, including electric bikes and two-seaters, so you can ride the shore. The published number is +81-142-75-2406.",
             },
           ],
         },
         {
           id: "teine",
           eyebrow: "Car · often under 40 minutes",
-          title: "The short day is Teine.",
+          title: "Ski or hike at Teine.",
           lede: "When the valleys are too far, the mountain to the west is already enough.",
           steps: [
             {
@@ -647,6 +672,29 @@ export const copy = {
               time: "Evening",
               title: "The same door",
               body: "This is the day the space in front of the house is for. Dinner does not have to be in the city.",
+            },
+          ],
+        },
+        {
+          id: "shiraoi",
+          eyebrow: "Car or train · a full day",
+          title: "Shiraoi. Upopoy, the National Ainu Museum.",
+          lede: "A whole day for Ainu history and the park in Shiraoi, on the coast southwest of the city. Not a stop you add to another trip.",
+          steps: [
+            {
+              time: "Morning",
+              title: "Leave after breakfast",
+              body: "By car, allow about an hour and a quarter from this side of the city in clear weather, toward Tomakomai and then Shiraoi. Without a car, take a JR train to Shiraoi Station, then a short bus or taxi to the park. Check that morning’s connection before you go.",
+            },
+            {
+              time: "The day",
+              title: "The museum and the park",
+              body: "Upopoy, at 2-3-2 Wakakusa-cho, Shiraoi, is Japan’s national museum of Ainu history and culture, with a park and a traditional village beside it. From 1 April to 31 October 2026 the official hours are 9:00–18:00. It is closed on Mondays, or the next weekday when Monday is a holiday. Last entry is one hour before closing. Adult admission is ¥1,200 at the gate and ¥1,000 on the website. High-school students pay half of that. Junior-high students and younger go free. From November the hours are shorter. Read the day’s notice before you leave.",
+            },
+            {
+              time: "Back",
+              title: "One direction",
+              body: "Give the park the day. Do not add Noboribetsu or Lake Toya. You want the same door for a late dinner.",
             },
           ],
         },
