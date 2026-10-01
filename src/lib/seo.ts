@@ -1,5 +1,5 @@
 import { AIRBNB, MAP } from "@/data/facts";
-import { photoFile } from "@/lib/photo-manifest";
+import { photoFile, photoMeta } from "@/lib/photo-manifest";
 import { FONT_STYLESHEET } from "@/lib/fonts";
 import {
   HTML_LANG,
@@ -304,7 +304,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
 };
 
 const HERO: Partial<Record<PageId, string>> = {
-  home: "living",
+  home: "exterior",
   a: "living",
   b: "entry",
 };
@@ -466,8 +466,8 @@ function apartment(id: "a" | "b", lang: Lang) {
     name: isA ? "Casa Antonio A" : "Casa Antonio B",
     url: absolutePage(page, lang),
     image: isA
-      ? [`${ORIGIN}/photos/living-1600.webp`, `${ORIGIN}/photos/bedroom-1600.webp`, `${ORIGIN}/photos/kitchen-1600.webp`]
-      : [`${ORIGIN}/photos/exterior-1333.webp`, `${ORIGIN}/photos/entry-1600.webp`, `${ORIGIN}/photos/street-1067.webp`],
+      ? [`${ORIGIN}/photos/living-2000.webp`, `${ORIGIN}/photos/bedroom-1800.webp`, `${ORIGIN}/photos/kitchen-1800.webp`]
+      : [`${ORIGIN}/photos/exterior-1333.webp`, `${ORIGIN}/photos/entry-1800.webp`, `${ORIGIN}/photos/street-1067.webp`],
     floorSize: {
       "@type": "QuantitativeValue",
       value: isA ? 100 : 70,
@@ -725,12 +725,13 @@ export function headFor(page: PageId, lang: Lang) {
     { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
   ];
   if (hero) {
+    const widths = photoMeta[hero]?.widths ?? [800];
     links.push({
       rel: "preload",
       as: "image",
       type: "image/avif",
-      href: photoFile(hero, 800, "avif"),
-      imageSrcSet: `${photoFile(hero, 800, "avif")} 800w, ${photoFile(hero, 1600, "avif")} 1600w`,
+      href: photoFile(hero, widths[widths.length - 1], "avif"),
+      imageSrcSet: widths.map((width) => `${photoFile(hero, width, "avif")} ${width}w`).join(", "),
       imageSizes: "100vw",
       fetchPriority: "high",
     });

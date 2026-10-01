@@ -16,7 +16,7 @@ export function Home() {
   return (
     <Shell>
       <section className="hero">
-        <Photo className="hero-img" src="/photos/living.jpg" alt={t.hero.title} priority sizes="100vw" />
+        <Photo className="hero-img" src="/photos/exterior.jpg" alt={c.doors} priority sizes="100vw" />
         <div className="hero-overlay">
           <p className="eyebrow">{t.hero.eyebrow}</p>
           <h1>{t.hero.title}</h1>

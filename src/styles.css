@@ -311,6 +311,10 @@ a.quick-reserve-trigger {
   display: block;
 }
 
+.hero-img {
+  object-position: center 56%;
+}
+
 .hero-overlay,
 .page-hero-copy {
   position: absolute;
@@ -1353,7 +1357,7 @@ body.lightbox-open .quick-reserve {
   }
 
   .hero-img {
-    object-position: center 85%;
+    object-position: center 56%;
   }
 
   .hero {

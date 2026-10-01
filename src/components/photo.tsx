@@ -9,7 +9,7 @@ export function Photo({
   src,
   alt,
   className,
-  sizes = "(max-width: 900px) 100vw, 800px",
+  sizes = "(max-width: 900px) 100vw, 1200px",
   priority = false,
 }: {
   src: string;
@@ -31,7 +31,7 @@ export function Photo({
       <source type="image/webp" srcSet={set("webp")} sizes={sizes} />
       <img
         className={className}
-        src={`/photos/${stem}-${widths[0]}.webp`}
+        src={`/photos/${stem}-${widths[widths.length - 1]}.webp`}
         srcSet={set("webp")}
         sizes={sizes}
         alt={alt}

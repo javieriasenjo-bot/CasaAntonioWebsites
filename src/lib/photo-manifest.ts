@@ -1,30 +1,34 @@
 export const photoMeta: Record<string, { widths: readonly number[]; width: number; height: number }> = {
   "bath-hall": { widths: [600], width: 600, height: 900 },
-  "bedroom": { widths: [800, 1600], width: 1800, height: 1200 },
-  "bedroom-2": { widths: [800, 1600], width: 1800, height: 1200 },
-  "bedroom-3": { widths: [800, 1600], width: 1800, height: 1200 },
-  "bluepond": { widths: [800, 1600], width: 1800, height: 1200 },
-  "buddha": { widths: [800, 1600], width: 1800, height: 1012 },
-  "dining": { widths: [800, 1600], width: 1800, height: 1200 },
-  "dining-2": { widths: [800, 1600], width: 1800, height: 1200 },
-  "entry": { widths: [800, 1600], width: 1800, height: 1200 },
+  "bedroom": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "bedroom-2": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "bedroom-3": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "bluepond": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "buddha": { widths: [800, 1600, 1800], width: 1800, height: 1012 },
+  "dining": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "dining-2": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "entry": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
   "exterior": { widths: [800, 1333], width: 1333, height: 2000 },
   "genkan": { widths: [800, 1280], width: 1280, height: 853 },
-  "hall": { widths: [800, 1600], width: 1800, height: 1200 },
-  "jigoku": { widths: [800, 1600], width: 1800, height: 1350 },
-  "jozankei": { widths: [800, 1600], width: 1800, height: 1012 },
-  "kitchen": { widths: [800, 1600], width: 1800, height: 1200 },
-  "kitchen-living": { widths: [800, 1600], width: 1800, height: 1200 },
-  "living": { widths: [800, 1600], width: 2000, height: 1333 },
-  "open": { widths: [800, 1600], width: 1800, height: 1200 },
-  "otaru": { widths: [800, 1600], width: 1800, height: 1205 },
+  "hall": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "jigoku": { widths: [800, 1600, 1800], width: 1800, height: 1350 },
+  "jozankei": { widths: [800, 1600, 1800], width: 1800, height: 1012 },
+  "kitchen": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "kitchen-living": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "living": { widths: [800, 1600, 2000], width: 2000, height: 1333 },
+  "open": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
+  "otaru": { widths: [800, 1600, 1800], width: 1800, height: 1205 },
   "sink": { widths: [800, 1280], width: 1280, height: 853 },
-  "sofa": { widths: [800, 1600], width: 1800, height: 1200 },
+  "sofa": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
   "street": { widths: [800, 1067], width: 1067, height: 1600 },
-  "teine": { widths: [800, 1600], width: 2000, height: 1124 },
-  "toya": { widths: [800, 1600], width: 1800, height: 1200 },
+  "teine": { widths: [800, 1600, 2000], width: 2000, height: 1124 },
+  "toya": { widths: [800, 1600, 1800], width: 1800, height: 1200 },
 };
 
 export const photoWidths: Record<string, readonly number[]> = Object.fromEntries(
   Object.entries(photoMeta).map(([stem, meta]) => [stem, meta.widths]),
 );
+
+export function photoFile(stem: string, width: number, ext: "avif" | "webp") {
+  return `/photos/${stem}-${width}.${ext}`;
+}
