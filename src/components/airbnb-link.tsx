@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { AIRBNB } from "@/data/content";
+import { AIRBNB } from "@/data/facts";
 import { trackAirbnbClick, type Cabin } from "@/lib/analytics";
 
 export function AirbnbLink({

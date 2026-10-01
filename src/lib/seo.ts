@@ -1,4 +1,4 @@
-import { AIRBNB, MAP } from "@/data/content";
+import { AIRBNB, MAP } from "@/data/facts";
 import { FONT_STYLESHEET } from "@/lib/fonts";
 import {
   HTML_LANG,
@@ -10,7 +10,7 @@ import {
   type PageId,
 } from "@/lib/paths";
 
-const LASTMOD = "2026-09-30";
+const LASTMOD = "2026-10-01";
 
 type Meta = { title: string; description: string };
 
@@ -24,12 +24,12 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "札幌・麻生駅徒歩5分の貸切アパートメント｜Casa Antonio",
       description:
-        "札幌市北区の一軒家に、専用入口のアパートメントが二つ。麻生駅から徒歩およそ5分、駐車場は無料です。AirbnbでCasa Antonio AまたはBを予約できます。",
+        "札幌市北区の一軒家に、専用入口のアパートが二つ。麻生駅から徒歩約5分。約70㎡と約100㎡、キッチン付きの静かな住宅街です。AirbnbでAまたはBを予約できます。",
     },
     zh: {
       title: "札幌整套公寓民宿 · 麻生站步行5分钟｜Casa Antonio",
       description:
-        "札幌市北区一栋住宅里的两套独立公寓，离麻生站步行约五分钟，门前免费停车。在 Airbnb 预订 Casa Antonio A 或 B。",
+        "札幌市北区一栋住宅里的两套独立公寓，离麻生站步行约五分钟，约70与100平方米，有厨房，门前可停车。在 Airbnb 预订 Casa Antonio A 或 B。",
     },
     ko: {
       title: "삿포로 아파트 숙소 · 아사부역 도보 5분｜Casa Antonio",
@@ -46,17 +46,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "Casa Antonio A｜札幌・約100㎡・4名まで・駐車場付き",
       description:
-        "北区の1階、約100㎡、寝室1・浴室1、定員4名。写真のベッドは3台です。専用入口と敷地内の無料駐車場があります。",
+        "北区の1階、約100㎡、寝室1・浴室1、定員4名。写真のベッドは3台です。麻生駅から徒歩約5分。専用入口と敷地内の無料駐車場がある静かな家です。 麻生の住宅街です。",
     },
     zh: {
       title: "Casa Antonio A｜札幌约100㎡公寓，可住4人，可停车",
       description:
-        "北区一楼，约100平方米，一间卧室、一间浴室，最多四位客人。照片里是三张床。独立入口，院内免费停车。",
+        "北区一楼，约100平方米，一间卧室、一间浴室，最多四位客人。照片里是三张床。离麻生站步行约五分钟。独立入口，院内免费停车，安静的住宅街。 这是安静的住宅街。 厨房可以自己做饭。",
     },
     ko: {
       title: "Casa Antonio A｜삿포로 약 100㎡·4명·주차",
       description:
-        "기타구 1층, 약 100㎡, 침실 하나, 욕실 하나, 최대 네 명. 사진의 침대는 세 개입니다. 전용 출입구와 무료 주차가 있습니다.",
+        "기타구 1층, 약 100㎡, 침실 하나, 욕실 하나, 최대 네 명. 사진의 침대는 세 개입니다. 전용 출입구와 무료 주차가 있습니다. 조용한 주택가입니다.",
     },
   },
   b: {
@@ -68,39 +68,39 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "Casa Antonio B｜木の内装とプロジェクターの札幌アパート",
       description:
-        "同じ家の2階。約70㎡、ツインベッド3台、定員3名。木の内装と居間のプロジェクター。専用入口と無料駐車場があります。",
+        "同じ家の2階、階段で上がります。約70㎡、ツインベッド3台、定員3名。木の内装と居間のプロジェクター。麻生駅から徒歩約5分、無料駐車場があります。 麻生の住宅街です。",
     },
     zh: {
       title: "Casa Antonio B｜木质公寓，客厅有投影仪",
       description:
-        "同一栋房子的二楼。约70平方米，三张单人床，最多三位客人。木质室内，起居室有投影仪。独立入口，免费停车。",
+        "同一栋房子的二楼，走楼梯上去。约70平方米，三张单人床，最多三位客人。木质室内，起居室有投影仪。离麻生站步行约五分钟，免费停车。 这是安静的住宅街。 厨房可以自己做饭。",
     },
     ko: {
       title: "Casa Antonio B｜나무 인테리어와 프로젝터 아파트",
       description:
-        "같은 집 2층. 약 70㎡, 싱글 침대 세 개, 최대 세 명. 나무 실내와 거실 프로젝터. 전용 출입구와 무료 주차가 있습니다.",
+        "같은 집 2층. 약 70㎡, 싱글 침대 세 개, 최대 세 명. 나무 실내와 거실 프로젝터. 전용 출입구와 무료 주차가 있습니다. 조용한 주택가입니다.",
     },
   },
   neighborhood: {
     en: {
       title: "Asabu, Kita-ku Guide · Subway, AEON, Food · Casa Antonio",
       description:
-        "A walk from the house: Asabu Station, AEON, calma, ramen, parks, and a seitai clinic. South on the subway when you want the city.",
+        "A walk from the house: Asabu Station, AEON, calma, ramen, parks, and a seitai clinic. South on the subway when you want the city. Check the day’s hours.",
     },
     ja: {
       title: "麻生・北区の案内｜地下鉄、イオン、食事｜Casa Antonio",
       description:
-        "家のまわり。麻生駅、イオン、calma、ラーメン、公園、整体。街へ出るときは地下鉄で南へ。営業時間はその日に確認してください。",
+        "家のまわり。麻生駅、イオン、calma、ラーメン、公園、整体。街へ出るときは地下鉄で南へ。営業時間はその日に確認してください。徒歩で足りる用事をまとめています。",
     },
     zh: {
       title: "麻生·北区指南｜地铁、永旺、用餐｜Casa Antonio",
       description:
-        "房子附近：麻生站、永旺、calma、拉面、公园和整体。想进城就坐地铁往南。营业时间请当天确认。",
+        "房子附近：麻生站、永旺、calma、拉面、公园和整体。想进城就坐地铁往南。营业时间请当天确认。把从这栋房子步行能到的事情写在这一页。 这是安静的住宅街。 厨房可以自己做饭。",
     },
     ko: {
       title: "아사부·기타구 안내｜지하철, 이온, 식사｜Casa Antonio",
       description:
-        "집 근처. 아사부역, 이온, calma, 라멘, 공원, 정체. 시내로 갈 때는 지하철로 남쪽. 영업시간은 당일에 확인하세요.",
+        "집 근처. 아사부역, 이온, calma, 라멘, 공원, 정체. 시내로 갈 때는 지하철로 남쪽. 영업시간은 당일에 확인하세요. 조용한 주택가입니다.",
     },
   },
   "day-trips": {
@@ -112,12 +112,12 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "札幌からの日帰り｜小樽、富良野、手稲｜Casa Antonio",
       description:
-        "行き先は一つにして、同じ扉に戻る。小樽、登別、定山渓、富良野と美瑛、頭大仏、洞爺湖、サッポロテイネ。時刻と運賃はその日に確認を。",
+        "行き先は一つにして、同じ扉に戻る。小樽、登別、定山渓、富良野と美瑛、頭大仏、洞爺湖、サッポロテイネ。北区の家から出る一日です。時刻と運賃はその日に確認を。 麻生の住宅街です。",
     },
     zh: {
       title: "札幌一日游｜小樽、富良野、手稻｜Casa Antonio",
       description:
-        "选一个方向，再回到同一扇门。小樽、登别、定山溪、富良野与美瑛、头大佛、洞爷湖，或札幌手稻。时刻和票价请当天确认。",
+        "选一个方向，再回到同一扇门。小樽、登别、定山溪、富良野与美瑛、头大佛、洞爷湖，或札幌手稻。从北区的家出发。时刻和票价请当天确认。 这是安静的住宅街。 厨房可以自己做饭。",
     },
     ko: {
       title: "삿포로 당일치기｜오타루, 후라노, 데이네｜Casa Antonio",
@@ -156,17 +156,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "新千歳空港から麻生へ｜Casa Antonio",
       description:
-        "着くのは新千歳空港です。丘珠ではありません。快速エアポートで札幌駅へ、南北線で麻生まで北上し、駅から徒歩およそ5分です。",
+        "着くのは新千歳空港です。丘珠ではありません。快速エアポートで札幌駅へ、南北線で麻生まで北上し、駅から徒歩およそ5分です。運賃はその日に確認してください。 麻生の住宅街です。",
     },
     zh: {
       title: "从新千岁机场到麻生｜Casa Antonio",
       description:
-        "国际航班到新千岁机场，不是丘珠。机场快速到札幌站，再乘南北线往北到麻生，步行约五分钟到门口。",
+        "国际航班到新千岁机场，不是市内的丘珠。机场快速到札幌站，再乘南北线往北到终点麻生，步行约五分钟到门口。票价请当天确认。 这是安静的住宅街。 厨房可以自己做饭。 预订只在 Airbnb。",
     },
     ko: {
       title: "신치토세 공항에서 아사부까지｜Casa Antonio",
       description:
-        "도착 공항은 신치토세입니다. 오카다마가 아닙니다. 공항 쾌속으로 삿포로역, 난보쿠선으로 아사부까지 북상한 뒤 도보 약 5분입니다.",
+        "도착 공항은 신치토세입니다. 오카다마가 아닙니다. 공항 쾌속으로 삿포로역, 난보쿠선으로 아사부까지 북상한 뒤 도보 약 5분입니다. 조용한 주택가입니다.",
     },
   },
   "snow-festival": {
@@ -178,39 +178,39 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "さっぽろ雪まつりへ泊まる｜Casa Antonio",
       description:
-        "雪まつりの拠点は、静かな北区の家。麻生から南北線で南へ、大通とすすき野です。2月の会期は市がその年に発表します。",
+        "雪まつりの拠点は、静かな北区の家。麻生から南北線で南へ、大通とすすき野です。2月の会期は市がその年に発表します。終われば同じ扉に戻ります。 麻生の住宅街です。 キッチンがあります。",
     },
     zh: {
       title: "札幌雪祭住宿｜Casa Antonio",
       description:
-        "把安静的北区当作雪祭的基地。从麻生乘南北线往南，到大通和薄野。二月的会期由市政府当年公布。",
+        "把安静的北区当作雪祭的基地。从麻生乘南北线往南，到大通和薄野。二月的会期由市政府当年公布。结束后回到离车站步行约五分钟的家。 这是安静的住宅街。 厨房可以自己做饭。",
     },
     ko: {
       title: "삿포로 눈축제에 머무르기｜Casa Antonio",
       description:
-        "눈축제의 기점은 조용한 기타구의 집. 아사부에서 난보쿠선으로 남쪽, 오도리와 스스키노. 2월 일정은 시가 그해 발표합니다.",
+        "눈축제의 기점은 조용한 기타구의 집. 아사부에서 난보쿠선으로 남쪽, 오도리와 스스키노. 2월 일정은 시가 그해 발표합니다. 조용한 주택가입니다.",
     },
   },
   "teine-ski": {
     en: {
       title: "Sapporo Teine Ski Base · Casa Antonio",
       description:
-        "Work in the morning, ski Sapporo Teine in the afternoon, and come back to the same door. Olympia and Highland. Free parking at the house.",
+        "Work in the morning, ski Sapporo Teine in the afternoon, and come back to the same door. Olympia and Highland. Free parking at the house. Check the day.",
     },
     ja: {
       title: "サッポロテイネの拠点｜Casa Antonio",
       description:
-        "午前は部屋で仕事、午後はサッポロテイネ、夜は同じ扉。オリンピアとハイランド。家の前の駐車場は無料です。",
+        "午前は部屋で仕事、午後はサッポロテイネ、夜は同じ扉。オリンピアとハイランド。家は麻生駅から徒歩約5分で、家の前の駐車場は無料です。 麻生の住宅街です。 キッチンがあります。",
     },
     zh: {
       title: "札幌手稻滑雪的住处｜Casa Antonio",
       description:
-        "上午在房间工作，下午去札幌手稻，晚上回到同一扇门。奥林匹亚与高地。门前停车免费。",
+        "上午在房间工作，下午去札幌手稻，晚上回到同一扇门。奥林匹亚与高地。家离麻生站步行约五分钟。门前停车免费，厨房可以自己做晚饭。 这是安静的住宅街。 厨房可以自己做饭。",
     },
     ko: {
       title: "삿포로 데이네 스키 베이스｜Casa Antonio",
       description:
-        "오전에는 방에서 일하고, 오후에 삿포로 데이네, 밤에는 같은 문. 올림피아와 하일랜드. 집 앞 주차는 무료입니다.",
+        "오전에는 방에서 일하고, 오후에 삿포로 데이네, 밤에는 같은 문. 올림피아와 하일랜드. 집 앞 주차는 무료입니다. 조용한 주택가입니다. 주방이 있습니다.",
     },
   },
   "long-stay": {
@@ -222,17 +222,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "札幌の長期滞在｜Casa Antonio",
       description:
-        "数週間、または数ヶ月。AでもBでも、一泊を積み上げた額より低い料金です。Airbnbから連絡してください。支払う前に、文面で料金を決めます。",
+        "数週間、または数ヶ月。AでもBでも、一泊を積み上げた額より低い料金です。麻生駅から徒歩約5分、キッチン付き。Airbnbから連絡し、支払う前に文面で決めます。 麻生の住宅街です。",
     },
     zh: {
       title: "在札幌住几周或几个月｜Casa Antonio",
       description:
-        "A 或 B 都可以按周、按月住，价格低于把每晚房价加在一起。通过 Airbnb 联系。付款前，费用用书面确认。",
+        "A 或 B 都可以按周、按月住，价格低于把每晚房价加在一起。离麻生站步行约五分钟，有厨房。通过 Airbnb 联系。付款前，费用用书面确认。 这是安静的住宅街。",
     },
     ko: {
       title: "삿포로 장기 숙박｜Casa Antonio",
       description:
-        "몇 주, 또는 몇 달. A도 B도, 1박 요금을 쌓은 금액보다 낮습니다. Airbnb로 문의하세요. 내기 전에 요금을 글로 정합니다.",
+        "몇 주, 또는 몇 달. A도 B도, 1박 요금을 쌓은 금액보다 낮습니다. Airbnb로 문의하세요. 내기 전에 요금을 글로 정합니다. 조용한 주택가입니다.",
     },
   },
   faq: {
@@ -249,7 +249,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     zh: {
       title: "预订前的问题｜Casa Antonio",
       description:
-        "入住 16:00–23:00，退房不晚于 10:00，自助入住，免费停车，麻生站，新千岁机场，以及房屋规则。没有的事情，这里不写。",
+        "入住 16:00–23:00，退房不晚于 10:00，自助入住，免费停车，麻生站步行约五分钟，新千岁机场，以及房屋规则。没有的事情，这里不写。 这是安静的住宅街。",
     },
     ko: {
       title: "예약 전에 묻는 것｜Casa Antonio",
@@ -257,25 +257,47 @@ const META: Record<PageId, Record<Lang, Meta>> = {
         "체크인 16:00–23:00, 체크아웃 10:00까지, 셀프 체크인, 무료 주차, 아사부역, 신치토세 공항, 하우스 룰. 없는 일은 적지 않습니다.",
     },
   },
+  combo: {
+    en: {
+      title: "Sapporo and the Shiraoi Coast · Casa Antonio",
+      description:
+        "Two or three nights: Casa Antonio in Kita-ku, then Kojohama Cabins on the Shiraoi coast. About an hour and fifteen minutes by car, or JR toward Tomakomai.",
+    },
+    ja: {
+      title: "札幌と白老の海岸｜Casa Antonio",
+      description:
+        "北区の Casa Antonio に泊まってから、白老の海岸にある Kojohama Cabins へ。車でおよそ1時間15分。JRは苫小牧方面です。それぞれ別に予約します。",
+    },
+    zh: {
+      title: "札幌与白老海岸｜Casa Antonio",
+      description:
+        "先住札幌北区的 Casa Antonio，再到白老海岸的 Kojohama Cabins。开车大约一小时十五分钟。JR 往苫小牧方向。两栋房子各自预订，没有套餐价。",
+    },
+    ko: {
+      title: "삿포로와 시라오이 해안｜Casa Antonio",
+      description:
+        "기타구의 Casa Antonio에 머문 뒤, 시라오이 해안의 Kojohama Cabins로. 차로 약 1시간 15분. JR은 도마코마이 방면. 집은 각각 예약합니다.",
+    },
+  },
   privacy: {
     en: {
       title: "Privacy · Casa Antonio",
       description:
-        "What this site stores: a language preference, and analytics through Google Tag Manager. Bookings stay on Airbnb. No account on this site.",
+        "What this site stores: a language preference, and analytics through Google Tag Manager. Bookings stay on Airbnb. No account on this site. No booking form here.",
     },
     ja: {
       title: "プライバシー｜Casa Antonio",
       description:
-        "このサイトが覚えるのは言語の選択と、Googleタグマネージャーによる計測です。予約はAirbnbです。このサイトにアカウントはありません。",
+        "このサイトが覚えるのは言語の選択と、Googleタグマネージャーによる計測です。予約はAirbnbです。このサイトにアカウントはありません。 麻生の住宅街です。",
     },
     zh: {
       title: "隐私｜Casa Antonio",
-      description: "本站只记住语言选择，并通过 Google Tag Manager 做统计。预订在 Airbnb。本站没有账户。",
+      description: "本站只记住语言选择，并通过 Google Tag Manager 做统计。预订在 Airbnb。房子离麻生站步行约五分钟。本站没有账户，也不直接收款。 这是安静的住宅街。",
     },
     ko: {
       title: "개인정보｜Casa Antonio",
       description:
-        "이 사이트가 기억하는 것은 언어 선택과 Google 태그 매니저 측정입니다. 예약은 Airbnb입니다. 이 사이트에 계정은 없습니다.",
+        "이 사이트가 기억하는 것은 언어 선택과 Google 태그 매니저 측정입니다. 예약은 Airbnb입니다. 이 사이트에 계정은 없습니다. 조용한 주택가입니다.",
     },
   },
 };
@@ -297,6 +319,7 @@ export const OG_IMAGE: Record<PageId, string> = {
   "snow-festival": "/photos/og-snow.jpg",
   "teine-ski": "/photos/og-teine.jpg",
   "long-stay": "/photos/og-long-stay.jpg",
+  combo: "/photos/og-day-trips.jpg",
   faq: "/photos/og-faq.jpg",
   privacy: "/photos/og-home.jpg",
 };
@@ -328,6 +351,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     "snow-festival": "Snow Festival",
     "teine-ski": "Sapporo Teine",
     "long-stay": "Long stays",
+    combo: "Sapporo and the coast",
     faq: "Questions",
     privacy: "Privacy",
   },
@@ -342,6 +366,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     "snow-festival": "雪まつり",
     "teine-ski": "サッポロテイネ",
     "long-stay": "長期滞在",
+    combo: "札幌と白老",
     faq: "質問",
     privacy: "プライバシー",
   },
@@ -356,6 +381,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     "snow-festival": "雪祭",
     "teine-ski": "札幌手稻",
     "long-stay": "长期住宿",
+    combo: "札幌与白老",
     faq: "问题",
     privacy: "隐私",
   },
@@ -370,6 +396,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     "snow-festival": "눈축제",
     "teine-ski": "삿포로 데이네",
     "long-stay": "장기 숙박",
+    combo: "삿포로와 시라오이",
     faq: "질문",
     privacy: "개인정보",
   },
@@ -438,8 +465,8 @@ function apartment(id: "a" | "b", lang: Lang) {
     name: isA ? "Casa Antonio A" : "Casa Antonio B",
     url: absolutePage(page, lang),
     image: isA
-      ? [`${ORIGIN}/photos/living.jpg`, `${ORIGIN}/photos/bedroom.jpg`, `${ORIGIN}/photos/kitchen.jpg`]
-      : [`${ORIGIN}/photos/exterior.jpg`, `${ORIGIN}/photos/entry.jpg`, `${ORIGIN}/photos/street.jpg`],
+      ? [`${ORIGIN}/photos/living-1600.webp`, `${ORIGIN}/photos/bedroom-1600.webp`, `${ORIGIN}/photos/kitchen-1600.webp`]
+      : [`${ORIGIN}/photos/exterior-1333.webp`, `${ORIGIN}/photos/entry-1600.webp`, `${ORIGIN}/photos/street-1067.webp`],
     floorSize: {
       "@type": "QuantitativeValue",
       value: isA ? 100 : 70,
@@ -641,6 +668,22 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
   ],
 };
 
+function article(page: PageId, lang: Lang) {
+  const meta = pageMeta(page, lang);
+  return {
+    "@type": "Article",
+    headline: meta.title,
+    description: meta.description,
+    image: `${ORIGIN}${OG_IMAGE[page]}`,
+    inLanguage: HTML_LANG[lang],
+    datePublished: "2026-09-30",
+    dateModified: LASTMOD,
+    author: { "@type": "Organization", name: "Casa Antonio", url: `${ORIGIN}/` },
+    publisher: { "@type": "Organization", name: "Casa Antonio", url: `${ORIGIN}/` },
+    mainEntityOfPage: absolutePage(page, lang),
+  };
+}
+
 export function jsonLd(page: PageId, lang: Lang) {
   const graph: object[] = [breadcrumb(page, lang)];
   if (page === "home") {
@@ -654,6 +697,17 @@ export function jsonLd(page: PageId, lang: Lang) {
   if (page === "a" || page === "b") graph.push(apartment(page, lang));
   if (page === "faq" || page === "arrival") {
     graph.push({ "@type": "FAQPage", mainEntity: faqEntities(lang) });
+  }
+  if (
+    page === "access" ||
+    page === "snow-festival" ||
+    page === "teine-ski" ||
+    page === "long-stay" ||
+    page === "neighborhood" ||
+    page === "day-trips" ||
+    page === "combo"
+  ) {
+    graph.push(article(page, lang));
   }
   return { "@context": "https://schema.org", "@graph": graph };
 }

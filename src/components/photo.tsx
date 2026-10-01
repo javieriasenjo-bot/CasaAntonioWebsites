@@ -1,4 +1,4 @@
-import { photoWidths } from "@/lib/photo-manifest";
+import { photoMeta } from "@/lib/photo-manifest";
 
 function stemOf(src: string) {
   const name = src.split("/").pop() ?? src;
@@ -19,7 +19,8 @@ export function Photo({
   priority?: boolean;
 }) {
   const stem = stemOf(src);
-  const widths = photoWidths[stem];
+  const meta = photoMeta[stem];
+  const widths = meta?.widths;
   if (!widths?.length) {
     return <img className={className} src={src} alt={alt} />;
   }
@@ -34,6 +35,8 @@ export function Photo({
         srcSet={set("webp")}
         sizes={sizes}
         alt={alt}
+        width={meta.width}
+        height={meta.height}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
         decoding="async"

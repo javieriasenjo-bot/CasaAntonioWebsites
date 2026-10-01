@@ -352,6 +352,44 @@ a.quick-reserve-trigger {
   text-wrap: pretty;
 }
 
+.selling-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.7rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.selling-points li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0.2rem 0.15rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+.selling-points svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: none;
+}
+
+.guide-photo {
+  width: 100%;
+  height: auto;
+  max-height: 28rem;
+  object-fit: cover;
+  margin: 1.2rem 0 0;
+}
+
+.reviews {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin: 2rem auto 0;
+}
+
 .hero-actions,
 .stay-actions {
   display: flex;
@@ -1314,9 +1352,21 @@ body.lightbox-open .quick-reserve {
     width: calc(100% - 1.6rem);
   }
 
+  .hero-img {
+    object-position: center 85%;
+  }
+
   .hero {
     min-height: 24rem;
     height: calc(100svh - 8.5rem);
+  }
+
+  .site-header {
+    transition: transform 0.25s ease;
+  }
+
+  .site-header[data-hidden="true"] {
+    transform: translateY(-100%);
   }
 
   .page-hero {
@@ -1430,6 +1480,9 @@ body.lightbox-open .quick-reserve {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
   html {
     scroll-behavior: auto;
   }

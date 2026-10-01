@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://casaantonio.jp/sitemap.xml

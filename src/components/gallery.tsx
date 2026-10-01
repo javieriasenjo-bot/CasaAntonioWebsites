@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Photo } from "@/components/photo";
-import type { Photo as HousePhoto } from "@/data/content";
+import type { Photo as HousePhoto } from "@/data/facts";
 import type { Lang } from "@/lib/i18n";
 
 export function Gallery({

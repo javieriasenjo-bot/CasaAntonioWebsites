@@ -40,6 +40,7 @@ export const PAGE_IDS = [
   "snow-festival",
   "teine-ski",
   "long-stay",
+  "combo",
   "faq",
   "privacy",
 ] as const;
@@ -57,6 +58,7 @@ export const PAGE_SLUG: Record<PageId, string> = {
   "snow-festival": "snow-festival",
   "teine-ski": "teine-ski",
   "long-stay": "long-stay",
+  combo: "combo",
   faq: "faq",
   privacy: "privacy",
 };
@@ -71,6 +73,7 @@ const SLUG_PAGE: Record<string, PageId> = {
   "snow-festival": "snow-festival",
   "teine-ski": "teine-ski",
   "long-stay": "long-stay",
+  combo: "combo",
   faq: "faq",
   privacy: "privacy",
 };
