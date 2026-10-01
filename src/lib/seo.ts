@@ -1,4 +1,5 @@
 import { AIRBNB, MAP } from "@/data/facts";
+import { photoFile } from "@/lib/photo-manifest";
 import { FONT_STYLESHEET } from "@/lib/fonts";
 import {
   HTML_LANG,
@@ -19,7 +20,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Sapporo Apartments near Asabu Station · Casa Antonio",
       description:
-        "Two private apartments in one Kita-ku house, about five minutes on foot from Asabu Station, with free parking. Book Casa Antonio A or B on Airbnb.",
+        "Two private apartments in one Kita-ku house, about five minutes on foot from Asabu Station. Free parking, one car each. Book A or B on Airbnb.",
     },
     ja: {
       title: "札幌・麻生駅徒歩5分の貸切アパートメント｜Casa Antonio",
@@ -41,22 +42,22 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Casa Antonio A · 100 m² Sapporo Apartment, 4 Guests, Parking",
       description:
-        "Ground-floor apartment in Kita-ku, about 100 m², one bedroom and one bath, up to four guests. Three beds in the photos. Private door and free parking.",
+        "Ground-floor apartment in Kita-ku, about 100 m², two bedrooms and one living room, up to four guests. One free parking space. Private door.",
     },
     ja: {
       title: "Casa Antonio A｜札幌・約100㎡・4名まで・駐車場付き",
       description:
-        "北区の1階、約100㎡、寝室1・浴室1、定員4名。写真のベッドは3台です。麻生駅から徒歩約5分。専用入口と敷地内の無料駐車場がある静かな家です。 麻生の住宅街です。",
+        "北区の1階、約100㎡。寝室2、居間1、浴室1、定員4名。ベッドは各寝室に2台です。麻生駅から徒歩約5分。専用入口と、無料の駐車場が1台あります。",
     },
     zh: {
       title: "Casa Antonio A｜札幌约100㎡公寓，可住4人，可停车",
       description:
-        "北区一楼，约100平方米，一间卧室、一间浴室，最多四位客人。照片里是三张床。离麻生站步行约五分钟。独立入口，院内免费停车，安静的住宅街。 这是安静的住宅街。 厨房可以自己做饭。",
+        "北区一楼，约100平方米，两间卧室、一间起居室、一间浴室，最多四位客人。每间卧室两张床。离麻生站步行约五分钟。独立入口，每套公寓免费停车一位。",
     },
     ko: {
       title: "Casa Antonio A｜삿포로 약 100㎡·4명·주차",
       description:
-        "기타구 1층, 약 100㎡, 침실 하나, 욕실 하나, 최대 네 명. 사진의 침대는 세 개입니다. 전용 출입구와 무료 주차가 있습니다. 조용한 주택가입니다.",
+        "기타구 1층, 약 100㎡, 침실 둘과 거실, 최대 네 명. 침실마다 침대 두 개입니다. 전용 출입구와 무료 주차 한 대가 있습니다. 조용한 주택가입니다.",
     },
   },
   b: {
@@ -129,22 +130,22 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Check-in, Parking & Arrival · Casa Antonio Sapporo",
       description:
-        "Check-in 16:00–23:00, self check-in. Check-out by 10:00. Free private parking. No smoking, no pets, no parties. Licenses M010045173 and M010045174.",
+        "Check-in 16:00–23:00, self check-in. Leave any time until 10:00. Free parking, one car per apartment. No smoking, no pets, no parties.",
     },
     ja: {
       title: "チェックイン・駐車場・到着｜Casa Antonio 札幌",
       description:
-        "チェックインは16:00–23:00、セルフチェックイン。チェックアウトは10:00まで。駐車場は無料。禁煙、ペット不可、パーティー不可。届出番号はAがM010045173、BがM010045174。",
+        "チェックインは16:00–23:00、セルフチェックイン。出発は10:00まで、それより前でもかまいません。駐車場は無料で各室1台。禁煙、ペット不可、パーティー不可。",
     },
     zh: {
       title: "入住、停车与到达｜Casa Antonio 札幌",
       description:
-        "入住 16:00–23:00，自助入住。退房不晚于 10:00。院内免费停车。禁烟、不可带宠物、不可开派对。备案号 A 为 M010045173，B 为 M010045174。",
+        "入住 16:00–23:00，自助入住。10:00 前随时可离开。每套公寓免费停车一辆。禁烟、不可带宠物、不可开派对。备案号仍是 A M010045173、B M010045174。",
     },
     ko: {
       title: "체크인·주차·도착｜Casa Antonio 삿포로",
       description:
-        "체크인 16:00–23:00, 셀프 체크인. 체크아웃은 10:00까지. 주차는 무료. 금연, 반려동물 불가, 파티 불가. 신고 번호 A M010045173, B M010045174.",
+        "체크인 16:00–23:00, 셀프 체크인. 10:00 전이라면 언제든 퇴실. 주차는 무료, 아파트마다 한 대. 금연, 반려동물 불가, 파티 불가.",
     },
   },
   access: {
@@ -428,7 +429,7 @@ function lodging() {
     checkinTime: "16:00",
     checkoutTime: "10:00",
     amenityFeature: [
-      { "@type": "LocationFeatureSpecification", name: "Free private parking", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Free parking, one car per apartment", value: true },
       { "@type": "LocationFeatureSpecification", name: "Self check-in", value: true },
       { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
       { "@type": "LocationFeatureSpecification", name: "Non-smoking", value: true },
@@ -472,15 +473,15 @@ function apartment(id: "a" | "b", lang: Lang) {
       value: isA ? 100 : 70,
       unitCode: "MTK",
     },
-    numberOfBedrooms: 1,
+    numberOfBedrooms: isA ? 2 : 1,
     numberOfBathroomsTotal: 1,
     occupancy: { "@type": "QuantitativeValue", maxValue: isA ? 4 : 3 },
     bed: isA
-      ? [{ "@type": "BedDetails", numberOfBeds: 3 }]
+      ? [{ "@type": "BedDetails", numberOfBeds: 4 }]
       : [{ "@type": "BedDetails", typeOfBed: "Twin", numberOfBeds: 3 }],
     containedInPlace: { "@type": "LodgingBusiness", name: "Casa Antonio", url: `${ORIGIN}/` },
     amenityFeature: [
-      { "@type": "LocationFeatureSpecification", name: "Free private parking", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Free parking, one car per apartment", value: true },
       { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
       { "@type": "LocationFeatureSpecification", name: "Kitchen", value: true },
       ...(isA ? [] : [{ "@type": "LocationFeatureSpecification", name: "Projector", value: true }]),
@@ -505,11 +506,11 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "What time is check-out?",
-      a: "By 10:00. You may leave from 06:00.",
+      a: "By 10:00. You may leave any time before that.",
     },
     {
       q: "Is parking available?",
-      a: "Yes. Free, private, on site, on the apron in front of the doors.",
+      a: "Yes. Free, one car per apartment, on the apron in front of the doors.",
     },
     {
       q: "Which station is nearest?",
@@ -517,23 +518,23 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "Which airport do I fly into?",
-      a: "New Chitose Airport. Okadama, in the city, is not the airport for this stay. From New Chitose, take the JR Airport rapid to Sapporo Station, then the Namboku line north to Asabu.",
+      a: "New Chitose Airport (CTS) is the airport this guide is written for. A direct Chuo Bus runs to Asabu Station. The other usual way is the JR Airport rapid to Sapporo Station, then the Namboku line north. Okadama is a smaller city airport; use it only if your ticket actually lands there.",
     },
     {
       q: "Can I smoke, bring a pet, or have a party?",
       a: "No smoking anywhere on the property, including the entrances and the parking area. No pets. No parties.",
     },
     {
-      q: "Is there a damage deposit?",
-      a: "A damage deposit of up to ¥15,000 may be charged if something is broken.",
+      q: "What if something is damaged?",
+      a: "The damage charge is at least ¥15,000.",
     },
     {
       q: "How many people can stay?",
-      a: "Casa Antonio A is listed for up to four guests. The photographs show three beds. Casa Antonio B has three twin beds and is listed for up to three guests. The guest checking in should be 18 or older. Children are welcome. Only people named on the booking stay here.",
+      a: "Casa Antonio A sleeps up to four guests: two separate bedrooms, two beds in each, and one living room. Casa Antonio B sleeps up to three guests, with three single beds in one bedroom. The guest checking in should be 18 or older. Children are welcome. Only people named on the booking stay here.",
     },
     {
       q: "How do long stays work?",
-      a: "Write through Airbnb with your dates. A stay of weeks or months is priced below stacked nightly rates. The rate is agreed in writing before you pay. This site does not take the booking.",
+      a: "Write through Airbnb with your dates and ask for a rate. The rate for a stay of weeks or months is agreed in writing before you pay. This site does not take the booking and does not promise a discount.",
     },
     {
       q: "Is there Wi-Fi?",
@@ -547,11 +548,11 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "チェックアウトは何時ですか？",
-      a: "10:00までです。06:00から出発できます。",
+      a: "10:00までです。それより前なら、いつ出発してもかまいません。",
     },
     {
       q: "駐車場はありますか？",
-      a: "あります。無料で、専用、敷地内です。扉の前のスペースです。",
+      a: "あります。無料で、各アパートメントに1台、扉の前です。",
     },
     {
       q: "最寄り駅はどこですか？",
@@ -559,7 +560,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "どの空港に着きますか？",
-      a: "新千歳空港です。市内の丘珠空港は、この滞在の空港ではありません。新千歳から快速エアポートで札幌駅へ、南北線で麻生まで北上します。",
+      a: "新千歳空港（CTS）が、この案内の空港です。麻生駅までの直行バスがあります。もう一つの普通の行き方は、快速エアポートで札幌駅、南北線で北上です。丘珠は市内の小さな空港で、チケットがそこに着くときだけ使います。",
     },
     {
       q: "喫煙、ペット、パーティーはできますか？",
@@ -567,15 +568,15 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "損害金はありますか？",
-      a: "壊したものがある場合、最大15,000円の損害金をいただくことがあります。",
+      a: "破損がある場合、損害金は15,000円からです。",
     },
     {
       q: "何名まで泊まれますか？",
-      a: "Casa Antonio Aの定員は4名です。写真のベッドは3台です。Bはツインベッド3台、定員3名です。チェックインする方は18歳以上。お子さまは歓迎します。泊まれるのは予約に名前のある人だけです。",
+      a: "Casa Antonio Aの定員は4名です。寝室は2つで、それぞれベッドが2台、居間が1つです。Bはシングルベッド3台、定員3名です。チェックインする方は18歳以上。お子さまは歓迎します。泊まれるのは予約に名前のある人だけです。",
     },
     {
       q: "長期滞在はどうしますか？",
-      a: "日程を添えてAirbnbから連絡してください。数週間や数ヶ月は、一泊料金を積み上げた額より低い料金です。支払う前に文面で決めます。このサイトでは予約を受けません。",
+      a: "日程を添えてAirbnbから料金を尋ねてください。数週間や数ヶ月の料金は、支払う前に文面で決めます。このサイトでは予約を受けず、割引を約束しません。",
     },
     {
       q: "Wi-Fiはありますか？",
@@ -589,11 +590,11 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "几点退房？",
-      a: "不晚于 10:00。早上 06:00 起可以离开。",
+      a: "不晚于 10:00。在那之前，随时可以离开。",
     },
     {
       q: "有停车位吗？",
-      a: "有。免费、专用、在院内，就在门前。",
+      a: "有。免费，每套公寓一辆，就在门前。",
     },
     {
       q: "最近的车站是哪一站？",
@@ -601,7 +602,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "飞到哪个机场？",
-      a: "新千岁机场。市内的丘珠机场不是这次住宿的机场。从新千岁乘机场快速到札幌站，再乘南北线往北到麻生。",
+      a: "这份指南写的是新千岁机场（CTS）。有直达麻生站的中央巴士。另一条常用路是机场快速到札幌站，再乘南北线往北。丘珠是市内的小机场，只有机票降落在那里时才用。",
     },
     {
       q: "可以吸烟、带宠物或办派对吗？",
@@ -609,15 +610,15 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "有损坏押金吗？",
-      a: "如果有东西损坏，可能会收取最高 15,000 日元的赔偿。",
+      a: "如果有东西损坏，赔偿从 15,000 日元起。",
     },
     {
       q: "可以住几个人？",
-      a: "Casa Antonio A 最多四位客人。照片里是三张床。B 有三张单人床，最多三位客人。办理入住的客人须年满 18 岁。欢迎孩子。只有预订上的人可以住。",
+      a: "Casa Antonio A 最多四位客人：两间分开的卧室，每间两张床，另有一间起居室。B 是一间卧室、三张单人床，最多三位客人。办理入住的客人须年满 18 岁。欢迎孩子。只有预订上的人可以住。",
     },
     {
       q: "长期住怎么订？",
-      a: "带着日期，通过 Airbnb 联系。住几周或几个月，价格低于把每晚房价加在一起。付款前用书面确认。这个网站不收款。",
+      a: "带着日期，通过 Airbnb 询问价格。住几周或几个月的价格，付款前用书面确认。这个网站不收款，也不承诺折扣。",
     },
     {
       q: "有 Wi-Fi 吗？",
@@ -631,11 +632,11 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "체크아웃은 몇 시인가요?",
-      a: "10:00까지입니다. 06:00부터 나갈 수 있습니다.",
+      a: "10:00까지입니다. 그 전이라면 언제든 나갈 수 있습니다.",
     },
     {
       q: "주차가 되나요?",
-      a: "됩니다. 무료이고, 전용이며, 부지 안입니다. 문 앞 공간입니다.",
+      a: "됩니다. 무료이고, 아파트마다 한 대, 문 앞입니다.",
     },
     {
       q: "가장 가까운 역은 어디인가요?",
@@ -643,7 +644,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "어느 공항에 내리나요?",
-      a: "신치토세 공항입니다. 시내의 오카다마 공항은 이 숙박의 공항이 아닙니다. 신치토세에서 공항 쾌속으로 삿포로역, 난보쿠선으로 아사부까지 북상합니다.",
+      a: "이 안내의 공항은 신치토세(CTS)입니다. 아사부역까지 직행 버스가 있습니다. 다른 보통의 길은 공항 쾌속으로 삿포로역, 그다음 난보쿠선으로 북상입니다. 오카다마는 시내의 작은 공항이고, 표가 거기에 내릴 때만 씁니다.",
     },
     {
       q: "흡연, 반려동물, 파티가 되나요?",
@@ -651,15 +652,15 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "손해 보증금이 있나요?",
-      a: "파손된 것이 있으면 최대 15,000엔의 손해금을 받을 수 있습니다.",
+      a: "파손된 것이 있으면 손해금은 15,000엔부터입니다.",
     },
     {
       q: "몇 명까지 묵나요?",
-      a: "Casa Antonio A는 최대 네 명입니다. 사진의 침대는 세 개입니다. B는 싱글 침대 세 개, 최대 세 명입니다. 체크인하는 분은 18세 이상. 어린이는 환영합니다. 예약에 이름이 있는 사람만 묵습니다.",
+      a: "Casa Antonio A는 최대 네 명입니다. 침실이 둘이고, 각각 침대가 두 개, 거실은 하나입니다. B는 싱글 침대 세 개, 최대 세 명입니다. 체크인하는 분은 18세 이상. 어린이는 환영합니다. 예약에 이름이 있는 사람만 묵습니다.",
     },
     {
       q: "장기 숙박은 어떻게 하나요?",
-      a: "날짜를 적어 Airbnb로 연락하세요. 몇 주나 몇 달은, 1박 요금을 쌓은 금액보다 낮습니다. 내기 전에 글로 정합니다. 이 사이트에서는 예약을 받지 않습니다.",
+      a: "날짜를 적어 Airbnb로 요금을 물어보세요. 몇 주나 몇 달의 요금은 내기 전에 글로 정합니다. 이 사이트는 예약을 받지 않고, 할인을 약속하지 않습니다.",
     },
     {
       q: "Wi-Fi가 있나요?",
@@ -728,8 +729,8 @@ export function headFor(page: PageId, lang: Lang) {
       rel: "preload",
       as: "image",
       type: "image/avif",
-      href: `/photos/${hero}-800.avif`,
-      imageSrcSet: `/photos/${hero}-800.avif 800w, /photos/${hero}-1600.avif 1600w`,
+      href: photoFile(hero, 800, "avif"),
+      imageSrcSet: `${photoFile(hero, 800, "avif")} 800w, ${photoFile(hero, 1600, "avif")} 1600w`,
       imageSizes: "100vw",
       fetchPriority: "high",
     });

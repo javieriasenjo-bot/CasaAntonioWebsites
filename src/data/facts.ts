@@ -36,9 +36,9 @@ export const apartmentAPhotos: Photo[] = [
   p("/photos/kitchen.jpg", "Kitchen sink, cooktop, and refrigerator", "シンク、コンロ、冷蔵庫", "厨房水槽、炉灶与冰箱", "싱크, 가스레인지, 냉장고"),
   p("/photos/open.jpg", "Looking from the living room toward the kitchen and hall", "居間からキッチンと廊下を見る", "从起居室望向厨房和走廊", "거실에서 주방과 복도를 바라본 모습"),
   p("/photos/sofa.jpg", "The grey sofa under the high window", "高窓の下のグレーのソファ", "高窗下的灰色沙发", "높은 창 아래의 회색 소파"),
-  p("/photos/bedroom.jpg", "Bedroom with three beds", "ベッド3台の寝室", "三张床的卧室", "침대 세 개의 침실"),
-  p("/photos/bedroom-2.jpg", "The three beds from the window side", "窓側から見た3台のベッド", "从窗边看三张床", "창가에서 본 침대 세 개"),
-  p("/photos/bedroom-3.jpg", "Beds, closet, and the bedroom window", "ベッドとクローゼット、寝室の窓", "床、衣柜与卧室的窗", "침대, 옷장, 침실 창"),
+  p("/photos/bedroom.jpg", "First bedroom, two beds", "ひとつめの寝室、ベッド2台", "第一间卧室，两张床", "첫 번째 침실, 침대 두 개"),
+  p("/photos/bedroom-2.jpg", "The same bedroom, from the door", "同じ寝室を入口から", "同一间卧室，从门口看", "같은 침실, 문 쪽에서"),
+  p("/photos/bedroom-3.jpg", "The second bedroom, two beds", "ふたつめの寝室、ベッド2台", "第二间卧室，两张床", "두 번째 침실, 침대 두 개"),
   p("/photos/hall.jpg", "Hall closet and the way through the apartment", "廊下の収納と部屋の奥", "走廊储物与房间深处", "복도 수납과 집 안쪽"),
   ...housePhotos,
 ];

@@ -31,8 +31,8 @@ export const copy = {
     },
     hero: {
       eyebrow: "Kita-ku · Asabu · Sapporo",
-      title: "Two apartments, one quiet house.",
-      lede: "Casa Antonio A is the modern floor. Casa Antonio B, upstairs, is the warmth of wood. About five minutes on foot from Asabu Station.",
+      title: "Two private apartments near Asabu Station, Sapporo.",
+      lede: "Two apartments, one quiet house. Casa Antonio A is the modern floor. Casa Antonio B, upstairs, is the warmth of wood. About five minutes on foot from Asabu Station.",
       a: "See Antonio A",
       b: "See Antonio B",
     },
@@ -49,28 +49,30 @@ export const copy = {
     choicesLede: "Same address, two different stays. Both are booked on Airbnb.",
     aCard: {
       name: "Casa Antonio A",
-      line: "Modern space · about 100 m² · up to 4 guests",
+      line: "Modern · about 100 m² · 2 bedrooms · up to 4",
+      note: "Two bedrooms and one living room.",
       cta: "View the apartment",
     },
     bCard: {
       name: "Casa Antonio B",
       line: "Warmth of wood · second floor · about 70 m² · up to 3 guests",
+      note: "Interior photos are not on this page yet.",
       cta: "View the apartment",
     },
     aHome: {
       eyebrow: "Ground-floor apartment",
       title: "Casa Antonio A",
       tag: "A pale, modern room for coming back to.",
-      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same room. The bedroom down the hall has three beds. The apartment is about 100 square meters, one bedroom and one bath, for up to four guests. The photographs show three beds.",
+      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same living room. Two separate bedrooms are off the hall, with two beds in each. About 100 square meters, for up to four guests.",
     },
     bHome: {
       eyebrow: "Second floor",
       title: "Casa Antonio B",
       tag: "Wood, a projector, and a private door.",
-      body: "B is the warmth of wood: a simple modern interior with a projector in the living room. About 70 square meters, one bedroom with three twin beds, for up to three guests. It is the upstairs apartment in the same house, with its own entrance.",
+      body: "B is the warmth of wood: a simple modern interior with a projector in the living room. About 70 square meters, one bedroom with three single beds, for up to three guests. It is the upstairs apartment in the same house, with its own entrance.",
     },
-    bookA: "Book Antonio A on Airbnb",
-    bookB: "Book Antonio B on Airbnb",
+    bookA: "Check dates for Casa Antonio A",
+    bookB: "Check dates for Casa Antonio B",
     photos: "All photographs",
     photoNoteA: "Photographs of Casa Antonio A, taken in the apartment, plus the shared house outside.",
     photoNoteB: "These photographs are of the house.",
@@ -93,16 +95,16 @@ export const copy = {
     },
     longStay: {
       eyebrow: "Long-term rentals",
-      title: "Weeks and months, at a special rate.",
-      lede: "Both apartments can be taken for longer than a holiday. A stay of several weeks, or a few months, is priced below what those nights would cost one by one.",
+      title: "Weeks and months, by asking.",
+      lede: "Both apartments can be taken for longer than a holiday. Ask the host for a rate for your dates. This page does not promise a discount.",
       body: [
-        "Casa Antonio A and Casa Antonio B are the same house, with separate doors. A long stay uses one of them as a home: cook, work, keep the car in the free space out front, and ride the subway when the city is the plan. It suits a work season in Sapporo, a university term, a family visit that runs long, or a winter built around Teine.",
-        "The discount is real, and it is not a figure printed on this page. Nightly prices on Airbnb are for shorter bookings. For a block of weeks or months, we set a special rate for those exact dates — lower than stacking the nightly price. What is included, and the total, are confirmed in writing before you pay. This site does not take the booking.",
+        "Casa Antonio A and Casa Antonio B are the same house, with separate doors. A long stay uses one of them as a home: cook, work, keep one car in the free space in front of that apartment, and ride the subway when the city is the plan. It suits a work season in Sapporo, a university term, a family visit that runs long, or a winter built around Teine.",
+        "Ask on Airbnb for a rate for your dates. Nightly prices there are for shorter bookings. For a block of weeks or months, the host can quote a rate for those exact dates. What is included, and the total, are confirmed in writing before you pay. This site does not take the booking.",
         "The house rules do not relax because the stay is long. No smoking, no pets, no parties, and a quiet street after dark. Check-in and check-out still apply at each end. Only the people on the booking live there.",
       ],
       points: [
         { k: "Length", v: "Several weeks, or a number of months" },
-        { k: "Rate", v: "A special price, below stacked nightly rates" },
+        { k: "Rate", v: "Quoted for your dates, in writing" },
         { k: "Which", v: "Antonio A, Antonio B, or one after the other" },
         { k: "How", v: "Message us on Airbnb with your dates" },
       ],
@@ -115,8 +117,8 @@ export const copy = {
       title: "The same house rules, on both floors.",
       items: [
         { k: "Check-in", v: "16:00–23:00, self check-in" },
-        { k: "Check-out", v: "by 10:00" },
-        { k: "Parking", v: "Free, on site, private" },
+        { k: "Check-out", v: "Any time until 10:00" },
+        { k: "Parking", v: "Free, one car per apartment" },
         { k: "Smoking", v: "Nowhere on the property" },
         { k: "Pets", v: "Not allowed" },
         { k: "Parties", v: "Not allowed" },
@@ -130,8 +132,8 @@ export const copy = {
       photo: "Interior photographs are of Casa Antonio A.",
     },
     reserve: {
-      label: "Reserve",
-      title: "Book on Airbnb",
+      label: "Check dates",
+      title: "Check dates on Airbnb",
       a: "Casa Antonio A",
       b: "Casa Antonio B",
       close: "Close",
@@ -145,20 +147,20 @@ export const copy = {
     },
     aPage: {
       eyebrow: "Casa Antonio A · modern space",
-      title: "A modern apartment, with its own door.",
-      lede: "Pale walls, a long sofa, and a kitchen open to the living room. The bedroom sits just through the hall.",
+      title: "Casa Antonio A",
+      lede: "A modern apartment with its own door. Pale walls, a long sofa, and a kitchen open to the living room. Two separate bedrooms, with two beds in each.",
       facts: [
         ["Guests", "Up to 4"],
-        ["Layout", "1 bedroom, 1 bath"],
+        ["Layout", "2 bedrooms, 1 living room, 1 bath"],
         ["Size", "About 100 m²"],
-        ["Beds in photos", "Three"],
+        ["Beds", "4, two in each bedroom"],
         ["Entrance", "Private"],
         ["License", "M010045173"],
       ],
       storyTitle: "What the room is like",
       story: [
         "Casa Antonio A is the modern one. The living room is a soft grey-blue, with a sofa facing the window and a pale table in the middle. The kitchen is part of the same room: a counter, a refrigerator, a cooktop under a hood, a microwave, and a toaster oven. There is also an oven.",
-        "The bedroom has three beds dressed in white, a closet, and a dresser. A short hall joins it to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
+        "There are two bedrooms, each with two beds in white linen. One has a closet and a dresser. A short hall joins them to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
         "You come in through your own door. Check-in is private and contactless; the timing and the lock instructions are sent on Airbnb, not posted here. Towels, linen, and basic toiletries are provided, along with a washer, heating, air conditioning, and Wi-Fi.",
       ],
       amenities: [
@@ -172,31 +174,31 @@ export const copy = {
         "Unit bath with tub",
         "Hairdryer and free toiletries",
         "Towels and bed linen",
-        "Free private parking on site",
+        "Free parking, one car",
         "Smoke alarm and fire extinguisher",
       ],
     },
     bPage: {
       eyebrow: "Casa Antonio B · warmth of wood",
-      title: "Upstairs, with a projector and a quiet street.",
+      title: "Casa Antonio B",
       lede: "The second floor of the same house, reached by stairs. A wood interior, and a projector in the living room.",
       facts: [
         ["Guests", "Up to 3"],
         ["Layout", "1 bedroom, 1 bath"],
         ["Size", "About 70 m²"],
-        ["Beds", "3 twins"],
+        ["Beds", "3 single beds"],
         ["Floor", "Second, by stairs"],
         ["License", "M010045174"],
       ],
       storyTitle: "The upstairs apartment",
       story: [
         "B is our upstairs apartment: warm wood, a simple modern finish, and a projector for movie nights. Asabu Station (Namboku line) is about five minutes on foot. Sapporo Station, Odori, and Susukino are a short ride south.",
-        "It is about 70 square meters: one bedroom, three twin beds, up to three guests, and one bathroom with a tub, shower, bidet, and hairdryer. The kitchen has a stovetop, refrigerator, microwave, kitchenware, a dining table, and wine glasses. There is a sofa, a washer, slippers, towels, and linen.",
-        "It has a private entrance, free on-site parking, free Wi-Fi, heating, air conditioning, and self check-in. Non-smoking, on a quiet residential street.",
+        "It is about 70 square meters: one bedroom, three single beds, up to three guests, and one bathroom with a tub, shower, bidet, and hairdryer. The kitchen has a stovetop, refrigerator, microwave, kitchenware, a dining table, and wine glasses. There is a sofa, a washer, slippers, towels, and linen.",
+        "It has a private entrance, one free parking space, free Wi-Fi, heating, air conditioning, and self check-in. Non-smoking, on a quiet residential street.",
       ],
       amenities: [
         "Projector in the living room",
-        "Three twin beds",
+        "Three single beds",
         "Free Wi-Fi throughout",
         "Heating and air conditioning",
         "Kitchen with stovetop, microwave, and refrigerator",
@@ -206,19 +208,19 @@ export const copy = {
         "Bathtub, shower, and bidet",
         "Hairdryer, slippers, and toiletries",
         "Towels and bed linen",
-        "Free private parking on site",
+        "Free parking, one car",
         "Smoke alarm, fire extinguisher, and CO detector",
       ],
     },
     rules: [
-      "Check-in from 16:00 until 23:00. Check-out from 06:00, and by 10:00.",
+      "Check-in from 16:00 until 23:00. Check-out by 10:00. You may leave any time before then.",
       "Self check-in. Instructions arrive through Airbnb after booking.",
       "The whole property is non-smoking, including entrances and the parking area.",
       "No pets.",
       "No parties, and the apartments are not for stag or hen events.",
       "The guest checking in should be 18 or older. Children are welcome.",
       "Only registered guests. Please don’t hand the door to anyone who isn’t on the booking.",
-      "A damage deposit of up to ¥15,000 may be charged if something is broken.",
+      "If something is damaged, the charge is at least ¥15,000.",
       "Quiet residential street — keep voices and music down, especially after dark.",
     ],
     neighborhood: {
@@ -232,7 +234,7 @@ export const copy = {
         {
           title: "The house",
           time: "The door",
-          body: "Two wooden doors under a brick porch, and free parking on the apron in front. The street is houses. Come back here between the station and a longer outing.",
+          body: "Two wooden doors under a brick porch, and one free parking space in front of each apartment. The street is houses. Come back here between the station and a longer outing.",
         },
         {
           title: "Asabu Station",
@@ -257,7 +259,7 @@ export const copy = {
         {
           title: "Sapporo Station and Odori",
           time: "Subway",
-          body: "Sapporo Station is about 4.9 km by road. The train takes about seven minutes. Odori is the long park further down the same line: the snow festival in February, beer gardens in summer, the TV tower at the east end. Susukino is the late night, if you want one.",
+          body: "Sapporo Station is about 4.9 km by road. The subway takes about nine minutes, station to station. Odori is the long park further down the same line: the snow festival in February, beer gardens in summer, the TV tower at the east end. Susukino is the late night, if you want one.",
         },
         {
           title: "Hokkaido University",
@@ -404,7 +406,7 @@ export const copy = {
             {
               name: "AEON parking",
               time: "Same building",
-              body: "About 570 spaces if the last block is easier by car. The house also has its own free space out front.",
+              body: "About 570 spaces if the last block is easier by car. The house also has one free space in front of each apartment.",
             },
           ],
         },
@@ -434,7 +436,7 @@ export const copy = {
             {
               name: "Sapporo Station",
               time: "About 4.9 km",
-              body: "The train takes about seven minutes. Larger cafes are here, not in Asabu.",
+              body: "The subway takes about nine minutes, station to station. Larger cafes are here, not in Asabu.",
             },
           ],
         },
@@ -496,7 +498,7 @@ export const copy = {
             {
               time: "Morning",
               title: "Asabu, then the train",
-              body: "Walk to Asabu and take the subway to Sapporo Station, about seven minutes. From there the JR Hakodate line runs to Otaru. The faster trains take about 35 to 45 minutes.",
+              body: "Walk to Asabu and take the subway to Sapporo Station, about nine minutes on the city's station matrix. From there the JR Hakodate line runs to Otaru. The faster trains take about 35 to 45 minutes.",
             },
             {
               time: "Late morning",
@@ -672,7 +674,7 @@ export const copy = {
         "These are private lodgings under Japan’s housing accommodation business. Casa Antonio A is M010045173. Casa Antonio B is M010045174.",
       payTitle: "How booking works",
       payBody:
-        "Dates, price, and availability live on Airbnb. This site does not take payment. A damage deposit of up to ¥15,000 may be requested if something in the apartment is damaged.",
+        "Dates, price, and availability live on Airbnb. This site does not take payment. If something in the apartment is damaged, the charge is at least ¥15,000.",
     },
     lightbox: { close: "Close", prev: "Previous photograph", next: "Next photograph" },
   };
@@ -690,15 +692,22 @@ export const guides = {
     coastCta: "Kojohama Cabins",
     longCta: "Long stays",
     teineMore: "Sapporo Teine, as a ski day",
-    bookA: "Reserve Antonio A",
-    bookB: "Reserve Antonio B",
+    bookA: "Check dates · A",
+    bookB: "Check dates · B",
     bNote:
-      "Interior photographs of Casa Antonio B are not on this page yet. The rooms are a living room with a projector, a bedroom with three twin beds, a kitchen, and a bath. Those pictures are on Airbnb.",
+      "The photographs below are the shared house outside. They are not the rooms inside Casa Antonio B.",
+    bPhotosCta: "See Casa Antonio B photos on Airbnb",
+    copyAddress: "Copy the Japanese address",
+    copied: "Copied",
+    directions: "Directions in Google Maps",
+    busLabel: "Chuo Bus timetable, New Chitose to Asabu",
+    matrixLabel: "Subway station times",
+    snowLabel: "Official Snow Festival notice",
     bSlots: ["Living room with a projector", "Bedroom, three twin beds", "Kitchen and dining table", "Bath with a tub"],
     points: {
-      home: ["5 min to Asabu Station", "Full kitchen", "70–100 m²", "Teine ski ~40 min"],
-      a: ["5 min to Asabu Station", "Full kitchen", "About 100 m²", "Up to 4 guests", "Teine ski ~40 min"],
-      b: ["5 min to Asabu Station", "Full kitchen", "About 70 m²", "Up to 3 guests", "Teine ski ~40 min"],
+      home: ["5 min to Asabu Station", "Free parking, one car each", "Full kitchen", "70–100 m²"],
+      a: ["2 bedrooms", "Up to 4 guests", "Free parking, one car", "Full kitchen", "About 100 m²"],
+      b: ["5 min to Asabu Station", "Free parking, one car", "Full kitchen", "About 70 m²", "Up to 3 guests"],
     },
     combo: {
       eyebrow: "Shiraoi coast",
@@ -728,56 +737,68 @@ export const guides = {
     access: {
       eyebrow: "New Chitose Airport",
       title: "From the airport to the door.",
-      lede: "Fly into New Chitose Airport (CTS), south of Sapporo. Okadama is a small airport in the city. It is not this trip.",
+      lede: "This page is the way from New Chitose Airport (CTS) to the house. Most flights land there. Okadama is a smaller airport inside the city; it has its own note at the end.",
       facts: [
         { k: "Airport", v: "New Chitose (CTS)" },
-        { k: "Not this trip", v: "Okadama" },
+        { k: "Direct bus", v: "Chuo Bus to Asabu, about 58 min on the 1 April 2026 timetable" },
         { k: "Train", v: "Airport rapid, about 37–45 min to Sapporo Station" },
-        { k: "Then", v: "Namboku line north to Asabu, about 7 min" },
+        { k: "Subway", v: "Asabu–Sapporo about 9 min, station to station" },
         { k: "Walk", v: "About 5 min from Asabu Station" },
-        { k: "Parking", v: "Free, on site" },
+        { k: "Parking", v: "Free, one car per apartment" },
       ],
       blocks: [
         {
-          h: "By train",
+          h: "Direct airport bus",
+          paragraphs: [
+            "Hokkaido Chuo Bus runs between New Chitose and Asabu Station (地下鉄麻生駅). On the summer timetable updated 1 April 2026, a bus leaving the ANA stop at 8:48 is scheduled into Asabu at 9:46, about 58 minutes. That is an example, not a guarantee. Traffic, snow, and the next timetable change it.",
+            "The adult fare on that timetable is ¥1,500. Board at the ANA stop, stand 20, or the JAL stop, stand 13. The Asabu stop is at the station. From there it is the same walk as from the subway, about five minutes south to Kita 38-jo Nishi 3-chome. Check the official timetable the day you fly. This site does not name a station exit.",
+          ],
+        },
+        {
+          h: "Train, then the subway",
           paragraphs: [
             "From New Chitose Airport Station, take the JR Airport rapid to Sapporo Station. The fastest trains are about 37 minutes. Some take closer to 45. The ordinary ticket is on the order of ¥1,200. Check the fare on the day.",
-            "The Sapporo subway is a separate ticket. A JR pass, if you have one, does not cover it. At Sapporo Station, change to the Namboku line and ride north to Asabu, the last station. That ride is about seven minutes.",
-            "The house is about a five-minute walk from Asabu Station, south of the station, in Kita 38-jo Nishi 3-chome.",
+            "The Sapporo subway is a separate ticket. It is not included on a JR ticket. At Sapporo Station, change to the Namboku line and ride north to Asabu, the last station. The city's station matrix gives nine minutes for Asabu–Sapporo, before waiting and the walk between platforms.",
+            "The house is about a five-minute walk from Asabu Station.",
           ],
         },
         {
-          h: "By bus",
+          h: "Car or taxi",
           paragraphs: [
-            "Airport buses run between New Chitose and central Sapporo, including Sapporo Station. The ride is often 70 to 90 minutes, depending on traffic and weather. The adult fare to Sapporo Station on the current city timetable is ¥1,500. Check the day.",
-            "From Sapporo Station, the Namboku line northbound ends at Asabu.",
-          ],
-        },
-        {
-          h: "By car or taxi",
-          paragraphs: [
-            "A car from the airport takes the expressway toward Sapporo, then north into Kita-ku. Outside rush hour the drive is often under 90 minutes. Snow changes that. Free private parking is on the apron in front of the doors.",
+            "A car from the airport takes the expressway toward Sapporo, then north into Kita-ku. Outside rush hour the drive is often under 90 minutes. Snow changes that. Each apartment has one free parking space on the apron in front of the doors.",
             "A metered taxi to central Sapporo is commonly about ¥10,000–13,000 before expressway tolls. The house is north of Sapporo Station. Confirm the fare to this address, not only to the station.",
+          ],
+        },
+        {
+          h: "If you land at Okadama",
+          paragraphs: [
+            "Okadama (OKD) is a small airport in Higashi-ku, used by some regional flights. This guide is built for New Chitose. From Okadama, a taxi or a city bus toward the subway is the usual way on. Check that connection on the day. The Namboku line still ends at Asabu.",
+          ],
+        },
+        {
+          h: "If the flight is late",
+          paragraphs: [
+            "Check-in on the listing is 16:00–23:00. If you may miss that window, message the host on Airbnb before you land. This page cannot promise a later arrival.",
           ],
         },
       ],
     },
     snow: {
-      eyebrow: "Usually early February",
+      eyebrow: "4–11 February 2027",
       title: "A quiet base for the Snow Festival.",
-      lede: "The Sapporo Snow Festival is usually held in early February. The main site is Odori Park. Susukino has its own site. The city publishes the dates each year. This page does not invent them.",
+      lede: "The organizer has published the 77th Sapporo Snow Festival for 4–11 February 2027. Odori Park, from West 1 to West 11, is the main site. Susukino and Tsudome are the other two. Checked against the official notice on 1 October 2026.",
       blocks: [
         {
           h: "The ride in",
           paragraphs: [
-            "From the house, walk about five minutes to Asabu Station and take the Namboku line south. Odori Station is the stop for the park. Susukino is one station further. You come back the same way, to the north end of the line.",
+            "From the house, walk about five minutes to Asabu Station and take the Namboku line south. Odori is about eleven minutes from Asabu on the city's station matrix, before you wait for a train. Susukino is one station past Odori. You come back the same way, to the north end of the line.",
             "The apartments are the quiet part of the day: cook, sleep, and ride in when you want the snow. Check-in is still 16:00–23:00, and the street is still a residential street.",
           ],
         },
         {
-          h: "What this page will not pretend",
+          h: "Dates, and what is not posted yet",
           paragraphs: [
-            "Sculpture hours, crowd levels, and whether a given year adds a site somewhere else are set by the organizers. Look those up for the year you travel. The subway is the plan that does not change: Asabu, southbound, Odori.",
+            "The dates above are the published festival period. Hours and lighting for 2027 are still being posted on the official site. In recent years the Odori site has been open from early morning, with lights from sunset until 22:00, and Susukino lights until 23:00. Treat that as the recent pattern, not a promise for 2027.",
           ],
         },
       ],
@@ -786,7 +807,7 @@ export const guides = {
       eyebrow: "West of the house",
       title: "Sapporo Teine, and the same door at the end.",
       lede: "The ski day from this side of the city. A morning in the apartment, an afternoon on the mountain, and the private door when it is over.",
-      credit: "Sapporo Teine, looking back toward the city. Photograph by Miki Yoshihito, CC BY 2.0.",
+      credit: "Sapporo Teine, looking back toward the city. Photograph by MIKI Yoshihito. Resized for this page. CC BY 2.0.",
       blocks: [
         {
           h: "The mountain",
@@ -798,7 +819,7 @@ export const guides = {
         {
           h: "The house as a base",
           paragraphs: [
-            "Casa Antonio is not a ski-in lodge. It is a residential apartment with a kitchen, heat, and free parking in front of the doors. Bring the skis in the car, or leave them for the bus day. There is no separate drying room described on this site.",
+            "Casa Antonio is not a ski-in lodge. It is a residential apartment with a kitchen, heat, and one free parking space in front of each door. Bring the skis in the car, or leave them for the bus day. There is no separate drying room described on this site.",
             "In the evening the Namboku line is still there if the mountain was enough and the city is next. Not both on the same tight schedule.",
           ],
         },
