@@ -1,32 +1,26 @@
+// Fill these in with real Airbnb data. While rating/count are null and quotes is empty,
+// the reviews block stays hidden and no aggregateRating is added to the structured data.
+// Never invent values.
+
 export type ReviewQuote = {
-  name: string;
-  when: string;
-  country: string;
-  text: string;
+  apartment: "a" | "b";
+  name: string; // guest first name, as shown on Airbnb
+  month: string; // e.g. "2026-02"
+  country: string; // e.g. "Hong Kong"
+  text: string; // short quote, original language is fine
 };
 
-export type StayReviews = {
-  rating: number | null;
-  count: number | null;
-  quotes: ReviewQuote[];
-  href: string;
+export const ratings: Record<"a" | "b", { rating: number | null; count: number | null }> = {
+  a: { rating: null, count: null },
+  b: { rating: null, count: null },
 };
 
-export const reviews: { a: StayReviews; b: StayReviews } = {
-  a: {
-    rating: null,
-    count: null,
-    quotes: [],
-    href: "https://www.airbnb.com/rooms/1248284267045468378",
-  },
-  b: {
-    rating: null,
-    count: null,
-    quotes: [],
-    href: "https://www.airbnb.com/rooms/1248260873560502499",
-  },
-};
+export const quotes: ReviewQuote[] = [];
 
-export function reviewReady(stay: StayReviews) {
-  return stay.rating != null && stay.count != null && stay.quotes.length >= 3 && stay.quotes.every((quote) => quote.text && quote.name);
+export function hasReviews(apartment?: "a" | "b") {
+  const ids = apartment ? [apartment] : (["a", "b"] as const);
+  return (
+    ids.some((id) => ratings[id].rating !== null && ratings[id].count !== null) ||
+    quotes.some((q) => !apartment || q.apartment === apartment)
+  );
 }
