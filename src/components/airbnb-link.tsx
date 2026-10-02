@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { AIRBNB } from "@/data/facts";
-import { trackAirbnbClick, type Cabin } from "@/lib/analytics";
+import type { Cabin } from "@/lib/analytics";
 
 export function AirbnbLink({
   cabin,
@@ -20,7 +20,7 @@ export function AirbnbLink({
       href={href}
       target="_blank"
       rel="noreferrer"
-      onClick={() => trackAirbnbClick(cabin, href, location)}
+      data-link-location={location}
     >
       {children}
     </a>
