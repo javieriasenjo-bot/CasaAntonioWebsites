@@ -1,10 +1,10 @@
-import { AccessPage, FaqPage, LongStayPage, SnowPage, TeinePage } from "@/components/guide-view";
+import { AccessPage, ComboPage, FaqPage, LongStayPage, SnowPage, TeinePage } from "@/components/guide-view";
 import { PrivacyPage } from "@/components/privacy-page";
 import { StayView } from "@/components/stay-view";
-import { Arrival } from "@/components/pages/arrival";
-import { DayTrips } from "@/components/pages/day-trips";
-import { Home } from "@/components/pages/index";
-import { Neighborhood } from "@/components/pages/neighborhood";
+import { Arrival } from "@/components/arrival-page";
+import { DayTrips } from "@/components/day-trips-page";
+import { Home } from "@/components/home-page";
+import { Neighborhood } from "@/components/neighborhood-page";
 import type { PageId } from "@/lib/paths";
 
 export function RenderPage({ page }: { page: PageId }) {
@@ -29,6 +29,8 @@ export function RenderPage({ page }: { page: PageId }) {
       return <TeinePage />;
     case "long-stay":
       return <LongStayPage />;
+    case "combo":
+      return <ComboPage />;
     case "faq":
       return <FaqPage />;
     case "privacy":

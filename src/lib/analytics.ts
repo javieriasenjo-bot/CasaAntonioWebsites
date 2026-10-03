@@ -11,10 +11,6 @@ function push(event: Record<string, unknown>) {
   window.dataLayer.push(event);
 }
 
-// airbnb_click is pushed by the GTM click listener (GTM-T8TLRH4L), which covers
-// every Airbnb link on the site. Do not push it here too, or each booking click
-// is counted twice in GA4.
-
 export function trackLanguageChange(next: string, destinationHref: string) {
   push({
     event: "language_change",

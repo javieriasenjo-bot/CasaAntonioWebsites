@@ -2,8 +2,7 @@ import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
 import { Shell } from "@/components/chrome";
-import { copy } from "@/data/content";
-import { guides } from "@/data/guides";
+import { house } from "@/data/active";
 import { FAQ } from "@/lib/seo";
 import { useLang } from "@/lib/i18n";
 
@@ -24,7 +23,7 @@ export function FaqList() {
 
 function BookBoth() {
   const { lang } = useLang();
-  const g = guides[lang];
+  const g = house().guides;
   return (
     <div className="stay-actions">
       <AirbnbLink cabin="a" location="footer" className="button button-dark">
@@ -39,7 +38,7 @@ function BookBoth() {
 
 export function AccessPage() {
   const { lang } = useLang();
-  const page = guides[lang].access;
+  const page = house().guides.access;
   return (
     <Shell>
       <section className="page-intro">
@@ -77,7 +76,7 @@ export function AccessPage() {
 
 export function SnowPage() {
   const { lang } = useLang();
-  const page = guides[lang].snow;
+  const page = house().guides.snow;
   return (
     <Shell>
       <section className="page-intro">
@@ -100,7 +99,7 @@ export function SnowPage() {
           ))}
           <p>
             <PageLink page="access" className="text-link">
-              {guides[lang].footerLinks[0]?.label}
+              {house().guides.footerLinks[0]?.label}
             </PageLink>
           </p>
           <BookBoth />
@@ -112,7 +111,7 @@ export function SnowPage() {
 
 export function TeinePage() {
   const { lang } = useLang();
-  const page = guides[lang].teine;
+  const page = house().guides.teine;
   return (
     <Shell>
       <section className="page-intro">
@@ -138,7 +137,7 @@ export function TeinePage() {
           ))}
           <p>
             <PageLink page="neighborhood" hash="ski" className="text-link">
-              {copy[lang].nav.neighborhood}
+              {house().copy.nav.neighborhood}
             </PageLink>
           </p>
           <BookBoth />
@@ -150,7 +149,7 @@ export function TeinePage() {
 
 export function LongStayPage() {
   const { lang } = useLang();
-  const t = copy[lang].longStay;
+  const t = house().copy.longStay;
   return (
     <Shell>
       <section className="page-intro">
@@ -158,11 +157,9 @@ export function LongStayPage() {
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.title}</h1>
           <p className="lede">{t.lede}</p>
+          <Photo className="guide-photo" src="/photos/dining-2.jpg" alt={t.title} sizes="(max-width: 900px) 100vw, 1120px" />
         </div>
       </section>
-      <figure className="wrap page-figure">
-        <Photo src="/photos/dining.jpg" alt={copy[lang].captions.workTable} sizes="(max-width: 900px) 100vw, 1120px" />
-      </figure>
       <section className="long-stay">
         <div className="wrap">
           {t.body.map((paragraph) => (
@@ -200,11 +197,9 @@ export function FaqPage() {
         <div className="wrap narrow">
           <p className="eyebrow">Casa Antonio</p>
           <h1>{metaTitle}</h1>
+          <Photo className="guide-photo" src="/photos/exterior.jpg" alt={metaTitle} sizes="(max-width: 900px) 100vw, 740px" />
         </div>
       </section>
-      <figure className="wrap page-figure">
-        <Photo src="/photos/kitchen-living.jpg" alt={copy[lang].captions.living} sizes="(max-width: 900px) 100vw, 1120px" />
-      </figure>
       <section className="stay-body">
         <div className="wrap narrow">
           <FaqList />
@@ -215,9 +210,43 @@ export function FaqPage() {
   );
 }
 
+export function ComboPage() {
+  const { lang } = useLang();
+  const page = house().guides.combo;
+  return (
+    <Shell>
+      <section className="page-intro">
+        <div className="wrap narrow">
+          <p className="eyebrow">{page.eyebrow}</p>
+          <h1>{page.title}</h1>
+          <p className="lede">{page.lede}</p>
+        </div>
+      </section>
+      <section className="stay-body">
+        <div className="wrap prose-page">
+          {page.blocks.map((block) => (
+            <div className="prose" key={block.h}>
+              <h2>{block.h}</h2>
+              {block.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          ))}
+          <p>
+            <a className="text-link" href="https://kojohamacabins.jp/">
+              Kojohama Cabins
+            </a>
+          </p>
+          <BookBoth />
+        </div>
+      </section>
+    </Shell>
+  );
+}
+
 export function NotFoundPage() {
   const { lang } = useLang();
-  const g = guides[lang];
+  const g = house().guides;
   return (
     <Shell>
       <section className="page-intro">
@@ -225,9 +254,9 @@ export function NotFoundPage() {
           <h1>{g.notFoundTitle}</h1>
           <p>{g.notFoundBody}</p>
           <p className="footer-links">
-            <PageLink page="home">{copy[lang].stayShared.back}</PageLink>
-            <PageLink page="a">{copy[lang].nav.a}</PageLink>
-            <PageLink page="b">{copy[lang].nav.b}</PageLink>
+            <PageLink page="home">{house().copy.stayShared.back}</PageLink>
+            <PageLink page="a">{house().copy.nav.a}</PageLink>
+            <PageLink page="b">{house().copy.nav.b}</PageLink>
           </p>
         </div>
       </section>

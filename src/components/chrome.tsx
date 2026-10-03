@@ -2,8 +2,8 @@ import { useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
-import { copy } from "@/data/content";
-import { guides, LANG_NAME } from "@/data/guides";
+import { house } from "@/data/active";
+import { LANG_NAME } from "@/data/lang-name";
 import { trackLanguageChange } from "@/lib/analytics";
 import { rememberLang, useLang, type Lang } from "@/lib/i18n";
 import { HTML_LANG, pagePath, parsePath, type PageId } from "@/lib/paths";
@@ -20,39 +20,39 @@ const NAV: { page: PageId; key: "a" | "b" | "neighborhood" | "trips" | "arrival"
 
 export function Shell({ children }: { children: ReactNode }) {
   const { lang, suggestion, dismissSuggestion } = useLang();
-  const t = copy[lang];
-  const g = guides[lang];
+  const t = house().copy;
+  const g = house().guides;
   const path = useRouterState({ select: (state) => state.location.pathname });
   const page = parsePath(path)?.page ?? "home";
   const [menuOpen, setMenuOpen] = useState(false);
   const [reserveOpen, setReserveOpen] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
 
   useEffect(() => {
     setMenuOpen(false);
     setReserveOpen(false);
   }, [path]);
 
-  // Mobile: hide the header while scrolling down, show it again on scroll up.
-  const [headerHidden, setHeaderHidden] = useState(false);
   useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
     let last = window.scrollY;
-    let ticking = false;
     const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(() => {
-        const y = window.scrollY;
-        const mobile = window.matchMedia("(max-width: 860px)").matches;
-        if (!mobile || y < 120) setHeaderHidden(false);
-        else if (y > last + 6) setHeaderHidden(true);
-        else if (y < last - 6) setHeaderHidden(false);
-        last = y;
-        ticking = false;
-      });
+      if (menuOpen) {
+        setHeaderHidden(false);
+        last = window.scrollY;
+        return;
+      }
+      const y = window.scrollY;
+      const delta = y - last;
+      if (y < 40) setHeaderHidden(false);
+      else if (delta > 8) setHeaderHidden(true);
+      else if (delta < -8) setHeaderHidden(false);
+      last = y;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [menuOpen]);
 
   const directCabin = page === "a" || page === "b" ? page : null;
 
@@ -61,7 +61,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <a className="skip-link" href="#content">
         {t.chrome.skip}
       </a>
-      <header className="site-header" data-hidden={headerHidden && !menuOpen ? "true" : undefined}>
+      <header className="site-header" data-hidden={headerHidden ? "true" : "false"}>
         <div className="nav-inner">
           <PageLink page="home" className="logo">
             Casa Antonio <span>Sapporo</span>

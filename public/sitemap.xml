@@ -397,6 +397,42 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://casaantonio.jp/faq/" />
   </url>
   <url>
+    <loc>https://casaantonio.jp/combo/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casaantonio.jp/combo/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://casaantonio.jp/ja/combo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://casaantonio.jp/zh-cn/combo/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casaantonio.jp/ko/combo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casaantonio.jp/combo/" />
+  </url>
+  <url>
+    <loc>https://casaantonio.jp/ja/combo/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casaantonio.jp/combo/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://casaantonio.jp/ja/combo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://casaantonio.jp/zh-cn/combo/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casaantonio.jp/ko/combo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casaantonio.jp/combo/" />
+  </url>
+  <url>
+    <loc>https://casaantonio.jp/zh-cn/combo/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casaantonio.jp/combo/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://casaantonio.jp/ja/combo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://casaantonio.jp/zh-cn/combo/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casaantonio.jp/ko/combo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casaantonio.jp/combo/" />
+  </url>
+  <url>
+    <loc>https://casaantonio.jp/ko/combo/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casaantonio.jp/combo/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://casaantonio.jp/ja/combo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://casaantonio.jp/zh-cn/combo/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casaantonio.jp/ko/combo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casaantonio.jp/combo/" />
+  </url>
+  <url>
     <loc>https://casaantonio.jp/privacy/</loc>
     <lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://casaantonio.jp/privacy/" />

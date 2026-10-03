@@ -49,13 +49,13 @@ export const copy = {
     choicesLede: "Same address, two different stays. Both are booked on Airbnb.",
     aCard: {
       name: "Casa Antonio A",
-      line: "Modern · about 100 m² · 2 bedrooms · up to 4",
+      line: "Modern · about 65 m² · 2 bedrooms · up to 4",
       note: "Two bedrooms and one living room.",
       cta: "View the apartment",
     },
     bCard: {
       name: "Casa Antonio B",
-      line: "Warmth of wood · second floor · about 70 m² · up to 3 guests",
+      line: "Warmth of wood · second floor · about 65 m² · up to 3 guests",
       note: "Interior photos are not on this page yet.",
       cta: "View the apartment",
     },
@@ -63,13 +63,13 @@ export const copy = {
       eyebrow: "Ground-floor apartment",
       title: "Casa Antonio A",
       tag: "A pale, modern room for coming back to.",
-      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same living room. Two separate bedrooms are off the hall, with two beds in each. About 100 square meters, for up to four guests.",
+      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same living room. Two separate bedrooms are off the hall, with two beds in each. About 65 square meters, for up to four guests.",
     },
     bHome: {
       eyebrow: "Second floor",
       title: "Casa Antonio B",
       tag: "Wood, a projector, and a private door.",
-      body: "B is the warmth of wood: a simple modern interior with a projector in the living room. About 70 square meters, one bedroom with three single beds, for up to three guests. It is the upstairs apartment in the same house, with its own entrance.",
+      body: "B is the warmth of wood: a simple modern interior with a projector in the living room. About 65 square meters, one bedroom with three single beds, for up to three guests. It is the upstairs apartment in the same house, with its own entrance.",
     },
     bookA: "Check dates for Casa Antonio A",
     bookB: "Check dates for Casa Antonio B",
@@ -152,7 +152,7 @@ export const copy = {
       facts: [
         ["Guests", "Up to 4"],
         ["Layout", "2 bedrooms, 1 living room, 1 bath"],
-        ["Size", "About 100 m²"],
+        ["Size", "About 65 m²"],
         ["Beds", "4, two in each bedroom"],
         ["Entrance", "Private"],
         ["License", "M010045173"],
@@ -185,7 +185,7 @@ export const copy = {
       facts: [
         ["Guests", "Up to 3"],
         ["Layout", "1 bedroom, 1 bath"],
-        ["Size", "About 70 m²"],
+        ["Size", "About 65 m²"],
         ["Beds", "3 single beds"],
         ["Floor", "Second, by stairs"],
         ["License", "M010045174"],
@@ -193,7 +193,7 @@ export const copy = {
       storyTitle: "The upstairs apartment",
       story: [
         "B is our upstairs apartment: warm wood, a simple modern finish, and a projector for movie nights. Asabu Station (Namboku line) is about five minutes on foot. Sapporo Station, Odori, and Susukino are a short ride south.",
-        "It is about 70 square meters: one bedroom, three single beds, up to three guests, and one bathroom with a tub, shower, bidet, and hairdryer. The kitchen has a stovetop, refrigerator, microwave, kitchenware, a dining table, and wine glasses. There is a sofa, a washer, slippers, towels, and linen.",
+        "It is about 65 square meters: one bedroom, three single beds, up to three guests, and one bathroom with a tub, shower, bidet, and hairdryer. The kitchen has a stovetop, refrigerator, microwave, kitchenware, a dining table, and wine glasses. There is a sofa, a washer, slippers, towels, and linen.",
         "It has a private entrance, one free parking space, free Wi-Fi, heating, air conditioning, and self check-in. Non-smoking, on a quiet residential street.",
       ],
       amenities: [
@@ -753,9 +753,9 @@ export const guides = {
     snowLabel: "Official Snow Festival notice",
     bSlots: ["Living room with a projector", "Bedroom, three twin beds", "Kitchen and dining table", "Bath with a tub"],
     points: {
-      home: ["5 min to Asabu Station", "Free parking, one car each", "Full kitchen", "70–100 m²"],
-      a: ["2 bedrooms", "Up to 4 guests", "Free parking, one car", "Full kitchen", "About 100 m²"],
-      b: ["5 min to Asabu Station", "Free parking, one car", "Full kitchen", "About 70 m²", "Up to 3 guests"],
+      home: ["5 min to Asabu Station", "Free parking, one car each", "Full kitchen", "65 m² each"],
+      a: ["2 bedrooms", "Up to 4 guests", "Free parking, one car", "Full kitchen", "About 65 m²"],
+      b: ["5 min to Asabu Station", "Free parking, one car", "Full kitchen", "About 65 m²", "Up to 3 guests"],
     },
     combo: {
       eyebrow: "Shiraoi coast",
