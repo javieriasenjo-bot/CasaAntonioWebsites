@@ -1,8 +1,10 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { createServer } from "vite";
 
-const root = new URL("..", import.meta.url).pathname;
+// fileURLToPath works on Windows too (".pathname" gives "/C:/..." and breaks there).
+const root = fileURLToPath(new URL("..", import.meta.url));
 const dist = join(root, "dist");
 const shell = readFileSync(join(dist, "index.html"), "utf8");
 const assets = [...shell.matchAll(/<link rel="stylesheet"[^>]*>|<script type="module"[^>]*><\/script>|<link rel="modulepreload"[^>]*>/g)]
