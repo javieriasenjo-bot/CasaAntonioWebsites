@@ -1684,3 +1684,8 @@ body.lightbox-open .quick-reserve {
     gap: 1.2rem;
   }
 }
+
+.review-score { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; align-items: baseline; }
+.review-quotes blockquote { white-space: pre-line; }
+.review-source { font-weight: 600; }
+.review-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
