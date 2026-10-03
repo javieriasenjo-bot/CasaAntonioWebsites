@@ -5,6 +5,7 @@ import { Shell } from "@/components/chrome";
 import { house } from "@/data/active";
 import { OFFICIAL, OfficialLinks } from "@/components/official-links";
 import { FAQ } from "@/lib/seo";
+import { useState } from "react";
 import { useLang } from "@/lib/i18n";
 
 export function FaqList() {
@@ -18,6 +19,39 @@ export function FaqList() {
           <p>{item.a}</p>
         </details>
       ))}
+    </div>
+  );
+}
+
+const ADDRESS_JP = "〒001-0038 北海道札幌市北区北38条西3丁目1-7";
+const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS_JP)}`;
+
+function AddressActions() {
+  const g = house().guides;
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(ADDRESS_JP);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* clipboard unavailable: the address is shown as text next to the button */
+    }
+  };
+  return (
+    <div className="address-actions">
+      <p lang="ja">{ADDRESS_JP}</p>
+      <div className="stay-actions">
+        <button type="button" className="button button-line" onClick={copy}>
+          {copied ? g.copied : g.copyAddress}
+        </button>
+        <a className="button button-line" href={DIRECTIONS} target="_blank" rel="noopener">
+          {g.directions} ↗
+        </a>
+      </div>
+      <p aria-live="polite" className="sr-only">
+        {copied ? g.copied : ""}
+      </p>
     </div>
   );
 }
@@ -68,6 +102,7 @@ export function AccessPage() {
               ))}
             </div>
           ))}
+          <AddressActions />
           <OfficialLinks items={OFFICIAL.access} />
           <BookBoth />
         </div>

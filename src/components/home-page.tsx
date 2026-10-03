@@ -68,34 +68,6 @@ export function Home() {
         </div>
       </section>
 
-      <section className="mosaic-section">
-        <div className="wrap">
-          <div className="mosaic">
-            <figure>
-              <Photo src="/photos/entry.jpg" alt={c.doors} sizes="(max-width: 900px) 100vw, 46vw" />
-              <figcaption>{c.doors}</figcaption>
-            </figure>
-            <figure>
-              <Photo src="/photos/kitchen-living.jpg" alt={c.living} sizes="(max-width: 900px) 100vw, 27vw" />
-              <figcaption>Antonio A</figcaption>
-            </figure>
-            <figure>
-              <Photo src="/photos/bedroom.jpg" alt={c.bedroom} sizes="(max-width: 900px) 100vw, 27vw" />
-              <figcaption>{c.bedroom}</figcaption>
-            </figure>
-            <figure>
-              <Photo src="/photos/kitchen.jpg" alt={c.kitchen} sizes="(max-width: 900px) 100vw, 27vw" />
-              <figcaption>{c.kitchen}</figcaption>
-            </figure>
-            <figure>
-              <Photo src="/photos/dining.jpg" alt={c.table} sizes="(max-width: 900px) 100vw, 27vw" />
-              <figcaption>{c.table}</figcaption>
-            </figure>
-          </div>
-          <p className="photo-note">{t.mosaicCaption}</p>
-        </div>
-      </section>
-
       <section className="home-stay home-stay-a">
         <div className="wrap stay-split">
           <div>
@@ -136,6 +108,26 @@ export function Home() {
         </div>
       </section>
 
+      <section className="practical">
+        <div className="wrap">
+          <div className="section-head">
+            <p className="eyebrow">{t.practical.eyebrow}</p>
+            <h2>{t.practical.title}</h2>
+          </div>
+          <dl className="fact-grid">
+            {t.practical.items.map((item) => (
+              <div key={item.k}>
+                <dt>{item.k}</dt>
+                <dd>{item.v}</dd>
+              </div>
+            ))}
+          </dl>
+          <PageLink page="arrival" className="text-link">
+            {t.practical.cta}
+          </PageLink>
+        </div>
+      </section>
+      <Reviews which="home" />
       <section className="home-nomad">
         <div className="wrap stay-split">
           <div>
@@ -188,26 +180,6 @@ export function Home() {
         </div>
       </section>
 
-      <section className="practical">
-        <div className="wrap">
-          <div className="section-head">
-            <p className="eyebrow">{t.practical.eyebrow}</p>
-            <h2>{t.practical.title}</h2>
-          </div>
-          <dl className="fact-grid">
-            {t.practical.items.map((item) => (
-              <div key={item.k}>
-                <dt>{item.k}</dt>
-                <dd>{item.v}</dd>
-              </div>
-            ))}
-          </dl>
-          <PageLink page="arrival" className="text-link">
-            {t.practical.cta}
-          </PageLink>
-        </div>
-      </section>
-      <Reviews which="home" />
       <KojohamaPromo from="home" />
     </Shell>
   );

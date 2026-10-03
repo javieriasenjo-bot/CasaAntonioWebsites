@@ -10,10 +10,11 @@ const LABEL: Record<Lang, { title: string; reviews: string; favorite: string; tr
 };
 
 const INITIAL = 4;
+const INITIAL_HOME = 2;
 
 type Item = { key: string; text: string; meta: string; source: "Airbnb" | "Booking.com"; lang?: string };
 
-function Block({ id, title, lang }: { id: "a" | "b"; title: string; lang: Lang }) {
+function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lang: Lang; initial: number }) {
   const [open, setOpen] = useState(false);
   const air: StayReviews = reviews[id];
   const book: BookingReviews = bookingReviews[id];
@@ -42,7 +43,7 @@ function Block({ id, title, lang }: { id: "a" | "b"; title: string; lang: Lang }
         lang: b.lang === "zh" ? "zh-Hant" : b.lang,
       });
   }
-  const shown = open ? items : items.slice(0, INITIAL);
+  const shown = open ? items : items.slice(0, initial);
   return (
     <div className="review-block">
       <p className="review-score">
@@ -72,7 +73,7 @@ function Block({ id, title, lang }: { id: "a" | "b"; title: string; lang: Lang }
           </li>
         ))}
       </ul>
-      {items.length > INITIAL ? (
+      {items.length > initial ? (
         <p className="gallery-more">
           <button type="button" className="button button-line" aria-expanded={open} aria-controls={`reviews-${id}`} onClick={() => setOpen(!open)}>
             {open ? l.less : l.more}
@@ -100,7 +101,7 @@ export function Reviews({ which }: { which: "home" | "a" | "b" }) {
     <section className="reviews">
       <h2>{LABEL[lang].title}</h2>
       {ids.map((id) => (
-        <Block key={id} id={id} title={id === "a" ? "Casa Antonio A" : "Casa Antonio B"} lang={lang} />
+        <Block key={id} id={id} title={id === "a" ? "Casa Antonio A" : "Casa Antonio B"} lang={lang} initial={which === "home" ? INITIAL_HOME : INITIAL} />
       ))}
     </section>
   );
