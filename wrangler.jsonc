@@ -5,5 +5,12 @@
     "directory": "./dist",
     "not_found_handling": "404-page",
     "html_handling": "force-trailing-slash"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true
+    }
   }
 }
