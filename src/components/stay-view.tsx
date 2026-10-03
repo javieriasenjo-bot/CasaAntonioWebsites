@@ -3,18 +3,19 @@ import { Shell } from "@/components/chrome";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
+import { KojohamaPromo } from "@/components/kojohama-promo";
 import { Reviews } from "@/components/reviews";
 import { SellingPoints } from "@/components/selling-points";
 import { house } from "@/data/active";
-import { apartmentAPhotos, housePhotos, type Photo as HousePhoto } from "@/data/facts";
+import { apartmentAPhotos, apartmentBPhotos, type Photo as HousePhoto } from "@/data/facts";
 import { useLang } from "@/lib/i18n";
 
 export function StayView({ id }: { id: "a" | "b" }) {
   const { lang } = useLang();
   const t = house().copy;
   const page = id === "a" ? t.aPage : t.bPage;
-  const hero = id === "a" ? "/photos/living.jpg" : "/photos/entry.jpg";
-  const photos: readonly HousePhoto[] = (id === "a" ? apartmentAPhotos : housePhotos).filter((photo) => photo.src !== hero);
+  const hero = id === "a" ? "/photos/living.jpg" : "/photos/b-living.jpg";
+  const photos: readonly HousePhoto[] = (id === "a" ? apartmentAPhotos : apartmentBPhotos).filter((photo) => photo.src !== hero);
   const note = id === "a" ? t.photoNoteA : t.photoNoteB;
   const g = house().guides;
 
@@ -22,7 +23,7 @@ export function StayView({ id }: { id: "a" | "b" }) {
     <Shell>
       <section className={`page-hero page-hero-${id}`}>
         <Photo
-          src={id === "a" ? "/photos/living.jpg" : "/photos/entry.jpg"}
+          src={hero}
           alt={page.title}
           priority
           sizes="100vw"
@@ -63,16 +64,6 @@ export function StayView({ id }: { id: "a" | "b" }) {
 
           <h2 className="block-title">{t.photos}</h2>
           <Gallery photos={photos} lang={lang} labels={t.lightbox} />
-          {id === "b" ? (
-            <>
-              <p className="photo-note">{g.bNote}</p>
-              <ul className="slot-grid">
-                {g.bSlots.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </>
-          ) : null}
           <p className="photo-note">{note}</p>
           <Reviews which={id} />
 
@@ -96,6 +87,7 @@ export function StayView({ id }: { id: "a" | "b" }) {
           </div>
         </div>
       </section>
+      <KojohamaPromo from={id} />
     </Shell>
   );
 }

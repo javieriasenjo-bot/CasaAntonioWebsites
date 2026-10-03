@@ -306,7 +306,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
 const HERO: Partial<Record<PageId, string>> = {
   home: "exterior",
   a: "living",
-  b: "entry",
+  b: "b-living",
 };
 
 export const OG_IMAGE: Record<PageId, string> = {
@@ -467,7 +467,7 @@ function apartment(id: "a" | "b", lang: Lang) {
     url: absolutePage(page, lang),
     image: isA
       ? [`${ORIGIN}/photos/living-2000.webp`, `${ORIGIN}/photos/bedroom-1800.webp`, `${ORIGIN}/photos/kitchen-1800.webp`]
-      : [`${ORIGIN}/photos/exterior-1333.webp`, `${ORIGIN}/photos/entry-1800.webp`, `${ORIGIN}/photos/street-1067.webp`],
+      : [`${ORIGIN}/photos/b-living-2000.webp`, `${ORIGIN}/photos/b-bedroom-2000.webp`, `${ORIGIN}/photos/b-kitchen-2000.webp`, `${ORIGIN}/photos/b-dining-2000.webp`, `${ORIGIN}/photos/b-bath-1333.webp`],
     floorSize: {
       "@type": "QuantitativeValue",
       value: 65,

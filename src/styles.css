@@ -1634,3 +1634,53 @@ body.lightbox-open .quick-reserve {
   color: var(--color-muted);
   font-size: 0.84rem;
 }
+
+/* "Show all photos" under long galleries */
+.gallery-more {
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+/* Cross-link to the sister property, Kojohama Cabins */
+.kojohama-promo {
+  padding: 3rem 0;
+  background: var(--color-foam);
+}
+
+.kojohama-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.kojohama-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.kojohama-copy h2 {
+  margin: 0.2rem 0 0.8rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.kojohama-copy p:not(.eyebrow) {
+  margin: 0 0 1.2rem;
+}
+
+@media (max-width: 860px) {
+  .kojohama-promo {
+    padding: 2.2rem 0;
+  }
+
+  .kojohama-inner {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}

@@ -4,7 +4,9 @@ import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
 import { Reviews } from "@/components/reviews";
 import { SellingPoints } from "@/components/selling-points";
+import { KojohamaPromo } from "@/components/kojohama-promo";
 import { house } from "@/data/active";
+import { apartmentBPhotos } from "@/data/facts";
 import { useLang } from "@/lib/i18n";
 
 export function Home() {
@@ -130,7 +132,7 @@ export function Home() {
               </AirbnbLink>
             </div>
           </div>
-          <Photo src="/photos/exterior.jpg" alt={c.woodDoors} sizes="(max-width: 900px) 100vw, 50vw" />
+          <Photo src="/photos/b-living-sofa.jpg" alt={apartmentBPhotos[1].alt[lang]} sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </section>
 
@@ -206,6 +208,7 @@ export function Home() {
         </div>
       </section>
       <Reviews which="home" />
+      <KojohamaPromo from="home" />
     </Shell>
   );
 }

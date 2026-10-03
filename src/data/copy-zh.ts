@@ -55,7 +55,7 @@ export const zh = {
   bCard: {
     name: "Casa Antonio B",
     line: "木质暖调 · 二楼 · 约 65 ㎡ · 最多 3 位",
-    note: "室内照片还不在这一页。",
+    note: "一间卧室、三张单人床，还有投影仪。",
     cta: "看这套公寓",
   },
   aHome: {
@@ -74,7 +74,7 @@ export const zh = {
   bookB: "查看 Casa Antonio B 的日期",
   photos: "全部照片",
   photoNoteA: "室内照片拍摄于 Casa Antonio A，外面是共用的房子。",
-  photoNoteB: "这里放的是房子的外观。",
+  photoNoteB: "室内照片拍摄于 Casa Antonio B，外面是共用的房子。",
   neighborhoodTeaser: {
     eyebrow: "麻生",
     title: "想进城的时候，往南走。",
@@ -128,7 +128,7 @@ export const zh = {
     line: "一栋房子，两套公寓。札幌市北区北38条西3丁目。",
     address: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
     licenses: "民宿备案号　A · M010045173　　B · M010045174",
-    photo: "室内照片为 Casa Antonio A。",
+    photo: "所有照片均拍摄于 Casa Antonio。",
   },
   reserve: {
     label: "查看日期",

@@ -59,11 +59,21 @@ export function Gallery({
   }, [open]);
 
   const current = open === null ? null : photos[open];
+  // Long galleries (Casa Antonio B has 50+ photos) show the first 12 so the page stays short on phones.
+  const INITIAL = 12;
+  const [expanded, setExpanded] = useState(false);
+  const shown = expanded ? photos : photos.slice(0, INITIAL);
+  const showAll: Record<Lang, string> = {
+    en: `Show all ${photos.length} photos`,
+    ja: `写真をすべて見る（${photos.length}枚）`,
+    zh: `查看全部 ${photos.length} 张照片`,
+    ko: `사진 ${photos.length}장 모두 보기`,
+  };
 
   return (
     <>
       <div className="gallery">
-        {photos.map((photo, index) => (
+        {shown.map((photo, index) => (
           <button
             key={photo.src}
             type="button"
@@ -77,6 +87,13 @@ export function Gallery({
           </button>
         ))}
       </div>
+      {!expanded && photos.length > INITIAL ? (
+        <p className="gallery-more">
+          <button type="button" className="button button-line" onClick={() => setExpanded(true)}>
+            {showAll[lang]}
+          </button>
+        </p>
+      ) : null}
       {current && open !== null
         ? createPortal(
             <div ref={dialogRef} className="lightbox" role="dialog" aria-modal="true" aria-label={current.alt[lang]}>

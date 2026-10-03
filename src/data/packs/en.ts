@@ -56,7 +56,7 @@ export const copy = {
     bCard: {
       name: "Casa Antonio B",
       line: "Warmth of wood · second floor · about 65 m² · up to 3 guests",
-      note: "Interior photos are not on this page yet.",
+      note: "One bedroom, three single beds, and a projector.",
       cta: "View the apartment",
     },
     aHome: {
@@ -75,7 +75,7 @@ export const copy = {
     bookB: "Check dates for Casa Antonio B",
     photos: "All photographs",
     photoNoteA: "Photographs of Casa Antonio A, taken in the apartment, plus the shared house outside.",
-    photoNoteB: "These photographs are of the house.",
+    photoNoteB: "Photographs of Casa Antonio B, taken in the apartment, plus the shared house outside.",
     neighborhoodTeaser: {
       eyebrow: "Asabu",
       title: "South to the city when you want it.",
@@ -129,7 +129,7 @@ export const copy = {
       line: "Two apartments in one house. Kita 38-jo Nishi 3-chome, Kita-ku, Sapporo.",
       address: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
       licenses: "Minpaku notification  M010045173 · A     M010045174 · B",
-      photo: "Interior photographs are of Casa Antonio A.",
+      photo: "All photographs were taken at Casa Antonio.",
     },
     reserve: {
       label: "Check dates",

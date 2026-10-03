@@ -56,7 +56,7 @@ export const copy = {
     bCard: {
       name: "Casa Antonio B",
       line: "木の温もり · 2階 · 約65㎡ · 定員3名",
-      note: "室内の写真は、まだこのページにありません。",
+      note: "寝室ひとつ、シングルベッド3台、プロジェクター付き。",
       cta: "部屋を見る",
     },
     aHome: {
@@ -75,7 +75,7 @@ export const copy = {
     bookB: "Casa Antonio Bの空室を見る",
     photos: "写真をすべて見る",
     photoNoteA: "写真は Casa Antonio A の室内と、共用の建物の外観です。",
-    photoNoteB: "ここに並んでいるのは建物の写真です。",
+    photoNoteB: "写真は Casa Antonio B の室内と、共用の建物の外観です。",
     neighborhoodTeaser: {
       eyebrow: "麻生",
       title: "街へ出たくなったら、南へ。",
@@ -129,7 +129,7 @@ export const copy = {
       line: "一軒家に、ふたつのアパートメント。札幌市北区北38条西3丁目。",
       address: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
       licenses: "住宅宿泊事業の届出番号　A · M010045173　　B · M010045174",
-      photo: "室内写真は Casa Antonio A のものです。",
+      photo: "写真はすべて Casa Antonio で撮影しました。",
     },
     reserve: {
       label: "空室を見る",

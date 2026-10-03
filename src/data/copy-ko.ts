@@ -55,7 +55,7 @@ export const ko = {
   bCard: {
     name: "Casa Antonio B",
     line: "나무의 온기 · 2층 · 약 65㎡ · 최대 3명",
-    note: "실내 사진은 아직 이 페이지에 없습니다.",
+    note: "침실 하나, 싱글 침대 세 개, 프로젝터.",
     cta: "아파트 보기",
   },
   aHome: {
@@ -74,7 +74,7 @@ export const ko = {
   bookB: "Casa Antonio B 날짜 보기",
   photos: "사진 모두 보기",
   photoNoteA: "실내 사진은 Casa Antonio A에서 찍은 것이고, 바깥은 함께 쓰는 집입니다.",
-  photoNoteB: "이 페이지의 사진은 집 바깥입니다.",
+  photoNoteB: "실내 사진은 Casa Antonio B에서 찍은 것이고, 바깥은 함께 쓰는 집입니다.",
   neighborhoodTeaser: {
     eyebrow: "아사부",
     title: "도시로 나가고 싶을 때는 남쪽으로.",
@@ -128,7 +128,7 @@ export const ko = {
     line: "집 한 채에 아파트 두 채. 삿포로시 기타구 기타 38조 니시 3초메.",
     address: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
     licenses: "민박 신고 번호　A · M010045173　　B · M010045174",
-    photo: "실내 사진은 Casa Antonio A의 것입니다.",
+    photo: "모든 사진은 Casa Antonio에서 촬영했습니다.",
   },
   reserve: {
     label: "날짜 보기",
