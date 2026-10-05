@@ -27,11 +27,11 @@ const { renderPage } = await vite.ssrLoadModule("/src/entry-server.tsx");
 const paths = await vite.ssrLoadModule("/src/lib/paths.ts");
 const seo = await vite.ssrLoadModule("/src/lib/seo.ts");
 
-const gtmHead = `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T8TLRH4L');</script>`;
+// GTM + GA4 are ~300 KiB. Loading them at the start competes with the hero image and the app script on slow
+// phones, so they load on the first interaction or 3.5 s after the page's load event, whichever comes first.
+const gtmHead = `<script>window.dataLayer=window.dataLayer||[];(function(w,d,i){function go(){if(w.__gtm)return;w.__gtm=1;w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id='+i;d.head.appendChild(s)}
+['pointerdown','keydown','scroll','touchstart'].forEach(function(t){w.addEventListener(t,go,{once:true,passive:true})});
+w.addEventListener('load',function(){setTimeout(go,3500)})})(window,document,'GTM-T8TLRH4L');</script>`;
 const gtmBody = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8TLRH4L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;
 
 const pages = paths.PAGE_IDS;
