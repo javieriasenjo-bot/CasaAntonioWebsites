@@ -1,0 +1,36 @@
+{
+  "checkedOn": "2026-10-06",
+  "method": "Public Airbnb pages and opened full amenities panels, headless Edge",
+  "properties": {
+    "a": {
+      "url": "https://www.airbnb.com/rooms/1248284267045468378",
+      "guests": 4,
+      "bedrooms": 2,
+      "singleBeds": 3,
+      "doubleBeds": 1,
+      "freeParking": true,
+      "dryingRack": true,
+      "advertisedWifiMbps": 84,
+      "wifiTestDate": null,
+      "titleStillSaysPaidParking": true
+    },
+    "b": {
+      "url": "https://www.airbnb.com/rooms/1248260873560502499",
+      "guests": 3,
+      "bedrooms": 1,
+      "singleBeds": 3,
+      "doubleBeds": 0,
+      "freeParking": true
+    }
+  },
+  "unknown": [
+    "Cot and high-chair availability",
+    "Current dated Wi-Fi measurements",
+    "Numerical parking height/width/length clearance"
+  ],
+  "externalCorrections": [
+    "A title: paid parking contradicts free parking",
+    "A description: both bedrooms labelled Bedroom 1",
+    "Both: bring seasonings text conflicts with oil/salt/pepper amenities"
+  ]
+}

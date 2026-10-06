@@ -687,7 +687,14 @@ function article(page: PageId, lang: Lang) {
 }
 
 export function jsonLd(page: PageId, lang: Lang) {
-  const graph: object[] = [breadcrumb(page, lang)];
+  const graph: object[] = [breadcrumb(page, lang), {
+    "@type": "WebPage",
+    "@id": `${absolutePage(page, lang)}#webpage`,
+    url: absolutePage(page, lang),
+    name: pageMeta(page, lang).title,
+    inLanguage: HTML_LANG[lang],
+    dateModified: PAGE_MODIFIED[page],
+  }];
   if (page === "home") {
     graph.push(lodging(), {
       "@type": "WebSite",

@@ -50,7 +50,7 @@ for (const page of pages) {
 ${gtmHead}
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#243833" />
-<noscript><style>.site-header nav{display:flex!important}.menu-toggle,.quick-reserve-trigger{display:none!important}</style></noscript>
+<noscript><style>.site-header nav{display:flex!important}.menu-toggle,button.quick-reserve-trigger{display:none!important}</style></noscript>
 ${tags.meta}
 ${tags.links}
 ${tags.fontLink}

@@ -103,16 +103,16 @@ export function Gallery({
 
   return (
     <>
-      <div className="gallery-filters" aria-label={({ en: "Photo rooms", ja: "写真の部屋", zh: "照片分类", ko: "사진 공간" })[lang]}>
+      <div className="gallery-filters" role="group" aria-label={({ en: "Photo rooms", ja: "写真の部屋", zh: "照片分类", ko: "사진 공간" })[lang]}>
         {(Object.keys(ROOM_LABELS) as (keyof typeof ROOM_LABELS)[]).filter(key => key === "all" || allPhotos.some(p => photoCategory(p.src) === key)).map(key => (
-          <button type="button" key={key} aria-pressed={category === key} onClick={() => { setOpen(null); setCategory(key); }}>
+          <button type="button" key={key} aria-pressed={category === key} onClick={() => { setOpen(null); setExpanded(false); setCategory(key); }}>
             {ROOM_LABELS[key][lang]}
           </button>
         ))}
       </div>
       <div className="gallery" id={galleryId}>{thumbnails(photos.slice(0, INITIAL), 0)}</div>
       {photos.length > INITIAL ? (
-        <details className="gallery-extra" onToggle={(event) => setExpanded(event.currentTarget.open)}>
+        <details key={category} className="gallery-extra" onToggle={(event) => setExpanded(event.currentTarget.open)}>
           <summary className="button button-line">
             {expanded ? showFewer[lang] : showAll[lang]}
           </summary>

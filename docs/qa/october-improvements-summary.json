@@ -1,0 +1,86 @@
+{
+  "checkedOn": "2026-10-06",
+  "target": "Local production build, http://127.0.0.1:4179",
+  "browser": "Headless Microsoft Edge via Playwright",
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "automatedTests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "routeChecks": {
+    "pages": 52,
+    "viewports": [
+      390,
+      1440
+    ],
+    "checks": 104,
+    "hydratedHeadingPreserved": true,
+    "horizontalOverflow": false,
+    "brokenLoadedImages": 0
+  },
+  "mobileKeyboardChecks": [
+    {
+      "prefix": "",
+      "width": 320,
+      "gallery": "keyboard navigation and focus restoration passed",
+      "menu": "passed"
+    },
+    {
+      "prefix": "/ja",
+      "width": 320,
+      "gallery": "keyboard navigation and focus restoration passed",
+      "menu": "passed"
+    },
+    {
+      "prefix": "/zh-cn",
+      "width": 320,
+      "gallery": "keyboard navigation and focus restoration passed",
+      "menu": "passed"
+    },
+    {
+      "prefix": "/ko",
+      "width": 320,
+      "gallery": "keyboard navigation and focus restoration passed",
+      "menu": "passed"
+    }
+  ],
+  "noJavaScriptGallery": {
+    "galleryExpansion": "passed",
+    "photoHref": "/photos/dining-2-1800.webp",
+    "photoStatus": 200
+  },
+  "featureChecks": [
+    {
+      "prefix": "",
+      "chooser": "focus, outside dismissal and Escape passed",
+      "gallery": "category, horizontal swipe, vertical movement and eight-photo overview passed",
+      "fallback": "320px no JavaScript and blocked app assets passed"
+    },
+    {
+      "prefix": "/ja",
+      "chooser": "focus, outside dismissal and Escape passed",
+      "gallery": "category, horizontal swipe, vertical movement and eight-photo overview passed",
+      "fallback": "320px no JavaScript and blocked app assets passed"
+    },
+    {
+      "prefix": "/zh-cn",
+      "chooser": "focus, outside dismissal and Escape passed",
+      "gallery": "category, horizontal swipe, vertical movement and eight-photo overview passed",
+      "fallback": "320px no JavaScript and blocked app assets passed"
+    },
+    {
+      "prefix": "/ko",
+      "chooser": "focus, outside dismissal and Escape passed",
+      "gallery": "category, horizontal swipe, vertical movement and eight-photo overview passed",
+      "fallback": "320px no JavaScript and blocked app assets passed"
+    }
+  ],
+  "limits": [
+    "Swipe checks dispatched synthetic touch events; no physical-phone test",
+    "Image check covers loaded images; generated image href/srcset existence checked separately",
+    "Local production build; latest website changes not deployed by Codex",
+    "GA4 collection blocked during browser QA",
+    "No new Lighthouse or field Core Web Vitals measurement"
+  ]
+}

@@ -41,7 +41,14 @@ export function Shell({ children }: { children: ReactNode }) {
     if (!reserveOpen) return;
     reserveRef.current?.querySelector<HTMLElement>(".quick-reserve-menu a")?.focus();
     const outside = (event: PointerEvent) => {
-      if (event.target instanceof Node && !reserveRef.current?.contains(event.target)) closeReserve();
+      if (event.target instanceof Element && !reserveRef.current?.contains(event.target)) {
+        setReserveOpen(false);
+        // Let a clicked link/control receive focus; otherwise return it after
+        // the pointer's default action (which would undo immediate focus).
+        if (!event.target.closest("a, button, input, select, textarea, [tabindex]")) {
+          requestAnimationFrame(() => reserveRef.current?.querySelector<HTMLElement>(".quick-reserve-trigger")?.focus());
+        }
+      }
     };
     document.addEventListener("pointerdown", outside);
     return () => document.removeEventListener("pointerdown", outside);

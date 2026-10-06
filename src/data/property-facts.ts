@@ -64,11 +64,13 @@ export function practicalGuestFacts(id: "a" | "b", lang: Lang): [string, string]
     ko: ["침대 폭", "체크인·체크아웃", "주차", "세탁", "출입"],
   }[lang];
   const widths = PROPERTY_FACTS.bedWidthsCM;
+  const steps = PROPERTY_FACTS.bStairs.approximateSteps;
+  const { checkin, checkout } = PROPERTY_FACTS.arrival;
   const values = {
-    en: [`Singles ${widths.Single} cm${id === "a" ? ` · double ${widths.Double} cm` : ""}`, "Self check-in 16:00–23:00 · check-out by 10:00", "One free space per apartment, suitable for a large car", id === "b" ? "Washing machine and space to hang and dry clothes in the laundry room" : "Washing machine", id === "b" ? "Second floor · approximately 25 steps with a handrail" : "Ground floor"],
-    ja: [`シングル${widths.Single}cm${id === "a" ? `・ダブル${widths.Double}cm` : ""}`, "セルフチェックイン16:00–23:00・チェックアウト10:00まで", "各部屋1台無料。大型車も駐車可能", id === "b" ? "洗濯機と、洗濯室内の物干しスペース" : "洗濯機あり", id === "b" ? "2階・約25段の階段（手すりあり）" : "1階"],
-    zh: [`单人床${widths.Single}厘米${id === "a" ? `・双人床${widths.Double}厘米` : ""}`, "自助入住16:00–23:00・10:00前退房", "每套公寓免费停一辆车，可停大型汽车", id === "b" ? "洗衣机及洗衣房内的晾衣空间" : "有洗衣机", id === "b" ? "二楼・约25级台阶，设有扶手" : "一楼"],
-    ko: [`싱글 ${widths.Single}cm${id === "a" ? ` · 더블 ${widths.Double}cm` : ""}`, "셀프 체크인 16:00–23:00 · 체크아웃 10:00까지", "아파트당 무료 주차 1대, 대형 차량도 주차 가능", id === "b" ? "세탁기와 세탁실 안의 빨래 건조 공간" : "세탁기 있음", id === "b" ? "2층 · 약 25개 계단, 손잡이 있음" : "1층"],
+    en: [`Singles ${widths.Single} cm${id === "a" ? ` · double ${widths.Double} cm` : ""}`, `Self check-in ${checkin} · check-out by ${checkout}`, "One free space per apartment, suitable for a large car. Tell the host when booking.", id === "b" ? "Washing machine and space to hang and dry clothes in the laundry room" : "Washing machine and drying rack for clothes", id === "b" ? `Second floor · approximately ${steps} steps with a handrail` : "Ground floor"],
+    ja: [`シングル${widths.Single}cm${id === "a" ? `・ダブル${widths.Double}cm` : ""}`, `セルフチェックイン${checkin}・チェックアウト${checkout}まで`, "各部屋1台無料。大型車も駐車可能。利用する場合は予約時にお知らせください", id === "b" ? "洗濯機と、洗濯室内の物干しスペース" : "洗濯機と物干しラック", id === "b" ? `2階・約${steps}段の階段（手すりあり）` : "1階"],
+    zh: [`单人床${widths.Single}厘米${id === "a" ? `・双人床${widths.Double}厘米` : ""}`, `自助入住${checkin}・${checkout}前退房`, "每套公寓免费停一辆车，可停大型汽车。使用车位请在预订时告知房东", id === "b" ? "洗衣机及洗衣房内的晾衣空间" : "洗衣机及晾衣架", id === "b" ? `二楼・约${steps}级台阶，设有扶手` : "一楼"],
+    ko: [`싱글 ${widths.Single}cm${id === "a" ? ` · 더블 ${widths.Double}cm` : ""}`, `셀프 체크인 ${checkin} · 체크아웃 ${checkout}까지`, "아파트당 무료 주차 1대, 대형 차량도 주차 가능. 이용 시 예약할 때 호스트에게 알려 주세요", id === "b" ? "세탁기와 세탁실 안의 빨래 건조 공간" : "세탁기와 빨래 건조대", id === "b" ? `2층 · 약 ${steps}개 계단, 손잡이 있음` : "1층"],
   }[lang];
   return labels.map((label, i) => [label, values[i]]);
 }

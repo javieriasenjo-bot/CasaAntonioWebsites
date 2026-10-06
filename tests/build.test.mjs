@@ -70,3 +70,42 @@ test("all destination photos retain verified original-source links in every lang
     assert.ok(readFileSync(join(dist, prefix, "teine-ski/index.html"), "utf8").includes(`href="${teine.sourcePageUrl}"`));
   }
 });
+
+test("owner facts, privacy disclosure and maintenance dates agree in all languages", () => {
+  const cases = [
+    ['', /Free · one car/, /minimum charge of ¥15,000/, /handrail/, /Google Analytics/],
+    ['ja/', /無料・1台/, /最低請求額は15,000円/, /手すり/, /Googleアナリティクス/],
+    ['zh-cn/', /免费・一辆/, /最低收费为 15,000 日元/, /扶手/, /Google Analytics/],
+    ['ko/', /무료 · 1대/, /최소 청구액은 15,000엔/, /손잡이/, /Google 애널리틱스/],
+  ];
+  for (const [prefix, parking, damage, handrail, analytics] of cases) {
+    for (const [route, guests] of [['casa-antonio-a',4],['casa-antonio-b',3]]) {
+      const html = readFileSync(join(dist,prefix,route,'index.html'),'utf8');
+      assert.match(html, parking);
+      assert.match(html, new RegExp('"occupancy":\\{"@type":"QuantitativeValue","maxValue":'+guests));
+      assert.match(html, /90(?: cm|cm|厘米)/);
+      if (guests === 4) {
+        assert.match(html, /130(?: cm|cm|厘米)/);
+        assert.doesNotMatch(html, /earlier bed arrangement|being checked|three double beds|ダブルベッド3台|三张双人床|더블 침대 세 개/);
+      } else {
+        assert.match(html, /"typeOfBed":"Single","numberOfBeds":3/);
+        assert.doesNotMatch(html, /"typeOfBed":"Double"/);
+        assert.match(html, /25(?: steps|段|级|개)/);
+        assert.match(html, handrail);
+      }
+    }
+    const faq = readFileSync(join(dist,prefix,'faq/index.html'),'utf8');
+    assert.match(faq,damage);
+    const privacy = readFileSync(join(dist,prefix,'privacy/index.html'),'utf8');
+    assert.match(privacy,analytics); assert.match(privacy,/Booking\.com/);
+  }
+  const sitemap = readFileSync(join(dist,'sitemap.xml'),'utf8');
+  for (const file of pages(dist)) {
+    const html = readFileSync(file,'utf8');
+    const schema = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
+    const webPage = schema.flatMap(s=>s['@graph'] || [s]).find(s=>s['@type']==='WebPage');
+    assert.ok(webPage, file);
+    assert.match(webPage.dateModified,/^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(sitemap.replace(/>\s+</g,'><').includes('<loc>'+webPage.url+'</loc><lastmod>'+webPage.dateModified+'</lastmod>'),file);
+  }
+});

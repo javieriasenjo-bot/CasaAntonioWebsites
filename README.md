@@ -22,7 +22,7 @@ Add these parameters on links you place in a profile or a post. Do not add them 
 
 ## Status (6 Oct 2026)
 
-Owner-confirmed facts are in `src/data/property-facts.ts`: free parking for one car per apartment; approximately 65 m² each; A has three double beds across two bedrooms (2 + 1), maximum four guests; B has three single beds, maximum three guests. Damage charges are actual repair costs with a minimum of ¥15,000. Existing A bedroom photos show an earlier arrangement; all languages disclose this beside the gallery until current photos are supplied.
+Current property facts are in `src/data/property-facts.ts`: free parking for one large car per apartment; approximately 65 m² each; A has three singles and one double across two bedrooms (two singles beside the living room; one single and one double farther away), maximum four guests; B has three singles, maximum three guests. Singles are 90 cm wide; the double is 130 cm. B is on the second floor, reached by approximately 25 steps with a handrail, and has laundry-room hanging/drying space. A lists a drying rack on Airbnb. Damage charges follow actual repair costs with a minimum of ¥15,000. The owner confirmed that A’s existing photos show the current layout. See `docs/OCTOBER_IMPROVEMENTS.md` for the latest changes and checks.
 
 The site captures clicks immediately in `scripts/analytics-bootstrap.js`. GTM consumes the queue. Do not add a second click listener or React event push. Booking intent remains `airbnb_click` for compatibility, while both platforms' review links use `review_click`, and long-stay requests use `inquiry_click`. These actions are not completed bookings. The bootstrap keeps the legacy listener guard to prevent duplicate events.
 
