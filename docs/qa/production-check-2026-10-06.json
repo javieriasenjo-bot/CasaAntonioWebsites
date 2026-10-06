@@ -1,0 +1,644 @@
+{
+  "checkedOn": "2026-10-06",
+  "target": "https://casaantonio.jp/",
+  "method": "Fresh HTTP responses and headless Edge browser checks",
+  "productionParity": {
+    "pages": [
+      {
+        "path": "/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/casa-antonio-a/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/casa-antonio-a/",
+        "alternates": 5
+      },
+      {
+        "path": "/casa-antonio-a/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/casa-antonio-a/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/casa-antonio-a/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/casa-antonio-a/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/casa-antonio-a/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/casa-antonio-a/",
+        "alternates": 5
+      },
+      {
+        "path": "/casa-antonio-b/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/casa-antonio-b/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/casa-antonio-b/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/casa-antonio-b/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/casa-antonio-b/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/casa-antonio-b/",
+        "alternates": 5
+      },
+      {
+        "path": "/neighborhood/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/neighborhood/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/casa-antonio-b/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/casa-antonio-b/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/neighborhood/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/neighborhood/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/neighborhood/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/neighborhood/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/neighborhood/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/neighborhood/",
+        "alternates": 5
+      },
+      {
+        "path": "/day-trips/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/day-trips/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/day-trips/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/day-trips/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/day-trips/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/day-trips/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/day-trips/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/day-trips/",
+        "alternates": 5
+      },
+      {
+        "path": "/arrival/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/arrival/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/arrival/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/arrival/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/arrival/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/arrival/",
+        "alternates": 5
+      },
+      {
+        "path": "/access/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/access/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/arrival/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/arrival/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/access/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/access/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/access/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/access/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/access/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/access/",
+        "alternates": 5
+      },
+      {
+        "path": "/snow-festival/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/snow-festival/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/snow-festival/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/snow-festival/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/snow-festival/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/snow-festival/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/snow-festival/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/snow-festival/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/teine-ski/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/teine-ski/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/teine-ski/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/teine-ski/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/teine-ski/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/teine-ski/",
+        "alternates": 5
+      },
+      {
+        "path": "/teine-ski/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/teine-ski/",
+        "alternates": 5
+      },
+      {
+        "path": "/long-stay/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/long-stay/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/long-stay/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/long-stay/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/long-stay/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/long-stay/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/long-stay/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/long-stay/",
+        "alternates": 5
+      },
+      {
+        "path": "/faq/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/faq/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/faq/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/faq/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/faq/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/faq/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/faq/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/faq/",
+        "alternates": 5
+      },
+      {
+        "path": "/combo/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/combo/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/combo/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/combo/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/combo/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/combo/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/combo/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/combo/",
+        "alternates": 5
+      },
+      {
+        "path": "/privacy/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/privacy/",
+        "alternates": 5
+      },
+      {
+        "path": "/ja/privacy/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ja/privacy/",
+        "alternates": 5
+      },
+      {
+        "path": "/zh-cn/privacy/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/zh-cn/privacy/",
+        "alternates": 5
+      },
+      {
+        "path": "/ko/privacy/",
+        "status": 200,
+        "htmlMatchesLocal": true,
+        "assetsMatch": true,
+        "descriptionMatches": true,
+        "canonical": "https://casaantonio.jp/ko/privacy/",
+        "alternates": 5
+      }
+    ],
+    "resources": [
+      {
+        "path": "/assets/_-R-33UK4_.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/chrome-Cwg5li-U.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/guide-view-CNdgIJuR.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/index-Bp5-U1-C.css",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/index-NKiryWWm.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/official-links-D1S92UEt.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/photo-credit-BDENt_yQ.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/property-facts-B-3G4mI0.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/react-dom-uJKx6JcA.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/travel-facts-mcf2dyri.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      }
+    ],
+    "redirects": [
+      {
+        "url": "http://casaantonio.jp/",
+        "status": 301,
+        "location": "https://casaantonio.jp/"
+      },
+      {
+        "url": "https://casaantonio.jp/casa-antonio-a",
+        "status": 307,
+        "location": "/casa-antonio-a/"
+      },
+      {
+        "url": "https://casaantonio.jp/ja/casa-antonio-b",
+        "status": 307,
+        "location": "/ja/casa-antonio-b/"
+      }
+    ],
+    "sitemap": {
+      "status": 200,
+      "matchesLocal": true
+    }
+  },
+  "browser": {
+    "routeChecks": 104,
+    "pages": 52,
+    "viewports": [
+      390,
+      1440
+    ],
+    "preservedPrerenderedHeading": true,
+    "horizontalOverflow": false,
+    "brokenLoadedImages": 0,
+    "applicationErrors": 0,
+    "mobileKeyboardChecks": [
+      {
+        "prefix": "",
+        "width": 320,
+        "gallery": "keyboard navigation and focus restoration passed",
+        "menu": "passed"
+      },
+      {
+        "prefix": "/ja",
+        "width": 320,
+        "gallery": "keyboard navigation and focus restoration passed",
+        "menu": "passed"
+      },
+      {
+        "prefix": "/zh-cn",
+        "width": 320,
+        "gallery": "keyboard navigation and focus restoration passed",
+        "menu": "passed"
+      },
+      {
+        "prefix": "/ko",
+        "width": 320,
+        "gallery": "keyboard navigation and focus restoration passed",
+        "menu": "passed"
+      }
+    ],
+    "noJavaScriptGallery": {
+      "galleryExpansion": "passed",
+      "photoHref": "/photos/dining-2-1800.webp",
+      "photoStatus": 200
+    }
+  },
+  "featureChecks": [
+    {
+      "prefix": "",
+      "chooser": "focus, outside dismissal and Escape passed",
+      "gallery": "category, horizontal swipe, vertical movement and eight-photo overview passed",
+      "fallback": "320px no JavaScript and blocked app assets passed"
+    },
+    {
+      "prefix": "/ja",
+      "chooser": "focus, outside dismissal and Escape passed",
+      "gallery": "category, horizontal swipe, vertical movement and eight-photo overview passed",
+      "fallback": "320px no JavaScript and blocked app assets passed"
+    },
+    {
+      "prefix": "/zh-cn",
+      "chooser": "focus, outside dismissal and Escape passed",
+      "gallery": "category, horizontal swipe, vertical movement and eight-photo overview passed",
+      "fallback": "320px no JavaScript and blocked app assets passed"
+    },
+    {
+      "prefix": "/ko",
+      "chooser": "focus, outside dismissal and Escape passed",
+      "gallery": "category, horizontal swipe, vertical movement and eight-photo overview passed",
+      "fallback": "320px no JavaScript and blocked app assets passed"
+    }
+  ],
+  "analyticsSpotCheck": {
+    "language": "English",
+    "successfulActions": 9,
+    "container": "GTM-T8TLRH4L",
+    "destination": "G-3V83R0Z48F",
+    "events": [
+      "airbnb_click",
+      "inquiry_click",
+      "language_change",
+      "map_click",
+      "review_click"
+    ],
+    "collectionRequestsIntercepted": true,
+    "accountReceiptVerified": false
+  },
+  "limits": [
+    "Headless browser; swipe tested with synthetic touch events, no physical-phone check",
+    "Loaded-image checks plus one high-resolution request; not every original photo downloaded",
+    "No new Lighthouse score or field Core Web Vitals",
+    "GTM spot-check verifies queued events and attempted GA4 requests, not account-side receipt"
+  ],
+  "testNotes": [
+    "An initial quick focus assertion ran before focus settled; condition-based rerun passed",
+    "An initial startup wait timed out; full rerun passed all 104 route checks without application errors"
+  ]
+}

@@ -62,3 +62,13 @@ Evidence: `docs/qa/october-improvements-summary.json`, `docs/qa/airbnb-facts-202
 4. When changing property facts, reconcile translated copy, FAQ, property schema and fact checks together. Preserve booking/review/enquiry distinctions in analytics.
 5. Owner commits/deploys. After deployment, verify the actual mobile booking journeys, gallery, canonical/hreflang, sitemap dates and analytics receipt. Do not count clicks as completed reservations.
 6. Resolve the external-listing wording and missing owner facts above without inventing amenities, legal terms, photo alterations or performance measurements.
+
+## Production verification after owner deployment — 6 October 2026
+
+The owner deployed the source. Fresh checks of `https://casaantonio.jp/` confirm all 52 pages return HTTP 200 and exactly match the current local production HTML, including metadata and versioned asset references. Every page retains its canonical and five language alternates. The live sitemap matches the local sitemap. HTTP redirects to HTTPS; tested English/Japanese apartment paths without trailing slashes redirect correctly. Ten homepage-referenced versioned resources returned 200 with one-year immutable caching.
+
+All 104 production browser checks (52 pages at 390/1440 px) passed: prerendered headings preserved, no horizontal overflow, broken loaded images or application errors. All four languages passed 320 px chooser focus/outside/Escape behavior, gallery categories and synthetic swipe checks, keyboard/focus navigation and the no-script/blocked-script mobile fallback. A no-script gallery photo request returned HTTP 200. An initial fast focus assertion was replaced with a wait for focus; one initial startup wait timed out, while the full rerun passed.
+
+Nine English production analytics actions passed: A/B bookings, Airbnb/Booking.com review links, long-stay enquiry, map and language change. Each queued once and attempted the expected GA4 event to `G-3V83R0Z48F`. Collection requests were intercepted before transmission; account-side receipt remains unverified. No new Lighthouse or real-user performance result is claimed.
+
+Evidence: `docs/qa/production-check-2026-10-06.json`. Remaining external listing wording, family amenities and dated Wi-Fi measurement items above remain open.

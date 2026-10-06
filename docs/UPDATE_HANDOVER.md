@@ -70,3 +70,7 @@ Start with `src/data/property-facts.ts`, `src/data/travel-facts.ts`, `scripts/an
 ## Latest continuation
 
 See [OCTOBER_IMPROVEMENTS.md](OCTOBER_IMPROVEMENTS.md) for subsequent mobile fallback, privacy, metadata, practical facts, gallery and maintenance improvements. That document supersedes earlier bed-layout assumptions and records the new validation separately from the earlier Lighthouse sample.
+
+## Production now verified
+
+The owner deployed the latest source. All 52 live pages match the local production build; 104 mobile/desktop checks, four-language feature/fallback checks and a nine-action English analytics spot-check passed. See the production section in [OCTOBER_IMPROVEMENTS.md](OCTOBER_IMPROVEMENTS.md) and [production evidence](qa/production-check-2026-10-06.json). GA4 account receipt and physical-phone/field-performance measurements remain unverified.
