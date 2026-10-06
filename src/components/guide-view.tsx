@@ -166,7 +166,7 @@ export function TeinePage() {
         <div className="wrap">
           <figure className="ski-figure">
             <Photo src="/photos/teine.jpg" alt={page.title} sizes="(max-width: 900px) 100vw, 1120px" />
-            <figcaption><PhotoCredit text={page.credit} /></figcaption>
+            <figcaption><PhotoCredit text={page.credit} src="/photos/teine.jpg" lang={lang} /></figcaption>
           </figure>
           {page.blocks.map((block) => (
             <div className="prose" key={block.h}>

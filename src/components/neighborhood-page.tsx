@@ -29,10 +29,10 @@ const placeShots: { key: string; shot: Shot }[] = [
     shot: {
       src: "/photos/odori.jpg",
       credit: credit(
-        "Odori Park and the TV tower. Photograph by LR0725, CC BY-SA 4.0.",
-        "大通公園とテレビ塔。写真: LR0725, CC BY-SA 4.0。",
-        "大通公园与电视塔。摄影：LR0725，CC BY-SA 4.0。",
-        "오도리 공원과 TV 타워. 사진: LR0725, CC BY-SA 4.0.",
+        "Odori Park viewed from Sapporo TV Tower. Photograph by LR0725, CC BY-SA 4.0.",
+        "さっぽろテレビ塔から見た大通公園。写真: LR0725, CC BY-SA 4.0。",
+        "从札幌电视塔俯瞰大通公园。摄影：LR0725，CC BY-SA 4.0。",
+        "삿포로 TV 타워에서 바라본 오도리 공원. 사진: LR0725, CC BY-SA 4.0.",
       ),
     },
   },
@@ -98,7 +98,7 @@ export function Neighborhood() {
                         {shot ? (
                           <figure className="place-shot">
                             <Photo src={shot.src} alt={item.name} sizes="(max-width: 800px) 100vw, 720px" />
-                            <figcaption><PhotoCredit text={shot.credit[lang]} /></figcaption>
+                            <figcaption><PhotoCredit text={shot.credit[lang]} src={shot.src} lang={lang} /></figcaption>
                           </figure>
                         ) : null}
                         <p>{item.body}</p>

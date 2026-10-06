@@ -17,9 +17,11 @@ Existing excerpts remain verbatim. Score recording dates come from the supplied 
 
 ## Destination photos
 
-Photographer names and license labels were carried over from source, and Creative Commons license labels now link to the corresponding license pages. These are not proof of acquisition or ownership. The property-photo folders do not establish the sources of destination photos.
+All 16 destination photographs were matched on 6 October 2026 to exact Wikimedia Commons file pages: hokudai, odori, clock, teine, otaru, sakaimachi, otaru-aqua, shukutsu, jigoku, jozankei, bluepond, furano, biei, buddha, toya and upopoy. Their authors and license labels agree with the existing credits. Original-photo links now appear with the captions in all four languages, alongside license links and a localized notice that the web images were resized and converted. Odori's caption now accurately describes the view from Sapporo TV Tower.
 
-Records still needed for hokudai, odori, clock, teine, otaru, sakaimachi, otaru-aqua, shukutsu, jigoku, jozankei, bluepond, furano, biei, buddha, toya and upopoy: exact original file/source URL, author record, license/version, acquisition date or original record, and any crop/resize modifications. Public-domain/CC0 claims also need their original source record. Record these before claiming that attribution is complete. The source already says Teine was resized; do not invent modification histories for the others.
+[photo-attribution.json](qa/photo-attribution.json) records exact file-page URLs, original image URLs/dimensions, authors, licenses, Commons SHA-1, the local photos-src SHA-256, verification date and comparison score. [photo-provenance.ts](../src/data/photo-provenance.ts) supplies the site's source links. Each supplied JPEG was compared against a Commons thumbnail at 64 × 64 pixels and visually checked side by side. RGB comparison RMSE ranges from approximately 1.03 to 2.73 out of 255; this is image-match evidence, not a byte-identical comparison of the full original. The existing web assets and photo manifest provide resized WebP/AVIF variants. The existing images were retained.
+
+The original acquisition dates and historical download records remain unknown. Newly matched public sources do not establish when the source author acquired the files or every historical edit. Do not invent those records. The property-photo folders are separate owner-provided records, not the source of destination photos.
 
 ## Verified travel references
 

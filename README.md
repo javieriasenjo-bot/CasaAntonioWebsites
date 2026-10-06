@@ -33,6 +33,6 @@ See `docs/GTM_SETUP.md` for the outstanding container configuration and verifica
 ## Still needed from the owner
 
 - A current photo of the bedroom that now has one double bed. The existing photos remain with a layout-disclosure note.
-- Original destination-photo acquisition/source links, and individual Booking.com review dates/source records. The supplied high-quality property-photo folders do not establish these records.
+- Historical destination-photo acquisition records, and individual Booking.com review dates/source records. Exact public originals for all 16 destination photos are now linked and documented in `docs/qa/photo-attribution.json`; acquisition dates remain unknown.
 - Reconcile Airbnb/Booking.com listing terms with the approved parking, bed arrangement and damage policy; this source update does not edit those listings.
 - Optional nightly rates, social profile URLs, and a direct long-stay contact, only if they should be published. Airbnb messaging remains available meanwhile.

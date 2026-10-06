@@ -189,7 +189,7 @@ export function DayTrips() {
                   {photos.map((photo) => (
                     <figure key={photo.src} className="trip-figure">
                       <Photo src={photo.src} alt={idea.title} sizes={photos.length > 1 ? "(max-width: 800px) 100vw, 26vw" : "(max-width: 800px) 100vw, 800px"} />
-                      <figcaption><PhotoCredit text={photo.credit[lang]} /></figcaption>
+                      <figcaption><PhotoCredit text={photo.credit[lang]} src={photo.src} lang={lang} /></figcaption>
                     </figure>
                   ))}
                 </div>
