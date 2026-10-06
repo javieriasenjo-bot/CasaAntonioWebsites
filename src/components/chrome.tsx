@@ -4,7 +4,6 @@ import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { house } from "@/data/active";
 import { LANG_NAME } from "@/data/lang-name";
-import { trackLanguageChange } from "@/lib/analytics";
 import { rememberLang, useLang, type Lang } from "@/lib/i18n";
 import { HTML_LANG, pagePath, parsePath, type PageId } from "@/lib/paths";
 
@@ -108,15 +107,13 @@ export function Shell({ children }: { children: ReactNode }) {
                   <a
                     key={id}
                     href={href}
+                    data-language={id}
                     hrefLang={HTML_LANG[id]}
                     lang={HTML_LANG[id]}
                     className={lang === id ? "active" : undefined}
                     aria-current={lang === id ? "true" : undefined}
                     onClick={() => {
                       rememberLang(id);
-                      if (id !== lang) {
-                        trackLanguageChange(id, new URL(href, window.location.origin).href);
-                      }
                     }}
                   >
                     {LANG_NAME[id]}
@@ -133,10 +130,10 @@ export function Shell({ children }: { children: ReactNode }) {
             </p>
             <a
               href={pagePath(page, suggestion)}
+              data-language={suggestion}
               hrefLang={HTML_LANG[suggestion]}
               onClick={() => {
                 rememberLang(suggestion);
-                trackLanguageChange(suggestion, new URL(pagePath(page, suggestion), window.location.origin).href);
               }}
             >
               {g.bannerOpen} {LANG_NAME[suggestion]}

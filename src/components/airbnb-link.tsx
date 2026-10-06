@@ -2,9 +2,8 @@ import type { ReactNode } from "react";
 import { AIRBNB } from "@/data/facts";
 import type { Cabin } from "@/lib/analytics";
 
-// Airbnb clicks are tracked only by the Tag Manager click listener (no site-side dataLayer push).
-// The link carries data-intent / data-property / data-placement so that single listener can classify
-// booking clicks apart from review-reading clicks. Do not add a site-side push (it would duplicate events).
+// The early analytics bootstrap captures these attributes, including before hydration.
+// GTM consumes the queued events; do not add another DOM click producer.
 export function AirbnbLink({
   cabin,
   location,
@@ -15,7 +14,7 @@ export function AirbnbLink({
   cabin: Cabin;
   location: string;
   className?: string;
-  intent?: "booking" | "reviews";
+  intent?: "booking" | "reviews" | "inquiry";
   children: ReactNode;
 }) {
   const href = cabin === "a" ? AIRBNB.a : AIRBNB.b;

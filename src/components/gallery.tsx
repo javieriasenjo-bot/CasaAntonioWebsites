@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Photo } from "@/components/photo";
+import { Photo, photoHref } from "@/components/photo";
 import type { Photo as HousePhoto } from "@/data/facts";
 import type { Lang } from "@/lib/i18n";
 
@@ -14,6 +14,7 @@ export function Gallery({
   labels: { close: string; prev: string; next: string };
 }) {
   const [open, setOpen] = useState<number | null>(null);
+  const galleryId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
 
@@ -63,7 +64,6 @@ export function Gallery({
   // Long galleries (Casa Antonio B has 50+ photos) show the first 12 so the page stays short on phones.
   const INITIAL = 12;
   const [expanded, setExpanded] = useState(false);
-  const shown = expanded ? photos : photos.slice(0, INITIAL);
   const showAll: Record<Lang, string> = {
     en: `Show all ${photos.length} photos`,
     ja: `写真をすべて見る（${photos.length}枚）`,
@@ -73,29 +73,34 @@ export function Gallery({
 
   const showFewer: Record<Lang, string> = { en: "Show fewer photos", ja: "写真を閉じる", zh: "收起照片", ko: "사진 접기" };
 
+  const thumbnails = (items: readonly HousePhoto[], offset: number) => items.map((photo, index) => (
+    <a
+      key={photo.src}
+      href={photoHref(photo.src)}
+      target="_blank"
+      rel="noreferrer"
+      className="g-item"
+      onClick={(event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        returnFocus.current = event.currentTarget;
+        setOpen(index + offset);
+      }}
+    >
+      <Photo src={photo.src} alt={photo.alt[lang]} sizes="(max-width: 700px) 50vw, 280px" />
+    </a>
+  ));
+
   return (
     <>
-      <div className="gallery">
-        {shown.map((photo, index) => (
-          <button
-            key={photo.src}
-            type="button"
-            className="g-item"
-            onClick={(event) => {
-              returnFocus.current = event.currentTarget;
-              setOpen(index);
-            }}
-          >
-            <Photo src={photo.src} alt={photo.alt[lang]} sizes="(max-width: 700px) 50vw, 280px" />
-          </button>
-        ))}
-      </div>
+      <div className="gallery" id={galleryId}>{thumbnails(photos.slice(0, INITIAL), 0)}</div>
       {photos.length > INITIAL ? (
-        <p className="gallery-more">
-          <button type="button" className="button button-line" aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>
+        <details className="gallery-extra" onToggle={(event) => setExpanded(event.currentTarget.open)}>
+          <summary className="button button-line">
             {expanded ? showFewer[lang] : showAll[lang]}
-          </button>
-        </p>
+          </summary>
+          <div className="gallery">{thumbnails(photos.slice(INITIAL), INITIAL)}</div>
+        </details>
       ) : null}
       {current && open !== null
         ? createPortal(

@@ -1,4 +1,4 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { loadPack } from "./data/load-pack";
 import { langFromPath } from "./lib/paths";
@@ -15,10 +15,13 @@ declare module "@tanstack/react-router" {
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Root element missing");
+// These static routes have no server loader data to restore. Mark the router as
+// hydrating SSR so its root Suspense boundary matches the prerendered tree.
+if (root.hasChildNodes()) router.ssr = { manifest: undefined };
 
 await loadPack(langFromPath(window.location.pathname));
 await router.load();
-// Prerendered markup is for crawlers. Mounting into a fresh node avoids a hydration mismatch
-// from attribute casing (srcSet, hrefLang) after the browser parses the HTML.
-root.replaceChildren();
-createRoot(root).render(<RouterProvider router={router} />);
+const app = <RouterProvider router={router} />;
+// Preserve the HTML guests have already seen while the language/runtime loads.
+if (root.hasChildNodes()) hydrateRoot(root, app);
+else createRoot(root).render(app);

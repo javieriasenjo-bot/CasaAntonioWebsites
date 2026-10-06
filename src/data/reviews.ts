@@ -3,6 +3,7 @@
 // Update rating/count when they change on Airbnb. Never invent or edit a quote.
 
 export type ReviewQuote = {
+  sourceUrl?: string;
   name: string;
   when: string; // month and year as shown on Airbnb
   country: string; // guest location as shown on Airbnb; "" when Airbnb shows none
@@ -11,6 +12,7 @@ export type ReviewQuote = {
 };
 
 export type StayReviews = {
+  recordedOn: string;
   rating: number | null;
   count: number | null;
   guestFavorite?: boolean;
@@ -20,6 +22,7 @@ export type StayReviews = {
 
 export const reviews: { a: StayReviews; b: StayReviews } = {
   a: {
+    recordedOn: "2026-10-01",
     rating: 4.87,
     count: 30,
     quotes: [
@@ -52,6 +55,7 @@ export const reviews: { a: StayReviews; b: StayReviews } = {
     href: "https://www.airbnb.com/rooms/1248284267045468378",
   },
   b: {
+    recordedOn: "2026-10-01",
     rating: 4.95,
     count: 20,
     guestFavorite: true,
@@ -92,11 +96,12 @@ export function reviewReady(stay: StayReviews) {
 // Booking.com: real scores and guest comments copied from the two Booking.com listings (checked 2026-10-04).
 // Scores are out of 10. Comments are shown in the guest's own language (`lang`); some are the opening lines of
 // a longer review (Booking.com truncates them) and are marked `excerpt`. Never invent or edit a quote.
-export type BookingQuote = { name: string; country: string; lang: "en" | "ja" | "zh"; text: string; excerpt?: boolean };
-export type BookingReviews = { score: number; count: number; label: string; quotes: BookingQuote[]; href: string };
+export type BookingQuote = { name: string; country: string; lang: "en" | "ja" | "zh"; text: string; excerpt?: boolean; sourceUrl?: string; reviewDate?: string };
+export type BookingReviews = { recordedOn: string; score: number; count: number; label: string; quotes: BookingQuote[]; href: string };
 
 export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
   a: {
+    recordedOn: "2026-10-04",
     score: 8.9,
     count: 23,
     label: "Fabulous",
@@ -110,6 +115,7 @@ export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
     ],
   },
   b: {
+    recordedOn: "2026-10-04",
     score: 9.7,
     count: 26,
     label: "Exceptional",

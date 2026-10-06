@@ -12,7 +12,7 @@ const LABEL: Record<Lang, { title: string; reviews: string; favorite: string; tr
 const INITIAL = 4;
 const INITIAL_HOME = 2;
 
-type Item = { key: string; text: string; meta: string; source: "Airbnb" | "Booking.com"; lang?: string };
+type Item = { key: string; text: string; meta: string; source: "Airbnb" | "Booking.com"; sourceUrl?: string; lang?: string };
 
 function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lang: Lang; initial: number }) {
   const [open, setOpen] = useState(false);
@@ -31,6 +31,7 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
         text: q.text,
         meta: [q.name, q.country, q.when].filter(Boolean).join(" · ") + (q.translated ? ` · ${l.translated}` : ""),
         source: "Airbnb",
+        sourceUrl: q.sourceUrl,
         lang: "en",
       });
     const b = book.quotes[i];
@@ -38,8 +39,9 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
       items.push({
         key: `b-${b.name}`,
         text: b.text,
-        meta: [b.name, b.country].filter(Boolean).join(" · ") + (b.lang !== lang ? ` · ${l.original}` : "") + (b.excerpt ? ` · ${l.excerpt}` : ""),
+        meta: [b.name, b.country, b.reviewDate].filter(Boolean).join(" · ") + (b.lang !== lang ? ` · ${l.original}` : "") + (b.excerpt ? ` · ${l.excerpt}` : ""),
         source: "Booking.com",
+        sourceUrl: b.sourceUrl,
         lang: b.lang === "zh" ? "zh-Hant" : b.lang,
       });
   }
@@ -63,12 +65,19 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
           {l.reviews}
         </span>
       </p>
+      <p className="review-checked">
+        {({ en: "Ratings recorded", ja: "評価の記録日", zh: "评分记录日期", ko: "평점 기록일" })[lang]}:
+        {" "}Airbnb <time dateTime={air.recordedOn}>{air.recordedOn}</time>
+        {" · "}Booking.com <time dateTime={book.recordedOn}>{book.recordedOn}</time>
+      </p>
       <ul className="review-quotes" id={`reviews-${id}`}>
         {shown.map((it) => (
           <li key={it.key}>
             <blockquote lang={it.lang}>“{it.text}”</blockquote>
             <p>
-              {it.meta} · <span className="review-source">{it.source}</span>
+              {it.meta} · {it.sourceUrl ? (
+                <a className="review-source" href={it.sourceUrl} target="_blank" rel="noreferrer" data-intent="reviews" data-property={id} data-placement="review-excerpt">{it.source}</a>
+              ) : <span className="review-source">{it.source}</span>}
             </p>
           </li>
         ))}

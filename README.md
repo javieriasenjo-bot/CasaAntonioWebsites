@@ -20,15 +20,19 @@ Add these parameters on links you place in a profile or a post. Do not add them 
 
 `?utm_source=rednote&utm_medium=social&utm_campaign=bio`
 
-## Status (4 Oct 2026)
+## Status (6 Oct 2026)
 
-Done: B has 50 interior photos (first 12 curated for booking questions); A has 57 photos (bedrooms, bath, washroom, exterior early). Both apartments are ~65 m² and A is two bedrooms / four beds, matching the Airbnb listing. Real Airbnb and Booking.com reviews are on the site (scores: Airbnb /5, Booking.com /10, never merged; source in `src/data/reviews.ts`). Airbnb clicks are tracked ONLY by the GTM listener; links carry `data-intent` (booking | reviews), `data-property`, `data-placement`. Do not add a site-side push.
+Owner-confirmed facts are in `src/data/property-facts.ts`: free parking for one car per apartment; approximately 65 m² each; A has three double beds across two bedrooms (2 + 1), maximum four guests; B has three single beds, maximum three guests. Damage charges are actual repair costs with a minimum of ¥15,000. Existing A bedroom photos show an earlier arrangement; all languages disclose this beside the gallery until current photos are supplied.
+
+The site captures clicks immediately in `scripts/analytics-bootstrap.js`. GTM consumes the queue. Do not add a second click listener or React event push. Booking intent remains `airbnb_click` for compatibility, while both platforms' review links use `review_click`, and long-stay requests use `inquiry_click`. These actions are not completed bookings. The bootstrap keeps the legacy listener guard to prevent duplicate events.
+
+Run `npm ci` then `npm run check` before releasing. The check builds all 52 pages, typechecks, tests click classification/queueing, and validates local routes and photo links. Browser checks are documented in `docs/UPDATE_HANDOVER.md`.
+
+See `docs/GTM_SETUP.md` for the outstanding container configuration and verification. See `docs/CONTENT_PROVENANCE.md` for source records still needed. No deployment or authenticated GTM change was performed in this source update.
 
 ## Still needed from the owner
 
-- Confirm the parking policy (free vs paid). Airbnb A's title says paid parking; the site says free.
-- Confirm the damage-charge wording. The site says "at least ¥15,000"; the Booking.com house rules say "up to ¥15,000".
-- Bed types per room for A, and a floor plan if one exists.
-- A nightly price, only if it should be printed.
-- Profile URLs for Instagram, TikTok, and RedNote, if they should appear on the page.
-- A direct contact for long stays, only if you want one besides Airbnb.
+- A current photo of the bedroom that now has one double bed. The existing photos remain with a layout-disclosure note.
+- Original destination-photo acquisition/source links, and individual Booking.com review dates/source records. The supplied high-quality property-photo folders do not establish these records.
+- Reconcile Airbnb/Booking.com listing terms with the approved parking, bed arrangement and damage policy; this source update does not edit those listings.
+- Optional nightly rates, social profile URLs, and a direct long-stay contact, only if they should be published. Airbnb messaging remains available meanwhile.

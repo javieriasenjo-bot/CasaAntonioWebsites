@@ -8,6 +8,7 @@ import { KojohamaPromo } from "@/components/kojohama-promo";
 import { house } from "@/data/active";
 import { apartmentBPhotos } from "@/data/facts";
 import { useLang } from "@/lib/i18n";
+import { apartmentSummary } from "@/data/property-facts";
 
 export function Home() {
   const { lang } = useLang();
@@ -35,16 +36,6 @@ export function Home() {
         </div>
       </section>
 
-      <section className="intro">
-        <div className="wrap narrow">
-          <p className="eyebrow">{t.intro.eyebrow}</p>
-          <h2>{t.intro.title}</h2>
-          {t.intro.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-      </section>
-
       <section className="choices-section">
         <div className="wrap">
           <div className="section-head">
@@ -56,15 +47,31 @@ export function Home() {
               <span className="choice-kicker">A</span>
               <span className="choice-name">{t.aCard.name}</span>
               <span className="choice-line">{t.aCard.line}</span>
+              <dl className="choice-facts">
+                {apartmentSummary("a", lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+              </dl>
               <span className="choice-link">{t.aCard.cta}</span>
             </PageLink>
             <PageLink page="b" className="choice choice-b">
               <span className="choice-kicker">B</span>
               <span className="choice-name">{t.bCard.name}</span>
               <span className="choice-line">{t.bCard.line}</span>
+              <dl className="choice-facts">
+                {apartmentSummary("b", lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+              </dl>
               <span className="choice-link">{t.bCard.cta}</span>
             </PageLink>
           </div>
+        </div>
+      </section>
+
+      <section className="intro">
+        <div className="wrap narrow">
+          <p className="eyebrow">{t.intro.eyebrow}</p>
+          <h2>{t.intro.title}</h2>
+          {t.intro.body.slice(0, 1).map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </section>
 
@@ -104,7 +111,7 @@ export function Home() {
               </AirbnbLink>
             </div>
           </div>
-          <Photo src="/photos/b-living-sofa.jpg" alt={apartmentBPhotos[1].alt[lang]} sizes="(max-width: 900px) 100vw, 50vw" />
+          <Photo src="/photos/b-living-sofa.jpg" alt={apartmentBPhotos.find((photo) => photo.src === "/photos/b-living-sofa.jpg")!.alt[lang]} sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </section>
 
@@ -134,12 +141,13 @@ export function Home() {
             <p className="eyebrow">{t.nomad.eyebrow}</p>
             <h2>{t.nomad.title}</h2>
             <p className="lede">{t.nomad.lede}</p>
-            {t.nomad.body.map((paragraph) => (
+            {t.nomad.body.slice(0, 1).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             <PageLink page="teine-ski" className="button button-dark">
-              {t.nomad.cta}
+              {g.teineMore}
             </PageLink>
+            <PageLink page="neighborhood" className="text-link">{t.nav.neighborhood}</PageLink>
           </div>
           <Photo src="/photos/dining-2.jpg" alt={c.workTable} sizes="(max-width: 900px) 100vw, 50vw" />
         </div>

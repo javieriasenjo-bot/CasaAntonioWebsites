@@ -1,4 +1,5 @@
 import { useLang, type Lang } from "@/lib/i18n";
+import { TRAVEL_FACTS } from "@/data/travel-facts";
 
 // Official sources behind the practical guides. Only URLs that were opened and confirmed (4 Oct 2026) belong here.
 type L = { label: Record<Lang, string>; href: string };
@@ -7,7 +8,8 @@ const T = (en: string, ja: string, zh: string, ko: string): Record<Lang, string>
 
 export const OFFICIAL = {
   access: [
-    { label: T("Hokkaido Chuo Bus: airport bus timetable", "北海道中央バス：空港連絡バス時刻表", "北海道中央巴士：机场巴士时刻表", "홋카이도 주오버스: 공항버스 시간표"), href: "https://www.chuo-bus.co.jp/airport/" },
+    { label: T("Chuo Bus: airport to Asabu timetable", "中央バス：新千歳空港→麻生の時刻表", "中央巴士：新千岁机场→麻生时刻表", "주오버스: 신치토세공항→아사부 시간표"), href: TRAVEL_FACTS.airportBus.toAsabu },
+    { label: T("Airport bus routes and return services", "空港バス路線・空港行きの案内", "机场巴士路线及返程信息", "공항버스 노선 및 공항행 안내"), href: TRAVEL_FACTS.airportBus.overview },
     { label: T("JR Hokkaido: New Chitose Airport trains", "JR北海道：新千歳空港アクセス", "JR北海道：新千岁机场列车", "JR홋카이도: 신치토세공항 열차"), href: "https://www.jrhokkaido.co.jp/airport/index.html" },
   ],
   snow: [
@@ -18,7 +20,7 @@ export const OFFICIAL = {
     { label: T("Hokkaido Chuo Bus", "北海道中央バス", "北海道中央巴士", "홋카이도 주오버스"), href: "https://www.chuo-bus.co.jp/" },
   ],
   shiraoi: [
-    { label: T("Upopoy: tickets and prices", "ウポポイ：入場料金", "Upopoy：门票与价格", "우포포이: 입장권 및 요금"), href: "https://ainu-upopoy.go.jp/en/guide/admission/" },
+    { label: T("Upopoy: tickets and prices", "ウポポイ：入場料金", "Upopoy：门票与价格", "우포포이: 입장권 및 요금"), href: TRAVEL_FACTS.upopoy.source },
     { label: T("Upopoy: hours and closing days", "ウポポイ：開園時間・休園日", "Upopoy：开放时间与休园日", "우포포이: 운영 시간 및 휴관일"), href: "https://ainu-upopoy.go.jp/en/guide/hours/" },
   ],
 } satisfies Record<string, L[]>;

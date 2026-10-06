@@ -1,12 +1,14 @@
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
+import { PhotoCredit } from "@/components/photo-credit";
 import { Shell } from "@/components/chrome";
 import { house } from "@/data/active";
 import { OFFICIAL, OfficialLinks } from "@/components/official-links";
 import { FAQ } from "@/lib/seo";
 import { useState } from "react";
 import { useLang } from "@/lib/i18n";
+import { airportBoardingText } from "@/data/travel-facts";
 
 export function FaqList() {
   const { lang } = useLang();
@@ -45,7 +47,7 @@ function AddressActions() {
         <button type="button" className="button button-line" onClick={copy}>
           {copied ? g.copied : g.copyAddress}
         </button>
-        <a className="button button-line" href={DIRECTIONS} target="_blank" rel="noopener">
+        <a className="button button-line" href={DIRECTIONS} data-map-provider="google" target="_blank" rel="noopener">
           {g.directions} ↗
         </a>
       </div>
@@ -103,6 +105,7 @@ export function AccessPage() {
             </div>
           ))}
           <AddressActions />
+          <p className="arrival-boarding">{airportBoardingText(lang)}</p>
           <OfficialLinks items={OFFICIAL.access} />
           <BookBoth />
         </div>
@@ -163,7 +166,7 @@ export function TeinePage() {
         <div className="wrap">
           <figure className="ski-figure">
             <Photo src="/photos/teine.jpg" alt={page.title} sizes="(max-width: 900px) 100vw, 1120px" />
-            <figcaption>{page.credit}</figcaption>
+            <figcaption><PhotoCredit text={page.credit} /></figcaption>
           </figure>
           {page.blocks.map((block) => (
             <div className="prose" key={block.h}>
@@ -214,10 +217,10 @@ export function LongStayPage() {
           </dl>
           <p className="photo-note">{t.note}</p>
           <div className="stay-actions">
-            <AirbnbLink cabin="a" location="long-stay" className="button button-dark">
+            <AirbnbLink cabin="a" location="long-stay" intent="inquiry" className="button button-dark">
               {t.ctaA}
             </AirbnbLink>
-            <AirbnbLink cabin="b" location="long-stay" className="button button-wood">
+            <AirbnbLink cabin="b" location="long-stay" intent="inquiry" className="button button-wood">
               {t.ctaB}
             </AirbnbLink>
           </div>

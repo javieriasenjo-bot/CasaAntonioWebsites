@@ -1,3 +1,5 @@
+import { DAMAGE_POLICY } from "@/data/property-facts";
+import { upopoyAdmissionText } from "@/data/travel-facts";
 import { guideFooter as footer } from "../guide-footer";
 export const copy = {
     chrome: {
@@ -63,7 +65,7 @@ export const copy = {
       eyebrow: "Ground-floor apartment",
       title: "Casa Antonio A",
       tag: "A pale, modern room for coming back to.",
-      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same living room. Two separate bedrooms are off the hall, with two beds in each. About 65 square meters, for up to four guests.",
+      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same living room. Two separate bedrooms are off the hall, with three double beds in total. About 65 square meters, for up to four guests.",
     },
     bHome: {
       eyebrow: "Second floor",
@@ -148,19 +150,19 @@ export const copy = {
     aPage: {
       eyebrow: "Casa Antonio A · modern space",
       title: "Casa Antonio A",
-      lede: "A modern apartment with its own door. Pale walls, a long sofa, and a kitchen open to the living room. Two separate bedrooms, with two beds in each.",
+      lede: "A modern apartment with its own door. Pale walls, a long sofa, and a kitchen open to the living room. Two separate bedrooms, with three double beds in total.",
       facts: [
         ["Guests", "Up to 4"],
         ["Layout", "2 bedrooms, 1 living room, 1 bath"],
         ["Size", "About 65 m²"],
-        ["Beds", "4, two in each bedroom"],
+        ["Beds", "3 double beds (2 + 1)"],
         ["Entrance", "Private"],
         ["License", "M010045173"],
       ],
       storyTitle: "What the room is like",
       story: [
         "Casa Antonio A is the modern one. The living room is a soft grey-blue, with a sofa facing the window and a pale table in the middle. The kitchen is part of the same room: a counter, a refrigerator, a cooktop under a hood, a microwave, and a toaster oven. There is also an oven.",
-        "There are two bedrooms, each with two beds in white linen. One has a closet and a dresser. A short hall joins them to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
+        "There are two bedrooms with three double beds in total, dressed in white linen. One has a closet and a dresser. A short hall joins them to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
         "You come in through your own door. Check-in is private and contactless; the timing and the lock instructions are sent on Airbnb, not posted here. Towels, linen, and basic toiletries are provided, along with a washer, heating, air conditioning, and Wi-Fi.",
       ],
       amenities: [
@@ -220,7 +222,7 @@ export const copy = {
       "No parties, and the apartments are not for stag or hen events.",
       "The guest checking in should be 18 or older. Children are welcome.",
       "Only registered guests. Please don’t hand the door to anyone who isn’t on the booking.",
-      "If something is damaged, the charge is at least ¥15,000.",
+      DAMAGE_POLICY.en,
       "Quiet residential street — keep voices and music down, especially after dark.",
     ],
     neighborhood: {
@@ -689,7 +691,7 @@ export const copy = {
             {
               time: "The day",
               title: "The museum and the park",
-              body: "Upopoy, at 2-3-2 Wakakusa-cho, Shiraoi, is Japan’s national museum of Ainu history and culture, with a park and a traditional village beside it. From 1 April to 31 October 2026 the official hours are 9:00–18:00. It is closed on Mondays, or the next weekday when Monday is a holiday. Last entry is one hour before closing. Adult admission is ¥1,200 at the gate and ¥1,000 on the website. High-school students pay ¥600 at the gate and ¥400 on the website. Junior-high students and younger go free. From November the hours are shorter. Read the day’s notice before you leave.",
+              body: `Upopoy, at 2-3-2 Wakakusa-cho, Shiraoi, is Japan’s national museum of Ainu history and culture, with a park and a traditional village beside it. From 1 April to 31 October 2026 the official hours are 9:00–18:00. It is closed on Mondays, or the next weekday when Monday is a holiday. Last entry is one hour before closing. ${upopoyAdmissionText("en")} From November the hours are shorter. Read the day’s notice before you leave.`,
             },
             {
               time: "Back",
@@ -722,7 +724,7 @@ export const copy = {
         "These are private lodgings under Japan’s housing accommodation business. Casa Antonio A is M010045173. Casa Antonio B is M010045174.",
       payTitle: "How booking works",
       payBody:
-        "Dates, price, and availability live on Airbnb. This site does not take payment. If something in the apartment is damaged, the charge is at least ¥15,000.",
+        `Dates, price, and availability live on Airbnb. This site does not take payment. ${DAMAGE_POLICY.en}`,
     },
     lightbox: { close: "Close", prev: "Previous photograph", next: "Next photograph" },
   };
@@ -751,7 +753,7 @@ export const guides = {
     busLabel: "Chuo Bus timetable, New Chitose to Asabu",
     matrixLabel: "Subway station times",
     snowLabel: "Official Snow Festival notice",
-    bSlots: ["Living room with a projector", "Bedroom, three twin beds", "Kitchen and dining table", "Bath with a tub"],
+    bSlots: ["Living room with a projector", "Bedroom, three single beds", "Kitchen and dining table", "Bath with a tub"],
     points: {
       home: ["5 min to Asabu Station", "Free parking, one car each", "Full kitchen", "65 m² each"],
       a: ["2 bedrooms", "Up to 4 guests", "Free parking, one car", "Full kitchen", "About 65 m²"],
@@ -799,7 +801,7 @@ export const guides = {
           h: "Direct airport bus",
           paragraphs: [
             "Hokkaido Chuo Bus runs between New Chitose and Asabu Station (地下鉄麻生駅). On the summer timetable updated 1 April 2026, a bus leaving the ANA stop at 8:48 is scheduled into Asabu at 9:46, about 58 minutes. That is an example, not a guarantee. Traffic, snow, and the next timetable change it.",
-            "The adult fare on that timetable is ¥1,500. Board at the ANA stop, stand 20, or the JAL stop, stand 13. The Asabu stop is at the station. From there it is the same walk as from the subway, about five minutes south to Kita 38-jo Nishi 3-chome. Check the official timetable the day you fly. This site does not name a station exit.",
+            "The adult fare on that timetable is ¥1,500. Board at the ANA stop, stand 20, or the JAL stop, stand 13. The Asabu stop is at the station. From there it is the same walk as from the subway, about five minutes south to Kita 38-jo Nishi 3-chome. Check the official timetable the day you fly. Use the directions link below for the final walk. If travelling with luggage, follow the station’s elevator signs.",
           ],
         },
         {

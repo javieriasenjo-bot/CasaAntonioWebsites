@@ -7,7 +7,9 @@
     "build": "vite build && node scripts/prerender.mjs && node scripts/strip-redirects.mjs",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
-    "postinstall": "node scripts/cf-postinstall.mjs"
+    "postinstall": "node scripts/cf-postinstall.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build && node --test tests/analytics.test.mjs tests/build.test.mjs"
   },
   "allowScripts": {
     "esbuild": true,

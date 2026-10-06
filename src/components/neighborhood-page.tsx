@@ -1,9 +1,9 @@
 import { Shell } from "@/components/chrome";
 import { Photo } from "@/components/photo";
+import { PhotoCredit } from "@/components/photo-credit";
 import { house } from "@/data/active";
 import { MAP } from "@/data/facts";
 import { useLang, type Lang } from "@/lib/i18n";
-import { trackMapClick } from "@/lib/analytics";
 
 type Shot = { src: string; credit: Record<Lang, string> };
 
@@ -98,13 +98,13 @@ export function Neighborhood() {
                         {shot ? (
                           <figure className="place-shot">
                             <Photo src={shot.src} alt={item.name} sizes="(max-width: 800px) 100vw, 720px" />
-                            <figcaption>{shot.credit[lang]}</figcaption>
+                            <figcaption><PhotoCredit text={shot.credit[lang]} /></figcaption>
                           </figure>
                         ) : null}
                         <p>{item.body}</p>
                         {map ? (
                           <p className="trips-more">
-                            <a href={map} target="_blank" rel="noreferrer" onClick={() => trackMapClick("google")}>
+                            <a href={map} target="_blank" rel="noreferrer" data-map-provider="google">
                               {t.mapLabel}
                             </a>
                           </p>
@@ -137,7 +137,7 @@ export function Neighborhood() {
               <h2>{t.mapTitle}</h2>
               <p>{t.mapNote}</p>
             </div>
-            <a className="button button-dark" href={MAP.google} target="_blank" rel="noreferrer" onClick={() => trackMapClick("google")}>
+            <a className="button button-dark" href={MAP.google} target="_blank" rel="noreferrer" data-map-provider="google">
               {t.openMap}
             </a>
           </div>

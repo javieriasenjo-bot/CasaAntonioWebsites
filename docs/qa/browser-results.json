@@ -1,0 +1,763 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/casa-antonio-a/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/casa-antonio-a/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/casa-antonio-a/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/casa-antonio-a/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/casa-antonio-b/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/casa-antonio-b/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/casa-antonio-b/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/casa-antonio-b/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/neighborhood/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/neighborhood/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/neighborhood/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/neighborhood/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/day-trips/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/day-trips/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/day-trips/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/day-trips/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/arrival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/arrival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/arrival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/arrival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/access/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/access/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/access/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/access/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/snow-festival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/snow-festival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/snow-festival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/snow-festival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/teine-ski/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/teine-ski/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/teine-ski/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/teine-ski/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/long-stay/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/long-stay/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/long-stay/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/long-stay/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/faq/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/faq/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/faq/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/faq/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/combo/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/combo/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/combo/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/combo/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/privacy/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ja/privacy/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/zh-cn/privacy/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/ko/privacy/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 390
+    },
+    {
+      "path": "/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/casa-antonio-a/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/casa-antonio-a/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/casa-antonio-a/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/casa-antonio-a/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/casa-antonio-b/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/casa-antonio-b/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/casa-antonio-b/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/casa-antonio-b/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/neighborhood/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/neighborhood/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/neighborhood/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/neighborhood/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/day-trips/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/day-trips/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/day-trips/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/day-trips/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/arrival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/arrival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/arrival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/arrival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/access/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/access/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/access/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/access/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/snow-festival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/snow-festival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/snow-festival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/snow-festival/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/teine-ski/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/teine-ski/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/teine-ski/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/teine-ski/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/long-stay/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/long-stay/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/long-stay/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/long-stay/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/faq/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/faq/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/faq/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/faq/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/combo/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/combo/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/combo/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/combo/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/privacy/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ja/privacy/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/zh-cn/privacy/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    },
+    {
+      "path": "/ko/privacy/",
+      "preserved": true,
+      "overflow": false,
+      "broken": [],
+      "width": 1440
+    }
+  ],
+  "interactions": [
+    {
+      "prefix": "",
+      "width": 320,
+      "gallery": "keyboard navigation and focus restoration passed",
+      "menu": "passed"
+    },
+    {
+      "prefix": "/ja",
+      "width": 320,
+      "gallery": "keyboard navigation and focus restoration passed",
+      "menu": "passed"
+    },
+    {
+      "prefix": "/zh-cn",
+      "width": 320,
+      "gallery": "keyboard navigation and focus restoration passed",
+      "menu": "passed"
+    },
+    {
+      "prefix": "/ko",
+      "width": 320,
+      "gallery": "keyboard navigation and focus restoration passed",
+      "menu": "passed"
+    }
+  ],
+  "noJavaScript": {
+    "galleryExpansion": "passed",
+    "photoHref": "/photos/bedroom-1800.webp",
+    "photoStatus": 200
+  }
+}

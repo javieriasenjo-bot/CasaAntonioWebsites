@@ -1,4 +1,5 @@
 import { AIRBNB, MAP } from "@/data/facts";
+import { DAMAGE_POLICY, PROPERTY_FACTS } from "@/data/property-facts";
 import { photoFile, photoMeta } from "@/lib/photo-manifest";
 import { FONT_STYLESHEET } from "@/lib/fonts";
 import {
@@ -11,7 +12,7 @@ import {
   type PageId,
 } from "@/lib/paths";
 
-const LASTMOD = "2026-10-01";
+const LASTMOD = "2026-10-06";
 
 type Meta = { title: string; description: string };
 
@@ -47,29 +48,29 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "Casa Antonio A｜札幌・約65㎡・4名まで・駐車場付き",
       description:
-        "北区の1階、約65㎡。寝室2、居間1、浴室1、定員4名。ベッドは各寝室に2台です。麻生駅から徒歩約5分。専用入口と、無料の駐車場が1台あります。",
+        "北区の1階、約65㎡。寝室2、居間1、浴室1、定員4名。ダブルベッドが合計3台あります。麻生駅から徒歩約5分。専用入口と、無料の駐車場が1台あります。",
     },
     zh: {
       title: "Casa Antonio A｜札幌约65㎡公寓，可住4人，可停车",
       description:
-        "北区一楼，约65平方米，两间卧室、一间起居室、一间浴室，最多四位客人。每间卧室两张床。离麻生站步行约五分钟。独立入口，每套公寓免费停车一位。",
+        "北区一楼，约65平方米，两间卧室、一间起居室、一间浴室，最多四位客人。共三张双人床。离麻生站步行约五分钟。独立入口，每套公寓免费停车一位。",
     },
     ko: {
       title: "Casa Antonio A｜삿포로 약 65㎡·4명·주차",
       description:
-        "기타구 1층, 약 65㎡, 침실 둘과 거실, 최대 네 명. 침실마다 침대 두 개입니다. 전용 출입구와 무료 주차 한 대가 있습니다. 조용한 주택가입니다.",
+        "기타구 1층, 약 65㎡, 침실 둘과 거실, 최대 네 명. 더블 침대는 총 세 개입니다. 전용 출입구와 무료 주차 한 대가 있습니다. 조용한 주택가입니다.",
     },
   },
   b: {
     en: {
       title: "Casa Antonio B · Wood-Style Sapporo Apartment with Projector",
       description:
-        "Second-floor apartment in the same Kita-ku house. About 65 m², three twin beds, up to three guests, a wood interior, and a projector. Free parking.",
+        "Second-floor apartment in the same Kita-ku house. About 65 m², three single beds, up to three guests, a wood interior, and a projector. Free parking.",
     },
     ja: {
       title: "Casa Antonio B｜木の内装とプロジェクターの札幌アパート",
       description:
-        "同じ家の2階、階段で上がります。約65㎡、ツインベッド3台、定員3名。木の内装と居間のプロジェクター。麻生駅から徒歩約5分、無料駐車場があります。 麻生の住宅街です。",
+        "同じ家の2階、階段で上がります。約65㎡、シングルベッド3台、定員3名。木の内装と居間のプロジェクター。麻生駅から徒歩約5分、無料駐車場があります。 麻生の住宅街です。",
     },
     zh: {
       title: "Casa Antonio B｜木质公寓，客厅有投影仪",
@@ -410,6 +411,7 @@ export function crumbLabel(page: PageId, lang: Lang) {
 function lodging() {
   return {
     "@type": "LodgingBusiness",
+    "@id": `${ORIGIN}/#business`,
     name: "Casa Antonio",
     url: `${ORIGIN}/`,
     image: `${ORIGIN}${OG_IMAGE.home}`,
@@ -463,6 +465,7 @@ function apartment(id: "a" | "b", lang: Lang) {
   const isA = id === "a";
   return {
     "@type": "Apartment",
+    "@id": `${ORIGIN}/#apartment-${id}`,
     name: isA ? "Casa Antonio A" : "Casa Antonio B",
     url: absolutePage(page, lang),
     image: isA
@@ -470,16 +473,14 @@ function apartment(id: "a" | "b", lang: Lang) {
       : [`${ORIGIN}/photos/b-living-2000.webp`, `${ORIGIN}/photos/b-bedroom-2000.webp`, `${ORIGIN}/photos/b-kitchen-2000.webp`, `${ORIGIN}/photos/b-dining-2000.webp`, `${ORIGIN}/photos/b-bath-1333.webp`],
     floorSize: {
       "@type": "QuantitativeValue",
-      value: 65,
+      value: PROPERTY_FACTS[id].areaM2,
       unitCode: "MTK",
     },
-    numberOfBedrooms: isA ? 2 : 1,
+    numberOfBedrooms: PROPERTY_FACTS[id].bedrooms,
     numberOfBathroomsTotal: 1,
-    occupancy: { "@type": "QuantitativeValue", maxValue: isA ? 4 : 3 },
-    bed: isA
-      ? [{ "@type": "BedDetails", numberOfBeds: 4 }]
-      : [{ "@type": "BedDetails", typeOfBed: "Twin", numberOfBeds: 3 }],
-    containedInPlace: { "@type": "LodgingBusiness", name: "Casa Antonio", url: `${ORIGIN}/` },
+    occupancy: { "@type": "QuantitativeValue", maxValue: PROPERTY_FACTS[id].maxGuests },
+    bed: [{ "@type": "BedDetails", typeOfBed: PROPERTY_FACTS[id].bedType, numberOfBeds: PROPERTY_FACTS[id].beds }],
+    containedInPlace: { "@id": `${ORIGIN}/#business` },
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "Free parking, one car per apartment", value: true },
       { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
@@ -526,11 +527,11 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "What if something is damaged?",
-      a: "The damage charge is at least ¥15,000.",
+      a: DAMAGE_POLICY.en,
     },
     {
       q: "How many people can stay?",
-      a: "Casa Antonio A sleeps up to four guests: two separate bedrooms, two beds in each, and one living room. Casa Antonio B sleeps up to three guests, with three single beds in one bedroom. The guest checking in should be 18 or older. Children are welcome. Only people named on the booking stay here.",
+      a: "Casa Antonio A sleeps up to four guests: two separate bedrooms, two double beds in one and one double bed in the other, and one living room. Casa Antonio B sleeps up to three guests, with three single beds in one bedroom. The guest checking in should be 18 or older. Children are welcome. Only people named on the booking stay here.",
     },
     {
       q: "How do long stays work?",
@@ -568,11 +569,11 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "損害金はありますか？",
-      a: "破損がある場合、損害金は15,000円からです。",
+      a: DAMAGE_POLICY.ja,
     },
     {
       q: "何名まで泊まれますか？",
-      a: "Casa Antonio Aの定員は4名です。寝室は2つで、それぞれベッドが2台、居間が1つです。Bはシングルベッド3台、定員3名です。チェックインする方は18歳以上。お子さまは歓迎します。泊まれるのは予約に名前のある人だけです。",
+      a: "Casa Antonio Aの定員は4名です。寝室は2つで、ダブルベッドはひとつに2台、もうひとつに1台、居間が1つです。Bはシングルベッド3台、定員3名です。チェックインする方は18歳以上。お子さまは歓迎します。泊まれるのは予約に名前のある人だけです。",
     },
     {
       q: "長期滞在はどうしますか？",
@@ -609,12 +610,12 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
       a: "包括入口和停车场在内，整栋房子禁烟。不可带宠物。不可办派对。",
     },
     {
-      q: "有损坏押金吗？",
-      a: "如果有东西损坏，赔偿从 15,000 日元起。",
+      q: "损坏费用如何收取？",
+      a: DAMAGE_POLICY.zh,
     },
     {
       q: "可以住几个人？",
-      a: "Casa Antonio A 最多四位客人：两间分开的卧室，每间两张床，另有一间起居室。B 是一间卧室、三张单人床，最多三位客人。办理入住的客人须年满 18 岁。欢迎孩子。只有预订上的人可以住。",
+      a: "Casa Antonio A 最多四位客人：两间分开的卧室，一间有两张双人床，另一间有一张双人床，另有一间起居室。B 是一间卧室、三张单人床，最多三位客人。办理入住的客人须年满 18 岁。欢迎孩子。只有预订上的人可以住。",
     },
     {
       q: "长期住怎么订？",
@@ -651,12 +652,12 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
       a: "입구와 주차장을 포함해 부지 안은 금연입니다. 반려동물은 안 됩니다. 파티도 안 됩니다.",
     },
     {
-      q: "손해 보증금이 있나요?",
-      a: "파손된 것이 있으면 손해금은 15,000엔부터입니다.",
+      q: "파손 비용은 어떻게 청구되나요?",
+      a: DAMAGE_POLICY.ko,
     },
     {
       q: "몇 명까지 묵나요?",
-      a: "Casa Antonio A는 최대 네 명입니다. 침실이 둘이고, 각각 침대가 두 개, 거실은 하나입니다. B는 싱글 침대 세 개, 최대 세 명입니다. 체크인하는 분은 18세 이상. 어린이는 환영합니다. 예약에 이름이 있는 사람만 묵습니다.",
+      a: "Casa Antonio A는 최대 네 명입니다. 침실이 둘이고, 한 침실에 더블 침대 두 개, 다른 침실에 한 개, 거실은 하나입니다. B는 싱글 침대 세 개, 최대 세 명입니다. 체크인하는 분은 18세 이상. 어린이는 환영합니다. 예약에 이름이 있는 사람만 묵습니다.",
     },
     {
       q: "장기 숙박은 어떻게 하나요?",
@@ -695,7 +696,7 @@ export function jsonLd(page: PageId, lang: Lang) {
       inLanguage: ["en", "ja", "zh-Hans", "ko"],
     });
   }
-  if (page === "a" || page === "b") graph.push(apartment(page, lang));
+  if (page === "a" || page === "b") graph.push(lodging(), apartment(page, lang));
   if (page === "faq" || page === "arrival") {
     graph.push({ "@type": "FAQPage", mainEntity: faqEntities(lang) });
   }

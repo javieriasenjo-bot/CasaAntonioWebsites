@@ -5,6 +5,12 @@ function stemOf(src: string) {
   return name.replace(/\.(jpe?g|png|webp|avif)$/i, "");
 }
 
+export function photoHref(src: string) {
+  const stem = stemOf(src);
+  const widths = photoMeta[stem]?.widths;
+  return widths?.length ? `/photos/${stem}-${widths[widths.length - 1]}.webp` : src;
+}
+
 export function Photo({
   src,
   alt,

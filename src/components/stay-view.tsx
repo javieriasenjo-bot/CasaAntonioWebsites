@@ -9,6 +9,7 @@ import { SellingPoints } from "@/components/selling-points";
 import { house } from "@/data/active";
 import { apartmentAPhotos, apartmentBPhotos, type Photo as HousePhoto } from "@/data/facts";
 import { useLang } from "@/lib/i18n";
+import { apartmentSummary, A_BED_LAYOUT, A_PHOTO_LAYOUT_NOTE } from "@/data/property-facts";
 
 export function StayView({ id }: { id: "a" | "b" }) {
   const { lang } = useLang();
@@ -39,7 +40,7 @@ export function StayView({ id }: { id: "a" | "b" }) {
       <section className="stay-body">
         <div className="wrap">
           <dl className="fact-grid fact-grid-tight">
-            {page.facts.map(([label, value]) => (
+            {[...apartmentSummary(id, lang), ...page.facts.filter(([label]) => ["License", "届出番号", "备案号", "신고 번호"].includes(label))].map(([label, value]) => (
               <div key={label}>
                 <dt>{label}</dt>
                 <dd>{value}</dd>
@@ -49,6 +50,7 @@ export function StayView({ id }: { id: "a" | "b" }) {
 
           <div className="prose">
             <h2>{page.storyTitle}</h2>
+            {id === "a" ? <p>{A_BED_LAYOUT[lang]}</p> : null}
             {page.story.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -63,6 +65,7 @@ export function StayView({ id }: { id: "a" | "b" }) {
           </div>
 
           <h2 className="block-title">{t.photos}</h2>
+          {id === "a" ? <p className="photo-note">{A_PHOTO_LAYOUT_NOTE[lang]}</p> : null}
           <Gallery photos={photos} lang={lang} labels={t.lightbox} />
           <p className="photo-note">{note}</p>
           <Reviews which={id} />

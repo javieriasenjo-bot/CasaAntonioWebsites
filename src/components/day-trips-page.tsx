@@ -2,6 +2,7 @@ import { Shell } from "@/components/chrome";
 import { PageLink } from "@/components/page-link";
 import { OFFICIAL, OfficialLinks } from "@/components/official-links";
 import { Photo } from "@/components/photo";
+import { PhotoCredit } from "@/components/photo-credit";
 import { house } from "@/data/active";
 import { useLang, type Lang } from "@/lib/i18n";
 
@@ -188,7 +189,7 @@ export function DayTrips() {
                   {photos.map((photo) => (
                     <figure key={photo.src} className="trip-figure">
                       <Photo src={photo.src} alt={idea.title} sizes={photos.length > 1 ? "(max-width: 800px) 100vw, 26vw" : "(max-width: 800px) 100vw, 800px"} />
-                      <figcaption>{photo.credit[lang]}</figcaption>
+                      <figcaption><PhotoCredit text={photo.credit[lang]} /></figcaption>
                     </figure>
                   ))}
                 </div>

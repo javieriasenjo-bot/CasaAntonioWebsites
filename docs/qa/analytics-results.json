@@ -1,0 +1,72 @@
+{
+  "queuedBeforeHydrationAndGTM": [
+    {
+      "source_url": "http://127.0.0.1:4179/casa-antonio-b/",
+      "destination_url": "https://www.airbnb.com/rooms/1248260873560502499",
+      "page_language": "en",
+      "event": "airbnb_click",
+      "intent": "booking",
+      "provider": "airbnb",
+      "property": "b",
+      "apartment_name": "Casa Antonio B",
+      "link_location": "stay-b"
+    }
+  ],
+  "eventsAfterCurrentGTM": [
+    {
+      "source_url": "http://127.0.0.1:4179/casa-antonio-b/",
+      "destination_url": "https://www.airbnb.com/rooms/1248260873560502499",
+      "page_language": "en",
+      "event": "airbnb_click",
+      "intent": "booking",
+      "provider": "airbnb",
+      "property": "b",
+      "apartment_name": "Casa Antonio B",
+      "link_location": "stay-b",
+      "gtm.uniqueEventId": 4
+    },
+    {
+      "source_url": "http://127.0.0.1:4179/casa-antonio-b/",
+      "destination_url": "https://www.airbnb.com/rooms/1248260873560502499",
+      "page_language": "en",
+      "event": "airbnb_click",
+      "intent": "booking",
+      "provider": "airbnb",
+      "property": "b",
+      "apartment_name": "Casa Antonio B",
+      "link_location": "stay-b",
+      "gtm.uniqueEventId": 14
+    },
+    {
+      "source_url": "http://127.0.0.1:4179/casa-antonio-b/",
+      "destination_url": "https://www.airbnb.com/rooms/1248260873560502499",
+      "page_language": "en",
+      "event": "review_click",
+      "intent": "reviews",
+      "provider": "airbnb",
+      "property": "b",
+      "apartment_name": "Casa Antonio B",
+      "link_location": "reviews",
+      "gtm.uniqueEventId": 16
+    },
+    {
+      "source_url": "http://127.0.0.1:4179/casa-antonio-b/",
+      "destination_url": "https://www.booking.com/hotel/jp/casa-antonio-b.html",
+      "page_language": "en",
+      "event": "review_click",
+      "intent": "reviews",
+      "provider": "booking",
+      "property": "b",
+      "apartment_name": "Casa Antonio B",
+      "link_location": "reviews",
+      "gtm.uniqueEventId": 18
+    }
+  ],
+  "attemptedGA4Events": [
+    "page_view",
+    "airbnb_click",
+    "airbnb_click"
+  ],
+  "GA4AccountReceiptVerified": false,
+  "GA4RequestsIntercepted": true
+}
