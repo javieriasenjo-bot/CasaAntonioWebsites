@@ -65,7 +65,7 @@ export const copy = {
       eyebrow: "Ground-floor apartment",
       title: "Casa Antonio A",
       tag: "A pale, modern room for coming back to.",
-      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same living room. Two separate bedrooms are off the hall, with three double beds in total. About 65 square meters, for up to four guests.",
+      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same living room. Two separate bedrooms are off the hall, with three single beds and one double bed. About 65 square meters, for up to four guests.",
     },
     bHome: {
       eyebrow: "Second floor",
@@ -150,19 +150,19 @@ export const copy = {
     aPage: {
       eyebrow: "Casa Antonio A · modern space",
       title: "Casa Antonio A",
-      lede: "A modern apartment with its own door. Pale walls, a long sofa, and a kitchen open to the living room. Two separate bedrooms, with three double beds in total.",
+      lede: "A modern apartment with its own door. Pale walls, a long sofa, and a kitchen open to the living room. Two separate bedrooms, with three single beds and one double bed.",
       facts: [
         ["Guests", "Up to 4"],
         ["Layout", "2 bedrooms, 1 living room, 1 bath"],
         ["Size", "About 65 m²"],
-        ["Beds", "3 double beds (2 + 1)"],
+        ["Beds", "3 single beds + 1 double bed"],
         ["Entrance", "Private"],
         ["License", "M010045173"],
       ],
       storyTitle: "What the room is like",
       story: [
         "Casa Antonio A is the modern one. The living room is a soft grey-blue, with a sofa facing the window and a pale table in the middle. The kitchen is part of the same room: a counter, a refrigerator, a cooktop under a hood, a microwave, and a toaster oven. There is also an oven.",
-        "There are two bedrooms with three double beds in total, dressed in white linen. One has a closet and a dresser. A short hall joins them to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
+        "There are two bedrooms with three single beds and one double bed, dressed in white linen. One has a closet and a dresser. A short hall joins them to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
         "You come in through your own door. Check-in is private and contactless; the timing and the lock instructions are sent on Airbnb, not posted here. Towels, linen, and basic toiletries are provided, along with a washer, heating, air conditioning, and Wi-Fi.",
       ],
       amenities: [

@@ -1,0 +1,23 @@
+{
+  "checkedOn": "2026-10-06",
+  "publicContainerVersion": "12",
+  "container": "GTM-T8TLRH4L",
+  "ga4Destination": "G-3V83R0Z48F",
+  "successfulActions": 36,
+  "events": [
+    "airbnb_click",
+    "inquiry_click",
+    "language_change",
+    "map_click",
+    "review_click"
+  ],
+  "languages": [
+    "en",
+    "ja",
+    "zh-Hans",
+    "ko"
+  ],
+  "collectionRequestsIntercepted": true,
+  "accountReceiptVerified": false,
+  "browserErrors": []
+}

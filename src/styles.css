@@ -1386,7 +1386,7 @@ body.lightbox-open .quick-reserve {
     gap: 0.35rem;
   }
 
-  .menu-toggle {
+  .app-ready .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1407,7 +1407,7 @@ body.lightbox-open .quick-reserve {
   }
 
   .site-header nav {
-    display: none;
+    display: flex;
     width: 100%;
     flex-direction: column;
     gap: 0;
@@ -1712,3 +1712,18 @@ picture source { display: none; }
 .gallery-extra { margin: 1.5rem 0; }
 .gallery-extra summary { cursor: pointer; width: fit-content; }
 .gallery-extra[open] summary { margin-bottom: 1.5rem; }
+
+/* Static controls stay usable until the interactive app is ready. */
+button.quick-reserve-trigger { display: none; }
+.app-ready button.quick-reserve-trigger { display: inline-flex; }
+.quick-reserve-fallback { display: flex; gap: .5rem; }
+.quick-reserve-fallback a { background: #243833; color: #fff; padding: .75rem; border-radius: .5rem; }
+.app-ready .quick-reserve-fallback { display: none; }
+@media (max-width: 860px) {
+  .app-ready .site-header nav:not([data-open="true"]) { display: none; }
+}
+
+.gallery-filters { display: none; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+.app-ready .gallery-filters { display: flex; }
+.gallery-filters button { min-height: 44px; padding: .5rem .8rem; border: 1px solid var(--color-line); border-radius: .4rem; background: transparent; font: inherit; color: var(--color-ink); }
+.gallery-filters button[aria-pressed="true"] { background: #243833; color: #fff; }

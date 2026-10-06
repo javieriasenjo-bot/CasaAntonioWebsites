@@ -2,6 +2,10 @@
 
 The signed-in Google Tag Manager account has not been changed. Use the existing Casa Antonio container **GTM-T8TLRH4L** and GA4 measurement ID **G-3V83R0Z48F**. Do not create another container or add another Google tag to the website.
 
+## Live status — checked 6 October 2026
+
+The owner has published the settings. Public container version 12 and 36 live-site browser actions across four languages passed the event/GA4-request checks. Collection requests were intercepted, so this does not verify receipt inside the GA4 account. The steps below remain a reference for importing, testing and publishing future revisions; there is no need to reimport the prepared file for this check.
+
 ## Prepared file — ready for import
 
 The owner supplied `C:\dev\GTM-T8TLRH4L_workspace12.json`. It remains unchanged. The updated file is:

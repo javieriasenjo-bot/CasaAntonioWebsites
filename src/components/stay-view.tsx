@@ -9,7 +9,7 @@ import { SellingPoints } from "@/components/selling-points";
 import { house } from "@/data/active";
 import { apartmentAPhotos, apartmentBPhotos, type Photo as HousePhoto } from "@/data/facts";
 import { useLang } from "@/lib/i18n";
-import { apartmentSummary, A_BED_LAYOUT, A_PHOTO_LAYOUT_NOTE } from "@/data/property-facts";
+import { apartmentSummary, practicalGuestFacts, A_BED_LAYOUT, A_PHOTO_LAYOUT_NOTE } from "@/data/property-facts";
 
 export function StayView({ id }: { id: "a" | "b" }) {
   const { lang } = useLang();
@@ -46,6 +46,11 @@ export function StayView({ id }: { id: "a" | "b" }) {
                 <dd>{value}</dd>
               </div>
             ))}
+          </dl>
+
+          <h2 className="block-title">{({ en: "Practical stay details", ja: "滞在の実用情報", zh: "实用入住信息", ko: "숙박 실용 정보" })[lang]}</h2>
+          <dl className="fact-grid fact-grid-tight">
+            {practicalGuestFacts(id, lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
           </dl>
 
           <div className="prose">

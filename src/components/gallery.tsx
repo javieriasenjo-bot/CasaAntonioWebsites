@@ -3,9 +3,10 @@ import { createPortal } from "react-dom";
 import { Photo, photoHref } from "@/components/photo";
 import type { Photo as HousePhoto } from "@/data/facts";
 import type { Lang } from "@/lib/i18n";
+import { photoCategory, ROOM_LABELS } from "@/lib/photo-category";
 
 export function Gallery({
-  photos,
+  photos: allPhotos,
   lang,
   labels,
 }: {
@@ -13,6 +14,15 @@ export function Gallery({
   lang: Lang;
   labels: { close: string; prev: string; next: string };
 }) {
+  const [category, setCategory] = useState<keyof typeof ROOM_LABELS>("all");
+  // Lead with different rooms; alternate angles remain available under Show all.
+  const featured = allPhotos.some(p => p.src.includes("b-bedroom"))
+    ? ["b-living-sofa", "b-bedroom", "b-kitchen", "b-bath", "b-washroom", "b-stairs", "b-entrance", "b-projector"]
+    : ["living", "a-bedroom-one", "a-bedroom-two", "kitchen", "a-bath", "a-washroom", "a-exterior", "dining"];
+  const rank = (src: string) => { const i = featured.indexOf(src.replace(/^.*\//, "").replace(/\.[^.]+$/, "")); return i < 0 ? featured.length : i; };
+  const photos = allPhotos.filter((p, i, list) => list.findIndex(other => other.src === p.src) === i && (category === "all" || photoCategory(p.src) === category))
+    .sort((a, b) => rank(a.src) - rank(b.src));
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
   const [open, setOpen] = useState<number | null>(null);
   const galleryId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -61,8 +71,8 @@ export function Gallery({
   }, [open]);
 
   const current = open === null ? null : photos[open];
-  // Long galleries (Casa Antonio B has 50+ photos) show the first 12 so the page stays short on phones.
-  const INITIAL = 12;
+  // An eight-photo overview keeps alternate angles off the first screen.
+  const INITIAL = 8;
   const [expanded, setExpanded] = useState(false);
   const showAll: Record<Lang, string> = {
     en: `Show all ${photos.length} photos`,
@@ -93,6 +103,13 @@ export function Gallery({
 
   return (
     <>
+      <div className="gallery-filters" aria-label={({ en: "Photo rooms", ja: "写真の部屋", zh: "照片分类", ko: "사진 공간" })[lang]}>
+        {(Object.keys(ROOM_LABELS) as (keyof typeof ROOM_LABELS)[]).filter(key => key === "all" || allPhotos.some(p => photoCategory(p.src) === key)).map(key => (
+          <button type="button" key={key} aria-pressed={category === key} onClick={() => { setOpen(null); setCategory(key); }}>
+            {ROOM_LABELS[key][lang]}
+          </button>
+        ))}
+      </div>
       <div className="gallery" id={galleryId}>{thumbnails(photos.slice(0, INITIAL), 0)}</div>
       {photos.length > INITIAL ? (
         <details className="gallery-extra" onToggle={(event) => setExpanded(event.currentTarget.open)}>
@@ -122,7 +139,16 @@ export function Gallery({
                 >
                   ‹
                 </button>
-                <figure>
+                <figure
+                  onTouchStart={event => { const t = event.touches[0]; touchStart.current = t ? { x: t.clientX, y: t.clientY } : null; }}
+                  onTouchEnd={event => {
+                    const start = touchStart.current; touchStart.current = null;
+                    const end = event.changedTouches[0]; if (!start || !end) return;
+                    const dx = end.clientX - start.x, dy = end.clientY - start.y;
+                    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) setOpen((open + (dx < 0 ? 1 : -1) + photos.length) % photos.length);
+                  }}
+                  onTouchCancel={() => { touchStart.current = null; }}
+                >
                   <Photo src={current.src} alt={current.alt[lang]} sizes="92vw" priority />
                   <figcaption>{current.alt[lang]}</figcaption>
                 </figure>

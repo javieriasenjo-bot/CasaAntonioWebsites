@@ -1,5 +1,5 @@
 import { useRouterState } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { house } from "@/data/active";
@@ -26,6 +26,26 @@ export function Shell({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [reserveOpen, setReserveOpen] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
+  const reserveRef = useRef<HTMLDivElement>(null);
+  const closeReserve = () => {
+    setReserveOpen(false);
+    reserveRef.current?.querySelector<HTMLElement>(".quick-reserve-trigger")?.focus();
+  };
+
+  useEffect(() => {
+    document.documentElement.classList.add("app-ready");
+    return () => document.documentElement.classList.remove("app-ready");
+  }, []);
+
+  useEffect(() => {
+    if (!reserveOpen) return;
+    reserveRef.current?.querySelector<HTMLElement>(".quick-reserve-menu a")?.focus();
+    const outside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !reserveRef.current?.contains(event.target)) closeReserve();
+    };
+    document.addEventListener("pointerdown", outside);
+    return () => document.removeEventListener("pointerdown", outside);
+  }, [reserveOpen]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -177,7 +197,7 @@ export function Shell({ children }: { children: ReactNode }) {
           <p className="small credit">{t.footer.photo}</p>
         </div>
       </footer>
-      <div className="quick-reserve">
+      <div className="quick-reserve" ref={reserveRef}>
         {directCabin ? (
           <AirbnbLink
             cabin={directCabin}
@@ -188,11 +208,15 @@ export function Shell({ children }: { children: ReactNode }) {
           </AirbnbLink>
         ) : (
           <>
+            <div className="quick-reserve-fallback">
+              <AirbnbLink cabin="a" location="reserve-fallback">{t.reserve.a}</AirbnbLink>
+              <AirbnbLink cabin="b" location="reserve-fallback">{t.reserve.b}</AirbnbLink>
+            </div>
             {reserveOpen ? (
               <div className="quick-reserve-menu" id="reserve-menu">
                 <div className="quick-reserve-menu-head">
                   <strong>{t.reserve.title}</strong>
-                  <button type="button" className="quick-reserve-close" onClick={() => setReserveOpen(false)} aria-label={t.reserve.close}>
+                  <button type="button" className="quick-reserve-close" onClick={closeReserve} aria-label={t.reserve.close}>
                     ×
                   </button>
                 </div>

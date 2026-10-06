@@ -29,7 +29,8 @@ test("student online price and approved bed counts agree across languages and sc
     assert.match(html, /400/);
     assert.doesNotMatch(html, /高中生是这个价钱的一半|고등학생은 그 반액/);
     const a = readFileSync(join(dist, prefix, "casa-antonio-a/index.html"), "utf8");
-    assert.match(a, /"typeOfBed":"Double","numberOfBeds":3/);
+    assert.match(a, /"typeOfBed":"Single","numberOfBeds":3/);
+    assert.match(a, /"typeOfBed":"Double","numberOfBeds":1/);
     assert.match(a, /"floorSize":\{"@type":"QuantitativeValue","value":65/);
     assert.doesNotMatch(a, /"numberOfBeds":4/);
   }

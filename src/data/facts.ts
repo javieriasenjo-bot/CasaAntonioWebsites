@@ -44,7 +44,7 @@ export const apartmentAPhotos: Photo[] = [
   p("/photos/sofa.jpg", "The grey sofa under the high window", "高窓の下のグレーのソファ", "高窗下的灰色沙发", "높은 창 아래의 회색 소파"),
   p("/photos/bedroom.jpg", "First bedroom, two beds", "ひとつめの寝室、ベッド2台", "第一间卧室，两张床", "첫 번째 침실, 침대 두 개"),
   p("/photos/bedroom-2.jpg", "The same bedroom, from the door", "同じ寝室を入口から", "同一间卧室，从门口看", "같은 침실, 문 쪽에서"),
-  p("/photos/bedroom-3.jpg", "The second bedroom, earlier bed arrangement", "ふたつめの寝室", "第二间卧室", "두 번째 침실"),
+  p("/photos/bedroom-3.jpg", "The second bedroom", "ふたつめの寝室", "第二间卧室", "두 번째 침실"),
   p("/photos/hall.jpg", "Hall closet and the way through the apartment", "廊下の収納と部屋の奥", "走廊储物与房间深处", "복도 수납과 집 안쪽"),
   p("/photos/a-entrance.jpg", "Front entrance and parking from the street", "道路側から見た玄関と駐車場", "从街道看入口与停车位", "도로에서 본 현관과 주차장"),
   p("/photos/a-dining-window.jpg", "Window-side counter seating next to the kitchen", "キッチン横の窓際カウンター席", "厨房旁的靠窗吧台座位", "주방 옆 창가 카운터 좌석"),

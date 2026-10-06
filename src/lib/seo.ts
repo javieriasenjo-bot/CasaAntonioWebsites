@@ -12,7 +12,7 @@ import {
   type PageId,
 } from "@/lib/paths";
 
-const LASTMOD = "2026-10-06";
+import { PAGE_MODIFIED } from "@/data/page-maintenance";
 
 type Meta = { title: string; description: string };
 
@@ -26,12 +26,12 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "札幌・麻生駅徒歩5分の貸切アパートメント｜Casa Antonio",
       description:
-        "札幌市北区の一軒家に、専用入口のアパートが二つ。麻生駅から徒歩約5分。各約65㎡、キッチン付きの静かな住宅街です。AirbnbでAまたはBを予約できます。",
+        "札幌・麻生駅から徒歩約5分。専用入口のある貸切アパート2室を比較できます。各約65㎡、Aは4名、Bは3名まで。各室1台の無料駐車場があり、予約はAirbnbで受け付けています。",
     },
     zh: {
       title: "札幌整套公寓民宿 · 麻生站步行5分钟｜Casa Antonio",
       description:
-        "札幌市北区一栋住宅里的两套独立公寓，离麻生站步行约五分钟，每套约65平方米，有厨房，门前可停车。在 Airbnb 预订 Casa Antonio A 或 B。",
+        "比较札幌麻生站附近的两套独立公寓：每套约65平方米，A最多住4人，B最多住3人。步行约5分钟到地铁站，每套可免费停一辆车，通过Airbnb预订。",
     },
     ko: {
       title: "삿포로 아파트 숙소 · 아사부역 도보 5분｜Casa Antonio",
@@ -48,17 +48,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "Casa Antonio A｜札幌・約65㎡・4名まで・駐車場付き",
       description:
-        "北区の1階、約65㎡。寝室2、居間1、浴室1、定員4名。ダブルベッドが合計3台あります。麻生駅から徒歩約5分。専用入口と、無料の駐車場が1台あります。",
+        "札幌・麻生駅徒歩約5分の1階貸切アパート。約65㎡、寝室2室、シングル3台とダブル1台で4名まで。キッチン、洗濯機、専用入口、1台分の無料駐車場があります。",
     },
     zh: {
       title: "Casa Antonio A｜札幌约65㎡公寓，可住4人，可停车",
       description:
-        "北区一楼，约65平方米，两间卧室、一间起居室、一间浴室，最多四位客人。共三张双人床。离麻生站步行约五分钟。独立入口，每套公寓免费停车一位。",
+        "札幌麻生站步行约5分钟的一楼独立公寓，约65平方米。两间卧室共3张单人床和1张双人床，最多4人；配有厨房、洗衣机和独立入口，可免费停一辆车。",
     },
     ko: {
       title: "Casa Antonio A｜삿포로 약 65㎡·4명·주차",
       description:
-        "기타구 1층, 약 65㎡, 침실 둘과 거실, 최대 네 명. 더블 침대는 총 세 개입니다. 전용 출입구와 무료 주차 한 대가 있습니다. 조용한 주택가입니다.",
+        "기타구 1층, 약 65㎡, 침실 둘과 거실, 최대 네 명. 싱글 침대 세 개와 더블 침대 한 개입니다. 전용 출입구와 무료 주차 한 대가 있습니다.",
     },
   },
   b: {
@@ -70,17 +70,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "Casa Antonio B｜木の内装とプロジェクターの札幌アパート",
       description:
-        "同じ家の2階、階段で上がります。約65㎡、シングルベッド3台、定員3名。木の内装と居間のプロジェクター。麻生駅から徒歩約5分、無料駐車場があります。 麻生の住宅街です。",
+        "木の内装とプロジェクターがある約65㎡の貸切アパート。シングル3台で3名まで。2階へは手すり付きの階段約25段。洗濯機、室内物干しスペース、1台分の無料駐車場があります。",
     },
     zh: {
       title: "Casa Antonio B｜木质公寓，客厅有投影仪",
       description:
-        "同一栋房子的二楼，走楼梯上去。约65平方米，三张单人床，最多三位客人。木质室内，起居室有投影仪。离麻生站步行约五分钟，免费停车。 这是安静的住宅街。 厨房可以自己做饭。",
+        "约65平方米的二楼独立公寓，木质内饰、客厅投影仪和3张单人床，最多3人。需走约25级带扶手的台阶；洗衣房可晾衣，每套可免费停一辆车。",
     },
     ko: {
       title: "Casa Antonio B｜나무 인테리어와 프로젝터 아파트",
       description:
-        "같은 집 2층. 약 65㎡, 싱글 침대 세 개, 최대 세 명. 나무 실내와 거실 프로젝터. 전용 출입구와 무료 주차가 있습니다. 조용한 주택가입니다.",
+        "같은 집 2층. 약 65㎡, 싱글 침대 세 개, 최대 세 명. 나무 실내와 거실 프로젝터. 전용 출입구와 무료 주차가 있습니다.",
     },
   },
   neighborhood: {
@@ -92,17 +92,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "麻生・北区の案内｜地下鉄、イオン、食事｜Casa Antonio",
       description:
-        "家のまわり。麻生駅、イオン、calma、ラーメン、公園、整体。街へ出るときは地下鉄で南へ。営業時間はその日に確認してください。徒歩で足りる用事をまとめています。",
+        "Casa Antonio周辺の麻生駅、スーパー、飲食店、公園を紹介。徒歩での目安と地図リンクをまとめ、滞在中の買い物や食事選びに役立てられます。営業時間は各店舗でご確認ください。",
     },
     zh: {
       title: "麻生·北区指南｜地铁、永旺、用餐｜Casa Antonio",
       description:
-        "房子附近：麻生站、永旺、calma、拉面、公园和整体。想进城就坐地铁往南。营业时间请当天确认。把从这栋房子步行能到的事情写在这一页。 这是安静的住宅街。 厨房可以自己做饭。",
+        "查看Casa Antonio附近的麻生站、超市、餐厅和公园。页面提供步行时间参考及地图链接，方便安排买菜、用餐和散步；出发前请向各店确认营业时间。",
     },
     ko: {
       title: "아사부·기타구 안내｜지하철, 이온, 식사｜Casa Antonio",
       description:
-        "집 근처. 아사부역, 이온, calma, 라멘, 공원, 정체. 시내로 갈 때는 지하철로 남쪽. 영업시간은 당일에 확인하세요. 조용한 주택가입니다.",
+        "집 근처. 아사부역, 이온, calma, 라멘, 공원, 바디 케어 시설. 시내로 갈 때는 지하철로 남쪽. 영업시간은 당일에 확인하세요.",
     },
   },
   "day-trips": {
@@ -114,12 +114,12 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "札幌からの日帰り｜小樽、富良野、手稲｜Casa Antonio",
       description:
-        "行き先は一つにして、同じ扉に戻る。小樽、登別、定山渓、富良野と美瑛、洞爺湖、手稲、白老のウポポイ、頭大仏。北区の家から出る一日です。時刻と運賃はその日に確認を。",
+        "札幌のCasa Antonioを拠点に、小樽、定山渓、登別、富良野・美瑛、洞爺湖、白老ウポポイなどへ。行き先ごとの見どころと移動の目安を紹介します。運行時刻・料金は出発前に確認を。",
     },
     zh: {
       title: "札幌一日游｜小樽、富良野、手稻｜Casa Antonio",
       description:
-        "选一个方向，再回到同一扇门。小樽、登别、定山溪、富良野与美瑛、洞爷湖、手稻、白老的 Upopoy，或头大佛。时刻和票价请当天确认。",
+        "从札幌Casa Antonio出发，规划小樽、定山溪、登别、富良野与美瑛、洞爷湖或白老Upopoy一日游。比较各地看点和交通参考，出行前确认班次与费用。",
     },
     ko: {
       title: "삿포로 당일치기｜오타루, 후라노, 데이네｜Casa Antonio",
@@ -136,12 +136,12 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "チェックイン・駐車場・到着｜Casa Antonio 札幌",
       description:
-        "チェックインは16:00–23:00、セルフチェックイン。出発は10:00まで、それより前でもかまいません。駐車場は無料で各室1台。禁煙、ペット不可、パーティー不可。",
+        "セルフチェックインは16:00–23:00、チェックアウトは10:00まで。各室1台の無料駐車場と、到着前に確認したい入室方法・ハウスルールをご案内します。",
     },
     zh: {
       title: "入住、停车与到达｜Casa Antonio 札幌",
       description:
-        "入住 16:00–23:00，自助入住。10:00 前随时可离开。每套公寓免费停车一辆。禁烟、不可带宠物、不可开派对。备案号仍是 A M010045173、B M010045174。",
+        "自助入住时间为16:00–23:00，退房不晚于10:00。查看每套一辆车的免费停车安排、入住前须知及禁烟、禁止宠物和聚会等房屋规则。",
     },
     ko: {
       title: "체크인·주차·도착｜Casa Antonio 삿포로",
@@ -158,17 +158,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "新千歳空港から麻生へ｜Casa Antonio",
       description:
-        "着くのは新千歳空港です。丘珠ではありません。快速エアポートで札幌駅へ、南北線で麻生まで北上し、駅から徒歩およそ5分です。運賃はその日に確認してください。 麻生の住宅街です。",
+        "新千歳空港からCasa Antonioへのアクセス案内。JR快速エアポートと地下鉄南北線で麻生駅へ、または空港バスを利用。駅から徒歩約5分の道順と交通リンクを確認できます。",
     },
     zh: {
       title: "从新千岁机场到麻生｜Casa Antonio",
       description:
-        "国际航班到新千岁机场，不是市内的丘珠。机场快速到札幌站，再乘南北线往北到终点麻生，步行约五分钟到门口。票价请当天确认。 这是安静的住宅街。 厨房可以自己做饭。 预订只在 Airbnb。",
+        "了解从新千岁机场前往Casa Antonio的方法：乘JR机场快速转地铁南北线到麻生站，或选择机场巴士。查看交通链接及从车站步行约5分钟的到达指引。",
     },
     ko: {
       title: "신치토세 공항에서 아사부까지｜Casa Antonio",
       description:
-        "도착 공항은 신치토세입니다. 오카다마가 아닙니다. 공항 쾌속으로 삿포로역, 난보쿠선으로 아사부까지 북상한 뒤 도보 약 5분입니다. 조용한 주택가입니다.",
+        "도착 공항은 신치토세입니다. 오카다마가 아닙니다. 공항 쾌속으로 삿포로역, 난보쿠선으로 아사부까지 북상한 뒤 도보 약 5분입니다.",
     },
   },
   "snow-festival": {
@@ -180,17 +180,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "さっぽろ雪まつりへ泊まる｜Casa Antonio",
       description:
-        "雪まつりの拠点は、静かな北区の家。麻生から南北線で南へ、大通とすすき野です。2月の会期は市がその年に発表します。終われば同じ扉に戻ります。 麻生の住宅街です。 キッチンがあります。",
+        "麻生駅近くのCasa Antonioからさっぽろ雪まつりへ。地下鉄南北線で大通・すすきの方面に移動できます。冬の滞在準備と会場へのアクセスを確認し、会期は公式情報でご確認ください。",
     },
     zh: {
       title: "札幌雪祭住宿｜Casa Antonio",
       description:
-        "把安静的北区当作雪祭的基地。从麻生乘南北线往南，到大通和薄野。二月的会期由市政府当年公布。结束后回到离车站步行约五分钟的家。 这是安静的住宅街。 厨房可以自己做饭。",
+        "住在麻生站附近的Casa Antonio，乘地铁南北线前往大通和薄野的札幌雪祭会场。查看冬季住宿与出行建议，具体会期请以官方公布为准。",
     },
     ko: {
       title: "삿포로 눈축제에 머무르기｜Casa Antonio",
       description:
-        "눈축제의 기점은 조용한 기타구의 집. 아사부에서 난보쿠선으로 남쪽, 오도리와 스스키노. 2월 일정은 시가 그해 발표합니다. 조용한 주택가입니다.",
+        "눈축제의 기점은 조용한 기타구의 집. 아사부에서 난보쿠선으로 남쪽, 오도리와 스스키노. 2월 일정은 시가 그해 발표합니다.",
     },
   },
   "teine-ski": {
@@ -202,17 +202,17 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "サッポロテイネの拠点｜Casa Antonio",
       description:
-        "午前は部屋で仕事、午後はサッポロテイネ、夜は同じ扉。オリンピアとハイランド。家は麻生駅から徒歩約5分で、家の前の駐車場は無料です。 麻生の住宅街です。 キッチンがあります。",
+        "札幌のCasa Antonioを拠点にサッポロテイネでスキー。オリンピア・ハイランドの公式案内と移動の目安を紹介します。宿泊施設には無料駐車場があり、営業状況はスキー場でご確認ください。",
     },
     zh: {
       title: "札幌手稻滑雪的住处｜Casa Antonio",
       description:
-        "上午在房间工作，下午去札幌手稻，晚上回到同一扇门。奥林匹亚与高地。家离麻生站步行约五分钟。门前停车免费，厨房可以自己做晚饭。 这是安静的住宅街。 厨房可以自己做饭。",
+        "以札幌Casa Antonio为住宿基地，前往札幌手稻滑雪场的奥林匹亚与高地区域。查看官方信息和交通参考；住宿提供免费停车，营业情况请向雪场确认。",
     },
     ko: {
       title: "삿포로 데이네 스키 베이스｜Casa Antonio",
       description:
-        "오전에는 방에서 일하고, 오후에 삿포로 데이네, 밤에는 같은 문. 올림피아와 하일랜드. 집 앞 주차는 무료입니다. 조용한 주택가입니다. 주방이 있습니다.",
+        "오전에는 방에서 일하고, 오후에 삿포로 데이네, 밤에는 같은 문. 올림피아와 하일랜드. 집 앞 주차는 무료입니다. 주방이 있습니다.",
     },
   },
   "long-stay": {
@@ -224,39 +224,39 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "札幌の長期滞在｜Casa Antonio",
       description:
-        "数週間、または数ヶ月。AでもBでも、一泊を積み上げた額より低い料金です。麻生駅から徒歩約5分、キッチン付き。Airbnbから連絡し、支払う前に文面で決めます。 麻生の住宅街です。",
+        "札幌で数週間から数か月滞在したい方へ。Casa Antonio A・Bのキッチンや洗濯機、交通アクセスを確認し、Airbnbから長期滞在料金を相談できます。料金は支払い前に文面で確認します。",
     },
     zh: {
       title: "在札幌住几周或几个月｜Casa Antonio",
       description:
-        "A 或 B 都可以按周、按月住，价格低于把每晚房价加在一起。离麻生站步行约五分钟，有厨房。通过 Airbnb 联系。付款前，费用用书面确认。 这是安静的住宅街。",
+        "计划在札幌住几周或几个月？了解Casa Antonio A和B的厨房、洗衣机及地铁交通，通过Airbnb咨询长期住宿价格，并在付款前书面确认费用。",
     },
     ko: {
       title: "삿포로 장기 숙박｜Casa Antonio",
       description:
-        "몇 주, 또는 몇 달. A도 B도, 1박 요금을 쌓은 금액보다 낮습니다. Airbnb로 문의하세요. 내기 전에 요금을 글로 정합니다. 조용한 주택가입니다.",
+        "몇 주, 또는 몇 달. A도 B도, 1박 요금을 쌓은 금액보다 낮습니다. Airbnb로 문의하세요. 내기 전에 요금을 글로 정합니다.",
     },
   },
   faq: {
     en: {
       title: "Questions before You Book · Casa Antonio",
       description:
-        "Check-in 16:00–23:00, check-out by 10:00, self check-in, free parking, Asabu Station, New Chitose Airport, and the house rules. No invented extras.",
+        "Check-in 16:00–23:00, check-out by 10:00, self check-in, free parking, Asabu Station, New Chitose Airport, and the house rules. Read the practical details before booking.",
     },
     ja: {
       title: "泊まる前の質問｜Casa Antonio",
       description:
-        "チェックイン16:00–23:00、チェックアウト10:00まで、セルフチェックイン、無料駐車場、麻生駅、新千歳空港、ハウスルール。ここにないことは書きません。",
+        "Casa Antonioの予約前によくある質問。A・Bの定員とベッド、無料駐車場、チェックイン、階段、交通アクセス、破損時の費用など、滞在の実用情報を確認できます。",
     },
     zh: {
       title: "预订前的问题｜Casa Antonio",
       description:
-        "入住 16:00–23:00，退房不晚于 10:00，自助入住，免费停车，麻生站步行约五分钟，新千岁机场，以及房屋规则。没有的事情，这里不写。 这是安静的住宅街。",
+        "预订Casa Antonio前的常见问题：比较A和B的人数与床位，了解免费停车、入住时间、楼梯、交通和损坏收费等实用信息。",
     },
     ko: {
       title: "예약 전에 묻는 것｜Casa Antonio",
       description:
-        "체크인 16:00–23:00, 체크아웃 10:00까지, 셀프 체크인, 무료 주차, 아사부역, 신치토세 공항, 하우스 룰. 없는 일은 적지 않습니다.",
+        "체크인 16:00–23:00, 체크아웃 10:00까지, 셀프 체크인, 무료 주차, 아사부역, 신치토세 공항, 하우스 룰. 예약 전에 확인해 주세요.",
     },
   },
   combo: {
@@ -268,12 +268,12 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "札幌と白老の海岸｜Casa Antonio",
       description:
-        "北区の Casa Antonio に泊まってから、白老の海岸にある Kojohama Cabins へ。車でおよそ1時間15分。JRは苫小牧方面です。それぞれ別に予約します。",
+        "札幌のCasa Antonioと白老の海岸にあるKojohama Cabinsを組み合わせる旅。街と海辺の滞在を計画し、移動の目安をご確認ください。各宿泊施設は別々に予約します。",
     },
     zh: {
       title: "札幌与白老海岸｜Casa Antonio",
       description:
-        "先住札幌北区的 Casa Antonio，再到白老海岸的 Kojohama Cabins。开车大约一小时十五分钟。JR 往苫小牧方向。两栋房子各自预订，没有套餐价。",
+        "把札幌Casa Antonio与白老海岸的Kojohama Cabins安排在同一趟北海道旅程中。查看城市与海边住宿的组合建议和交通参考；两处住宿分别预订。",
     },
     ko: {
       title: "삿포로와 시라오이 해안｜Casa Antonio",
@@ -285,21 +285,21 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Privacy · Casa Antonio",
       description:
-        "What this site stores: a language preference, and analytics through Google Tag Manager. Bookings stay on Airbnb. No account on this site. No booking form here.",
+        "How Casa Antonio uses language storage and Google Analytics, including booking, Airbnb and Booking.com review links, long-stay enquiries and maps.",
     },
     ja: {
       title: "プライバシー｜Casa Antonio",
       description:
-        "このサイトが覚えるのは言語の選択と、Googleタグマネージャーによる計測です。予約はAirbnbです。このサイトにアカウントはありません。 麻生の住宅街です。",
+        "言語設定の保存とGoogleアナリティクスの利用について。予約、Airbnb・Booking.comのレビュー、長期滞在の問い合わせ、地図などのクリック計測をご説明します。",
     },
     zh: {
       title: "隐私｜Casa Antonio",
-      description: "本站只记住语言选择，并通过 Google Tag Manager 做统计。预订在 Airbnb。房子离麻生站步行约五分钟。本站没有账户，也不直接收款。 这是安静的住宅街。",
+      description: "了解Casa Antonio如何保存语言设置并使用Google Analytics，统计预订、Airbnb和Booking.com评价、长住咨询及地图链接的点击。",
     },
     ko: {
       title: "개인정보｜Casa Antonio",
       description:
-        "이 사이트가 기억하는 것은 언어 선택과 Google 태그 매니저 측정입니다. 예약은 Airbnb입니다. 이 사이트에 계정은 없습니다. 조용한 주택가입니다.",
+        "언어 설정 저장과 Google 애널리틱스 이용 안내. 예약, Airbnb·Booking.com 후기, 장기 숙박 문의와 지도 링크의 클릭 측정을 설명합니다.",
     },
   },
 };
@@ -479,7 +479,7 @@ function apartment(id: "a" | "b", lang: Lang) {
     numberOfBedrooms: PROPERTY_FACTS[id].bedrooms,
     numberOfBathroomsTotal: 1,
     occupancy: { "@type": "QuantitativeValue", maxValue: PROPERTY_FACTS[id].maxGuests },
-    bed: [{ "@type": "BedDetails", typeOfBed: PROPERTY_FACTS[id].bedType, numberOfBeds: PROPERTY_FACTS[id].beds }],
+    bed: PROPERTY_FACTS[id].beds.map(bed => ({ "@type": "BedDetails", typeOfBed: bed.type, numberOfBeds: bed.count })),
     containedInPlace: { "@id": `${ORIGIN}/#business` },
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "Free parking, one car per apartment", value: true },
@@ -531,7 +531,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "How many people can stay?",
-      a: "Casa Antonio A sleeps up to four guests: two separate bedrooms, two double beds in one and one double bed in the other, and one living room. Casa Antonio B sleeps up to three guests, with three single beds in one bedroom. The guest checking in should be 18 or older. Children are welcome. Only people named on the booking stay here.",
+      a: "Casa Antonio A sleeps up to four guests: two separate bedrooms, three single beds and one double bed, and one living room. Casa Antonio B sleeps up to three guests, with three single beds in one bedroom. The guest checking in should be 18 or older. Children are welcome. Only people named on the booking stay here.",
     },
     {
       q: "How do long stays work?",
@@ -573,7 +573,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "何名まで泊まれますか？",
-      a: "Casa Antonio Aの定員は4名です。寝室は2つで、ダブルベッドはひとつに2台、もうひとつに1台、居間が1つです。Bはシングルベッド3台、定員3名です。チェックインする方は18歳以上。お子さまは歓迎します。泊まれるのは予約に名前のある人だけです。",
+      a: "Casa Antonio Aの定員は4名です。寝室は2つで、シングルベッド3台とダブルベッド1台、居間が1つです。Bはシングルベッド3台、定員3名です。チェックインする方は18歳以上。お子さまは歓迎します。泊まれるのは予約に名前のある人だけです。",
     },
     {
       q: "長期滞在はどうしますか？",
@@ -615,7 +615,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "可以住几个人？",
-      a: "Casa Antonio A 最多四位客人：两间分开的卧室，一间有两张双人床，另一间有一张双人床，另有一间起居室。B 是一间卧室、三张单人床，最多三位客人。办理入住的客人须年满 18 岁。欢迎孩子。只有预订上的人可以住。",
+      a: "Casa Antonio A 最多四位客人：两间分开的卧室，共有三张单人床和一张双人床，另有一间起居室。B 是一间卧室、三张单人床，最多三位客人。办理入住的客人须年满 18 岁。欢迎孩子。只有预订上的人可以住。",
     },
     {
       q: "长期住怎么订？",
@@ -657,7 +657,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "몇 명까지 묵나요?",
-      a: "Casa Antonio A는 최대 네 명입니다. 침실이 둘이고, 한 침실에 더블 침대 두 개, 다른 침실에 한 개, 거실은 하나입니다. B는 싱글 침대 세 개, 최대 세 명입니다. 체크인하는 분은 18세 이상. 어린이는 환영합니다. 예약에 이름이 있는 사람만 묵습니다.",
+      a: "Casa Antonio A는 최대 네 명입니다. 침실이 둘이고, 싱글 침대 세 개와 더블 침대 한 개, 거실은 하나입니다. B는 싱글 침대 세 개, 최대 세 명입니다. 체크인하는 분은 18세 이상. 어린이는 환영합니다. 예약에 이름이 있는 사람만 묵습니다.",
     },
     {
       q: "장기 숙박은 어떻게 하나요?",
@@ -679,7 +679,7 @@ function article(page: PageId, lang: Lang) {
     image: `${ORIGIN}${OG_IMAGE[page]}`,
     inLanguage: HTML_LANG[lang],
     datePublished: "2026-09-30",
-    dateModified: LASTMOD,
+    dateModified: PAGE_MODIFIED[page],
     author: { "@type": "Organization", name: "Casa Antonio", url: `${ORIGIN}/` },
     publisher: { "@type": "Organization", name: "Casa Antonio", url: `${ORIGIN}/` },
     mainEntityOfPage: absolutePage(page, lang),
@@ -816,7 +816,7 @@ export function sitemapXml() {
       const links = alternates(page)
         .map((item) => `    <xhtml:link rel="alternate" hreflang="${item.hreflang}" href="${item.href}" />`)
         .join("\n");
-      return `  <url>\n    <loc>${absolutePage(page, lang)}</loc>\n    <lastmod>${LASTMOD}</lastmod>\n${links}\n  </url>`;
+      return `  <url>\n    <loc>${absolutePage(page, lang)}</loc>\n    <lastmod>${PAGE_MODIFIED[page]}</lastmod>\n${links}\n  </url>`;
     }),
   );
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join("\n")}\n</urlset>\n`;

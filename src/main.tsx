@@ -19,9 +19,15 @@ if (!root) throw new Error("Root element missing");
 // hydrating SSR so its root Suspense boundary matches the prerendered tree.
 if (root.hasChildNodes()) router.ssr = { manifest: undefined };
 
-await loadPack(langFromPath(window.location.pathname));
-await router.load();
-const app = <RouterProvider router={router} />;
-// Preserve the HTML guests have already seen while the language/runtime loads.
-if (root.hasChildNodes()) hydrateRoot(root, app);
-else createRoot(root).render(app);
+try {
+  await loadPack(langFromPath(window.location.pathname));
+  await router.load();
+  const app = <RouterProvider router={router} />;
+  // Preserve the HTML guests have already seen while the language/runtime loads.
+  if (root.hasChildNodes()) hydrateRoot(root, app);
+  else createRoot(root).render(app);
+} catch (error) {
+  // Static navigation and reservation links remain usable if startup fails.
+  document.documentElement.classList.remove("app-ready");
+  console.error("Casa Antonio could not start interactive features", error);
+}

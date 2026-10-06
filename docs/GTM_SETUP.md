@@ -4,9 +4,9 @@
 
 The source integration is implemented and tested against the current public container. Owner authorization to update GTM was received. The owner supplied `C:/dev/GTM-T8TLRH4L_workspace12.json`; its original bytes are preserved. The revised import file is `C:/dev/GTM-T8TLRH4L_CasaAntonio_Updated_2026-10-06.json`. It adds three tags, three triggers and five variables, modifies two tags and deletes nothing. Structure/reference/preservation checks and 32 local source/JSON contract scenarios passed. The live homepage was fetched on 6 October and contains the exact updated bootstrap code.
 
-Authenticated import, Google-side validation and publication have **not** been performed: this session has no browser-control runtime or GTM connector. Preview and GA4 receipt verification remain required. Follow [GTM_OWNER_STEPS.md](GTM_OWNER_STEPS.md), starting at section 2. The source/JSON simulation is not a Google runtime test.
+The owner reported publishing the updated settings. Public live container version 12 was fetched and checked on 6 October 2026. Real browser tests against the live website passed 36 actions across four languages: A/B booking, both providers' reviews, long-stay enquiries, maps and language changes. Each action queued one matching event and attempted one matching GA4 collection event for `G-3V83R0Z48F`. Review actions did not emit booking events. Collection requests were intercepted before transmission to keep test visits out of business analytics. Account receipt and signed-in Preview/DebugView remain unverified.
 
-Container: `GTM-T8TLRH4L`. Existing GA4 destination: `G-3V83R0Z48F`, verified from the public container on 6 October. Public booking tag ID 14 consumes `airbnb_click`, with apartment_name, destination_url, page_language and link_location. The current container also handles contact_click and language_change. It has no review_click, inquiry_click or map_click tag.
+Container: `GTM-T8TLRH4L`. The public container now includes review_click, inquiry_click and map_click alongside booking, contact and language tags. The guarded legacy listener remains present. Evidence: `C:/dev/CasaAntonio_Live_GTM_Check_2026-10-06.json`.
 
 ## Source contract
 

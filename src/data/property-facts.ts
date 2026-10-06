@@ -5,8 +5,11 @@ export const PROPERTY_FACTS = {
   confirmedOn: "2026-10-06",
   parking: { carsPerApartment: 1, free: true },
   damage: { minimumJPY: 15000, basis: "actual repair costs" },
-  a: { areaM2: 65, bedrooms: 2, beds: 3, bedsPerBedroom: [2, 1], bedType: "Double", maxGuests: 4, floor: 1 },
-  b: { areaM2: 65, bedrooms: 1, beds: 3, bedType: "Single", maxGuests: 3, floor: 2 },
+  bedWidthsCM: { Single: 90, Double: 130 },
+  arrival: { checkin: "16:00–23:00", checkout: "10:00" },
+  bStairs: { approximateSteps: 25, handrail: true },
+  a: { areaM2: 65, bedrooms: 2, beds: [{ type: "Single", count: 3 }, { type: "Double", count: 1 }], maxGuests: 4, floor: 1 },
+  b: { areaM2: 65, bedrooms: 1, beds: [{ type: "Single", count: 3 }], maxGuests: 3, floor: 2 },
 } as const;
 
 export const DAMAGE_POLICY: Record<Lang, string> = {
@@ -25,25 +28,47 @@ export function apartmentSummary(id: "a" | "b", lang: Lang) {
     ko: ["정원", "침실", "침대", "면적", "층", "주차"],
   }[lang];
   const values = {
-    en: [`Up to ${p.maxGuests}`, `${p.bedrooms}`, `${p.beds} ${id === "a" ? "double" : "single"} beds`, `About ${p.areaM2} m²`, id === "a" ? "Ground floor" : "Second floor · stairs", "Free · one car"],
-    ja: [`${p.maxGuests}名まで`, `${p.bedrooms}室`, `${id === "a" ? "ダブル" : "シングル"}${p.beds}台`, `約${p.areaM2}㎡`, id === "a" ? "1階" : "2階・階段あり", "無料・1台"],
-    zh: [`最多${p.maxGuests}人`, `${p.bedrooms}间`, `${p.beds}张${id === "a" ? "双人床" : "单人床"}`, `约${p.areaM2}㎡`, id === "a" ? "一楼" : "二楼・需走楼梯", "免费・一辆"],
-    ko: [`최대 ${p.maxGuests}명`, `${p.bedrooms}개`, `${id === "a" ? "더블" : "싱글"} ${p.beds}개`, `약 ${p.areaM2}㎡`, id === "a" ? "1층" : "2층 · 계단", "무료 · 1대"],
+    en: [`Up to ${p.maxGuests}`, `${p.bedrooms}`, bedSummary(id, lang), `About ${p.areaM2} m²`, id === "a" ? "Ground floor" : "Second floor · stairs", "Free · one car"],
+    ja: [`${p.maxGuests}名まで`, `${p.bedrooms}室`, bedSummary(id, lang), `約${p.areaM2}㎡`, id === "a" ? "1階" : "2階・階段あり", "無料・1台"],
+    zh: [`最多${p.maxGuests}人`, `${p.bedrooms}间`, bedSummary(id, lang), `约${p.areaM2}㎡`, id === "a" ? "一楼" : "二楼・需走楼梯", "免费・一辆"],
+    ko: [`최대 ${p.maxGuests}명`, `${p.bedrooms}개`, bedSummary(id, lang), `약 ${p.areaM2}㎡`, id === "a" ? "1층" : "2층 · 계단", "무료 · 1대"],
   }[lang];
   return labels.map((label, i) => [label, values[i]] as [string, string]);
 }
 
+export function bedSummary(id: "a" | "b", lang: Lang) {
+  const labels = { en: { Single: "single beds", Double: "double bed" }, ja: { Single: "シングル", Double: "ダブル" }, zh: { Single: "单人床", Double: "双人床" }, ko: { Single: "싱글", Double: "더블" } }[lang];
+  return PROPERTY_FACTS[id].beds.map(b => lang === "ja" ? `${labels[b.type]}${b.count}台` : lang === "zh" ? `${b.count}张${labels[b.type]}` : lang === "ko" ? `${labels[b.type]} ${b.count}개` : `${b.count} ${labels[b.type]}`).join(" + ");
+}
+
 export const A_BED_LAYOUT: Record<Lang, string> = {
-  en: "Two double beds in one bedroom; one double bed in the other. Maximum four guests.",
-  ja: "ひとつの寝室にダブルベッド2台、もうひとつに1台。定員は4名です。",
-  zh: "一间卧室有两张双人床，另一间有一张双人床。最多入住四人。",
-  ko: "한 침실에는 더블 침대 2개, 다른 침실에는 1개가 있습니다. 최대 4명입니다.",
+  en: "The bedroom beside the living room has two single beds. The bedroom farther from the living room has one single and one double bed. Maximum four guests.",
+  ja: "居間の隣の寝室はシングルベッド2台。居間から離れた寝室はシングル1台とダブル1台です。定員は4名です。",
+  zh: "客厅旁的卧室有两张单人床，离客厅较远的卧室有一张单人床和一张双人床。最多入住四人。",
+  ko: "거실 옆 침실에는 싱글 침대 2개, 거실에서 더 먼 침실에는 싱글 1개와 더블 1개가 있습니다. 최대 4명입니다.",
 };
 
-// Existing bedroom photographs predate the owner's current bed-layout confirmation.
+// The owner confirmed that the existing photographs show this arrangement.
 export const A_PHOTO_LAYOUT_NOTE: Record<Lang, string> = {
-  en: "Some bedroom photos show an earlier bed arrangement. The current setup is three double beds: two in one bedroom and one in the other, for a maximum of four guests.",
-  ja: "一部の寝室写真は以前のベッド配置です。現在はダブルベッドが合計3台（ひとつの寝室に2台、もうひとつに1台）で、定員は4名です。",
-  zh: "部分卧室照片显示的是以前的床位安排。目前共有三张双人床（一间卧室两张，另一间一张），最多入住四人。",
-  ko: "일부 침실 사진은 이전 침대 배치를 보여 줍니다. 현재 더블 침대는 총 3개(한 침실에 2개, 다른 침실에 1개)이며 최대 4명입니다.",
+  en: "Bedroom photos show the current setup: three single beds and one double bed across two rooms, maximum four guests.",
+  ja: "寝室写真は現在の配置です。2室にシングルベッド3台とダブルベッド1台、定員4名です。",
+  zh: "卧室照片展示当前床位安排：两间卧室共有三张单人床和一张双人床，最多四人。",
+  ko: "침실 사진은 현재 배치입니다. 두 침실에 싱글 침대 3개와 더블 침대 1개, 최대 4명입니다.",
 };
+
+export function practicalGuestFacts(id: "a" | "b", lang: Lang): [string, string][] {
+  const labels = {
+    en: ["Bed widths", "Arrival / departure", "Parking", "Laundry", "Access"],
+    ja: ["ベッド幅", "チェックイン・アウト", "駐車場", "洗濯", "アクセス"],
+    zh: ["床宽", "入住与退房", "停车", "洗衣", "进出"],
+    ko: ["침대 폭", "체크인·체크아웃", "주차", "세탁", "출입"],
+  }[lang];
+  const widths = PROPERTY_FACTS.bedWidthsCM;
+  const values = {
+    en: [`Singles ${widths.Single} cm${id === "a" ? ` · double ${widths.Double} cm` : ""}`, "Self check-in 16:00–23:00 · check-out by 10:00", "One free space per apartment, suitable for a large car", id === "b" ? "Washing machine and space to hang and dry clothes in the laundry room" : "Washing machine", id === "b" ? "Second floor · approximately 25 steps with a handrail" : "Ground floor"],
+    ja: [`シングル${widths.Single}cm${id === "a" ? `・ダブル${widths.Double}cm` : ""}`, "セルフチェックイン16:00–23:00・チェックアウト10:00まで", "各部屋1台無料。大型車も駐車可能", id === "b" ? "洗濯機と、洗濯室内の物干しスペース" : "洗濯機あり", id === "b" ? "2階・約25段の階段（手すりあり）" : "1階"],
+    zh: [`单人床${widths.Single}厘米${id === "a" ? `・双人床${widths.Double}厘米` : ""}`, "自助入住16:00–23:00・10:00前退房", "每套公寓免费停一辆车，可停大型汽车", id === "b" ? "洗衣机及洗衣房内的晾衣空间" : "有洗衣机", id === "b" ? "二楼・约25级台阶，设有扶手" : "一楼"],
+    ko: [`싱글 ${widths.Single}cm${id === "a" ? ` · 더블 ${widths.Double}cm` : ""}`, "셀프 체크인 16:00–23:00 · 체크아웃 10:00까지", "아파트당 무료 주차 1대, 대형 차량도 주차 가능", id === "b" ? "세탁기와 세탁실 안의 빨래 건조 공간" : "세탁기 있음", id === "b" ? "2층 · 약 25개 계단, 손잡이 있음" : "1층"],
+  }[lang];
+  return labels.map((label, i) => [label, values[i]]);
+}
