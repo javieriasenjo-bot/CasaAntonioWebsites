@@ -1,6 +1,18 @@
 # Casa Antonio — Google Tag Manager steps for the owner
 
-The website changes are ready locally. The signed-in Google Tag Manager account has not been changed. Use the existing Casa Antonio container **GTM-T8TLRH4L** and GA4 measurement ID **G-3V83R0Z48F**. Do not create another container or add another Google tag to the website.
+The signed-in Google Tag Manager account has not been changed. Use the existing Casa Antonio container **GTM-T8TLRH4L** and GA4 measurement ID **G-3V83R0Z48F**. Do not create another container or add another Google tag to the website.
+
+## Prepared file — ready for import
+
+The owner supplied `C:\dev\GTM-T8TLRH4L_workspace12.json`. It remains unchanged. The updated file is:
+
+`C:\dev\GTM-T8TLRH4L_CasaAntonio_Updated_2026-10-06.json`
+
+Start at **section 2** below. Expected import changes are **3 tags added, 2 tags modified, 3 triggers added, 5 variables added, zero deletions**. Existing Google, contact and guarded listener tags are preserved. The change report is `C:\dev\CasaAntonio_GTM_Change_Report_2026-10-06.json`.
+
+JSON structure, IDs, variable/trigger references and preservation checks passed. A local simulation passed 32 actions across four languages and verified that the existing listener respects the updated source's duplicate-listener guard. This is not Google import/compiler validation or account-level GA4 receipt verification.
+
+On 6 October 2026, the fetched live homepage contained the exact local `analytics-bootstrap.js` code. That confirms the homepage's event producer is deployed; it does not certify all other routes or GTM changes. Preview the relevant live routes below before publication.
 
 ## 1. Export your current setup
 
@@ -13,7 +25,7 @@ The website changes are ready locally. The signed-in Google Tag Manager account 
 7. Save the downloaded JSON file in `C:\dev`. Keep this unchanged file as a backup.
 8. Tell Codex the exact filename, for example `C:\dev\GTM-T8TLRH4L_workspace.json`.
 
-Exporting does not change the live site. Codex can inspect the actual configuration and prepare a revised JSON file preserving existing items. The revised import file has **not yet been created**; it requires your export.
+Exporting does not change the live site. This export step has already been completed for the prepared file above. Repeat it if the workspace changes before import.
 
 ## 2. Import the revised file after Codex prepares it
 

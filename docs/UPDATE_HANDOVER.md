@@ -2,9 +2,9 @@
 
 ## Delivery
 
-Updated source is in `C:/dev/CasaAntonioWebsites`, ready for the owner's GitHub review and commit. Codex did not commit, push or deploy the website. Authenticated GTM changes could not be made because this session has no browser-control runtime or GTM connector. The exact remaining container changes are in [GTM_SETUP.md](GTM_SETUP.md). [GTM_OWNER_STEPS.md](GTM_OWNER_STEPS.md) gives the owner the export, import, test and publish steps; the revised import JSON awaits an actual container export.
+Updated source is in `C:/dev/CasaAntonioWebsites`, ready for the owner's GitHub review and commit. Codex did not commit, push or deploy the website. Authenticated GTM changes could not be made because this session has no browser-control runtime or GTM connector. The owner supplied the workspace export; `C:/dev/GTM-T8TLRH4L_CasaAntonio_Updated_2026-10-06.json` is now prepared for Merge import. It adds three tags, three triggers and five variables, modifies two tags and deletes nothing. Reference/preservation checks and 32 local source/JSON scenarios passed. Google import validation, Preview, GA4 receipt and publication remain pending. Follow [GTM_OWNER_STEPS.md](GTM_OWNER_STEPS.md), starting at section 2; [GTM_SETUP.md](GTM_SETUP.md) retains the exact configuration contract.
 
-This handover records implemented website changes and remaining work. It does not claim that proposed account changes or the updated source are already deployed.
+This handover records implemented website changes and remaining work. The live homepage was fetched on 6 October and contains the exact local analytics bootstrap. That verifies the homepage's event producer, not all deployment details or any pending GTM account changes.
 
 ## Implemented fixes and improvements
 

@@ -2,7 +2,9 @@
 
 ## Status
 
-The source integration is implemented and tested against the current public container. Authenticated account edits and publication have **not** been performed: this session has no browser-control runtime or GTM connector. Owner authorization to update GTM was received. This file is the exact remaining configuration handoff.
+The source integration is implemented and tested against the current public container. Owner authorization to update GTM was received. The owner supplied `C:/dev/GTM-T8TLRH4L_workspace12.json`; its original bytes are preserved. The revised import file is `C:/dev/GTM-T8TLRH4L_CasaAntonio_Updated_2026-10-06.json`. It adds three tags, three triggers and five variables, modifies two tags and deletes nothing. Structure/reference/preservation checks and 32 local source/JSON contract scenarios passed. The live homepage was fetched on 6 October and contains the exact updated bootstrap code.
+
+Authenticated import, Google-side validation and publication have **not** been performed: this session has no browser-control runtime or GTM connector. Preview and GA4 receipt verification remain required. Follow [GTM_OWNER_STEPS.md](GTM_OWNER_STEPS.md), starting at section 2. The source/JSON simulation is not a Google runtime test.
 
 Container: `GTM-T8TLRH4L`. Existing GA4 destination: `G-3V83R0Z48F`, verified from the public container on 6 October. Public booking tag ID 14 consumes `airbnb_click`, with apartment_name, destination_url, page_language and link_location. The current container also handles contact_click and language_change. It has no review_click, inquiry_click or map_click tag.
 
