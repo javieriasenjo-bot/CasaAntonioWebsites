@@ -2,7 +2,7 @@
 
 ## Delivery
 
-Updated source is in `C:/dev/CasaAntonioWebsites`, ready for the owner's GitHub review and commit. No commit, push or website deployment was performed. Authenticated GTM changes could not be made because this session has no browser-control runtime or GTM connector. The exact remaining container changes are in [GTM_SETUP.md](GTM_SETUP.md).
+Updated source is in `C:/dev/CasaAntonioWebsites`, ready for the owner's GitHub review and commit. Codex did not commit, push or deploy the website. Authenticated GTM changes could not be made because this session has no browser-control runtime or GTM connector. The exact remaining container changes are in [GTM_SETUP.md](GTM_SETUP.md). [GTM_OWNER_STEPS.md](GTM_OWNER_STEPS.md) gives the owner the export, import, test and publish steps; the revised import JSON awaits an actual container export.
 
 This handover records implemented website changes and remaining work. It does not claim that proposed account changes or the updated source are already deployed.
 
@@ -28,6 +28,7 @@ This handover records implemented website changes and remaining work. It does no
 - Gallery expansion, lightbox arrows, Escape/focus return and mobile-menu Escape behavior passed at 320px in all four languages. No-JavaScript gallery expansion and direct high-resolution photo links passed.
 - With both application scripts and GTM deliberately delayed, the first booking click queued once before hydration. After allowing the real current public GTM container to load, it attempted one GA4 booking request. A second action attempted one additional booking request. Both providers' review actions remained separate in the data layer. Those controlled requests were intercepted, so this verifies attempted transmission, not account receipt.
 - Browser results are in `docs/qa/browser-results.json` and `docs/qa/analytics-results.json`.
+- After the destination-photo credit update, all 12 affected routes (three page types × four languages) were checked at 320px and 1440px, for 24 further checks. Original-source caption links, heading preservation, loaded images and overflow checks passed with no browser errors. External requests were blocked for this local check. Results are in `docs/qa/photo-browser-results.json`.
 
 ## Local loading sample
 
