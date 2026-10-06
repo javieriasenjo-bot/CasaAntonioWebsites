@@ -72,3 +72,11 @@ All 104 production browser checks (52 pages at 390/1440 px) passed: prerendered 
 Nine English production analytics actions passed: A/B bookings, Airbnb/Booking.com review links, long-stay enquiry, map and language change. Each queued once and attempted the expected GA4 event to `G-3V83R0Z48F`. Collection requests were intercepted before transmission; account-side receipt remains unverified. No new Lighthouse or real-user performance result is claimed.
 
 Evidence: `docs/qa/production-check-2026-10-06.json`. Remaining external listing wording, family amenities and dated Wi-Fi measurement items above remain open.
+
+## Fresh GTM verification after owner confirmation — 6 October 2026
+
+The public GTM container is version 12 (`GTM-T8TLRH4L`). A fresh four-language check passed all 36 actions: eight apartment booking clicks, sixteen Airbnb/Booking.com review clicks, four long-stay enquiries, four map clicks and four language changes. Every action queued once and attempted exactly one matching GA4 event to `G-3V83R0Z48F`; page-language, apartment, provider and intent parameters were verified where applicable. Reviews remained distinct from booking clicks. Collection requests were intercepted before transmission, so account-side GA4 receipt remains unverified. Evidence: `docs/qa/gtm-recheck-2026-10-06.json`.
+
+## Main-menu Long stays entry — 6 October 2026
+
+At the owner’s request, Long stays is now a separate main-navigation entry directly after Casa Antonio B in all four languages. It appears in the desktop navigation, mobile menu and static no-JavaScript navigation, and marks the long-stay page as current. The existing localized labels are reused. This source change has not been deployed by Codex. The production build and eight automated tests passed; twenty browser checks across four languages and widths 320, 390, 861, 1024 and 1440 px passed navigation, active-page indication, enquiry-button presence and overflow checks. No-JavaScript visibility passed separately. Evidence: `docs/qa/long-stay-menu-check-2026-10-06.json`. The owner’s separately reported iPhone outbound-link issue is not claimed resolved by this navigation change.

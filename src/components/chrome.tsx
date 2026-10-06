@@ -9,9 +9,10 @@ import { HTML_LANG, pagePath, parsePath, type PageId } from "@/lib/paths";
 
 const LANGS: Lang[] = ["en", "ja", "zh", "ko"];
 
-const NAV: { page: PageId; key: "a" | "b" | "neighborhood" | "trips" | "arrival" }[] = [
+const NAV: { page: PageId; key: "a" | "b" | "longStay" | "neighborhood" | "trips" | "arrival" }[] = [
   { page: "a", key: "a" },
   { page: "b", key: "b" },
+  { page: "long-stay", key: "longStay" },
   { page: "neighborhood", key: "neighborhood" },
   { page: "day-trips", key: "trips" },
   { page: "arrival", key: "arrival" },
@@ -123,7 +124,7 @@ export function Shell({ children }: { children: ReactNode }) {
                   data-active={page === item.page ? "true" : undefined}
                   aria-current={page === item.page ? "page" : undefined}
                 >
-                  {t.nav[item.key]}
+                  {item.key === "longStay" ? g.longCta : t.nav[item.key]}
                 </PageLink>
               ))}
             </nav>

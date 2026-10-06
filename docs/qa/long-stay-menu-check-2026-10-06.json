@@ -1,0 +1,165 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "prefix": "",
+      "label": "Long stays",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 320,
+      "prefix": "/ja",
+      "label": "\u9577\u671f\u6ede\u5728\u306b\u3064\u3044\u3066",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 320,
+      "prefix": "/zh-cn",
+      "label": "\u957f\u671f\u4f4f\u5bbf",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 320,
+      "prefix": "/ko",
+      "label": "\uc7a5\uae30 \uc219\ubc15",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 390,
+      "prefix": "",
+      "label": "Long stays",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 390,
+      "prefix": "/ja",
+      "label": "\u9577\u671f\u6ede\u5728\u306b\u3064\u3044\u3066",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 390,
+      "prefix": "/zh-cn",
+      "label": "\u957f\u671f\u4f4f\u5bbf",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 390,
+      "prefix": "/ko",
+      "label": "\uc7a5\uae30 \uc219\ubc15",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 861,
+      "prefix": "",
+      "label": "Long stays",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 861,
+      "prefix": "/ja",
+      "label": "\u9577\u671f\u6ede\u5728\u306b\u3064\u3044\u3066",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 861,
+      "prefix": "/zh-cn",
+      "label": "\u957f\u671f\u4f4f\u5bbf",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 861,
+      "prefix": "/ko",
+      "label": "\uc7a5\uae30 \uc219\ubc15",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 1024,
+      "prefix": "",
+      "label": "Long stays",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 1024,
+      "prefix": "/ja",
+      "label": "\u9577\u671f\u6ede\u5728\u306b\u3064\u3044\u3066",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 1024,
+      "prefix": "/zh-cn",
+      "label": "\u957f\u671f\u4f4f\u5bbf",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 1024,
+      "prefix": "/ko",
+      "label": "\uc7a5\uae30 \uc219\ubc15",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 1440,
+      "prefix": "",
+      "label": "Long stays",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 1440,
+      "prefix": "/ja",
+      "label": "\u9577\u671f\u6ede\u5728\u306b\u3064\u3044\u3066",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 1440,
+      "prefix": "/zh-cn",
+      "label": "\u957f\u671f\u4f4f\u5bbf",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    },
+    {
+      "width": 1440,
+      "prefix": "/ko",
+      "label": "\uc7a5\uae30 \uc219\ubc15",
+      "navigation": "passed",
+      "activePage": "passed",
+      "enquiryButtons": 2
+    }
+  ],
+  "noJavaScript": "passed"
+}
