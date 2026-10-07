@@ -1,5 +1,7 @@
 # Casa Antonio improvements — 6 October 2026
 
+Continuation on 7 October: additional source improvements, Search Console export findings, the successful IndexNow submission and remaining account actions are documented in [SEARCH_ANALYTICS_2026-10-07.md](SEARCH_ANALYTICS_2026-10-07.md). Those new source changes await owner deployment; the production status below applies to the earlier 6 October release.
+
 ## Current completion status — 6 October 2026
 
 - **Production deployment: done.** The owner deployed the latest version. Codex freshly verified the separate main-menu Long stays entry on the English, Japanese, Chinese and Korean production homepages (HTTP 200, entry visible).

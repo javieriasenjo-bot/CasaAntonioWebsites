@@ -6,7 +6,7 @@ import { Shell } from "@/components/chrome";
 import { house } from "@/data/active";
 import { OFFICIAL, OfficialLinks } from "@/components/official-links";
 import { FAQ } from "@/lib/seo";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { airportBoardingText } from "@/data/travel-facts";
 
@@ -30,29 +30,47 @@ const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeU
 
 function AddressActions() {
   const g = house().guides;
-  const [copied, setCopied] = useState(false);
+  const { lang } = useLang();
+  const [status, setStatus] = useState<"idle" | "copied" | "manual">("idle");
+  const addressRef = useRef<HTMLParagraphElement>(null);
+  const resetRef = useRef<number | undefined>(undefined);
+  useEffect(() => () => window.clearTimeout(resetRef.current), []);
+  const manual = {
+    en: "Automatic copying is unavailable. The address is selected; touch and hold it, or use your browser’s Copy command.",
+    ja: "自動コピーができません。住所を選択しました。長押しするか、ブラウザのコピー機能をご利用ください。",
+    zh: "无法自动复制。地址已选中，请长按地址或使用浏览器的复制功能。",
+    ko: "자동 복사가 불가능합니다. 주소가 선택되었습니다. 길게 누르거나 브라우저의 복사 기능을 사용하세요.",
+  }[lang];
   const copy = async () => {
+    window.clearTimeout(resetRef.current);
     try {
       await navigator.clipboard.writeText(ADDRESS_JP);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
+      setStatus("copied");
+      resetRef.current = window.setTimeout(() => setStatus("idle"), 2000);
     } catch {
-      /* clipboard unavailable: the address is shown as text next to the button */
+      if (addressRef.current) {
+        const range = document.createRange();
+        range.selectNodeContents(addressRef.current);
+        const selection = window.getSelection();
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+      }
+      setStatus("manual");
     }
   };
   return (
     <div className="address-actions">
-      <p lang="ja">{ADDRESS_JP}</p>
+      <p lang="ja" ref={addressRef}>{ADDRESS_JP}</p>
       <div className="stay-actions">
-        <button type="button" className="button button-line" onClick={copy}>
-          {copied ? g.copied : g.copyAddress}
+        <button type="button" className="button button-line copy-address" onClick={copy}>
+          {status === "copied" ? g.copied : g.copyAddress}
         </button>
         <a className="button button-line" href={DIRECTIONS} data-map-provider="google" target="_blank" rel="noopener">
           {g.directions} ↗
         </a>
       </div>
-      <p aria-live="polite" className="sr-only">
-        {copied ? g.copied : ""}
+      <p aria-live="polite" className={status === "manual" ? "photo-note" : "sr-only"}>
+        {status === "copied" ? g.copied : status === "manual" ? manual : ""}
       </p>
     </div>
   );
@@ -199,6 +217,11 @@ export function LongStayPage() {
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.title}</h1>
           <p className="lede">{t.lede}</p>
+          <div className="stay-actions">
+            <AirbnbLink cabin="a" location="long-stay-top" intent="inquiry" className="button button-dark">{t.ctaA}</AirbnbLink>
+            <AirbnbLink cabin="b" location="long-stay-top" intent="inquiry" className="button button-wood">{t.ctaB}</AirbnbLink>
+          </div>
+          <p className="photo-note">{t.note}</p>
           <Photo className="guide-photo" src="/photos/dining-2.jpg" alt={t.title} sizes="(max-width: 900px) 100vw, 1120px" />
         </div>
       </section>

@@ -110,9 +110,9 @@ export const copy = {
         { k: "Which", v: "Antonio A, Antonio B, or one after the other" },
         { k: "How", v: "Message us on Airbnb with your dates" },
       ],
-      ctaA: "Ask about Antonio A",
-      ctaB: "Ask about Antonio B",
-      note: "Write the dates, how many people, and which apartment. We reply with the long-stay rate for that period.",
+      ctaA: "Enquire on Airbnb · A ↗",
+      ctaB: "Enquire on Airbnb · B ↗",
+      note: "These buttons open Airbnb in a new tab. On the listing, select “Message host” and send your dates, guest count and preferred apartment to request a long-stay quote.",
     },
     practical: {
       eyebrow: "Before you arrive",

@@ -40,4 +40,4 @@ Test a booking click with GTM delayed and before hydration. In the local control
 
 Register event-scoped GA4 custom dimensions if reporting needs them: apartment_name, provider, intent, link_location, page_language, selected_language and map_provider. Reuse existing definitions. Avoid adding URL dimensions with high cardinality. Existing generic GA4 enhanced-measurement click events can coexist; do not add those and airbnb_click together as if they were distinct bookings.
 
-Queues do not guarantee delivery after a page is closed or a same-tab page departure before Google loads. The existing booking links open another tab and keep the originating page available. Account DebugView verification remains required.
+Queues do not guarantee delivery after a page is closed or a same-tab page departure before Google loads. The existing booking links open another tab and keep the originating page available. The owner confirmed the A long-stay trigger appeared in GA4 on 6 October 2026; the requested receipt check is complete. Optional account checks for other event types and reporting dimensions are documented in SEARCH_ANALYTICS_2026-10-07.md.

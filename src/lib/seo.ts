@@ -219,7 +219,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Long Stays in Sapporo · Casa Antonio",
       description:
-        "Weeks or months in Casa Antonio A or B, at a rate below stacked nightly prices. Write through Airbnb. The rate is agreed in writing before you pay.",
+        "Planning weeks or months in Sapporo? Ask about Casa Antonio A or B on Airbnb with your dates and guest count. Confirm the quoted rate before paying.",
     },
     ja: {
       title: "札幌の長期滞在｜Casa Antonio",
@@ -234,7 +234,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ko: {
       title: "삿포로 장기 숙박｜Casa Antonio",
       description:
-        "몇 주, 또는 몇 달. A도 B도, 1박 요금을 쌓은 금액보다 낮습니다. Airbnb로 문의하세요. 내기 전에 요금을 글로 정합니다.",
+        "삿포로에서 몇 주 또는 몇 달 머무를 계획이라면 Casa Antonio A 또는 B의 요금을 Airbnb로 문의하세요. 날짜와 인원을 보내고 결제 전에 견적을 확인하세요.",
     },
   },
   faq: {

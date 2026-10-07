@@ -9,7 +9,8 @@
     "deploy": "npm run build && wrangler deploy",
     "postinstall": "node scripts/cf-postinstall.mjs",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm run build && node --test tests/analytics.test.mjs tests/build.test.mjs"
+    "check": "npm run typecheck && npm run build && node --test tests/analytics.test.mjs tests/build.test.mjs tests/indexnow.test.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "allowScripts": {
     "esbuild": true,

@@ -109,9 +109,9 @@ export const zh = {
       { k: "哪一套", v: "Antonio A、Antonio B，或先后各住一套" },
       { k: "怎么订", v: "在 Airbnb 上把日期发给我们" },
     ],
-    ctaA: "询问 Antonio A",
-    ctaB: "询问 Antonio B",
-    note: "写下日期、人数，以及要哪一套。我们会回复那段时间的长住价格。",
+    ctaA: "在 Airbnb 咨询 · A ↗",
+    ctaB: "在 Airbnb 咨询 · B ↗",
+    note: "按钮会在新标签页打开 Airbnb。在房源页面选择“联系房东”，发送入住日期、人数及希望的公寓，咨询长住报价。",
   },
   practical: {
     eyebrow: "到达之前",

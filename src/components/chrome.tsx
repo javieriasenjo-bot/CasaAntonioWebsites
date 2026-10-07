@@ -101,7 +101,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <a className="skip-link" href="#content">
         {t.chrome.skip}
       </a>
-      <header className="site-header" data-hidden={headerHidden ? "true" : "false"}>
+      <header className="site-header" data-hidden={headerHidden ? "true" : "false"} onFocusCapture={() => setHeaderHidden(false)}>
         <div className="nav-inner">
           <PageLink page="home" className="logo">
             Casa Antonio <span>Sapporo</span>
@@ -172,7 +172,7 @@ export function Shell({ children }: { children: ReactNode }) {
           </div>
         ) : null}
       </header>
-      <main id="content">{children}</main>
+      <main id="content" tabIndex={-1}>{children}</main>
       <footer className="site-footer">
         <div className="wrap">
           <p className="footer-brand">Casa Antonio</p>
@@ -205,7 +205,9 @@ export function Shell({ children }: { children: ReactNode }) {
           <p className="small credit">{t.footer.photo}</p>
         </div>
       </footer>
-      <div className="quick-reserve" ref={reserveRef}>
+      <div className="quick-reserve" ref={reserveRef} onBlurCapture={(event) => {
+        if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) setReserveOpen(false);
+      }}>
         {directCabin ? (
           <AirbnbLink
             cabin={directCabin}

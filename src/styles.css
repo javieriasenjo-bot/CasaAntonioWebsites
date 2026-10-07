@@ -1442,7 +1442,7 @@ body.lightbox-open .quick-reserve {
     transition: transform 0.25s ease;
   }
 
-  .site-header[data-hidden="true"] {
+  .site-header[data-hidden="true"]:not(:focus-within) {
     transform: translateY(-100%);
   }
 
@@ -1701,6 +1701,8 @@ picture source { display: none; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .address-actions { margin: 1.5rem 0; }
+.copy-address { display: none; }
+.app-ready .copy-address { display: inline-flex; }
 .address-actions > p[lang] { font-weight: 600; margin-bottom: 0.5rem; }
 
 .choice-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem 1rem; margin: 1rem 0; }
