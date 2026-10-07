@@ -10,6 +10,8 @@ The build prerenders 52 pages: 13 pages in English, Japanese, Simplified Chinese
 
 Full-size photo originals live in `photos-src/`, not in `public/photos/`. Keep the `og-*.jpg` files in `public/photos/`. Do not put a `_redirects` file in `public/`.
 
+Photos use a seven-day browser cache with one day of stale-while-revalidate. When replacing a photo, use a new filename/stem, regenerate all AVIF/WebP sizes and update the photo manifest and source references. Version replacement `og-*.jpg` files too and update their SEO references. Overwriting a URL can leave returning guests seeing the old photo for up to a week. Keep originals in the repository while generation and attribution checks depend on them.
+
 ## Social links
 
 Add these parameters on links you place in a profile or a post. Do not add them to the Airbnb buttons on the site itself.
@@ -28,11 +30,11 @@ The site captures clicks immediately in `scripts/analytics-bootstrap.js`. GTM co
 
 Run `npm ci` then `npm run check` before releasing. The check builds all 52 pages, typechecks, tests click classification/queueing, and validates local routes and photo links. Browser checks are documented in `docs/UPDATE_HANDOVER.md`.
 
-See `docs/GTM_SETUP.md` for the outstanding container configuration and verification. See `docs/CONTENT_PROVENANCE.md` for source records still needed. No deployment or authenticated GTM change was performed in this source update.
+The owner published the GTM update and confirmed the A long-stay event in GA4. No further container import is required. See `docs/SEARCH_ANALYTICS_2026-10-07.md` for optional account reporting setup and `docs/CONTENT_PROVENANCE.md` for source records still needed. See `docs/CLAUDE_REVIEW_2026-10-07.md` for the source review, cleanup, photo caching and official day-trip links.
 
 ## Still needed from the owner
 
-- A current photo of the bedroom that now has one double bed. The existing photos remain with a layout-disclosure note.
+- No replacement bedroom photo is required: the owner confirmed that A's current photos show the approved bed arrangement.
 - Historical destination-photo acquisition records, and individual Booking.com review dates/source records. Exact public originals for all 16 destination photos are now linked and documented in `docs/qa/photo-attribution.json`; acquisition dates remain unknown.
 - Reconcile Airbnb/Booking.com listing terms with the approved parking, bed arrangement and damage policy; this source update does not edit those listings.
 - Optional nightly rates, social profile URLs, and a direct long-stay contact, only if they should be published. Airbnb messaging remains available meanwhile.
