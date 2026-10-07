@@ -1,6 +1,6 @@
 import { Shell } from "@/components/chrome";
 import { PageLink } from "@/components/page-link";
-import { OFFICIAL, OfficialLinks } from "@/components/official-links";
+import { DAY_TRIP_OFFICIAL, OfficialLinks } from "@/components/official-links";
 import { Photo } from "@/components/photo";
 import { PhotoCredit } from "@/components/photo-credit";
 import { house } from "@/data/active";
@@ -206,7 +206,7 @@ export function DayTrips() {
                   </li>
                 ))}
               </ul>
-              {idea.id === "shiraoi" || idea.id === "teine" ? <OfficialLinks items={OFFICIAL[idea.id]} /> : null}
+              {DAY_TRIP_OFFICIAL[idea.id]?.length ? <OfficialLinks items={DAY_TRIP_OFFICIAL[idea.id]} /> : null}
               {idea.id === "teine" ? (
                 <p className="trips-more">
                   <PageLink page="teine-ski">{t.more}</PageLink>

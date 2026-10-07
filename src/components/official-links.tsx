@@ -1,7 +1,8 @@
 import { useLang, type Lang } from "@/lib/i18n";
 import { TRAVEL_FACTS } from "@/data/travel-facts";
 
-// Official sources behind the practical guides. Only URLs that were opened and confirmed (4 Oct 2026) belong here.
+// Official sources behind the practical guides. URLs were opened and verified;
+// day-trip additions were checked on 7 October 2026.
 type L = { label: Record<Lang, string>; href: string };
 
 const T = (en: string, ja: string, zh: string, ko: string): Record<Lang, string> => ({ en, ja, zh, ko });
@@ -24,6 +25,32 @@ export const OFFICIAL = {
     { label: T("Upopoy: hours and closing days", "ウポポイ：開園時間・休園日", "Upopoy：开放时间与休园日", "우포포이: 운영 시간 및 휴관일"), href: "https://ainu-upopoy.go.jp/en/guide/hours/" },
   ],
 } satisfies Record<string, L[]>;
+
+export const DAY_TRIP_OFFICIAL: Record<string, L[]> = {
+  otaru: [
+    { label: T("Otaru Tourism Association (Japanese)", "小樽観光協会", "小樽观光协会（日文）", "오타루 관광협회 (일본어)"), href: "https://otaru.gr.jp/" },
+    { label: T("Otaru Aquarium: visitor information (Japanese)", "おたる水族館：ご利用案内", "小樽水族馆：参观信息（日文）", "오타루 수족관: 관람 안내 (일본어)"), href: "https://otaru-aq.jp/guide" },
+    { label: T("Sakaimachi shopping street (Japanese)", "小樽堺町通り商店街", "小樽堺町商店街（日文）", "오타루 사카이마치 상점가 (일본어)"), href: "https://otaru-sakaimachi.com/" },
+  ],
+  noboribetsu: [
+    { label: T("Noboribetsu: official tourism information", "登別：公式観光情報", "登别：官方旅游信息", "노보리베쓰: 공식 관광 안내"), href: "https://noboribetsu-spa.jp/en/" },
+  ],
+  jozankei: [
+    { label: T("Jozankei: official tourism and access information", "定山渓：公式観光・アクセス情報", "定山溪：官方旅游及交通信息", "조잔케이: 공식 관광 및 교통 안내"), href: "https://jozankei.jp/en/" },
+  ],
+  furano: [
+    { label: T("Farm Tomita: official visitor information", "ファーム富田：公式案内", "富田农场：官方参观信息", "팜 도미타: 공식 방문 안내"), href: "https://farm-tomita.co.jp/en/" },
+    { label: T("Biei Tourism Association", "美瑛町観光協会", "美瑛町观光协会", "비에이 관광협회"), href: "https://www.biei-hokkaido.jp/en/" },
+  ],
+  buddha: [
+    { label: T("Hill of the Buddha: hours, admission and notices", "頭大仏殿：拝観時間・料金・お知らせ", "头大佛：开放时间、门票及公告", "머리 대불: 관람 시간, 요금 및 공지"), href: "https://www.takinoreien.com/pages/108/" },
+  ],
+  toya: [
+    { label: T("Lake Toya: official tourism and access information", "洞爺湖：公式観光・アクセス情報", "洞爷湖：官方旅游及交通信息", "도야호: 공식 관광 및 교통 안내"), href: "https://www.laketoya.com/en/" },
+  ],
+  teine: OFFICIAL.teine,
+  shiraoi: OFFICIAL.shiraoi,
+};
 
 const TITLE = T("Official information", "公式情報", "官方信息", "공식 정보");
 
