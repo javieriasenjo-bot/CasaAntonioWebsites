@@ -4,7 +4,7 @@ The signed-in Google Tag Manager account has not been changed. Use the existing 
 
 ## Live status — checked 6 October 2026
 
-The owner has published the settings. Public container version 12 and 36 live-site browser actions across four languages passed the event/GA4-request checks. Collection requests were intercepted, so this does not verify receipt inside the GA4 account. The steps below remain a reference for importing, testing and publishing future revisions; there is no need to reimport the prepared file for this check.
+The owner has published the settings. Public container version 12 and 36 live-site browser actions across four languages passed the event/GA4-request checks. The controlled collection requests were intercepted. The owner subsequently confirmed that clicking the A long-stay enquiry produces a visible event inside GA4, so the receipt check is now marked done based on that account observation. Other event types and their account-side parameters were not independently inspected by Codex. The steps below remain a reference for importing, testing and publishing future revisions; there is no need to reimport the prepared file for this check.
 
 ## Prepared file — ready for import
 

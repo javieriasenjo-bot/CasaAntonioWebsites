@@ -1,5 +1,26 @@
 # Casa Antonio improvements — 6 October 2026
 
+## Current completion status — 6 October 2026
+
+- **Production deployment: done.** The owner deployed the latest version. Codex freshly verified the separate main-menu Long stays entry on the English, Japanese, Chinese and Korean production homepages (HTTP 200, entry visible).
+- **GA4 receipt verification: done, owner-confirmed.** The owner reports seeing the Casa Antonio A long-stay trigger in Google Analytics after clicking it. This closes the requested receipt check. The evidence is the owner's direct account observation, not Codex account access. The earlier intercepted 36-action test remains evidence of correct event names, parameters and duplicate prevention, not account receipt for every event type.
+- **A bedroom facts/photos: done.** The owner confirmed the current photographs and bed layout.
+
+Earlier statements that account receipt was unverified describe checks before this owner confirmation. No GA4 account access or screenshots were obtained by Codex.
+
+## Remaining owner confirmations/actions
+
+1. **iPhone links:** confirm whether booking and Airbnb review links now open normally. This reported device-specific issue remains unresolved; desktop/mobile-width Edge checks opened the links but do not prove physical-iPhone behavior. If still failing, provide the browser name, affected page/button and what happens after tapping.
+2. **External Airbnb/Booking.com consistency:** correct A's paid-parking title and duplicated Bedroom 1 label; reconcile the listings with confirmed free parking, bed/occupancy and damage terms. Confirm whether oil, salt, pepper or other seasonings are supplied, because descriptive text and amenities disagree. These are external-listing edits, not website-code deployment tasks. The discrepancies were observed earlier on 6 October; they have not been rechecked after any owner listing edits.
+3. **Family amenities:** confirm cot and high-chair availability for A/B, including any charges or advance-request conditions; unknown items remain unpublished.
+4. **Optional Wi-Fi details:** measure each apartment, record date, download/upload speeds and where measured before adding numerical claims. The website can remain without advertised speeds.
+5. **Optional exact parking limits:** supply numerical clearance/space dimensions if known. Current copy already says one large car per apartment; no further parking confirmation is required for that wording.
+6. **Optional review/provenance detail:** provide exact individual Booking.com review dates/links and any historical destination-photo acquisition records if available. Unknown dates are not fabricated.
+7. **Optional GA4 reporting setup:** inspect/register existing event-scoped custom dimensions for apartment/provider/intent/language if separate breakdowns are wanted. A spot-check of the other event types inside GA4 would expand account-side evidence; it is not an outstanding prerequisite for marking the owner-confirmed receipt check done.
+
+No further GTM import/publish action is required on the basis of these checks. The new menu entry is deployed. The physical-iPhone outbound-link problem remains a separate open issue.
+
+
 ## Delivery
 
 Updated source: `C:/dev/CasaAntonioWebsites`. Ready for the owner's GitHub review and commit. Codex did not commit, push or deploy these changes. The owner has made commits during the session; existing work was preserved. This handover covers the latest continuation and supersedes earlier three-double-bed and outdated-photograph assumptions.

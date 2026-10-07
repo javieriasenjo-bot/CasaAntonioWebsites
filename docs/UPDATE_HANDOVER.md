@@ -2,7 +2,7 @@
 
 ## Delivery
 
-Updated source is in `C:/dev/CasaAntonioWebsites`, ready for the owner's GitHub review and commit. Codex did not commit, push or deploy the website. Authenticated GTM changes could not be made because this session has no browser-control runtime or GTM connector. The owner supplied the workspace export; `C:/dev/GTM-T8TLRH4L_CasaAntonio_Updated_2026-10-06.json` is now prepared for Merge import. It adds three tags, three triggers and five variables, modifies two tags and deletes nothing. Reference/preservation checks and 32 local source/JSON scenarios passed. The owner has since published the settings. Public version 12 and 36 live-site actions across four languages passed event and GA4-request checks; collection requests were intercepted. Signed-in Preview/GA4 receipt remains unverified. [GTM_OWNER_STEPS.md](GTM_OWNER_STEPS.md) records the updated live status; [GTM_SETUP.md](GTM_SETUP.md) retains the exact configuration contract.
+Updated source is in `C:/dev/CasaAntonioWebsites`, ready for the owner's GitHub review and commit. Codex did not commit, push or deploy the website. Authenticated GTM changes could not be made because this session has no browser-control runtime or GTM connector. The owner supplied the workspace export; `C:/dev/GTM-T8TLRH4L_CasaAntonio_Updated_2026-10-06.json` is now prepared for Merge import. It adds three tags, three triggers and five variables, modifies two tags and deletes nothing. Reference/preservation checks and 32 local source/JSON scenarios passed. The owner has since published the settings. Public version 12 and 36 live-site actions across four languages passed event and GA4-request checks; collection requests were intercepted. The owner subsequently confirmed the A long-stay event appears in GA4; receipt verification is marked done based on that account observation. [GTM_OWNER_STEPS.md](GTM_OWNER_STEPS.md) records the updated live status; [GTM_SETUP.md](GTM_SETUP.md) retains the exact configuration contract.
 
 This handover records implemented website changes and remaining work. The live homepage was fetched on 6 October and contains the exact local analytics bootstrap. The later live browser check verified the public updated container and event producer on the tested apartment, long-stay and access routes. Other deployment details were not re-audited here.
 
@@ -50,7 +50,7 @@ Two initial local Lighthouse samples reached GA4 before the request-block patter
 
 ## Remaining work and acceptance criteria
 
-1. **GA4 receipt — container owner:** updated GTM tags are publicly live and 36 live browser actions passed event/request checks. Verify receipt and parameters in signed-in Preview and GA4 DebugView; the controlled browser check intercepted collection requests. Keep the legacy guarded listener while old pages remain deployed. Do not count outbound clicks as confirmed reservations.
+1. **GA4 receipt — done, owner-confirmed:** the owner saw the A long-stay trigger in GA4. The 36 browser actions also passed event/request checks; those requests were intercepted. Account-side inspection of the other event types/parameters is optional further validation. Keep the legacy guarded listener while old pages remain deployed. Do not count outbound clicks as confirmed reservations.
 2. **A bedroom photographs — resolved:** the owner confirmed the photographs are current. Keep existing originals and describe the two-single room beside the living room and the single/double room farther away. Do not invent or edit a replacement interior.
 3. **Historical acquisition/review records — owner/source author:** exact public originals for all 16 destination photos are now documented and linked. Historical acquisition dates/download records remain unknown. Supply those records if available, plus individual Booking.com excerpt dates/links. Do not fabricate dates or historical modification details.
 4. **External listing consistency — owner:** reconcile Airbnb and Booking.com parking, bed and damage terms with the approved facts. Website source changes do not update those listings.
@@ -74,3 +74,7 @@ See [OCTOBER_IMPROVEMENTS.md](OCTOBER_IMPROVEMENTS.md) for subsequent mobile fal
 ## Production now verified
 
 The owner deployed the latest source. All 52 live pages match the local production build; 104 mobile/desktop checks, four-language feature/fallback checks and a nine-action English analytics spot-check passed. See the production section in [OCTOBER_IMPROVEMENTS.md](OCTOBER_IMPROVEMENTS.md) and [production evidence](qa/production-check-2026-10-06.json). GA4 account receipt and physical-phone/field-performance measurements remain unverified.
+
+## Latest owner completion confirmation
+
+The latest version and separate Long stays menu entry are live in all four languages. The owner confirmed observing the A long-stay trigger inside GA4; the requested receipt check is marked done. See the current completion status and remaining-owner checklist at the top of [OCTOBER_IMPROVEMENTS.md](OCTOBER_IMPROVEMENTS.md). The separate iPhone outbound-link issue is still open unless the owner confirms it is resolved.

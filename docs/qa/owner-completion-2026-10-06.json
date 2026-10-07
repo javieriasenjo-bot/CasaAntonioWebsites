@@ -1,0 +1,16 @@
+{
+  "confirmedOn": "2026-10-06",
+  "productionDeployed": true,
+  "longStayMainMenuVerifiedLanguages": [
+    "en",
+    "ja",
+    "zh-Hans",
+    "ko"
+  ],
+  "ga4ReceiptCheckStatus": "done",
+  "receiptEvidenceSource": "owner confirmation in chat",
+  "observedAction": "Casa Antonio A long-stay trigger",
+  "independentAccountInspection": false,
+  "otherEventTypesAccountReceipt": "not individually inspected",
+  "iphoneOutboundLinkIssue": "still open; no owner resolution confirmation"
+}
