@@ -12,7 +12,7 @@ Earlier statements that account receipt was unverified describe checks before th
 
 ## Remaining owner confirmations/actions
 
-1. **iPhone links:** confirm whether booking and Airbnb review links now open normally. This reported device-specific issue remains unresolved; desktop/mobile-width Edge checks opened the links but do not prove physical-iPhone behavior. If still failing, provide the browser name, affected page/button and what happens after tapping.
+1. **iPhone links: done, owner-confirmed on 8 October 2026.** The owner confirms booking and review links work on the physical iPhone with the latest site. This closes the reported device-specific issue. Codex's Edge checks remain separate evidence.
 2. **External Airbnb/Booking.com consistency:** correct A's paid-parking title and duplicated Bedroom 1 label; reconcile the listings with confirmed free parking, bed/occupancy and damage terms. Confirm whether oil, salt, pepper or other seasonings are supplied, because descriptive text and amenities disagree. These are external-listing edits, not website-code deployment tasks. The discrepancies were observed earlier on 6 October; they have not been rechecked after any owner listing edits.
 3. **Family amenities:** confirm cot and high-chair availability for A/B, including any charges or advance-request conditions; unknown items remain unpublished.
 4. **Optional Wi-Fi details:** measure each apartment, record date, download/upload speeds and where measured before adding numerical claims. The website can remain without advertised speeds.
@@ -20,7 +20,7 @@ Earlier statements that account receipt was unverified describe checks before th
 6. **Optional review/provenance detail:** provide exact individual Booking.com review dates/links and any historical destination-photo acquisition records if available. Unknown dates are not fabricated.
 7. **Optional GA4 reporting setup:** inspect/register existing event-scoped custom dimensions for apartment/provider/intent/language if separate breakdowns are wanted. A spot-check of the other event types inside GA4 would expand account-side evidence; it is not an outstanding prerequisite for marking the owner-confirmed receipt check done.
 
-No further GTM import/publish action is required on the basis of these checks. The new menu entry is deployed. The physical-iPhone outbound-link problem remains a separate open issue.
+No further GTM import/publish action is required on the basis of these checks. The new menu entry is deployed. The physical-iPhone outbound-link issue is closed by the owner's 8 October confirmation.
 
 
 ## Delivery

@@ -78,6 +78,6 @@ From the repository, dry-run `npm run indexnow -- --urls C:/dev/changed-urls.txt
 
 ## Outstanding owner information
 
-Physical-iPhone link behavior remains unconfirmed. If still failing, supply browser, exact button/page and tap result. Existing unresolved property/listing details are in OCTOBER_IMPROVEMENTS.md: seasonings, family amenities, current external-listing accuracy and optional measured Wi-Fi/parking dimensions. Unknown facts remain unpublished.
+Update on 8 October: the owner confirms booking and review links work on the physical iPhone with the latest site. The device-specific issue is closed. Existing unresolved property/listing details are in OCTOBER_IMPROVEMENTS.md: seasonings, family amenities, current external-listing accuracy and optional measured Wi-Fi/parking dimensions. Unknown facts remain unpublished.
 
 Account changes above remain prepared rather than performed. Opening tabs in the app does not expose their contents to this session's tools. Current computer-use instructions require node_repl, which is unavailable here; no alternative browser-profile or cookie access was attempted.

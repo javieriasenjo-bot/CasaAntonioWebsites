@@ -144,9 +144,10 @@ export function Home() {
             {t.nomad.body.slice(0, 1).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <PageLink page="teine-ski" className="button button-dark">
-              {g.teineMore}
+            <PageLink page="long-stay" className="button button-dark">
+              {g.longCta}
             </PageLink>
+            <PageLink page="teine-ski" className="text-link">{g.teineMore}</PageLink>
             <PageLink page="neighborhood" className="text-link">{t.nav.neighborhood}</PageLink>
           </div>
           <Photo src="/photos/dining-2.jpg" alt={c.workTable} sizes="(max-width: 900px) 100vw, 50vw" />

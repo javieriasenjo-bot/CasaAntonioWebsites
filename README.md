@@ -14,6 +14,8 @@ Photos use a seven-day browser cache with one day of stale-while-revalidate. Whe
 
 ## Social links
 
+Prepared Casa Antonio links for Instagram, TikTok, Rednote and YouTube, in all four languages and with matching apartment/long-stay destinations, are in `docs/CAMPAIGN_LINKS_2026-10-08.md`. These are not published profile edits. Generate a single post link with `npm run campaign-links -- --campaign casa_antonio_2026_10 --content bedroom_a_2026_10_08 --source instagram --lang ja --page a`. Use `--out filename.md` to save a reusable table. See `docs/GROWTH_2026-10-08.md` for the Casa-only measurement baseline and remaining account steps.
+
 Add these parameters on links you place in a profile or a post. Do not add them to the Airbnb buttons on the site itself.
 
 `?utm_source=instagram&utm_medium=social&utm_campaign=bio`
