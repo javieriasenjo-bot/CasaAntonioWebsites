@@ -57,7 +57,7 @@
   }
   ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (name) { w.addEventListener(name, load, { once: true, passive: true }); });
   // Do not wait for every image/iframe's load event before starting the fallback timer.
-  function idle() { w.setTimeout(load, 1500); }
+  function idle() { w.setTimeout(load, 3500); }
   if (d.readyState === "loading") d.addEventListener("DOMContentLoaded", idle, { once: true });
   else idle();
 })(window, document);

@@ -1,4 +1,4 @@
-import { createRoot, hydrateRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { loadPack } from "./data/load-pack";
 import { langFromPath } from "./lib/paths";
@@ -15,17 +15,13 @@ declare module "@tanstack/react-router" {
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Root element missing");
-// These static routes have no server loader data to restore. Mark the router as
-// hydrating SSR so its root Suspense boundary matches the prerendered tree.
-if (root.hasChildNodes()) router.ssr = { manifest: undefined };
-
 try {
   await loadPack(langFromPath(window.location.pathname));
   await router.load();
   const app = <RouterProvider router={router} />;
-  // Preserve the HTML guests have already seen while the language/runtime loads.
-  if (root.hasChildNodes()) hydrateRoot(root, app);
-  else createRoot(root).render(app);
+  // Prerendered HTML stays visible until the app is ready; then it is replaced.
+  root.replaceChildren();
+  createRoot(root).render(app);
 } catch (error) {
   // Static navigation and reservation links remain usable if startup fails.
   document.documentElement.classList.remove("app-ready");
