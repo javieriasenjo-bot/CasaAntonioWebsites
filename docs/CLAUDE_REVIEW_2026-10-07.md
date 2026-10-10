@@ -13,23 +13,17 @@ The supplied suggestions were assessed as proposals, not as instructions to chan
 
 ## Suggestions not adopted
 
-### Replace hydration with a full client render
+### Replace hydration with a full client render — ADOPTED (9 October 2026)
 
-The production check visited all 52 pages at 390 and 1440 px, captured page exceptions and React console errors, and compared the prebuilt heading element with the heading after app startup. All 104 route checks preserved the heading, with no React #418 or other captured application error. Gallery/menu checks and the no-JavaScript fallback also passed. The proposed mismatch was not reproduced, so `main.tsx` retains hydration and its current router SSR boundary setup. It calls hydrateRoot once on startup, not repeatedly. A blanket clear-and-render would discard already visible HTML.
+Superseded decision: `src/main.tsx` no longer calls `hydrateRoot`. It loads the language pack and router, then runs `root.replaceChildren()` followed by `createRoot(root).render(...)`. The prerendered HTML stays visible until the app is ready. Earlier hydration with a manual `router.ssr` flag risked React #418 mismatches with TanStack Router's Suspense boundaries. Do not restore `hydrateRoot` or the `router.ssr` line without re-running live console checks on every language and page for React errors.
 
-This remains an integration detail to revalidate after React/TanStack upgrades; the checks are desktop Edge and mobile-width Edge, not every browser, physical iPhone, extension or slow-network case. No framework migration was performed. [React hydration expectations](https://react.dev/reference/react-dom/client/hydrateRoot), [React #418](https://react.dev/errors/418).
+### Increase the GTM fallback from 1.5 to 3.5 seconds — ADOPTED (9 October 2026)
 
-Evidence: `C:/dev/casa-hydration-review-2026-10-07.json`.
-
-### Increase the GTM fallback from 1.5 to 3.5 seconds
-
-Kept 1.5 seconds. GTM already starts on the first pointer, touch, keyboard or scroll interaction. Queueing begins immediately and does not depend on loading GTM. However, queueing is not account delivery: a short passive visit or same-tab departure before the loader runs can end before analytics sends anything. A longer fallback increases that exposure. No fresh Lighthouse comparison or trace isolates this timer as the cause of the reported score of 65, so the proposed delay is not justified by that score alone. [Lighthouse scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring).
-
-Existing owner-confirmed GA4 receipt remains done. No additional tracking producer, GA4 event or account configuration was added.
+`scripts/analytics-bootstrap.js` now starts the fallback GTM load 3.5 seconds after the document is ready (`setTimeout(load, 3500)`). GTM still starts immediately on first pointer, touch, keyboard or scroll interaction, and click queueing begins immediately, so early clicks are not lost. After this release and the photo-cache change, mobile PageSpeed rose from 65 to 84 (9 October 2026, single run). Do not shorten the fallback without a fresh comparison.
 
 ### Delete copy-check.ts
 
-Kept it. `tsconfig.json` includes all of `src`, so TypeScript checks this file even though the runtime app does not import it. Its assignments enforce the translated copy/guide shapes against English during `npm run typecheck`. It is a compile-time safeguard and adds no runtime bundle payload. Import absence alone does not establish that a file is useless.
+Kept it (a deletion on 9 October was reversed on 11 October). `tsconfig.json` includes all of `src`, so TypeScript checks this file even though the runtime app does not import it. Its assignments enforce the translated copy/guide shapes against English during `npm run typecheck`. It is a compile-time safeguard and adds no runtime bundle payload. Import absence alone does not establish that a file is useless.
 
 ### Move original photos out of Git
 
@@ -55,6 +49,6 @@ The Buddha operator currently reports cleaning from 25 September through 20 Octo
 
 - Typecheck, production build of 52 pages and all 10 automated tests passed after deleting the files and adding the links.
 - Local browser checks visited the day-trip page in four languages at 390 and 1440 px. Every one of the 64 destination sections had nonempty official links. No captured React/application error or horizontal overflow occurred.
-- Live hydration review covered 104 route/width combinations; image, gallery, menu and no-JavaScript checks passed.
+- The 7 October live review covered 104 route/width combinations; image, gallery, menu and no-JavaScript checks passed. Hydration was later replaced by a client render (see above).
 - A new owner commit (`92acad1`, title `new v`) was observed during work with the implementation already included. Codex did not commit, push or deploy. The live photo cache header matches the new policy. Production day-trip checks passed in all four languages at 390 and 1440 px: all 64 destination sections had official links, with no captured application error or overflow. Evidence: `C:/dev/casa-claude-review-production-2026-10-07.json`.
 - New README/review documentation changes may still need the owner's commit. No new PageSpeed score, signed-in account change or physical iPhone test is claimed.
