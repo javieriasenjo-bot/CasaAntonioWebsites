@@ -7,7 +7,7 @@ This review checks the supplied Claude findings against the current branch, the 
 | Item | Current finding | Decision |
 | --- | --- | --- |
 | `src/data/copy-check.ts` | Present, tracked and already committed in `4e206a0`. `tsconfig.json` includes `src`, so `npm run typecheck` checks it without adding runtime code. | Keep. No restore commit is needed. |
-| Hydration documentation | `src/main.tsx` uses `root.replaceChildren()` and `createRoot`. Both `CLAUDE_REVIEW_2026-10-07.md` and `UPDATE_HANDOVER.md` already describe that behavior. | Correct as committed. Do not restore the former `hydrateRoot` workaround without a full multilingual browser check. |
+| Hydration documentation | The earlier 9 October full client render has now been superseded by router-free hydration on 11 October. Server and browser share the direct page tree. | Keep the new approach; do not restore the old `router.ssr` workaround. See `STARTUP_PERFORMANCE_2026-10-11.md`. |
 | Analytics delay documentation | The bootstrap and both handover documents say 3.5 seconds. Interaction still starts GTM immediately and the early event queue remains active. | Correct as committed. |
 | Day-trip links | The official links for Otaru, Noboribetsu, Jozankei, Furano/Biei, Hill of the Buddha and Lake Toya are present. | Closed. |
 | Homepage work section | Its primary action opens the localized long-stay page. | Closed. |
@@ -42,3 +42,8 @@ These account edits cannot be made from the repository. The available Windows Co
 ## Validation
 
 `npm run check` passes: TypeScript, the 52-page production build and all 12 automated tests. No source behavior was changed from an inconclusive performance experiment. The files in this follow-up only bring the handover and current evidence up to date.
+
+
+## Later startup implementation (11 October)
+
+The performance decision above records the earlier review. The subsequent approved startup work removes TanStack Router, loads only the current page and language, preserves prerendered nodes through hydration, and uses a native mobile menu. All 52 routes passed browser checks. The current implementation, measurements and validation are documented in STARTUP_PERFORMANCE_2026-10-11.md. The earlier statement that this follow-up changes no behavior applies only to the earlier review files.

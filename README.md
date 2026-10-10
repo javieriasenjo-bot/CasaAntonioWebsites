@@ -1,5 +1,9 @@
 # Casa Antonio
 
+## Startup rendering
+
+Server and browser share the same page tree. Router-free hydration preserves prerendered content; only the current page and language are loaded. The native mobile menu works without JavaScript. Run `npm run check:browser` with installed Chrome after `npm run check`. See [the startup report](docs/STARTUP_PERFORMANCE_2026-10-11.md) for measurements and regression coverage.
+
 Static site for casaantonio.jp. Deploy with `npm run build && npx wrangler deploy`.
 
 Workers Builds is set to run only `npx wrangler deploy`. That command does not create `dist`, which is why deploy failed with "assets.directory does not exist". On that builder (`WORKERS_CI=1`), `postinstall` runs the Vite build and prerender before Wrangler starts. A normal `npm install` on your own machine does not.

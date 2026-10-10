@@ -1,4 +1,3 @@
-import { useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
@@ -19,14 +18,14 @@ const NAV: { page: PageId; key: "a" | "b" | "longStay" | "neighborhood" | "trips
 ];
 
 export function Shell({ children }: { children: ReactNode }) {
-  const { lang, suggestion, dismissSuggestion } = useLang();
+  const { lang, pathname: path, suggestion, dismissSuggestion } = useLang();
   const t = house().copy;
   const g = house().guides;
-  const path = useRouterState({ select: (state) => state.location.pathname });
   const page = parsePath(path)?.page ?? "home";
   const [menuOpen, setMenuOpen] = useState(false);
   const [reserveOpen, setReserveOpen] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
+  const menuRef = useRef<HTMLDetailsElement>(null);
   const reserveRef = useRef<HTMLDivElement>(null);
   const closeReserve = () => {
     setReserveOpen(false);
@@ -35,6 +34,8 @@ export function Shell({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.classList.add("app-ready");
+    // Respect a native menu opened before the page's JavaScript arrived.
+    setMenuOpen(menuRef.current?.open ?? false);
     return () => document.documentElement.classList.remove("app-ready");
   }, []);
 
@@ -56,16 +57,12 @@ export function Shell({ children }: { children: ReactNode }) {
   }, [reserveOpen]);
 
   useEffect(() => {
-    setMenuOpen(false);
-    setReserveOpen(false);
-  }, [path]);
-
-  useEffect(() => {
     if (!menuOpen && !reserveOpen) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       const trigger = document.querySelector<HTMLElement>(menuOpen ? ".menu-toggle" : ".quick-reserve-trigger");
       setMenuOpen(false);
+      if (menuRef.current) menuRef.current.open = false;
       setReserveOpen(false);
       trigger?.focus();
     };
@@ -107,16 +104,22 @@ export function Shell({ children }: { children: ReactNode }) {
             Casa Antonio <span>Sapporo</span>
           </PageLink>
           <div className="header-tools">
-            <button
-              type="button"
-              className="menu-toggle"
-              aria-expanded={menuOpen}
-              aria-controls="site-nav"
-              onClick={() => setMenuOpen((open) => !open)}
-            >
-              {menuOpen ? g.closeMenu : g.menu}
-            </button>
-            <nav id="site-nav" aria-label={t.chrome.nav} data-open={menuOpen ? "true" : "false"}>
+            <details className="mobile-nav" ref={menuRef} onToggle={(event) => setMenuOpen(event.currentTarget.open)}>
+              <summary className="menu-toggle">{g.menu}</summary>
+              <nav id="site-nav" aria-label={t.chrome.nav} data-open={menuOpen ? "true" : "false"}>
+                {NAV.map((item) => (
+                  <PageLink
+                    key={item.page}
+                    page={item.page}
+                    data-active={page === item.page ? "true" : undefined}
+                    aria-current={page === item.page ? "page" : undefined}
+                  >
+                    {item.key === "longStay" ? g.longCta : t.nav[item.key]}
+                  </PageLink>
+                ))}
+              </nav>
+            </details>
+            <nav className="desktop-nav" aria-label={t.chrome.nav}>
               {NAV.map((item) => (
                 <PageLink
                   key={item.page}

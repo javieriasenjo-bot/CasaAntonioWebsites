@@ -1,13 +1,13 @@
-import { createMemoryHistory, createRouter, RouterProvider } from "@tanstack/react-router";
 import { renderToString } from "react-dom/server";
 import { loadPack } from "./data/load-pack";
-import { langFromPath } from "./lib/paths";
-import { routeTree } from "./routeTree.gen";
+import { langFromPath, parsePath } from "./lib/paths";
+import { loadPage } from "./load-page";
+import { LanguageProvider } from "./lib/i18n";
 
 export async function renderPage(url: string) {
-  await loadPack(langFromPath(url));
-  const history = createMemoryHistory({ initialEntries: [url] });
-  const router = createRouter({ routeTree, history, trailingSlash: "always" });
-  await router.load();
-  return renderToString(<RouterProvider router={router} />);
+  const [, Page] = await Promise.all([
+    loadPack(langFromPath(url)),
+    loadPage(parsePath(url)?.page ?? null),
+  ]);
+  return renderToString(<LanguageProvider pathname={url}><Page /></LanguageProvider>);
 }

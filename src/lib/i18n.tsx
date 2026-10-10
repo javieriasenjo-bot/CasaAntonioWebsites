@@ -1,11 +1,11 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { useRouterState } from "@tanstack/react-router";
 import { ensureFont } from "@/lib/fonts";
 import { HTML_LANG, langFromPath, type Lang } from "@/lib/paths";
 
 export type { Lang };
 
 type LangContextValue = {
+  pathname: string;
   lang: Lang;
   suggestion: Lang | null;
   dismissSuggestion: () => void;
@@ -19,8 +19,7 @@ function isLang(value: string | null): value is Lang {
   return value === "en" || value === "ja" || value === "zh" || value === "ko";
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const pathname = useRouterState({ select: (state) => state.location.pathname });
+export function LanguageProvider({ pathname, children }: { pathname: string; children: ReactNode }) {
   const lang = langFromPath(pathname);
   const [suggestion, setSuggestion] = useState<Lang | null>(null);
 
@@ -48,7 +47,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <LangContext.Provider value={{ lang, suggestion, dismissSuggestion }}>{children}</LangContext.Provider>
+    <LangContext.Provider value={{ pathname, lang, suggestion, dismissSuggestion }}>{children}</LangContext.Provider>
   );
 }
 

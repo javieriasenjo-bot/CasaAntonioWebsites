@@ -15,7 +15,7 @@ The supplied suggestions were assessed as proposals, not as instructions to chan
 
 ### Replace hydration with a full client render — ADOPTED (9 October 2026)
 
-Superseded decision: `src/main.tsx` no longer calls `hydrateRoot`. It loads the language pack and router, then runs `root.replaceChildren()` followed by `createRoot(root).render(...)`. The prerendered HTML stays visible until the app is ready. Earlier hydration with a manual `router.ssr` flag risked React #418 mismatches with TanStack Router's Suspense boundaries. Do not restore `hydrateRoot` or the `router.ssr` line without re-running live console checks on every language and page for React errors.
+Historical decision (9 October): the router-based hydration workaround was replaced by a full client render. On 11 October this was superseded again by router-free hydration: server and browser now render the same direct page tree, preserving the prerendered DOM. Do not restore the manual `router.ssr` workaround. See `STARTUP_PERFORMANCE_2026-10-11.md` for the current implementation and 52-route browser checks.
 
 ### Increase the GTM fallback from 1.5 to 3.5 seconds — ADOPTED (9 October 2026)
 

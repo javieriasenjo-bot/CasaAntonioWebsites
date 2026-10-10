@@ -10,6 +10,7 @@
     "postinstall": "node scripts/cf-postinstall.mjs",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run build && node --test tests/analytics.test.mjs tests/build.test.mjs tests/indexnow.test.mjs tests/campaign-links.test.mjs",
+    "check:browser": "node scripts/check-startup.mjs",
     "campaign-links": "node scripts/campaign-links.mjs",
     "indexnow": "node scripts/indexnow.mjs"
   },
@@ -19,8 +20,6 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
-    "@tanstack/react-router": "^1.170.0",
-    "@tanstack/router-plugin": "^1.168.0",
     "@vitejs/plugin-react": "^5.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -31,6 +30,7 @@
   "devDependencies": {
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "playwright-core": "^1.64.0",
     "typescript": "^5.7.0"
   }
 }
