@@ -77,4 +77,6 @@ The owner deployed the latest source. All 52 live pages match the local producti
 
 ## Latest owner completion confirmation
 
-The latest version and separate Long stays menu entry are live in all four languages. The owner confirmed observing the A long-stay trigger inside GA4; the requested receipt check is marked done. See the current completion status and remaining-owner checklist at the top of [OCTOBER_IMPROVEMENTS.md](OCTOBER_IMPROVEMENTS.md). The separate iPhone outbound-link issue is still open unless the owner confirms it is resolved.
+The latest version and separate Long stays menu entry are live in all four languages. The owner confirmed observing the A long-stay trigger inside GA4; the requested receipt check is marked done. The owner also confirmed on 8 October that booking and review links work on the physical iPhone, so that issue is closed. See the current completion status and remaining-owner checklist at the top of [OCTOBER_IMPROVEMENTS.md](OCTOBER_IMPROVEMENTS.md).
+
+The 11 October review of Claude's later suggestions, current search data, listing discrepancies and a fresh live Lighthouse run is in [CLAUDE_FOLLOWUP_2026-10-11.md](CLAUDE_FOLLOWUP_2026-10-11.md).

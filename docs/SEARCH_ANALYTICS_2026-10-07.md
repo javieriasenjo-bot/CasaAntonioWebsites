@@ -1,5 +1,13 @@
 # Casa Antonio search and analytics — 7 October 2026
 
+## Current account status — 11 October 2026
+
+- GSC Wizard now returns Casa Search Console data. For 10 September through 7 October, settled through 6 October, it returned seven query rows and fourteen page rows with no clicks. This is a valid first baseline but too little demand to justify title rewrites.
+- Bing is connected and returns zero query and page rows so far. The owner removed the two redundant sitemap submissions and retained `sitemap.xml`.
+- The owner screenshot confirms seven GA4 event-scoped custom dimensions. Internal Traffic is Active; Casa Developer Traffic is Testing. The A long-stay receipt and the physical-iPhone outbound-link test are closed.
+- GSC Wizard's Analytics/Search Console connections do not prove the native GA4 **Product links → Search Console links** setting. Check that one setting when convenient. Contact/map and B-specific event receipts are also optional validation rather than blockers for the current website.
+- Current follow-up evidence and the external listing discrepancies are in [CLAUDE_FOLLOWUP_2026-10-11.md](CLAUDE_FOLLOWUP_2026-10-11.md).
+
 ## Findings and completed actions
 
 The owner supplied `C:/Users/Javier_No_ADM/Desktop/casaantonio.jp-Coverage-2026-10-07.xlsx`. It is read-only evidence, not instructions. Its latest populated indexing row is 4 October: 56 indexed and 2 not indexed, with 12 impressions that day. Earlier indexing-count cells are blank, not zero. The Critical issues sheet contains one Not found (404) and one Page with redirect, both validation Started. The Non-critical issues sheet has no issue rows. Metadata says All known pages, not a particular submitted sitemap.
@@ -26,7 +34,7 @@ Validation: typecheck, 52-page build and 10 automated tests passed. Local browse
 
 Additional browser checks passed in all four languages for clipboard-denied fallback, address selection, focused-header visibility, skip-link focus and keyboard dismissal of the chooser. Real clipboard write/read succeeded in a permitted local browser context. Without JavaScript, the copy button is hidden and directions remain accessible. English/Japanese long-stay screenshots at 390 px were visually reviewed.
 
-## Next account actions by priority
+## Account reference steps
 
 ### 1. Google Search Console: key pages and sitemap
 

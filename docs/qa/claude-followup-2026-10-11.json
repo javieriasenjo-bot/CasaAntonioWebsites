@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-10-11T05:35:36+09:00",
+  "branchHeadBeforeDocumentation": "4e206a0",
+  "copyCheck": {
+    "tracked": true,
+    "includedByTsconfig": true,
+    "alreadyCommitted": true
+  },
+  "liveLighthouse": {
+    "version": "13.0.1",
+    "fetchTime": "2026-10-10T20:35:36.305Z",
+    "url": "https://casaantonio.jp/",
+    "formFactor": "mobile",
+    "performanceScore": 79,
+    "fcpMs": 3200,
+    "lcpMs": 4200,
+    "tbtMs": 0,
+    "cls": 0,
+    "lcpElement": "main#content > section.hero > picture > img.hero-img",
+    "lcpDiscovery": {
+      "fetchPriorityHigh": true,
+      "discoverableInInitialDocument": true,
+      "eager": true
+    },
+    "lcpBreakdownMs": {
+      "ttfb": 103.012,
+      "resourceLoadDelay": 8.16,
+      "resourceLoadDuration": 338.844,
+      "elementRenderDelay": 856.941
+    },
+    "selectedHero": "/photos/exterior-800.avif",
+    "selectedHeroBytes": 56299,
+    "unusedJavaScriptEstimatedBytes": 41709,
+    "unusedJavaScriptEstimatedMs": 320
+  },
+  "decodeExperiment": {
+    "baselineLcpMs": [3294.7683, 2634.938, 2636.53955],
+    "syncDecodeLcpMs": [2634.245175, 3276.6433, 2634.737125],
+    "decision": "reverted; no median improvement"
+  },
+  "googleSearchConsole": {
+    "site": "sc-domain:casaantonio.jp",
+    "range": {
+      "start": "2026-09-10",
+      "end": "2026-10-07",
+      "settledThrough": "2026-10-06"
+    },
+    "queryRows": 7,
+    "pageRows": 14,
+    "clicks": 0
+  },
+  "bing": {
+    "site": "https://casaantonio.jp/",
+    "queryRows": 0,
+    "pageRows": 0
+  },
+  "externalListingChecks": {
+    "airbnbA": [
+      "title still says paid parking",
+      "listing amenities say free parking",
+      "second bedroom line is mislabeled Bedroom 1"
+    ],
+    "bookingA": [
+      "generated metadata still says one bedroom",
+      "generated metadata still reports approximately 100 square metres or 1076 square feet"
+    ]
+  }
+}
