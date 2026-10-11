@@ -41,6 +41,8 @@ The supplied homepage bounce rate of 80.5% has not been independently reproduced
 
 Do not automatically create a Google Business Profile for either apartment. Google's eligibility rules exclude individual vacation homes and rental apartments. An independently eligible staffed business would need a separate assessment based on its real operations. A query containing “google business” alone does not demonstrate guest intent or eligibility. [Official eligibility rules](https://support.google.com/business/answer/13763036?hl=en).
 
+Owner clarification: Casa Antonio A already has a Google profile; the owner supplied its Google Search link on 11 October. Do not create a duplicate or delete the existing profile. Review its website destination, address, category, photos and property facts through the owner's management interface. Public search also finds a Casa Antonio A Google Travel entity, but that alone does not establish Business Profile ownership, verification, category or eligibility. The authenticated management view has not been inspected.
+
 ### Exact listing edits for an authorized signed-in operator
 
 - Airbnb A: remove the word “paid” from the existing parking title without implying multiple free spaces. Parking is free for one car. Rename the second duplicated “Bedroom 1” label to “Bedroom 2”. Describe the room beside the living room as two single beds (90 cm each); the farther room as one single (90 cm) and one double (130 cm). Maximum occupancy remains four.
