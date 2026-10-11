@@ -25,3 +25,7 @@ Browser coverage includes all 52 routes at mobile and desktop widths; preserved 
 Line endings are governed by `.gitattributes` (`text=auto eol=lf`); the touched text files use LF. No whole-repository renormalization is included.
 
 Changes are prepared locally for owner review and commit. No deployment or account-setting changes are included. GA4's native Search Console link and remaining B/contact/map receipts still require account verification; successful click queueing alone does not prove GA4 receipt.
+
+## Production follow-up
+
+The owner subsequently deployed this version on 11 October. All 52 live routes passed startup browser checks with no hydration errors, preserved heading/hero nodes and working no-JavaScript menus. A fresh single live mobile Lighthouse run scored 91 (LCP 3.22 seconds, TBT 0, CLS 0.0011). This is a lab sample, not field data. The original paragraph above records the predeployment status; deployment is now confirmed. See `REMAINING_ACCOUNT_CHECKS_2026-10-11.md` for current analytics receipt and account priorities.
