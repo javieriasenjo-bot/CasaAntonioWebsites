@@ -69,6 +69,8 @@ Start with `src/data/property-facts.ts`, `src/data/travel-facts.ts`, `scripts/an
 
 ## Latest continuation
 
+The consolidated current open-item list is [OPEN_TRACKER.md](OPEN_TRACKER.md), reconciled on 12 October against both Claude handovers, the source, live URLs and search/account evidence. It supersedes older outstanding-item sections below and in companion documents.
+
 See [OCTOBER_IMPROVEMENTS.md](OCTOBER_IMPROVEMENTS.md) for subsequent mobile fallback, privacy, metadata, practical facts, gallery and maintenance improvements. That document supersedes earlier bed-layout assumptions and records the new validation separately from the earlier Lighthouse sample.
 
 ## Production now verified

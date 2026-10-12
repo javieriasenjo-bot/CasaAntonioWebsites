@@ -1,0 +1,411 @@
+{
+  "date": "2026-10-12",
+  "live": [
+    {
+      "url": "http://casaantonio.jp/",
+      "status": 301,
+      "location": "https://casaantonio.jp/",
+      "metricool": false,
+      "securityPolicy": null
+    },
+    {
+      "url": "https://casaantonio.jp/",
+      "status": 200,
+      "location": null,
+      "metricool": true,
+      "securityPolicy": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' https://tracker.metricool.com https://www.googletagmanager.com https://www.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://tracker.metricool.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com; frame-src https://www.googletagmanager.com https://www.openstreetmap.org"
+    },
+    {
+      "url": "https://casaantonio.jp/combo/",
+      "status": 200,
+      "location": null,
+      "metricool": true,
+      "securityPolicy": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' https://tracker.metricool.com https://www.googletagmanager.com https://www.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://tracker.metricool.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com; frame-src https://www.googletagmanager.com https://www.openstreetmap.org"
+    },
+    {
+      "url": "https://casaantonio.jp/415n/",
+      "status": 404,
+      "location": null,
+      "metricool": false,
+      "securityPolicy": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' https://tracker.metricool.com https://www.googletagmanager.com https://www.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://tracker.metricool.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com; frame-src https://www.googletagmanager.com https://www.openstreetmap.org"
+    },
+    {
+      "url": "https://casaantonio.jp/casa-antonio-a",
+      "status": 307,
+      "location": "/casa-antonio-a/",
+      "metricool": false,
+      "securityPolicy": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' https://tracker.metricool.com https://www.googletagmanager.com https://www.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://tracker.metricool.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com; frame-src https://www.googletagmanager.com https://www.openstreetmap.org"
+    }
+  ],
+  "pages": [
+    {
+      "path": "dist\\access\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "Fly into New Chitose, not Okadama. Airport rapid to Sapporo Station, then the Namboku line north to Asabu, about five minutes on foot to the door."
+    },
+    {
+      "path": "dist\\arrival\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "Check-in 16:00–23:00, self check-in. Leave any time until 10:00. Free parking, one car per apartment. No smoking, no pets, no parties."
+    },
+    {
+      "path": "dist\\casa-antonio-a\\index.html",
+      "images": 61,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "Ground-floor apartment in Kita-ku, about 65 m², two bedrooms and one living room, up to four guests. One free parking space. Private door."
+    },
+    {
+      "path": "dist\\casa-antonio-b\\index.html",
+      "images": 54,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "Second-floor apartment in the same Kita-ku house. About 65 m², three single beds, up to three guests, a wood interior, and a projector. Free parking."
+    },
+    {
+      "path": "dist\\combo\\index.html",
+      "images": 0,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "Two or three nights: Casa Antonio in Kita-ku, then Kojohama Cabins on the Shiraoi coast. About an hour and fifteen minutes by car, or JR toward Tomakomai."
+    },
+    {
+      "path": "dist\\day-trips\\index.html",
+      "images": 21,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "One direction, then home: Otaru, Noboribetsu, Jozankei, Furano and Biei, Lake Toya, Teine, Upopoy in Shiraoi, or the Hill of the Buddha. Check the day."
+    },
+    {
+      "path": "dist\\faq\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "Check-in 16:00–23:00, check-out by 10:00, self check-in, free parking, Asabu Station, New Chitose Airport, and the house rules. Read the practical details before booking."
+    },
+    {
+      "path": "dist\\index.html",
+      "images": 6,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "Two private apartments in one Kita-ku house, about five minutes on foot from Asabu Station. Free parking, one car each. Book A or B on Airbnb."
+    },
+    {
+      "path": "dist\\ja\\access\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "新千歳空港からCasa Antonioへのアクセス案内。JR快速エアポートと地下鉄南北線で麻生駅へ、または空港バスを利用。駅から徒歩約5分の道順と交通リンクを確認できます。"
+    },
+    {
+      "path": "dist\\ja\\arrival\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "セルフチェックインは16:00–23:00、チェックアウトは10:00まで。各室1台の無料駐車場と、到着前に確認したい入室方法・ハウスルールをご案内します。"
+    },
+    {
+      "path": "dist\\ja\\casa-antonio-a\\index.html",
+      "images": 61,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "札幌・麻生駅徒歩約5分の1階貸切アパート。約65㎡、寝室2室、シングル3台とダブル1台で4名まで。キッチン、洗濯機、専用入口、1台分の無料駐車場があります。"
+    },
+    {
+      "path": "dist\\ja\\casa-antonio-b\\index.html",
+      "images": 54,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "木の内装とプロジェクターがある約65㎡の貸切アパート。シングル3台で3名まで。2階へは手すり付きの階段約25段。洗濯機、室内物干しスペース、1台分の無料駐車場があります。"
+    },
+    {
+      "path": "dist\\ja\\combo\\index.html",
+      "images": 0,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "札幌のCasa Antonioと白老の海岸にあるKojohama Cabinsを組み合わせる旅。街と海辺の滞在を計画し、移動の目安をご確認ください。各宿泊施設は別々に予約します。"
+    },
+    {
+      "path": "dist\\ja\\day-trips\\index.html",
+      "images": 21,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "札幌のCasa Antonioを拠点に、小樽、定山渓、登別、富良野・美瑛、洞爺湖、白老ウポポイなどへ。行き先ごとの見どころと移動の目安を紹介します。運行時刻・料金は出発前に確認を。"
+    },
+    {
+      "path": "dist\\ja\\faq\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "Casa Antonioの予約前によくある質問。A・Bの定員とベッド、無料駐車場、チェックイン、階段、交通アクセス、破損時の費用など、滞在の実用情報を確認できます。"
+    },
+    {
+      "path": "dist\\ja\\index.html",
+      "images": 6,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "札幌・麻生駅から徒歩約5分。専用入口のある貸切アパート2室を比較できます。各約65㎡、Aは4名、Bは3名まで。各室1台の無料駐車場があり、予約はAirbnbで受け付けています。"
+    },
+    {
+      "path": "dist\\ja\\long-stay\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "札幌で数週間から数か月滞在したい方へ。Casa Antonio A・Bのキッチンや洗濯機、交通アクセスを確認し、Airbnbから長期滞在料金を相談できます。料金は支払い前に文面で確認します。"
+    },
+    {
+      "path": "dist\\ja\\neighborhood\\index.html",
+      "images": 4,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "Casa Antonio周辺の麻生駅、スーパー、飲食店、公園を紹介。徒歩での目安と地図リンクをまとめ、滞在中の買い物や食事選びに役立てられます。営業時間は各店舗でご確認ください。"
+    },
+    {
+      "path": "dist\\ja\\privacy\\index.html",
+      "images": 0,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "言語設定の保存とGoogleアナリティクスの利用について。予約、Airbnb・Booking.comのレビュー、長期滞在の問い合わせ、地図などのクリック計測をご説明します。"
+    },
+    {
+      "path": "dist\\ja\\snow-festival\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "麻生駅近くのCasa Antonioからさっぽろ雪まつりへ。地下鉄南北線で大通・すすきの方面に移動できます。冬の滞在準備と会場へのアクセスを確認し、会期は公式情報でご確認ください。"
+    },
+    {
+      "path": "dist\\ja\\teine-ski\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "札幌のCasa Antonioを拠点にサッポロテイネでスキー。オリンピア・ハイランドの公式案内と移動の目安を紹介します。宿泊施設には無料駐車場があり、営業状況はスキー場でご確認ください。"
+    },
+    {
+      "path": "dist\\ko\\access\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "도착 공항은 신치토세입니다. 오카다마가 아닙니다. 공항 쾌속으로 삿포로역, 난보쿠선으로 아사부까지 북상한 뒤 도보 약 5분입니다."
+    },
+    {
+      "path": "dist\\ko\\arrival\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "체크인 16:00–23:00, 셀프 체크인. 10:00 전이라면 언제든 퇴실. 주차는 무료, 아파트마다 한 대. 금연, 반려동물 불가, 파티 불가."
+    },
+    {
+      "path": "dist\\ko\\casa-antonio-a\\index.html",
+      "images": 61,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "기타구 1층, 약 65㎡, 침실 둘과 거실, 최대 네 명. 싱글 침대 세 개와 더블 침대 한 개입니다. 전용 출입구와 무료 주차 한 대가 있습니다."
+    },
+    {
+      "path": "dist\\ko\\casa-antonio-b\\index.html",
+      "images": 54,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "같은 집 2층. 약 65㎡, 싱글 침대 세 개, 최대 세 명. 나무 실내와 거실 프로젝터. 전용 출입구와 무료 주차가 있습니다."
+    },
+    {
+      "path": "dist\\ko\\combo\\index.html",
+      "images": 0,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "기타구의 Casa Antonio에 머문 뒤, 시라오이 해안의 Kojohama Cabins로. 차로 약 1시간 15분. JR은 도마코마이 방면. 집은 각각 예약합니다."
+    },
+    {
+      "path": "dist\\ko\\day-trips\\index.html",
+      "images": 21,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "방향은 하나, 그리고 같은 문으로. 오타루, 노보리베쓰, 조잔케이, 후라노와 비에이, 도야호, 데이네, 시라오이 우포포이, 머리 대불. 시간과 요금은 당일 확인."
+    },
+    {
+      "path": "dist\\ko\\faq\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "체크인 16:00–23:00, 체크아웃 10:00까지, 셀프 체크인, 무료 주차, 아사부역, 신치토세 공항, 하우스 룰. 예약 전에 확인해 주세요."
+    },
+    {
+      "path": "dist\\ko\\index.html",
+      "images": 6,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "삿포로 기타구의 한 집에 전용 출입구가 있는 아파트가 둘입니다. 아사부역에서 도보 약 5분, 주차는 무료. Airbnb에서 Casa Antonio A 또는 B를 예약하세요."
+    },
+    {
+      "path": "dist\\ko\\long-stay\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "삿포로에서 몇 주 또는 몇 달 머무를 계획이라면 Casa Antonio A 또는 B의 요금을 Airbnb로 문의하세요. 날짜와 인원을 보내고 결제 전에 견적을 확인하세요."
+    },
+    {
+      "path": "dist\\ko\\neighborhood\\index.html",
+      "images": 4,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "집 근처. 아사부역, 이온, calma, 라멘, 공원, 바디 케어 시설. 시내로 갈 때는 지하철로 남쪽. 영업시간은 당일에 확인하세요."
+    },
+    {
+      "path": "dist\\ko\\privacy\\index.html",
+      "images": 0,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "언어 설정 저장과 Google 애널리틱스 이용 안내. 예약, Airbnb·Booking.com 후기, 장기 숙박 문의와 지도 링크의 클릭 측정을 설명합니다."
+    },
+    {
+      "path": "dist\\ko\\snow-festival\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "눈축제의 기점은 조용한 기타구의 집. 아사부에서 난보쿠선으로 남쪽, 오도리와 스스키노. 2월 일정은 시가 그해 발표합니다."
+    },
+    {
+      "path": "dist\\ko\\teine-ski\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "오전에는 방에서 일하고, 오후에 삿포로 데이네, 밤에는 같은 문. 올림피아와 하일랜드. 집 앞 주차는 무료입니다. 주방이 있습니다."
+    },
+    {
+      "path": "dist\\long-stay\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "Planning weeks or months in Sapporo? Ask about Casa Antonio A or B on Airbnb with your dates and guest count. Confirm the quoted rate before paying."
+    },
+    {
+      "path": "dist\\neighborhood\\index.html",
+      "images": 4,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "Places worth naming from the house: meals, a supermarket, parks, a clinic, and the subway south. Map links open Google Maps. Check the day’s hours."
+    },
+    {
+      "path": "dist\\privacy\\index.html",
+      "images": 0,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "How Casa Antonio uses language storage and Google Analytics, including booking, Airbnb and Booking.com review links, long-stay enquiries and maps."
+    },
+    {
+      "path": "dist\\snow-festival\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "A quiet Kita-ku base for the Snow Festival. Namboku line from Asabu south to Odori and Susukino. The city sets the February dates each year."
+    },
+    {
+      "path": "dist\\teine-ski\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "Work in the morning, ski Sapporo Teine in the afternoon, and come back to the same door. Olympia and Highland. Free parking at the house. Check the day."
+    },
+    {
+      "path": "dist\\zh-cn\\access\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "了解从新千岁机场前往Casa Antonio的方法：乘JR机场快速转地铁南北线到麻生站，或选择机场巴士。查看交通链接及从车站步行约5分钟的到达指引。"
+    },
+    {
+      "path": "dist\\zh-cn\\arrival\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "自助入住时间为16:00–23:00，退房不晚于10:00。查看每套一辆车的免费停车安排、入住前须知及禁烟、禁止宠物和聚会等房屋规则。"
+    },
+    {
+      "path": "dist\\zh-cn\\casa-antonio-a\\index.html",
+      "images": 61,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "札幌麻生站步行约5分钟的一楼独立公寓，约65平方米。两间卧室共3张单人床和1张双人床，最多4人；配有厨房、洗衣机和独立入口，可免费停一辆车。"
+    },
+    {
+      "path": "dist\\zh-cn\\casa-antonio-b\\index.html",
+      "images": 54,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "约65平方米的二楼独立公寓，木质内饰、客厅投影仪和3张单人床，最多3人。需走约25级带扶手的台阶；洗衣房可晾衣，每套可免费停一辆车。"
+    },
+    {
+      "path": "dist\\zh-cn\\combo\\index.html",
+      "images": 0,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "把札幌Casa Antonio与白老海岸的Kojohama Cabins安排在同一趟北海道旅程中。查看城市与海边住宿的组合建议和交通参考；两处住宿分别预订。"
+    },
+    {
+      "path": "dist\\zh-cn\\day-trips\\index.html",
+      "images": 21,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "从札幌Casa Antonio出发，规划小樽、定山溪、登别、富良野与美瑛、洞爷湖或白老Upopoy一日游。比较各地看点和交通参考，出行前确认班次与费用。"
+    },
+    {
+      "path": "dist\\zh-cn\\faq\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "预订Casa Antonio前的常见问题：比较A和B的人数与床位，了解免费停车、入住时间、楼梯、交通和损坏收费等实用信息。"
+    },
+    {
+      "path": "dist\\zh-cn\\index.html",
+      "images": 6,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "比较札幌麻生站附近的两套独立公寓：每套约65平方米，A最多住4人，B最多住3人。步行约5分钟到地铁站，每套可免费停一辆车，通过Airbnb预订。"
+    },
+    {
+      "path": "dist\\zh-cn\\long-stay\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "计划在札幌住几周或几个月？了解Casa Antonio A和B的厨房、洗衣机及地铁交通，通过Airbnb咨询长期住宿价格，并在付款前书面确认费用。"
+    },
+    {
+      "path": "dist\\zh-cn\\neighborhood\\index.html",
+      "images": 4,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "查看Casa Antonio附近的麻生站、超市、餐厅和公园。页面提供步行时间参考及地图链接，方便安排买菜、用餐和散步；出发前请向各店确认营业时间。"
+    },
+    {
+      "path": "dist\\zh-cn\\privacy\\index.html",
+      "images": 0,
+      "imagesWithoutDimensions": [],
+      "article": false,
+      "description": "了解Casa Antonio如何保存语言设置并使用Google Analytics，统计预订、Airbnb和Booking.com评价、长住咨询及地图链接的点击。"
+    },
+    {
+      "path": "dist\\zh-cn\\snow-festival\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "住在麻生站附近的Casa Antonio，乘地铁南北线前往大通和薄野的札幌雪祭会场。查看冬季住宿与出行建议，具体会期请以官方公布为准。"
+    },
+    {
+      "path": "dist\\zh-cn\\teine-ski\\index.html",
+      "images": 1,
+      "imagesWithoutDimensions": [],
+      "article": true,
+      "description": "以札幌Casa Antonio为住宿基地，前往札幌手稻滑雪场的奥林匹亚与高地区域。查看官方信息和交通参考；住宿提供免费停车，营业情况请向雪场确认。"
+    }
+  ],
+  "bPhotos": {
+    "count": 50,
+    "missingVariants": []
+  },
+  "originalsDeployed": false
+}

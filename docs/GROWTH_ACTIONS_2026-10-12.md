@@ -1,5 +1,7 @@
 # Casa Antonio growth and account review — 12 October 2026
 
+The later consolidated status and owner decisions are in [OPEN_TRACKER.md](OPEN_TRACKER.md). Social account creation/publishing is explicitly deferred; the details below retain the preceding audit chronology.
+
 ## Completed checks
 
 GA4 `properties/556764779` now marks `inquiry_click` as a key event. This was verified through the API, not changed by Codex. The two recorded enquiry clicks predate the change and remain ordinary events; a zero retrospective key-event count does not establish a defect. Retain the existing booking/contact key events. No purchase instrumentation or transaction value has been added.

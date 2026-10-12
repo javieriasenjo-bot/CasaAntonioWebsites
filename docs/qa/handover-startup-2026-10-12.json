@@ -1,0 +1,401 @@
+{
+  "checkedAt": "2026-10-12T11:40:36.719Z",
+  "routes": 52,
+  "results": [
+    {
+      "path": "/access/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/arrival/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/casa-antonio-a/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/casa-antonio-b/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/combo/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/day-trips/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/faq/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/access/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/arrival/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/casa-antonio-a/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/casa-antonio-b/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/combo/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/day-trips/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/faq/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/long-stay/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/neighborhood/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/privacy/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/snow-festival/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ja/teine-ski/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/access/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/arrival/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/casa-antonio-a/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/casa-antonio-b/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/combo/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/day-trips/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/faq/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/long-stay/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/neighborhood/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/privacy/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/snow-festival/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/ko/teine-ski/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/long-stay/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/neighborhood/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/privacy/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/snow-festival/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/teine-ski/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/access/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/arrival/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/casa-antonio-a/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/casa-antonio-b/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/combo/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/day-trips/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/faq/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/long-stay/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/neighborhood/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/privacy/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/snow-festival/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "path": "/zh-cn/teine-ski/",
+      "headingPreserved": true,
+      "heroPreserved": true,
+      "errors": [],
+      "mobileAndDesktopOverflow": false
+    },
+    {
+      "scenario": "no JavaScript",
+      "path": "/",
+      "passed": true
+    },
+    {
+      "scenario": "no JavaScript",
+      "path": "/ja/",
+      "passed": true
+    },
+    {
+      "scenario": "no JavaScript",
+      "path": "/zh-cn/",
+      "passed": true
+    },
+    {
+      "scenario": "no JavaScript",
+      "path": "/ko/",
+      "passed": true
+    },
+    {
+      "scenario": "delayed JavaScript and first booking",
+      "passed": true,
+      "heroPreserved": true,
+      "events": 1
+    },
+    {
+      "scenario": "failed language import",
+      "passed": true
+    }
+  ],
+  "analytics": "blocked"
+}

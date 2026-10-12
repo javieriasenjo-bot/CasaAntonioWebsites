@@ -1,32 +1,35 @@
-# Google Business Profile draft — Casa Antonio (11 Oct 2026)
+# Existing Google profile — Casa Antonio A
 
-**Eligibility first.** Google's guidelines are strict for unstaffed short-term rentals (self check-in, no on-site staff). Start a profile at business.google.com and follow its verification flow; if Google refuses a storefront listing, the fallback is a profile without a public address or relying on the Airbnb/Booking.com presence. Do not invent a staffed front desk or opening hours.
+Updated 12 October 2026. This draft is for the EXISTING Casa Antonio A profile, not a new umbrella profile and not a new B profile. The owner says the other three managed profiles are Ocean Stay cabins. Do not rename, merge or edit those cabin profiles.
 
-## Fields
-- Name: Casa Antonio (use the real signage/brand name only; no keywords)
-- Primary category: Apartment rental agency / Holiday apartment rental (pick what Google offers)
-- Secondary: Vacation home rental, Lodging
-- Address: 〒001-0038 北海道札幌市北区北38条西3丁目1-7 (same as the website)
-- Website: https://casaantonio.jp/?utm_source=google&utm_medium=organic&utm_campaign=gbp
-- Hours: leave unset or "by arrangement" (self check-in 16:00–23:00, check-out by 10:00 belongs in the description, not hours)
-- Phone: only if you want guests to call; none is published on the site today
-- Attributes (only if true): Free parking lot, Kitchen, Wi-Fi, Washer, Heating, Air conditioning
+## Current account status
 
-## Description (EN, ≤750 characters)
-Two private apartments in one quiet house in Kita-ku, Sapporo, about a five-minute walk from Asabu Station (Namboku subway line). Apartment A sleeps up to 4 (two bedrooms), Apartment B up to 3. Each is about 65 m² with a full kitchen, washer, heating, Wi-Fi and one free parking space. Self check-in 16:00–23:00. Good for families, winter trips to Teine ski area, the Snow Festival and longer work stays. Book on Airbnb or Booking.com; ask about long stays through Airbnb messages.
+Claude reports that a website UTM edit was submitted and may be pending Google review. That account state has not been independently verified here. Inspect the existing profile's Website field and public destination before submitting another edit. Retain its real existing name/category until the management view and real operation are reviewed. Do not add keywords to the business name, invent a staffed reception or hide the address to bypass eligibility.
 
-## 説明（日本語）
-札幌市北区、麻生駅（南北線）から徒歩約5分の静かな一軒家にある、2つの貸切アパートメント。Aは最大4名（寝室2室）、Bは最大3名。どちらも約65㎡で、キッチン・洗濯機・暖房・Wi-Fi・無料駐車場1台付き。セルフチェックイン（16:00〜23:00）。ご家族旅行、手稲スキー、雪まつり、長期滞在に。ご予約はAirbnbまたはBooking.comから。長期滞在のご相談はAirbnbのメッセージで。
+There are no Casa social accounts and the owner has deferred creating them. Leave social links and website `sameAs` values absent. Phone is pending the owner's decision; no number has been supplied. Do not publish an invented number. Keep prices off this draft until the owner provides an accurate pricing policy.
 
-## Posts to publish after approval
-1. Welcome: exterior photo, "Two private apartments near Asabu Station" → https://casaantonio.jp/?utm_source=google&utm_medium=organic&utm_campaign=gbp_post
-2. Winter: Teine ski day trip → https://casaantonio.jp/teine-ski/?utm_source=google&utm_medium=organic&utm_campaign=gbp_post
-3. Long stays → https://casaantonio.jp/long-stay/?utm_source=google&utm_medium=organic&utm_campaign=gbp_post
+## Website destination
 
-## Photos to upload
-Exterior/entrance, A living room, A kitchen, A bedrooms, B living room, B bedroom (all from `public/photos`, original sizes in `photos-src`).
+Prefer Apartment A's page rather than the two-apartment homepage. If the already submitted URL uses another valid campaign name, retain it until its approval/state is known rather than creating another edit solely for naming consistency.
 
-## Rules
-- Keep name/address/website identical to casaantonio.jp.
-- Do not add review text of your own; link to real Airbnb/Booking.com reviews only.
-- Don't claim amenities not on the site (no cot, high chair, Wi-Fi speed).
+https://casaantonio.jp/casa-antonio-a/?utm_source=google&utm_medium=organic&utm_campaign=google_business_profile&utm_content=website_a
+
+Japanese alternative: https://casaantonio.jp/ja/casa-antonio-a/?utm_source=google&utm_medium=organic&utm_campaign=google_business_profile&utm_content=website_a
+
+## Apartment A description — English draft
+
+Casa Antonio A is a private ground-floor apartment in Kita-ku, Sapporo, about a five-minute walk from Asabu Station on the Namboku subway line. Approximately 65 m², it has two bedrooms with three single beds and one double bed, for up to four guests. A kitchen, washing machine, heating, air conditioning and Wi-Fi are provided. Parking is free for one car. Self check-in is from 16:00 to 23:00; check-out is by 10:00. Ask about longer stays through Airbnb.
+
+## Apartment A description — Japanese draft
+
+Casa Antonio Aは、札幌市北区の静かな住宅街にある1階の貸切アパートメントです。地下鉄南北線・麻生駅から徒歩約5分。約65㎡、寝室2室にシングルベッド3台とダブルベッド1台を備え、4名まで宿泊できます。キッチン、洗濯機、暖房、エアコン、Wi-Fi、1台分の無料駐車場があります。セルフチェックインは16:00〜23:00、チェックアウトは10:00まで。長期滞在はAirbnbからお問い合わせください。
+
+## Photos and reviews
+
+Use A's actual entrance, living room, kitchen and both bedrooms. Do not add B interiors to A's profile or create a false impression that A includes both floors. Originals are retained in `photos-src/`; public variants are in `public/photos/`. Confirm that Google photo uploads belong to the correct existing profile.
+
+Obtain the public Google Maps sharing link and Google review-request link from the profile. A signed-in Google Search management URL is not a substitute. Ask real guests for honest feedback without incentives, gating or invented reviews; never publish Airbnb quotations as Google guest reviews. Adding a review link to the guest guide is pending the exact public link and guide location.
+
+## Scope
+
+This file is a prepared account-edit draft, not evidence of a submitted or approved description. Social posting remains deferred. Any Google profile post requires access to the correct profile and actual publishing capability. See `OPEN_TRACKER.md` for current ownership and status.

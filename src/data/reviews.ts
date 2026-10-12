@@ -55,9 +55,9 @@ export const reviews: { a: StayReviews; b: StayReviews } = {
     href: "https://www.airbnb.com/rooms/1248284267045468378",
   },
   b: {
-    recordedOn: "2026-10-01",
+    recordedOn: "2026-10-12",
     rating: 4.95,
-    count: 20,
+    count: 21,
     guestFavorite: true,
     quotes: [
       {

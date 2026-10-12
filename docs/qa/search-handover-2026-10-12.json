@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-12",
+  "googleSitemap": {
+    "siteUrl": "sc-domain:casaantonio.jp",
+    "sitemaps": [
+      {
+        "path": "https://casaantonio.jp/sitemap.xml",
+        "lastSubmitted": "2026-10-08T07:23:43.188Z",
+        "isPending": false,
+        "isSitemapsIndex": false,
+        "type": "sitemap",
+        "lastDownloaded": "2026-10-11T22:05:53.077Z",
+        "warnings": "0",
+        "errors": "0",
+        "contents": [
+          {
+            "type": "web",
+            "submitted": "52",
+            "indexed": "0"
+          }
+        ]
+      }
+    ]
+  },
+  "bingSitemap": {
+    "siteUrl": "sc-domain:casaantonio.jp",
+    "bingSiteUrl": "https://casaantonio.jp/",
+    "rowCount": 1,
+    "feeds": [
+      {
+        "url": "https://casaantonio.jp/sitemap.xml",
+        "status": "Success",
+        "type": "Sitemap",
+        "lastCrawled": "2026-10-03",
+        "submitted": "2026-10-03",
+        "urlCount": 52,
+        "fileSize": 0,
+        "compressed": false
+      }
+    ],
+    "dataSource": "bing"
+  },
+  "inspections": {
+    "siteUrl": "sc-domain:casaantonio.jp",
+    "count": 12,
+    "succeeded": 12,
+    "failed": 0,
+    "skipped": 0,
+    "quotaExhausted": false,
+    "quota": {
+      "count": 12,
+      "limit": 2000,
+      "remaining": 1988
+    },
+    "results": [
+      {
+        "url": "https://casaantonio.jp/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:24:34Z",
+        "googleCanonical": "https://casaantonio.jp/",
+        "userCanonical": "https://casaantonio.jp/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=1kZrnLHPvYJNsYNpzAZKyQ&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/casa-antonio-a/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:28:36Z",
+        "googleCanonical": "https://casaantonio.jp/casa-antonio-a/",
+        "userCanonical": "https://casaantonio.jp/casa-antonio-a/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=K-JQ8BB_0NcPBfDXEqQQFQ&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/casa-antonio-b/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:36:34Z",
+        "googleCanonical": "https://casaantonio.jp/casa-antonio-b/",
+        "userCanonical": "https://casaantonio.jp/casa-antonio-b/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=6kdmge7zEh6KOz0JoXnldA&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/ja/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:26:35Z",
+        "googleCanonical": "https://casaantonio.jp/ja/",
+        "userCanonical": "https://casaantonio.jp/ja/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=sJVKvD-4EQjcCxWGvwhpxg&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/ja/casa-antonio-a/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:30:36Z",
+        "googleCanonical": "https://casaantonio.jp/ja/casa-antonio-a/",
+        "userCanonical": "https://casaantonio.jp/ja/casa-antonio-a/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=o6gJIYu2MD2q8F1AdrD9aw&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/ja/casa-antonio-b/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:34:36Z",
+        "googleCanonical": "https://casaantonio.jp/ja/casa-antonio-b/",
+        "userCanonical": "https://casaantonio.jp/ja/casa-antonio-b/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=BSK5xtVv2UGoDOEhXOXKjg&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/zh-cn/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:26:35Z",
+        "googleCanonical": "https://casaantonio.jp/zh-cn/",
+        "userCanonical": "https://casaantonio.jp/zh-cn/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=T1aR80WlvoMjqIkKbMXjsg&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/zh-cn/casa-antonio-a/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:30:36Z",
+        "googleCanonical": "https://casaantonio.jp/zh-cn/casa-antonio-a/",
+        "userCanonical": "https://casaantonio.jp/zh-cn/casa-antonio-a/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=itm2HMr4xplUQIkpQXHSdw&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/zh-cn/casa-antonio-b/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:34:37Z",
+        "googleCanonical": "https://casaantonio.jp/zh-cn/casa-antonio-b/",
+        "userCanonical": "https://casaantonio.jp/zh-cn/casa-antonio-b/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=K66WCaG0IiVq_oBRIhp_8Q&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/ko/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:28:36Z",
+        "googleCanonical": "https://casaantonio.jp/ko/",
+        "userCanonical": "https://casaantonio.jp/ko/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=qGPyOrvJwTtCI-9ECmyNcA&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/ko/casa-antonio-a/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:30:59Z",
+        "googleCanonical": "https://casaantonio.jp/ko/casa-antonio-a/",
+        "userCanonical": "https://casaantonio.jp/ko/casa-antonio-a/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=Wtggk2j6nSx7ROGsM68yDw&utm_medium=link&utm_source=api"
+      },
+      {
+        "url": "https://casaantonio.jp/ko/casa-antonio-b/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-12T01:36:34Z",
+        "googleCanonical": "https://casaantonio.jp/ko/casa-antonio-b/",
+        "userCanonical": "https://casaantonio.jp/ko/casa-antonio-b/",
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:casaantonio.jp&id=s070EaoThweFzeGMcF_3Wg&utm_medium=link&utm_source=api"
+      }
+    ]
+  }
+}

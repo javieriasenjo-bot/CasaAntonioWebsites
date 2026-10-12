@@ -1,5 +1,7 @@
 # Casa Antonio
 
+Current outstanding work and owner questions are maintained in [docs/OPEN_TRACKER.md](docs/OPEN_TRACKER.md). Older handovers are historical; the tracker reconciles their claims with current source and account evidence.
+
 ## Startup rendering
 
 Server and browser share the same page tree. Router-free hydration preserves prerendered content; only the current page and language are loaded. The native mobile menu works without JavaScript. Run `npm run check:browser` with installed Chrome after `npm run check`. See [the startup report](docs/STARTUP_PERFORMANCE_2026-10-11.md) for measurements and regression coverage.
