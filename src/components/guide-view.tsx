@@ -1,4 +1,5 @@
 import { AirbnbLink } from "@/components/airbnb-link";
+import { EmailLink } from "@/components/email-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
 import { PhotoCredit } from "@/components/photo-credit";
@@ -220,6 +221,7 @@ export function LongStayPage() {
           <div className="stay-actions">
             <AirbnbLink cabin="a" location="long-stay-top" intent="inquiry" className="button button-dark">{t.ctaA}</AirbnbLink>
             <AirbnbLink cabin="b" location="long-stay-top" intent="inquiry" className="button button-wood">{t.ctaB}</AirbnbLink>
+            <EmailLink longStay placement="long-stay-top-email" className="button button-line" />
           </div>
           <p className="photo-note">{t.note}</p>
           <Photo className="guide-photo" src="/photos/dining-2.jpg" alt={t.title} sizes="(max-width: 900px) 100vw, 1120px" />
@@ -246,6 +248,7 @@ export function LongStayPage() {
             <AirbnbLink cabin="b" location="long-stay" intent="inquiry" className="button button-wood">
               {t.ctaB}
             </AirbnbLink>
+            <EmailLink longStay placement="long-stay-email" className="button button-line" />
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
+import { EmailLink } from "@/components/email-link";
 import { house } from "@/data/active";
 import { LANG_NAME } from "@/data/lang-name";
 import { rememberLang, useLang, type Lang } from "@/lib/i18n";
@@ -191,6 +192,7 @@ export function Shell({ children }: { children: ReactNode }) {
             </AirbnbLink>
             <PageLink page="arrival">{t.nav.arrival}</PageLink>
           </p>
+          <p className="footer-links"><EmailLink placement="footer-email" /></p>
           <p className="footer-label">{g.footerGuides}</p>
           <p className="footer-links">
             {g.footerLinks.map((item) => (

@@ -80,3 +80,13 @@ test("language and map actions are captured once; unrelated links are ignored", 
   b.click("https://example.com/airbnb.com", { "data-intent": "booking" });
   assert.deepEqual(Array.from(b.window.dataLayer.slice(1), e => e.event), ["language_change", "map_click"]);
 });
+
+test("an email enquiry queues one contact event without claiming message delivery", () => {
+  const b = boot();
+  b.click("mailto:admin@kagami-planning.com?subject=Casa%20Antonio", { "data-placement": "long-stay-top-email" });
+  const events = Array.from(b.window.dataLayer.slice(1));
+  assert.equal(events.length, 1);
+  assert.equal(events[0].event, "contact_click");
+  assert.equal(events[0].contact_method, "email");
+  assert.equal(events[0].link_location, "long-stay-top-email");
+});

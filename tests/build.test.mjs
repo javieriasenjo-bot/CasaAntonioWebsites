@@ -16,6 +16,7 @@ test("all 52 generated pages retain language SEO and an early event producer", (
   for (const file of files) {
     const html = readFileSync(file, "utf8");
     assert.match(html, /<h1[ >]/);
+    assert.match(html, /href="mailto:admin@kagami-planning\.com\?/);
     assert.ok(html.indexOf('<meta charset="UTF-8"') < 1024, `${file}: charset must be declared early`);
     assert.match(html, /rel="canonical"/);
     assert.equal((html.match(/rel="alternate"/g) || []).length, 5);

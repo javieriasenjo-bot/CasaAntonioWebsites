@@ -101,7 +101,7 @@ export const copy = {
       lede: "Both apartments can be taken for longer than a holiday. Ask the host for a rate for your dates. This page does not promise a discount.",
       body: [
         "Casa Antonio A and Casa Antonio B are the same house, with separate doors. A long stay uses one of them as a home: cook, work, keep one car in the free space in front of that apartment, and ride the subway when the city is the plan. It suits a work season in Sapporo, a university term, a family visit that runs long, or a winter built around Teine.",
-        "Ask on Airbnb for a rate for your dates. Nightly prices there are for shorter bookings. For a block of weeks or months, the host can quote a rate for those exact dates. What is included, and the total, are confirmed in writing before you pay. This site does not take the booking.",
+        "Contact us on Airbnb or by email with your dates, preferred apartment and number of guests. Confirm what is included and the total before paying. This website does not take reservations or payments.",
         "The house rules do not relax because the stay is long. No smoking, no pets, no parties, and a quiet street after dark. Check-in and check-out still apply at each end. Only the people on the booking live there.",
       ],
       points: [
