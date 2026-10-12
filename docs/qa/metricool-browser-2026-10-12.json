@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-12",
+  "collection": "intercepted",
+  "results": [
+    {
+      "path": "/",
+      "blocked": false,
+      "scriptLoads": 1,
+      "beacons": 1,
+      "policyViolations": [],
+      "appReady": true
+    },
+    {
+      "path": "/ja/privacy/",
+      "blocked": false,
+      "scriptLoads": 1,
+      "beacons": 1,
+      "policyViolations": [],
+      "appReady": true
+    },
+    {
+      "path": "/zh-cn/privacy/",
+      "blocked": false,
+      "scriptLoads": 1,
+      "beacons": 1,
+      "policyViolations": [],
+      "appReady": true
+    },
+    {
+      "path": "/ko/privacy/",
+      "blocked": false,
+      "scriptLoads": 1,
+      "beacons": 1,
+      "policyViolations": [],
+      "appReady": true
+    },
+    {
+      "path": "/",
+      "blocked": true,
+      "scriptLoads": 1,
+      "beacons": 0,
+      "policyViolations": [],
+      "appReady": true
+    }
+  ]
+}

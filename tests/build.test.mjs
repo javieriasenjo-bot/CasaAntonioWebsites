@@ -20,6 +20,7 @@ test("all 52 generated pages retain language SEO and an early event producer", (
     assert.match(html, /rel="canonical"/);
     assert.equal((html.match(/rel="alternate"/g) || []).length, 5);
     assert.ok(html.indexOf("__caClickListener") < html.indexOf('type="module"'));
+    assert.equal((html.match(/ffd44c179566f41dd21d51d09878d58d/g) || []).length, 1, file);
     for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) JSON.parse(match[1]);
   }
 });
@@ -97,7 +98,7 @@ test("owner facts, privacy disclosure and maintenance dates agree in all languag
     const faq = readFileSync(join(dist,prefix,'faq/index.html'),'utf8');
     assert.match(faq,damage);
     const privacy = readFileSync(join(dist,prefix,'privacy/index.html'),'utf8');
-    assert.match(privacy,analytics); assert.match(privacy,/Booking\.com/);
+    assert.match(privacy,analytics); assert.match(privacy,/Booking\.com/); assert.match(privacy,/Metricool/);
   }
   const sitemap = readFileSync(join(dist,'sitemap.xml'),'utf8');
   for (const file of pages(dist)) {

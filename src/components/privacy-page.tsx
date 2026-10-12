@@ -17,6 +17,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
         h: "Measurement",
         p: [
           "We use Google Analytics through Google Tag Manager to understand how visitors use this website. Google Analytics may set cookies. We measure booking-link clicks, Airbnb and Booking.com review-link clicks, long-stay enquiries, map links and language changes, including the apartment, page language and link destination. These clicks and enquiries are not completed reservations. No booking or payment details are collected through a form here.",
+          "We also use Metricool to measure website visits. Its visit tracker uses no cookies and sends the page URL, referring page when available, and browser window size to Metricool. This is separate from our booking-link measurements and does not confirm a reservation.",
         ],
       },
       {
@@ -48,6 +49,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
         h: "計測",
         p: [
           "Googleタグマネージャーを通じてGoogleアナリティクスを利用し、サイトの使われ方を確認しています。GoogleアナリティクスはCookieを使用することがあります。予約リンク、Airbnb・Booking.comのレビュー、長期滞在の問い合わせ、地図、言語変更のクリックを、部屋・ページの言語・リンク先などとともに計測します。クリックや問い合わせは予約成立を意味しません。このサイトのフォームで予約情報や決済情報を収集することはありません。",
+          "サイトの訪問数を把握するため、Metricoolも利用しています。この訪問トラッカーはCookieを使わず、ページのURL、取得できる場合は参照元のページ、ブラウザの表示領域の大きさをMetricoolに送信します。予約リンクの計測とは別で、予約成立を確認するものではありません。",
         ],
       },
       {
@@ -77,6 +79,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
         h: "统计",
         p: [
           "我们通过 Google Tag Manager 使用 Google Analytics，了解访客如何使用网站。Google Analytics 可能使用 Cookie。统计包括预订链接、Airbnb 和 Booking.com 评价链接、长住咨询、地图和语言切换的点击，以及公寓、页面语言和链接目标。这些点击和咨询不代表已完成预订。本站不通过表单收集预订或付款信息。",
+          "我们也使用 Metricool 统计网站访问。其访问追踪器不使用 Cookie，会向 Metricool 发送页面网址、可获取的来源页面及浏览器窗口大小。这项统计与预订链接点击统计分开，不代表预订已确认。",
         ],
       },
       {
@@ -104,6 +107,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
         h: "측정",
         p: [
           "Google 태그 매니저를 통해 Google 애널리틱스를 사용하여 방문자의 사이트 이용을 파악합니다. Google 애널리틱스는 쿠키를 사용할 수 있습니다. 예약 링크, Airbnb 및 Booking.com 후기 링크, 장기 숙박 문의, 지도와 언어 변경 클릭을 아파트, 페이지 언어, 링크 목적지 등의 정보와 함께 측정합니다. 클릭이나 문의는 예약 완료를 의미하지 않습니다. 이 사이트의 양식으로 예약 또는 결제 정보를 수집하지 않습니다.",
+          "웹사이트 방문을 측정하기 위해 Metricool도 사용합니다. 방문 추적기는 쿠키를 사용하지 않으며 페이지 URL, 확인 가능한 유입 페이지와 브라우저 창 크기를 Metricool에 전송합니다. 이는 예약 링크 클릭 측정과 별개이며 예약 확정을 의미하지 않습니다.",
         ],
       },
       {

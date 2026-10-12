@@ -4,6 +4,35 @@ import { readFileSync } from "node:fs";
 import vm from "node:vm";
 
 const source = readFileSync(new URL("../scripts/analytics-bootstrap.js", import.meta.url), "utf8");
+const metricoolSource = readFileSync(new URL("../scripts/metricool-bootstrap.js", import.meta.url), "utf8");
+
+test("Metricool waits for initial HTML, initializes once and tolerates a blocked tracker", () => {
+  const scripts = [], calls = [], listeners = new Map();
+  let idle;
+  const window = { location: { hostname: "casaantonio.jp" }, requestIdleCallback: fn => { idle = fn; } };
+  const document = { readyState: "loading", addEventListener: (name, fn) => listeners.set(name, fn),
+    createElement: () => ({}), head: { appendChild: script => scripts.push(script) } };
+  const context = vm.createContext({ window, document });
+  vm.runInContext(metricoolSource, context);
+  vm.runInContext(metricoolSource, context);
+  assert.equal(scripts.length, 0);
+  listeners.get("DOMContentLoaded")();
+  assert.equal(scripts.length, 0);
+  idle();
+  assert.equal(scripts.length, 1);
+  assert.equal(scripts[0].async, true);
+  assert.equal(scripts[0].src, "https://tracker.metricool.com/resources/be.js");
+  assert.doesNotThrow(() => scripts[0].onload());
+  window.beTracker = { t: options => calls.push(options.hash) };
+  scripts[0].onload(); scripts[0].onload();
+  assert.deepEqual(calls, ["ffd44c179566f41dd21d51d09878d58d"]);
+});
+
+test("Metricool does not record development or unrelated hostnames", () => {
+  for (const hostname of ["localhost", "127.0.0.1", "casaantonio.jp.example.com", "kojohamacabins.jp"]) {
+    vm.runInNewContext(metricoolSource, { window: { location: { hostname } }, document: {} });
+  }
+});
 function boot() {
   const listeners = new Map();
   const scripts = [];

@@ -9,7 +9,9 @@ export default defineConfig({
     {
       name: "early-analytics",
       transformIndexHtml(html) {
-        return html.replace("<!-- analytics-bootstrap -->", `<script>${readFileSync(new URL("./scripts/analytics-bootstrap.js", import.meta.url), "utf8")}</script>`);
+        const scripts = ["analytics-bootstrap.js", "metricool-bootstrap.js"]
+          .map(name => `<script>${readFileSync(new URL(`./scripts/${name}`, import.meta.url), "utf8")}</script>`).join("\n");
+        return html.replace("<!-- analytics-bootstrap -->", scripts);
       },
     },
     react(),
