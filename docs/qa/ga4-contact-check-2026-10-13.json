@@ -1,0 +1,40 @@
+{
+  "siteUrl": "sc-domain:casaantonio.jp",
+  "propertyId": "properties/556764779",
+  "siteScope": null,
+  "dataSource": "ga4-api",
+  "timeZone": "Asia/Tokyo",
+  "range": {
+    "startDate": "2026-10-08",
+    "endDate": "2026-10-12"
+  },
+  "comparisonRange": null,
+  "hasComparison": false,
+  "dimension": "event",
+  "secondaryDimension": "date",
+  "metrics": [
+    "eventCount",
+    "totalUsers"
+  ],
+  "rowCount": 2,
+  "totalRows": 2,
+  "truncated": false,
+  "rows": [
+    {
+      "key": "review_click",
+      "date": "2026-10-08",
+      "eventCount": 2,
+      "prevEventCount": 0,
+      "totalUsers": 1,
+      "prevTotalUsers": 0
+    },
+    {
+      "key": "inquiry_click",
+      "date": "2026-10-08",
+      "eventCount": 1,
+      "prevEventCount": 0,
+      "totalUsers": 1,
+      "prevTotalUsers": 0
+    }
+  ]
+}

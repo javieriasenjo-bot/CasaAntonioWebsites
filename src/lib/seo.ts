@@ -219,22 +219,22 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Long Stays in Sapporo · Casa Antonio",
       description:
-        "Planning weeks or months in Sapporo? Ask about Casa Antonio A or B on Airbnb with your dates and guest count. Confirm the quoted rate before paying.",
+        "Planning weeks or months in Sapporo? Contact Casa Antonio A or B through Airbnb or email with your dates and guest count to discuss availability and terms.",
     },
     ja: {
       title: "札幌の長期滞在｜Casa Antonio",
       description:
-        "札幌で数週間から数か月滞在したい方へ。Casa Antonio A・Bのキッチンや洗濯機、交通アクセスを確認し、Airbnbから長期滞在料金を相談できます。料金は支払い前に文面で確認します。",
+        "札幌で数週間から数か月滞在したい方へ。Casa Antonio A・Bのキッチン、洗濯機、交通アクセスをご紹介。Airbnbまたはメールで日程・人数をお知らせいただき、空室状況や条件をご相談ください。",
     },
     zh: {
       title: "在札幌住几周或几个月｜Casa Antonio",
       description:
-        "计划在札幌住几周或几个月？了解Casa Antonio A和B的厨房、洗衣机及地铁交通，通过Airbnb咨询长期住宿价格，并在付款前书面确认费用。",
+        "计划在札幌住几周或几个月？了解Casa Antonio A和B的厨房、洗衣机及地铁交通，通过Airbnb或邮件发送入住日期和人数，咨询空房及入住条件。",
     },
     ko: {
       title: "삿포로 장기 숙박｜Casa Antonio",
       description:
-        "삿포로에서 몇 주 또는 몇 달 머무를 계획이라면 Casa Antonio A 또는 B의 요금을 Airbnb로 문의하세요. 날짜와 인원을 보내고 결제 전에 견적을 확인하세요.",
+        "삿포로에서 몇 주 또는 몇 달 머무를 계획이라면 Airbnb 또는 이메일로 Casa Antonio A·B에 문의하세요. 숙박 날짜와 인원을 보내 예약 가능 여부와 숙박 조건을 확인하세요.",
     },
   },
   faq: {
@@ -535,7 +535,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "How do long stays work?",
-      a: "Write through Airbnb with your dates and ask for a rate. The rate for a stay of weeks or months is agreed in writing before you pay. This site does not take the booking and does not promise a discount.",
+      a: "Contact us through Airbnb or at admin@kagami-planning.com with your dates, preferred apartment and guest count. Confirm availability, terms and the total before paying. This website does not take reservations or payments.",
     },
     {
       q: "Is there Wi-Fi?",
@@ -577,7 +577,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "長期滞在はどうしますか？",
-      a: "日程を添えてAirbnbから料金を尋ねてください。数週間や数ヶ月の料金は、支払う前に文面で決めます。このサイトでは予約を受けず、割引を約束しません。",
+      a: "日程、ご希望のお部屋、人数を添えて、Airbnbまたはadmin@kagami-planning.comへお問い合わせください。空室状況、条件、合計金額はお支払い前にご確認ください。このサイトでは予約や決済を受け付けていません。",
     },
     {
       q: "Wi-Fiはありますか？",
@@ -619,7 +619,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "长期住怎么订？",
-      a: "带着日期，通过 Airbnb 询问价格。住几周或几个月的价格，付款前用书面确认。这个网站不收款，也不承诺折扣。",
+      a: "请通过Airbnb或admin@kagami-planning.com联系我们，并提供入住日期、希望入住的公寓和人数。付款前请确认空房、入住条件和总金额。本站不接受预订或付款。",
     },
     {
       q: "有 Wi-Fi 吗？",
@@ -661,7 +661,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "장기 숙박은 어떻게 하나요?",
-      a: "날짜를 적어 Airbnb로 요금을 물어보세요. 몇 주나 몇 달의 요금은 내기 전에 글로 정합니다. 이 사이트는 예약을 받지 않고, 할인을 약속하지 않습니다.",
+      a: "숙박 날짜, 원하는 아파트와 인원을 적어 Airbnb 또는 admin@kagami-planning.com으로 문의해 주세요. 결제 전에 예약 가능 여부, 숙박 조건과 총금액을 확인해 주세요. 이 사이트에서는 예약이나 결제를 받지 않습니다.",
     },
     {
       q: "Wi-Fi가 있나요?",

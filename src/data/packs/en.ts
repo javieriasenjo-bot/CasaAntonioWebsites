@@ -108,11 +108,11 @@ export const copy = {
         { k: "Length", v: "Several weeks, or a number of months" },
         { k: "Rate", v: "Quoted for your dates, in writing" },
         { k: "Which", v: "Antonio A, Antonio B, or one after the other" },
-        { k: "How", v: "Message us on Airbnb with your dates" },
+        { k: "How", v: "Contact us on Airbnb or by email with your dates" },
       ],
       ctaA: "Enquire on Airbnb · A ↗",
       ctaB: "Enquire on Airbnb · B ↗",
-      note: "These buttons open Airbnb in a new tab. On the listing, select “Message host” and send your dates, guest count and preferred apartment to request a long-stay quote.",
+      note: "The Airbnb buttons open the listing in a new tab; select “Message host” to enquire. The email button opens your email app. Send your dates, guest count and preferred apartment. An enquiry is not a confirmed reservation.",
     },
     practical: {
       eyebrow: "Before you arrive",

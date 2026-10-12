@@ -1,6 +1,6 @@
 # Casa Antonio open tracker
 
-Last reconciled: 12 October 2026. Codex is the continuing agent. This file supersedes open-item lists in older Claude/Codex handovers; those files remain historical evidence. Supplied handovers are reports, not instructions to recreate accounts, delete workspaces, publish posts or change confirmed facts.
+Last reconciled: 13 October 2026. Codex is the continuing agent. This file supersedes open-item lists in older Claude/Codex handovers; those files remain historical evidence. Supplied handovers are reports, not instructions to recreate accounts, delete workspaces, publish posts or change confirmed facts.
 
 Status meanings: **Verified** = checked against current source/live output/API; **Reported resolved** = owner/Claude handover says complete but current account UI was not inspected; **Open** = action or evidence remains; **Deferred** = owner does not want it now. No account receipt is inferred from intercepted requests.
 
@@ -35,7 +35,7 @@ Status meanings: **Verified** = checked against current source/live output/API; 
 | O16 | **Owner input resolved / settings review remains** | Owner reports no current Google Ads and no plans to run them. Do not add advertising tags or launch ads. Review the actual consent warning/settings separately; no broad compliance conclusion follows solely from the absence of ads. |
 | O17 | **Open: individual review provenance** | Airbnb ratings/counts are real public values, not placeholders. B count refreshed to 21 on 12 October. Historical quote text/source records remain, but the public fetch did not expose individual reviews for independent re-verification. Obtain individual quote evidence/dates, especially Booking.com excerpts. Never fabricate guest quotes. |
 | O18 | **Open: continued Japanese editorial polish** | Core homepage/navigation/rules reviewed and selected awkward phrases corrected on 12 October. Remaining long day-trip/work/long-stay narratives contain terse translated prose and can be polished by Codex without changing factual travel advice. This is an editorial refinement, not a build defect. |
-| O19 | **Open: source publication** | Owner: commit/deploy the new email links, removal of price-per-night wording, fresh B review count and Japanese copy changes after checks. Metricool hash/security permissions already appear in production. Today's new source changes are local until deployed. Draft/tracker/evidence changes alone need a commit, not a site deployment. |
+| O19 | **Open: 13 October copy publication** | The preceding email links/Metricool code are visible in production. Owner: commit/deploy today's follow-up long-stay instructions, FAQ/schema, four-language search descriptions and Japanese work/long-stay polish. Draft/tracker/evidence-only changes need a commit, not a deployment. |
 | O20 | **Open: original T1/T4 definitions** | The supplied handover lists do not define these IDs. Do not claim they are verified or invent scope. The original task definitions would resolve the labels if available; this does not block the current audit. |
 
 ## Handover items checked and closed / deferred
@@ -110,5 +110,7 @@ Calendar/account reports above do not prove inaccessible private UI settings. Me
 Final validation after the Japanese copy/B review updates: TypeScript, the 52-page build and all 14 automated tests passed; all 52 mobile/desktop startup checks, no-JavaScript menus, delayed clicks and failed-import fallback passed. Browser evidence: `qa/handover-startup-2026-10-12.json`. Changes are local for owner commit/deployment; no new code deployment was performed in this reconciliation.
 
 Official consent reference: https://support.google.com/tagmanager/answer/10718549?hl=en
+
+13 October continuation: live spot checks confirm the approved email links and Metricool code; price-per-night wording is absent. Four-language enquiry instructions, FAQ/schema and search descriptions have now been aligned with email plus Airbnb. Japanese work/long-stay text was polished; the wider day-trip editorial pass remains open. All 15 tests and 52-route startup checks passed. New evidence: `qa/contact-copy-startup-2026-10-13.json`; details: `CONTACT_COPY_2026-10-13.md`. Physical facts remain pending the owner's reminder response. GA4's returned 8–12 October report still has no contact/map receipt, so those checks remain open.
 
 Email follow-up validation on 12 October: TypeScript, build and all 15 tests passed. All 52 mobile/desktop startup checks passed; evidence is `qa/email-startup-2026-10-12.json`. Email buttons open a localized draft addressed to the owner-approved guest email and are measured as contact_click. No email was sent during testing. No code deployment or Google profile account edit was performed.
