@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-12T01:37:17.982Z",
+  "results": [
+    {
+      "path": "/casa-antonio-b/",
+      "event": "airbnb_click",
+      "provider": "airbnb",
+      "count": 1,
+      "apartment": "Casa Antonio B",
+      "mapProvider": null
+    },
+    {
+      "path": "/casa-antonio-b/",
+      "event": "review_click",
+      "provider": "airbnb",
+      "count": 1,
+      "apartment": "Casa Antonio B",
+      "mapProvider": null
+    },
+    {
+      "path": "/casa-antonio-b/",
+      "event": "review_click",
+      "provider": "booking",
+      "count": 1,
+      "apartment": "Casa Antonio B",
+      "mapProvider": null
+    },
+    {
+      "path": "/long-stay/",
+      "event": "inquiry_click",
+      "provider": "airbnb",
+      "count": 1,
+      "apartment": "Casa Antonio B",
+      "mapProvider": null
+    },
+    {
+      "path": "/neighborhood/",
+      "event": "map_click",
+      "provider": null,
+      "count": 1,
+      "apartment": null,
+      "mapProvider": "google"
+    }
+  ],
+  "collection": "intercepted; no GA4 receipt claimed"
+}

@@ -1,0 +1,929 @@
+{
+  "checkedDate": "2026-10-12",
+  "property": "sc-domain:casaantonio.jp",
+  "reports": {
+    "queries": {
+      "siteUrl": "sc-domain:casaantonio.jp",
+      "startDate": "2026-09-12",
+      "endDate": "2026-10-09",
+      "dimensions": [
+        "query"
+      ],
+      "searchType": "web",
+      "rowCount": 8,
+      "rows": [
+        {
+          "keys": [
+            "\"furano\""
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 95
+        },
+        {
+          "keys": [
+            "akazora"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 63
+        },
+        {
+          "keys": [
+            "antonio"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "keys": [
+            "google business"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "keys": [
+            "teine ski map"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 98
+        },
+        {
+          "keys": [
+            "新千歳空港から麻生駅 バス"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 29
+        },
+        {
+          "keys": [
+            "札幌 長期 滞在"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 68
+        },
+        {
+          "keys": [
+            "아사노야"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 33
+        }
+      ],
+      "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "returned": 8,
+        "hasMore": false,
+        "note": "Showing all 8 rows."
+      },
+      "dataSource": "api",
+      "settledThrough": null,
+      "dataMaturity": {
+        "firstIncompleteDate": null,
+        "settledThrough": null,
+        "dateBasis": "America/Los_Angeles",
+        "source": "unavailable",
+        "probe": {
+          "searchType": "web",
+          "startDate": "2026-10-02",
+          "endDate": "2026-10-11",
+          "dataState": "all"
+        },
+        "note": "Search Console did not return metadata.firstIncompleteDate for the probe, so no settled-through boundary could be established. Do not infer one from the last returned row: zero-activity days are omitted from row data."
+      }
+    },
+    "pages": {
+      "siteUrl": "sc-domain:casaantonio.jp",
+      "startDate": "2026-09-12",
+      "endDate": "2026-10-09",
+      "dimensions": [
+        "page"
+      ],
+      "searchType": "web",
+      "rowCount": 15,
+      "rows": [
+        {
+          "keys": [
+            "https://casaantonio.jp/"
+          ],
+          "clicks": 0,
+          "impressions": 20,
+          "ctr": 0,
+          "position": 13.9
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/arrival"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/arrival/"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/casa-antonio-a/"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/casa-antonio-b"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 6.6
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/casa-antonio-b/"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 4
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/day-trips/"
+          ],
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 52.285714285714285
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/ja/"
+          ],
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 6.571428571428571
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/ja/access/"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 21.666666666666668
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/ja/casa-antonio-a/"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 5.4
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/ja/casa-antonio-b/"
+          ],
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 6.214285714285714
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/ja/long-stay/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 68
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/ko/neighborhood/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 33
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/neighborhood"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "keys": [
+            "https://casaantonio.jp/teine-ski/"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 98
+        }
+      ],
+      "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "returned": 15,
+        "hasMore": false,
+        "note": "Showing all 15 rows."
+      },
+      "dataSource": "api",
+      "settledThrough": null,
+      "dataMaturity": {
+        "firstIncompleteDate": null,
+        "settledThrough": null,
+        "dateBasis": "America/Los_Angeles",
+        "source": "unavailable",
+        "probe": {
+          "searchType": "web",
+          "startDate": "2026-10-02",
+          "endDate": "2026-10-11",
+          "dataState": "all"
+        },
+        "note": "Search Console did not return metadata.firstIncompleteDate for the probe, so no settled-through boundary could be established. Do not infer one from the last returned row: zero-activity days are omitted from row data."
+      }
+    },
+    "events": {
+      "siteUrl": "sc-domain:casaantonio.jp",
+      "propertyId": "properties/556764779",
+      "siteScope": null,
+      "dataSource": "ga4-api",
+      "range": {
+        "startDate": "2026-10-01",
+        "endDate": "2026-10-11"
+      },
+      "comparisonRange": null,
+      "hasComparison": false,
+      "availableDimensions": [
+        "customEvent:apartment_name",
+        "customEvent:contact_method",
+        "customEvent:intent",
+        "customEvent:link_location",
+        "customEvent:page_language",
+        "customEvent:provider",
+        "customEvent:selected_language"
+      ],
+      "availableMetrics": [],
+      "timeZone": "Asia/Tokyo",
+      "dimension": "customEvent:apartment_name",
+      "secondaryDimension": "eventName",
+      "metrics": [
+        "eventCount",
+        "sessions",
+        "activeUsers",
+        "keyEvents"
+      ],
+      "summary": {
+        "eventCount": 21,
+        "sessions": 6,
+        "activeUsers": 2,
+        "totalUsers": 2,
+        "keyEvents": 14
+      },
+      "prevSummary": null,
+      "rowCount": 4,
+      "totalRows": 4,
+      "rows": [
+        {
+          "key": "Casa Antonio B",
+          "eventCount": 8,
+          "prevEventCount": 0,
+          "sessions": 3,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEvents": 8,
+          "prevKeyEvents": 0,
+          "secondary": "airbnb_click"
+        },
+        {
+          "key": "Casa Antonio A",
+          "eventCount": 6,
+          "prevEventCount": 0,
+          "sessions": 3,
+          "prevSessions": 0,
+          "activeUsers": 2,
+          "prevActiveUsers": 0,
+          "keyEvents": 6,
+          "prevKeyEvents": 0,
+          "secondary": "airbnb_click"
+        },
+        {
+          "key": "Casa Antonio A",
+          "eventCount": 5,
+          "prevEventCount": 0,
+          "sessions": 3,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEvents": 0,
+          "prevKeyEvents": 0,
+          "secondary": "review_click"
+        },
+        {
+          "key": "Casa Antonio A",
+          "eventCount": 2,
+          "prevEventCount": 0,
+          "sessions": 2,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEvents": 0,
+          "prevKeyEvents": 0,
+          "secondary": "inquiry_click"
+        }
+      ],
+      "truncated": false
+    },
+    "keyevents": {
+      "siteUrl": "sc-domain:casaantonio.jp",
+      "propertyId": "properties/556764779",
+      "siteScope": null,
+      "dataSource": "ga4-api",
+      "range": {
+        "startDate": "2026-10-01",
+        "endDate": "2026-10-11"
+      },
+      "comparisonRange": null,
+      "hasComparison": false,
+      "keyEventNames": [
+        "airbnb_click",
+        "contact_click",
+        "inquiry_click",
+        "purchase"
+      ],
+      "keyEvents": [
+        {
+          "key": "airbnb_click",
+          "keyEventCount": 14,
+          "prevKeyEventCount": 0,
+          "totalUsers": 2,
+          "prevTotalUsers": 0
+        }
+      ],
+      "propertyDisplayName": "CasaAntonio",
+      "currencyCode": "JPY",
+      "timeZone": "Asia/Tokyo",
+      "keyEvent": "inquiry_click",
+      "isKeyEvent": true,
+      "metricMode": "per_event_metrics",
+      "rawEventCount": 2,
+      "prevRawEventCount": null,
+      "note": "\"inquiry_click\" fired 2 times in this period, but GA4 counted 0 of them as key events. Key-event counting is not retroactive (occurrences from before the event was marked as a key event stay plain events), and a key event set to count once per session counts at most one per session. rawEventCount is the plain event count; keyEventCount and the conversion rates use GA4's key-event count.",
+      "summary": {
+        "keyEventCount": 0,
+        "sessionKeyEventRate": 0,
+        "userKeyEventRate": 0,
+        "sessions": 46,
+        "activeUsers": 40,
+        "totalUsers": 40,
+        "allKeyEvents": 14,
+        "eventCount": 307
+      },
+      "prevSummary": null,
+      "channels": [
+        {
+          "key": "Direct",
+          "sessions": 42,
+          "prevSessions": 0,
+          "activeUsers": 38,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "Referral",
+          "sessions": 3,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "Organic Search",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        }
+      ],
+      "sources": [
+        {
+          "key": "(direct) / (none)",
+          "sessions": 42,
+          "prevSessions": 0,
+          "activeUsers": 38,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "tagassistant.google.com / referral",
+          "sessions": 3,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "google / organic",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        }
+      ],
+      "landingPages": [
+        {
+          "key": "/",
+          "sessions": 41,
+          "prevSessions": 0,
+          "activeUsers": 38,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "/casa-antonio-a",
+          "sessions": 2,
+          "prevSessions": 0,
+          "activeUsers": 2,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "/arrival",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "/casa-antonio-b",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "/faq",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        }
+      ],
+      "pages": [
+        {
+          "key": "/",
+          "screenPageViews": 51,
+          "prevScreenPageViews": 0,
+          "sessions": 42,
+          "prevSessions": 0,
+          "activeUsers": 38,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0
+        },
+        {
+          "key": "/casa-antonio-a/",
+          "screenPageViews": 15,
+          "prevScreenPageViews": 0,
+          "sessions": 7,
+          "prevSessions": 0,
+          "activeUsers": 3,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0
+        },
+        {
+          "key": "/neighborhood/",
+          "screenPageViews": 9,
+          "prevScreenPageViews": 0,
+          "sessions": 2,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0
+        },
+        {
+          "key": "/casa-antonio-b/",
+          "screenPageViews": 8,
+          "prevScreenPageViews": 0,
+          "sessions": 5,
+          "prevSessions": 0,
+          "activeUsers": 3,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0
+        },
+        {
+          "key": "/day-trips/",
+          "screenPageViews": 6,
+          "prevScreenPageViews": 0,
+          "sessions": 2,
+          "prevSessions": 0,
+          "activeUsers": 2,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0
+        }
+      ],
+      "countries": [
+        {
+          "key": "United States",
+          "sessions": 26,
+          "prevSessions": 0,
+          "activeUsers": 26,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "Japan",
+          "sessions": 9,
+          "prevSessions": 0,
+          "activeUsers": 3,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "Taiwan",
+          "sessions": 5,
+          "prevSessions": 0,
+          "activeUsers": 5,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "Germany",
+          "sessions": 2,
+          "prevSessions": 0,
+          "activeUsers": 2,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "China",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        }
+      ],
+      "devices": [
+        {
+          "key": "desktop",
+          "sessions": 34,
+          "prevSessions": 0,
+          "activeUsers": 32,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        },
+        {
+          "key": "mobile",
+          "sessions": 12,
+          "prevSessions": 0,
+          "activeUsers": 8,
+          "prevActiveUsers": 0,
+          "keyEventCount": 0,
+          "prevKeyEventCount": 0,
+          "sessionKeyEventRate": 0,
+          "prevSessionKeyEventRate": 0
+        }
+      ]
+    },
+    "landing": {
+      "siteUrl": "sc-domain:casaantonio.jp",
+      "propertyId": "properties/556764779",
+      "siteScope": null,
+      "dataSource": "ga4-api",
+      "timeZone": "Asia/Tokyo",
+      "range": {
+        "startDate": "2026-10-01",
+        "endDate": "2026-10-11"
+      },
+      "comparisonRange": null,
+      "hasComparison": false,
+      "dimension": "landingPage",
+      "secondaryDimension": null,
+      "metrics": [
+        "sessions",
+        "activeUsers",
+        "bounceRate",
+        "keyEvents",
+        "totalRevenue"
+      ],
+      "rowCount": 5,
+      "totalRows": 5,
+      "truncated": false,
+      "rows": [
+        {
+          "key": "/",
+          "sessions": 41,
+          "prevSessions": 0,
+          "activeUsers": 38,
+          "prevActiveUsers": 0,
+          "bounceRate": 0.8292682926829268,
+          "prevBounceRate": 0,
+          "keyEvents": 6,
+          "prevKeyEvents": 0,
+          "totalRevenue": 0,
+          "prevTotalRevenue": 0
+        },
+        {
+          "key": "/casa-antonio-a",
+          "sessions": 2,
+          "prevSessions": 0,
+          "activeUsers": 2,
+          "prevActiveUsers": 0,
+          "bounceRate": 0,
+          "prevBounceRate": 0,
+          "keyEvents": 6,
+          "prevKeyEvents": 0,
+          "totalRevenue": 0,
+          "prevTotalRevenue": 0
+        },
+        {
+          "key": "/arrival",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "bounceRate": 1,
+          "prevBounceRate": 0,
+          "keyEvents": 0,
+          "prevKeyEvents": 0,
+          "totalRevenue": 0,
+          "prevTotalRevenue": 0
+        },
+        {
+          "key": "/casa-antonio-b",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "bounceRate": 0,
+          "prevBounceRate": 0,
+          "keyEvents": 2,
+          "prevKeyEvents": 0,
+          "totalRevenue": 0,
+          "prevTotalRevenue": 0
+        },
+        {
+          "key": "/faq",
+          "sessions": 1,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "bounceRate": 1,
+          "prevBounceRate": 0,
+          "keyEvents": 0,
+          "prevKeyEvents": 0,
+          "totalRevenue": 0,
+          "prevTotalRevenue": 0
+        }
+      ]
+    },
+    "event_dates": {
+      "siteUrl": "sc-domain:casaantonio.jp",
+      "propertyId": "properties/556764779",
+      "siteScope": null,
+      "dataSource": "ga4-api",
+      "timeZone": "Asia/Tokyo",
+      "range": {
+        "startDate": "2026-10-01",
+        "endDate": "2026-10-11"
+      },
+      "comparisonRange": null,
+      "hasComparison": false,
+      "dimension": "event",
+      "secondaryDimension": "date",
+      "metrics": [
+        "eventCount",
+        "totalUsers"
+      ],
+      "rowCount": 6,
+      "totalRows": 6,
+      "truncated": false,
+      "rows": [
+        {
+          "key": "airbnb_click",
+          "date": "2026-10-01",
+          "eventCount": 12,
+          "prevEventCount": 0,
+          "totalUsers": 1,
+          "prevTotalUsers": 0
+        },
+        {
+          "key": "review_click",
+          "date": "2026-10-06",
+          "eventCount": 3,
+          "prevEventCount": 0,
+          "totalUsers": 1,
+          "prevTotalUsers": 0
+        },
+        {
+          "key": "airbnb_click",
+          "date": "2026-10-06",
+          "eventCount": 2,
+          "prevEventCount": 0,
+          "totalUsers": 1,
+          "prevTotalUsers": 0
+        },
+        {
+          "key": "inquiry_click",
+          "date": "2026-10-06",
+          "eventCount": 1,
+          "prevEventCount": 0,
+          "totalUsers": 1,
+          "prevTotalUsers": 0
+        },
+        {
+          "key": "review_click",
+          "date": "2026-10-08",
+          "eventCount": 2,
+          "prevEventCount": 0,
+          "totalUsers": 1,
+          "prevTotalUsers": 0
+        },
+        {
+          "key": "inquiry_click",
+          "date": "2026-10-08",
+          "eventCount": 1,
+          "prevEventCount": 0,
+          "totalUsers": 1,
+          "prevTotalUsers": 0
+        }
+      ]
+    },
+    "provider": {
+      "siteUrl": "sc-domain:casaantonio.jp",
+      "propertyId": "properties/556764779",
+      "siteScope": null,
+      "dataSource": "ga4-api",
+      "range": {
+        "startDate": "2026-10-01",
+        "endDate": "2026-10-11"
+      },
+      "comparisonRange": null,
+      "hasComparison": false,
+      "availableDimensions": [
+        "customEvent:apartment_name",
+        "customEvent:contact_method",
+        "customEvent:intent",
+        "customEvent:link_location",
+        "customEvent:page_language",
+        "customEvent:provider",
+        "customEvent:selected_language"
+      ],
+      "availableMetrics": [],
+      "timeZone": "Asia/Tokyo",
+      "dimension": "customEvent:provider",
+      "secondaryDimension": "eventName",
+      "metrics": [
+        "eventCount",
+        "sessions",
+        "activeUsers",
+        "keyEvents"
+      ],
+      "summary": {
+        "eventCount": 21,
+        "sessions": 6,
+        "activeUsers": 2,
+        "totalUsers": 2,
+        "keyEvents": 14
+      },
+      "prevSummary": null,
+      "rowCount": 3,
+      "totalRows": 3,
+      "rows": [
+        {
+          "key": "(not set)",
+          "eventCount": 14,
+          "prevEventCount": 0,
+          "sessions": 4,
+          "prevSessions": 0,
+          "activeUsers": 2,
+          "prevActiveUsers": 0,
+          "keyEvents": 14,
+          "prevKeyEvents": 0,
+          "secondary": "airbnb_click"
+        },
+        {
+          "key": "(not set)",
+          "eventCount": 5,
+          "prevEventCount": 0,
+          "sessions": 3,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEvents": 0,
+          "prevKeyEvents": 0,
+          "secondary": "review_click"
+        },
+        {
+          "key": "(not set)",
+          "eventCount": 2,
+          "prevEventCount": 0,
+          "sessions": 2,
+          "prevSessions": 0,
+          "activeUsers": 1,
+          "prevActiveUsers": 0,
+          "keyEvents": 0,
+          "prevKeyEvents": 0,
+          "secondary": "inquiry_click"
+        }
+      ],
+      "truncated": false
+    }
+  }
+}

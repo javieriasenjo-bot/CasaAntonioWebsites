@@ -1,5 +1,9 @@
 # Remaining account checks — 11 October 2026
 
+**12 October update:** `inquiry_click` is now confirmed as a GA4 key event; its earlier clicks are not retroactively converted. The website has no direct email/phone/LINE/WhatsApp link, so contact receipt is conditional rather than an outstanding guest-journey defect. See `GROWTH_ACTIONS_2026-10-12.md` and `qa/growth-review-2026-10-12.json` for the latest account/search checks. Historical findings below retain their original dates.
+
+**Social-account clarification:** the owner confirmed on 12 October that Casa Antonio has no social accounts. Profile/post publishing is a future task after account creation, not a pending edit to an existing account. Keep Kojohama profiles unchanged. No social account has been created.
+
 ## Verified directly through GSC Wizard / GA4 APIs
 
 Property: `properties/556764779` (CasaAntonio). Reporting timezone: `Asia/Tokyo`. All seven custom dimensions are registered and queryable: apartment_name, contact_method, intent, link_location, page_language, provider, selected_language.
