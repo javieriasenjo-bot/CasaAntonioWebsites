@@ -103,6 +103,8 @@ Media clarification: the supplied Casa A/B folders contain 89 and 50 JPEGs respe
 
 ## Evidence and next handover
 
+**13 October redirect email resolved:** the supplied ZIP lists slashless A, B and arrival. Live checks show one 307 hop to each corresponding trailing-slash page; all three destinations return 200 and Google URL Inspection confirms PASS / Submitted and indexed with matching canonicals. The validation failure reflects intentional redirects that remain in place, not a broken destination. Do not restart that validation just to clear the category. See `SEARCH_REDIRECT_NOTICE_2026-10-13.md`. This finding does not resolve the separate 404 validation UI status.
+
 `qa/search-handover-2026-10-12.json`: both sitemap APIs and 12 URL inspections. `qa/handover-audit-2026-10-12.json`: current page/image/schema audit and live redirects/Metricool presence. `qa/live-gtm-2026-10-12.json`: intercepted GA4 runtime requests. `qa/growth-review-2026-10-12.json`: search/analytics baseline. `CONTENT_PROVENANCE.md`: confirmed owner facts and historical photo/review provenance.
 
 Calendar/account reports above do not prove inaccessible private UI settings. Metricool code is now visible in production, but dashboard receipt remains separate. No direct Google/OTA/social account edit or new reminder is claimed.
