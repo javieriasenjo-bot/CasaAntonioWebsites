@@ -5,6 +5,7 @@ import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
 import { house } from "@/data/active";
 import { useLang } from "@/lib/i18n";
+import { preparationGuestFacts } from "@/data/property-facts";
 
 export function Arrival() {
   const { lang } = useLang();
@@ -32,6 +33,7 @@ export function Arrival() {
                 <dd>{item.v}</dd>
               </div>
             ))}
+            {preparationGuestFacts(lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
           </dl>
           <div className="two-col arrival-cols">
             <div>

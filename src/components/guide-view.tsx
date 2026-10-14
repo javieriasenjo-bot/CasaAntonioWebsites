@@ -6,14 +6,14 @@ import { PhotoCredit } from "@/components/photo-credit";
 import { Shell } from "@/components/chrome";
 import { house } from "@/data/active";
 import { OFFICIAL, OfficialLinks } from "@/components/official-links";
-import { FAQ } from "@/lib/seo";
+import { faqItems } from "@/lib/seo";
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { airportBoardingText } from "@/data/travel-facts";
 
 export function FaqList() {
   const { lang } = useLang();
-  const items = FAQ[lang];
+  const items = faqItems(lang);
   return (
     <div className="faq-list">
       {items.map((item) => (

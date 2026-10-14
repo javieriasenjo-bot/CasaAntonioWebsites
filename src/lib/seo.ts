@@ -1,5 +1,5 @@
 import { AIRBNB, MAP } from "@/data/facts";
-import { DAMAGE_POLICY, PROPERTY_FACTS } from "@/data/property-facts";
+import { DAMAGE_POLICY, PROPERTY_FACTS, preparationFaq } from "@/data/property-facts";
 import { photoFile, photoMeta } from "@/lib/photo-manifest";
 import { FONT_STYLESHEET } from "@/lib/fonts";
 import {
@@ -491,7 +491,7 @@ function apartment(id: "a" | "b", lang: Lang) {
 }
 
 export function faqEntities(lang: Lang) {
-  const q = FAQ[lang];
+  const q = faqItems(lang);
   return q.map((item) => ({
     "@type": "Question",
     name: item.q,
@@ -669,6 +669,10 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
   ],
 };
+
+export function faqItems(lang: Lang) {
+  return [...FAQ[lang], ...preparationFaq(lang)];
+}
 
 function article(page: PageId, lang: Lang) {
   const meta = pageMeta(page, lang);

@@ -4,6 +4,7 @@ import type { Lang } from "@/lib/paths";
 export const PROPERTY_FACTS = {
   confirmedOn: "2026-10-06",
   parking: { carsPerApartment: 1, free: true },
+  guestPreparation: { confirmedOn: "2026-10-14", cot: false, highChair: false, snowClearedBy: "host/property management", seasonings: "oil, salt and pepper usually removed between stays for hygiene" },
   damage: { minimumJPY: 15000, basis: "actual repair costs" },
   bedWidthsCM: { Single: 90, Double: 130 },
   arrival: { checkin: "16:00–23:00", checkout: "10:00" },
@@ -72,5 +73,36 @@ export function practicalGuestFacts(id: "a" | "b", lang: Lang): [string, string]
     zh: [`单人床${widths.Single}厘米${id === "a" ? `・双人床${widths.Double}厘米` : ""}`, `自助入住${checkin}・${checkout}前退房`, "每套公寓免费停一辆车，可停大型汽车。使用车位请在预订时告知房东", id === "b" ? "洗衣机及洗衣房内的晾衣空间" : "洗衣机及晾衣架", id === "b" ? `二楼・约${steps}级台阶，设有扶手` : "一楼"],
     ko: [`싱글 ${widths.Single}cm${id === "a" ? ` · 더블 ${widths.Double}cm` : ""}`, `셀프 체크인 ${checkin} · 체크아웃 ${checkout}까지`, "아파트당 무료 주차 1대, 대형 차량도 주차 가능. 이용 시 예약할 때 호스트에게 알려 주세요", id === "b" ? "세탁기와 세탁실 안의 빨래 건조 공간" : "세탁기와 빨래 건조대", id === "b" ? `2층 · 약 ${steps}개 계단, 손잡이 있음` : "1층"],
   }[lang];
-  return labels.map((label, i) => [label, values[i]]);
+  return [...labels.map((label, i) => [label, values[i]] as [string, string]), ...preparationGuestFacts(lang)];
+}
+
+const PREPARATION: Record<Lang, { label: string; question: string; answer: string }[]> = {
+  en: [
+    { label: "Winter parking", question: "Who clears parking snow?", answer: "The host/property management company clears parking snow. Guests are not responsible for snow clearing." },
+    { label: "Family equipment", question: "Is a cot or high chair available?", answer: "Neither apartment provides a cot or high chair. Please plan accordingly when travelling with young children." },
+    { label: "Seasonings", question: "Are oil, salt and pepper supplied?", answer: "Oil, salt and pepper are usually removed between stays for hygiene. Please bring the seasonings you need." },
+  ],
+  ja: [
+    { label: "冬の駐車場", question: "駐車場の除雪は誰が行いますか？", answer: "駐車場の除雪はホスト・管理会社が行います。ゲストの方に除雪をお願いすることはありません。" },
+    { label: "お子さま用の備品", question: "ベビーベッドやハイチェアはありますか？", answer: "A・Bともにベビーベッドとハイチェアはご用意していません。小さなお子さま連れの場合は、必要なものをご準備ください。" },
+    { label: "調味料", question: "油・塩・こしょうはありますか？", answer: "衛生上の理由により、油・塩・こしょうは通常、滞在ごとに撤去しています。必要な調味料はご持参ください。" },
+  ],
+  zh: [
+    { label: "冬季停车", question: "停车位的积雪由谁清理？", answer: "停车位的积雪由房东或物业管理公司清理，客人不负责除雪。" },
+    { label: "儿童用品", question: "是否提供婴儿床或儿童高脚椅？", answer: "A和B均不提供婴儿床或儿童高脚椅。携带幼儿入住时，请提前准备所需用品。" },
+    { label: "调味料", question: "是否提供油、盐和胡椒？", answer: "出于卫生考虑，油、盐和胡椒通常会在每次入住之间移除。请自备所需调味料。" },
+  ],
+  ko: [
+    { label: "겨울 주차", question: "주차장의 눈은 누가 치우나요?", answer: "주차장 제설은 호스트 또는 관리 회사가 담당합니다. 게스트에게 제설을 요청하지 않습니다." },
+    { label: "유아용 비품", question: "아기 침대나 유아용 식탁 의자가 있나요?", answer: "A와 B 모두 아기 침대와 유아용 식탁 의자를 제공하지 않습니다. 어린 자녀와 여행할 경우 필요한 용품을 미리 준비해 주세요." },
+    { label: "조미료", question: "식용유, 소금, 후추가 제공되나요?", answer: "위생을 위해 식용유, 소금, 후추는 보통 숙박 사이에 치웁니다. 필요한 조미료는 직접 가져와 주세요." },
+  ],
+};
+
+export function preparationGuestFacts(lang: Lang): [string, string][] {
+  return PREPARATION[lang].map(item => [item.label, item.answer]);
+}
+
+export function preparationFaq(lang: Lang) {
+  return PREPARATION[lang].map(item => ({ q: item.question, a: item.answer }));
 }
