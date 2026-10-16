@@ -1,0 +1,233 @@
+{
+  "checkedAt": "2026-10-16T05:38:45.895Z",
+  "collection": "All GA4 requests intercepted and aborted; no GA4 receipt or email delivery claimed.",
+  "results": [
+    {
+      "path": "/casa-antonio-b/",
+      "event": "airbnb_click",
+      "selector": "a[data-property=\"b\"][data-intent=\"booking\"]",
+      "count": 1,
+      "queued": [
+        {
+          "event": "gtm.js"
+        },
+        {
+          "event": "gtm.dom"
+        },
+        {
+          "event": "gtm.load"
+        },
+        {
+          "event": "airbnb_click",
+          "provider": "airbnb",
+          "property": "b"
+        }
+      ],
+      "allCollectedEvents": [
+        "page_view",
+        "airbnb_click"
+      ],
+      "parameters": [
+        {
+          "tid": "G-3V83R0Z48F",
+          "en": "airbnb_click",
+          "ep.apartment_name": "Casa Antonio B",
+          "ep.destination_url": "https://www.airbnb.com/rooms/1248260873560502499",
+          "ep.page_language": "en",
+          "ep.link_location": "stay-b",
+          "ep.source_url": "https://casaantonio.jp/casa-antonio-b/",
+          "ep.provider": "airbnb",
+          "ep.intent": "booking",
+          "ep.property": "b"
+        }
+      ]
+    },
+    {
+      "path": "/casa-antonio-b/",
+      "event": "review_click",
+      "selector": "a[data-intent=\"reviews\"][href*=\"airbnb.com\"]",
+      "count": 1,
+      "queued": [
+        {
+          "event": "gtm.js"
+        },
+        {
+          "event": "gtm.dom"
+        },
+        {
+          "event": "gtm.load"
+        },
+        {
+          "event": "review_click",
+          "provider": "airbnb",
+          "property": "b"
+        }
+      ],
+      "allCollectedEvents": [
+        "page_view",
+        "review_click"
+      ],
+      "parameters": [
+        {
+          "tid": "G-3V83R0Z48F",
+          "en": "review_click",
+          "ep.apartment_name": "Casa Antonio B",
+          "ep.destination_url": "https://www.airbnb.com/rooms/1248260873560502499",
+          "ep.page_language": "en",
+          "ep.link_location": "reviews",
+          "ep.source_url": "https://casaantonio.jp/casa-antonio-b/",
+          "ep.provider": "airbnb",
+          "ep.intent": "reviews",
+          "ep.property": "b"
+        }
+      ]
+    },
+    {
+      "path": "/casa-antonio-b/",
+      "event": "review_click",
+      "selector": "a[data-intent=\"reviews\"][href*=\"booking.com\"]",
+      "count": 1,
+      "queued": [
+        {
+          "event": "gtm.js"
+        },
+        {
+          "event": "gtm.dom"
+        },
+        {
+          "event": "gtm.load"
+        },
+        {
+          "event": "review_click",
+          "provider": "booking",
+          "property": "b"
+        }
+      ],
+      "allCollectedEvents": [
+        "page_view",
+        "review_click"
+      ],
+      "parameters": [
+        {
+          "tid": "G-3V83R0Z48F",
+          "en": "review_click",
+          "ep.apartment_name": "Casa Antonio B",
+          "ep.destination_url": "https://www.booking.com/hotel/jp/casa-antonio-b.html",
+          "ep.page_language": "en",
+          "ep.link_location": "reviews",
+          "ep.source_url": "https://casaantonio.jp/casa-antonio-b/",
+          "ep.provider": "booking",
+          "ep.intent": "reviews",
+          "ep.property": "b"
+        }
+      ]
+    },
+    {
+      "path": "/long-stay/",
+      "event": "inquiry_click",
+      "selector": "a[data-property=\"b\"][data-intent=\"inquiry\"]",
+      "count": 1,
+      "queued": [
+        {
+          "event": "gtm.js"
+        },
+        {
+          "event": "gtm.dom"
+        },
+        {
+          "event": "gtm.load"
+        },
+        {
+          "event": "inquiry_click",
+          "provider": "airbnb",
+          "property": "b"
+        }
+      ],
+      "allCollectedEvents": [
+        "page_view",
+        "inquiry_click"
+      ],
+      "parameters": [
+        {
+          "tid": "G-3V83R0Z48F",
+          "en": "inquiry_click",
+          "ep.apartment_name": "Casa Antonio B",
+          "ep.destination_url": "https://www.airbnb.com/rooms/1248260873560502499",
+          "ep.page_language": "en",
+          "ep.link_location": "long-stay-top",
+          "ep.source_url": "https://casaantonio.jp/long-stay/",
+          "ep.provider": "airbnb",
+          "ep.intent": "inquiry",
+          "ep.property": "b"
+        }
+      ]
+    },
+    {
+      "path": "/neighborhood/",
+      "event": "map_click",
+      "selector": "a[data-map-provider=\"google\"]",
+      "count": 1,
+      "queued": [
+        {
+          "event": "gtm.js"
+        },
+        {
+          "event": "gtm.dom"
+        },
+        {
+          "event": "gtm.load"
+        },
+        {
+          "event": "map_click"
+        }
+      ],
+      "allCollectedEvents": [
+        "page_view",
+        "map_click"
+      ],
+      "parameters": [
+        {
+          "tid": "G-3V83R0Z48F",
+          "en": "map_click",
+          "ep.map_provider": "google",
+          "ep.page_language": "en",
+          "ep.source_url": "https://casaantonio.jp/neighborhood/",
+          "ep.destination_url": "https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E5%B1%B1%E9%BE%8D+%E6%9C%AD%E5%B9%8C%E5%B8%82%E5%8C%97%E5%8C%BA%E9%BA%BB%E7%94%9F%E7%94%BA2-4-8"
+        }
+      ]
+    },
+    {
+      "path": "/long-stay/",
+      "event": "contact_click",
+      "selector": "a[href^=\"mailto:\"]",
+      "count": 1,
+      "queued": [
+        {
+          "event": "gtm.js"
+        },
+        {
+          "event": "gtm.dom"
+        },
+        {
+          "event": "gtm.load"
+        },
+        {
+          "event": "contact_click"
+        }
+      ],
+      "allCollectedEvents": [
+        "page_view",
+        "contact_click"
+      ],
+      "parameters": [
+        {
+          "tid": "G-3V83R0Z48F",
+          "en": "contact_click",
+          "ep.contact_method": "email",
+          "ep.page_language": "en",
+          "ep.link_location": "long-stay-top-email"
+        }
+      ]
+    }
+  ]
+}

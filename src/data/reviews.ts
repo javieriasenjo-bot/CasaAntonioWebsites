@@ -1,4 +1,5 @@
-// Real guest reviews, copied verbatim from the two Airbnb listings (checked 2026-10-01).
+// Guest reviews cross-checked against the public Airbnb review dialogs on 2026-10-16.
+// Excerpts are labelled explicitly; preserve original wording and material qualifications.
 // Quotes marked `translated: true` are Airbnb's own English translation of the original.
 // Update rating/count when they change on Airbnb. Never invent or edit a quote.
 
@@ -9,6 +10,7 @@ export type ReviewQuote = {
   country: string; // guest location as shown on Airbnb; "" when Airbnb shows none
   text: string;
   translated?: boolean;
+  excerpt?: boolean;
 };
 
 export type StayReviews = {
@@ -22,7 +24,7 @@ export type StayReviews = {
 
 export const reviews: { a: StayReviews; b: StayReviews } = {
   a: {
-    recordedOn: "2026-10-01",
+    recordedOn: "2026-10-16",
     rating: 4.87,
     count: 30,
     quotes: [
@@ -30,59 +32,62 @@ export const reviews: { a: StayReviews; b: StayReviews } = {
         name: "Kelly",
         when: "December 2025",
         country: "",
-        text: "Best stay of my Hokkaido trip! The place was squeaky clean and the interior design is very modern.",
+        text: "Best stay of my Hokkaido trip!\nThe place was squeaky clean and the interior design is very modern\nBut since we stay there during winter so the floor outside is full of ice, so it’s not so convenient if you are not driving a car to this place\nThanks for the responsive host too!",
       },
       {
         name: "Yoshef Wisnu",
         when: "May 2025",
         country: "",
-        text: "The property we stayed at truly felt like home. The location is extremely strategic—close to restaurants, Aeon supermarket, Asabu Station, and the bus stop.",
+        text: "Wow, the property we stayed at truly felt like home. The location is extremely strategic—close to restaurants, Aeon supermarket, Asabu Station, and the bus stop.",
+        excerpt: true,
       },
       {
-        name: "安",
-        when: "January 2025",
-        country: "Ichikawa, Japan",
-        text: "A beautifully designed house that feels just like home. For someone from a place without snow, the most memorable part is how warm the house is.",
+        name: "Junko",
+        when: "August 2026",
+        country: "Shinagawa, Japan",
+        text: "It was very clean and a pleasant place to stay.\nI was bothered by the loud footsteps of the family staying on the second floor early in the morning and late at night, but otherwise it was very comfortable.I want to stay there again!",
+        translated: true,
       },
       {
         name: "Hiromi O",
         when: "July 2025",
         country: "Hickory, North Carolina",
-        text: "All the rooms were beautiful and new, and we had a very pleasant time.",
+        text: "The living room, hallway, and bedroom were air-conditioned, making it a very pleasant place to stay.All the rooms were beautiful and new, and we had a very pleasant time.",
         translated: true,
       },
     ],
     href: "https://www.airbnb.com/rooms/1248284267045468378",
   },
   b: {
-    recordedOn: "2026-10-12",
+    recordedOn: "2026-10-16",
     rating: 4.95,
-    count: 21,
+    count: 22,
     guestFavorite: true,
     quotes: [
       {
         name: "Supattra",
         when: "December 2025",
         country: "",
-        text: "The house truly felt brand new and was extremely clean and well-maintained. We were especially impressed by the projector, which was a great touch and made the stay even more enjoyable.",
+        text: "The house truly felt brand new and was extremely clean and well-maintained. The facilities were modern, beautiful, and fully equipped with everything we needed, making our stay very comfortable.\nWe were especially impressed by the projector, which was a great touch and made the stay even more enjoyable.",
+        excerpt: true,
       },
       {
         name: "Yolanda",
         when: "February 2026",
         country: "",
-        text: "A short walk from the station which saves us a lot of hassle dragging our luggage through the snow! The house was comfortable and warm.",
+        text: "A short walk from the station which saves us a lot of hassle dragging our luggage through the snow! The house was comfortable and warm, happy to book here another time if i were to go Sapporo again!",
       },
       {
         name: "Yuki",
         when: "August 2025",
         country: "Marina, California",
-        text: "It was very cozy and quiet, clean house. Also, very close to subway to get to Sapporo station. Kitchen and washer machine are helpful.",
+        text: "It was very cozy and quiet, clean house. Also, very close to subway to get to Sapporo station. Kitchen and washer machine are helpful. Host responded promptly. Our family enjoyed the stay a lot. We will definitely stay again when we come back to Sapporo.",
       },
       {
         name: "Leonard",
         when: "December 2024",
         country: "Singapore",
-        text: "We really love the space of the accommodation. There's a dedicated living room, dining area and huge bathroom as well.",
+        text: "We really love the space of the accommodation. There's a dedicated living room, dining area and huge bathroom as well. Also an area to hang your laundry.\nFree parking is also a big plus.\none thing to note is the accommodation is on the 2nd floor so there's a need to climb a flight of stairs. something to consider when booking\nLocation is walkable from Asabu station.\nOverall, we love the space and the amenities of the home, it was top notch.",
       },
     ],
     href: "https://www.airbnb.com/rooms/1248260873560502499",
@@ -93,7 +98,7 @@ export function reviewReady(stay: StayReviews) {
   return stay.rating != null && stay.count != null && stay.quotes.length >= 3 && stay.quotes.every((quote) => quote.text && quote.name);
 }
 
-// Booking.com: real scores and guest comments copied from the two Booking.com listings (checked 2026-10-04).
+// Booking.com: real scores and guest comments copied from the two Booking.com listings (cross-checked 2026-10-16).
 // Scores are out of 10. Comments are shown in the guest's own language (`lang`); some are the opening lines of
 // a longer review (Booking.com truncates them) and are marked `excerpt`. Never invent or edit a quote.
 export type BookingQuote = { name: string; country: string; lang: "en" | "ja" | "zh"; text: string; excerpt?: boolean; sourceUrl?: string; reviewDate?: string };
@@ -101,10 +106,10 @@ export type BookingReviews = { recordedOn: string; score: number; count: number;
 
 export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
   a: {
-    recordedOn: "2026-10-04",
-    score: 8.9,
-    count: 23,
-    label: "Fabulous",
+    recordedOn: "2026-10-16",
+    score: 9.0,
+    count: 24,
+    label: "Wonderful",
     href: "https://www.booking.com/hotel/jp/casa-antonio-a.html",
     quotes: [
       { name: "Aloysius", country: "Singapore", lang: "en", text: "Really comfortable and nice space. Message and concerns were addressed fast" },
@@ -115,7 +120,7 @@ export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
     ],
   },
   b: {
-    recordedOn: "2026-10-04",
+    recordedOn: "2026-10-16",
     score: 9.7,
     count: 26,
     label: "Exceptional",

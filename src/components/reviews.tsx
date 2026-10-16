@@ -3,8 +3,8 @@ import { bookingReviews, reviewReady, reviews, type BookingReviews, type StayRev
 import { useLang, type Lang } from "@/lib/i18n";
 
 const LABEL: Record<Lang, { title: string; reviews: string; favorite: string; translated: string; all: string; bookingAll: string; more: string; less: string; original: string; excerpt: string; ofTen: string }> = {
-  en: { title: "What guests say", reviews: "reviews", favorite: "Guest favorite", translated: "Translated by Airbnb", all: "Read all reviews on Airbnb", bookingAll: "Read all reviews on Booking.com", more: "Show more reviews", less: "Show fewer", original: "Original language", excerpt: "opening lines", ofTen: "/10" },
-  ja: { title: "ゲストの声", reviews: "件のレビュー", favorite: "ゲストのお気に入り", translated: "Airbnbによる英訳", all: "Airbnbですべてのレビューを見る", bookingAll: "Booking.comですべてのレビューを見る", more: "レビューをもっと見る", less: "閉じる", original: "原文", excerpt: "冒頭のみ", ofTen: "/10" },
+  en: { title: "What guests say", reviews: "reviews", favorite: "Guest favorite", translated: "Translated by Airbnb", all: "Read all reviews on Airbnb", bookingAll: "Read all reviews on Booking.com", more: "Show more reviews", less: "Show fewer", original: "Original language", excerpt: "excerpt", ofTen: "/10" },
+  ja: { title: "ゲストの声", reviews: "件のレビュー", favorite: "ゲストのお気に入り", translated: "Airbnbによる英訳", all: "Airbnbですべてのレビューを見る", bookingAll: "Booking.comですべてのレビューを見る", more: "レビューをもっと見る", less: "閉じる", original: "原文", excerpt: "抜粋", ofTen: "/10" },
   zh: { title: "住客评价", reviews: "条评价", favorite: "房客推荐", translated: "Airbnb 翻译", all: "在 Airbnb 查看全部评价", bookingAll: "在 Booking.com 查看全部评价", more: "查看更多评价", less: "收起", original: "原文", excerpt: "节选", ofTen: "/10" },
   ko: { title: "게스트 후기", reviews: "개의 후기", favorite: "게스트 선호", translated: "Airbnb 번역", all: "Airbnb에서 모든 후기 보기", bookingAll: "Booking.com에서 모든 후기 보기", more: "후기 더 보기", less: "접기", original: "원문", excerpt: "일부 발췌", ofTen: "/10" },
 };
@@ -29,7 +29,7 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
       items.push({
         key: `a-${q.name}-${q.when}`,
         text: q.text,
-        meta: [q.name, q.country, q.when].filter(Boolean).join(" · ") + (q.translated ? ` · ${l.translated}` : ""),
+        meta: [q.name, q.country, q.when].filter(Boolean).join(" · ") + (q.translated ? ` · ${l.translated}` : "") + (q.excerpt ? ` · ${l.excerpt}` : ""),
         source: "Airbnb",
         sourceUrl: q.sourceUrl,
         lang: "en",
