@@ -1,0 +1,267 @@
+{
+  "checkedAt": "2026-10-16T08:37:09.126Z",
+  "routes": 52,
+  "method": "Public HTTP fetch and normalized server-rendered body comparison against the locally tested build. No signed-in account access or browser-interaction check.",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/access/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/arrival/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/casa-antonio-a/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/casa-antonio-b/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/combo/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/day-trips/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/faq/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/access/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/arrival/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/casa-antonio-a/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/casa-antonio-b/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/combo/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/day-trips/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/faq/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/long-stay/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/neighborhood/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/privacy/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/snow-festival/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ja/teine-ski/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/access/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/arrival/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/casa-antonio-a/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/casa-antonio-b/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/combo/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/day-trips/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/faq/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/long-stay/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/neighborhood/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/privacy/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/snow-festival/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/ko/teine-ski/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/long-stay/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/neighborhood/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/privacy/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/snow-festival/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/teine-ski/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/access/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/arrival/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/casa-antonio-a/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/casa-antonio-b/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/combo/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/day-trips/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/faq/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/long-stay/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/neighborhood/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/privacy/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/snow-festival/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    },
+    {
+      "path": "/zh-cn/teine-ski/",
+      "status": 200,
+      "bodyMatchesLocal": true
+    }
+  ]
+}
