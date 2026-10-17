@@ -104,6 +104,41 @@ try {
     await assertFallback(page); results.push({ scenario: "no JavaScript", path: `/${prefix}`, passed: true });
     await ctx.close();
   }
+  // Mobile browser bars and larger text must never clip the hero's heading
+  // or force the menu/language controls to overlap or lose touch-target size.
+  for (const prefix of ["", "ja/", "zh-cn/", "ko/"]) {
+    const ctx = await context({ javaScriptEnabled: false });
+    const page = await ctx.newPage();
+    await page.goto(`${origin}/${prefix}`, { waitUntil: "domcontentloaded" });
+    await page.waitForLoadState("load");
+    for (const viewport of [{ width: 320, height: 568 }, { width: 393, height: 650 }, { width: 430, height: 740 }, { width: 844, height: 390 }]) {
+      await page.setViewportSize(viewport);
+      for (const fontSize of ["100%", "125%"]) {
+        await page.evaluate(size => { document.documentElement.style.fontSize = size; }, fontSize);
+        // Script-disabled pages do not run animation-frame callbacks.
+        await page.waitForTimeout(50);
+        const layout = await page.evaluate(() => {
+          const rect = selector => document.querySelector(selector).getBoundingClientRect();
+          const hero = rect(".hero"), header = rect(".site-header"), menu = rect(".menu-toggle"), languages = rect(".language-switcher");
+          return {
+            heroContentFits: [...document.querySelectorAll(".hero-overlay > *")].every(element => {
+              const r = element.getBoundingClientRect();
+              return r.top >= hero.top - 1 && r.bottom <= hero.bottom + 1;
+            }),
+            controlsFit: menu.left >= 0 && menu.right <= innerWidth && languages.left >= 0 && languages.right <= innerWidth && languages.top >= menu.bottom - 1,
+            touchTargets: [...document.querySelectorAll(".language-switcher a,.menu-toggle")].every(element => {
+              const r = element.getBoundingClientRect(); return r.width >= 44 && r.height >= 44;
+            }),
+            headingBelowHeader: rect("h1").top >= header.bottom - 1,
+            overflow: document.documentElement.scrollWidth > innerWidth + 1,
+          };
+        });
+        assert.deepEqual(layout, { heroContentFits: true, controlsFit: true, touchTargets: true, headingBelowHeader: true, overflow: false }, `${prefix || "en"}: ${viewport.width}x${viewport.height}, text ${fontSize}`);
+        results.push({ scenario: "mobile header and unclipped hero", path: `/${prefix}`, viewport, fontSize, passed: true });
+      }
+    }
+    await ctx.close();
+  }
   const delayed = await context();
   let release; const gate = new Promise(done => { release = done; });
   await delayed.route("**/assets/*.js", async route => { await gate; await route.continue(); });
