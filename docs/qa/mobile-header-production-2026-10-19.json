@@ -1,0 +1,327 @@
+{
+  "checkedAt": "2026-10-18T19:32:39.720Z",
+  "browser": "Installed desktop Chrome with mobile viewport/touch emulation; not physical iPhone or Safari",
+  "analytics": "Third-party requests blocked",
+  "results": [
+    {
+      "prefix": "",
+      "width": 320,
+      "height": 568,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "",
+      "width": 320,
+      "height": 568,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "",
+      "width": 393,
+      "height": 650,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "",
+      "width": 393,
+      "height": 650,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "",
+      "width": 430,
+      "height": 740,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "",
+      "width": 430,
+      "height": 740,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "",
+      "width": 844,
+      "height": 390,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "",
+      "width": 844,
+      "height": 390,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ja/",
+      "width": 320,
+      "height": 568,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ja/",
+      "width": 320,
+      "height": 568,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ja/",
+      "width": 393,
+      "height": 650,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ja/",
+      "width": 393,
+      "height": 650,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ja/",
+      "width": 430,
+      "height": 740,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ja/",
+      "width": 430,
+      "height": 740,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ja/",
+      "width": 844,
+      "height": 390,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ja/",
+      "width": 844,
+      "height": 390,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "zh-cn/",
+      "width": 320,
+      "height": 568,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "zh-cn/",
+      "width": 320,
+      "height": 568,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "zh-cn/",
+      "width": 393,
+      "height": 650,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "zh-cn/",
+      "width": 393,
+      "height": 650,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "zh-cn/",
+      "width": 430,
+      "height": 740,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "zh-cn/",
+      "width": 430,
+      "height": 740,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "zh-cn/",
+      "width": 844,
+      "height": 390,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "zh-cn/",
+      "width": 844,
+      "height": 390,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ko/",
+      "width": 320,
+      "height": 568,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ko/",
+      "width": 320,
+      "height": 568,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ko/",
+      "width": 393,
+      "height": 650,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ko/",
+      "width": 393,
+      "height": 650,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ko/",
+      "width": 430,
+      "height": 740,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ko/",
+      "width": 430,
+      "height": 740,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ko/",
+      "width": 844,
+      "height": 390,
+      "font": "100%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    },
+    {
+      "prefix": "ko/",
+      "width": 844,
+      "height": 390,
+      "font": "125%",
+      "overflow": false,
+      "heroFits": true,
+      "controlsFit": true,
+      "touchTargets": true
+    }
+  ]
+}

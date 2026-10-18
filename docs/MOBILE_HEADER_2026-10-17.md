@@ -15,4 +15,4 @@ The owner's iPhone screenshot showed a tall, uneven header and a partly clipped 
 
 Production build, TypeScript and all 15 existing tests passed. Integrated browser checks passed: all 52 routes, no-JavaScript and script-failure fallbacks, plus all 32 language/viewport/text-size combinations. Results are saved to `qa/mobile-header-2026-10-17.json`. Local Chrome screenshots were visually inspected with the menu closed and open. These checks do not claim testing on a physical iPhone or Safari; the owner should reopen Safari after deployment to confirm the original device behavior.
 
-Changes are local only until the owner commits and deploys. Existing account-review documents and photos were left intact.
+19 October production verification: the owner has committed and deployed the fix. The live CSS contains the revised rules. All 32 four-language viewport/text-size scenarios and four menu open/Escape checks passed on the public site in mobile-emulated Chrome. Third-party traffic was blocked. See qa/mobile-header-production-2026-10-19.json. Physical iPhone/Safari confirmation remains outstanding. Existing account-review documents and photos were left intact.

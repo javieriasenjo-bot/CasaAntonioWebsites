@@ -138,3 +138,5 @@ See ACCOUNT_REVIEW_2026-10-16.md for current evidence superseding earlier access
 ## Mobile layout follow-up — 17 October
 
 Owner iPhone screenshot revealed uneven header controls and clipped hero content that earlier overflow/menu checks missed. Local CSS now uses a brand/Menu row and full-width language row, content-sized mobile heroes, and review cards that fit narrow enlarged-text layouts. Browser coverage expanded to four languages, 320/393/430/844px widths, short portrait/landscape viewports and 100%/125% text. See MOBILE_HEADER_2026-10-17.md and qa/mobile-header-2026-10-17.json for completed evidence. Commit/deployment remains the owner step; earlier account-review files were preserved.
+
+19 October mobile deployment verification: source fixes are committed and the live CSS matches. All 15 current tests pass; 32 production language/viewport/text-size scenarios and four menu open/Escape checks pass. Evidence: qa/mobile-header-production-2026-10-19.json. This closes deployment verification for the mobile fix; physical iPhone/Safari confirmation remains with the owner. No new production deployment or account changes were required.
