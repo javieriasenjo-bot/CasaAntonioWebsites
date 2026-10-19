@@ -90,3 +90,13 @@ test("an email enquiry queues one contact event without claiming message deliver
   assert.equal(events[0].contact_method, "email");
   assert.equal(events[0].link_location, "long-stay-top-email");
 });
+
+test("Airbnb's language sites count as Airbnb bookings with the right apartment", () => {
+  const b = boot();
+  b.click("https://www.airbnb.jp/rooms/1248284267045468378", { "data-intent": "booking", "data-placement": "home-a" });
+  b.click("https://www.airbnb.co.kr/rooms/1248260873560502499", { "data-intent": "booking" });
+  b.click("https://zh.airbnb.com/rooms/1248260873560502499", { "data-intent": "booking" });
+  b.click("https://airbnb.jp.example.com/rooms/1248284267045468378", { "data-intent": "booking" });
+  const events = b.window.dataLayer.filter(e => e.event === "airbnb_click");
+  assert.equal(JSON.stringify(events.map(e => [e.provider, e.property])), JSON.stringify([["airbnb", "a"], ["airbnb", "b"], ["airbnb", "b"]]));
+});

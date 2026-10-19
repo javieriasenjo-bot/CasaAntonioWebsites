@@ -1,4 +1,5 @@
-import { AIRBNB, MAP } from "@/data/facts";
+import { MAP } from "@/data/facts";
+import { ADDRESS, AIRBNB } from "@/data/links";
 import { DAMAGE_POLICY, PROPERTY_FACTS, preparationFaq } from "@/data/property-facts";
 import { photoFile, photoMeta } from "@/lib/photo-manifest";
 import { FONT_STYLESHEET } from "@/lib/fonts";
@@ -417,10 +418,10 @@ function lodging() {
     image: `${ORIGIN}${OG_IMAGE.home}`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "北38条西3丁目1-7",
-      addressLocality: "札幌市北区",
-      addressRegion: "北海道",
-      postalCode: "001-0038",
+      streetAddress: ADDRESS.street,
+      addressLocality: ADDRESS.locality,
+      addressRegion: ADDRESS.region,
+      postalCode: ADDRESS.postalCode,
       addressCountry: "JP",
     },
     geo: {
@@ -436,6 +437,8 @@ function lodging() {
       { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
       { "@type": "LocationFeatureSpecification", name: "Non-smoking", value: true },
     ],
+    petsAllowed: false,
+    containsPlace: [{ "@id": `${ORIGIN}/#apartment-a` }, { "@id": `${ORIGIN}/#apartment-b` }],
     sameAs: [AIRBNB.a, AIRBNB.b],
   };
 }
@@ -700,7 +703,7 @@ export function jsonLd(page: PageId, lang: Lang) {
     dateModified: PAGE_MODIFIED[page],
   }];
   if (page === "home") {
-    graph.push(lodging(), {
+    graph.push(lodging(), apartment("a", lang), apartment("b", lang), {
       "@type": "WebSite",
       name: "Casa Antonio",
       url: `${ORIGIN}/`,
@@ -708,7 +711,8 @@ export function jsonLd(page: PageId, lang: Lang) {
     });
   }
   if (page === "a" || page === "b") graph.push(lodging(), apartment(page, lang));
-  if (page === "faq" || page === "arrival") {
+  // One FAQPage per question set: /arrival/ shows the same list but only /faq/ marks it up.
+  if (page === "faq") {
     graph.push({ "@type": "FAQPage", mainEntity: faqEntities(lang) });
   }
   if (
@@ -758,19 +762,20 @@ export function headFor(page: PageId, lang: Lang) {
       { property: "og:image", content: image },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: meta.title },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Casa Antonio" },
       { property: "og:locale", content: OG_LOCALE[lang] },
       ...(Object.keys(OG_LOCALE) as Lang[])
         .filter((other) => other !== lang)
         .map((other) => ({ property: "og:locale:alternate", content: OG_LOCALE[other] })),
-      { property: "og:site_name", content: "Casa Antonio" },
-      { property: "og:image:alt", content: meta.title },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: meta.title },
       { name: "twitter:description", content: meta.description },
       { name: "twitter:image", content: image },
     ],
     links,
+    // Escape "<" so no string can close the script element early.
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(page, lang)).replace(/</g, "\\u003c") }],
   };
 }

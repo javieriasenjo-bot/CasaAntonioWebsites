@@ -48,7 +48,7 @@ export function StayView({ id }: { id: "a" | "b" }) {
             ))}
           </dl>
 
-          <h2 className="block-title">{({ en: "Practical stay details", ja: "滞在の実用情報", zh: "实用入住信息", ko: "숙박 실용 정보" })[lang]}</h2>
+          <h2 className="block-title">{t.ui.practicalTitle}</h2>
           <dl className="fact-grid fact-grid-tight">
             {practicalGuestFacts(id, lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
           </dl>

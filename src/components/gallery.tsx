@@ -2,8 +2,9 @@ import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Photo, photoHref } from "@/components/photo";
 import type { Photo as HousePhoto } from "@/data/facts";
+import { house } from "@/data/active";
 import type { Lang } from "@/lib/i18n";
-import { photoCategory, ROOM_LABELS } from "@/lib/photo-category";
+import { photoCategory, ROOM_KEYS, type RoomKey } from "@/lib/photo-category";
 
 export function Gallery({
   photos: allPhotos,
@@ -14,7 +15,8 @@ export function Gallery({
   lang: Lang;
   labels: { close: string; prev: string; next: string };
 }) {
-  const [category, setCategory] = useState<keyof typeof ROOM_LABELS>("all");
+  const ui = house().copy.ui.gallery;
+  const [category, setCategory] = useState<RoomKey>("all");
   // Lead with different rooms; alternate angles remain available under Show all.
   const featured = allPhotos.some(p => p.src.includes("b-bedroom"))
     ? ["b-living-sofa", "b-bedroom", "b-kitchen", "b-bath", "b-washroom", "b-stairs", "b-entrance", "b-projector"]
@@ -74,14 +76,7 @@ export function Gallery({
   // An eight-photo overview keeps alternate angles off the first screen.
   const INITIAL = 8;
   const [expanded, setExpanded] = useState(false);
-  const showAll: Record<Lang, string> = {
-    en: `Show all ${photos.length} photos`,
-    ja: `写真をすべて見る（${photos.length}枚）`,
-    zh: `查看全部 ${photos.length} 张照片`,
-    ko: `사진 ${photos.length}장 모두 보기`,
-  };
-
-  const showFewer: Record<Lang, string> = { en: "Show fewer photos", ja: "写真を閉じる", zh: "收起照片", ko: "사진 접기" };
+  const showAll = ui.showAll.replace("{n}", String(photos.length));
 
   const thumbnails = (items: readonly HousePhoto[], offset: number) => items.map((photo, index) => (
     <a
@@ -103,10 +98,10 @@ export function Gallery({
 
   return (
     <>
-      <div className="gallery-filters" role="group" aria-label={({ en: "Photo rooms", ja: "写真の部屋", zh: "照片分类", ko: "사진 공간" })[lang]}>
-        {(Object.keys(ROOM_LABELS) as (keyof typeof ROOM_LABELS)[]).filter(key => key === "all" || allPhotos.some(p => photoCategory(p.src) === key)).map(key => (
+      <div className="gallery-filters" role="group" aria-label={ui.filters}>
+        {ROOM_KEYS.filter(key => key === "all" || allPhotos.some(p => photoCategory(p.src) === key)).map(key => (
           <button type="button" key={key} aria-pressed={category === key} onClick={() => { setOpen(null); setExpanded(false); setCategory(key); }}>
-            {ROOM_LABELS[key][lang]}
+            {ui.rooms[key]}
           </button>
         ))}
       </div>
@@ -114,7 +109,7 @@ export function Gallery({
       {photos.length > INITIAL ? (
         <details key={category} className="gallery-extra" onToggle={(event) => setExpanded(event.currentTarget.open)}>
           <summary className="button button-line">
-            {expanded ? showFewer[lang] : showAll[lang]}
+            {expanded ? ui.showFewer : showAll}
           </summary>
           <div className="gallery">{thumbnails(photos.slice(INITIAL), INITIAL)}</div>
         </details>
@@ -152,6 +147,14 @@ export function Gallery({
                   <Photo src={current.src} alt={current.alt[lang]} sizes="92vw" priority />
                   <figcaption>{current.alt[lang]}</figcaption>
                 </figure>
+                {photos.length > 1 ? (
+                  // Fetch the neighbouring photos now so a swipe never lands on a blank frame.
+                  <div className="lightbox-preload" aria-hidden="true">
+                    {[(open + 1) % photos.length, (open - 1 + photos.length) % photos.length].map((index) => (
+                      <Photo key={photos[index].src} src={photos[index].src} alt="" sizes="92vw" preload />
+                    ))}
+                  </div>
+                ) : null}
                 <button
                   type="button"
                   className="lightbox-nav"

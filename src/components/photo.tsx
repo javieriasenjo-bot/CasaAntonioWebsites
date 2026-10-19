@@ -17,12 +17,15 @@ export function Photo({
   className,
   sizes = "(max-width: 900px) 100vw, 1200px",
   priority = false,
+  preload = false,
 }: {
   src: string;
   alt: string;
   className?: string;
   sizes?: string;
   priority?: boolean;
+  /** Fetch now at low priority (e.g. the lightbox's neighbouring photos). */
+  preload?: boolean;
 }) {
   const stem = stemOf(src);
   const meta = photoMeta[stem];
@@ -43,8 +46,8 @@ export function Photo({
         alt={alt}
         width={meta.width}
         height={meta.height}
-        loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"}
+        loading={priority || preload ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : preload ? "low" : "auto"}
         decoding="async"
       />
     </picture>

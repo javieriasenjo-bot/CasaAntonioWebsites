@@ -27,7 +27,7 @@
     var intent = a.getAttribute("data-intent");
     var parsed;
     try { parsed = new URL(url); } catch (_) { return; }
-    var provider = /(^|\.)airbnb\.com$/.test(parsed.hostname) ? "airbnb"
+    var provider = /(^|\.)airbnb\.(com|jp|co\.kr)$/.test(parsed.hostname) ? "airbnb"
       : /(^|\.)booking\.com$/.test(parsed.hostname) ? "booking" : null;
     var property = a.getAttribute("data-property");
     if (!property && provider === "airbnb") {

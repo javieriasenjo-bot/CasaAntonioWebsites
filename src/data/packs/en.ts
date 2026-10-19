@@ -1,3 +1,4 @@
+import { ADDRESS } from "@/data/links";
 import { DAMAGE_POLICY } from "@/data/property-facts";
 import { upopoyAdmissionText } from "@/data/travel-facts";
 import { guideFooter as footer } from "../guide-footer";
@@ -46,7 +47,6 @@ export const copy = {
         "It is not a hotel lobby. You let yourself in, cook if you want to, and ride the subway south when the city is the plan. Asabu Station, on the Namboku line, is about five minutes on foot.",
       ],
     },
-    mosaicCaption: "The house, and Casa Antonio A",
     choicesTitle: "Choose a floor",
     choicesLede: "Same address, two different stays. Both are booked on Airbnb.",
     aCard: {
@@ -60,18 +60,6 @@ export const copy = {
       line: "Warmth of wood · second floor · about 65 m² · up to 3 guests",
       note: "One bedroom, three single beds, and a projector.",
       cta: "View the apartment",
-    },
-    aHome: {
-      eyebrow: "Ground-floor apartment",
-      title: "Casa Antonio A",
-      tag: "A pale, modern room for coming back to.",
-      body: "Grey sofa, wood floor, a window-side table, and a kitchen in the same living room. Two separate bedrooms are off the hall, with three single beds and one double bed. About 65 square meters, for up to four guests.",
-    },
-    bHome: {
-      eyebrow: "Second floor",
-      title: "Casa Antonio B",
-      tag: "Wood, a projector, and a private door.",
-      body: "B is the warmth of wood: a simple modern interior with a projector in the living room. About 65 square meters, one bedroom with three single beds, for up to three guests. It is the upstairs apartment in the same house, with its own entrance.",
     },
     bookA: "Check dates for Casa Antonio A",
     bookB: "Check dates for Casa Antonio B",
@@ -129,7 +117,7 @@ export const copy = {
     },
     footer: {
       line: "Two apartments in one house. Kita 38-jo Nishi 3-chome, Kita-ku, Sapporo.",
-      address: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
+      address: ADDRESS.full,
       licenses: "Minpaku notification  M010045173 · A     M010045174 · B",
       photo: "All photographs were taken at Casa Antonio.",
     },
@@ -727,6 +715,51 @@ export const copy = {
         `Dates, price, and availability live on Airbnb. This site does not take payment. ${DAMAGE_POLICY.en}`,
     },
     lightbox: { close: "Close", prev: "Previous photograph", next: "Next photograph" },
+    ui: {
+      gallery: {
+        showAll: "Show all {n} photos",
+        showFewer: "Show fewer photos",
+        filters: "Photo rooms",
+        rooms: {
+          all: "All rooms",
+          living: "Living & dining",
+          bedrooms: "Bedrooms",
+          kitchen: "Kitchen",
+          bath: "Bath & laundry",
+          entrance: "Entrance & parking",
+          details: "Other details",
+        },
+      },
+      reviews: {
+        title: "What guests say",
+        reviews: "reviews",
+        favorite: "Guest favorite",
+        translated: "Translated by Airbnb",
+        all: "Read all reviews on Airbnb",
+        bookingAll: "Read all reviews on Booking.com",
+        more: "Show more reviews",
+        less: "Show fewer",
+        original: "Original language",
+        excerpt: "excerpt",
+        ofTen: "/10",
+        recorded: "Ratings recorded",
+      },
+      kojohama: {
+        eyebrow: "Our other place",
+        title: "Three more beautiful cabins in Kojohama",
+        body: "We also host three oceanfront cabins in Kojohama, Shiraoi, about 1 hour 15 minutes from Sapporo by car. Close to Upopoy and the Noboribetsu hot springs. Pair them with Casa Antonio for a city-and-sea trip.",
+        cta: "Visit kojohamacabins.jp",
+        alt: "Kojohama Cabins by the sea at sunset",
+      },
+      email: {
+        label: "Email enquiries",
+        longStay: "Ask about a long stay by email",
+        body: "Apartment (A or B):\nStay dates:\nNumber of guests:\nQuestion:",
+      },
+      practicalTitle: "Practical stay details",
+      copyManual: "Automatic copying is unavailable. The address is selected; touch and hold it, or use your browser’s Copy command.",
+      faqTitle: "Before you book",
+    },
   };
 
 export const guides = {
@@ -746,13 +779,10 @@ export const guides = {
     copyAddress: "Copy the Japanese address",
     copied: "Copied",
     directions: "Directions in Google Maps",
-    busLabel: "Chuo Bus timetable, New Chitose to Asabu",
-    matrixLabel: "Subway station times",
-    snowLabel: "Official Snow Festival notice",
     points: {
-      home: ["5 min to Asabu Station", "Free parking, one car each", "Full kitchen", "65 m² each"],
-      a: ["2 bedrooms", "Up to 4 guests", "Free parking, one car", "Full kitchen", "About 65 m²"],
-      b: ["5 min to Asabu Station", "Free parking, one car", "Full kitchen", "About 65 m²", "Up to 3 guests"],
+      home: [{ icon: "station", label: "5 min to Asabu Station" }, { icon: "parking", label: "Free parking, one car each" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "65 m² each" }],
+      a: [{ icon: "bed", label: "2 bedrooms" }, { icon: "guests", label: "Up to 4 guests" }, { icon: "parking", label: "Free parking, one car" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "About 65 m²" }],
+      b: [{ icon: "station", label: "5 min to Asabu Station" }, { icon: "parking", label: "Free parking, one car" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "About 65 m²" }, { icon: "guests", label: "Up to 3 guests" }],
     },
     combo: {
       eyebrow: "Shiraoi coast",
@@ -777,8 +807,6 @@ export const guides = {
         },
       ],
     },
-    notFoundTitle: "This page is not on the site.",
-    notFoundBody: "The apartments are still here.",
     access: {
       eyebrow: "New Chitose Airport",
       title: "From the airport to the door.",

@@ -2,13 +2,21 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { EmailLink } from "@/components/email-link";
-import { kojohamaUrl } from "@/components/kojohama-promo";
+import { kojohamaUrl } from "@/data/links";
 import { house } from "@/data/active";
 import { LANG_NAME } from "@/data/lang-name";
 import { rememberLang, useLang, type Lang } from "@/lib/i18n";
 import { HTML_LANG, pagePath, parsePath, type PageId } from "@/lib/paths";
 
 const LANGS: Lang[] = ["en", "ja", "zh", "ko"];
+
+// Shown in the suggested language itself, because the visitor may not read the current page's language.
+const ALSO_IN: Record<Lang, { line: string; open: string }> = {
+  en: { line: "This page is also available in English.", open: "View in English" },
+  ja: { line: "このページは日本語でもご覧いただけます。", open: "日本語で見る" },
+  zh: { line: "本页面也有中文版。", open: "查看中文版" },
+  ko: { line: "이 페이지는 한국어로도 볼 수 있습니다.", open: "한국어로 보기" },
+};
 
 const NAV: { page: PageId; key: "a" | "b" | "longStay" | "neighborhood" | "trips" | "arrival" }[] = [
   { page: "a", key: "a" },
@@ -158,18 +166,23 @@ export function Shell({ children }: { children: ReactNode }) {
         </div>
         {suggestion ? (
           <div className="lang-banner">
-            <p>
-              {g.banner} {LANG_NAME[suggestion]}.
-            </p>
+            {suggestion.reason === "browser" ? (
+              <p lang={HTML_LANG[suggestion.lang]}>{ALSO_IN[suggestion.lang].line}</p>
+            ) : (
+              <p>
+                {g.banner} {LANG_NAME[suggestion.lang]}.
+              </p>
+            )}
             <a
-              href={pagePath(page, suggestion)}
-              data-language={suggestion}
-              hrefLang={HTML_LANG[suggestion]}
+              href={pagePath(page, suggestion.lang)}
+              data-language={suggestion.lang}
+              hrefLang={HTML_LANG[suggestion.lang]}
+              lang={suggestion.reason === "browser" ? HTML_LANG[suggestion.lang] : undefined}
               onClick={() => {
-                rememberLang(suggestion);
+                rememberLang(suggestion.lang);
               }}
             >
-              {g.bannerOpen} {LANG_NAME[suggestion]}
+              {suggestion.reason === "browser" ? ALSO_IN[suggestion.lang].open : `${g.bannerOpen} ${LANG_NAME[suggestion.lang]}`}
             </a>
             <button type="button" onClick={dismissSuggestion}>
               {g.bannerStay}
@@ -204,7 +217,7 @@ export function Shell({ children }: { children: ReactNode }) {
           </p>
           <p className="coast-line">
             <strong>{g.coastTitle}.</strong> {g.coastBody}{" "}
-            <a href={kojohamaUrl(lang, "footer")} rel="noopener">
+            <a href={kojohamaUrl(lang, "footer")}>
               {g.coastCta}
             </a>
           </p>

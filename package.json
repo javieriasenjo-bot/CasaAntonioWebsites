@@ -12,18 +12,17 @@
     "check": "npm run typecheck && npm run build && node --test tests/analytics.test.mjs tests/build.test.mjs tests/indexnow.test.mjs tests/campaign-links.test.mjs",
     "check:browser": "node scripts/check-startup.mjs",
     "campaign-links": "node scripts/campaign-links.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "photos": "node scripts/photos.mjs"
   },
   "allowScripts": {
     "esbuild": true,
     "workerd": true
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.0",
     "@vitejs/plugin-react": "^5.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "tailwindcss": "^4.3.0",
     "vite": "^8.2.0",
     "wrangler": "4.144.0"
   },
@@ -31,6 +30,7 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "playwright-core": "^1.64.0",
+    "sharp": "^0.35.5",
     "typescript": "^5.7.0"
   }
 }

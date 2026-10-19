@@ -1,48 +1,66 @@
-# Casa Antonio
+# Casa Antonio — casaantonio.jp
 
-Current outstanding work and owner questions are maintained in [docs/OPEN_TRACKER.md](docs/OPEN_TRACKER.md). Older handovers are historical; the tracker reconciles their claims with current source and account evidence.
+Static, prerendered React site (Vite) served as Cloudflare Workers static assets: 13 pages × English, Japanese, Simplified Chinese and Korean = 52 pages.
 
-## Startup rendering
+- Open work and owner questions: [docs/OPEN_TRACKER.md](docs/OPEN_TRACKER.md)
+- Latest code review and what was implemented: [docs/CLAUDE_CODE_REVIEW_2026-10-18.md](docs/CLAUDE_CODE_REVIEW_2026-10-18.md)
+- Older handovers and QA evidence: [docs/archive/](docs/archive/) (historical; the tracker reconciles them)
 
-Server and browser share the same page tree. Router-free hydration preserves prerendered content; only the current page and language are loaded. The native mobile menu works without JavaScript. Run `npm run check:browser` with installed Chrome after `npm run check`. See [the startup report](docs/STARTUP_PERFORMANCE_2026-10-11.md) for measurements and regression coverage.
+## Commands
 
-Static site for casaantonio.jp. Deploy with `npm run build && npx wrangler deploy`.
+| Command | What it does |
+| --- | --- |
+| `npm ci` | Install exactly what `package-lock.json` lists |
+| `npm run dev` | Local dev server |
+| `npm run check` | Typecheck, build all 52 pages, run the tests. Run before every release |
+| `npm run check:browser` | Browser checks (all routes, no-JS menu, mobile header, first click). Needs Chrome, or set `CASA_BROWSER_PATH` |
+| `npm run photos` | Make missing photo sizes from `photos-src/` and regenerate the photo manifest |
+| `npm run campaign-links -- …` | Social/UTM links (see below) |
+| `npm run indexnow -- --urls changed-urls.txt [--submit]` | Tell Bing/IndexNow about changed URLs after a deploy |
 
-Workers Builds is set to run only `npx wrangler deploy`. That command does not create `dist`, which is why deploy failed with "assets.directory does not exist". On that builder (`WORKERS_CI=1`), `postinstall` runs the Vite build and prerender before Wrangler starts. A normal `npm install` on your own machine does not.
+## How pages render
 
-Do not also set a dashboard build command unless you remove `postinstall`. Either one is enough. Leave the deploy command as `npx wrangler deploy`.
+Server and browser share one page tree. Each page is prerendered to HTML, then hydrated without a router, so the visible content is never replaced. Only the current page's chunk and language pack load, and the prerenderer adds `modulepreload` links for them so they download alongside the entry script. The mobile menu (`<details>`) and all booking links work without JavaScript.
 
-The build prerenders 52 pages: 13 pages in English, Japanese, Simplified Chinese, and Korean, including `/combo/`. `www` already redirects to the apex in Cloudflare DNS. This assets-only project does not add a second host redirect.
+## Deploy
 
-Full-size photo originals live in `photos-src/`, not in `public/photos/`. Keep the `og-*.jpg` files in `public/photos/`. Do not put a `_redirects` file in `public/`.
+Workers Builds runs only `npx wrangler deploy`, which does not build. On that builder (`WORKERS_CI=1`), `postinstall` (`scripts/cf-postinstall.mjs`) runs the build first. A normal `npm install` on your own PC does not. Manual deploy: `npm run deploy`.
 
-Photos use a seven-day browser cache with one day of stale-while-revalidate. When replacing a photo, use a new filename/stem, regenerate all AVIF/WebP sizes and update the photo manifest and source references. Version replacement `og-*.jpg` files too and update their SEO references. Overwriting a URL can leave returning guests seeing the old photo for up to a week. Keep originals in the repository while generation and attribution checks depend on them.
+Optional simplification (needs one dashboard change): set **Workers & Pages → casaantoniowebsites → Settings → Build → Build command** to `npm run build`, then delete `scripts/cf-postinstall.mjs` and the `postinstall` script. Cloudflare's docs say Workers Builds ignores a `build` section in `wrangler.jsonc`, so this cannot be done in code alone. Never use both at once.
+
+`www` redirects to the apex in Cloudflare DNS. Do not add a `_redirects` file to `public/` (the build deletes it).
+
+## Where things live
+
+- **Text, all languages:** `src/data/packs/{en,ja,zh,ko}.ts`, including UI labels under `copy.ui`. `src/data/copy-check.ts` makes TypeScript fail if a language pack's shape differs from English.
+- **Property facts** (beds, parking, damage policy): `src/data/property-facts.ts`. Confirmed facts are listed in the tracker.
+- **Address, Airbnb and Kojohama links:** `src/data/links.ts`. Airbnb buttons open Airbnb's own site for the page language (airbnb.com / airbnb.jp / zh.airbnb.com / airbnb.co.kr). Kojohama links carry UTM tags.
+- **Reviews:** `src/data/reviews.ts`. Never invent or edit a quote. `when` is `YYYY-MM` and is formatted per language. Quotes in the page's language are shown first.
+- **SEO:** `src/lib/seo.ts` (titles, descriptions, hreflang, Open Graph, JSON-LD). `src/data/page-maintenance.ts` sets each page's `dateModified`/sitemap `lastmod`. Update it only when visible content or meaningful metadata changes.
+- **Styles:** plain CSS in `src/styles.css`. Tailwind was removed on 19 Oct 2026, and a small reset sits at the top. Older rules are desktop-first (`max-width` queries); write new rules mobile-first.
+
+## Photos
+
+Originals live in `photos-src/<stem>.jpg`. Served sizes live in `public/photos/<stem>-<width>.{avif,webp}`, and `src/lib/photo-manifest.ts` is generated from them. To add a photo, drop the original into `photos-src/`, run `npm run photos`, then reference `/photos/<stem>.jpg` in the code (the `Photo` component picks the sizes).
+
+Photos are cached for seven days. **When replacing a photo, use a new stem**: overwriting a URL can show returning guests the old image for a week. Version replacement `og-*.jpg` files too (they stay in `public/photos/`) and update their references in `seo.ts`. Keep the originals in the repository, because generation and the photo-attribution test depend on them.
+
+## Analytics contract
+
+`scripts/analytics-bootstrap.js` (inlined, minified, into every page) is the only producer of click events. GTM consumes the queue. Do not add a second click listener or a React event push.
+
+- `airbnb_click`: booking intent. Not a completed booking.
+- `review_click`: Airbnb or Booking.com review links.
+- `inquiry_click`: long-stay requests.
+- `contact_click`: email links.
+- `map_click` and `language_change` are also tracked.
+
+Metricool (`scripts/metricool-bootstrap.js`) counts visits only.
 
 ## Social links
 
-Prepared Casa Antonio links for Instagram, TikTok, Rednote and YouTube, in all four languages and with matching apartment/long-stay destinations, are in `docs/CAMPAIGN_LINKS_2026-10-08.md`. These are not published profile edits. Generate a single post link with `npm run campaign-links -- --campaign casa_antonio_2026_10 --content bedroom_a_2026_10_08 --source instagram --lang ja --page a`. Use `--out filename.md` to save a reusable table. See `docs/GROWTH_2026-10-08.md` for the Casa-only measurement baseline and remaining account steps.
+Prepared links for Instagram, TikTok, RedNote and YouTube, in all four languages, are in [docs/CAMPAIGN_LINKS_2026-10-08.md](docs/CAMPAIGN_LINKS_2026-10-08.md). Generate one post link with:
 
-Add these parameters on links you place in a profile or a post. Do not add them to the Airbnb buttons on the site itself.
+`npm run campaign-links -- --campaign casa_antonio_2026_10 --content bedroom_a_2026_10_08 --source instagram --lang ja --page a`
 
-`?utm_source=instagram&utm_medium=social&utm_campaign=bio`
-
-`?utm_source=tiktok&utm_medium=social&utm_campaign=bio`
-
-`?utm_source=rednote&utm_medium=social&utm_campaign=bio`
-
-## Status (6 Oct 2026)
-
-Current property facts are in `src/data/property-facts.ts`: free parking for one large car per apartment; approximately 65 m² each; A has three singles and one double across two bedrooms (two singles beside the living room; one single and one double farther away), maximum four guests; B has three singles, maximum three guests. Singles are 90 cm wide; the double is 130 cm. B is on the second floor, reached by approximately 25 steps with a handrail, and has laundry-room hanging/drying space. A lists a drying rack on Airbnb. Damage charges follow actual repair costs with a minimum of ¥15,000. The owner confirmed that A’s existing photos show the current layout. See `docs/OCTOBER_IMPROVEMENTS.md` for the latest changes and checks.
-
-The site captures clicks immediately in `scripts/analytics-bootstrap.js`. GTM consumes the queue. Do not add a second click listener or React event push. Booking intent remains `airbnb_click` for compatibility, while both platforms' review links use `review_click`, and long-stay requests use `inquiry_click`. These actions are not completed bookings. The bootstrap keeps the legacy listener guard to prevent duplicate events.
-
-Run `npm ci` then `npm run check` before releasing. The check builds all 52 pages, typechecks, tests click classification/queueing, and validates local routes and photo links. Browser checks are documented in `docs/UPDATE_HANDOVER.md`.
-
-The owner published the GTM update and confirmed the A long-stay event in GA4. No further container import is required. See `docs/SEARCH_ANALYTICS_2026-10-07.md` for optional account reporting setup and `docs/CONTENT_PROVENANCE.md` for source records still needed. See `docs/CLAUDE_REVIEW_2026-10-07.md` for the source review, cleanup, photo caching and official day-trip links.
-
-## Still needed from the owner
-
-- No replacement bedroom photo is required: the owner confirmed that A's current photos show the approved bed arrangement.
-- Historical destination-photo acquisition records, and individual Booking.com review dates/source records. Exact public originals for all 16 destination photos are now linked and documented in `docs/qa/photo-attribution.json`; acquisition dates remain unknown.
-- Reconcile Airbnb/Booking.com listing terms with the approved parking, bed arrangement and damage policy; this source update does not edit those listings.
-- Optional nightly rates, social profile URLs, and a direct long-stay contact, only if they should be published. Airbnb messaging remains available meanwhile.
+Add `--out filename.md` to save a table. The tool reads `public/sitemap.xml`, which the build keeps up to date. For profile links use `?utm_source=instagram|tiktok|rednote&utm_medium=social&utm_campaign=bio`. Never add UTM tags to the Airbnb buttons on the site.

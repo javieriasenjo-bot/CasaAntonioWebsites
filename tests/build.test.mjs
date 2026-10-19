@@ -111,3 +111,24 @@ test("owner facts, privacy disclosure and maintenance dates agree in all languag
     assert.ok(sitemap.replace(/>\s+</g,'><').includes('<loc>'+webPage.url+'</loc><lastmod>'+webPage.dateModified+'</lastmod>'),file);
   }
 });
+
+test("19 October code review: schema, previews, localized booking links and preloads", () => {
+  const hosts = { "": "https://www.airbnb.com/", "ja/": "https://www.airbnb.jp/", "zh-cn/": "https://zh.airbnb.com/", "ko/": "https://www.airbnb.co.kr/" };
+  for (const [prefix, host] of Object.entries(hosts)) {
+    for (const route of ["", "casa-antonio-a/", "faq/", "arrival/"]) {
+      const html = readFileSync(join(dist, prefix, route, "index.html"), "utf8");
+      const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m => JSON.parse(m[1])["@graph"]);
+      assert.equal(graph.some(node => node["@type"] === "FAQPage"), route === "faq/", `${prefix}${route}: FAQPage only on /faq/`);
+      assert.match(html, /<meta property="og:site_name" content="Casa Antonio" \/>/);
+      assert.equal((html.match(/og:locale:alternate/g) || []).length, 3);
+      for (const match of html.matchAll(/data-intent="booking"[^>]*href="([^"]+)"/g)) assert.ok(match[1].startsWith(host), `${prefix}${route}: ${match[1]}`);
+      assert.ok(html.includes(`<link rel="modulepreload" crossorigin href="/assets/${{ "": "en", "ja/": "ja", "zh-cn/": "zh", "ko/": "ko" }[prefix]}-`), `${prefix}${route}: language pack preload`);
+      assert.doesNotMatch(html, /Runs before hydration|Visit measurement only/, "inline scripts are minified");
+      if (route === "") {
+        assert.equal(graph.filter(node => node["@type"] === "Apartment").length, 2);
+        assert.match(html, /utm_content=footer/);
+      }
+    }
+  }
+  assert.ok(!existsSync(join(dist, ".vite")), "Vite manifest must not be deployed");
+});

@@ -2,7 +2,6 @@ import { AirbnbLink } from "@/components/airbnb-link";
 import { EmailLink } from "@/components/email-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
-import { kojohamaUrl } from "@/components/kojohama-promo";
 import { PhotoCredit } from "@/components/photo-credit";
 import { Shell } from "@/components/chrome";
 import { house } from "@/data/active";
@@ -11,6 +10,7 @@ import { faqItems } from "@/lib/seo";
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { airportBoardingText } from "@/data/travel-facts";
+import { ADDRESS, kojohamaUrl } from "@/data/links";
 
 export function FaqList() {
   const { lang } = useLang();
@@ -27,26 +27,19 @@ export function FaqList() {
   );
 }
 
-const ADDRESS_JP = "〒001-0038 北海道札幌市北区北38条西3丁目1-7";
-const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS_JP)}`;
+const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS.full)}`;
 
 function AddressActions() {
   const g = house().guides;
-  const { lang } = useLang();
   const [status, setStatus] = useState<"idle" | "copied" | "manual">("idle");
   const addressRef = useRef<HTMLParagraphElement>(null);
   const resetRef = useRef<number | undefined>(undefined);
   useEffect(() => () => window.clearTimeout(resetRef.current), []);
-  const manual = {
-    en: "Automatic copying is unavailable. The address is selected; touch and hold it, or use your browser’s Copy command.",
-    ja: "自動コピーができません。住所を選択しました。長押しするか、ブラウザのコピー機能をご利用ください。",
-    zh: "无法自动复制。地址已选中，请长按地址或使用浏览器的复制功能。",
-    ko: "자동 복사가 불가능합니다. 주소가 선택되었습니다. 길게 누르거나 브라우저의 복사 기능을 사용하세요.",
-  }[lang];
+  const manual = house().copy.ui.copyManual;
   const copy = async () => {
     window.clearTimeout(resetRef.current);
     try {
-      await navigator.clipboard.writeText(ADDRESS_JP);
+      await navigator.clipboard.writeText(ADDRESS.full);
       setStatus("copied");
       resetRef.current = window.setTimeout(() => setStatus("idle"), 2000);
     } catch {
@@ -62,7 +55,7 @@ function AddressActions() {
   };
   return (
     <div className="address-actions">
-      <p lang="ja" ref={addressRef}>{ADDRESS_JP}</p>
+      <p lang="ja" ref={addressRef}>{ADDRESS.full}</p>
       <div className="stay-actions">
         <button type="button" className="button button-line copy-address" onClick={copy}>
           {status === "copied" ? g.copied : g.copyAddress}
@@ -259,7 +252,7 @@ export function LongStayPage() {
 
 export function FaqPage() {
   const { lang } = useLang();
-  const metaTitle = lang === "ja" ? "泊まる前に" : lang === "zh" ? "预订之前" : lang === "ko" ? "묵기 전에" : "Before you book";
+  const metaTitle = house().copy.ui.faqTitle;
   return (
     <Shell>
       <section className="page-intro">
@@ -307,26 +300,6 @@ export function ComboPage() {
             </a>
           </p>
           <BookBoth />
-        </div>
-      </section>
-    </Shell>
-  );
-}
-
-export function NotFoundPage() {
-  const { lang } = useLang();
-  const g = house().guides;
-  return (
-    <Shell>
-      <section className="page-intro">
-        <div className="wrap narrow">
-          <h1>{g.notFoundTitle}</h1>
-          <p>{g.notFoundBody}</p>
-          <p className="footer-links">
-            <PageLink page="home">{house().copy.stayShared.back}</PageLink>
-            <PageLink page="a">{house().copy.nav.a}</PageLink>
-            <PageLink page="b">{house().copy.nav.b}</PageLink>
-          </p>
         </div>
       </section>
     </Shell>

@@ -1,3 +1,4 @@
+import { ADDRESS } from "@/data/links";
 import { DAMAGE_POLICY } from "@/data/property-facts";
 import { upopoyAdmissionText } from "@/data/travel-facts";
 import { guideFooter as footer } from "../guide-footer";
@@ -46,7 +47,6 @@ export const copy = {
         "ホテルのロビーはありません。自分の扉から入り、作りたければキッチンを使い、街へ出るときは地下鉄で南へ。南北線・麻生駅まで、徒歩およそ5分です。",
       ],
     },
-    mosaicCaption: "家と、Casa Antonio A",
     choicesTitle: "お部屋を選ぶ",
     choicesLede: "住所は同じ、滞在の雰囲気は違います。予約はAirbnbです。",
     aCard: {
@@ -60,18 +60,6 @@ export const copy = {
       line: "木の温もり · 2階 · 約65㎡ · 定員3名",
       note: "寝室ひとつ、シングルベッド3台、プロジェクター付き。",
       cta: "部屋を見る",
-    },
-    aHome: {
-      eyebrow: "下の階",
-      title: "Casa Antonio A",
-      tag: "戻ってきたくなる、明るいモダンな部屋。",
-      body: "グレーのソファ、木の床、窓際のテーブル、同じ居間のキッチン。廊下の先に寝室がふたつあり、シングルベッド3台とダブルベッド1台です。約65㎡、定員4名。",
-    },
-    bHome: {
-      eyebrow: "2階",
-      title: "Casa Antonio B",
-      tag: "木の温もりと、プロジェクター。",
-      body: "木の温もりを感じる、シンプルでモダンな室内。リビングにはプロジェクターがあります。約65㎡、寝室1室、シングルベッド3台で定員3名。同じ家の2階にあり、専用入口から出入りできます。",
     },
     bookA: "Casa Antonio Aの空室を見る",
     bookB: "Casa Antonio Bの空室を見る",
@@ -129,7 +117,7 @@ export const copy = {
     },
     footer: {
       line: "一軒家に、ふたつのアパートメント。札幌市北区北38条西3丁目。",
-      address: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
+      address: ADDRESS.full,
       licenses: "住宅宿泊事業の届出番号　A · M010045173　　B · M010045174",
       photo: "写真はすべて Casa Antonio で撮影しました。",
     },
@@ -598,6 +586,51 @@ export const copy = {
         `日程、料金、空室はAirbnbにあります。このサイトでは代金を受け取りません。${DAMAGE_POLICY.ja}`,
     },
     lightbox: { close: "閉じる", prev: "前の写真", next: "次の写真" },
+    ui: {
+      gallery: {
+        showAll: "写真をすべて見る（{n}枚）",
+        showFewer: "写真を閉じる",
+        filters: "写真の部屋",
+        rooms: {
+          all: "すべて",
+          living: "居間・ダイニング",
+          bedrooms: "寝室",
+          kitchen: "キッチン",
+          bath: "浴室・洗濯",
+          entrance: "玄関・駐車場",
+          details: "その他",
+        },
+      },
+      reviews: {
+        title: "ゲストの声",
+        reviews: "件のレビュー",
+        favorite: "ゲストのお気に入り",
+        translated: "Airbnbによる英訳",
+        all: "Airbnbですべてのレビューを見る",
+        bookingAll: "Booking.comですべてのレビューを見る",
+        more: "レビューをもっと見る",
+        less: "閉じる",
+        original: "原文",
+        excerpt: "抜粋",
+        ofTen: "/10",
+        recorded: "評価の記録日",
+      },
+      kojohama: {
+        eyebrow: "姉妹の宿",
+        title: "虎杖浜に、もう3棟の素敵なキャビン",
+        body: "白老町・虎杖浜の海沿いにある一棟貸しキャビンも3棟運営しています。札幌から車で約1時間15分、ウポポイや登別温泉の近くです。Casa Antonio と組み合わせて、街と海の旅をどうぞ。",
+        cta: "kojohamacabins.jp を見る",
+        alt: "夕暮れの海辺に建つ Kojohama Cabins",
+      },
+      email: {
+        label: "メールでお問い合わせ",
+        longStay: "長期滞在をメールで相談する",
+        body: "希望のお部屋（AまたはB）：\n宿泊日程：\n人数：\nお問い合わせ内容：",
+      },
+      practicalTitle: "滞在の実用情報",
+      copyManual: "自動コピーができません。住所を選択しました。長押しするか、ブラウザのコピー機能をご利用ください。",
+      faqTitle: "泊まる前に",
+    },
   };
 
 export const guides = {
@@ -617,13 +650,10 @@ export const guides = {
     copyAddress: "日本語の住所をコピー",
     copied: "コピーしました",
     directions: "Googleマップで経路",
-    busLabel: "中央バス時刻表（新千歳→麻生）",
-    matrixLabel: "地下鉄の駅間時間",
-    snowLabel: "さっぽろ雪まつりの公式告知",
     points: {
-      home: ["麻生駅まで徒歩5分", "無料駐車、各室1台", "使えるキッチン", "各約65㎡"],
-      a: ["寝室2つ", "定員4名", "無料駐車、1台", "使えるキッチン", "約65㎡"],
-      b: ["麻生駅まで徒歩5分", "無料駐車、1台", "使えるキッチン", "約65㎡", "定員3名"],
+      home: [{ icon: "station", label: "麻生駅まで徒歩5分" }, { icon: "parking", label: "無料駐車、各室1台" }, { icon: "kitchen", label: "使えるキッチン" }, { icon: "size", label: "各約65㎡" }],
+      a: [{ icon: "bed", label: "寝室2つ" }, { icon: "guests", label: "定員4名" }, { icon: "parking", label: "無料駐車、1台" }, { icon: "kitchen", label: "使えるキッチン" }, { icon: "size", label: "約65㎡" }],
+      b: [{ icon: "station", label: "麻生駅まで徒歩5分" }, { icon: "parking", label: "無料駐車、1台" }, { icon: "kitchen", label: "使えるキッチン" }, { icon: "size", label: "約65㎡" }, { icon: "guests", label: "定員3名" }],
     },
     combo: {
       eyebrow: "白老の海岸",
@@ -644,8 +674,6 @@ export const guides = {
         },
       ],
     },
-    notFoundTitle: "このページはありません。",
-    notFoundBody: "部屋は、ここにあります。",
     access: {
       eyebrow: "新千歳空港",
       title: "空港から、扉まで。",

@@ -6,7 +6,6 @@ import { Reviews } from "@/components/reviews";
 import { SellingPoints } from "@/components/selling-points";
 import { KojohamaPromo } from "@/components/kojohama-promo";
 import { house } from "@/data/active";
-import { apartmentBPhotos } from "@/data/facts";
 import { useLang } from "@/lib/i18n";
 import { apartmentSummary } from "@/data/property-facts";
 
@@ -43,27 +42,45 @@ export function Home() {
             <p>{t.choicesLede}</p>
           </div>
           <div className="choices">
-            <PageLink page="a" className="choice choice-a">
-              <span className="choice-kicker">A</span>
-              <span className="choice-name">{t.aCard.name}</span>
-              <span className="choice-line">{t.aCard.line}</span>
+            <article className="choice choice-a">
+              <span className="choice-kicker" aria-hidden="true">A</span>
+              <h3 className="choice-name">
+                {/* Stretched link: the whole card opens the apartment page. */}
+                <PageLink page="a">{t.aCard.name}</PageLink>
+              </h3>
+              <p className="choice-line">{t.aCard.line}</p>
               <dl className="choice-facts">
                 {apartmentSummary("a", lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
               </dl>
-              <span className="choice-link">{t.aCard.cta}</span>
-            </PageLink>
-            <PageLink page="b" className="choice choice-b">
-              <span className="choice-kicker">B</span>
-              <span className="choice-name">{t.bCard.name}</span>
-              <span className="choice-line">{t.bCard.line}</span>
+              <div className="choice-actions">
+                <span className="choice-link" aria-hidden="true">{t.aCard.cta}</span>
+                <AirbnbLink cabin="a" location="home-a" className="choice-book">
+                  {t.bookA}
+                </AirbnbLink>
+              </div>
+            </article>
+            <article className="choice choice-b">
+              <span className="choice-kicker" aria-hidden="true">B</span>
+              <h3 className="choice-name">
+                {/* Stretched link: the whole card opens the apartment page. */}
+                <PageLink page="b">{t.bCard.name}</PageLink>
+              </h3>
+              <p className="choice-line">{t.bCard.line}</p>
               <dl className="choice-facts">
                 {apartmentSummary("b", lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
               </dl>
-              <span className="choice-link">{t.bCard.cta}</span>
-            </PageLink>
+              <div className="choice-actions">
+                <span className="choice-link" aria-hidden="true">{t.bCard.cta}</span>
+                <AirbnbLink cabin="b" location="home-b" className="choice-book">
+                  {t.bookB}
+                </AirbnbLink>
+              </div>
+            </article>
           </div>
         </div>
       </section>
+
+      <Reviews which="home" />
 
       <section className="intro">
         <div className="wrap narrow">
@@ -72,46 +89,6 @@ export function Home() {
           {t.intro.body.slice(0, 1).map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-        </div>
-      </section>
-
-      <section className="home-stay home-stay-a">
-        <div className="wrap stay-split">
-          <div>
-            <p className="eyebrow">{t.aHome.eyebrow}</p>
-            <h2>{t.aHome.title}</h2>
-            <p className="tagline">{t.aHome.tag}</p>
-            <p>{t.aHome.body}</p>
-            <div className="stay-actions">
-              <PageLink page="a" className="button button-dark">
-                {t.aCard.cta}
-              </PageLink>
-              <AirbnbLink cabin="a" location="home-a" className="button button-line">
-                {t.bookA}
-              </AirbnbLink>
-            </div>
-          </div>
-          <Photo src="/photos/sofa.jpg" alt={c.livingAlt} sizes="(max-width: 900px) 100vw, 50vw" />
-        </div>
-      </section>
-
-      <section className="home-stay home-stay-b">
-        <div className="wrap stay-split stay-split-flip">
-          <div>
-            <p className="eyebrow">{t.bHome.eyebrow}</p>
-            <h2>{t.bHome.title}</h2>
-            <p className="tagline">{t.bHome.tag}</p>
-            <p>{t.bHome.body}</p>
-            <div className="stay-actions">
-              <PageLink page="b" className="button button-wood">
-                {t.bCard.cta}
-              </PageLink>
-              <AirbnbLink cabin="b" location="home-b" className="button button-line">
-                {t.bookB}
-              </AirbnbLink>
-            </div>
-          </div>
-          <Photo src="/photos/b-living-sofa.jpg" alt={apartmentBPhotos.find((photo) => photo.src === "/photos/b-living-sofa.jpg")!.alt[lang]} sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </section>
 
@@ -134,8 +111,7 @@ export function Home() {
           </PageLink>
         </div>
       </section>
-      <Reviews which="home" />
-      <section className="home-nomad">
+      <section className="home-nomad" id="long-stay">
         <div className="wrap stay-split">
           <div>
             <p className="eyebrow">{t.nomad.eyebrow}</p>
@@ -151,18 +127,6 @@ export function Home() {
             <PageLink page="neighborhood" className="text-link">{t.nav.neighborhood}</PageLink>
           </div>
           <Photo src="/photos/dining-2.jpg" alt={c.workTable} sizes="(max-width: 900px) 100vw, 50vw" />
-        </div>
-      </section>
-
-      <section className="long-stay" id="long-stay">
-        <div className="wrap">
-          <p className="eyebrow">{t.longStay.eyebrow}</p>
-          <h2>{t.longStay.title}</h2>
-          <p className="lede">{t.longStay.lede}</p>
-          <p>{t.longStay.body[0]}</p>
-          <PageLink page="long-stay" className="button button-dark">
-            {g.longCta}
-          </PageLink>
         </div>
       </section>
 

@@ -1,10 +1,5 @@
 import type { Lang } from "@/lib/i18n";
 
-export const AIRBNB = {
-  a: "https://www.airbnb.com/rooms/1248284267045468378",
-  b: "https://www.airbnb.com/rooms/1248260873560502499",
-} as const;
-
 export const MAP = {
   lat: 43.105783,
   lng: 141.341362,

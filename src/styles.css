@@ -1,16 +1,54 @@
-@import "tailwindcss";
+/* Layer order mirrors the former Tailwind setup; unlayered rules below win over these. */
+@layer theme, base;
 
-@theme {
-  --color-paper: #f4efe8;
-  --color-ink: #1c1916;
-  --color-muted: #6e655d;
-  --color-pine: #243833;
-  --color-wood: #8c4a32;
-  --color-line: #e3dbd1;
-  --color-foam: #ebe4da;
-  --color-card: #fbf8f4;
-  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "PingFang SC", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --font-display: "Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", "Yu Mincho", serif;
+@layer theme {
+  :root {
+    --color-paper: #f4efe8;
+    --color-ink: #1c1916;
+    --color-muted: #6e655d;
+    --color-pine: #243833;
+    --color-wood: #8c4a32;
+    --color-line: #e3dbd1;
+    --color-foam: #ebe4da;
+    --color-card: #fbf8f4;
+    --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "PingFang SC", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-display: "Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", "Yu Mincho", serif;
+  }
+}
+
+/* Minimal reset (the parts of Tailwind v4 preflight this site relies on). */
+@layer base {
+  *, ::before, ::after, ::backdrop { box-sizing: border-box; border: 0 solid; margin: 0; padding: 0; }
+  html {
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: 1.5;
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr { height: 0; color: inherit; border-top-width: 1px; }
+  h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+  b, strong { font-weight: bolder; }
+  code, kbd, samp, pre { font-family: var(--font-mono); font-size: 1em; }
+  small { font-size: 80%; }
+  table { text-indent: 0; border-color: inherit; border-collapse: collapse; }
+  summary { display: list-item; }
+  ol, ul, menu { list-style: none; }
+  img, svg, video, canvas, audio, iframe, embed, object { vertical-align: middle; display: block; }
+  img, video { max-width: 100%; height: auto; }
+  button, input, select, optgroup, textarea {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]) { appearance: button; }
+  [hidden]:where(:not([hidden="until-found"])) { display: none !important; }
 }
 
 @layer base {
@@ -114,7 +152,9 @@ html[lang="ko"] {
   position: sticky;
   top: 0;
   z-index: 20;
+  background: #f5f0ea;
   background: color-mix(in srgb, var(--color-paper) 92%, white);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-line);
 }
@@ -175,7 +215,7 @@ html[lang="ko"] {
   border: 1px solid var(--color-line);
   border-radius: 999px;
   padding: 0.15rem;
-  background: color-mix(in srgb, white 55%, transparent);
+  background: rgb(255 255 255 / 0.55);
 }
 
 .language-switcher a {
@@ -493,8 +533,7 @@ a.quick-reserve-trigger {
 .prose p,
 .info-card p,
 .map-caption p,
-.note-card p,
-.home-stay p {
+.note-card p {
   color: var(--color-muted);
 }
 
@@ -573,12 +612,14 @@ a.quick-reserve-trigger {
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  isolation: isolate;
 }
 
 .choice::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: -1;
   background: linear-gradient(180deg, rgb(20 18 16 / 0.60), rgb(20 18 16 / 0.85));
 }
 
@@ -615,21 +656,70 @@ a.quick-reserve-trigger {
 }
 
 .choice-link {
-  margin-top: 1rem;
   border-bottom: 1px solid rgb(255 255 255 / 0.7);
   font-size: 0.85rem;
 }
 
-.home-stay {
-  padding: 4.5rem 0;
+/* Stretched link: the name's link covers the card; the booking button sits above it. */
+.choice > .choice-name {
+  position: static;
+  margin: 0;
+  font-weight: 400;
 }
 
-.home-stay-a {
-  background: var(--color-card);
+.choice-name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
-.home-stay-b {
-  background: #f7f1ea;
+.choice-name a:focus-visible {
+  outline: none;
+}
+
+.choice:has(.choice-name a:focus-visible) {
+  outline: 2px solid var(--color-pine);
+  outline-offset: 3px;
+}
+
+.choice-actions {
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.choice-book {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1.1rem;
+  border: 1px solid rgb(255 255 255 / 0.8);
+  border-radius: 999px;
+  background: rgb(20 18 16 / 0.3);
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.choice-book:hover,
+.choice-book:focus-visible {
+  background: white;
+  color: var(--color-ink);
+}
+
+.lightbox-preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .stay-split {
@@ -647,26 +737,6 @@ a.quick-reserve-trigger {
   direction: ltr;
 }
 
-.home-stay h2 {
-  font-size: clamp(2.1rem, 4vw, 3.4rem);
-  margin: 0 0 0.4rem;
-}
-
-.home-stay-a h2 {
-  color: var(--color-pine);
-}
-
-.home-stay-b h2 {
-  color: var(--color-wood);
-}
-
-.tagline {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  margin: 0 0 0.8rem;
-}
-
-.home-stay img,
 .stay-split img {
   width: 100%;
   height: 26rem;
@@ -1271,6 +1341,7 @@ a.quick-reserve-trigger {
 .quick-reserve-menu {
   width: min(19rem, calc(100vw - 2rem));
   padding: 0.9rem;
+  background: #f4f0e9;
   background: color-mix(in srgb, var(--color-paper) 96%, white);
   border: 1px solid var(--color-line);
   box-shadow: 0 14px 36px rgb(20 18 16 / 0.2);
@@ -1562,7 +1633,6 @@ body.lightbox-open .quick-reserve {
     min-height: 16rem;
   }
 
-  .home-stay img,
   .stay-split img,
   .place-photo-row img,
   .trip-figure img,
@@ -1596,7 +1666,6 @@ body.lightbox-open .quick-reserve {
   .card-section,
   .page-intro,
   .map-section,
-  .home-stay,
   .long-stay {
     padding: 3.2rem 0;
   }
@@ -1650,6 +1719,12 @@ body.lightbox-open .quick-reserve {
 /* Guest reviews (real Airbnb quotes from src/data/reviews.ts) */
 .reviews {
   padding: 2.5rem 0 3rem;
+}
+
+/* On the home page the reviews follow the apartment cards directly. */
+.choices-section + .reviews {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .reviews h2 {

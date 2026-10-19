@@ -26,7 +26,9 @@ export async function loadPage(page: PageId | null): Promise<ComponentType> {
         case "long-stay": return guides.LongStayPage;
         case "combo": return guides.ComboPage;
         case "faq": return guides.FaqPage;
-        default: return guides.NotFoundPage;
+        // Unknown paths never reach this in production: Cloudflare serves the static, multilingual
+        // public/404.html (no JavaScript). The dev server falls back to the home page.
+        default: return (await import("./components/home-page")).Home;
       }
     }
   }

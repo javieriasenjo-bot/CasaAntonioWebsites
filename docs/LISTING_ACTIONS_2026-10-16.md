@@ -7,7 +7,7 @@ These are prepared corrections, not saved account edits. The owner has authorize
 | Listing | What was actually checked | Result |
 | --- | --- | --- |
 | [Airbnb A](https://www.airbnb.com/rooms/1248284267045468378) | Public page returned on 16 October | Title still mentions paid parking while amenities say free parking. Description labels both bed lines Bedroom 1. Structured bed panel already shows two bedrooms/four beds: Bedroom 1 has single+double; Bedroom 2 has two singles. Four-guest maximum is correct. |
-| [Booking.com A](https://www.booking.com/hotel/jp/casa-antonio-a.html) | Initial static request blocked; parallel fresh Chrome inspection succeeded | Public summary shows approximately 100 m², one bedroom/two beds despite a Two-Bedroom Apartment room type. Fresh rating 9.0/24. See REVIEWS_AUDIT_2026-10-16.md. |
+| [Booking.com A](https://www.booking.com/hotel/jp/casa-antonio-a.html) | Initial static request blocked; parallel fresh Chrome inspection succeeded | Public summary shows approximately 100 m², one bedroom/two beds despite a Two-Bedroom Apartment room type. Fresh rating 9.0/24. See archive/REVIEWS_AUDIT_2026-10-16.md. |
 | [Agoda Sapporo A](https://www.agoda.com/casa-antonio-a/hotel/sapporo-jp.html) | Fresh direct request plus search extraction of this exact URL | Direct response was empty. Search extraction still shows 100 m² and one bedroom/studio; its crawl is three months old, so current account state is unverified. Generic description also places central-city sights within a short walk, inconsistent with an Asabu base. |
 | [Existing A Google profile](https://maps.app.goo.gl/xUrVzn4P1eaeBNFu7) | Fresh short-link request | Web reader could not open it. Earlier resolved A identity retained; submitted website approval and description state unverified. |
 | gites.fr | Exact-name Sapporo search | No confidently identified property URL obtained; do not request changes to similarly named unrelated properties. |
@@ -64,7 +64,7 @@ Support request, Japanese:
 
 The parallel public Chrome review audit also found B listed at approximately 70 m² (owner-confirmed approximately 65 m²). Both Booking pages state damage charges **up to ¥15,000**, whereas the owner-confirmed website wording says actual repair costs with a **minimum of ¥15,000**. These are materially different terms, not alternative translations of the same policy.
 
-Owner/account operator: reconcile each platform policy and supported configuration before changing the published terms. Do not claim that the existing Booking terms already permit the owner's minimum-charge wording, silently overwrite website facts, or change existing booking conditions under this copy-correction task. No platform policy was modified here. See `REVIEWS_AUDIT_2026-10-16.md` for the public audit method and sources.
+Owner/account operator: reconcile each platform policy and supported configuration before changing the published terms. Do not claim that the existing Booking terms already permit the owner's minimum-charge wording, silently overwrite website facts, or change existing booking conditions under this copy-correction task. No platform policy was modified here. See `archive/REVIEWS_AUDIT_2026-10-16.md` for the public audit method and sources.
 
 ## Priority 3: existing Google profile and guest guide
 

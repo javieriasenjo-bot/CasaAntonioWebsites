@@ -66,3 +66,38 @@ Overall: solid. Prerender + hydration, hreflang, sitemap, JSON-LD, the no-JS men
 2. Conversion: 1.1, 1.2, 1.4, 1.3.
 3. Pipeline: 2.3 → 2.1 / 2.2, then 2.4 / 2.5.
 4. Optional: 1.5 (after verifying the domains), 2.7 (after field data), hygiene.
+
+---
+
+## Implementation status — 19 October 2026
+
+All changes were made in the source and verified on a clean copy. `npm run check` passes (typecheck, 52 pages, 17 tests including 2 new ones), and so does `npm run check:browser` (all routes at mobile/desktop widths, no-JS menu, mobile header matrix, delayed first click, failed import). Before/after mobile screenshots were compared, and the Tailwind removal rendered pixel-identical.
+
+| # | Status | What changed |
+|---|---|---|
+| 1.1 | Done (part) | Reviews in the page's language come first. Airbnb's Japanese originals of translated quotes are not stored, so they can't be shown yet. Paste the original text into `reviews.ts` if wanted (never invent quotes). |
+| 1.2 | Done | `when` is now `YYYY-MM`, and review and "ratings recorded" dates are formatted per language (`src/lib/dates.ts`). The formatting is deterministic, so prerendered and hydrated text always match. |
+| 1.3 | Done | Home page cut from 11 to 8 sections. The A/B cards gained a "Check dates" Airbnb button, and the whole card opens the apartment (stretched link). The duplicate A/B sections and the second long-stay section were removed (the `#long-stay` anchor moved to the remaining section), and reviews now follow the cards. Mobile page height went from 10,027 px to 7,851 px. |
+| 1.4 | Done | A first-time visitor gets the browser-language offer, worded in the offered language. "Stay in this language" then remembers the current language. A language chosen earlier still takes priority. |
+| 1.5 | Done | Airbnb buttons use airbnb.jp / zh.airbnb.com / airbnb.co.kr per page language; all three were checked to open the listings in the right language. The analytics bootstrap recognises these hosts, with a new test. Structured data keeps the canonical airbnb.com URLs. |
+| 1.6 | Done | The footer and /combo/ Kojohama links are localised, carry UTM tags (`utm_content=footer` / `guide`) and keep the referrer. |
+| 1.7 | Done | The lightbox fetches the next and previous photos at low priority. |
+| 2.1 | Done | Added 400w AVIF/WebP for all 130 photos (260 files, 4 MB). On average a 400w AVIF is 60% smaller than the 800w one. |
+| 2.2 | Not done (measured) | Re-encoding the heavy WebPs (`exterior`, `a-entrance`, `entry`) at sane quality doesn't make them smaller: they're high-detail brick and texture shots. Only browsers without AVIF download them. |
+| 2.3 | Done | `npm run photos` (`scripts/photos.mjs`, sharp): makes missing sizes from `photos-src/` and regenerates `photo-manifest.ts` from the files on disk. |
+| 2.4 | Done | Vite manifest → `modulepreload` for each page's chunk and language pack. The manifest is deleted from `dist`. |
+| 2.5 | Done | UI strings moved from components into the packs (`copy.ui`): gallery, room filters, reviews, Kojohama promo, email, practical title, copy-address fallback, FAQ title. The privacy page keeps its 4-language text because it only loads on that page. |
+| 2.6 | Done | The inline bootstrap scripts are minified with Vite's built-in minifier (`scripts/inline-scripts.mjs`). |
+| 2.7 | Not done | The Preact swap is still an experiment to try only if field Core Web Vitals justify it. |
+| 3.1 | Done | Added `og:site_name`, `og:image:alt` and `og:locale:alternate`. |
+| 3.2 | Done | `FAQPage` now only on `/faq/`. |
+| 3.3 | Done | Home graph includes both `Apartment` nodes, `containsPlace` and `petsAllowed: false`. |
+| 3.4 | Done | JSON-LD escapes `<`. |
+| 3.5 | Kept | `npm run campaign-links` reads `public/sitemap.xml` without needing a build, so the build keeps writing it. |
+| 4 | Done | Dead keys removed in all packs (`bNote`, `bSlots`, `bPhotosCta`, `closeMenu`, `busLabel`, `matrixLabel`, `snowLabel`, `mosaicCaption`, `notFound*`, `aHome`, `bHome`). Address single-sourced in `src/data/links.ts`. Packs unified (`copy-zh.ts` / `copy-ko.ts` merged into `packs/`). `data/guides.ts` removed. `NotFoundPage` removed (production uses `public/404.html`). |
+| 4 | Done + bug fix | Selling points now name their icon. Before, the icons were assigned by position and were wrong (parking showed a fork, size showed a ski slope). Added parking and bed icons. |
+| 4 | Done | Tailwind removed: a small reset plus `:root` variables, with `-webkit-backdrop-filter` and `color-mix` fallbacks added by hand. CSS went from 7.8 KB to 6.5 KB gzipped. |
+| 4 | Not done | Deploy `postinstall`: Cloudflare docs say Workers Builds ignores wrangler's `build` config, so removing it needs the dashboard build command set first (steps in the README). `observability` was left as it is (harmless). |
+| 4 | Done | Hygiene: 46 historical docs/QA files moved to `docs/archive/`, with references rewritten. README rewritten. `indexnow-submit.ps1` removed (`npm run indexnow` replaces it). The leftover `.tanstack/` folder was deleted from the PC copy. |
+| 4 | Not done | Git LFS: Workers Builds would need LFS support, or it would deploy pointer files instead of photos. Too risky for the gain. |
+| — | Done | `PAGE_MODIFIED` set to 19 Oct for home, A, B and arrival. |

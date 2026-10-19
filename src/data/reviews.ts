@@ -6,7 +6,7 @@
 export type ReviewQuote = {
   sourceUrl?: string;
   name: string;
-  when: string; // month and year as shown on Airbnb
+  when: string; // "YYYY-MM": month and year as shown on Airbnb; formatted per page language
   country: string; // guest location as shown on Airbnb; "" when Airbnb shows none
   text: string;
   translated?: boolean;
@@ -19,7 +19,6 @@ export type StayReviews = {
   count: number | null;
   guestFavorite?: boolean;
   quotes: ReviewQuote[];
-  href: string;
 };
 
 export const reviews: { a: StayReviews; b: StayReviews } = {
@@ -30,33 +29,32 @@ export const reviews: { a: StayReviews; b: StayReviews } = {
     quotes: [
       {
         name: "Kelly",
-        when: "December 2025",
+        when: "2025-12",
         country: "",
         text: "Best stay of my Hokkaido trip!\nThe place was squeaky clean and the interior design is very modern\nBut since we stay there during winter so the floor outside is full of ice, so it’s not so convenient if you are not driving a car to this place\nThanks for the responsive host too!",
       },
       {
         name: "Yoshef Wisnu",
-        when: "May 2025",
+        when: "2025-05",
         country: "",
         text: "Wow, the property we stayed at truly felt like home. The location is extremely strategic—close to restaurants, Aeon supermarket, Asabu Station, and the bus stop.",
         excerpt: true,
       },
       {
         name: "Junko",
-        when: "August 2026",
+        when: "2026-08",
         country: "Shinagawa, Japan",
         text: "It was very clean and a pleasant place to stay.\nI was bothered by the loud footsteps of the family staying on the second floor early in the morning and late at night, but otherwise it was very comfortable.I want to stay there again!",
         translated: true,
       },
       {
         name: "Hiromi O",
-        when: "July 2025",
+        when: "2025-07",
         country: "Hickory, North Carolina",
         text: "The living room, hallway, and bedroom were air-conditioned, making it a very pleasant place to stay.All the rooms were beautiful and new, and we had a very pleasant time.",
         translated: true,
       },
     ],
-    href: "https://www.airbnb.com/rooms/1248284267045468378",
   },
   b: {
     recordedOn: "2026-10-16",
@@ -66,31 +64,30 @@ export const reviews: { a: StayReviews; b: StayReviews } = {
     quotes: [
       {
         name: "Supattra",
-        when: "December 2025",
+        when: "2025-12",
         country: "",
         text: "The house truly felt brand new and was extremely clean and well-maintained. The facilities were modern, beautiful, and fully equipped with everything we needed, making our stay very comfortable.\nWe were especially impressed by the projector, which was a great touch and made the stay even more enjoyable.",
         excerpt: true,
       },
       {
         name: "Yolanda",
-        when: "February 2026",
+        when: "2026-02",
         country: "",
         text: "A short walk from the station which saves us a lot of hassle dragging our luggage through the snow! The house was comfortable and warm, happy to book here another time if i were to go Sapporo again!",
       },
       {
         name: "Yuki",
-        when: "August 2025",
+        when: "2025-08",
         country: "Marina, California",
         text: "It was very cozy and quiet, clean house. Also, very close to subway to get to Sapporo station. Kitchen and washer machine are helpful. Host responded promptly. Our family enjoyed the stay a lot. We will definitely stay again when we come back to Sapporo.",
       },
       {
         name: "Leonard",
-        when: "December 2024",
+        when: "2024-12",
         country: "Singapore",
         text: "We really love the space of the accommodation. There's a dedicated living room, dining area and huge bathroom as well. Also an area to hang your laundry.\nFree parking is also a big plus.\none thing to note is the accommodation is on the 2nd floor so there's a need to climb a flight of stairs. something to consider when booking\nLocation is walkable from Asabu station.\nOverall, we love the space and the amenities of the home, it was top notch.",
       },
     ],
-    href: "https://www.airbnb.com/rooms/1248260873560502499",
   },
 };
 

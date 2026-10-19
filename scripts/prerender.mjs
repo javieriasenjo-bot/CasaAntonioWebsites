@@ -1,7 +1,8 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createServer, minifySync } from "vite";
+import { createServer } from "vite";
+import { inlineScripts } from "./inline-scripts.mjs";
 
 // fileURLToPath works on Windows too (".pathname" gives "/C:/..." and breaks there).
 const root = fileURLToPath(new URL("..", import.meta.url));
@@ -16,6 +17,39 @@ if (!assets.includes("/assets/")) {
   throw new Error("Built asset tags were not found in dist/index.html");
 }
 
+// Preload the visited page's own chunk and language pack (plus their static imports), so they
+// download in parallel with the entry script instead of after it has run.
+const manifest = JSON.parse(readFileSync(join(dist, ".vite", "manifest.json"), "utf8"));
+const PAGE_MODULE = {
+  home: "src/components/home-page.tsx",
+  a: "src/components/stay-view.tsx",
+  b: "src/components/stay-view.tsx",
+  neighborhood: "src/components/neighborhood-page.tsx",
+  "day-trips": "src/components/day-trips-page.tsx",
+  arrival: "src/components/arrival-page.tsx",
+  privacy: "src/components/privacy-page.tsx",
+};
+function chunkFiles(key, seen = new Set()) {
+  const entry = manifest[key];
+  if (!entry) throw new Error(`Vite manifest has no chunk for ${key}; update PAGE_MODULE in prerender.mjs`);
+  if (seen.has(key)) return seen;
+  seen.add(key);
+  for (const child of entry.imports ?? []) chunkFiles(child, seen);
+  return seen;
+}
+const entryKey = Object.keys(manifest).find((key) => manifest[key].isEntry);
+const alreadyLoaded = new Set([...chunkFiles(entryKey)].map((key) => manifest[key].file));
+function preloadTags(page, lang) {
+  const keys = new Set([
+    ...chunkFiles(PAGE_MODULE[page] ?? "src/components/guide-view.tsx"),
+    ...chunkFiles(`src/data/packs/${lang}.ts`),
+  ]);
+  return [...new Set([...keys].map((key) => manifest[key].file))]
+    .filter((file) => !alreadyLoaded.has(file))
+    .map((file) => `<link rel="modulepreload" crossorigin href="/${file}">`)
+    .join("\n");
+}
+
 const vite = await createServer({
   root,
   server: { middlewareMode: true },
@@ -28,9 +62,7 @@ const paths = await vite.ssrLoadModule("/src/lib/paths.ts");
 const seo = await vite.ssrLoadModule("/src/lib/seo.ts");
 
 // Queue actions immediately; defer only the third-party loader.
-const inline = (name) => `<script>${minifySync(name, readFileSync(join(root, "scripts", name), "utf8")).code.trim()}</script>`;
-const gtmHead = inline("analytics-bootstrap.js");
-const metricoolHead = inline("metricool-bootstrap.js");
+const [gtmHead, metricoolHead] = inlineScripts();
 const gtmBody = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8TLRH4L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;
 
 const pages = paths.PAGE_IDS;
@@ -62,6 +94,7 @@ ${tags.fontLink}
 <link rel="manifest" href="/site.webmanifest" />
 ${tags.ld}
 ${assets}
+${preloadTags(page, lang)}
 </head>
 <body>
 ${gtmBody}
@@ -81,5 +114,6 @@ ${gtmBody}
 const sitemap = seo.sitemapXml();
 writeFileSync(join(dist, "sitemap.xml"), sitemap);
 writeFileSync(join(root, "public", "sitemap.xml"), sitemap);
+rmSync(join(dist, ".vite"), { recursive: true, force: true });
 await vite.close();
 console.log(`Prerendered ${count} pages`);

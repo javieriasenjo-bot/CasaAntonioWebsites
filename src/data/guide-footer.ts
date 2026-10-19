@@ -1,7 +1,6 @@
 import type { Lang, PageId } from "@/lib/paths";
-import type { GuideCopy } from "./guides";
 
-export const guideFooter = (lang: Lang): GuideCopy["footerLinks"] => [
+export const guideFooter = (lang: Lang): { page: PageId; label: string }[] => [
   { page: "access", label: lang === "ja" ? "空港から" : lang === "zh" ? "从机场" : lang === "ko" ? "공항에서" : "From the airport" },
   { page: "snow-festival", label: lang === "ja" ? "雪まつり" : lang === "zh" ? "雪祭" : lang === "ko" ? "눈축제" : "Snow Festival" },
   { page: "teine-ski", label: lang === "ja" ? "サッポロテイネ" : lang === "zh" ? "札幌手稻" : lang === "ko" ? "삿포로 데이네" : "Sapporo Teine" },

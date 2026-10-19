@@ -1,13 +1,9 @@
 import { useState } from "react";
+import { house } from "@/data/active";
+import { airbnbUrl } from "@/data/links";
 import { bookingReviews, reviewReady, reviews, type BookingReviews, type StayReviews } from "@/data/reviews";
+import { formatDay, formatMonth } from "@/lib/dates";
 import { useLang, type Lang } from "@/lib/i18n";
-
-const LABEL: Record<Lang, { title: string; reviews: string; favorite: string; translated: string; all: string; bookingAll: string; more: string; less: string; original: string; excerpt: string; ofTen: string }> = {
-  en: { title: "What guests say", reviews: "reviews", favorite: "Guest favorite", translated: "Translated by Airbnb", all: "Read all reviews on Airbnb", bookingAll: "Read all reviews on Booking.com", more: "Show more reviews", less: "Show fewer", original: "Original language", excerpt: "excerpt", ofTen: "/10" },
-  ja: { title: "ゲストの声", reviews: "件のレビュー", favorite: "ゲストのお気に入り", translated: "Airbnbによる英訳", all: "Airbnbですべてのレビューを見る", bookingAll: "Booking.comですべてのレビューを見る", more: "レビューをもっと見る", less: "閉じる", original: "原文", excerpt: "抜粋", ofTen: "/10" },
-  zh: { title: "住客评价", reviews: "条评价", favorite: "房客推荐", translated: "Airbnb 翻译", all: "在 Airbnb 查看全部评价", bookingAll: "在 Booking.com 查看全部评价", more: "查看更多评价", less: "收起", original: "原文", excerpt: "节选", ofTen: "/10" },
-  ko: { title: "게스트 후기", reviews: "개의 후기", favorite: "게스트 선호", translated: "Airbnb 번역", all: "Airbnb에서 모든 후기 보기", bookingAll: "Booking.com에서 모든 후기 보기", more: "후기 더 보기", less: "접기", original: "원문", excerpt: "일부 발췌", ofTen: "/10" },
-};
 
 const INITIAL = 4;
 const INITIAL_HOME = 2;
@@ -18,33 +14,35 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
   const [open, setOpen] = useState(false);
   const air: StayReviews = reviews[id];
   const book: BookingReviews = bookingReviews[id];
-  const l = LABEL[lang];
+  const l = house().copy.ui.reviews;
   const airOk = reviewReady(air) && air.rating != null && air.count != null;
-  const items: Item[] = [];
+  const interleaved: Item[] = [];
   const airQuotes = airOk ? air.quotes : [];
   // Interleave Airbnb and Booking.com so both sources show before "Show more".
   for (let i = 0; i < Math.max(airQuotes.length, book.quotes.length); i++) {
     const q = airQuotes[i];
     if (q)
-      items.push({
+      interleaved.push({
         key: `a-${q.name}-${q.when}`,
         text: q.text,
-        meta: [q.name, q.country, q.when].filter(Boolean).join(" · ") + (q.translated ? ` · ${l.translated}` : "") + (q.excerpt ? ` · ${l.excerpt}` : ""),
+        meta: [q.name, q.country, formatMonth(q.when, lang)].filter(Boolean).join(" · ") + (q.translated ? ` · ${l.translated}` : "") + (q.excerpt ? ` · ${l.excerpt}` : ""),
         source: "Airbnb",
         sourceUrl: q.sourceUrl,
         lang: "en",
       });
     const b = book.quotes[i];
     if (b)
-      items.push({
+      interleaved.push({
         key: `b-${b.name}`,
         text: b.text,
-        meta: [b.name, b.country, b.reviewDate].filter(Boolean).join(" · ") + (b.lang !== lang ? ` · ${l.original}` : "") + (b.excerpt ? ` · ${l.excerpt}` : ""),
+        meta: [b.name, b.country, b.reviewDate ? formatDay(b.reviewDate, lang) : ""].filter(Boolean).join(" · ") + (b.lang !== lang ? ` · ${l.original}` : "") + (b.excerpt ? ` · ${l.excerpt}` : ""),
         source: "Booking.com",
         sourceUrl: b.sourceUrl,
         lang: b.lang === "zh" ? "zh-Hant" : b.lang,
       });
   }
+  // Guests reading in their own language come first (stable, so source interleaving is kept otherwise).
+  const items = [...interleaved].sort((x, y) => Number(!x.lang?.startsWith(lang)) - Number(!y.lang?.startsWith(lang)));
   const shown = open ? items : items.slice(0, initial);
   return (
     <div className="review-block">
@@ -66,9 +64,9 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
         </span>
       </p>
       <p className="review-checked">
-        {({ en: "Ratings recorded", ja: "評価の記録日", zh: "评分记录日期", ko: "평점 기록일" })[lang]}:
-        {" "}Airbnb <time dateTime={air.recordedOn}>{air.recordedOn}</time>
-        {" · "}Booking.com <time dateTime={book.recordedOn}>{book.recordedOn}</time>
+        {l.recorded}:
+        {" "}Airbnb <time dateTime={air.recordedOn}>{formatDay(air.recordedOn, lang)}</time>
+        {" · "}Booking.com <time dateTime={book.recordedOn}>{formatDay(book.recordedOn, lang)}</time>
       </p>
       <ul className="review-quotes" id={`reviews-${id}`}>
         {shown.map((it) => (
@@ -91,7 +89,7 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
       ) : null}
       <p className="review-links">
         {airOk ? (
-          <a className="text-link" href={air.href} target="_blank" rel="noreferrer" data-intent="reviews" data-property={id} data-placement="reviews">
+          <a className="text-link" href={airbnbUrl(id, lang)} target="_blank" rel="noreferrer" data-intent="reviews" data-property={id} data-placement="reviews">
             {l.all}
           </a>
         ) : null}
@@ -108,7 +106,7 @@ export function Reviews({ which }: { which: "home" | "a" | "b" }) {
   const ids = which === "home" ? (["a", "b"] as const) : ([which] as const);
   return (
     <section className="reviews">
-      <h2>{LABEL[lang].title}</h2>
+      <h2>{house().copy.ui.reviews.title}</h2>
       {ids.map((id) => (
         <Block key={id} id={id} title={id === "a" ? "Casa Antonio A" : "Casa Antonio B"} lang={lang} initial={which === "home" ? INITIAL_HOME : INITIAL} />
       ))}
