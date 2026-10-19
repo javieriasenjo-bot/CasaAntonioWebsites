@@ -508,6 +508,9 @@ neighborhood: {
       alt: "노을 진 바닷가의 Kojohama Cabins",
     },
     email: {
+        copy: "이메일 주소 복사",
+        copied: "이메일 주소를 복사했습니다",
+        manual: "다음 이메일 주소를 선택해 복사하세요:",
       label: "이메일 문의",
       longStay: "이메일로 장기 숙박 문의",
       body: "아파트(A 또는 B):\n숙박 날짜:\n인원:\n문의 내용:",

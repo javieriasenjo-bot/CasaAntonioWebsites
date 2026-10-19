@@ -752,6 +752,9 @@ export const copy = {
         alt: "Kojohama Cabins by the sea at sunset",
       },
       email: {
+        copy: "Copy email address",
+        copied: "Email address copied",
+        manual: "Select and copy this email address:",
         label: "Email enquiries",
         longStay: "Ask about a long stay by email",
         body: "Apartment (A or B):\nStay dates:\nNumber of guests:\nQuestion:",

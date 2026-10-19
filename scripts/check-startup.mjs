@@ -139,6 +139,82 @@ try {
     }
     await ctx.close();
   }
+  // Exercise the actual card surfaces and controls, not just their link markup.
+  for (const prefix of ["", "ja/", "zh-cn/", "ko/"]) {
+    const ctx = await context();
+    const page = await ctx.newPage();
+    const home = `${origin}/${prefix}`;
+    for (const id of ["a", "b"]) {
+      for (const action of ["title", "label", "surface", "keyboard"]) {
+        await page.goto(home);
+        await page.waitForFunction(() => document.documentElement.classList.contains("app-ready"));
+        const card = page.locator(`.choice-${id}`);
+        if (action === "surface") {
+          await card.scrollIntoViewIfNeeded();
+          const box = await card.boundingBox();
+          await page.mouse.click(box.x + box.width - 10, box.y + 10);
+        } else {
+          const link = card.locator(action === "title" ? ".choice-name a" : ".choice-link");
+          if (action === "keyboard") { await link.focus(); await page.keyboard.press("Enter"); }
+          else await link.click();
+        }
+        await page.waitForURL(`${home}casa-antonio-${id}/`);
+      }
+      await page.goto(home);
+      await page.waitForFunction(() => document.documentElement.classList.contains("app-ready"));
+      const book = page.locator(`.choice-${id} .choice-book`);
+      await book.evaluate(anchor => anchor.addEventListener("click", event => event.preventDefault()));
+      await book.click();
+      const events = await page.evaluate(() => window.dataLayer.filter(item => item.event === "airbnb_click"));
+      assert.equal(events.length, 1); assert.equal(events[0].property, id);
+      const photo = page.locator(`.choice-${id} .choice-photo`);
+      await photo.scrollIntoViewIfNeeded();
+      await page.waitForFunction(selector => { const image = document.querySelector(selector); return image.complete && image.naturalWidth > 0; }, `.choice-${id} .choice-photo`);
+      assert.match(await photo.evaluate(image => image.currentSrc), /-800\.avif$/);
+    }
+    await ctx.addInitScript(() => { Object.defineProperty(navigator, "clipboard", { configurable: true, value: { writeText: async text => { window.__copiedEmail = text; } } }); });
+    await page.goto(home); await page.waitForFunction(() => document.documentElement.classList.contains("app-ready"));
+    const copy = page.locator("footer .copy-email"); await copy.click();
+    await page.waitForFunction(() => window.__copiedEmail === "admin@kagami-planning.com");
+    assert.ok(await page.locator("footer [role=status]").textContent());
+    assert.equal(await page.evaluate(() => window.dataLayer.filter(item => item.event === "contact_click").length), 0);
+    await page.evaluate(() => { navigator.clipboard.writeText = async () => { throw new Error("clipboard blocked"); }; });
+    await copy.click();
+    await page.locator("footer .email-copy-manual").waitFor();
+    assert.match(await page.locator("footer .email-copy-manual").textContent(), /admin@kagami-planning\.com/);
+    results.push({ scenario: "card actions, responsive photos and email copy/fallback", path: `/${prefix}`, passed: true });
+    await ctx.close();
+  }
+  for (const [locale, target] of [["ja-JP", "ja"], ["ko-KR", "ko"], ["zh-TW", "zh-cn"]]) {
+    const ctx = await context({ locale }); const page = await ctx.newPage();
+    await page.goto(origin); await page.locator(".lang-banner").waitFor();
+    assert.equal(new URL(page.url()).pathname, "/");
+    assert.equal(await page.locator(".lang-banner a").getAttribute("href"), `/${target}/`);
+    for (const viewport of [{ width: 320, height: 568 }, { width: 393, height: 650 }, { width: 430, height: 740 }, { width: 844, height: 390 }]) {
+      await page.setViewportSize(viewport);
+      for (const font of ["100%", "125%"]) {
+        await page.evaluate(size => { document.documentElement.style.fontSize = size; window.scrollTo(0, 0); }, font);
+        await page.waitForTimeout(70);
+        assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, `${locale}: banner overflow`);
+        assert.ok(await page.evaluate(() => document.querySelector("h1").getBoundingClientRect().top >= document.querySelector(".site-header").getBoundingClientRect().bottom - 1));
+        await page.locator(".menu-toggle").click();
+        await page.waitForFunction(() => document.querySelector("#site-nav").dataset.open === "true");
+        const last = page.locator("#site-nav a").last(); await last.scrollIntoViewIfNeeded();
+        assert.ok(await last.evaluate(element => {
+          const box = element.getBoundingClientRect();
+          return box.bottom <= innerHeight + 1 && element.contains(document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2));
+        }), `${locale}: menu unreachable`);
+        await page.keyboard.press("Escape"); await page.locator("#site-nav").waitFor({ state: "hidden" });
+      }
+    }
+    await page.locator(".lang-banner button").click(); await page.locator(".lang-banner").waitFor({ state: "hidden" });
+    await page.reload(); await page.waitForFunction(() => document.documentElement.classList.contains("app-ready"));
+    assert.equal(await page.locator(".lang-banner").count(), 0);
+    await page.evaluate(() => { localStorage.clear(); sessionStorage.clear(); });
+    await page.reload(); await page.locator(".lang-banner a").click(); await page.waitForURL(`${origin}/${target}/`);
+    results.push({ scenario: "first-visit language banner, enlarged text, dismissal and locale navigation", locale, passed: true });
+    await ctx.close();
+  }
   const delayed = await context();
   let release; const gate = new Promise(done => { release = done; });
   await delayed.route("**/assets/*.js", async route => { await gate; await route.continue(); });

@@ -508,6 +508,9 @@ neighborhood: {
       alt: "夕阳下海边的 Kojohama Cabins",
     },
     email: {
+        copy: "复制邮箱地址",
+        copied: "邮箱地址已复制",
+        manual: "请选择并复制此邮箱地址：",
       label: "邮件咨询",
       longStay: "通过邮件咨询长住",
       body: "公寓（A或B）：\n入住日期：\n人数：\n咨询内容：",

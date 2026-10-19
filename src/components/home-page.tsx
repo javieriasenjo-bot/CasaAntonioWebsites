@@ -43,6 +43,7 @@ export function Home() {
           </div>
           <div className="choices">
             <article className="choice choice-a">
+              <Photo className="choice-photo" src="/photos/open.jpg" alt="" sizes="(max-width: 860px) calc(100vw - 1.6rem), (max-width: 1160px) 48vw, 554px" />
               <span className="choice-kicker" aria-hidden="true">A</span>
               <h3 className="choice-name">
                 {/* Stretched link: the whole card opens the apartment page. */}
@@ -53,13 +54,14 @@ export function Home() {
                 {apartmentSummary("a", lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
               </dl>
               <div className="choice-actions">
-                <span className="choice-link" aria-hidden="true">{t.aCard.cta}</span>
+                <PageLink page="a" className="choice-link">{t.aCard.cta}</PageLink>
                 <AirbnbLink cabin="a" location="home-a" className="choice-book">
                   {t.bookA}
                 </AirbnbLink>
               </div>
             </article>
             <article className="choice choice-b">
+              <Photo className="choice-photo" src="/photos/b-living.jpg" alt="" sizes="(max-width: 860px) calc(100vw - 1.6rem), (max-width: 1160px) 48vw, 554px" />
               <span className="choice-kicker" aria-hidden="true">B</span>
               <h3 className="choice-name">
                 {/* Stretched link: the whole card opens the apartment page. */}
@@ -70,7 +72,7 @@ export function Home() {
                 {apartmentSummary("b", lang).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
               </dl>
               <div className="choice-actions">
-                <span className="choice-link" aria-hidden="true">{t.bCard.cta}</span>
+                <PageLink page="b" className="choice-link">{t.bCard.cta}</PageLink>
                 <AirbnbLink cabin="b" location="home-b" className="choice-book">
                   {t.bookB}
                 </AirbnbLink>

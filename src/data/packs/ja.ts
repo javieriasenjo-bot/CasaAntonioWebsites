@@ -623,6 +623,9 @@ export const copy = {
         alt: "夕暮れの海辺に建つ Kojohama Cabins",
       },
       email: {
+        copy: "メールアドレスをコピー",
+        copied: "メールアドレスをコピーしました",
+        manual: "このメールアドレスを選択してコピーしてください：",
         label: "メールでお問い合わせ",
         longStay: "長期滞在をメールで相談する",
         body: "希望のお部屋（AまたはB）：\n宿泊日程：\n人数：\nお問い合わせ内容：",

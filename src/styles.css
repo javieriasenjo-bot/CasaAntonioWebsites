@@ -627,14 +627,13 @@ a.quick-reserve-trigger {
   position: relative;
 }
 
-.choice-a {
-  background-image: url("/photos/open-800.webp");
-  background-image: image-set(url("/photos/open-800.webp") 1x, url("/photos/open-1600.webp") 2x);
-}
-
-.choice-b {
-  background-image: url("/photos/b-living-800.webp");
-  background-image: image-set(url("/photos/b-living-800.webp") 1x, url("/photos/b-living-1600.webp") 2x);
+.choice .choice-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
 .choice-kicker {
@@ -656,6 +655,9 @@ a.quick-reserve-trigger {
 }
 
 .choice-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   border-bottom: 1px solid rgb(255 255 255 / 0.7);
   font-size: 0.85rem;
 }
@@ -685,6 +687,7 @@ a.quick-reserve-trigger {
 
 .choice-actions {
   z-index: 2;
+  pointer-events: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -692,6 +695,8 @@ a.quick-reserve-trigger {
   margin-top: 1rem;
   width: 100%;
 }
+
+.choice-actions a { pointer-events: auto; }
 
 .choice-book {
   display: inline-flex;
@@ -712,6 +717,28 @@ a.quick-reserve-trigger {
   background: white;
   color: var(--color-ink);
 }
+
+.email-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.copy-email {
+  display: none;
+  min-height: 44px;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 0.4rem;
+  background: var(--color-card);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.app-ready .copy-email { display: inline-flex; align-items: center; }
+.email-copy-manual { width: 100%; overflow-wrap: anywhere; user-select: text; }
 
 .lightbox-preload {
   position: absolute;
@@ -1511,7 +1538,8 @@ body.lightbox-open .quick-reserve {
     padding: .5rem .75rem;
     background: var(--color-paper);
     border-bottom: 1px solid var(--color-line);
-    max-height: calc(100svh - 8rem);
+    /* The language suggestion can make the header taller than two rows. */
+    max-height: calc(100svh - 100%);
     overflow-y: auto;
   }
 
@@ -1574,6 +1602,10 @@ body.lightbox-open .quick-reserve {
 
   .site-header {
     transition: transform 0.25s ease;
+  }
+
+  .site-header:has(.mobile-nav[open]) {
+    z-index: 30;
   }
 
   .site-header[data-hidden="true"]:not(:focus-within) {
