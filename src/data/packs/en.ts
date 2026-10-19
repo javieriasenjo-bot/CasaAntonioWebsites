@@ -731,7 +731,6 @@ export const copy = {
 
 export const guides = {
     menu: "Menu",
-    closeMenu: "Close",
     banner: "You last read this site in",
     bannerOpen: "Open this page in",
     bannerStay: "Stay in this language",
@@ -744,16 +743,12 @@ export const guides = {
     teineMore: "Sapporo Teine, as a ski day",
     bookA: "Check dates · A",
     bookB: "Check dates · B",
-    bNote:
-      "The photographs below are the shared house outside. They are not the rooms inside Casa Antonio B.",
-    bPhotosCta: "See Casa Antonio B photos on Airbnb",
     copyAddress: "Copy the Japanese address",
     copied: "Copied",
     directions: "Directions in Google Maps",
     busLabel: "Chuo Bus timetable, New Chitose to Asabu",
     matrixLabel: "Subway station times",
     snowLabel: "Official Snow Festival notice",
-    bSlots: ["Living room with a projector", "Bedroom, three single beds", "Kitchen and dining table", "Bath with a tub"],
     points: {
       home: ["5 min to Asabu Station", "Free parking, one car each", "Full kitchen", "65 m² each"],
       a: ["2 bedrooms", "Up to 4 guests", "Free parking, one car", "Full kitchen", "About 65 m²"],

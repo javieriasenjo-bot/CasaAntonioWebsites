@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { EmailLink } from "@/components/email-link";
+import { kojohamaUrl } from "@/components/kojohama-promo";
 import { house } from "@/data/active";
 import { LANG_NAME } from "@/data/lang-name";
 import { rememberLang, useLang, type Lang } from "@/lib/i18n";
@@ -203,7 +204,7 @@ export function Shell({ children }: { children: ReactNode }) {
           </p>
           <p className="coast-line">
             <strong>{g.coastTitle}.</strong> {g.coastBody}{" "}
-            <a href="https://kojohamacabins.jp/" rel="noopener noreferrer">
+            <a href={kojohamaUrl(lang, "footer")} rel="noopener">
               {g.coastCta}
             </a>
           </p>

@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createServer } from "vite";
+import { createServer, minifySync } from "vite";
 
 // fileURLToPath works on Windows too (".pathname" gives "/C:/..." and breaks there).
 const root = fileURLToPath(new URL("..", import.meta.url));
@@ -28,8 +28,9 @@ const paths = await vite.ssrLoadModule("/src/lib/paths.ts");
 const seo = await vite.ssrLoadModule("/src/lib/seo.ts");
 
 // Queue actions immediately; defer only the third-party loader.
-const gtmHead = `<script>${readFileSync(join(root, "scripts", "analytics-bootstrap.js"), "utf8")}</script>`;
-const metricoolHead = `<script>${readFileSync(join(root, "scripts", "metricool-bootstrap.js"), "utf8")}</script>`;
+const inline = (name) => `<script>${minifySync(name, readFileSync(join(root, "scripts", name), "utf8")).code.trim()}</script>`;
+const gtmHead = inline("analytics-bootstrap.js");
+const metricoolHead = inline("metricool-bootstrap.js");
 const gtmBody = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8TLRH4L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;
 
 const pages = paths.PAGE_IDS;

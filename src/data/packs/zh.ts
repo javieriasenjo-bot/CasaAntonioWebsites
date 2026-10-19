@@ -3,7 +3,6 @@ import { guideFooter as footer } from "../guide-footer";
 export { copy };
 export const guides = {
     menu: "菜单",
-    closeMenu: "关闭",
     banner: "你上次选择的语言是",
     bannerOpen: "用这个语言打开",
     bannerStay: "留在当前语言",
@@ -16,15 +15,12 @@ export const guides = {
     teineMore: "札幌手稻的滑雪日",
     bookA: "查看空房 · A",
     bookB: "查看空房 · B",
-    bNote: "下面的照片是这栋房子的外面，不是 Casa Antonio B 的室内。",
-    bPhotosCta: "在 Airbnb 上看 Casa Antonio B 的照片",
     copyAddress: "复制日文地址",
     copied: "已复制",
     directions: "用 Google 地图看路线",
     busLabel: "中央巴士时刻表（新千岁到麻生）",
     matrixLabel: "地铁站间时间",
     snowLabel: "雪祭官方通知",
-    bSlots: ["带投影仪的起居室", "三张单人床的卧室", "厨房和餐桌", "带浴缸的浴室"],
     points: {
       home: ["步行5分钟到麻生站", "免费停车，每套一辆", "可用的厨房", "每套约65㎡"],
       a: ["两间卧室", "最多4人", "免费停车，一辆", "可用的厨房", "约65㎡"],

@@ -40,10 +40,17 @@ const COPY: Record<Lang, { eyebrow: string; title: string; body: string; cta: st
   },
 };
 
-export function KojohamaPromo({ from }: { from: "home" | "a" | "b" }) {
+export type KojohamaFrom = "home" | "a" | "b" | "footer" | "guide";
+
+// Single place that builds the tracked link, so every cross-link keeps attribution in Kojohama's GA4.
+export function kojohamaUrl(lang: Lang, from: KojohamaFrom) {
+  return `${SITE[lang]}?utm_source=casaantonio.jp&utm_medium=referral&utm_campaign=crosslink&utm_content=${from}`;
+}
+
+export function KojohamaPromo({ from }: { from: KojohamaFrom }) {
   const { lang } = useLang();
   const c = COPY[lang];
-  const href = `${SITE[lang]}?utm_source=casaantonio.jp&utm_medium=referral&utm_campaign=crosslink&utm_content=${from}`;
+  const href = kojohamaUrl(lang, from);
   return (
     <section className="kojohama-promo" aria-label={c.title}>
       <div className="wrap kojohama-inner">

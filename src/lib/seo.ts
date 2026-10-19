@@ -760,13 +760,18 @@ export function headFor(page: PageId, lang: Lang) {
       { property: "og:image:height", content: "630" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: OG_LOCALE[lang] },
+      ...(Object.keys(OG_LOCALE) as Lang[])
+        .filter((other) => other !== lang)
+        .map((other) => ({ property: "og:locale:alternate", content: OG_LOCALE[other] })),
+      { property: "og:site_name", content: "Casa Antonio" },
+      { property: "og:image:alt", content: meta.title },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: meta.title },
       { name: "twitter:description", content: meta.description },
       { name: "twitter:image", content: image },
     ],
     links,
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(page, lang)) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(page, lang)).replace(/</g, "\\u003c") }],
   };
 }
 

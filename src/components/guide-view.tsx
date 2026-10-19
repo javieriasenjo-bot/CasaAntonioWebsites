@@ -2,6 +2,7 @@ import { AirbnbLink } from "@/components/airbnb-link";
 import { EmailLink } from "@/components/email-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
+import { kojohamaUrl } from "@/components/kojohama-promo";
 import { PhotoCredit } from "@/components/photo-credit";
 import { Shell } from "@/components/chrome";
 import { house } from "@/data/active";
@@ -301,7 +302,7 @@ export function ComboPage() {
             </div>
           ))}
           <p>
-            <a className="text-link" href="https://kojohamacabins.jp/">
+            <a className="text-link" href={kojohamaUrl(lang, "guide")}>
               Kojohama Cabins
             </a>
           </p>

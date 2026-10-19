@@ -602,7 +602,6 @@ export const copy = {
 
 export const guides = {
     menu: "メニュー",
-    closeMenu: "閉じる",
     banner: "前回選んだ言語は",
     bannerOpen: "このページを開く",
     bannerStay: "この言語のまま",
@@ -615,15 +614,12 @@ export const guides = {
     teineMore: "サッポロテイネの一日",
     bookA: "空室を見る · A",
     bookB: "空室を見る · B",
-    bNote: "下の写真は、共有の家の外です。Casa Antonio Bの室内ではありません。",
-    bPhotosCta: "AirbnbでCasa Antonio Bの写真を見る",
     copyAddress: "日本語の住所をコピー",
     copied: "コピーしました",
     directions: "Googleマップで経路",
     busLabel: "中央バス時刻表（新千歳→麻生）",
     matrixLabel: "地下鉄の駅間時間",
     snowLabel: "さっぽろ雪まつりの公式告知",
-    bSlots: ["プロジェクターのある居間", "シングルベッド3台の寝室", "キッチンとダイニング", "浴槽のある浴室"],
     points: {
       home: ["麻生駅まで徒歩5分", "無料駐車、各室1台", "使えるキッチン", "各約65㎡"],
       a: ["寝室2つ", "定員4名", "無料駐車、1台", "使えるキッチン", "約65㎡"],

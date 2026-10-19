@@ -3,7 +3,6 @@ import { guideFooter as footer } from "../guide-footer";
 export { copy };
 export const guides = {
     menu: "메뉴",
-    closeMenu: "닫기",
     banner: "지난번에 고른 언어는",
     bannerOpen: "이 페이지를 열기",
     bannerStay: "이 언어로 남기",
@@ -16,15 +15,12 @@ export const guides = {
     teineMore: "삿포로 데이네의 스키 하루",
     bookA: "날짜 보기 · A",
     bookB: "날짜 보기 · B",
-    bNote: "아래 사진은 공유하는 집의 바깥입니다. Casa Antonio B의 실내가 아닙니다.",
-    bPhotosCta: "Airbnb에서 Casa Antonio B 사진 보기",
     copyAddress: "일본어 주소 복사",
     copied: "복사했습니다",
     directions: "Google 지도로 길 찾기",
     busLabel: "주오 버스 시각표 (신치토세 → 아사부)",
     matrixLabel: "지하철 역간 시간",
     snowLabel: "눈축제 공식 안내",
-    bSlots: ["프로젝터가 있는 거실", "싱글 침대 세 개의 침실", "주방과 식탁", "욕조가 있는 욕실"],
     points: {
       home: ["아사부역까지 도보 5분", "무료 주차, 집마다 1대", "쓸 수 있는 주방", "각 약 65㎡"],
       a: ["침실 2개", "최대 4명", "무료 주차, 1대", "쓸 수 있는 주방", "약 65㎡"],

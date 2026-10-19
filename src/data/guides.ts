@@ -5,7 +5,6 @@ type Block = { h: string; paragraphs: string[] };
 
 export type GuideCopy = {
   menu: string;
-  closeMenu: string;
   banner: string;
   bannerOpen: string;
   bannerStay: string;
@@ -18,8 +17,6 @@ export type GuideCopy = {
   teineMore: string;
   bookA: string;
   bookB: string;
-  bNote: string;
-  bSlots: string[];
   points: { home: string[]; a: string[]; b: string[] };
   combo: { eyebrow: string; title: string; lede: string; blocks: Block[] };
   access: { eyebrow: string; title: string; lede: string; blocks: Block[]; facts: { k: string; v: string }[] };
