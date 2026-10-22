@@ -9,6 +9,8 @@ export const ADDRESS = {
   full: "〒001-0038 北海道札幌市北区北38条西3丁目1-7",
 } as const;
 
+export const GUEST_EMAIL = "admin@kagami-planning.com";
+
 const AIRBNB_ROOM = { a: "1248284267045468378", b: "1248260873560502499" } as const;
 
 // Canonical listing URLs (structured data, documentation).

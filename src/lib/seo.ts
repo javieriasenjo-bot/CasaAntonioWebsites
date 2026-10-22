@@ -1,5 +1,5 @@
 import { MAP } from "@/data/facts";
-import { ADDRESS, AIRBNB } from "@/data/links";
+import { ADDRESS, AIRBNB, GUEST_EMAIL, airbnbUrl } from "@/data/links";
 import { DAMAGE_POLICY, PROPERTY_FACTS, preparationFaq } from "@/data/property-facts";
 import { photoFile, photoMeta } from "@/lib/photo-manifest";
 import { FONT_STYLESHEET } from "@/lib/fonts";
@@ -409,13 +409,150 @@ export function crumbLabel(page: PageId, lang: Lang) {
   return CRUMB[lang][page];
 }
 
-function lodging() {
+type SchemaCopy = {
+  house: [string, boolean][];
+  seasoningName: string;
+  seasoningValue: string;
+  reserve: Record<"a" | "b", string>;
+  privateDoor: string;
+  kitchen: string;
+  aLaundry: string;
+  bLaundry: string;
+  ground: string;
+  projector: string;
+  stairsName: string;
+  stairsValue: string;
+};
+
+const SCHEMA_COPY: Record<Lang, SchemaCopy> = {
+  en: {
+    house: [
+      ["Free parking, one large car per apartment", true],
+      ["Parking snow cleared by the host or property management", true],
+      ["Self check-in", true],
+      ["Wi-Fi", true],
+      ["Kitchen", true],
+      ["Washing machine", true],
+      ["Smoking allowed", false],
+      ["Parties allowed", false],
+      ["Cot available", false],
+      ["High chair available", false],
+    ],
+    seasoningName: "Seasonings",
+    seasoningValue: "Oil, salt and pepper are usually removed between stays for hygiene",
+    reserve: { a: "Book Casa Antonio A on Airbnb", b: "Book Casa Antonio B on Airbnb" },
+    privateDoor: "Private entrance",
+    kitchen: "Kitchen",
+    aLaundry: "Washing machine and drying rack",
+    bLaundry: "Washing machine and space to hang clothes",
+    ground: "Ground floor",
+    projector: "Projector",
+    stairsName: "Stairs to the apartment",
+    stairsValue: "Second floor, about 25 steps with a handrail",
+  },
+  ja: {
+    house: [
+      ["無料駐車場（各室、大型車1台）", true],
+      ["駐車場の除雪はホストまたは管理会社", true],
+      ["セルフチェックイン", true],
+      ["Wi-Fi", true],
+      ["キッチン", true],
+      ["洗濯機", true],
+      ["喫煙可", false],
+      ["パーティー可", false],
+      ["ベビーベッドあり", false],
+      ["ハイチェアあり", false],
+    ],
+    seasoningName: "調味料",
+    seasoningValue: "油・塩・こしょうは衛生のため、通常は滞在ごとに撤去",
+    reserve: { a: "AirbnbでCasa Antonio Aを予約", b: "AirbnbでCasa Antonio Bを予約" },
+    privateDoor: "専用入口",
+    kitchen: "キッチン",
+    aLaundry: "洗濯機と物干しラック",
+    bLaundry: "洗濯機と室内の物干しスペース",
+    ground: "1階",
+    projector: "プロジェクター",
+    stairsName: "お部屋までの階段",
+    stairsValue: "2階、手すり付きの階段約25段",
+  },
+  zh: {
+    house: [
+      ["免费停车（每套可停一辆大型车）", true],
+      ["停车位积雪由房东或物业清理", true],
+      ["自助入住", true],
+      ["Wi-Fi", true],
+      ["厨房", true],
+      ["洗衣机", true],
+      ["允许吸烟", false],
+      ["允许聚会", false],
+      ["提供婴儿床", false],
+      ["提供儿童高脚椅", false],
+    ],
+    seasoningName: "调味料",
+    seasoningValue: "出于卫生考虑，油、盐和胡椒通常会在每次入住之间移除",
+    reserve: { a: "在Airbnb预订Casa Antonio A", b: "在Airbnb预订Casa Antonio B" },
+    privateDoor: "独立入口",
+    kitchen: "厨房",
+    aLaundry: "洗衣机和晾衣架",
+    bLaundry: "洗衣机及洗衣房内的晾衣空间",
+    ground: "一楼",
+    projector: "投影仪",
+    stairsName: "到达公寓的台阶",
+    stairsValue: "二楼，约25级带扶手的台阶",
+  },
+  ko: {
+    house: [
+      ["무료 주차 (아파트당 대형차 1대)", true],
+      ["주차장 눈은 호스트 또는 관리 회사가 치움", true],
+      ["셀프 체크인", true],
+      ["Wi-Fi", true],
+      ["주방", true],
+      ["세탁기", true],
+      ["흡연 가능", false],
+      ["파티 가능", false],
+      ["아기 침대 제공", false],
+      ["유아용 식탁 의자 제공", false],
+    ],
+    seasoningName: "조미료",
+    seasoningValue: "위생을 위해 식용유, 소금, 후추는 보통 숙박 사이에 치움",
+    reserve: { a: "Airbnb에서 Casa Antonio A 예약", b: "Airbnb에서 Casa Antonio B 예약" },
+    privateDoor: "전용 출입구",
+    kitchen: "주방",
+    aLaundry: "세탁기와 빨래 건조대",
+    bLaundry: "세탁기와 세탁실 안 빨래 건조 공간",
+    ground: "1층",
+    projector: "프로젝터",
+    stairsName: "아파트까지 계단",
+    stairsValue: "2층, 손잡이 있는 계단 약 25개",
+  },
+};
+
+function feature(name: string, value: boolean) {
+  return { "@type": "LocationFeatureSpecification", name, value };
+}
+
+function reserveAction(id: "a" | "b", lang: Lang) {
+  return {
+    "@type": "ReserveAction",
+    name: SCHEMA_COPY[lang].reserve[id],
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: airbnbUrl(id, lang),
+      inLanguage: HTML_LANG[lang],
+      actionPlatform: ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
+    },
+  };
+}
+
+function lodging(lang: Lang) {
+  const copy = SCHEMA_COPY[lang];
   return {
     "@type": "LodgingBusiness",
     "@id": `${ORIGIN}/#business`,
     name: "Casa Antonio",
     url: `${ORIGIN}/`,
     image: `${ORIGIN}${OG_IMAGE.home}`,
+    email: GUEST_EMAIL,
     address: {
       "@type": "PostalAddress",
       streetAddress: ADDRESS.street,
@@ -431,13 +568,16 @@ function lodging() {
     },
     checkinTime: "16:00",
     checkoutTime: "10:00",
-    amenityFeature: [
-      { "@type": "LocationFeatureSpecification", name: "Free parking, one car per apartment", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Self check-in", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Non-smoking", value: true },
-    ],
+    knowsLanguage: ["en", "ja", "zh-Hans", "ko"],
+    smokingAllowed: false,
     petsAllowed: false,
+    amenityFeature: copy.house.map(([name, value]) => feature(name, value)),
+    additionalProperty: {
+      "@type": "PropertyValue",
+      name: copy.seasoningName,
+      value: copy.seasoningValue,
+    },
+    potentialAction: [reserveAction("a", lang), reserveAction("b", lang)],
     containsPlace: [{ "@id": `${ORIGIN}/#apartment-a` }, { "@id": `${ORIGIN}/#apartment-b` }],
     sameAs: [AIRBNB.a, AIRBNB.b],
   };
@@ -466,6 +606,7 @@ function breadcrumb(page: PageId, lang: Lang) {
 function apartment(id: "a" | "b", lang: Lang) {
   const page: PageId = id;
   const isA = id === "a";
+  const copy = SCHEMA_COPY[lang];
   return {
     "@type": "Apartment",
     "@id": `${ORIGIN}/#apartment-${id}`,
@@ -484,12 +625,17 @@ function apartment(id: "a" | "b", lang: Lang) {
     occupancy: { "@type": "QuantitativeValue", maxValue: PROPERTY_FACTS[id].maxGuests },
     bed: PROPERTY_FACTS[id].beds.map(bed => ({ "@type": "BedDetails", typeOfBed: bed.type, numberOfBeds: bed.count })),
     containedInPlace: { "@id": `${ORIGIN}/#business` },
+    floorLevel: isA ? "1" : "2",
     amenityFeature: [
-      { "@type": "LocationFeatureSpecification", name: "Free parking, one car per apartment", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Kitchen", value: true },
-      ...(isA ? [] : [{ "@type": "LocationFeatureSpecification", name: "Projector", value: true }]),
+      feature(copy.privateDoor, true),
+      feature(copy.kitchen, true),
+      feature(isA ? copy.aLaundry : copy.bLaundry, true),
+      feature(isA ? copy.ground : copy.projector, true),
     ],
+    ...(isA ? {} : {
+      additionalProperty: { "@type": "PropertyValue", name: copy.stairsName, value: copy.stairsValue },
+    }),
+    potentialAction: reserveAction(id, lang),
   };
 }
 
@@ -703,14 +849,14 @@ export function jsonLd(page: PageId, lang: Lang) {
     dateModified: PAGE_MODIFIED[page],
   }];
   if (page === "home") {
-    graph.push(lodging(), apartment("a", lang), apartment("b", lang), {
+    graph.push(lodging(lang), apartment("a", lang), apartment("b", lang), {
       "@type": "WebSite",
       name: "Casa Antonio",
       url: `${ORIGIN}/`,
       inLanguage: ["en", "ja", "zh-Hans", "ko"],
     });
   }
-  if (page === "a" || page === "b") graph.push(lodging(), apartment(page, lang));
+  if (page === "a" || page === "b") graph.push(lodging(lang), apartment(page, lang));
   // One FAQPage per question set: /arrival/ shows the same list but only /faq/ marks it up.
   if (page === "faq") {
     graph.push({ "@type": "FAQPage", mainEntity: faqEntities(lang) });

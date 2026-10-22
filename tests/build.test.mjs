@@ -132,3 +132,29 @@ test("19 October code review: schema, previews, localized booking links and prel
   }
   assert.ok(!existsSync(join(dist, ".vite")), "Vite manifest must not be deployed");
 });
+
+test("22 October: reserve actions, house rules and llms.txt", () => {
+  const hosts = { "": "https://www.airbnb.com/", "ja/": "https://www.airbnb.jp/", "zh-cn/": "https://zh.airbnb.com/", "ko/": "https://www.airbnb.co.kr/" };
+  for (const [prefix, host] of Object.entries(hosts)) {
+    const html = readFileSync(join(dist, prefix, "index.html"), "utf8");
+    const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m => JSON.parse(m[1])["@graph"]);
+    const business = graph.find(node => node["@type"] === "LodgingBusiness");
+    assert.equal(business.smokingAllowed, false);
+    assert.equal(business.petsAllowed, false);
+    assert.equal(business.email, "admin@kagami-planning.com");
+    assert.ok([].concat(business.potentialAction).some(action => action["@type"] === "ReserveAction" && String(action.target.urlTemplate).startsWith(host)));
+    const aptA = graph.find(node => node["@type"] === "Apartment" && node.name === "Casa Antonio A");
+    const aptB = graph.find(node => node["@type"] === "Apartment" && node.name === "Casa Antonio B");
+    assert.equal(aptA.floorLevel, "1");
+    assert.equal(aptB.floorLevel, "2");
+    assert.ok(String(aptB.additionalProperty.value).length > 0);
+    assert.ok(String(aptA.potentialAction.target.urlTemplate).includes("1248284267045468378"));
+    assert.ok(String(aptB.potentialAction.target.urlTemplate).startsWith(host));
+  }
+  const llms = readFileSync(join(dist, "llms.txt"), "utf8");
+  assert.match(llms, /北38条西3丁目1-7/);
+  assert.match(llms, /1248284267045468378/);
+  assert.match(llms, /1248260873560502499/);
+  assert.match(llms, /admin@kagami-planning.com/);
+  assert.doesNotMatch(llms, /\+81|tel:/);
+});

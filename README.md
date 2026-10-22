@@ -36,7 +36,7 @@ Optional simplification (needs one dashboard change): set **Workers & Pages → 
 - **Property facts** (beds, parking, damage policy): `src/data/property-facts.ts`. Confirmed facts are listed in the tracker.
 - **Address, Airbnb and Kojohama links:** `src/data/links.ts`. Airbnb buttons open Airbnb's own site for the page language (airbnb.com / airbnb.jp / zh.airbnb.com / airbnb.co.kr). Kojohama links carry UTM tags.
 - **Reviews:** `src/data/reviews.ts`. Never invent or edit a quote. `when` is `YYYY-MM` and is formatted per language. Quotes in the page's language are shown first.
-- **SEO:** `src/lib/seo.ts` (titles, descriptions, hreflang, Open Graph, JSON-LD). `src/data/page-maintenance.ts` sets each page's `dateModified`/sitemap `lastmod`. Update it only when visible content or meaningful metadata changes.
+- **SEO:** `src/lib/seo.ts` (titles, descriptions, hreflang, Open Graph, JSON-LD with localized amenities and Airbnb reserve actions). `public/llms.txt` is the plain-text summary for answer engines. `src/data/page-maintenance.ts` sets each page's `dateModified`/sitemap `lastmod`. Update it only when visible content or meaningful metadata changes.
 - **Styles:** plain CSS in `src/styles.css`. Tailwind was removed on 19 Oct 2026, and a small reset sits at the top. Older rules are desktop-first (`max-width` queries); write new rules mobile-first.
 
 ## Photos

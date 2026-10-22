@@ -1,7 +1,8 @@
 import { house } from "@/data/active";
+import { GUEST_EMAIL } from "@/data/links";
 import { useState } from "react";
 
-export const GUEST_EMAIL = "admin@kagami-planning.com";
+export { GUEST_EMAIL };
 
 export function EmailLink({ placement, longStay = false, className }: { placement: string; longStay?: boolean; className?: string }) {
   const copy = house().copy.ui.email;
