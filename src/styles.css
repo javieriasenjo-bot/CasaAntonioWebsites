@@ -208,25 +208,69 @@ html[lang="ko"] {
   color: var(--color-ink);
 }
 
-.language-switcher {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-  border: 1px solid var(--color-ink);
-  border-radius: 999px;
-  padding: 0.15rem;
-  background: var(--color-paper);
+/* One compact control at every width instead of a permanent four-button row.
+   The four links stay in the markup (and work with JavaScript off, because
+   <details> is native), so nothing is lost for crawlers or keyboard users. */
+.language-menu {
+  position: relative;
 }
 
-.language-switcher a {
+.language-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-ink);
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  border: 1px solid var(--color-line);
   border-radius: 999px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  list-style: none;
+}
+
+.language-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.language-toggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: none;
+}
+
+.language-menu[open] .language-toggle {
+  border-color: var(--color-ink);
+}
+
+.language-switcher {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  min-width: 11rem;
+  padding: 0.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: 0.6rem;
+  background: var(--color-paper);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 0.14);
+}
+
+.language-switcher a {
+  display: flex;
+  align-items: center;
+  color: var(--color-ink);
+  border-radius: 0.4rem;
   min-height: 44px;
   padding: 0 0.75rem;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
@@ -369,7 +413,7 @@ a.quick-reserve-trigger {
   justify-content: flex-end;
   padding: 3.2rem 8vw 3.6rem;
   color: white;
-  background: linear-gradient(180deg, rgb(20 18 16 / 0.05) 15%, rgb(20 18 16 / 0.62) 100%);
+  background: linear-gradient(180deg, rgb(20 18 16 / 0.22) 0%, rgb(20 18 16 / 0.5) 45%, rgb(20 18 16 / 0.78) 100%);
 }
 
 .page-hero-copy {
@@ -399,6 +443,13 @@ a.quick-reserve-trigger {
   font-weight: 400;
   line-height: 1.6;
   text-wrap: pretty;
+}
+
+.hero-note {
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgb(255 255 255 / 0.92);
 }
 
 .selling-points {
@@ -1544,20 +1595,21 @@ body.lightbox-open .quick-reserve {
     overflow-y: auto;
   }
 
+  /* Language and Menu share one row with the logo, so the header is a single
+     row rather than two — about 50px of the first screen given back. */
   .header-tools {
-    display: contents;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-self: end;
   }
 
-  .language-switcher {
-    grid-column: 1 / -1;
-    width: 100%;
-    flex-wrap: nowrap;
+  .mobile-nav {
+    justify-self: auto;
   }
 
-  .language-switcher a {
-    flex: 1 1 0;
-    min-width: 0;
-    padding-inline: 0.25rem;
+  .language-toggle {
+    padding: 0 0.6rem;
     font-size: 0.85rem;
   }
 
@@ -1577,6 +1629,13 @@ body.lightbox-open .quick-reserve {
     display: flex;
     align-items: center;
     font-size: 1rem;
+  }
+
+  /* Two even columns instead of a 3 + 1 wrap. */
+  .selling-points {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 0.8rem;
   }
 
   .wrap,
@@ -1731,6 +1790,10 @@ body.lightbox-open .quick-reserve {
 @media (max-width: 360px) {
   .fact-grid,
   .slot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selling-points {
     grid-template-columns: 1fr;
   }
 }

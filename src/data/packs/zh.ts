@@ -10,6 +10,7 @@ export const copy = {
   },
   captions: {
     doors: "两扇独立的门",
+    bLiving: "Antonio B 的客厅与投影幕布",
     living: "Antonio A 的起居室",
     bedroom: "卧室",
     kitchen: "厨房",

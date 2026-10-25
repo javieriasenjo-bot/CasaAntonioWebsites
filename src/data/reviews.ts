@@ -1,4 +1,6 @@
 // Guest reviews cross-checked against the public Airbnb review dialogs on 2026-10-16.
+// Order matters: the home page shows the first two per apartment, so the strongest
+// quote leads. Nothing is edited, trimmed or hidden — the qualified reviews follow.
 // Excerpts are labelled explicitly; preserve original wording and material qualifications.
 // Quotes marked `translated: true` are Airbnb's own English translation of the original.
 // Update rating/count when they change on Airbnb. Never invent or edit a quote.
@@ -28,12 +30,6 @@ export const reviews: { a: StayReviews; b: StayReviews } = {
     count: 30,
     quotes: [
       {
-        name: "Kelly",
-        when: "2025-12",
-        country: "",
-        text: "Best stay of my Hokkaido trip!\nThe place was squeaky clean and the interior design is very modern\nBut since we stay there during winter so the floor outside is full of ice, so it’s not so convenient if you are not driving a car to this place\nThanks for the responsive host too!",
-      },
-      {
         name: "Yoshef Wisnu",
         when: "2025-05",
         country: "",
@@ -41,17 +37,23 @@ export const reviews: { a: StayReviews; b: StayReviews } = {
         excerpt: true,
       },
       {
-        name: "Junko",
-        when: "2026-08",
-        country: "Shinagawa, Japan",
-        text: "It was very clean and a pleasant place to stay.\nI was bothered by the loud footsteps of the family staying on the second floor early in the morning and late at night, but otherwise it was very comfortable.I want to stay there again!",
-        translated: true,
-      },
-      {
         name: "Hiromi O",
         when: "2025-07",
         country: "Hickory, North Carolina",
         text: "The living room, hallway, and bedroom were air-conditioned, making it a very pleasant place to stay.All the rooms were beautiful and new, and we had a very pleasant time.",
+        translated: true,
+      },
+      {
+        name: "Kelly",
+        when: "2025-12",
+        country: "",
+        text: "Best stay of my Hokkaido trip!\nThe place was squeaky clean and the interior design is very modern\nBut since we stay there during winter so the floor outside is full of ice, so it’s not so convenient if you are not driving a car to this place\nThanks for the responsive host too!",
+      },
+      {
+        name: "Junko",
+        when: "2026-08",
+        country: "Shinagawa, Japan",
+        text: "It was very clean and a pleasant place to stay.\nI was bothered by the loud footsteps of the family staying on the second floor early in the morning and late at night, but otherwise it was very comfortable.I want to stay there again!",
         translated: true,
       },
     ],

@@ -10,6 +10,7 @@ export const copy = {
   },
   captions: {
     doors: "전용 문 두 짝",
+    bLiving: "Antonio B의 거실과 프로젝터 스크린",
     living: "안토니오 A의 거실",
     bedroom: "침실",
     kitchen: "주방",

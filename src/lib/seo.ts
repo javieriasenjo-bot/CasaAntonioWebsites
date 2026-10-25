@@ -306,7 +306,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
 };
 
 const HERO: Partial<Record<PageId, string>> = {
-  home: "exterior",
+  home: "b-living",
   a: "living",
   b: "b-living",
 };
@@ -688,7 +688,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "Is there Wi-Fi?",
-      a: "Yes. The apartment has Wi-Fi. This site does not publish a speed.",
+      a: "Yes, free Wi-Fi in both apartments. Measured in October 2026: about 180 Mbps in Casa Antonio B and about 75 Mbps in Casa Antonio A. Either is enough for video calls and streaming.",
     },
   ],
   ja: [
@@ -730,7 +730,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "Wi-Fiはありますか？",
-      a: "あります。速度の数字は公表していません。",
+      a: "あります。両室とも無料Wi-Fiです。2026年10月の実測で、Bが約180Mbps、Aが約75Mbpsでした。ビデオ通話や動画視聴には十分です。",
     },
   ],
   zh: [
@@ -772,7 +772,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "有 Wi-Fi 吗？",
-      a: "有。这里不公布速度。",
+      a: "有。两套公寓都有免费 Wi-Fi。2026 年 10 月实测：B 约 180 Mbps，A 约 75 Mbps。视频通话和在线观看都够用。",
     },
   ],
   ko: [
@@ -814,7 +814,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "Wi-Fi가 있나요?",
-      a: "있습니다. 속도는 적지 않습니다.",
+      a: "있습니다. 두 집 모두 무료 Wi-Fi입니다. 2026년 10월 실측으로 B는 약 180Mbps, A는 약 75Mbps였습니다. 영상 통화와 스트리밍에 충분합니다.",
     },
   ],
 };
@@ -919,6 +919,7 @@ export function headFor(page: PageId, lang: Lang) {
       { name: "twitter:title", content: meta.title },
       { name: "twitter:description", content: meta.description },
       { name: "twitter:image", content: image },
+      { name: "twitter:image:alt", content: meta.title },
     ],
     links,
     // Escape "<" so no string can close the script element early.

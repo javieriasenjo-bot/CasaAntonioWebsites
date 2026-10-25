@@ -8,6 +8,7 @@ import { KojohamaPromo } from "@/components/kojohama-promo";
 import { house } from "@/data/active";
 import { useLang } from "@/lib/i18n";
 import { apartmentSummary } from "@/data/property-facts";
+import { AVAILABILITY_NOTE } from "@/data/availability";
 
 export function Home() {
   const { lang } = useLang();
@@ -18,12 +19,14 @@ export function Home() {
   return (
     <Shell>
       <section className="hero">
-        <Photo className="hero-img" src="/photos/exterior.jpg" alt={c.doors} priority sizes="100vw" />
+        {/* Interiors sell short stays; the exterior keeps its place in "the house" section below. */}
+        <Photo className="hero-img" src="/photos/b-living.jpg" alt={c.bLiving} priority sizes="100vw" />
         <div className="hero-overlay">
           <p className="eyebrow">{t.hero.eyebrow}</p>
           <h1>{t.hero.title}</h1>
           <p>{t.hero.lede}</p>
           <SellingPoints items={g.points.home} />
+          {AVAILABILITY_NOTE[lang] ? <p className="hero-note">{AVAILABILITY_NOTE[lang]}</p> : null}
           <div className="hero-actions">
             <PageLink page="a" className="button button-light">
               {t.hero.a}

@@ -3,3 +3,7 @@ dist
 .DS_Store
 .wrangler
 *.zip
+
+# Built output. Cloudflare rebuilds on deploy; committing it only adds noise.
+# Run: git rm -r --cached dist
+dist

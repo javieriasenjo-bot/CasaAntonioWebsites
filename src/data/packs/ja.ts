@@ -10,6 +10,7 @@ export const copy = {
     },
     captions: {
       doors: "専用の扉がふたつ",
+      bLiving: "Antonio Bのリビング、プロジェクタースクリーン",
       living: "アントニオAの居間",
       bedroom: "寝室",
       kitchen: "キッチン",

@@ -10,6 +10,7 @@ export const copy = {
     },
     captions: {
       doors: "Two private doors",
+      bLiving: "Living room in Antonio B, with the projector screen",
       living: "Living room in Antonio A",
       bedroom: "Bedroom",
       kitchen: "Kitchen",

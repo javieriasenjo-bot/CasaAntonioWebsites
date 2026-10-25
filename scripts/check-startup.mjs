@@ -119,14 +119,16 @@ try {
         await page.waitForTimeout(50);
         const layout = await page.evaluate(() => {
           const rect = selector => document.querySelector(selector).getBoundingClientRect();
-          const hero = rect(".hero"), header = rect(".site-header"), menu = rect(".menu-toggle"), languages = rect(".language-switcher");
+          const hero = rect(".hero"), header = rect(".site-header"), menu = rect(".menu-toggle"), languages = rect(".language-toggle");
           return {
             heroContentFits: [...document.querySelectorAll(".hero-overlay > *")].every(element => {
               const r = element.getBoundingClientRect();
               return r.top >= hero.top - 1 && r.bottom <= hero.bottom + 1;
             }),
-            controlsFit: menu.left >= 0 && menu.right <= innerWidth && languages.left >= 0 && languages.right <= innerWidth && languages.top >= menu.bottom - 1,
-            touchTargets: [...document.querySelectorAll(".language-switcher a,.menu-toggle")].every(element => {
+            // Language and Menu now share the logo's row; both must stay on screen
+            // and keep a full tap target at every text size.
+            controlsFit: menu.left >= 0 && menu.right <= innerWidth && languages.left >= 0 && languages.right <= innerWidth && Math.abs(languages.top - menu.top) <= 12,
+            touchTargets: [...document.querySelectorAll(".language-toggle,.menu-toggle")].every(element => {
               const r = element.getBoundingClientRect(); return r.width >= 44 && r.height >= 44;
             }),
             headingBelowHeader: rect("h1").top >= header.bottom - 1,
