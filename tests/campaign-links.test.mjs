@@ -7,8 +7,8 @@ const options = { campaign: 'casa_antonio_2026_10', content: 'profile' };
 
 test('campaign links cover canonical language destinations without redirecting or changing domains', () => {
   const links = campaignLinks(options, sitemap);
-  assert.equal(links.length, 64);
-  assert.equal(new Set(links.map(l => l.url)).size, 64);
+  assert.equal(links.length, 160); // 4 sources x 4 languages x 10 destinations
+  assert.equal(new Set(links.map(l => l.url)).size, 160);
   const ja = campaignLinks({ ...options, source: 'instagram', lang: 'ja', page: 'a' }, sitemap);
   assert.equal(ja.length, 1);
   const url = new URL(ja[0].url);

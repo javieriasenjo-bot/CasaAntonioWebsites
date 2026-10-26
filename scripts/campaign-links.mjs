@@ -5,7 +5,13 @@ import { pathToFileURL } from 'node:url';
 const origin = 'https://casaantonio.jp';
 const sources = ['instagram', 'tiktok', 'rednote', 'youtube'];
 const languages = { en: '', ja: '/ja', zh: '/zh-cn', ko: '/ko' };
-const pages = { home: '', a: 'casa-antonio-a', b: 'casa-antonio-b', 'long-stay': 'long-stay' };
+// Seasonal and neighbourhood posts deserve their own landing page rather than
+// all being pointed at the home page.
+const pages = {
+  home: '', a: 'casa-antonio-a', b: 'casa-antonio-b', 'long-stay': 'long-stay',
+  neighborhood: 'neighborhood', 'day-trips': 'day-trips', 'snow-festival': 'snow-festival',
+  'teine-ski': 'teine-ski', combo: 'combo', arrival: 'arrival',
+};
 
 export function campaignLinks({ campaign, content, source, lang, page }, sitemap) {
   // Keep campaign naming consistent. Do not guess aliases or tag internal links.
@@ -14,7 +20,7 @@ export function campaignLinks({ campaign, content, source, lang, page }, sitemap
   }
   if (source && !sources.includes(source)) throw new Error('Use instagram, tiktok, rednote or youtube; no aliases.');
   if (lang && !Object.hasOwn(languages, lang)) throw new Error('Use en, ja, zh or ko.');
-  if (page && !Object.hasOwn(pages, page)) throw new Error('Use home, a, b or long-stay.');
+  if (page && !Object.hasOwn(pages, page)) throw new Error(`Use one of: ${Object.keys(pages).join(', ')}.`);
   const canonical = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]));
   const links = [];
   for (const platform of source ? [source] : sources) {

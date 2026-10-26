@@ -53,6 +53,16 @@ export function Arrival() {
                   ))}
                 </ul>
               </div>
+              {/* Winter is the one thing guests are repeatedly surprised by, and a
+                  review says so plainly. Better answered before arrival than after. */}
+              <div>
+                <h2>{page.winterTitle}</h2>
+                <ul className="plain-list">
+                  {page.winter.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
               <div className="note-card">
                 <h2>{page.languagesTitle}</h2>
                 <p>{page.languages}</p>

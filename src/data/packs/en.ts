@@ -474,6 +474,7 @@ export const copy = {
       mapTitle: "The house",
       mapNote: "Pin is the published coordinate for Kita 38-jo Nishi 3-chome 1-7. Open it in Google Maps if you are navigating in. Shop photos stay on Google. They are not copied here.",
       mapLabel: "Map and photos",
+      showMap: "Show the map",
       openMap: "Open in Google Maps",
     },
     dayTrips: {
@@ -705,6 +706,14 @@ export const copy = {
         "Heating, air conditioning, and Wi-Fi",
         "Slippers are listed for Casa Antonio B",
         "A hairdryer",
+      ],
+      winterTitle: "Winter underfoot",
+      winter: [
+        "From December into March the pavements can be icy even when the road looks clear.",
+        "Boots with a non-slip sole make the five-minute walk to Asabu Station easy. Smooth soles do not.",
+        "We or the property management clear the parking space. You never have to shovel it.",
+        "A car is not needed. The Namboku line runs south from Asabu to Sapporo Station, Odori and Susukino.",
+        "Indoors it is warm: the heating runs through the winter.",
       ],
       languagesTitle: "Languages",
       languages: "We reply in English, Japanese, Korean, and Chinese. This site is written in those four languages.",

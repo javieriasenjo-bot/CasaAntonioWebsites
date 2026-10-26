@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Shell } from "@/components/chrome";
 import { Photo } from "@/components/photo";
 import { PhotoCredit } from "@/components/photo-credit";
@@ -70,6 +71,7 @@ function shotFor(map: string | undefined) {
 export function Neighborhood() {
   const { lang } = useLang();
   const t = house().copy.neighborhood;
+  const [mapOpen, setMapOpen] = useState(false);
 
   return (
     <Shell>
@@ -129,8 +131,17 @@ export function Neighborhood() {
 
       <section className="map-section">
         <div className="wrap">
+          {/* The OpenStreetMap iframe is a third-party load most visitors never use,
+              so it is fetched only when asked for. Without JavaScript the Google Maps
+              button below still works. */}
           <div className="map-frame">
-            <iframe title={t.mapTitle} src={MAP.embed} loading="lazy" />
+            {mapOpen ? (
+              <iframe title={t.mapTitle} src={MAP.embed} loading="lazy" />
+            ) : (
+              <button type="button" className="map-facade" onClick={() => setMapOpen(true)}>
+                {t.showMap}
+              </button>
+            )}
           </div>
           <div className="map-caption">
             <div>
