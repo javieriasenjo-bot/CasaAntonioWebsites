@@ -1,6 +1,6 @@
 import { ADDRESS } from "@/data/links";
 import { DAMAGE_POLICY } from "@/data/property-facts";
-import { upopoyAdmissionText } from "@/data/travel-facts";
+import { upopoyAdmissionText, upopoyHoursText } from "@/data/travel-facts";
 import { guideFooter as footer } from "../guide-footer";
 export const copy = {
     chrome: {
@@ -681,7 +681,7 @@ export const copy = {
             {
               time: "The day",
               title: "The museum and the park",
-              body: `Upopoy, at 2-3-2 Wakakusa-cho, Shiraoi, is Japan’s national museum of Ainu history and culture, with a park and a traditional village beside it. From 1 April to 31 October 2026 the official hours are 9:00–18:00. It is closed on Mondays, or the next weekday when Monday is a holiday. Last entry is one hour before closing. ${upopoyAdmissionText("en")} From November the hours are shorter. Read the day’s notice before you leave.`,
+              body: `Upopoy, at 2-3-2 Wakakusa-cho, Shiraoi, is Japan’s national museum of Ainu history and culture, with a park and a traditional village beside it. ${upopoyHoursText("en")} ${upopoyAdmissionText("en")} Read the day’s notice before you leave.`,
             },
             {
               time: "Back",
@@ -826,7 +826,7 @@ export const guides = {
       lede: "This page is the way from New Chitose Airport (CTS) to the house. Most flights land there. Okadama is a smaller airport inside the city; it has its own note at the end.",
       facts: [
         { k: "Airport", v: "New Chitose (CTS)" },
-        { k: "Direct bus", v: "Chuo Bus to Asabu, about 58 min on the 1 April 2026 timetable" },
+        { k: "Direct bus", v: "Chuo Bus to Asabu, about 58 min (timetable checked 4 Nov 2026)" },
         { k: "Train", v: "Airport rapid, about 37–45 min to Sapporo Station" },
         { k: "Subway", v: "Asabu–Sapporo about 9 min, station to station" },
         { k: "Walk", v: "About 5 min from Asabu Station" },
@@ -836,8 +836,8 @@ export const guides = {
         {
           h: "Direct airport bus",
           paragraphs: [
-            "Hokkaido Chuo Bus runs between New Chitose and Asabu Station (地下鉄麻生駅). On the summer timetable updated 1 April 2026, a bus leaving the ANA stop at 8:48 is scheduled into Asabu at 9:46, about 58 minutes. That is an example, not a guarantee. Traffic, snow, and the next timetable change it.",
-            "The adult fare on that timetable is ¥1,500. Board at the ANA stop, stand 20, or the JAL stop, stand 13. The Asabu stop is at the station. From there it is the same walk as from the subway, about five minutes south to Kita 38-jo Nishi 3-chome. Check the official timetable the day you fly. Use the directions link below for the final walk. If travelling with luggage, follow the station’s elevator signs.",
+            "Hokkaido Chuo Bus runs between New Chitose and Asabu Station (地下鉄麻生駅). The timetable posted on 4 November 2026 is still the summer one, updated 1 April 2026. On it, buses leave the ANA stop from 8:48 until the last bus at 22:23, every 30–60 minutes, and the ride to Asabu is scheduled at about 58 minutes. Chuo Bus has announced a renewal of its airport buses from 11 December 2026, so check the times again if you land after that. In snow the ride takes longer, and buses can be delayed or cancelled. Chuo Bus posts cancellations on its website.",
+            "Check the fare on Chuo Bus’s website before you go. Board at the ANA stop, stand 20, the JAL stop, stand 13, or the international terminal, stand 84. The Asabu stop is at the station. From there it is the same walk as from the subway, about five minutes south to Kita 38-jo Nishi 3-chome. Check the official timetable the day you fly. Use the directions link below for the final walk. If travelling with luggage, follow the station’s elevator signs.",
           ],
         },
         {
