@@ -7,7 +7,10 @@
 // New stems get widths 400/800/1600/max (max = original width, capped at 2000). Existing stems keep
 // their current widths and only gain missing ones (e.g. 400). Use a new stem when replacing a photo:
 // photos are cached for seven days, so overwriting a URL can show returning guests the old image.
-import { existsSync, readdirSync, writeFileSync } from "node:fs";
+//
+// PLACE_STEMS (neighbourhood/day-trip photos, always shown as landscape strips) are the exception:
+// they are always regenerated, cropped to 3:2, capped at 1600px, and compressed harder.
+import { existsSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
@@ -22,7 +25,16 @@ const only = args.find((arg) => arg.startsWith("--only="))?.slice(7).split(",").
 const BASE_WIDTHS = [400, 800, 1600];
 const MAX_WIDTH = 2000;
 const FORMATS = { avif: { quality: 68, effort: 4 }, webp: { quality: 82, effort: 4 } };
+const PLACE_FORMATS = { avif: { quality: 58, effort: 4 }, webp: { quality: 72, effort: 4 } };
 const VARIANT = /^(.+)-(\d+)\.(avif|webp)$/;
+
+// Neighbourhood and day-trip photos: busy outdoor shots shown as landscape strips.
+// Cropped to 3:2, capped at 1600px, and compressed harder than the interior photos.
+const PLACE_STEMS = new Set([
+  "hokudai", "odori", "clock", "teine",
+  "otaru", "sakaimachi", "otaru-aqua", "shukutsu", "jigoku", "jozankei",
+  "bluepond", "furano", "biei", "buddha", "toya", "upopoy",
+]);
 
 function existingWidths() {
   const map = new Map();
@@ -41,16 +53,30 @@ let written = 0;
 for (const file of readdirSync(srcDir).filter((name) => /\.jpe?g$/i.test(name)).sort()) {
   const stem = file.replace(/\.jpe?g$/i, "");
   if (only && !only.includes(stem)) continue;
+  const isPlace = PLACE_STEMS.has(stem);
+  if (isPlace) {
+    // Regenerate from scratch: old variants were uncropped and may include
+    // widths above the new 1600px cap.
+    for (const existing of readdirSync(outDir)) {
+      if (new RegExp(`^${stem}-\\d+\\.(avif|webp)$`).test(existing)) unlinkSync(join(outDir, existing));
+    }
+  }
   const source = sharp(join(srcDir, file)).rotate();
   const { width: originalWidth = 0 } = await source.metadata();
   const current = before.get(stem);
-  const widths = new Set(current ?? [...BASE_WIDTHS, Math.min(originalWidth, MAX_WIDTH)]);
+  const widths = new Set(
+    isPlace ? BASE_WIDTHS : current ?? [...BASE_WIDTHS, Math.min(originalWidth, MAX_WIDTH)],
+  );
   widths.add(400);
+  const formats = isPlace ? PLACE_FORMATS : FORMATS;
   for (const width of [...widths].filter((w) => w <= originalWidth).sort((a, b) => a - b)) {
-    for (const [ext, options] of Object.entries(FORMATS)) {
+    for (const [ext, options] of Object.entries(formats)) {
       const target = join(outDir, `${stem}-${width}.${ext}`);
       if (!force && existsSync(target)) continue;
-      await source.clone().resize({ width, withoutEnlargement: true })[ext](options).toFile(target);
+      const resize = isPlace
+        ? { width, height: Math.round((width * 2) / 3), fit: "cover", withoutEnlargement: true }
+        : { width, withoutEnlargement: true };
+      await source.clone().resize(resize)[ext](options).toFile(target);
       written += 1;
     }
   }

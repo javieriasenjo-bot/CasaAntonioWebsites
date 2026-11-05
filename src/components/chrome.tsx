@@ -34,9 +34,15 @@ export function Shell({ children }: { children: ReactNode }) {
   const page = parsePath(path)?.page ?? "home";
   const [menuOpen, setMenuOpen] = useState(false);
   const [reserveOpen, setReserveOpen] = useState(false);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
   const menuRef = useRef<HTMLDetailsElement>(null);
   const reserveRef = useRef<HTMLDivElement>(null);
+  const langMenuRef = useRef<HTMLDetailsElement>(null);
+  const closeLangMenu = () => {
+    setLangMenuOpen(false);
+    if (langMenuRef.current) langMenuRef.current.open = false;
+  };
   const closeReserve = () => {
     setReserveOpen(false);
     reserveRef.current?.querySelector<HTMLElement>(".quick-reserve-trigger")?.focus();
@@ -67,18 +73,41 @@ export function Shell({ children }: { children: ReactNode }) {
   }, [reserveOpen]);
 
   useEffect(() => {
-    if (!menuOpen && !reserveOpen) return;
+    if (!menuOpen && !reserveOpen && !langMenuOpen) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
-      const trigger = document.querySelector<HTMLElement>(menuOpen ? ".menu-toggle" : ".quick-reserve-trigger");
+      const trigger = document.querySelector<HTMLElement>(
+        menuOpen ? ".menu-toggle" : reserveOpen ? ".quick-reserve-trigger" : ".language-toggle",
+      );
       setMenuOpen(false);
       if (menuRef.current) menuRef.current.open = false;
       setReserveOpen(false);
+      closeLangMenu();
       trigger?.focus();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [menuOpen, reserveOpen]);
+  }, [menuOpen, reserveOpen, langMenuOpen]);
+
+  // The language menu is a <details> floating above the page: close it on an
+  // outside click, on scroll (it also hides when the header slides away), or
+  // when the mobile nav opens, so it never lingers open on its own.
+  useEffect(() => {
+    if (!langMenuOpen) return;
+    const outside = (event: PointerEvent) => {
+      if (event.target instanceof Element && !langMenuRef.current?.contains(event.target)) closeLangMenu();
+    };
+    document.addEventListener("pointerdown", outside);
+    window.addEventListener("scroll", closeLangMenu, { passive: true });
+    return () => {
+      document.removeEventListener("pointerdown", outside);
+      window.removeEventListener("scroll", closeLangMenu);
+    };
+  }, [langMenuOpen]);
+
+  useEffect(() => {
+    if (menuOpen) closeLangMenu();
+  }, [menuOpen]);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -141,8 +170,12 @@ export function Shell({ children }: { children: ReactNode }) {
                 </PageLink>
               ))}
             </nav>
-            <details className="language-menu">
-              <summary className="language-toggle" aria-label={t.chrome.language}>
+            <details
+              className="language-menu"
+              ref={langMenuRef}
+              onToggle={(event) => setLangMenuOpen(event.currentTarget.open)}
+            >
+              <summary className="language-toggle" aria-label={`${t.chrome.language}: ${LANG_NAME[lang]}`}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} aria-hidden="true">
                   <circle cx="12" cy="12" r="9" />
                   <path d="M3 12h18" />

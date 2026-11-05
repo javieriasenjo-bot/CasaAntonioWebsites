@@ -64,7 +64,7 @@ export function Home() {
               </div>
             </article>
             <article className="choice choice-b">
-              <Photo className="choice-photo" src="/photos/b-living.jpg" alt="" sizes="(max-width: 860px) calc(100vw - 1.6rem), (max-width: 1160px) 48vw, 554px" />
+              <Photo className="choice-photo" src="/photos/b-dining.jpg" alt="" sizes="(max-width: 860px) calc(100vw - 1.6rem), (max-width: 1160px) 48vw, 554px" />
               <span className="choice-kicker" aria-hidden="true">B</span>
               <h3 className="choice-name">
                 {/* Stretched link: the whole card opens the apartment page. */}

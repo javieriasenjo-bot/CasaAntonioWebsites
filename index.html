@@ -16,8 +16,8 @@
       rel="preload"
       as="image"
       type="image/avif"
-      href="/photos/entry-800.avif"
-      imagesrcset="/photos/entry-800.avif 800w, /photos/entry-1600.avif 1600w"
+      href="/photos/b-living-800.avif"
+      imagesrcset="/photos/b-living-800.avif 800w, /photos/b-living-1600.avif 1600w"
       imagesizes="100vw"
       fetchpriority="high"
     />
@@ -29,30 +29,26 @@
     <meta property="og:image" content="https://casaantonio.jp/og.jpg" />
     <meta property="og:url" content="https://casaantonio.jp/" />
     <meta property="og:type" content="website" />
-    <script>
-      (function () {
-        var fonts = {
-          en: "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&display=swap",
-          ja: "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&display=swap",
-          zh: "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap",
-          ko: "https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600&display=swap"
-        };
-        var htmlLang = { en: "en", ja: "ja", zh: "zh-Hans", ko: "ko" };
-        var saved = "en";
-        try {
-          var stored = localStorage.getItem("casa-antonio-lang");
-          if (stored && fonts[stored]) saved = stored;
-        } catch (e) {}
-        document.documentElement.lang = htmlLang[saved];
-        var link = document.createElement("link");
-        link.id = "casa-font";
-        link.rel = "stylesheet";
-        link.href = fonts[saved];
-        link.media = "print";
-        link.setAttribute("data-lang", saved);
-        link.onload = function () { this.media = "all"; };
-        document.head.appendChild(link);
-      })();
+    <script type="module">
+      // Dev-server only: production pages are prerendered with the font link
+      // already in the markup (see src/lib/seo.ts), so this duplicates that
+      // logic just enough to pick the right font before hydration.
+      import { FONT_STYLESHEET } from "/src/lib/fonts.ts";
+      import { HTML_LANG } from "/src/lib/paths.ts";
+      var saved = "en";
+      try {
+        var stored = localStorage.getItem("casa-antonio-lang");
+        if (stored && FONT_STYLESHEET[stored]) saved = stored;
+      } catch (e) {}
+      document.documentElement.lang = HTML_LANG[saved];
+      var link = document.createElement("link");
+      link.id = "casa-font";
+      link.rel = "stylesheet";
+      link.href = FONT_STYLESHEET[saved];
+      link.media = "print";
+      link.setAttribute("data-lang", saved);
+      link.onload = function () { this.media = "all"; };
+      document.head.appendChild(link);
     </script>
   </head>
   <body>

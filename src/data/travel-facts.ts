@@ -1,6 +1,7 @@
 // Admission verified 6 October 2026. Upopoy winter hours/closures and the airport-bus
 // timetable re-verified against the official pages on 4 November 2026.
-// Upopoy winter hours below run to 31 March 2027 — update them before April 2027.
+// validUntil: "2027-03-31" — Upopoy winter hours (upopoyHoursText) are only correct through this date.
+// tests/fact-expirations.test.mjs fails once any validUntil marker in src/data has passed.
 import type { Lang } from "@/lib/paths";
 
 export const TRAVEL_FACTS = {

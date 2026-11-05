@@ -146,7 +146,7 @@ export const copy = {
         ["Size", "About 65 m²"],
         ["Beds", "3 single beds + 1 double bed"],
         ["Entrance", "Private"],
-        ["License", "M010045173"],
+        ["License", "M010045173", "license"],
       ],
       storyTitle: "What the room is like",
       story: [
@@ -179,7 +179,7 @@ export const copy = {
         ["Size", "About 65 m²"],
         ["Beds", "3 single beds"],
         ["Floor", "Second, by stairs"],
-        ["License", "M010045174"],
+        ["License", "M010045174", "license"],
       ],
       storyTitle: "The upstairs apartment",
       story: [
@@ -869,6 +869,7 @@ export const guides = {
         },
       ],
     },
+    // validUntil: "2027-02-11" — the 77th Sapporo Snow Festival dates below run through this date.
     snow: {
       eyebrow: "4–11 February 2027",
       title: "A quiet base for the Snow Festival.",

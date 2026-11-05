@@ -40,7 +40,7 @@ export function StayView({ id }: { id: "a" | "b" }) {
       <section className="stay-body">
         <div className="wrap">
           <dl className="fact-grid fact-grid-tight">
-            {[...apartmentSummary(id, lang), ...page.facts.filter(([label]) => ["License", "届出番号", "备案号", "신고 번호"].includes(label))].map(([label, value]) => (
+            {[...apartmentSummary(id, lang), ...page.facts.filter(([, , factId]) => factId === "license")].map(([label, value]) => (
               <div key={label}>
                 <dt>{label}</dt>
                 <dd>{value}</dd>

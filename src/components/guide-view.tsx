@@ -71,15 +71,14 @@ function AddressActions() {
   );
 }
 
-function BookBoth() {
-  const { lang } = useLang();
+function BookBoth({ page }: { page: string }) {
   const g = house().guides;
   return (
     <div className="stay-actions">
-      <AirbnbLink cabin="a" location="footer" className="button button-dark">
+      <AirbnbLink cabin="a" location={`${page}-body`} className="button button-dark">
         {g.bookA}
       </AirbnbLink>
-      <AirbnbLink cabin="b" location="footer" className="button button-wood">
+      <AirbnbLink cabin="b" location={`${page}-body`} className="button button-wood">
         {g.bookB}
       </AirbnbLink>
     </div>
@@ -120,7 +119,7 @@ export function AccessPage() {
           <AddressActions />
           <p className="arrival-boarding">{airportBoardingText(lang)}</p>
           <OfficialLinks items={OFFICIAL.access} />
-          <BookBoth />
+          <BookBoth page="access" />
         </div>
       </section>
     </Shell>
@@ -128,7 +127,6 @@ export function AccessPage() {
 }
 
 export function SnowPage() {
-  const { lang } = useLang();
   const page = house().guides.snow;
   return (
     <Shell>
@@ -156,7 +154,7 @@ export function SnowPage() {
             </PageLink>
           </p>
           <OfficialLinks items={OFFICIAL.snow} />
-          <BookBoth />
+          <BookBoth page="snow" />
         </div>
       </section>
     </Shell>
@@ -195,7 +193,7 @@ export function TeinePage() {
             </PageLink>
           </p>
           <OfficialLinks items={OFFICIAL.teine} />
-          <BookBoth />
+          <BookBoth page="teine" />
         </div>
       </section>
     </Shell>
@@ -203,7 +201,6 @@ export function TeinePage() {
 }
 
 export function LongStayPage() {
-  const { lang } = useLang();
   const t = house().copy.longStay;
   return (
     <Shell>
@@ -212,12 +209,6 @@ export function LongStayPage() {
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.title}</h1>
           <p className="lede">{t.lede}</p>
-          <div className="stay-actions">
-            <AirbnbLink cabin="a" location="long-stay-top" intent="inquiry" className="button button-dark">{t.ctaA}</AirbnbLink>
-            <AirbnbLink cabin="b" location="long-stay-top" intent="inquiry" className="button button-wood">{t.ctaB}</AirbnbLink>
-            <EmailLink longStay placement="long-stay-top-email" className="button button-line" />
-          </div>
-          <p className="photo-note">{t.note}</p>
           <Photo className="guide-photo" src="/photos/dining-2.jpg" alt={t.title} sizes="(max-width: 900px) 100vw, 1120px" />
         </div>
       </section>
@@ -251,7 +242,6 @@ export function LongStayPage() {
 }
 
 export function FaqPage() {
-  const { lang } = useLang();
   const metaTitle = house().copy.ui.faqTitle;
   return (
     <Shell>
@@ -265,7 +255,7 @@ export function FaqPage() {
       <section className="stay-body">
         <div className="wrap narrow">
           <FaqList />
-          <BookBoth />
+          <BookBoth page="faq" />
         </div>
       </section>
     </Shell>
@@ -299,7 +289,7 @@ export function ComboPage() {
               Kojohama Cabins
             </a>
           </p>
-          <BookBoth />
+          <BookBoth page="combo" />
         </div>
       </section>
     </Shell>

@@ -146,7 +146,7 @@ export const copy = {
       ["面积", "约 65 ㎡"],
       ["床", "三张单人床和一张双人床"],
       ["入口", "独立"],
-      ["备案号", "M010045173"],
+      ["备案号", "M010045173", "license"],
     ],
     storyTitle: "房间是什么样",
     story: [
@@ -179,7 +179,7 @@ export const copy = {
       ["面积", "约 65 ㎡"],
       ["床", "三张单人床"],
       ["楼层", "二楼，有楼梯"],
-      ["备案号", "M010045174"],
+      ["备案号", "M010045174", "license"],
     ],
     storyTitle: "楼上的公寓",
     story: [
@@ -620,6 +620,7 @@ export const guides = {
         },
       ],
     },
+    // validUntil: "2027-02-11" — the 77th Sapporo Snow Festival dates below run through this date.
     snow: {
       eyebrow: "2027年2月4日至11日",
       title: "雪祭期间，一个安静的落脚处。",

@@ -158,3 +158,26 @@ test("22 October: reserve actions, house rules and llms.txt", () => {
   assert.match(llms, /admin@kagami-planning.com/);
   assert.doesNotMatch(llms, /\+81|tel:/);
 });
+
+test("llms.txt review scores match src/data/reviews.ts", () => {
+  const reviewsSrc = readFileSync(join(root, "src/data/reviews.ts"), "utf8");
+  const llms = readFileSync(join(dist, "llms.txt"), "utf8");
+  const reviewsBlock = reviewsSrc.slice(reviewsSrc.indexOf("export const reviews"), reviewsSrc.indexOf("export function reviewReady"));
+  const bookingBlock = reviewsSrc.slice(reviewsSrc.indexOf("export const bookingReviews"));
+  function section(block, key) {
+    const re = new RegExp(`\\b${key}: \\{[^]*?recordedOn: "(\\d{4}-\\d{2}-\\d{2})"[^]*?(?:rating|score): ([\\d.]+)[^]*?count: (\\d+)`);
+    const m = re.exec(block);
+    assert.ok(m, `could not find "${key}" section`);
+    return { recordedOn: m[1], score: m[2], count: m[3] };
+  }
+  const airbnbA = section(reviewsBlock, "a");
+  const airbnbB = section(reviewsBlock, "b");
+  const bookingA = section(bookingBlock, "a");
+  const bookingB = section(bookingBlock, "b");
+  for (const { recordedOn } of [airbnbA, airbnbB, bookingA, bookingB]) assert.equal(recordedOn, "2026-10-16");
+  assert.match(llms, /16 October 2026/);
+  assert.match(llms, new RegExp(`Airbnb A ${airbnbA.score} from ${airbnbA.count} reviews`));
+  assert.match(llms, new RegExp(`Airbnb B ${airbnbB.score} from ${airbnbB.count} reviews`));
+  assert.match(llms, new RegExp(`Booking\\.com A ${bookingA.score} from ${bookingA.count} reviews`));
+  assert.match(llms, new RegExp(`Booking\\.com B ${bookingB.score} from ${bookingB.count} reviews`));
+});

@@ -146,7 +146,7 @@ export const copy = {
       ["넓이", "약 65㎡"],
       ["침대", "싱글 세 개 + 더블 한 개"],
       ["입구", "전용"],
-      ["신고 번호", "M010045173"],
+      ["신고 번호", "M010045173", "license"],
     ],
     storyTitle: "방의 모습",
     story: [
@@ -179,7 +179,7 @@ export const copy = {
       ["넓이", "약 65㎡"],
       ["침대", "싱글 3개"],
       ["층", "2층, 계단"],
-      ["신고 번호", "M010045174"],
+      ["신고 번호", "M010045174", "license"],
     ],
     storyTitle: "위층 아파트",
     story: [
@@ -620,6 +620,7 @@ export const guides = {
         },
       ],
     },
+    // validUntil: "2027-02-11" — the 77th Sapporo Snow Festival dates below run through this date.
     snow: {
       eyebrow: "2027년 2월 4–11일",
       title: "눈축제를 위한 조용한 거점.",

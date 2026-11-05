@@ -9,7 +9,7 @@
     "deploy": "npm run build && wrangler deploy",
     "postinstall": "node scripts/cf-postinstall.mjs",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm run build && node --test tests/analytics.test.mjs tests/build.test.mjs tests/indexnow.test.mjs tests/campaign-links.test.mjs",
+    "check": "npm run typecheck && npm run build && node --test tests/analytics.test.mjs tests/build.test.mjs tests/indexnow.test.mjs tests/campaign-links.test.mjs tests/fact-expirations.test.mjs",
     "check:browser": "node scripts/check-startup.mjs",
     "campaign-links": "node scripts/campaign-links.mjs",
     "indexnow": "node scripts/indexnow.mjs",
@@ -20,17 +20,17 @@
     "workerd": true
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^5.2.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "vite": "^8.2.0",
-    "wrangler": "4.144.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.2.0",
     "playwright-core": "^1.64.0",
     "sharp": "^0.35.5",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vite": "^8.2.0",
+    "wrangler": "4.144.0"
   }
 }
