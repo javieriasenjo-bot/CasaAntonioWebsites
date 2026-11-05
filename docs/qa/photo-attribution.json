@@ -260,6 +260,27 @@
     ]
   },
   {
+    "key": "snow-festival",
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sapporo_Snow_Festival_Odori-Site_At_Night_Panorama_1.jpg",
+    "originalFileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Sapporo_Snow_Festival_Odori-Site_At_Night_Panorama_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "Sapporo Snow Festival Odori-Site At Night Panorama 1.jpg",
+    "author": "京浜にけ",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "originalWidth": 1900,
+    "originalHeight": 2510,
+    "localSourceSha256": "f3b3c5376bfbedc2d4c18c7de7cb153eccd3819ddd7473860a1e11d69a45e56b",
+    "originalCommonsSha1": "aaf5e5d7d1f639acc384115bf89ce389362ff6af",
+    "comparisonRmse": 0,
+    "verifiedOn": "2026-11-05",
+    "acquisitionDate": null,
+    "webChanges": [
+      "Resized",
+      "Cropped to 3:2",
+      "Converted to WebP and AVIF"
+    ]
+  },
+  {
     "key": "teine",
     "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sapporo_Teine_Ski_Resort._(31250544382).jpg",
     "originalFileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/Sapporo_Teine_Ski_Resort._%2831250544382%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",

@@ -57,19 +57,22 @@ test("generated pages link to existing local routes and image variants", () => {
 
 test("all destination photos retain verified original-source links in every language", () => {
   const records = JSON.parse(readFileSync(join(root, "docs/qa/photo-attribution.json"), "utf8"));
-  assert.equal(records.length, 16);
-  assert.equal(new Set(records.map(r => r.key)).size, 16);
+  assert.equal(records.length, 17);
+  assert.equal(new Set(records.map(r => r.key)).size, 17);
   for (const record of records) {
     assert.equal(new URL(record.sourcePageUrl).hostname, "commons.wikimedia.org");
     assert.ok(record.author && record.license);
     assert.ok(record.comparisonRmse < 5);
     assert.equal(record.localSourceSha256, createHash("sha256").update(readFileSync(join(root, "photos-src", `${record.key}.jpg`))).digest("hex"));
   }
+  const pageRecords = records.filter(r => r.key !== "snow-festival");
   for (const prefix of ["", "ja/", "zh-cn/", "ko/"]) {
     const html = ["neighborhood", "day-trips"].map(route => readFileSync(join(dist, prefix, route, "index.html"), "utf8")).join("\n");
-    for (const record of records) assert.ok(html.includes(`href="${record.sourcePageUrl}"`), `${prefix}: missing original ${record.key}`);
+    for (const record of pageRecords) assert.ok(html.includes(`href="${record.sourcePageUrl}"`), `${prefix}: missing original ${record.key}`);
     const teine = records.find(r => r.key === "teine");
     assert.ok(readFileSync(join(dist, prefix, "teine-ski/index.html"), "utf8").includes(`href="${teine.sourcePageUrl}"`));
+    const snowFestival = records.find(r => r.key === "snow-festival");
+    assert.ok(readFileSync(join(dist, prefix, "snow-festival/index.html"), "utf8").includes(`href="${snowFestival.sourcePageUrl}"`), `${prefix}: missing original snow-festival`);
   }
 });
 

@@ -14,6 +14,7 @@ export const DESTINATION_PHOTO_SOURCES: Record<string, string> = {
   "/photos/otaru-aqua.jpg": "https://commons.wikimedia.org/wiki/File:Pleurogrammus_azonus_otaru.jpg",
   "/photos/sakaimachi.jpg": "https://commons.wikimedia.org/wiki/File:Sakaimachi_street_Otaru_Hokkaido11n.jpg",
   "/photos/shukutsu.jpg": "https://commons.wikimedia.org/wiki/File:Shukutsu,Otaru_20220626.jpg",
+  "/photos/snow-festival.jpg": "https://commons.wikimedia.org/wiki/File:Sapporo_Snow_Festival_Odori-Site_At_Night_Panorama_1.jpg",
   "/photos/teine.jpg": "https://commons.wikimedia.org/wiki/File:Sapporo_Teine_Ski_Resort._(31250544382).jpg",
   "/photos/toya.jpg": "https://commons.wikimedia.org/wiki/File:130922_Lake_Toya_Toyako_Hokkaido_Japan03s3.jpg",
   "/photos/upopoy.jpg": "https://commons.wikimedia.org/wiki/File:UPOPOY_202608.jpg"

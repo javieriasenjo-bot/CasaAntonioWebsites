@@ -874,6 +874,7 @@ export const guides = {
       eyebrow: "4–11 February 2027",
       title: "A quiet base for the Snow Festival.",
       lede: "The organizer has published the 77th Sapporo Snow Festival for 4–11 February 2027. Odori Park, from West 1 to West 11, is the main site. Susukino and Tsudome are the other two. Checked against the official notice on 1 October 2026.",
+      credit: "Sapporo Snow Festival, the Odori site at night, seen from Sapporo TV Tower. Photograph by 京浜にけ. Resized for this page. CC BY-SA 3.0.",
       blocks: [
         {
           h: "The ride in",

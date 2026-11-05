@@ -127,6 +127,7 @@ export function AccessPage() {
 }
 
 export function SnowPage() {
+  const { lang } = useLang();
   const page = house().guides.snow;
   return (
     <Shell>
@@ -139,7 +140,10 @@ export function SnowPage() {
       </section>
       <section className="stay-body">
         <div className="wrap prose-page">
-          <Photo src="/photos/exterior.jpg" alt="" sizes="(max-width: 900px) 100vw, 1120px" />
+          <figure className="ski-figure">
+            <Photo src="/photos/snow-festival.jpg" alt={page.title} sizes="(max-width: 900px) 100vw, 1120px" />
+            <figcaption><PhotoCredit text={page.credit} src="/photos/snow-festival.jpg" lang={lang} /></figcaption>
+          </figure>
           {page.blocks.map((block) => (
             <div className="prose" key={block.h}>
               <h2>{block.h}</h2>
@@ -249,7 +253,7 @@ export function FaqPage() {
         <div className="wrap narrow">
           <p className="eyebrow">Casa Antonio</p>
           <h1>{metaTitle}</h1>
-          <Photo className="guide-photo" src="/photos/exterior.jpg" alt={metaTitle} sizes="(max-width: 900px) 100vw, 740px" />
+          <Photo className="guide-photo" src="/photos/kitchen-living.jpg" alt={metaTitle} sizes="(max-width: 900px) 100vw, 740px" />
         </div>
       </section>
       <section className="stay-body">

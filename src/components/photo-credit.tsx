@@ -12,9 +12,10 @@ const changeLabels: Record<Lang, string> = {
 };
 
 export function PhotoCredit({ text, src, lang }: { text: string; src: string; lang: Lang }) {
-  const match = text.match(/CC BY-SA 4\.0|CC BY 2\.5|CC BY 2\.0|CC0/);
+  const match = text.match(/CC BY-SA 4\.0|CC BY-SA 3\.0|CC BY 2\.5|CC BY 2\.0|CC0/);
   const links: Record<string, string> = {
     "CC BY-SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "CC BY-SA 3.0": "https://creativecommons.org/licenses/by-sa/3.0/",
     "CC BY 2.5": "https://creativecommons.org/licenses/by/2.5/",
     "CC BY 2.0": "https://creativecommons.org/licenses/by/2.0/",
     CC0: "https://creativecommons.org/publicdomain/zero/1.0/",

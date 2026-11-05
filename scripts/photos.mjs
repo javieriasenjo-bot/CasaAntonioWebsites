@@ -33,7 +33,7 @@ const VARIANT = /^(.+)-(\d+)\.(avif|webp)$/;
 const PLACE_STEMS = new Set([
   "hokudai", "odori", "clock", "teine",
   "otaru", "sakaimachi", "otaru-aqua", "shukutsu", "jigoku", "jozankei",
-  "bluepond", "furano", "biei", "buddha", "toya", "upopoy",
+  "bluepond", "furano", "biei", "buddha", "toya", "upopoy", "snow-festival",
 ]);
 
 function existingWidths() {

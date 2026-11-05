@@ -125,6 +125,7 @@ export const photoMeta: Record<string, { widths: readonly number[]; width: numbe
   "sakaimachi": { widths: [400, 800, 1600], width: 1600, height: 1067 },
   "shukutsu": { widths: [400, 800, 1600], width: 1600, height: 1067 },
   "sink": { widths: [400, 800, 1280], width: 1280, height: 853 },
+  "snow-festival": { widths: [400, 800, 1600], width: 1600, height: 1067 },
   "sofa": { widths: [400, 800, 1600, 1800], width: 1800, height: 1200 },
   "street": { widths: [400, 800, 1067], width: 1067, height: 1600 },
   "teine": { widths: [400, 800, 1600], width: 1600, height: 1067 },
