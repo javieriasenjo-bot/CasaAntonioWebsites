@@ -1,11 +1,14 @@
 import { Shell } from "@/components/chrome";
+import { OtherChannels } from "@/components/other-channels";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
+import { PhotoCredit } from "@/components/photo-credit";
 import { Reviews } from "@/components/reviews";
 import { SellingPoints } from "@/components/selling-points";
 import { KojohamaPromo } from "@/components/kojohama-promo";
 import { house } from "@/data/active";
+import { photoAlt } from "@/data/facts";
 import { useLang } from "@/lib/i18n";
 import { apartmentSummary } from "@/data/property-facts";
 import { AVAILABILITY_NOTE } from "@/data/availability";
@@ -46,7 +49,7 @@ export function Home() {
           </div>
           <div className="choices">
             <article className="choice choice-a">
-              <Photo className="choice-photo" src="/photos/open.jpg" alt="" sizes="(max-width: 860px) calc(100vw - 1.6rem), (max-width: 1160px) 48vw, 554px" />
+              <Photo className="choice-photo" src="/photos/open.jpg" alt={photoAlt("/photos/open.jpg", lang)} sizes="(max-width: 860px) calc(100vw - 1.6rem), (max-width: 1160px) 48vw, 554px" />
               <span className="choice-kicker" aria-hidden="true">A</span>
               <h3 className="choice-name">
                 {/* Stretched link: the whole card opens the apartment page. */}
@@ -64,7 +67,7 @@ export function Home() {
               </div>
             </article>
             <article className="choice choice-b">
-              <Photo className="choice-photo" src="/photos/b-dining.jpg" alt="" sizes="(max-width: 860px) calc(100vw - 1.6rem), (max-width: 1160px) 48vw, 554px" />
+              <Photo className="choice-photo" src="/photos/b-dining.jpg" alt={photoAlt("/photos/b-dining.jpg", lang)} sizes="(max-width: 860px) calc(100vw - 1.6rem), (max-width: 1160px) 48vw, 554px" />
               <span className="choice-kicker" aria-hidden="true">B</span>
               <h3 className="choice-name">
                 {/* Stretched link: the whole card opens the apartment page. */}
@@ -82,6 +85,7 @@ export function Home() {
               </div>
             </article>
           </div>
+          <OtherChannels location="home" />
         </div>
       </section>
 
@@ -116,6 +120,41 @@ export function Home() {
           </PageLink>
         </div>
       </section>
+      <section className="seasons" id="seasons">
+        <div className="wrap">
+          <div className="section-head">
+            <p className="eyebrow">{t.seasons.eyebrow}</p>
+            <h2>{t.seasons.title}</h2>
+          </div>
+          <div className="season-grid">
+            <article className="season">
+              <figure>
+                <Photo src="/photos/teine.jpg" alt={t.seasons.winter.alt} sizes="(max-width: 860px) 100vw, 554px" />
+                <figcaption><PhotoCredit text={t.seasons.winter.credit} src="/photos/teine.jpg" lang={lang} /></figcaption>
+              </figure>
+              <p className="eyebrow">{t.seasons.winter.label}</p>
+              <h3>{t.seasons.winter.title}</h3>
+              {t.seasons.winter.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <p className="season-links">
+                <PageLink page="teine-ski" className="text-link">{t.seasons.winter.teine}</PageLink>
+                <PageLink page="snow-festival" className="text-link">{t.seasons.winter.snow}</PageLink>
+              </p>
+            </article>
+            <article className="season">
+              <figure>
+                <Photo src="/photos/furano.jpg" alt={t.seasons.summer.alt} sizes="(max-width: 860px) 100vw, 554px" />
+                <figcaption><PhotoCredit text={t.seasons.summer.credit} src="/photos/furano.jpg" lang={lang} /></figcaption>
+              </figure>
+              <p className="eyebrow">{t.seasons.summer.label}</p>
+              <h3>{t.seasons.summer.title}</h3>
+              {t.seasons.summer.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <p className="season-links">
+                <PageLink page="day-trips" className="text-link">{t.seasons.summer.trips}</PageLink>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
       <section className="home-nomad" id="long-stay">
         <div className="wrap stay-split">
           <div>
@@ -136,7 +175,7 @@ export function Home() {
       </section>
 
       <section className="ambient">
-        <Photo src="/photos/street.jpg" alt="" sizes="100vw" />
+        <Photo src="/photos/street.jpg" alt={photoAlt("/photos/street.jpg", lang)} sizes="100vw" />
         <div className="ambient-copy">
           <p className="eyebrow">{t.neighborhoodTeaser.eyebrow}</p>
           <h2>{t.neighborhoodTeaser.title}</h2>

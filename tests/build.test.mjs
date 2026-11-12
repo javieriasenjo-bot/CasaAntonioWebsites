@@ -124,7 +124,11 @@ test("19 October code review: schema, previews, localized booking links and prel
       assert.equal(graph.some(node => node["@type"] === "FAQPage"), route === "faq/", `${prefix}${route}: FAQPage only on /faq/`);
       assert.match(html, /<meta property="og:site_name" content="Casa Antonio" \/>/);
       assert.equal((html.match(/og:locale:alternate/g) || []).length, 3);
-      for (const match of html.matchAll(/data-intent="booking"[^>]*href="([^"]+)"/g)) assert.ok(match[1].startsWith(host), `${prefix}${route}: ${match[1]}`);
+      for (const match of html.matchAll(/data-intent="booking"(?![^>]*data-property="both")[^>]*href="([^"]+)"/g)) assert.ok(match[1].startsWith(host), `${prefix}${route}: ${match[1]}`);
+      // Booking.com and Trip.com carry one combined listing for both apartments (Ctrip on the Chinese pages).
+      const channels = [...html.matchAll(/data-intent="booking"[^>]*data-property="both"[^>]*href="([^"]+)"/g)].map(m => m[1]);
+      assert.ok(channels.includes("https://www.booking.com/hotel/jp/casa-antonio.html"), `${prefix}${route}: Booking.com link`);
+      assert.ok(channels.includes(prefix === "zh-cn/" ? "https://hotels.ctrip.com/hotels/136555119.html" : "https://www.trip.com/hotels/detail/?hotelId=136555119"), `${prefix}${route}: Trip.com link`);
       assert.ok(html.includes(`<link rel="modulepreload" crossorigin href="/assets/${{ "": "en", "ja/": "ja", "zh-cn/": "zh", "ko/": "ko" }[prefix]}-`), `${prefix}${route}: language pack preload`);
       assert.doesNotMatch(html, /Runs before hydration|Visit measurement only/, "inline scripts are minified");
       if (route === "") {
@@ -177,8 +181,8 @@ test("llms.txt review scores match src/data/reviews.ts", () => {
   const airbnbB = section(reviewsBlock, "b");
   const bookingA = section(bookingBlock, "a");
   const bookingB = section(bookingBlock, "b");
-  for (const { recordedOn } of [airbnbA, airbnbB, bookingA, bookingB]) assert.equal(recordedOn, "2026-10-16");
-  assert.match(llms, /16 October 2026/);
+  for (const { recordedOn } of [airbnbA, airbnbB, bookingA, bookingB]) assert.equal(recordedOn, "2026-11-12");
+  assert.match(llms, /12 November 2026/);
   assert.match(llms, new RegExp(`Airbnb A ${airbnbA.score} from ${airbnbA.count} reviews`));
   assert.match(llms, new RegExp(`Airbnb B ${airbnbB.score} from ${airbnbB.count} reviews`));
   assert.match(llms, new RegExp(`Booking\\.com A ${bookingA.score} from ${bookingA.count} reviews`));

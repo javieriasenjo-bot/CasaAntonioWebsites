@@ -32,6 +32,23 @@ export function airbnbUrl(cabin: "a" | "b", lang: Lang) {
   return `${AIRBNB_HOST[lang]}/rooms/${AIRBNB_ROOM[cabin]}`;
 }
 
+// Other booking channels. One combined listing per channel covers both apartments (A and B).
+// Added 12 Nov 2026. The Chinese page uses Ctrip (Trip.com's mainland site); the other languages use Trip.com.
+export const BOOKING_COM = "https://www.booking.com/hotel/jp/casa-antonio.html";
+
+const TRIP_COM: Record<Lang, string> = {
+  en: "https://www.trip.com/hotels/detail/?hotelId=136555119",
+  ja: "https://www.trip.com/hotels/detail/?hotelId=136555119",
+  zh: "https://hotels.ctrip.com/hotels/136555119.html",
+  ko: "https://www.trip.com/hotels/detail/?hotelId=136555119",
+};
+
+export const TRIP_COM_EN = TRIP_COM.en;
+
+export function tripUrl(lang: Lang) {
+  return TRIP_COM[lang];
+}
+
 const KOJOHAMA_SITE: Record<Lang, string> = {
   en: "https://kojohamacabins.jp/",
   ja: "https://kojohamacabins.jp/ja/",

@@ -1,10 +1,10 @@
-// Guest reviews cross-checked against the public Airbnb review dialogs on 2026-10-16.
+// Guest quotes cross-checked against the public Airbnb review dialogs on 2026-10-16; scores and counts re-read on 2026-11-12.
 // Order matters: the home page shows the first two per apartment, so the strongest
 // quote leads. Nothing is edited, trimmed or hidden — the qualified reviews follow.
 // Excerpts are labelled explicitly; preserve original wording and material qualifications.
 // Quotes marked `translated: true` are Airbnb's own English translation of the original.
 // Update rating/count when they change on Airbnb. Never invent or edit a quote.
-// validUntil: "2027-01-14" — recheck ratings, counts and quotes against Airbnb (90 days from recordedOn).
+// validUntil: "2027-02-10" — recheck ratings, counts and quotes against Airbnb (90 days from recordedOn).
 
 export type ReviewQuote = {
   sourceUrl?: string;
@@ -26,7 +26,7 @@ export type StayReviews = {
 
 export const reviews: { a: StayReviews; b: StayReviews } = {
   a: {
-    recordedOn: "2026-10-16",
+    recordedOn: "2026-11-12",
     rating: 4.87,
     count: 30,
     quotes: [
@@ -60,9 +60,9 @@ export const reviews: { a: StayReviews; b: StayReviews } = {
     ],
   },
   b: {
-    recordedOn: "2026-10-16",
-    rating: 4.95,
-    count: 22,
+    recordedOn: "2026-11-12",
+    rating: 4.96,
+    count: 23,
     guestFavorite: true,
     quotes: [
       {
@@ -98,19 +98,19 @@ export function reviewReady(stay: StayReviews) {
   return stay.rating != null && stay.count != null && stay.quotes.length >= 3 && stay.quotes.every((quote) => quote.text && quote.name);
 }
 
-// Booking.com: real scores and guest comments copied from the two Booking.com listings (cross-checked 2026-10-16).
+// Booking.com: real scores and guest comments copied from the two Booking.com listings (scores re-read 2026-11-12; quotes cross-checked 2026-10-16).
 // Scores are out of 10. Comments are shown in the guest's own language (`lang`); some are the opening lines of
 // a longer review (Booking.com truncates them) and are marked `excerpt`. Never invent or edit a quote.
-// validUntil: "2027-01-14" — recheck scores, counts and quotes against Booking.com (90 days from recordedOn).
+// validUntil: "2027-02-10" — recheck scores, counts and quotes against Booking.com (90 days from recordedOn).
 export type BookingQuote = { name: string; country: string; lang: "en" | "ja" | "zh"; text: string; excerpt?: boolean; sourceUrl?: string; reviewDate?: string };
 export type BookingReviews = { recordedOn: string; score: number; count: number; label: string; quotes: BookingQuote[]; href: string };
 
 export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
   a: {
-    recordedOn: "2026-10-16",
-    score: 9.0,
-    count: 24,
-    label: "Wonderful",
+    recordedOn: "2026-11-12",
+    score: 9.1,
+    count: 25,
+    label: "Superb",
     href: "https://www.booking.com/hotel/jp/casa-antonio-a.html",
     quotes: [
       { name: "Aloysius", country: "Singapore", lang: "en", text: "Really comfortable and nice space. Message and concerns were addressed fast" },
@@ -121,9 +121,9 @@ export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
     ],
   },
   b: {
-    recordedOn: "2026-10-16",
-    score: 9.7,
-    count: 26,
+    recordedOn: "2026-11-12",
+    score: 9.8,
+    count: 27,
     label: "Exceptional",
     href: "https://www.booking.com/hotel/jp/casa-antonio-b.html",
     quotes: [

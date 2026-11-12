@@ -1,5 +1,6 @@
 import { Gallery } from "@/components/gallery";
 import { Shell } from "@/components/chrome";
+import { OtherChannels } from "@/components/other-channels";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
@@ -67,6 +68,7 @@ export function StayView({ id }: { id: "a" | "b" }) {
                 {t.stayShared.back}
               </PageLink>
             </div>
+            <OtherChannels location={id === "a" ? "stay-a" : "stay-b"} />
           </div>
 
           <h2 className="block-title">{t.photos}</h2>

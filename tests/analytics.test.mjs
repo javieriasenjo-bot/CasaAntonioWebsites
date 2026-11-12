@@ -100,3 +100,14 @@ test("Airbnb's language sites count as Airbnb bookings with the right apartment"
   const events = b.window.dataLayer.filter(e => e.event === "airbnb_click");
   assert.equal(JSON.stringify(events.map(e => [e.provider, e.property])), JSON.stringify([["airbnb", "a"], ["airbnb", "b"], ["airbnb", "b"]]));
 });
+
+test("Booking.com and Trip.com booking links raise channel_click, not airbnb_click", () => {
+  const b = boot();
+  b.click("https://www.booking.com/hotel/jp/casa-antonio.html", { "data-intent": "booking", "data-property": "both", "data-placement": "home" });
+  b.click("https://www.trip.com/hotels/detail/?hotelId=136555119", { "data-intent": "booking", "data-property": "both", "data-placement": "footer" });
+  b.click("https://hotels.ctrip.com/hotels/136555119.html", { "data-intent": "booking", "data-property": "both", "data-placement": "stay-a" });
+  const events = Array.from(b.window.dataLayer.slice(1));
+  assert.deepEqual(events.map(e => e.event), ["channel_click", "channel_click", "channel_click"]);
+  assert.deepEqual(events.map(e => e.provider), ["booking", "trip", "trip"]);
+  assert.equal(events[0].apartment_name, "Casa Antonio A and B");
+});

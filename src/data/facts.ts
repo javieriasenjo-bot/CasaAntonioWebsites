@@ -139,3 +139,10 @@ export const apartmentBPhotos: Photo[] = [
   p("/photos/b-plates.jpg", "Plates for everyone", "人数分のお皿", "足够的餐盘", "인원수만큼의 접시"),
   ...housePhotos.slice(1),
 ];
+
+const ALL_PHOTOS = [...housePhotos, ...apartmentAPhotos, ...apartmentBPhotos];
+
+/** Descriptive alt text for a photo that is already captioned in the galleries. */
+export function photoAlt(src: string, lang: Lang) {
+  return ALL_PHOTOS.find((photo) => photo.src === src)?.alt[lang] ?? "";
+}

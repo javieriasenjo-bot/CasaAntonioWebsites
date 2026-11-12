@@ -28,7 +28,8 @@
     var parsed;
     try { parsed = new URL(url); } catch (_) { return; }
     var provider = /(^|\.)airbnb\.(com|jp|co\.kr)$/.test(parsed.hostname) ? "airbnb"
-      : /(^|\.)booking\.com$/.test(parsed.hostname) ? "booking" : null;
+      : /(^|\.)booking\.com$/.test(parsed.hostname) ? "booking"
+      : /(^|\.)(trip|ctrip)\.com$/.test(parsed.hostname) ? "trip" : null;
     var property = a.getAttribute("data-property");
     if (!property && provider === "airbnb") {
       property = parsed.pathname.indexOf("1248284267045468378") !== -1 ? "a"
@@ -36,9 +37,10 @@
     }
     var placement = a.getAttribute("data-placement") || (a.closest("header") ? "header" : a.closest("footer") ? "footer" : "body");
     if (provider && (intent || property)) {
-      var event = intent === "reviews" ? "review_click" : intent === "inquiry" ? "inquiry_click" : "airbnb_click";
+      var event = intent === "reviews" ? "review_click" : intent === "inquiry" ? "inquiry_click"
+        : provider === "airbnb" ? "airbnb_click" : "channel_click";
       w.dataLayer.push(Object.assign(base, { event: event, intent: intent || "booking", provider: provider,
-        property: property || "unknown", apartment_name: property === "a" ? "Casa Antonio A" : property === "b" ? "Casa Antonio B" : "unknown",
+        property: property || "unknown", apartment_name: property === "a" ? "Casa Antonio A" : property === "b" ? "Casa Antonio B" : property === "both" ? "Casa Antonio A and B" : "unknown",
         link_location: placement }));
     } else if (/^(mailto:|tel:)|^https:\/\/(wa\.me|(?:www\.)?line\.me)\//i.test(url)) {
       var method = /^mailto:/i.test(url) ? "email" : /^tel:/i.test(url) ? "phone" : /line\.me/i.test(url) ? "line" : "whatsapp";

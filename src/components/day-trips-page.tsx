@@ -131,7 +131,7 @@ const tripPhotos: Record<string, Shot[]> = {
         "Sapporo Teine, looking back toward the city. Photograph by Miki Yoshihito, CC BY 2.0.",
         "サッポロテイネから街を見下ろす。写真: Miki Yoshihito, CC BY 2.0。",
         "札幌手稻，回头望向城市。摄影：Miki Yoshihito，CC BY 2.0。",
-        "삿포로 데이네에서 시내를 내려다본 사진. 사진: Miki Yoshihito, CC BY 2.0.",
+        "삿포로 테이네에서 시내를 내려다본 사진. 사진: Miki Yoshihito, CC BY 2.0.",
       ),
     },
   ],

@@ -20,8 +20,8 @@
     "workerd": true
   },
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@types/react": "^19.2.0",
@@ -30,7 +30,7 @@
     "playwright-core": "^1.64.0",
     "sharp": "^0.35.5",
     "typescript": "^5.7.0",
-    "vite": "^8.2.0",
-    "wrangler": "4.144.0"
+    "vite": "^8.3.8",
+    "wrangler": "4.160.1"
   }
 }

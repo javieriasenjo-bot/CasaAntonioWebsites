@@ -73,6 +73,34 @@ export const copy = {
       body: "The Namboku line runs from Asabu through Sapporo Station to Odori and Susukino. Day to day, the useful places are closer: AEON over the station, and calma a few blocks south.",
       cta: "Nearby",
     },
+    // validUntil: "2027-03-31" — Teine 2026-27 season and the 77th Snow Festival dates (checked 12 Nov 2026).
+    seasons: {
+      "eyebrow": "Two seasons",
+      "title": "Come for the snow, or for the long summer days.",
+      "winter": {
+        "label": "Winter · December to March",
+        "title": "Ski at Teine, then come home to a warm apartment.",
+        "body": [
+          "Sapporo Teine is the ski area on this side of the city, about 40 minutes by car from central Sapporo, with night skiing on the lower Olympia side. It plans to open on 21 November 2026. Sapporo Kokusai, Bankei and Moiwayama are other ski areas inside the city; check their own sites for dates. Niseko and Rusutsu are bigger resorts, and a long day out.",
+          "The 77th Sapporo Snow Festival runs 4–11 February 2027 in Odori Park, Susukino and Tsudome. The Namboku line takes you from Asabu to Odori, and the street is quiet when you get back. Each apartment has one free parking space, and the host or property management clears the snow there."
+        ],
+        "teine": "Sapporo Teine for skiers",
+        "snow": "Snow Festival: dates and getting there",
+        "alt": "Sapporo Teine ski area in winter, looking back toward the city",
+        "credit": "Sapporo Teine, looking back toward the city. Photograph by Miki Yoshihito, CC BY 2.0."
+      },
+      "summer": {
+        "label": "Summer · June to September",
+        "title": "Biei and Furano, on an early start.",
+        "body": [
+          "Furano is about two hours and ten minutes by car in ordinary conditions, and Biei about two and a half. The lavender at Farm Tomita is usually at its best in July. The Shirogane Blue Pond and the patchwork hills of Biei are on the same road north.",
+          "Leave early and keep the day simple: one or two stops, lunch, and home by evening. Otaru, Lake Toya and Jozankei are closer if you want a shorter day. Each apartment has a free parking space, which helps if you hire a car."
+        ],
+        "trips": "Day trips from the house",
+        "alt": "Lavender rows at Farm Tomita in Furano",
+        "credit": "Lavender at Farm Tomita, Furano. Photograph by Kentagon, CC BY-SA 4.0."
+      }
+    },
     nomad: {
       eyebrow: "Working from Sapporo",
       title: "A quiet room for a real work day.",
@@ -510,7 +538,7 @@ export const copy = {
             {
               time: "Lunch",
               title: "Sankaku Market, or a rated room",
-              body: "Sankaku Market, a short walk from Otaru Station, is the simple seafood lunch: kaisendon and the stalls. Go before the tour groups fill it. If you want a restaurant, TripAdvisor’s Otaru list in October 2026 had Sawasaki Suisan Kaisenshokudo and Isezushi at 4.4 (about 205 and 234 reviews), and the soba shop Yabuhan at 4.4 from about 166 reviews. Kita no Donburiya Takinami, at 4.2 from about 155 reviews, is the seafood-bowl counter. Ratings move. This page does not hold a table.",
+              body: "Sankaku Market, a short walk from Otaru Station, is the simple seafood lunch: kaisendon and the stalls. Go before the tour groups fill it. If you want a restaurant, TripAdvisor’s Otaru list in November 2026 had Sawasaki Suisan Kaisenshokudo and Isezushi at 4.4 (about 205 and 234 reviews), and the soba shop Yabuhan at 4.4 from about 166 reviews. Kita no Donburiya Takinami, at 4.2 from about 154 reviews, is the seafood-bowl counter. Ratings move. This page does not hold a table.",
             },
             {
               time: "Afternoon",
@@ -538,7 +566,7 @@ export const copy = {
             {
               time: "A meal",
               title: "Near the valley",
-              body: "TripAdvisor’s list beside Jigokudani is short. In October 2026 the top of it was Pizzeria Astra, a wood-fired pizza room (4.8 from 29 reviews), then Aji no Daio, the curry-ramen shop (3.8 from about 70 reviews), and Onsen Ichiba, the seafood hall (3.5 from about 114 reviews). The scores are not all high. Check that they are open, and that the road home is still in daylight.",
+              body: "TripAdvisor’s list beside Jigokudani is short. In November 2026 the top of it was Pizzeria Astra, a wood-fired pizza room (4.8 from 29 reviews), then Aji no Daio, the curry-ramen shop (3.8 from about 70 reviews), and Onsen Ichiba, the seafood hall (3.5 from about 115 reviews). The scores are not all high. Check that they are open, and that the road home is still in daylight.",
             },
             {
               time: "Afternoon",
@@ -871,46 +899,117 @@ export const guides = {
     },
     // validUntil: "2027-02-11" — the 77th Sapporo Snow Festival dates below run through this date.
     snow: {
-      eyebrow: "4–11 February 2027",
-      title: "A quiet base for the Snow Festival.",
-      lede: "The organizer has published the 77th Sapporo Snow Festival for 4–11 February 2027. Odori Park, from West 1 to West 11, is the main site. Susukino and Tsudome are the other two. Checked against the official notice on 1 October 2026.",
-      credit: "Sapporo Snow Festival, the Odori site at night, seen from Sapporo TV Tower. Photograph by 京浜にけ. Resized for this page. CC BY-SA 3.0.",
-      blocks: [
+      "eyebrow": "4–11 February 2027",
+      "title": "A quiet base for the Snow Festival.",
+      "lede": "The organizer has published the 77th Sapporo Snow Festival for 4–11 February 2027, eight days. Odori Park, from West 1 to West 11, is the main site. Susukino and Tsudome are the other two. Checked against the organizer’s site on 12 November 2026.",
+      "credit": "Sapporo Snow Festival, the Odori site at night, seen from Sapporo TV Tower. Photograph by 京浜にけ. Resized for this page. CC BY-SA 3.0.",
+      "blocks": [
         {
-          h: "The ride in",
-          paragraphs: [
+          "h": "The ride in",
+          "paragraphs": [
             "From the house, walk about five minutes to Asabu Station and take the Namboku line south. Odori is about eleven minutes from Asabu on the city's station matrix, before you wait for a train. Susukino is one station past Odori. You come back the same way, to the north end of the line.",
-            "The apartments are the quiet part of the day: cook, sleep, and ride in when you want the snow. Check-in is still 16:00–23:00, and the street is still a residential street.",
-          ],
+            "The apartments are the quiet part of the day: cook, sleep, and ride in when you want the snow. Check-in is still 16:00–23:00, and the street is still a residential street."
+          ]
         },
         {
-          h: "Dates, and what is not posted yet",
-          paragraphs: [
-            "The dates above are the published festival period. Hours and lighting for 2027 are still being posted on the official site. In recent years the Odori site has been open from early morning, with lights from sunset until 22:00, and Susukino lights until 23:00. Treat that as the recent pattern, not a promise for 2027.",
-          ],
+          "h": "The three sites",
+          "paragraphs": [
+            "Odori, West 1 to West 11, is the main site. The organizer lists winter attractions on West 1, the Sapporo International Art Festival 2027 on West 2, small snow sculptures on West 3, large sculptures on West 4, 5, 7, 8 and 10, small and medium ones on West 6 and 9, and the international snow sculpture contest on West 11. Five large sculptures are planned.",
+            "Susukino is along Ekimae-dori, from South 4 to South 6. Tsudome is the Sapporo sports exchange facility of that name."
+          ]
         },
-      ],
+        {
+          "h": "New for 2027",
+          "paragraphs": [
+            "A special partner event, Sapporo Snow Sports Park 2027, takes place at the Daiwa House Premist Dome on 12–14 February (Friday to Sunday). The Sapporo International Art Festival 2027 is on West 2 in Odori. The organizer says it will keep updating the details, so some of this may change."
+          ]
+        },
+        {
+          "h": "Getting to Tsudome",
+          "paragraphs": [
+            "Tsudome is away from the subway. In 2026 the festival ran a shuttle between Sakaemachi Station and Tsudome from 4 to 11 February: ¥200 one way for adults, cash only, 9:40–14:30 from Sakaemachi and 12:00–16:20 from Tsudome, every 5–10 minutes. From Asabu you change to the Toho line at Odori to reach Sakaemachi. Tsudome has no general parking. The 2027 shuttle has not been announced yet."
+          ]
+        },
+        {
+          "h": "Dates, and what is not posted yet",
+          "paragraphs": [
+            "As of 12 November 2026 the organizer had not posted 2027 opening hours or lighting hours for any site. In recent years the Odori site has been open from early morning, with lights from sunset until 22:00, and Susukino lights until 23:00. Treat that as the recent pattern, not a promise for 2027, and check the official site before you go."
+          ]
+        }
+      ]
     },
     teine: {
-      eyebrow: "West of the house",
-      title: "Sapporo Teine, and the same door at the end.",
-      lede: "The ski day from this side of the city. A morning in the apartment, an afternoon on the mountain, and the private door when it is over.",
-      credit: "Sapporo Teine, looking back toward the city. Photograph by MIKI Yoshihito. Resized for this page. CC BY 2.0.",
-      blocks: [
+      "eyebrow": "West of the house",
+      "title": "Sapporo Teine, and the same door at the end.",
+      "lede": "A ski day from this side of the city: a morning in the apartment, the lifts, and the private door when it is over. Season dates, hours and prices below were read on the resort’s official site on 12 November 2026.",
+      "credit": "Sapporo Teine, looking back toward the city. Photograph by MIKI Yoshihito. Resized for this page. CC BY 2.0.",
+      "blocks": [
         {
-          h: "The mountain",
-          paragraphs: [
-            "Sapporo Teine is on the northwest face of Mount Teine, a 1972 Olympic venue. Olympia is the lower, broader zone. Highland is higher, where the old Olympic courses are.",
-            "The resort puts central Sapporo at about forty minutes by car. From Kita-ku you drive west on the Sasson Expressway. Parking at the mountain is free, on the order of 2,800 cars. Without a car: JR to Teine Station, then the bus up. That way is slower.",
-          ],
+          "h": "The mountain",
+          "paragraphs": [
+            "Sapporo Teine is on Mount Teine, a venue of the 1972 Sapporo Winter Olympics. It has two zones. Olympia is the lower, broader one, with a family area and the night skiing. Highland is higher, where the old Olympic courses are.",
+            "The resort lists 15 courses (7 on Highland, 8 on Olympia), 9 lifts and gondolas, 16,430 m of course in all, a top at 1,023 m, a vertical drop of 683 m, a longest run of about 6 km and a steepest slope of 38°."
+          ]
         },
         {
-          h: "The house as a base",
-          paragraphs: [
-            "Casa Antonio is not a ski-in lodge. It is a residential apartment with a kitchen, heat, and one free parking space in front of each door. Bring the skis in the car, or leave them for the bus day. There is no separate drying room described on this site.",
-            "In the evening the Namboku line is still there if the mountain was enough and the city is next. Not both on the same tight schedule.",
-          ],
+          "h": "Season dates, 2026–27",
+          "paragraphs": [
+            "The resort plans to open on 21 November. On Highland, the early season runs to 18 December, the regular season from 19 December to 7 March, spring from 8 to 28 March, and a special spring period from 29 March to 5 May. After 28 March only Highland is open. No closing date is given for Olympia; its night skiing ends on 28 March. Last season ended on 6 May.",
+            "Snow decides the real dates. Check the resort’s notices in the week you go."
+          ]
         },
-      ],
+        {
+          "h": "Lift hours and night skiing",
+          "paragraphs": [
+            "In the table from opening to 18 January, the Highland Summit Express and the Olympia gondola run 9:00–15:30, and the other lifts 9:00–16:00. One Olympia lift runs until 20:00 for the night session. The table changes after 18 January, so check the current one.",
+            "Night skiing is on Olympia only, 16:00–20:00 from 5 December to 28 March, with last boarding at 19:40. There is no night skiing on Highland."
+          ]
+        },
+        {
+          "h": "Lift tickets",
+          "paragraphs": [
+            "Adult prices, online and then at the counter. Early season (to 18 December): one day ¥8,400 and ¥9,400, five hours ¥6,300 and ¥7,300. Regular season (19 December to 7 March): one day ¥8,800 and ¥9,800, five hours ¥6,600 and ¥7,600. Spring (8–28 March): one day ¥6,600 and ¥7,600. Special spring on Highland (29 March to 5 May): one day ¥6,000 and ¥7,000.",
+            "The adult night ticket is ¥2,900 online and ¥3,900 at the counter. The child night ticket is ¥1,800 online and ¥2,800 at the counter. A 25-hour pass is ¥28,500, online only. Child day tickets and other categories are on the resort’s ticket page."
+          ]
+        },
+        {
+          "h": "Rentals",
+          "paragraphs": [
+            "The resort’s English rental page lists a ski or snowboard for one day at ¥9,200 for adults and ¥7,600 for children, and ¥10,500 and ¥8,900 from 26 December to 3 January. A full set with boots, wear, beanie, goggles and gloves is ¥20,000 for adults and ¥17,100 for children for one day. Wear alone is ¥7,300 and a helmet ¥3,300 a day. Prices can be revised during the season."
+          ]
+        },
+        {
+          "h": "Getting there by car",
+          "paragraphs": [
+            "The resort gives about 40 minutes from central Sapporo, about 60 minutes from New Chitose Airport and about 10 minutes from Teine IC. Kita-ku is on the north side of the city, so ask your navigation for the day’s time and leave margin for snow. Hire cars in Hokkaido in winter normally have winter tires; confirm when you book. The resort’s English access page does not describe parking, so check before you go."
+          ]
+        },
+        {
+          "h": "Getting there without a car",
+          "paragraphs": [
+            "From Asabu, take the Namboku line to Sapporo Station, then JR to Teine Station. The resort gives 11–18 minutes and ¥360 for the JR leg. A shuttle bus run by JR Hokkaido Bus leaves from the south exit of Teine Station: about 15 minutes to Olympia and 27 minutes to Highland. The adult fare to Highland is a flat ¥1,000 (children ¥500), paid in exact change.",
+            "Big Runs express buses run from Sapporo hotels from 5 December 2026 to 28 March 2027. A Bus Pack with a seven-hour lift ticket is ¥11,000 for adults; the round trip alone is ¥8,800 and one way ¥4,000. The resort lists no direct bus from Asabu. A taxi from Miyanosawa subway station takes about 30 minutes."
+          ]
+        },
+        {
+          "h": "Beginners and lessons",
+          "paragraphs": [
+            "The resort’s beginner pages list a family area on Olympia and a beginner area. English lessons are not described on the pages we read, so ask the resort before you plan around them."
+          ]
+        },
+        {
+          "h": "The house as a base",
+          "paragraphs": [
+            "Casa Antonio is not a ski-in lodge. It is a residential apartment with a kitchen, heat, and one free parking space in front of each door. Each apartment has a washing machine and somewhere to hang wet clothes. No dryer is advertised, so do not count on wet ski wear drying overnight. The host or property management clears the snow in the parking space; guests do not. Bring skis in the car, or rent them at the resort.",
+            "A day that suits the house: breakfast in the apartment, train or car to Teine for the morning, lunch on the mountain, and the night session on Olympia if you still have the energy. Last boarding is 19:40, so the ride home is after 20:00. If the mountain was enough and the city is next, the Namboku line runs to Odori and Susukino."
+          ]
+        },
+        {
+          "h": "Check before you go",
+          "paragraphs": [
+            "Dates and prices are for the 2026–27 season and come from sapporo-teine.com. Opening is a plan until the snow arrives. On the day, check the resort’s notices and the road and train situation."
+          ]
+        }
+      ]
     },
   };

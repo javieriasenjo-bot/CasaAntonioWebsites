@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ChannelLink } from "@/components/other-channels";
 import { AirbnbLink } from "@/components/airbnb-link";
 import { PageLink } from "@/components/page-link";
 import { EmailLink } from "@/components/email-link";
@@ -247,6 +248,8 @@ export function Shell({ children }: { children: ReactNode }) {
             <AirbnbLink cabin="b" location="footer">
               Airbnb · B
             </AirbnbLink>
+            <ChannelLink channel="booking" location="footer">Booking.com</ChannelLink>
+            <ChannelLink channel="trip" location="footer">{lang === "zh" ? "携程 Trip.com" : "Trip.com"}</ChannelLink>
             <PageLink page="arrival">{t.nav.arrival}</PageLink>
           </p>
           <p className="footer-links"><EmailLink placement="footer-email" /></p>

@@ -18,6 +18,9 @@ export const OFFICIAL = {
   ],
   teine: [
     { label: T("Sapporo Teine ski resort: official site", "サッポロテイネ公式サイト", "札幌手稻滑雪场官方网站", "삿포로 테이네 스키장 공식 사이트"), href: "https://sapporo-teine.com/" },
+    { label: T("Sapporo Teine: lift tickets", "サッポロテイネ：リフト券", "札幌手稻：缆车票价", "삿포로 테이네: 리프트권"), href: "https://sapporo-teine.com/snow/lang/en/tickets" },
+    { label: T("Sapporo Teine: access and shuttle buses", "サッポロテイネ：アクセスとシャトルバス", "札幌手稻：交通与接驳巴士", "삿포로 테이네: 교통과 셔틀버스"), href: "https://sapporo-teine.com/snow/lang/en/access" },
+    { label: T("Sapporo Teine: lift hours (Japanese)", "サッポロテイネ：リフト営業時間", "札幌手稻：缆车营业时间（日文）", "삿포로 테이네: 리프트 운영 시간 (일본어)"), href: "https://sapporo-teine.com/snow/lift-time" },
     { label: T("Hokkaido Chuo Bus", "北海道中央バス", "北海道中央巴士", "홋카이도 주오버스"), href: "https://www.chuo-bus.co.jp/" },
   ],
   shiraoi: [
