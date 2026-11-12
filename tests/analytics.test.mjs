@@ -52,23 +52,23 @@ function boot() {
 test("first booking is queued before any third-party script loads", () => {
   const b = boot();
   assert.equal(b.scripts.length, 0);
-  b.click("https://www.airbnb.com/rooms/1248284267045468378", { "data-intent": "booking", "data-property": "a", "data-placement": "home-a" });
+  b.click("https://www.airbnb.com/rooms/1810204332727383544", { "data-intent": "booking", "data-property": "a", "data-placement": "home-a" });
   assert.equal(b.window.dataLayer[0].event, "gtm.js");
   assert.equal(b.window.dataLayer[1].event, "airbnb_click");
   assert.equal(b.window.dataLayer[1].link_location, "home-a");
   assert.equal(b.window.dataLayer[1].page_language, "ja");
   // The deployed legacy producer checks this same guard. Reinitialization must not duplicate events.
   vm.runInContext(source, b.context);
-  b.click("https://www.airbnb.com/rooms/1248284267045468378", { "data-intent": "booking" });
+  b.click("https://www.airbnb.com/rooms/1810204332727383544", { "data-intent": "booking" });
   assert.equal(b.window.dataLayer.filter(e => e.event === "airbnb_click").length, 2);
   assert.equal(b.window.__caClickListener, true);
 });
 
 test("reviews from both providers and enquiries are distinct from booking intent", () => {
   const b = boot();
-  b.click("https://www.airbnb.com/rooms/1248284267045468378", { "data-intent": "reviews", "data-property": "a" });
+  b.click("https://www.airbnb.com/rooms/1810204332727383544", { "data-intent": "reviews", "data-property": "a" });
   b.click("https://www.booking.com/hotel/jp/casa-antonio-b.html", { "data-intent": "reviews", "data-property": "b" });
-  b.click("https://www.airbnb.com/rooms/1248284267045468378", { "data-intent": "inquiry", "data-placement": "long-stay" });
+  b.click("https://www.airbnb.com/rooms/1810204332727383544", { "data-intent": "inquiry", "data-placement": "long-stay" });
   assert.deepEqual(Array.from(b.window.dataLayer.slice(1), e => e.event), ["review_click", "review_click", "inquiry_click"]);
   assert.equal(b.window.dataLayer[2].provider, "booking");
 });
@@ -93,10 +93,10 @@ test("an email enquiry queues one contact event without claiming message deliver
 
 test("Airbnb's language sites count as Airbnb bookings with the right apartment", () => {
   const b = boot();
-  b.click("https://www.airbnb.jp/rooms/1248284267045468378", { "data-intent": "booking", "data-placement": "home-a" });
-  b.click("https://www.airbnb.co.kr/rooms/1248260873560502499", { "data-intent": "booking" });
-  b.click("https://zh.airbnb.com/rooms/1248260873560502499", { "data-intent": "booking" });
-  b.click("https://airbnb.jp.example.com/rooms/1248284267045468378", { "data-intent": "booking" });
+  b.click("https://www.airbnb.jp/rooms/1810204332727383544", { "data-intent": "booking", "data-placement": "home-a" });
+  b.click("https://www.airbnb.co.kr/rooms/1810193700504259008", { "data-intent": "booking" });
+  b.click("https://zh.airbnb.com/rooms/1810193700504259008", { "data-intent": "booking" });
+  b.click("https://airbnb.jp.example.com/rooms/1810204332727383544", { "data-intent": "booking" });
   const events = b.window.dataLayer.filter(e => e.event === "airbnb_click");
   assert.equal(JSON.stringify(events.map(e => [e.provider, e.property])), JSON.stringify([["airbnb", "a"], ["airbnb", "b"], ["airbnb", "b"]]));
 });

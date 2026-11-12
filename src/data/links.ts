@@ -11,7 +11,7 @@ export const ADDRESS = {
 
 export const GUEST_EMAIL = "admin@kagami-planning.com";
 
-const AIRBNB_ROOM = { a: "1248284267045468378", b: "1248260873560502499" } as const;
+const AIRBNB_ROOM = { a: "1810204332727383544", b: "1810193700504259008" } as const;
 
 // Canonical listing URLs (structured data, documentation).
 export const AIRBNB = {

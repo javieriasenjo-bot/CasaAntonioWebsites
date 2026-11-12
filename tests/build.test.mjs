@@ -155,13 +155,13 @@ test("22 October: reserve actions, house rules and llms.txt", () => {
     assert.equal(aptA.floorLevel, "1");
     assert.equal(aptB.floorLevel, "2");
     assert.ok(String(aptB.additionalProperty.value).length > 0);
-    assert.ok(String(aptA.potentialAction.target.urlTemplate).includes("1248284267045468378"));
+    assert.ok(String(aptA.potentialAction.target.urlTemplate).includes("1810204332727383544"));
     assert.ok(String(aptB.potentialAction.target.urlTemplate).startsWith(host));
   }
   const llms = readFileSync(join(dist, "llms.txt"), "utf8");
   assert.match(llms, /北38条西3丁目1-7/);
-  assert.match(llms, /1248284267045468378/);
-  assert.match(llms, /1248260873560502499/);
+  assert.match(llms, /1810204332727383544/);
+  assert.match(llms, /1810193700504259008/);
   assert.match(llms, /admin@kagami-planning.com/);
   assert.doesNotMatch(llms, /\+81|tel:/);
 });

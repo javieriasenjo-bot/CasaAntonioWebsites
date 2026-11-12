@@ -32,8 +32,8 @@
       : /(^|\.)(trip|ctrip)\.com$/.test(parsed.hostname) ? "trip" : null;
     var property = a.getAttribute("data-property");
     if (!property && provider === "airbnb") {
-      property = parsed.pathname.indexOf("1248284267045468378") !== -1 ? "a"
-        : parsed.pathname.indexOf("1248260873560502499") !== -1 ? "b" : null;
+      property = parsed.pathname.indexOf("1810204332727383544") !== -1 ? "a"
+        : parsed.pathname.indexOf("1810193700504259008") !== -1 ? "b" : null;
     }
     var placement = a.getAttribute("data-placement") || (a.closest("header") ? "header" : a.closest("footer") ? "footer" : "body");
     if (provider && (intent || property)) {
