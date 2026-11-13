@@ -1,5 +1,5 @@
 import { MAP } from "@/data/facts";
-import { ADDRESS, AIRBNB, BOOKING_COM, GUEST_EMAIL, TRIP_COM_EN, airbnbUrl } from "@/data/links";
+import { ADDRESS, AIRBNB, BOOKING_COM, GUEST_EMAIL, TRIP_COM_EN, airhostUrl } from "@/data/links";
 import { DAMAGE_POLICY, PROPERTY_FACTS, preparationFaq } from "@/data/property-facts";
 import { photoFile, photoMeta } from "@/lib/photo-manifest";
 import { FONT_STYLESHEET } from "@/lib/fonts";
@@ -22,22 +22,22 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Sapporo Apartments near Asabu Station · Casa Antonio",
       description:
-        "Two private apartments in one Kita-ku house, about five minutes on foot from Asabu Station. Free parking, one car each. Book A or B on Airbnb.",
+        "Two private apartments in one Kita-ku house, about five minutes on foot from Asabu Station. Free parking, one car each. Book A or B on our booking page.",
     },
     ja: {
       title: "札幌・麻生駅徒歩5分の貸切アパートメント｜Casa Antonio",
       description:
-        "札幌・麻生駅から徒歩約5分。専用入口のある貸切アパート2室を比較できます。各約65㎡、Aは4名、Bは3名まで。各室1台の無料駐車場があり、予約はAirbnbで受け付けています。",
+        "札幌・麻生駅から徒歩約5分。専用入口のある貸切アパート2室を比較できます。各約65㎡、Aは4名、Bは3名まで。各室1台の無料駐車場があり、ご予約は公式の予約ページで受け付けています。",
     },
     zh: {
       title: "札幌整套公寓民宿 · 麻生站步行5分钟｜Casa Antonio",
       description:
-        "比较札幌麻生站附近的两套独立公寓：每套约65平方米，A最多住4人，B最多住3人。步行约5分钟到地铁站，每套可免费停一辆车，通过Airbnb预订。",
+        "比较札幌麻生站附近的两套独立公寓：每套约65平方米，A最多住4人，B最多住3人。步行约5分钟到地铁站，每套可免费停一辆车，可在官方预订页面预订。",
     },
     ko: {
       title: "삿포로 아파트 숙소 · 아사부역 도보 5분｜Casa Antonio",
       description:
-        "삿포로 기타구의 한 집에 전용 출입구가 따로 있는 아파트가 두 채 있습니다. 아사부역에서 걸어서 약 5분, 주차는 무료입니다. Airbnb, Booking.com, Trip.com에서 Casa Antonio A와 B를 예약하실 수 있습니다.",
+        "삿포로 기타구의 한 집에 전용 출입구가 따로 있는 아파트가 두 채 있습니다. 아사부역에서 걸어서 약 5분, 주차는 무료입니다. 공식 예약 페이지에서 Casa Antonio A와 B를 예약하실 수 있습니다.",
     },
   },
   a: {
@@ -220,22 +220,22 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Long Stays in Sapporo · Casa Antonio",
       description:
-        "Planning weeks or months in Sapporo? Contact Casa Antonio A or B through Airbnb or email with your dates and guest count to discuss availability and terms.",
+        "Planning weeks or months in Sapporo? Contact Casa Antonio A or B through our booking page or email with your dates and guest count to discuss availability and terms.",
     },
     ja: {
       title: "札幌の長期滞在｜Casa Antonio",
       description:
-        "札幌で数週間から数か月滞在したい方へ。Casa Antonio A・Bのキッチン、洗濯機、交通アクセスをご紹介。Airbnbまたはメールで日程・人数をお知らせいただき、空室状況や条件をご相談ください。",
+        "札幌で数週間から数か月滞在したい方へ。Casa Antonio A・Bのキッチン、洗濯機、交通アクセスをご紹介。予約ページまたはメールで日程・人数をお知らせいただき、空室状況や条件をご相談ください。",
     },
     zh: {
       title: "在札幌住几周或几个月｜Casa Antonio",
       description:
-        "计划在札幌住几周或几个月？了解Casa Antonio A和B的厨房、洗衣机及地铁交通，通过Airbnb或邮件发送入住日期和人数，咨询空房及入住条件。",
+        "计划在札幌住几周或几个月？了解Casa Antonio A和B的厨房、洗衣机及地铁交通，通过预订页面或邮件发送入住日期和人数，咨询空房及入住条件。",
     },
     ko: {
       title: "삿포로 장기 숙박｜Casa Antonio",
       description:
-        "삿포로에서 몇 주, 몇 달 머물 계획이라면 Airbnb 또는 이메일로 Casa Antonio A·B에 문의하세요. 숙박 날짜와 인원을 알려 주시면 예약 가능 여부와 조건을 확인해 드립니다.",
+        "삿포로에서 몇 주, 몇 달 머물 계획이라면 예약 페이지 또는 이메일로 Casa Antonio A·B에 문의하세요. 숙박 날짜와 인원을 알려 주시면 예약 가능 여부와 조건을 확인해 드립니다.",
     },
   },
   faq: {
@@ -300,7 +300,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ko: {
       title: "개인정보｜Casa Antonio",
       description:
-        "언어 설정 저장과 Google 애널리틱스 이용 안내입니다. 예약 링크, Airbnb·Booking.com·Trip.com 클릭, 후기, 장기 숙박 문의와 지도 링크의 클릭 측정을 설명합니다.",
+        "언어 설정 저장과 Google 애널리틱스 이용 안내입니다. 예약 링크, Airbnb·Booking.com 후기 링크 클릭, 장기 숙박 문의와 지도 링크의 클릭 측정을 설명합니다.",
     },
   },
 };
@@ -440,7 +440,7 @@ const SCHEMA_COPY: Record<Lang, SchemaCopy> = {
     ],
     seasoningName: "Seasonings",
     seasoningValue: "Oil, salt and pepper are usually removed between stays for hygiene",
-    reserve: { a: "Book Casa Antonio A on Airbnb", b: "Book Casa Antonio B on Airbnb" },
+    reserve: { a: "Book Casa Antonio A", b: "Book Casa Antonio B" },
     privateDoor: "Private entrance",
     kitchen: "Kitchen",
     aLaundry: "Washing machine and drying rack",
@@ -465,7 +465,7 @@ const SCHEMA_COPY: Record<Lang, SchemaCopy> = {
     ],
     seasoningName: "調味料",
     seasoningValue: "油・塩・こしょうは衛生のため、通常は滞在ごとに撤去",
-    reserve: { a: "AirbnbでCasa Antonio Aを予約", b: "AirbnbでCasa Antonio Bを予約" },
+    reserve: { a: "Casa Antonio Aを予約", b: "Casa Antonio Bを予約" },
     privateDoor: "専用入口",
     kitchen: "キッチン",
     aLaundry: "洗濯機と物干しラック",
@@ -490,7 +490,7 @@ const SCHEMA_COPY: Record<Lang, SchemaCopy> = {
     ],
     seasoningName: "调味料",
     seasoningValue: "出于卫生考虑，油、盐和胡椒通常会在每次入住之间移除",
-    reserve: { a: "在Airbnb预订Casa Antonio A", b: "在Airbnb预订Casa Antonio B" },
+    reserve: { a: "预订Casa Antonio A", b: "预订Casa Antonio B" },
     privateDoor: "独立入口",
     kitchen: "厨房",
     aLaundry: "洗衣机和晾衣架",
@@ -515,7 +515,7 @@ const SCHEMA_COPY: Record<Lang, SchemaCopy> = {
     ],
     seasoningName: "조미료",
     seasoningValue: "위생을 위해 식용유, 소금, 후추는 보통 숙박 사이에 치움",
-    reserve: { a: "Airbnb에서 Casa Antonio A 예약", b: "Airbnb에서 Casa Antonio B 예약" },
+    reserve: { a: "Casa Antonio A 예약", b: "Casa Antonio B 예약" },
     privateDoor: "전용 출입구",
     kitchen: "주방",
     aLaundry: "세탁기와 빨래 건조대",
@@ -537,7 +537,7 @@ function reserveAction(id: "a" | "b", lang: Lang) {
     name: SCHEMA_COPY[lang].reserve[id],
     target: {
       "@type": "EntryPoint",
-      urlTemplate: airbnbUrl(id, lang),
+      urlTemplate: airhostUrl(lang),
       inLanguage: HTML_LANG[lang],
       actionPlatform: ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
     },
@@ -652,7 +652,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
   en: [
     {
       q: "What time is check-in?",
-      a: "16:00 to 23:00. It is self check-in. Airbnb sends the lock instructions after you book. They are not posted on this site.",
+      a: "16:00 to 23:00. It is self check-in. The lock instructions are sent after you book. They are not posted on this site.",
     },
     {
       q: "What time is check-out?",
@@ -684,7 +684,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "How do long stays work?",
-      a: "Contact us through Airbnb or at admin@kagami-planning.com with your dates, preferred apartment and guest count. Confirm availability, terms and the total before paying. This website does not take reservations or payments.",
+      a: "Contact us through our booking page (kagamiplanning.airhost.co/en) or at admin@kagami-planning.com with your dates, preferred apartment and guest count. Confirm availability, terms and the total before paying. This website does not take reservations or payments.",
     },
     {
       q: "Is there Wi-Fi?",
@@ -694,7 +694,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
   ja: [
     {
       q: "チェックインは何時ですか？",
-      a: "16:00から23:00です。セルフチェックインです。予約のあと、Airbnbに解錠の手順が届きます。このサイトには載せません。",
+      a: "16:00から23:00です。セルフチェックインです。解錠の手順は予約後にお届けします。このサイトには載せません。",
     },
     {
       q: "チェックアウトは何時ですか？",
@@ -726,7 +726,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "長期滞在はどうしますか？",
-      a: "ご希望の日程、お部屋、人数を添えて、Airbnbまたはadmin@kagami-planning.comまでご連絡ください。空室、条件、合計金額は、お支払いの前にご確認ください。このサイトでは予約や決済は行っていません。",
+      a: "ご希望の日程、お部屋、人数を添えて、予約ページ（kagamiplanning.airhost.co/ja）またはadmin@kagami-planning.comまでご連絡ください。空室、条件、合計金額は、お支払いの前にご確認ください。このサイトでは予約や決済は行っていません。",
     },
     {
       q: "Wi-Fiはありますか？",
@@ -736,7 +736,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
   zh: [
     {
       q: "几点入住？",
-      a: "16:00 到 23:00，自助入住。预订之后，开锁方式通过 Airbnb 发送，不印在这个网站上。",
+      a: "16:00 到 23:00，自助入住。开锁方式在预订后发送，不印在这个网站上。",
     },
     {
       q: "几点退房？",
@@ -768,7 +768,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "长期住怎么订？",
-      a: "请通过Airbnb或admin@kagami-planning.com联系我们，并提供入住日期、希望入住的公寓和人数。付款前请确认空房、入住条件和总金额。本站不接受预订或付款。",
+      a: "请通过预订页面（kagamiplanning.airhost.co/zh）或admin@kagami-planning.com联系我们，并提供入住日期、希望入住的公寓和人数。付款前请确认空房、入住条件和总金额。本站不接受预订或付款。",
     },
     {
       q: "有 Wi-Fi 吗？",
@@ -778,7 +778,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
   ko: [
     {
       q: "체크인은 몇 시인가요?",
-      a: "16:00부터 23:00까지이며, 셀프 체크인입니다. 예약하시면 Airbnb로 문 여는 방법을 보내 드립니다. 이 사이트에는 적어 두지 않습니다.",
+      a: "16:00부터 23:00까지이며, 셀프 체크인입니다. 예약하시면 문 여는 방법을 보내 드립니다. 이 사이트에는 적어 두지 않습니다.",
     },
     {
       q: "체크아웃은 몇 시인가요?",
@@ -810,7 +810,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "장기 숙박은 어떻게 하나요?",
-      a: "숙박 날짜, 원하는 아파트, 인원을 적어 Airbnb 또는 admin@kagami-planning.com으로 문의해 주세요. 결제하기 전에 예약 가능 여부, 숙박 조건, 총금액을 꼭 확인하세요. 이 사이트에서는 예약이나 결제를 받지 않습니다.",
+      a: "숙박 날짜, 원하는 아파트, 인원을 적어 예약 페이지(kagamiplanning.airhost.co/en) 또는 admin@kagami-planning.com으로 문의해 주세요. 결제하기 전에 예약 가능 여부, 숙박 조건, 총금액을 꼭 확인하세요. 이 사이트에서는 예약이나 결제를 받지 않습니다.",
     },
     {
       q: "Wi-Fi가 있나요?",

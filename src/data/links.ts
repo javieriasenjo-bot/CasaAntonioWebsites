@@ -11,6 +11,15 @@ export const ADDRESS = {
 
 export const GUEST_EMAIL = "admin@kagami-planning.com";
 
+// The one booking link: Airhost's booking engine, in the page language.
+// There is no Korean Airhost page set up, so Korean pages use the English one.
+const AIRHOST_BASE = "https://kagamiplanning.airhost.co";
+const AIRHOST_LANG: Record<Lang, string> = { en: "en", ja: "ja", zh: "zh", ko: "en" };
+
+export function airhostUrl(lang: Lang) {
+  return `${AIRHOST_BASE}/${AIRHOST_LANG[lang]}`;
+}
+
 const AIRBNB_ROOM = { a: "1810204332727383544", b: "1810193700504259008" } as const;
 
 // Canonical listing URLs (structured data, documentation).
@@ -32,8 +41,8 @@ export function airbnbUrl(cabin: "a" | "b", lang: Lang) {
   return `${AIRBNB_HOST[lang]}/rooms/${AIRBNB_ROOM[cabin]}`;
 }
 
-// Other booking channels. One combined listing per channel covers both apartments (A and B).
-// Added 12 Nov 2026. The Chinese page uses Ctrip (Trip.com's mainland site); the other languages use Trip.com.
+// Public listing pages on other channels. Used only as "sameAs" profile links in structured data,
+// not as booking buttons (every booking button goes to airhostUrl).
 export const BOOKING_COM = "https://www.booking.com/hotel/jp/casa-antonio.html";
 
 const TRIP_COM: Record<Lang, string> = {
@@ -45,9 +54,6 @@ const TRIP_COM: Record<Lang, string> = {
 
 export const TRIP_COM_EN = TRIP_COM.en;
 
-export function tripUrl(lang: Lang) {
-  return TRIP_COM[lang];
-}
 
 const KOJOHAMA_SITE: Record<Lang, string> = {
   en: "https://kojohamacabins.jp/",

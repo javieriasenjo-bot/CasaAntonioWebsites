@@ -1,4 +1,4 @@
-export type Cabin = "a" | "b";
+export type Cabin = "a" | "b" | "both";
 
 // Events are produced by scripts/analytics-bootstrap.js before hydration.
 declare global {

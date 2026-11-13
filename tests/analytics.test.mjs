@@ -101,6 +101,14 @@ test("Airbnb's language sites count as Airbnb bookings with the right apartment"
   assert.equal(JSON.stringify(events.map(e => [e.provider, e.property])), JSON.stringify([["airbnb", "a"], ["airbnb", "b"], ["airbnb", "b"]]));
 });
 
+test("Airhost booking links raise airbnb_click (legacy event name) with provider airhost", () => {
+  const b = boot();
+  b.click("https://kagamiplanning.airhost.co/ja", { "data-intent": "booking", "data-property": "both", "data-placement": "footer" });
+  b.click("https://kagamiplanning.airhost.co/en", { "data-intent": "inquiry", "data-property": "both", "data-placement": "long-stay" });
+  const events = b.window.dataLayer.filter(e => e.event === "airbnb_click" || e.event === "inquiry_click");
+  assert.equal(JSON.stringify(events.map(e => [e.event, e.provider, e.property])), JSON.stringify([["airbnb_click", "airhost", "both"], ["inquiry_click", "airhost", "both"]]));
+});
+
 test("Booking.com and Trip.com booking links raise channel_click, not airbnb_click", () => {
   const b = boot();
   b.click("https://www.booking.com/hotel/jp/casa-antonio.html", { "data-intent": "booking", "data-property": "both", "data-placement": "home" });

@@ -1,5 +1,5 @@
 import { Shell } from "@/components/chrome";
-import { AirbnbLink } from "@/components/airbnb-link";
+import { BookLink } from "@/components/book-link";
 import { FaqList } from "@/components/guide-view";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
@@ -71,12 +71,9 @@ export function Arrival() {
                 <h2>{page.payTitle}</h2>
                 <p>{page.payBody}</p>
                 <div className="stay-actions">
-                  <AirbnbLink cabin="a" location="arrival" className="button button-dark">
-                    {t.bookA}
-                  </AirbnbLink>
-                  <AirbnbLink cabin="b" location="arrival" className="button button-wood">
-                    {t.bookB}
-                  </AirbnbLink>
+                  <BookLink location="arrival" className="button button-dark">
+                    {t.stayShared.book}
+                  </BookLink>
                 </div>
               </div>
             </div>

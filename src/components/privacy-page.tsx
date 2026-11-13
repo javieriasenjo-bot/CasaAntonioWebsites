@@ -5,7 +5,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
   en: {
     eyebrow: "This site",
     title: "What the site keeps.",
-    lede: "Casa Antonio does not take the booking or the payment. Dates, the total, and payment stay on Airbnb.",
+    lede: "Casa Antonio does not take the booking or the payment. Dates, the total and payment are handled on our booking page (kagamiplanning.airhost.co/en).",
     blocks: [
       {
         h: "Language",
@@ -24,13 +24,13 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "Maps, and leaving the site",
         p: [
-          "The neighborhood page embeds a map from OpenStreetMap. Other map links open Google Maps. Airbnb, Booking.com and Kojohama Cabins are other sites, with their own policies.",
+          "The neighborhood page embeds a map from OpenStreetMap. Other map links open Google Maps. Our booking page (Airhost), Airbnb, Booking.com and Kojohama Cabins are other sites, with their own policies.",
         ],
       },
       {
         h: "What is not here",
         p: [
-          "There is no account and no message form on this site. Door codes are not published here. They are sent through Airbnb after a booking.",
+          "There is no account and no message form on this site. Door codes are not published here. They are sent to you after a booking.",
         ],
       },
     ],
@@ -38,7 +38,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
   ja: {
     eyebrow: "このサイト",
     title: "サイトが覚えること。",
-    lede: "Casa Antonio では予約も支払いも受けません。日程、合計、支払いはAirbnbです。",
+    lede: "Casa Antonio では予約も支払いも受けません。日程、合計、支払いは予約ページ（kagamiplanning.airhost.co/ja）で行います。",
     blocks: [
       {
         h: "言語",
@@ -57,19 +57,19 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "地図と、サイトの外",
         p: [
-          "周辺のページにはOpenStreetMapの地図があります。ほかの地図リンクはGoogleマップを開きます。Airbnb、Booking.com、Kojohama Cabinsは別のサイトで、それぞれの方針があります。",
+          "周辺のページにはOpenStreetMapの地図があります。ほかの地図リンクはGoogleマップを開きます。予約ページ（Airhost）、Airbnb、Booking.com、Kojohama Cabinsは別のサイトで、それぞれの方針があります。",
         ],
       },
       {
         h: "ここにはないもの",
-        p: ["このサイトにアカウントも、メッセージ欄もありません。扉の番号は載せません。予約のあと、Airbnbで届きます。"],
+        p: ["このサイトにアカウントも、メッセージ欄もありません。扉の番号は載せません。予約のあと、お届けします。"],
       },
     ],
   },
   zh: {
     eyebrow: "本站",
     title: "网站记住什么。",
-    lede: "Casa Antonio 不接受预订，也不收款。日期、总价和付款都在 Airbnb。",
+    lede: "Casa Antonio 不接受预订，也不收款。日期、总价和付款都在预订页面（kagamiplanning.airhost.co/zh）办理。",
     blocks: [
       {
         h: "语言",
@@ -87,18 +87,18 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       },
       {
         h: "地图，以及离开本站",
-        p: ["家附近的页面嵌入 OpenStreetMap。其他地图链接打开 Google 地图。Airbnb、Booking.com 和 Kojohama Cabins 是别的网站，各有自己的规则。"],
+        p: ["家附近的页面嵌入 OpenStreetMap。其他地图链接打开 Google 地图。预订页面（Airhost）、Airbnb、Booking.com 和 Kojohama Cabins 是别的网站，各有自己的规则。"],
       },
       {
         h: "这里没有的",
-        p: ["本站没有账户，也没有留言表。门锁密码不印在这里。预订之后通过 Airbnb 发送。"],
+        p: ["本站没有账户，也没有留言表。门锁密码不印在这里。预订之后发送给您。"],
       },
     ],
   },
   ko: {
     eyebrow: "이 사이트",
     title: "사이트가 기억하는 것.",
-    lede: "Casa Antonio는 예약도 결제도 받지 않습니다. 날짜, 합계, 결제는 Airbnb에 있습니다.",
+    lede: "Casa Antonio는 예약도 결제도 받지 않습니다. 날짜, 합계, 결제는 예약 페이지(kagamiplanning.airhost.co/en)에서 이루어집니다.",
     blocks: [
       {
         h: "언어",
@@ -117,12 +117,12 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "지도, 그리고 사이트 밖",
         p: [
-          "집 근처 페이지에는 OpenStreetMap이 있습니다. 다른 지도 링크는 Google 지도를 엽니다. Airbnb, Booking.com, Kojohama Cabins는 다른 사이트이고, 각자의 방침이 있습니다.",
+          "집 근처 페이지에는 OpenStreetMap이 있습니다. 다른 지도 링크는 Google 지도를 엽니다. 예약 페이지(Airhost), Airbnb, Booking.com, Kojohama Cabins는 다른 사이트이고, 각자의 방침이 있습니다.",
         ],
       },
       {
         h: "여기에 없는 것",
-        p: ["이 사이트에 계정도, 메시지 칸도 없습니다. 문 번호는 올리지 않습니다. 예약 뒤에 Airbnb로 옵니다."],
+        p: ["이 사이트에 계정도, 메시지 칸도 없습니다. 문 번호는 올리지 않습니다. 예약 뒤에 보내 드립니다."],
       },
     ],
   },

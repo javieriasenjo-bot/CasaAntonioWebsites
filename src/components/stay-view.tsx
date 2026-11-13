@@ -1,7 +1,6 @@
 import { Gallery } from "@/components/gallery";
 import { Shell } from "@/components/chrome";
-import { OtherChannels } from "@/components/other-channels";
-import { AirbnbLink } from "@/components/airbnb-link";
+import { BookLink } from "@/components/book-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
 import { KojohamaPromo } from "@/components/kojohama-promo";
@@ -61,14 +60,13 @@ export function StayView({ id }: { id: "a" | "b" }) {
               <p key={paragraph}>{paragraph}</p>
             ))}
             <div className="stay-actions">
-              <AirbnbLink cabin={id} location={id === "a" ? "stay-a" : "stay-b"} className={id === "a" ? "button button-dark" : "button button-wood"}>
+              <BookLink cabin={id} location={id === "a" ? "stay-a" : "stay-b"} className={id === "a" ? "button button-dark" : "button button-wood"}>
                 {t.stayShared.book}
-              </AirbnbLink>
+              </BookLink>
               <PageLink page="home" className="button button-line">
                 {t.stayShared.back}
               </PageLink>
             </div>
-            <OtherChannels location={id === "a" ? "stay-a" : "stay-b"} />
           </div>
 
           <h2 className="block-title">{t.photos}</h2>

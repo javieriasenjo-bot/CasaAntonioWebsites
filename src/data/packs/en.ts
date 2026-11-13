@@ -49,7 +49,7 @@ export const copy = {
       ],
     },
     choicesTitle: "Choose a floor",
-    choicesLede: "Same address, two different stays. Both are booked on Airbnb.",
+    choicesLede: "Same address, two different stays. Both can be booked on our booking page.",
     aCard: {
       name: "Casa Antonio A",
       line: "Modern · about 65 m² · 2 bedrooms · up to 4",
@@ -118,18 +118,17 @@ export const copy = {
       lede: "Both apartments can be taken for longer than a holiday. Ask the host for a rate for your dates. This page does not promise a discount.",
       body: [
         "Casa Antonio A and Casa Antonio B are the same house, with separate doors. A long stay uses one of them as a home: cook, work, keep one car in the free space in front of that apartment, and ride the subway when the city is the plan. It suits a work season in Sapporo, a university term, a family visit that runs long, or a winter built around Teine.",
-        "Contact us on Airbnb or by email with your dates, preferred apartment and number of guests. Confirm what is included and the total before paying. This website does not take reservations or payments.",
+        "Contact us through our booking page (kagamiplanning.airhost.co/en) or by email with your dates, preferred apartment and number of guests. Confirm what is included and the total before paying. This website does not take reservations or payments.",
         "The house rules do not relax because the stay is long. No smoking, no pets, no parties, and a quiet street after dark. Check-in and check-out still apply at each end. Only the people on the booking live there.",
       ],
       points: [
         { k: "Length", v: "Several weeks, or a number of months" },
         { k: "Rate", v: "Quoted for your dates, in writing" },
         { k: "Which", v: "Antonio A, Antonio B, or one after the other" },
-        { k: "How", v: "Contact us on Airbnb or by email with your dates" },
+        { k: "How", v: "Contact us through our booking page or by email with your dates" },
       ],
-      ctaA: "Enquire on Airbnb · A ↗",
-      ctaB: "Enquire on Airbnb · B ↗",
-      note: "The Airbnb buttons open the listing in a new tab; select “Message host” to enquire. The email button opens your email app. Send your dates, guest count and preferred apartment. An enquiry is not a confirmed reservation.",
+      ctaA: "Check availability and enquire ↗",
+      note: "The availability button opens our booking page in a new tab. The email button opens your email app. Send your dates, guest count and preferred apartment. An enquiry is not a confirmed reservation.",
     },
     practical: {
       eyebrow: "Before you arrive",
@@ -152,13 +151,13 @@ export const copy = {
     },
     reserve: {
       label: "Check dates",
-      title: "Check dates on Airbnb",
+      title: "Check availability and book",
       a: "Casa Antonio A",
       b: "Casa Antonio B",
       close: "Close",
     },
     stayShared: {
-      book: "Check dates on Airbnb",
+      book: "Check availability",
       amenities: "In the apartment",
       rules: "House rules",
       facts: "At a glance",
@@ -180,7 +179,7 @@ export const copy = {
       story: [
         "Casa Antonio A is the modern one. The living room is a soft grey-blue, with a sofa facing the window and a pale table in the middle. The kitchen is part of the same room: a counter, a refrigerator, a cooktop under a hood, a microwave, and a toaster oven. There is also an oven.",
         "There are two bedrooms with three single beds and one double bed, dressed in white linen. One has a closet and a dresser. A short hall joins them to the living room. Heating and air conditioning are in the rooms you actually sit in, which is what makes a long winter day possible.",
-        "You come in through your own door. Check-in is private and contactless; the timing and the lock instructions are sent on Airbnb, not posted here. Towels, linen, and basic toiletries are provided, along with a washer, heating, air conditioning, and Wi-Fi.",
+        "You come in through your own door. Check-in is private and contactless; the timing and the lock instructions are sent after you book, not posted here. Towels, linen, and basic toiletries are provided, along with a washer, heating, air conditioning, and Wi-Fi.",
       ],
       amenities: [
         "Free Wi-Fi throughout",
@@ -233,7 +232,7 @@ export const copy = {
     },
     rules: [
       "Check-in from 16:00 until 23:00. Check-out by 10:00. You may leave any time before then.",
-      "Self check-in. Instructions arrive through Airbnb after booking.",
+      "Self check-in. Instructions are sent after booking.",
       "The whole property is non-smoking, including entrances and the parking area.",
       "No pets.",
       "No parties, and the apartments are not for stag or hen events.",
@@ -724,7 +723,7 @@ export const copy = {
     arrival: {
       eyebrow: "Good to know",
       title: "Arrive after four. Leave by ten.",
-      lede: "Both apartments follow the same hours and the same house rules. The door code, or the key steps, are sent on Airbnb — they are not printed on this site.",
+      lede: "Both apartments follow the same hours and the same house rules. The door code, or the key steps, are sent after you book — they are not printed on this site.",
       hoursTitle: "Hours",
       includedTitle: "Already in the apartment",
       included: [
@@ -750,7 +749,7 @@ export const copy = {
         "These are private lodgings under Japan’s housing accommodation business. Casa Antonio A is M010045173. Casa Antonio B is M010045174.",
       payTitle: "How booking works",
       payBody:
-        `Dates, price, and availability live on Airbnb. This site does not take payment. ${DAMAGE_POLICY.en}`,
+        `Dates, price and availability are on our booking page (kagamiplanning.airhost.co/en). This site does not take payment. ${DAMAGE_POLICY.en}`,
     },
     lightbox: { close: "Close", prev: "Previous photograph", next: "Next photograph" },
     ui: {
@@ -892,7 +891,7 @@ export const guides = {
         {
           h: "If the flight is late",
           paragraphs: [
-            "Check-in on the listing is 16:00–23:00. If you may miss that window, message the host on Airbnb before you land. This page cannot promise a later arrival.",
+            "Check-in on the listing is 16:00–23:00. If you may miss that window, email us at admin@kagami-planning.com before you land. This page cannot promise a later arrival.",
           ],
         },
       ],

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ChannelLink } from "@/components/other-channels";
-import { AirbnbLink } from "@/components/airbnb-link";
+import { BookLink } from "@/components/book-link";
 import { PageLink } from "@/components/page-link";
 import { EmailLink } from "@/components/email-link";
 import { kojohamaUrl } from "@/data/links";
@@ -34,19 +33,13 @@ export function Shell({ children }: { children: ReactNode }) {
   const g = house().guides;
   const page = parsePath(path)?.page ?? "home";
   const [menuOpen, setMenuOpen] = useState(false);
-  const [reserveOpen, setReserveOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
   const menuRef = useRef<HTMLDetailsElement>(null);
-  const reserveRef = useRef<HTMLDivElement>(null);
   const langMenuRef = useRef<HTMLDetailsElement>(null);
   const closeLangMenu = () => {
     setLangMenuOpen(false);
     if (langMenuRef.current) langMenuRef.current.open = false;
-  };
-  const closeReserve = () => {
-    setReserveOpen(false);
-    reserveRef.current?.querySelector<HTMLElement>(".quick-reserve-trigger")?.focus();
   };
 
   useEffect(() => {
@@ -57,38 +50,20 @@ export function Shell({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (!reserveOpen) return;
-    reserveRef.current?.querySelector<HTMLElement>(".quick-reserve-menu a")?.focus();
-    const outside = (event: PointerEvent) => {
-      if (event.target instanceof Element && !reserveRef.current?.contains(event.target)) {
-        setReserveOpen(false);
-        // Let a clicked link/control receive focus; otherwise return it after
-        // the pointer's default action (which would undo immediate focus).
-        if (!event.target.closest("a, button, input, select, textarea, [tabindex]")) {
-          requestAnimationFrame(() => reserveRef.current?.querySelector<HTMLElement>(".quick-reserve-trigger")?.focus());
-        }
-      }
-    };
-    document.addEventListener("pointerdown", outside);
-    return () => document.removeEventListener("pointerdown", outside);
-  }, [reserveOpen]);
-
-  useEffect(() => {
-    if (!menuOpen && !reserveOpen && !langMenuOpen) return;
+    if (!menuOpen && !langMenuOpen) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       const trigger = document.querySelector<HTMLElement>(
-        menuOpen ? ".menu-toggle" : reserveOpen ? ".quick-reserve-trigger" : ".language-toggle",
+        menuOpen ? ".menu-toggle" : ".language-toggle",
       );
       setMenuOpen(false);
       if (menuRef.current) menuRef.current.open = false;
-      setReserveOpen(false);
       closeLangMenu();
       trigger?.focus();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [menuOpen, reserveOpen, langMenuOpen]);
+  }, [menuOpen, langMenuOpen]);
 
   // The language menu is a <details> floating above the page: close it on an
   // outside click, on scroll (it also hides when the header slides away), or
@@ -242,14 +217,7 @@ export function Shell({ children }: { children: ReactNode }) {
           <p>{t.footer.address}</p>
           <p className="small">{t.footer.licenses}</p>
           <p className="footer-links">
-            <AirbnbLink cabin="a" location="footer">
-              Airbnb · A
-            </AirbnbLink>
-            <AirbnbLink cabin="b" location="footer">
-              Airbnb · B
-            </AirbnbLink>
-            <ChannelLink channel="booking" location="footer">Booking.com</ChannelLink>
-            <ChannelLink channel="trip" location="footer">{lang === "zh" ? "携程 Trip.com" : "Trip.com"}</ChannelLink>
+            <BookLink location="footer">{t.reserve.label}</BookLink>
             <PageLink page="arrival">{t.nav.arrival}</PageLink>
           </p>
           <p className="footer-links"><EmailLink placement="footer-email" /></p>
@@ -270,50 +238,14 @@ export function Shell({ children }: { children: ReactNode }) {
           <p className="small credit">{t.footer.photo}</p>
         </div>
       </footer>
-      <div className="quick-reserve" ref={reserveRef} onBlurCapture={(event) => {
-        if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) setReserveOpen(false);
-      }}>
-        {directCabin ? (
-          <AirbnbLink
-            cabin={directCabin}
-            location={directCabin === "a" ? "stay-a" : "stay-b"}
-            className="quick-reserve-trigger"
-          >
-            {t.reserve.label}
-          </AirbnbLink>
-        ) : (
-          <>
-            <div className="quick-reserve-fallback">
-              <AirbnbLink cabin="a" location="reserve-fallback">{t.reserve.a}</AirbnbLink>
-              <AirbnbLink cabin="b" location="reserve-fallback">{t.reserve.b}</AirbnbLink>
-            </div>
-            {reserveOpen ? (
-              <div className="quick-reserve-menu" id="reserve-menu">
-                <div className="quick-reserve-menu-head">
-                  <strong>{t.reserve.title}</strong>
-                  <button type="button" className="quick-reserve-close" onClick={closeReserve} aria-label={t.reserve.close}>
-                    ×
-                  </button>
-                </div>
-                <AirbnbLink cabin="a" location="quick-reserve">
-                  {t.reserve.a}
-                </AirbnbLink>
-                <AirbnbLink cabin="b" location="quick-reserve">
-                  {t.reserve.b}
-                </AirbnbLink>
-              </div>
-            ) : null}
-            <button
-              type="button"
-              className="quick-reserve-trigger"
-              aria-expanded={reserveOpen}
-              aria-controls="reserve-menu"
-              onClick={() => setReserveOpen((value) => !value)}
-            >
-              {t.reserve.label}
-            </button>
-          </>
-        )}
+      <div className="quick-reserve">
+        <BookLink
+          cabin={directCabin ?? "both"}
+          location={directCabin ? (directCabin === "a" ? "stay-a" : "stay-b") : "quick-reserve"}
+          className="quick-reserve-trigger"
+        >
+          {t.reserve.label}
+        </BookLink>
       </div>
     </>
   );

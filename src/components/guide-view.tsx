@@ -1,4 +1,4 @@
-import { AirbnbLink } from "@/components/airbnb-link";
+import { BookLink } from "@/components/book-link";
 import { EmailLink } from "@/components/email-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
@@ -75,12 +75,9 @@ function BookBoth({ page }: { page: string }) {
   const g = house().guides;
   return (
     <div className="stay-actions">
-      <AirbnbLink cabin="a" location={`${page}-body`} className="button button-dark">
-        {g.bookA}
-      </AirbnbLink>
-      <AirbnbLink cabin="b" location={`${page}-body`} className="button button-wood">
-        {g.bookB}
-      </AirbnbLink>
+      <BookLink location={`${page}-body`} className="button button-dark">
+        {house().copy.stayShared.book}
+      </BookLink>
     </div>
   );
 }
@@ -231,12 +228,9 @@ export function LongStayPage() {
           </dl>
           <p className="photo-note">{t.note}</p>
           <div className="stay-actions">
-            <AirbnbLink cabin="a" location="long-stay" intent="inquiry" className="button button-dark">
+            <BookLink location="long-stay" intent="inquiry" className="button button-dark">
               {t.ctaA}
-            </AirbnbLink>
-            <AirbnbLink cabin="b" location="long-stay" intent="inquiry" className="button button-wood">
-              {t.ctaB}
-            </AirbnbLink>
+            </BookLink>
             <EmailLink longStay placement="long-stay-email" className="button button-line" />
           </div>
         </div>

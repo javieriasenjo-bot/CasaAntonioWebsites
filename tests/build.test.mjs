@@ -116,19 +116,19 @@ test("owner facts, privacy disclosure and maintenance dates agree in all languag
 });
 
 test("19 October code review: schema, previews, localized booking links and preloads", () => {
-  const hosts = { "": "https://www.airbnb.com/", "ja/": "https://www.airbnb.jp/", "zh-cn/": "https://zh.airbnb.com/", "ko/": "https://www.airbnb.co.kr/" };
+  // Every booking button is the single Airhost link in the page language (Korean has no Airhost page, so it uses English).
+  const hosts = { "": "https://kagamiplanning.airhost.co/en", "ja/": "https://kagamiplanning.airhost.co/ja", "zh-cn/": "https://kagamiplanning.airhost.co/zh", "ko/": "https://kagamiplanning.airhost.co/en" };
   for (const [prefix, host] of Object.entries(hosts)) {
-    for (const route of ["", "casa-antonio-a/", "faq/", "arrival/"]) {
+    for (const route of ["", "casa-antonio-a/", "casa-antonio-b/", "long-stay/", "faq/", "arrival/"]) {
       const html = readFileSync(join(dist, prefix, route, "index.html"), "utf8");
       const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m => JSON.parse(m[1])["@graph"]);
       assert.equal(graph.some(node => node["@type"] === "FAQPage"), route === "faq/", `${prefix}${route}: FAQPage only on /faq/`);
       assert.match(html, /<meta property="og:site_name" content="Casa Antonio" \/>/);
       assert.equal((html.match(/og:locale:alternate/g) || []).length, 3);
-      for (const match of html.matchAll(/data-intent="booking"(?![^>]*data-property="both")[^>]*href="([^"]+)"/g)) assert.ok(match[1].startsWith(host), `${prefix}${route}: ${match[1]}`);
-      // Booking.com and Trip.com carry one combined listing for both apartments (Ctrip on the Chinese pages).
-      const channels = [...html.matchAll(/data-intent="booking"[^>]*data-property="both"[^>]*href="([^"]+)"/g)].map(m => m[1]);
-      assert.ok(channels.includes("https://www.booking.com/hotel/jp/casa-antonio.html"), `${prefix}${route}: Booking.com link`);
-      assert.ok(channels.includes(prefix === "zh-cn/" ? "https://hotels.ctrip.com/hotels/136555119.html" : "https://www.trip.com/hotels/detail/?hotelId=136555119"), `${prefix}${route}: Trip.com link`);
+      const bookingHrefs = [...html.matchAll(/<a [^>]*data-intent="(?:booking|inquiry)"[^>]*href="([^"]+)"/g)].map(m => m[1]);
+      assert.ok(bookingHrefs.length > 0, `${prefix}${route}: has a booking link`);
+      for (const href of bookingHrefs) assert.equal(href, host, `${prefix}${route}: ${href}`);
+      assert.doesNotMatch(html.replace(/<script[\s\S]*?<\/script>/g, ""), /href="https:\/\/(?:www\.|zh\.|hotels\.)?(?:booking\.com\/hotel\/jp\/casa-antonio\.html|trip\.com|ctrip\.com)/, `${prefix}${route}: no Booking.com/Trip.com booking links`);
       assert.ok(html.includes(`<link rel="modulepreload" crossorigin href="/assets/${{ "": "en", "ja/": "ja", "zh-cn/": "zh", "ko/": "ko" }[prefix]}-`), `${prefix}${route}: language pack preload`);
       assert.doesNotMatch(html, /Runs before hydration|Visit measurement only/, "inline scripts are minified");
       if (route === "") {
@@ -141,7 +141,7 @@ test("19 October code review: schema, previews, localized booking links and prel
 });
 
 test("22 October: reserve actions, house rules and llms.txt", () => {
-  const hosts = { "": "https://www.airbnb.com/", "ja/": "https://www.airbnb.jp/", "zh-cn/": "https://zh.airbnb.com/", "ko/": "https://www.airbnb.co.kr/" };
+  const hosts = { "": "https://kagamiplanning.airhost.co/en", "ja/": "https://kagamiplanning.airhost.co/ja", "zh-cn/": "https://kagamiplanning.airhost.co/zh", "ko/": "https://kagamiplanning.airhost.co/en" };
   for (const [prefix, host] of Object.entries(hosts)) {
     const html = readFileSync(join(dist, prefix, "index.html"), "utf8");
     const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m => JSON.parse(m[1])["@graph"]);
@@ -149,14 +149,14 @@ test("22 October: reserve actions, house rules and llms.txt", () => {
     assert.equal(business.smokingAllowed, false);
     assert.equal(business.petsAllowed, false);
     assert.equal(business.email, "admin@kagami-planning.com");
-    assert.ok([].concat(business.potentialAction).some(action => action["@type"] === "ReserveAction" && String(action.target.urlTemplate).startsWith(host)));
+    assert.ok([].concat(business.potentialAction).some(action => action["@type"] === "ReserveAction" && String(action.target.urlTemplate) === host));
     const aptA = graph.find(node => node["@type"] === "Apartment" && node.name === "Casa Antonio A");
     const aptB = graph.find(node => node["@type"] === "Apartment" && node.name === "Casa Antonio B");
     assert.equal(aptA.floorLevel, "1");
     assert.equal(aptB.floorLevel, "2");
     assert.ok(String(aptB.additionalProperty.value).length > 0);
-    assert.ok(String(aptA.potentialAction.target.urlTemplate).includes("1810204332727383544"));
-    assert.ok(String(aptB.potentialAction.target.urlTemplate).startsWith(host));
+    assert.equal(String(aptA.potentialAction.target.urlTemplate), host);
+    assert.equal(String(aptB.potentialAction.target.urlTemplate), host);
   }
   const llms = readFileSync(join(dist, "llms.txt"), "utf8");
   assert.match(llms, /北38条西3丁目1-7/);

@@ -1,6 +1,5 @@
 import { Shell } from "@/components/chrome";
-import { OtherChannels } from "@/components/other-channels";
-import { AirbnbLink } from "@/components/airbnb-link";
+import { BookLink } from "@/components/book-link";
 import { PageLink } from "@/components/page-link";
 import { Photo } from "@/components/photo";
 import { PhotoCredit } from "@/components/photo-credit";
@@ -61,9 +60,9 @@ export function Home() {
               </dl>
               <div className="choice-actions">
                 <PageLink page="a" className="choice-link">{t.aCard.cta}</PageLink>
-                <AirbnbLink cabin="a" location="home-a" className="choice-book">
+                <BookLink cabin="a" location="home-a" className="choice-book">
                   {t.bookA}
-                </AirbnbLink>
+                </BookLink>
               </div>
             </article>
             <article className="choice choice-b">
@@ -79,13 +78,12 @@ export function Home() {
               </dl>
               <div className="choice-actions">
                 <PageLink page="b" className="choice-link">{t.bCard.cta}</PageLink>
-                <AirbnbLink cabin="b" location="home-b" className="choice-book">
+                <BookLink cabin="b" location="home-b" className="choice-book">
                   {t.bookB}
-                </AirbnbLink>
+                </BookLink>
               </div>
             </article>
           </div>
-          <OtherChannels location="home" />
         </div>
       </section>
 

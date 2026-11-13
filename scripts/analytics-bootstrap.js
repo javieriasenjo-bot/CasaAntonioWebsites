@@ -27,7 +27,8 @@
     var intent = a.getAttribute("data-intent");
     var parsed;
     try { parsed = new URL(url); } catch (_) { return; }
-    var provider = /(^|\.)airbnb\.(com|jp|co\.kr)$/.test(parsed.hostname) ? "airbnb"
+    var provider = /(^|\.)airhost\.co$/.test(parsed.hostname) ? "airhost"
+      : /(^|\.)airbnb\.(com|jp|co\.kr)$/.test(parsed.hostname) ? "airbnb"
       : /(^|\.)booking\.com$/.test(parsed.hostname) ? "booking"
       : /(^|\.)(trip|ctrip)\.com$/.test(parsed.hostname) ? "trip" : null;
     var property = a.getAttribute("data-property");
@@ -38,7 +39,7 @@
     var placement = a.getAttribute("data-placement") || (a.closest("header") ? "header" : a.closest("footer") ? "footer" : "body");
     if (provider && (intent || property)) {
       var event = intent === "reviews" ? "review_click" : intent === "inquiry" ? "inquiry_click"
-        : provider === "airbnb" ? "airbnb_click" : "channel_click";
+        : provider === "airbnb" || provider === "airhost" ? "airbnb_click" : "channel_click";
       w.dataLayer.push(Object.assign(base, { event: event, intent: intent || "booking", provider: provider,
         property: property || "unknown", apartment_name: property === "a" ? "Casa Antonio A" : property === "b" ? "Casa Antonio B" : property === "both" ? "Casa Antonio A and B" : "unknown",
         link_location: placement }));
