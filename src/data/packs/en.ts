@@ -36,7 +36,7 @@ export const copy = {
     hero: {
       eyebrow: "Kita-ku · Asabu · Sapporo",
       title: "Two private apartments near Asabu Station, Sapporo.",
-      lede: "Two apartments, one quiet house. Casa Antonio A is the modern floor. Casa Antonio B, upstairs, is the warmth of wood. About five minutes on foot from Asabu Station.",
+      lede: "Two newly built apartments, one quiet house, no shared space. Casa Antonio A is the modern ground floor. Casa Antonio B, upstairs, is the warmth of wood. About five minutes on foot from Asabu Station.",
       a: "See Antonio A",
       b: "See Antonio B",
     },
@@ -44,29 +44,56 @@ export const copy = {
       eyebrow: "The house",
       title: "A residential street in the north of the city.",
       body: [
-        "Casa Antonio is a private house in Kita 38-jo, Kita-ku. Two apartments share the building and keep separate entrances: a pair of wooden doors under a brick porch, with parking on the asphalt in front.",
+        "Casa Antonio is a private house in Kita 38-jo, Kita-ku. The newly built house is divided into two separate apartments that share no space and keep separate entrances: a pair of wooden doors under a brick porch, with parking on the asphalt in front.",
         "It is not a hotel lobby. You let yourself in, cook if you want to, and ride the subway south when the city is the plan. Asabu Station, on the Namboku line, is about five minutes on foot.",
       ],
     },
     choicesTitle: "Choose a floor",
-    choicesLede: "Same address, two different stays. Both can be booked on our booking page.",
+    choicesLede: "Same building, no shared space: each apartment is rented as a whole. Both can be booked on our booking page.",
+    which: {
+      "eyebrow": "Which one is which",
+      "title": "Which apartment is right for you?",
+      "lede": "Casa Antonio is a newly built house on a quiet residential street in Kita-ku, Sapporo. It is divided into two separate 67 m² apartments, and each one is rented as a whole. Same building, no shared spaces: just your own clean, modern home base in Sapporo.",
+      "a": {
+        "name": "Casa Antonio A",
+        "tag": "Ground floor · 2 bedrooms · up to 5 guests",
+        "body": "Two separate bedrooms on the ground floor. Perfect for families with kids or two couples who each want their own room."
+      },
+      "b": {
+        "name": "Casa Antonio B",
+        "tag": "Upstairs · spacious living room · 1 bedroom · up to 3 guests",
+        "body": "The whole upper floor (stairs only), with a large open living room, warm wooden beams and a big projector screen for movie nights. One bedroom with 3 single beds. Perfect for friends or a small family who love spending time together."
+      },
+      "both": {
+        "title": "In both apartments",
+        "body": "Full kitchen (3-burner IH stove, fridge, microwave, kettle, cookware and tableware), a bathtub to warm up after a snowy day, washing machine, fast Wi-Fi, air conditioning and heating. Self check-in with a lockbox. Free on-site parking for one car per apartment (please let us know when you book)."
+      },
+      "location": {
+        "title": "Location",
+        "body": "A 5-minute walk from Asabu Station (Namboku Line). Sapporo Station is about 7 minutes away, and Odori and Susukino are on the same line with no transfers. Supermarkets, cafés and restaurants are close by. From New Chitose Airport, take the JR Rapid Airport train to Sapporo Station, then the Namboku Line to Asabu. In winter (December–March) roads and sidewalks can be icy, so please bring non-slip shoes."
+      },
+      "hosts": {
+        "title": "Your hosts",
+        "body": "We are a local family in Hokkaido and host Casa Antonio ourselves. We are not on site, but we reply quickly and are happy to share tips on ramen, restaurants and supermarkets around Asabu, getting around by subway, driving on snowy roads, and day trips to Otaru, Jozankei Onsen, or the Teine and Kiroro ski resorts."
+      }
+    },
     aCard: {
       name: "Casa Antonio A",
-      line: "Modern · about 65 m² · 2 bedrooms · up to 4",
+      line: "Modern · about 67 m² · 2 bedrooms · up to 5",
       note: "Two bedrooms and one living room.",
       cta: "View the apartment",
     },
     bCard: {
       name: "Casa Antonio B",
-      line: "Warmth of wood · second floor · about 65 m² · up to 3 guests",
+      line: "Warmth of wood · second floor · about 67 m² · up to 3 guests",
       note: "One bedroom, three single beds, and a projector.",
       cta: "View the apartment",
     },
     bookA: "Check dates for Casa Antonio A",
     bookB: "Check dates for Casa Antonio B",
     photos: "All photographs",
-    photoNoteA: "Photographs of Casa Antonio A, taken in the apartment, plus the shared house outside.",
-    photoNoteB: "Photographs of Casa Antonio B, taken in the apartment, plus the shared house outside.",
+    photoNoteA: "Photographs of Casa Antonio A, taken in the apartment, plus the house outside.",
+    photoNoteB: "Photographs of Casa Antonio B, taken in the apartment, plus the house outside.",
     neighborhoodTeaser: {
       eyebrow: "Asabu",
       title: "South to the city when you want it.",
@@ -168,9 +195,9 @@ export const copy = {
       title: "Casa Antonio A",
       lede: "A modern apartment with its own door. Pale walls, a long sofa, and a kitchen open to the living room. Two separate bedrooms, with three single beds and one double bed.",
       facts: [
-        ["Guests", "Up to 4"],
+        ["Guests", "Up to 5"],
         ["Layout", "2 bedrooms, 1 living room, 1 bath"],
-        ["Size", "About 65 m²"],
+        ["Size", "About 67 m²"],
         ["Beds", "3 single beds + 1 double bed"],
         ["Entrance", "Private"],
         ["License", "M010045173", "license"],
@@ -203,7 +230,7 @@ export const copy = {
       facts: [
         ["Guests", "Up to 3"],
         ["Layout", "1 bedroom, 1 bath"],
-        ["Size", "About 65 m²"],
+        ["Size", "About 67 m²"],
         ["Beds", "3 single beds"],
         ["Floor", "Second, by stairs"],
         ["License", "M010045174", "license"],
@@ -211,7 +238,7 @@ export const copy = {
       storyTitle: "The upstairs apartment",
       story: [
         "B is our upstairs apartment: warm wood, a simple modern finish, and a projector for movie nights. Asabu Station (Namboku line) is about five minutes on foot. Sapporo Station, Odori, and Susukino are a short ride south.",
-        "It is about 65 square meters: one bedroom, three single beds, up to three guests, and one bathroom with a tub, shower, bidet, and hairdryer. The kitchen has a stovetop, refrigerator, microwave, kitchenware, a dining table, and wine glasses. There is a sofa, a washer, slippers, towels, and linen.",
+        "It is about 67 square meters: one bedroom, three single beds, up to three guests, and one bathroom with a tub, shower, bidet, and hairdryer. The kitchen has a stovetop, refrigerator, microwave, kitchenware, a dining table, and wine glasses. There is a sofa, a washer, slippers, towels, and linen.",
         "It has a private entrance, one free parking space, free Wi-Fi, heating, air conditioning, and self check-in. Non-smoking, on a quiet residential street.",
       ],
       amenities: [
@@ -820,9 +847,9 @@ export const guides = {
     copied: "Copied",
     directions: "Directions in Google Maps",
     points: {
-      home: [{ icon: "station", label: "5 min to Asabu Station" }, { icon: "parking", label: "Free parking, one car each" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "65 m² each" }],
-      a: [{ icon: "bed", label: "2 bedrooms" }, { icon: "guests", label: "Up to 4 guests" }, { icon: "parking", label: "Free parking, one car" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "About 65 m²" }],
-      b: [{ icon: "station", label: "5 min to Asabu Station" }, { icon: "parking", label: "Free parking, one car" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "About 65 m²" }, { icon: "guests", label: "Up to 3 guests" }],
+      home: [{ icon: "station", label: "5 min to Asabu Station" }, { icon: "parking", label: "Free parking, one car each" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "67 m² each" }],
+      a: [{ icon: "bed", label: "2 bedrooms" }, { icon: "guests", label: "Up to 5 guests" }, { icon: "parking", label: "Free parking, one car" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "About 67 m²" }],
+      b: [{ icon: "station", label: "5 min to Asabu Station" }, { icon: "parking", label: "Free parking, one car" }, { icon: "kitchen", label: "Full kitchen" }, { icon: "size", label: "About 67 m²" }, { icon: "guests", label: "Up to 3 guests" }],
     },
     combo: {
       eyebrow: "Shiraoi coast",

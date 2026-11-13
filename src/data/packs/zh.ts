@@ -36,7 +36,7 @@ export const copy = {
   hero: {
     eyebrow: "札幌 · 北区 · 麻生",
     title: "麻生站附近的两套私人公寓，札幌。",
-    lede: "一栋安静的房子，两套公寓。Casa Antonio A 是偏现代的一层。楼上的 Casa Antonio B 是木质的暖调。从麻生站步行大约五分钟。",
+    lede: "一栋新建的安静房子，两套互不共用空间的公寓。Casa Antonio A 是偏现代的一层。楼上的 Casa Antonio B 是木质的暖调。从麻生站步行大约五分钟。",
     a: "看 Antonio A",
     b: "看 Antonio B",
   },
@@ -44,29 +44,56 @@ export const copy = {
     eyebrow: "这栋房子",
     title: "城市北侧的一条住宅街。",
     body: [
-      "Casa Antonio 是北区北38条的一栋私宅。两套公寓共用这栋楼，入口分开：砖门廊下并排两扇木门，前面是沥青停车位。",
+      "Casa Antonio 是北区北38条的一栋私宅。这栋新建的房子分为两套互不共用空间的独立公寓，入口分开：砖门廊下并排两扇木门，前面是沥青停车位。",
       "这里没有酒店大堂。自己进门，想做饭就用厨房，要进城就乘地铁往南。麻生站在南北线，步行大约五分钟。",
     ],
   },
   choicesTitle: "选一层",
-  choicesLede: "同一个地址，两种住法。可在我们的预订页面预订。",
+  choicesLede: "同一栋楼，没有共用空间，每套公寓整套出租。可在我们的预订页面预订。",
+  which: {
+    "eyebrow": "A 与 B 有何不同",
+    "title": "哪一套更适合您？",
+    "lede": "Casa Antonio 是札幌北区安静住宅街上的一栋新建房屋，分为两套相互独立、各约 67 ㎡ 的公寓，每套整套出租。同一栋楼，没有任何共用空间，是只属于您的干净、现代的札幌落脚处。",
+    "a": {
+      "name": "Casa Antonio A",
+      "tag": "一楼 · 2 间卧室 · 最多 5 位",
+      "body": "一楼有两间独立卧室，适合带孩子的家庭，或各想要独立房间的两对夫妇。"
+    },
+    "b": {
+      "name": "Casa Antonio B",
+      "tag": "二楼 · 宽敞客厅 · 1 间卧室 · 最多 3 位",
+      "body": "整个二楼（仅有楼梯），有宽敞开阔的客厅、温暖的木质横梁，以及适合电影之夜的大投影幕布。一间卧室，配 3 张单人床。适合喜欢相聚的朋友，或喜欢待在一起的小家庭。"
+    },
+    "both": {
+      "title": "两套公寓都有",
+      "body": "完整厨房（3 口 IH 电磁炉、冰箱、微波炉、电热水壶、炊具和餐具）、雪天后可以暖身的浴缸、洗衣机、高速 Wi-Fi、空调和暖气。使用密码锁盒自助入住。现场免费停车位，每套一辆（预订时请告知我们）。"
+    },
+    "location": {
+      "title": "位置",
+      "body": "步行 5 分钟到麻生站（南北线）。到札幌站约 7 分钟，大通和薄野在同一条线上，无需换乘。附近有超市、咖啡馆和餐厅。从新千岁机场出发，乘 JR 快速机场线到札幌站，再换乘南北线到麻生站。冬季（12 月至 3 月）道路和人行道可能结冰，请携带防滑鞋。"
+    },
+    "hosts": {
+      "title": "您的房东",
+      "body": "我们是住在北海道的本地家庭，亲自经营 Casa Antonio。我们不常驻现场，但会很快回复，乐于分享麻生一带的拉面、餐厅和超市信息，以及乘地铁出行、雪路驾驶，还有前往小樽、定山溪温泉，或手稻、Kiroro 滑雪场的一日游建议。"
+    }
+  },
   aCard: {
     name: "Casa Antonio A",
-    line: "现代 · 约 65 ㎡ · 两间卧室 · 最多 4 位",
+    line: "现代 · 约 67 ㎡ · 两间卧室 · 最多 5 位",
     note: "两间卧室，一间起居室。",
     cta: "看这套公寓",
   },
   bCard: {
     name: "Casa Antonio B",
-    line: "木质暖调 · 二楼 · 约 65 ㎡ · 最多 3 位",
+    line: "木质暖调 · 二楼 · 约 67 ㎡ · 最多 3 位",
     note: "一间卧室、三张单人床，还有投影仪。",
     cta: "看这套公寓",
   },
   bookA: "查看 Casa Antonio A 的日期",
   bookB: "查看 Casa Antonio B 的日期",
   photos: "全部照片",
-  photoNoteA: "室内照片拍摄于 Casa Antonio A，外面是共用的房子。",
-  photoNoteB: "室内照片拍摄于 Casa Antonio B，外面是共用的房子。",
+  photoNoteA: "室内照片拍摄于 Casa Antonio A，外面是同一栋房子。",
+  photoNoteB: "室内照片拍摄于 Casa Antonio B，外面是同一栋房子。",
   neighborhoodTeaser: {
     eyebrow: "麻生",
     title: "想进城的时候，往南走。",
@@ -168,9 +195,9 @@ export const copy = {
     title: "Casa Antonio A",
     lede: "一套有自己的门的现代公寓。浅色的墙，一张长沙发，厨房向起居室打开。两间分开的卧室，三张单人床和一张双人床。",
     facts: [
-      ["客人", "最多 4 位"],
+      ["客人", "最多 5 位"],
       ["格局", "2 卧室，1 起居室，1 浴室"],
-      ["面积", "约 65 ㎡"],
+      ["面积", "约 67 ㎡"],
       ["床", "三张单人床和一张双人床"],
       ["入口", "独立"],
       ["备案号", "M010045173", "license"],
@@ -203,7 +230,7 @@ export const copy = {
     facts: [
       ["客人", "最多 3 位"],
       ["格局", "1 卧室，1 浴室"],
-      ["面积", "约 65 ㎡"],
+      ["面积", "约 67 ㎡"],
       ["床", "三张单人床"],
       ["楼层", "二楼，有楼梯"],
       ["备案号", "M010045174", "license"],
@@ -211,7 +238,7 @@ export const copy = {
     storyTitle: "楼上的公寓",
     story: [
       "B 是我们楼上的公寓：暖木、简洁的现代室内，起居室有一台投影仪，适合在屋里过夜，而不是出门。最近的车站是南北线麻生站，步行大约五分钟。札幌站、大通和薄野往南坐一小段。",
-      "约 65 平方米：一间卧室、三张单人床、最多三位客人，一间浴室，有浴缸、淋浴、净身器和吹风机。厨房有炉灶、冰箱、微波炉、厨具、餐桌和酒杯。还有沙发、洗衣机、拖鞋、毛巾和床单。",
+      "约 67 平方米：一间卧室、三张单人床、最多三位客人，一间浴室，有浴缸、淋浴、净身器和吹风机。厨房有炉灶、冰箱、微波炉、厨具、餐桌和酒杯。还有沙发、洗衣机、拖鞋、毛巾和床单。",
       "独立入口，免费停车一位，免费 Wi-Fi，暖气，空调，自助入住。安静住宅街上的禁烟公寓。",
     ],
     amenities: [
@@ -575,9 +602,9 @@ export const guides = {
     copied: "已复制",
     directions: "用 Google 地图看路线",
     points: {
-      home: [{ icon: "station", label: "步行5分钟到麻生站" }, { icon: "parking", label: "免费停车，每套一辆" }, { icon: "kitchen", label: "可用的厨房" }, { icon: "size", label: "每套约65㎡" }],
-      a: [{ icon: "bed", label: "两间卧室" }, { icon: "guests", label: "最多4人" }, { icon: "parking", label: "免费停车，一辆" }, { icon: "kitchen", label: "可用的厨房" }, { icon: "size", label: "约65㎡" }],
-      b: [{ icon: "station", label: "步行5分钟到麻生站" }, { icon: "parking", label: "免费停车，一辆" }, { icon: "kitchen", label: "可用的厨房" }, { icon: "size", label: "约65㎡" }, { icon: "guests", label: "最多3人" }],
+      home: [{ icon: "station", label: "步行5分钟到麻生站" }, { icon: "parking", label: "免费停车，每套一辆" }, { icon: "kitchen", label: "可用的厨房" }, { icon: "size", label: "每套约67㎡" }],
+      a: [{ icon: "bed", label: "两间卧室" }, { icon: "guests", label: "最多5人" }, { icon: "parking", label: "免费停车，一辆" }, { icon: "kitchen", label: "可用的厨房" }, { icon: "size", label: "约67㎡" }],
+      b: [{ icon: "station", label: "步行5分钟到麻生站" }, { icon: "parking", label: "免费停车，一辆" }, { icon: "kitchen", label: "可用的厨房" }, { icon: "size", label: "约67㎡" }, { icon: "guests", label: "最多3人" }],
     },
     combo: {
       eyebrow: "白老海岸",

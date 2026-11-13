@@ -9,8 +9,8 @@ export const PROPERTY_FACTS = {
   bedWidthsCM: { Single: 90, Double: 130 },
   arrival: { checkin: "16:00–23:00", checkout: "10:00" },
   bStairs: { approximateSteps: 25, handrail: true },
-  a: { areaM2: 65, bedrooms: 2, beds: [{ type: "Single", count: 3 }, { type: "Double", count: 1 }], maxGuests: 4, floor: 1 },
-  b: { areaM2: 65, bedrooms: 1, beds: [{ type: "Single", count: 3 }], maxGuests: 3, floor: 2 },
+  a: { areaM2: 67, bedrooms: 2, beds: [{ type: "Single", count: 3 }, { type: "Double", count: 1 }], maxGuests: 5, floor: 1 },
+  b: { areaM2: 67, bedrooms: 1, beds: [{ type: "Single", count: 3 }], maxGuests: 3, floor: 2 },
 } as const;
 
 export const DAMAGE_POLICY: Record<Lang, string> = {
@@ -43,18 +43,18 @@ export function bedSummary(id: "a" | "b", lang: Lang) {
 }
 
 export const A_BED_LAYOUT: Record<Lang, string> = {
-  en: "The bedroom beside the living room has two single beds. The bedroom farther from the living room has one single and one double bed. Maximum four guests.",
-  ja: "居間の隣の寝室はシングルベッド2台。居間から離れた寝室はシングル1台とダブル1台です。定員は4名です。",
-  zh: "客厅旁的卧室有两张单人床，离客厅较远的卧室有一张单人床和一张双人床。最多入住四人。",
-  ko: "거실 옆 침실에는 싱글 침대 2개, 거실에서 더 먼 침실에는 싱글 1개와 더블 1개가 있습니다. 최대 4명입니다.",
+  en: "The bedroom beside the living room has two single beds. The bedroom farther from the living room has one single and one double bed, which sleeps two. Maximum five guests.",
+  ja: "居間の隣の寝室はシングルベッド2台。居間から離れた寝室はシングル1台とダブル1台（2名で就寝可）です。定員は5名です。",
+  zh: "客厅旁的卧室有两张单人床，离客厅较远的卧室有一张单人床和一张双人床（双人床可睡两人）。最多入住五人。",
+  ko: "거실 옆 침실에는 싱글 침대 2개, 거실에서 더 먼 침실에는 싱글 1개와 더블 1개(더블은 2명 사용 가능)가 있습니다. 최대 5명입니다.",
 };
 
 // The owner confirmed that the existing photographs show this arrangement.
 export const A_PHOTO_LAYOUT_NOTE: Record<Lang, string> = {
-  en: "Bedroom photos show the current setup: three single beds and one double bed across two rooms, maximum four guests.",
-  ja: "寝室写真は現在の配置です。2室にシングルベッド3台とダブルベッド1台、定員4名です。",
-  zh: "卧室照片展示当前床位安排：两间卧室共有三张单人床和一张双人床，最多四人。",
-  ko: "침실 사진은 현재 배치입니다. 두 침실에 싱글 침대 3개와 더블 침대 1개, 최대 4명입니다.",
+  en: "Bedroom photos show the current setup: three single beds and one double bed (which sleeps two) across two rooms, maximum five guests.",
+  ja: "寝室写真は現在の配置です。2室にシングルベッド3台とダブルベッド1台（2名で就寝可）、定員5名です。",
+  zh: "卧室照片展示当前床位安排：两间卧室共有三张单人床和一张双人床（双人床可睡两人），最多五人。",
+  ko: "침실 사진은 현재 배치입니다. 두 침실에 싱글 침대 3개와 더블 침대 1개(더블은 2명 사용 가능), 최대 5명입니다.",
 };
 
 export function practicalGuestFacts(id: "a" | "b", lang: Lang): [string, string][] {

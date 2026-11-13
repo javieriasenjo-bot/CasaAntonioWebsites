@@ -27,12 +27,12 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     ja: {
       title: "札幌・麻生駅徒歩5分の貸切アパートメント｜Casa Antonio",
       description:
-        "札幌・麻生駅から徒歩約5分。専用入口のある貸切アパート2室を比較できます。各約65㎡、Aは4名、Bは3名まで。各室1台の無料駐車場があり、ご予約は公式の予約ページで受け付けています。",
+        "札幌・麻生駅から徒歩約5分。専用入口のある貸切アパート2室を比較できます。各約67㎡、Aは5名、Bは3名まで。各室1台の無料駐車場があり、ご予約は公式の予約ページで受け付けています。",
     },
     zh: {
       title: "札幌整套公寓民宿 · 麻生站步行5分钟｜Casa Antonio",
       description:
-        "比较札幌麻生站附近的两套独立公寓：每套约65平方米，A最多住4人，B最多住3人。步行约5分钟到地铁站，每套可免费停一辆车，可在官方预订页面预订。",
+        "比较札幌麻生站附近的两套独立公寓：每套约67平方米，A最多住5人，B最多住3人。步行约5分钟到地铁站，每套可免费停一辆车，可在官方预订页面预订。",
     },
     ko: {
       title: "삿포로 아파트 숙소 · 아사부역 도보 5분｜Casa Antonio",
@@ -42,46 +42,46 @@ const META: Record<PageId, Record<Lang, Meta>> = {
   },
   a: {
     en: {
-      title: "Casa Antonio A · 65 m² Sapporo Apartment, 4 Guests, Parking",
+      title: "Casa Antonio A · 67 m² Sapporo Apartment, 5 Guests, Parking",
       description:
-        "Ground-floor apartment in Kita-ku, about 65 m², two bedrooms and one living room, up to four guests. One free parking space. Private door.",
+        "Ground-floor apartment in Kita-ku, about 67 m², two bedrooms and one living room, up to five guests. One free parking space. Private door.",
     },
     ja: {
-      title: "Casa Antonio A｜札幌・約65㎡・4名まで・駐車場付き",
+      title: "Casa Antonio A｜札幌・約67㎡・5名まで・駐車場付き",
       description:
-        "札幌・麻生駅徒歩約5分の1階貸切アパート。約65㎡、寝室2室、シングル3台とダブル1台で4名まで。キッチン、洗濯機、専用入口、1台分の無料駐車場があります。",
+        "札幌・麻生駅徒歩約5分の1階貸切アパート。約67㎡、寝室2室、シングル3台とダブル1台、最大5名。キッチン、洗濯機、専用入口、1台分の無料駐車場があります。",
     },
     zh: {
-      title: "Casa Antonio A｜札幌约65㎡公寓，可住4人，可停车",
+      title: "Casa Antonio A｜札幌约67㎡公寓，可住5人，可停车",
       description:
-        "札幌麻生站步行约5分钟的一楼独立公寓，约65平方米。两间卧室共3张单人床和1张双人床，最多4人；配有厨房、洗衣机和独立入口，可免费停一辆车。",
+        "札幌麻生站步行约5分钟的一楼独立公寓，约67平方米。两间卧室共3张单人床和1张双人床，最多5人；配有厨房、洗衣机和独立入口，可免费停一辆车。",
     },
     ko: {
-      title: "Casa Antonio A｜삿포로 약 65㎡·4명·주차",
+      title: "Casa Antonio A｜삿포로 약 67㎡·5명·주차",
       description:
-        "기타구 1층, 약 65㎡. 침실 2개와 거실이 있고 최대 4명이 묵을 수 있습니다. 싱글 침대 3개와 더블 침대 1개, 전용 출입구, 무료 주차 1대분.",
+        "기타구 1층, 약 67㎡. 침실 2개와 거실이 있고 최대 5명이 묵을 수 있습니다. 싱글 침대 3개와 더블 침대 1개, 전용 출입구, 무료 주차 1대분.",
     },
   },
   b: {
     en: {
       title: "Casa Antonio B · Wood-Style Sapporo Apartment with Projector",
       description:
-        "Second-floor apartment in the same Kita-ku house. About 65 m², three single beds, up to three guests, a wood interior, and a projector. Free parking.",
+        "Second-floor apartment in the same Kita-ku house. About 67 m², three single beds, up to three guests, a wood interior, and a projector. Free parking.",
     },
     ja: {
       title: "Casa Antonio B｜木の内装とプロジェクターの札幌アパート",
       description:
-        "木の内装とプロジェクターがある約65㎡の貸切アパート。シングル3台で3名まで。2階へは手すり付きの階段約25段。洗濯機、室内物干しスペース、1台分の無料駐車場があります。",
+        "木の内装とプロジェクターがある約67㎡の貸切アパート。シングル3台で3名まで。2階へは手すり付きの階段約25段。洗濯機、室内物干しスペース、1台分の無料駐車場があります。",
     },
     zh: {
       title: "Casa Antonio B｜木质公寓，客厅有投影仪",
       description:
-        "约65平方米的二楼独立公寓，木质内饰、客厅投影仪和3张单人床，最多3人。需走约25级带扶手的台阶；洗衣房可晾衣，每套可免费停一辆车。",
+        "约67平方米的二楼独立公寓，木质内饰、客厅投影仪和3张单人床，最多3人。需走约25级带扶手的台阶；洗衣房可晾衣，每套可免费停一辆车。",
     },
     ko: {
       title: "Casa Antonio B｜나무 인테리어와 프로젝터 아파트",
       description:
-        "같은 집 2층, 약 65㎡. 싱글 침대 3개, 최대 3명. 나무 인테리어에 거실 프로젝터가 있고, 전용 출입구와 무료 주차가 있습니다.",
+        "같은 집 2층, 약 67㎡. 싱글 침대 3개, 최대 3명. 나무 인테리어에 거실 프로젝터가 있고, 전용 출입구와 무료 주차가 있습니다.",
     },
   },
   neighborhood: {
@@ -680,7 +680,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "How many people can stay?",
-      a: "Casa Antonio A sleeps up to four guests: two separate bedrooms, three single beds and one double bed, and one living room. Casa Antonio B sleeps up to three guests, with three single beds in one bedroom. The guest checking in should be 18 or older. Children are welcome. Only people named on the booking stay here.",
+      a: "Casa Antonio A sleeps up to five guests: two separate bedrooms, three single beds and one double bed, and one living room. Casa Antonio B sleeps up to three guests, with three single beds in one bedroom. The guest checking in should be 18 or older. Children are welcome. Only people named on the booking stay here.",
     },
     {
       q: "How do long stays work?",
@@ -722,7 +722,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "何名まで泊まれますか？",
-      a: "Casa Antonio Aは最大4名です。寝室が2つあり、シングルベッド3台とダブルベッド1台、ほかに居間があります。Bはシングルベッド3台で、最大3名です。チェックインされる方は18歳以上である必要があります。お子さまも歓迎します。宿泊できるのは、予約に名前のある方だけです。",
+      a: "Casa Antonio Aは最大5名です。寝室が2つあり、シングルベッド3台とダブルベッド1台、ほかに居間があります。Bはシングルベッド3台で、最大3名です。チェックインされる方は18歳以上である必要があります。お子さまも歓迎します。宿泊できるのは、予約に名前のある方だけです。",
     },
     {
       q: "長期滞在はどうしますか？",
@@ -764,7 +764,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "可以住几个人？",
-      a: "Casa Antonio A 最多四位客人：两间分开的卧室，共有三张单人床和一张双人床，另有一间起居室。B 是一间卧室、三张单人床，最多三位客人。办理入住的客人须年满 18 岁。欢迎孩子。只有预订上的人可以住。",
+      a: "Casa Antonio A 最多五位客人：两间分开的卧室，共有三张单人床和一张双人床，另有一间起居室。B 是一间卧室、三张单人床，最多三位客人。办理入住的客人须年满 18 岁。欢迎孩子。只有预订上的人可以住。",
     },
     {
       q: "长期住怎么订？",
@@ -806,7 +806,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "몇 명까지 묵나요?",
-      a: "Casa Antonio A는 최대 4명입니다. 침실이 2개이고 싱글 침대 3개와 더블 침대 1개, 거실이 1개 있습니다. B는 싱글 침대 3개에 최대 3명입니다. 체크인하시는 분은 18세 이상이어야 합니다. 어린이도 환영합니다. 예약에 이름이 있는 분만 묵을 수 있습니다.",
+      a: "Casa Antonio A는 최대 5명입니다. 침실이 2개이고 싱글 침대 3개와 더블 침대 1개, 거실이 1개 있습니다. B는 싱글 침대 3개에 최대 3명입니다. 체크인하시는 분은 18세 이상이어야 합니다. 어린이도 환영합니다. 예약에 이름이 있는 분만 묵을 수 있습니다.",
     },
     {
       q: "장기 숙박은 어떻게 하나요?",

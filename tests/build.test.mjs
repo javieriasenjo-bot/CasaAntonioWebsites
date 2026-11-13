@@ -33,7 +33,7 @@ test("student online price and approved bed counts agree across languages and sc
     const a = readFileSync(join(dist, prefix, "casa-antonio-a/index.html"), "utf8");
     assert.match(a, /"typeOfBed":"Single","numberOfBeds":3/);
     assert.match(a, /"typeOfBed":"Double","numberOfBeds":1/);
-    assert.match(a, /"floorSize":\{"@type":"QuantitativeValue","value":65/);
+    assert.match(a, /"floorSize":\{"@type":"QuantitativeValue","value":67/);
     assert.doesNotMatch(a, /"numberOfBeds":4/);
   }
 });
@@ -84,12 +84,12 @@ test("owner facts, privacy disclosure and maintenance dates agree in all languag
     ['ko/', /무료 · 1대/, /최소 청구액은 15,000엔/, /손잡이/, /Google 애널리틱스/],
   ];
   for (const [prefix, parking, damage, handrail, analytics] of cases) {
-    for (const [route, guests] of [['casa-antonio-a',4],['casa-antonio-b',3]]) {
+    for (const [route, guests] of [['casa-antonio-a',5],['casa-antonio-b',3]]) {
       const html = readFileSync(join(dist,prefix,route,'index.html'),'utf8');
       assert.match(html, parking);
       assert.match(html, new RegExp('"occupancy":\\{"@type":"QuantitativeValue","maxValue":'+guests));
       assert.match(html, /90(?: cm|cm|厘米)/);
-      if (guests === 4) {
+      if (guests === 5) {
         assert.match(html, /130(?: cm|cm|厘米)/);
         assert.doesNotMatch(html, /earlier bed arrangement|being checked|three double beds|ダブルベッド3台|三张双人床|더블 침대 세 개/);
       } else {

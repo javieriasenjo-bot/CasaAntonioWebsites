@@ -6,6 +6,7 @@ import { PhotoCredit } from "@/components/photo-credit";
 import { Reviews } from "@/components/reviews";
 import { SellingPoints } from "@/components/selling-points";
 import { KojohamaPromo } from "@/components/kojohama-promo";
+import { WhichSection } from "@/components/which-section";
 import { house } from "@/data/active";
 import { photoAlt } from "@/data/facts";
 import { useLang } from "@/lib/i18n";
@@ -86,6 +87,8 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      <WhichSection />
 
       <Reviews which="home" />
 
