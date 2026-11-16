@@ -77,3 +77,9 @@ For the next 28 settled days compare each guide's organic landings, onward A/B v
 Official season checks: [Snow Festival 4–11 February 2027](https://www.snowfes.com/news/948.html); [Teine planned opening 21 November 2026](https://sapporo-teine.com/snow/lang/en/trailstatus/). Opening remains weather-dependent. Recheck winter schedules when they change and refresh 2027 titles after the season.
 
 Validation: TypeScript, all 56 prerendered routes, 24 automated tests and the browser suite passed. Browser evidence is in docs/qa/discovery-browser-2026-11-16.json; external analytics were blocked during browser tests. Checks cover mobile/desktop overflow, no-JavaScript navigation, preserved hydration, apartment clicks and existing booking/email controls.
+
+## Smartphone verification — 16 November 2026
+
+The focused mobile suite passed 480 layout scenarios: five updated route types in four languages, widths 320/375/390/412/430 and landscape 844×390, at 100%, 125%, 150% and 200% root text size. Touch tests passed for menus, apartment navigation, inline and fixed booking links, and monthly email enquiries. Third-party requests were blocked. Evidence: docs/qa/smartphones-2026-11-16.json. Repeat with npm run build followed by npm run check:phones.
+
+This pass fixed large-text overflow by allowing the phone header to wrap, making fact grids adapt to available width, and wrapping long URLs and the Japanese address on the Korean airport page. The existing 56-route browser suite passed after the header/grid fixes; the final address-wrapping addition passed the complete 480-scenario phone suite. Testing used Chromium mobile/touch emulation, not a physical phone or Safari/WebKit (not installed here).
