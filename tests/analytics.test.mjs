@@ -119,3 +119,18 @@ test("Booking.com and Trip.com booking links raise channel_click, not airbnb_cli
   assert.deepEqual(events.map(e => e.provider), ["booking", "trip", "trip"]);
   assert.equal(events[0].apartment_name, "Casa Antonio A and B");
 });
+
+test("guide apartment links queue one internal click without counting a booking", () => {
+  const b = boot();
+  const attrs = { "data-intent": "apartment", "data-property": "b", "data-placement": "access-apartment" };
+  b.click("https://casaantonio.jp/ja/casa-antonio-b/", attrs);
+  b.click("https://other.example/casa-antonio-b/", attrs);
+  b.click("https://casaantonio.jp/ja/casa-antonio-b/");
+  b.click("https://casaantonio.jp/ja/casa-antonio-b/", { ...attrs, "data-property": "unknown" });
+  const events = Array.from(b.window.dataLayer.slice(1));
+  assert.equal(events.length, 1);
+  assert.equal(events[0].event, "apartment_click");
+  assert.equal(events[0].property, "b");
+  assert.equal(events[0].link_location, "access-apartment");
+  assert.equal(events[0].page_language, "ja");
+});

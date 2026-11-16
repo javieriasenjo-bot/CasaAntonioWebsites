@@ -8,7 +8,7 @@ const languages = { en: '', ja: '/ja', zh: '/zh-cn', ko: '/ko' };
 // Seasonal and neighbourhood posts deserve their own landing page rather than
 // all being pointed at the home page.
 const pages = {
-  home: '', a: 'casa-antonio-a', b: 'casa-antonio-b', 'long-stay': 'long-stay',
+  home: '', a: 'casa-antonio-a', b: 'casa-antonio-b', 'long-stay': 'long-stay', 'monthly-stay': 'monthly-stay',
   neighborhood: 'neighborhood', 'day-trips': 'day-trips', 'snow-festival': 'snow-festival',
   'teine-ski': 'teine-ski', combo: 'combo', arrival: 'arrival',
 };

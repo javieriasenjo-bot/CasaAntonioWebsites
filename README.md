@@ -1,6 +1,6 @@
 # Casa Antonio — casaantonio.jp
 
-Static, prerendered React site (Vite) served as Cloudflare Workers static assets: 13 pages × English, Japanese, Simplified Chinese and Korean = 52 pages.
+Static, prerendered React site (Vite) served as Cloudflare Workers static assets: 14 pages × English, Japanese, Simplified Chinese and Korean = 56 pages.
 
 - Open work and owner questions: [docs/OPEN_TRACKER.md](docs/OPEN_TRACKER.md)
 - Latest code review and what was implemented: [docs/CLAUDE_CODE_REVIEW_2026-10-18.md](docs/CLAUDE_CODE_REVIEW_2026-10-18.md)
@@ -12,9 +12,10 @@ Static, prerendered React site (Vite) served as Cloudflare Workers static assets
 | --- | --- |
 | `npm ci` | Install exactly what `package-lock.json` lists |
 | `npm run dev` | Local dev server |
-| `npm run check` | Typecheck, build all 52 pages, run the tests. Run before every release |
+| `npm run check` | Typecheck, build all 56 pages, run the tests. Run before every release |
 | `npm run check:browser` | Browser checks (all routes, no-JS menu, mobile header, first click). Needs Chrome, or set `CASA_BROWSER_PATH` |
 | `npm run photos` | Make missing photo sizes from `photos-src/` and regenerate the photo manifest |
+| `npm run check:phones` | Touch/mobile checks for the updated guides: six viewports, four text sizes, all four languages. Run after build |
 | `npm run campaign-links -- …` | Social/UTM links (see below) |
 | `npm run indexnow -- --urls changed-urls.txt [--submit]` | Tell Bing/IndexNow about changed URLs after a deploy |
 
@@ -45,11 +46,16 @@ Originals live in `photos-src/<stem>.jpg`. Served sizes live in `public/photos/<
 
 Photos are cached for seven days. **When replacing a photo, use a new stem**: overwriting a URL can show returning guests the old image for a week. Version replacement `og-*.jpg` files too (they stay in `public/photos/`) and update their references in `seo.ts`. Keep the originals in the repository, because generation and the photo-attribution test depend on them.
 
+## November discoverability work
+
+Implementation, release checks and remaining account actions: [docs/DISCOVERABILITY_2026-11-16.md](docs/DISCOVERABILITY_2026-11-16.md). The monthly pages are enquiry-only; the new `apartment_click` event requires its GTM tag before GA4 receives it.
+
 ## Analytics contract
 
 `scripts/analytics-bootstrap.js` (inlined, minified, into every page) is the only producer of click events. GTM consumes the queue. Do not add a second click listener or a React event push.
 
-- `airbnb_click`: booking intent. Not a completed booking.
+- `apartment_click`: internal guide-to-apartment navigation; GA4 forwarding requires the GTM setup in the November handover.
+- `airbnb_click`: booking intent (legacy event name, now provider `airhost`). Not a completed booking.
 - `review_click`: Airbnb or Booking.com review links.
 - `inquiry_click`: long-stay requests.
 - `contact_click`: email links.

@@ -1,3 +1,5 @@
+import { StayDiscovery } from "@/components/stay-discovery";
+import { STAY_DISCOVERY } from "@/data/stay-discovery";
 import { BookLink } from "@/components/book-link";
 import { EmailLink } from "@/components/email-link";
 import { PageLink } from "@/components/page-link";
@@ -104,6 +106,7 @@ export function AccessPage() {
               </div>
             ))}
           </dl>
+          <StayDiscovery context="access" />
           <Photo src="/photos/street.jpg" alt={page.title} sizes="(max-width: 900px) 100vw, 1120px" />
           {page.blocks.map((block) => (
             <div className="prose" key={block.h}>
@@ -137,6 +140,7 @@ export function SnowPage() {
       </section>
       <section className="stay-body">
         <div className="wrap prose-page">
+          <StayDiscovery context="snow" />
           <figure className="ski-figure">
             <Photo src="/photos/snow-festival.jpg" alt={page.title} sizes="(max-width: 900px) 100vw, 1120px" />
             <figcaption><PhotoCredit text={page.credit} src="/photos/snow-festival.jpg" lang={lang} /></figcaption>
@@ -176,6 +180,7 @@ export function TeinePage() {
       </section>
       <section className="stay-body">
         <div className="wrap">
+          <StayDiscovery context="teine" />
           <figure className="ski-figure">
             <Photo src="/photos/teine.jpg" alt={page.title} sizes="(max-width: 900px) 100vw, 1120px" />
             <figcaption><PhotoCredit text={page.credit} src="/photos/teine.jpg" lang={lang} /></figcaption>
@@ -226,6 +231,7 @@ export function LongStayPage() {
               </div>
             ))}
           </dl>
+          <StayDiscovery context="long-stay" />
           <p className="photo-note">{t.note}</p>
           <div className="stay-actions">
             <BookLink location="long-stay" intent="inquiry" className="button button-dark">
@@ -288,6 +294,42 @@ export function ComboPage() {
             </a>
           </p>
           <BookBoth page="combo" />
+        </div>
+      </section>
+    </Shell>
+  );
+}
+
+export function MonthlyStayPage() {
+  const { lang } = useLang();
+  const t = STAY_DISCOVERY[lang];
+  return (
+    <Shell>
+      <section className="page-intro">
+        <div className="wrap narrow">
+          <p className="eyebrow">{t.eyebrow}</p>
+          <h1>{t.monthlyTitle}</h1>
+          <p className="lede">{t.monthlyIntro}</p>
+          <p className="monthly-terms">{t.terms}</p>
+          <a className="button button-dark" href="#monthly-enquiry">{t.request}</a>
+        </div>
+      </section>
+      <section className="stay-body">
+        <div className="wrap">
+          <StayDiscovery context="monthly-stay" />
+          {t.sections.map(section => <div className="prose" key={section.title}><h2>{section.title}</h2><p>{section.body}</p></div>)}
+          <div className="prose" id="monthly-enquiry">
+            <h2>{t.askTitle}</h2>
+            <ul className="enquiry-checklist">{t.ask.map(item => <li key={item}>{item}</li>)}</ul>
+            <div className="stay-actions">
+              <EmailLink longStay placement="monthly-stay-email" className="button button-dark" />
+              <BookLink location="monthly-stay-enquiry" intent="inquiry" className="button button-line">{t.dates} ↗</BookLink>
+            </div>
+          </div>
+          <p className="season-links">
+            <PageLink page="neighborhood" className="text-link">{house().copy.nav.neighborhood}</PageLink>
+            <PageLink page="access" className="text-link">{house().guides.footerLinks[0]?.label}</PageLink>
+          </p>
         </div>
       </section>
     </Shell>

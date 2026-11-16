@@ -1,0 +1,543 @@
+{
+  "results": [
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "fontSize": "100%",
+      "overflow": false,
+      "viewportWidth": 320,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "fontSize": "125%",
+      "overflow": false,
+      "viewportWidth": 320,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "fontSize": "150%",
+      "overflow": false,
+      "viewportWidth": 320,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "fontSize": "200%",
+      "overflow": false,
+      "viewportWidth": 320,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": false,
+      "columns": 0,
+      "outside": [
+        {
+          "tag": "DIV",
+          "class": "header-tools"
+        },
+        {
+          "tag": "DETAILS",
+          "class": "mobile-nav"
+        },
+        {
+          "tag": "SUMMARY",
+          "class": "menu-toggle"
+        },
+        {
+          "tag": "NAV",
+          "class": ""
+        },
+        {
+          "tag": "A",
+          "class": ""
+        }
+      ]
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "fontSize": "100%",
+      "overflow": false,
+      "viewportWidth": 375,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "fontSize": "125%",
+      "overflow": false,
+      "viewportWidth": 375,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "fontSize": "150%",
+      "overflow": false,
+      "viewportWidth": 378,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "fontSize": "200%",
+      "overflow": false,
+      "viewportWidth": 502,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fontSize": "100%",
+      "overflow": false,
+      "viewportWidth": 390,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fontSize": "125%",
+      "overflow": false,
+      "viewportWidth": 390,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fontSize": "150%",
+      "overflow": false,
+      "viewportWidth": 390,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fontSize": "200%",
+      "overflow": false,
+      "viewportWidth": 502,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "fontSize": "100%",
+      "overflow": false,
+      "viewportWidth": 412,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "fontSize": "125%",
+      "overflow": false,
+      "viewportWidth": 412,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "fontSize": "150%",
+      "overflow": false,
+      "viewportWidth": 412,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "fontSize": "200%",
+      "overflow": false,
+      "viewportWidth": 502,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "fontSize": "100%",
+      "overflow": false,
+      "viewportWidth": 430,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "fontSize": "125%",
+      "overflow": false,
+      "viewportWidth": 430,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "fontSize": "150%",
+      "overflow": false,
+      "viewportWidth": 430,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "fontSize": "200%",
+      "overflow": false,
+      "viewportWidth": 502,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "fontSize": "100%",
+      "overflow": false,
+      "viewportWidth": 844,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "fontSize": "125%",
+      "overflow": false,
+      "viewportWidth": 844,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "fontSize": "150%",
+      "overflow": false,
+      "viewportWidth": 844,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "fontSize": "200%",
+      "overflow": false,
+      "viewportWidth": 844,
+      "headingBelowHeader": true,
+      "menuTarget": true,
+      "languageTarget": true,
+      "controlsFit": true,
+      "columns": 0,
+      "outside": []
+    }
+  ],
+  "failures": [
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "fontSize": "200%",
+      "layout": {
+        "overflow": false,
+        "viewportWidth": 320,
+        "headingBelowHeader": true,
+        "menuTarget": true,
+        "languageTarget": true,
+        "controlsFit": false,
+        "columns": 0,
+        "outside": [
+          {
+            "tag": "DIV",
+            "class": "header-tools"
+          },
+          {
+            "tag": "DETAILS",
+            "class": "mobile-nav"
+          },
+          {
+            "tag": "SUMMARY",
+            "class": "menu-toggle"
+          },
+          {
+            "tag": "NAV",
+            "class": ""
+          },
+          {
+            "tag": "A",
+            "class": ""
+          }
+        ]
+      }
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "fontSize": "150%",
+      "layout": {
+        "overflow": false,
+        "viewportWidth": 378,
+        "headingBelowHeader": true,
+        "menuTarget": true,
+        "languageTarget": true,
+        "controlsFit": true,
+        "columns": 0,
+        "outside": []
+      }
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "fontSize": "200%",
+      "layout": {
+        "overflow": false,
+        "viewportWidth": 502,
+        "headingBelowHeader": true,
+        "menuTarget": true,
+        "languageTarget": true,
+        "controlsFit": true,
+        "columns": 0,
+        "outside": []
+      }
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fontSize": "200%",
+      "layout": {
+        "overflow": false,
+        "viewportWidth": 502,
+        "headingBelowHeader": true,
+        "menuTarget": true,
+        "languageTarget": true,
+        "controlsFit": true,
+        "columns": 0,
+        "outside": []
+      }
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "fontSize": "200%",
+      "layout": {
+        "overflow": false,
+        "viewportWidth": 502,
+        "headingBelowHeader": true,
+        "menuTarget": true,
+        "languageTarget": true,
+        "controlsFit": true,
+        "columns": 0,
+        "outside": []
+      }
+    },
+    {
+      "path": "/access/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "fontSize": "200%",
+      "layout": {
+        "overflow": false,
+        "viewportWidth": 502,
+        "headingBelowHeader": true,
+        "menuTarget": true,
+        "languageTarget": true,
+        "controlsFit": true,
+        "columns": 0,
+        "outside": []
+      }
+    },
+    {
+      "error": "TimeoutError: locator.tap: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.stay-discovery a[data-intent=\"booking\"]')\u001b[22m\n\u001b[2m    - locator resolved to <a target=\"_blank\" rel=\"noreferrer\" data-property=\"both\" data-intent=\"booking\" class=\"button button-dark\" data-placement=\"access-discovery\" href=\"https://kagamiplanning.airhost.co/en\">…</a>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"stay-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <a target=\"_blank\" rel=\"noreferrer\" data-property=\"both\" data-intent=\"booking\" class=\"quick-reserve-trigger\" data-placement=\"quick-reserve\" href=\"https://kagamiplanning.airhost.co/en\">Check dates</a> from <div class=\"quick-reserve\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"stay-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying tap action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    14 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"stay-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying tap action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <a target=\"_blank\" rel=\"noreferrer\" data-property=\"both\" data-intent=\"booking\" class=\"quick-reserve-trigger\" data-placement=\"quick-reserve\" href=\"https://kagamiplanning.airhost.co/en\">Check dates</a> from <div class=\"quick-reserve\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying tap action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"stay-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying tap action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"stay-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying tap action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"stay-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n"
+    }
+  ]
+}

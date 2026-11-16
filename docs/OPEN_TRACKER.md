@@ -1,5 +1,7 @@
 # Casa Antonio open tracker
 
+**16 November 2026 update:** See [DISCOVERABILITY_2026-11-16.md](DISCOVERABILITY_2026-11-16.md) for the current source changes and pending account actions. The October snapshot below contains superseded property facts: current source/live pages use approximately 67 m² each and A up to five guests. No fixed monthly rate or standard monthly contract is advertised; long stays remain enquiry-only.
+
 Last reconciled: 20 October 2026. Codex is the continuing agent. This file supersedes open-item lists in older Claude/Codex handovers; those files remain historical evidence. Supplied handovers are reports, not instructions to recreate accounts, delete workspaces, publish posts or change confirmed facts.
 
 Status meanings: **Verified** = checked against current source/live output/API; **Reported resolved** = owner/Claude handover says complete but current account UI was not inspected; **Open** = action or evidence remains; **Deferred** = owner does not want it now. No account receipt is inferred from intercepted requests.

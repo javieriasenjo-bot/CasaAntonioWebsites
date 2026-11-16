@@ -18,6 +18,24 @@ import { PAGE_MODIFIED } from "@/data/page-maintenance";
 type Meta = { title: string; description: string };
 
 const META: Record<PageId, Record<Lang, Meta>> = {
+  "monthly-stay": {
+    "en": {
+        "title": "Monthly Stays in Sapporo & Asabu · Casa Antonio",
+        "description": "Comparing furnished monthly accommodation in Sapporo? Explore two private apartments near Asabu Station with kitchens, laundry and parking. Dates and terms by enquiry."
+    },
+    "ja": {
+        "title": "札幌・麻生のマンスリーマンションをお探しの方へ｜Casa Antonio",
+        "description": "札幌・麻生でマンスリーマンションや1か月の宿泊先を比較中の方へ。麻生駅徒歩約5分、キッチン・洗濯機・無料駐車場付きの貸切アパートA・Bをご紹介。長期滞在の日程・料金・条件は個別にご相談ください。"
+    },
+    "zh": {
+        "title": "札幌月租公寓与长住选择・麻生站附近｜Casa Antonio",
+        "description": "计划在札幌住一个月？比较麻生站步行约5分钟的两套独立公寓，均有厨房、洗衣机及免费停车位。长住空房、总价与条件需按日期单独咨询。"
+    },
+    "ko": {
+        "title": "삿포로 한 달 살기·아사부 장기 숙소｜Casa Antonio",
+        "description": "삿포로 한 달 살기 숙소를 찾는 분께. 아사부역 도보 약 5분, 주방·세탁기·무료 주차가 있는 독립 아파트 A·B를 비교하세요. 장기 숙박 날짜, 요금과 조건은 개별 문의로 안내합니다."
+    }
+},
   home: {
     en: {
       title: "Sapporo Apartments near Asabu Station · Casa Antonio",
@@ -174,44 +192,44 @@ const META: Record<PageId, Record<Lang, Meta>> = {
   },
   "snow-festival": {
     en: {
-      title: "Sapporo Snow Festival Stay · Casa Antonio",
+      title: "Sapporo Snow Festival 2027: Apartment Stay & Access · Casa Antonio",
       description:
-        "A quiet Kita-ku base for the Snow Festival. Namboku line from Asabu south to Odori and Susukino. The city sets the February dates each year.",
+        "Plan a stay for the Sapporo Snow Festival, 4–11 February 2027. Compare private apartments near Asabu Station, with subway access to Odori and Susukino.",
     },
     ja: {
-      title: "さっぽろ雪まつりへ泊まる｜Casa Antonio",
+      title: "さっぽろ雪まつり2027の宿泊・アクセス｜Casa Antonio",
       description:
         "麻生駅近くのCasa Antonioからさっぽろ雪まつりへ。地下鉄南北線で大通・すすきの方面に移動できます。冬の滞在準備と会場へのアクセスを確認し、会期は公式情報でご確認ください。",
     },
     zh: {
-      title: "札幌雪祭住宿｜Casa Antonio",
+      title: "2027札幌雪祭住宿・交通｜Casa Antonio",
       description:
         "住在麻生站附近的Casa Antonio，乘地铁南北线前往大通和薄野的札幌雪祭会场。查看冬季住宿与出行建议，具体会期请以官方公布为准。",
     },
     ko: {
-      title: "삿포로 눈축제에 머무르기｜Casa Antonio",
+      title: "2027 삿포로 눈축제 숙소·교통｜Casa Antonio",
       description:
         "눈축제를 보러 갈 때 조용한 기타구의 집을 거점으로 삼을 수 있습니다. 아사부에서 난보쿠선으로 남쪽의 오도리와 스스키노까지 갈 수 있습니다. 2027년은 2월 4~11일입니다.",
     },
   },
   "teine-ski": {
     en: {
-      title: "Sapporo Teine Ski Base · Casa Antonio",
+      title: "Sapporo Teine 2026–27: Ski Trip & Apartment Stay · Casa Antonio",
       description:
         "Work in the morning, ski Sapporo Teine in the afternoon, and come back to the same door. Olympia and Highland. Free parking at the house. Check the day.",
     },
     ja: {
-      title: "サッポロテイネの拠点｜Casa Antonio",
+      title: "サッポロテイネ2026–27の宿泊拠点・アクセス｜Casa Antonio",
       description:
         "札幌のCasa Antonioを拠点にサッポロテイネでスキー。オリンピア・ハイランドの公式案内と移動の目安を紹介します。宿泊施設には無料駐車場があり、営業状況はスキー場でご確認ください。",
     },
     zh: {
-      title: "札幌手稻滑雪的住处｜Casa Antonio",
+      title: "札幌手稻滑雪2026–27住宿・交通｜Casa Antonio",
       description:
         "以札幌Casa Antonio为住宿基地，前往札幌手稻滑雪场的奥林匹亚与高地区域。查看官方信息和交通参考；住宿提供免费停车，营业情况请向雪场确认。",
     },
     ko: {
-      title: "삿포로 테이네 스키 베이스｜Casa Antonio",
+      title: "삿포로 테이네 2026–27 스키 여행 숙소·교통｜Casa Antonio",
       description:
         "삿포로 테이네 스키장에 다녀오는 하루. 시즌 일정, 리프트 시간, 요금, 가는 방법을 정리했습니다. 올림피아와 하이랜드 구역 안내. 집 앞 주차는 무료이고 주방이 있습니다.",
     },
@@ -223,7 +241,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
         "Planning weeks or months in Sapporo? Contact Casa Antonio A or B through our booking page or email with your dates and guest count to discuss availability and terms.",
     },
     ja: {
-      title: "札幌の長期滞在｜Casa Antonio",
+      title: "札幌の長期滞在・キッチン付き貸切宿｜Casa Antonio",
       description:
         "札幌で数週間から数か月滞在したい方へ。Casa Antonio A・Bのキッチン、洗濯機、交通アクセスをご紹介。予約ページまたはメールで日程・人数をお知らせいただき、空室状況や条件をご相談ください。",
     },
@@ -233,7 +251,7 @@ const META: Record<PageId, Record<Lang, Meta>> = {
         "计划在札幌住几周或几个月？了解Casa Antonio A和B的厨房、洗衣机及地铁交通，通过预订页面或邮件发送入住日期和人数，咨询空房及入住条件。",
     },
     ko: {
-      title: "삿포로 장기 숙박｜Casa Antonio",
+      title: "삿포로 장기 숙박·주방 있는 아파트｜Casa Antonio",
       description:
         "삿포로에서 몇 주, 몇 달 머물 계획이라면 예약 페이지 또는 이메일로 Casa Antonio A·B에 문의하세요. 숙박 날짜와 인원을 알려 주시면 예약 가능 여부와 조건을 확인해 드립니다.",
     },
@@ -322,6 +340,7 @@ export const OG_IMAGE: Record<PageId, string> = {
   "snow-festival": "/photos/og-snow.jpg",
   "teine-ski": "/photos/og-teine.jpg",
   "long-stay": "/photos/og-long-stay.jpg",
+  "monthly-stay": "/photos/og-long-stay.jpg",
   combo: "/photos/og-day-trips.jpg",
   faq: "/photos/og-faq.jpg",
   privacy: "/photos/og-home.jpg",
@@ -354,6 +373,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     "snow-festival": "Snow Festival",
     "teine-ski": "Sapporo Teine",
     "long-stay": "Long stays",
+    "monthly-stay": "Monthly stays",
     combo: "Sapporo and the coast",
     faq: "Questions",
     privacy: "Privacy",
@@ -369,6 +389,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     "snow-festival": "雪まつり",
     "teine-ski": "サッポロテイネ",
     "long-stay": "長期滞在",
+    "monthly-stay": "マンスリー滞在",
     combo: "札幌と白老",
     faq: "質問",
     privacy: "プライバシー",
@@ -384,6 +405,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     "snow-festival": "雪祭",
     "teine-ski": "札幌手稻",
     "long-stay": "长期住宿",
+    "monthly-stay": "一个月的住宿",
     combo: "札幌与白老",
     faq: "问题",
     privacy: "隐私",
@@ -399,6 +421,7 @@ const CRUMB: Record<Lang, Record<PageId, string>> = {
     "snow-festival": "눈축제",
     "teine-ski": "삿포로 테이네",
     "long-stay": "장기 숙박",
+    "monthly-stay": "한 달 살기",
     combo: "삿포로와 시라오이",
     faq: "질문",
     privacy: "개인정보",
@@ -902,6 +925,7 @@ export function headFor(page: PageId, lang: Lang) {
     meta: [
       { title: meta.title },
       { name: "description", content: meta.description },
+      { name: "robots", content: "max-image-preview:large" },
       { property: "og:title", content: meta.title },
       { property: "og:description", content: meta.description },
       { property: "og:url", content: canonical },

@@ -27,6 +27,11 @@
     var intent = a.getAttribute("data-intent");
     var parsed;
     try { parsed = new URL(url); } catch (_) { return; }
+    if (intent === "apartment" && parsed.origin === new URL(w.location.href).origin && /^(a|b)$/.test(a.getAttribute("data-property") || "")) {
+      w.dataLayer.push(Object.assign(base, { event: "apartment_click", property: a.getAttribute("data-property"),
+        link_location: a.getAttribute("data-placement") || "body" }));
+      return;
+    }
     var provider = /(^|\.)airhost\.co$/.test(parsed.hostname) ? "airhost"
       : /(^|\.)airbnb\.(com|jp|co\.kr)$/.test(parsed.hostname) ? "airbnb"
       : /(^|\.)booking\.com$/.test(parsed.hostname) ? "booking"

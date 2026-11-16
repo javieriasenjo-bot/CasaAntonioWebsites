@@ -46,15 +46,17 @@ async function assertFallback(page) {
   assert.equal(await page.locator("#site-nav").isVisible(), true);
   await page.locator(".menu-toggle").click();
   assert.equal(await page.locator("#site-nav").isVisible(), false);
-  assert.equal(await page.locator(".quick-reserve-fallback a").count(), 2);
-  assert.equal(await page.locator(".quick-reserve-fallback").isVisible(), true);
+  const booking = page.locator(".quick-reserve a[data-intent=booking]");
+  assert.equal(await booking.count(), 1);
+  assert.equal(await booking.isVisible(), true);
+  assert.match(await booking.getAttribute("href"), /^https:\/\/kagamiplanning\.airhost\.co\/(en|ja|zh)$/);
 }
 try {
   browser = await chromium.launch(process.env.CASA_BROWSER_PATH
     ? { executablePath: process.env.CASA_BROWSER_PATH }
     : { channel: "chrome" });
   const paths = routes(dist);
-  assert.equal(paths.length, 52);
+  assert.equal(paths.length, 56);
   for (const path of paths) {
     const ctx = await context();
     await ctx.addInitScript(() => {
@@ -239,6 +241,43 @@ try {
   await failure.goto(origin, { waitUntil: "domcontentloaded" }); await failure.locator("h1").waitFor();
   await assertFallback(failure); assert.equal(await failure.locator("html.app-ready").count(), 0);
   await failed.close(); results.push({ scenario: "failed language import", passed: true });
+  for (const prefix of ["", "ja/", "zh-cn/", "ko/"]) {
+    const ctx = await context(); const page = await ctx.newPage();
+    for (const route of ["access", "snow-festival", "teine-ski", "long-stay", "monthly-stay"]) {
+      await page.goto(`${origin}/${prefix}${route}/`);
+      await page.waitForFunction(() => document.documentElement.classList.contains("app-ready"));
+      await page.setViewportSize({ width: 320, height: 740 });
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, `${prefix}${route}: discovery overflow`);
+      const links = page.locator('.stay-discovery a[data-intent="apartment"]');
+      assert.equal(await links.count(), 2);
+      await links.first().evaluate(a => a.addEventListener("click", e => e.preventDefault()));
+      await links.first().click();
+      const events = await page.evaluate(() => window.dataLayer.filter(e => e.event === "apartment_click"));
+      assert.equal(events.length, 1); assert.equal(events[0].property, "a");
+      assert.equal(await page.evaluate(() => window.dataLayer.filter(e => e.event === "airbnb_click").length), 0);
+      await links.last().click();
+      await page.waitForURL(`${origin}/${prefix}casa-antonio-b/`);
+    }
+    await ctx.close();
+    const noJs = await context({ javaScriptEnabled: false }); const staticPage = await noJs.newPage();
+    await staticPage.goto(`${origin}/${prefix}monthly-stay/`);
+    await staticPage.locator('.stay-discovery a[data-property="a"]').click();
+    await staticPage.waitForURL(`${origin}/${prefix}casa-antonio-a/`);
+    await noJs.close();
+    results.push({ scenario: "guide funnel clicks, 320px layout, monthly no-JS navigation", path: `/${prefix}`, passed: true });
+  }
+  const visual = await context({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 1 });
+  const visualPage = await visual.newPage();
+  await visualPage.goto(`${origin}/ja/monthly-stay/`);
+  await visualPage.waitForFunction(() => document.documentElement.classList.contains("app-ready"));
+  await visualPage.locator(".stay-discovery").scrollIntoViewIfNeeded();
+  await visualPage.locator(".stay-discovery img").first().waitFor();
+  await visualPage.screenshot({ path: "docs/qa/discovery-desktop-2026-11-16.png", fullPage: true });
+  await visualPage.setViewportSize({ width: 390, height: 844 });
+  await visualPage.goto(`${origin}/ko/access/`);
+  await visualPage.locator(".stay-discovery").scrollIntoViewIfNeeded();
+  await visualPage.screenshot({ path: "docs/qa/discovery-mobile-2026-11-16.png" });
+  await visual.close();
   const evidence = { checkedAt: new Date().toISOString(), routes: paths.length, results, analytics: "blocked" };
   const output = process.argv[process.argv.indexOf("--out") + 1];
   if (process.argv.includes("--out") && output) writeFileSync(output, JSON.stringify(evidence, null, 2));

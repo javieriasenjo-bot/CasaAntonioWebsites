@@ -24,6 +24,7 @@ export async function loadPage(page: PageId | null): Promise<ComponentType> {
         case "snow-festival": return guides.SnowPage;
         case "teine-ski": return guides.TeinePage;
         case "long-stay": return guides.LongStayPage;
+        case "monthly-stay": return guides.MonthlyStayPage;
         case "combo": return guides.ComboPage;
         case "faq": return guides.FaqPage;
         // Unknown paths never reach this in production: Cloudflare serves the static, multilingual

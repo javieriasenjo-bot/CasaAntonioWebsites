@@ -10,9 +10,9 @@ const root = fileURLToPath(new URL("../", import.meta.url));
 function pages(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? pages(join(dir, e.name)) : e.name === "index.html" ? [join(dir, e.name)] : []);
 }
-test("all 52 generated pages retain language SEO and an early event producer", () => {
+test("all 56 generated pages retain language SEO and an early event producer", () => {
   const files = pages(dist);
-  assert.equal(files.length, 52);
+  assert.equal(files.length, 56);
   for (const file of files) {
     const html = readFileSync(file, "utf8");
     assert.match(html, /<h1[ >]/);
@@ -187,4 +187,27 @@ test("llms.txt review scores match src/data/reviews.ts", () => {
   assert.match(llms, new RegExp(`Airbnb B ${airbnbB.score} from ${airbnbB.count} reviews`));
   assert.match(llms, new RegExp(`Booking\\.com A ${bookingA.score} from ${bookingA.count} reviews`));
   assert.match(llms, new RegExp(`Booking\\.com B ${bookingB.score} from ${bookingB.count} reviews`));
+});
+
+test("discovery funnels preserve guides and monthly pages are discoverable in every language", () => {
+  for (const prefix of ["", "ja/", "zh-cn/", "ko/"]) {
+    for (const route of ["access", "snow-festival", "teine-ski", "long-stay", "monthly-stay"]) {
+      const html = readFileSync(join(dist, prefix, route, "index.html"), "utf8");
+      assert.equal((html.match(/<h1[ >]/g) || []).length, 1);
+      assert.match(html, /name="robots" content="max-image-preview:large"/);
+      assert.equal((html.match(/data-intent="apartment"/g) || []).length, 2);
+      for (const id of ["a", "b"]) {
+        assert.ok(html.includes(`href="/${prefix}casa-antonio-${id}/"`));
+      }
+      if (route === "access") assert.match(html, /chuo-bus\.co\.jp\/airport\/timetable/);
+      if (route === "monthly-stay") {
+        assert.ok(html.includes(`rel="canonical" href="https://casaantonio.jp/${prefix}monthly-stay/"`));
+        assert.match(html, /id="monthly-enquiry"/);
+        assert.match(html, /data-placement="monthly-stay-email"/);
+        assert.match(html, /class="monthly-terms"/);
+      }
+    }
+    const home = readFileSync(join(dist, prefix, "index.html"), "utf8");
+    assert.ok(home.includes(`href="/${prefix}monthly-stay/"`));
+  }
 });

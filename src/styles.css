@@ -2016,3 +2016,31 @@ button.quick-reserve-trigger { display: none; }
   .which-section { padding: 5.2rem 0; }
   .which-more { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* Guide-to-apartment paths remain visible and usable without JavaScript. */
+.stay-discovery { margin: 1.5rem 0 3rem; padding: clamp(1rem, 3vw, 2rem); background: var(--color-foam); border: 1px solid var(--color-line); border-radius: .6rem; }
+.stay-discovery h2 { margin: .3rem 0 .8rem; }
+.discovery-intro { max-width: 48rem; margin-bottom: 1.4rem; }
+.discovery-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+.discovery-card { min-width: 0; background: var(--color-card); border: 1px solid var(--color-line); border-radius: .4rem; overflow: hidden; }
+.discovery-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.discovery-card-body { padding: 1.1rem; }
+.discovery-card h3 { margin: 0; }
+.discovery-card .text-link { display: inline-block; padding: .65rem 0; }
+.stay-discovery .stay-actions { margin-bottom: 0; }
+.monthly-terms { margin: 1.2rem 0; }
+.enquiry-checklist { list-style: disc; padding-left: 1.3rem; }
+.enquiry-checklist li { margin: .55rem 0; }
+#monthly-enquiry { scroll-margin-top: 10rem; }
+@media (min-width: 760px) { .discovery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Reflow on narrow phones and when visitors enlarge their text. */
+.page-intro, .stay-body, .prose, .long-stay, .fact-grid, .stay-discovery { overflow-wrap: anywhere; }
+.fact-grid > div, .choice-facts > div { min-width: 0; }
+@media (max-width: 860px) {
+  .nav-inner { display: flex; flex-wrap: wrap; }
+  .logo { flex: 1 1 7rem; min-width: 0; }
+  .header-tools { flex: 0 1 auto; flex-wrap: wrap; max-width: 100%; margin-left: auto; }
+  .language-switcher { min-width: min(11rem, calc(100vw - 1.5rem)); max-width: calc(100vw - 1.5rem); }
+  .fact-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); }
+}
