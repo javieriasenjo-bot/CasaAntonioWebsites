@@ -2,7 +2,7 @@ import type { Lang } from "@/lib/paths";
 
 // An optional, owner-maintained line shown under the hero buttons.
 //
-// Why: every route to a booking is a blind click through to Airbnb. A short,
+// Why: every route to a booking is a blind click through to the booking page. A short,
 // true sentence about what is still open gives a visitor a reason to click now
 // rather than later. Leave the strings empty and nothing renders — there is no
 // placeholder and no invented availability. Write it in all four languages, or

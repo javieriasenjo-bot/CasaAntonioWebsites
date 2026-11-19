@@ -7,7 +7,7 @@ import { useLang, type Lang } from "@/lib/i18n";
 const INITIAL = 4;
 const INITIAL_HOME = 2;
 
-type Item = { key: string; text: string; meta: string; source: "Airbnb" | "Booking.com"; sourceUrl?: string; lang?: string };
+type Item = { key: string; text: string; meta: string; lang?: string };
 
 function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lang: Lang; initial: number }) {
   const [open, setOpen] = useState(false);
@@ -17,7 +17,7 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
   const airOk = reviewReady(air) && air.rating != null && air.count != null;
   const interleaved: Item[] = [];
   const airQuotes = airOk ? air.quotes : [];
-  // Interleave Airbnb and Booking.com so both sources show before "Show more".
+  // Interleave both review sources so both show before "Show more". The platform names are deliberately not shown.
   for (let i = 0; i < Math.max(airQuotes.length, book.quotes.length); i++) {
     const q = airQuotes[i];
     if (q)
@@ -25,8 +25,6 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
         key: `a-${q.name}-${q.when}`,
         text: q.text,
         meta: [q.name, q.country, formatMonth(q.when, lang)].filter(Boolean).join(" · ") + (q.translated ? ` · ${l.translated}` : "") + (q.excerpt ? ` · ${l.excerpt}` : ""),
-        source: "Airbnb",
-        sourceUrl: q.sourceUrl,
         lang: "en",
       });
     const b = book.quotes[i];
@@ -35,8 +33,6 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
         key: `b-${b.name}`,
         text: b.text,
         meta: [b.name, b.country, b.reviewDate ? formatDay(b.reviewDate, lang) : ""].filter(Boolean).join(" · ") + (b.lang !== lang ? ` · ${l.original}` : "") + (b.excerpt ? ` · ${l.excerpt}` : ""),
-        source: "Booking.com",
-        sourceUrl: b.sourceUrl,
         lang: b.lang === "zh" ? "zh-Hant" : b.lang,
       });
   }
@@ -49,14 +45,14 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
         <strong>{title}</strong>
         {airOk ? (
           <span>
-            Airbnb ★ {air.rating!.toFixed(2)} · {air.count}
+            ★ {air.rating!.toFixed(2)} · {air.count}
             {lang === "en" ? " " : ""}
             {l.reviews}
             {air.guestFavorite ? ` · ${l.favorite}` : ""}
           </span>
         ) : null}
         <span>
-          Booking.com {book.score.toFixed(1)}
+          {book.score.toFixed(1)}
           {l.ofTen} · {book.count}
           {lang === "en" ? " " : ""}
           {l.reviews}
@@ -64,18 +60,19 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
       </p>
       <p className="review-checked">
         {l.recorded}:
-        {" "}Airbnb <time dateTime={air.recordedOn}>{formatDay(air.recordedOn, lang)}</time>
-        {" · "}Booking.com <time dateTime={book.recordedOn}>{formatDay(book.recordedOn, lang)}</time>
+        {" "}<time dateTime={air.recordedOn}>{formatDay(air.recordedOn, lang)}</time>
+        {book.recordedOn !== air.recordedOn ? (
+          <>
+            {" · "}
+            <time dateTime={book.recordedOn}>{formatDay(book.recordedOn, lang)}</time>
+          </>
+        ) : null}
       </p>
       <ul className="review-quotes" id={`reviews-${id}`}>
         {shown.map((it) => (
           <li key={it.key}>
             <blockquote lang={it.lang}>“{it.text}”</blockquote>
-            <p>
-              {it.meta} · {it.sourceUrl ? (
-                <a className="review-source" href={it.sourceUrl} target="_blank" rel="noreferrer" data-intent="reviews" data-property={id} data-placement="review-excerpt">{it.source}</a>
-              ) : <span className="review-source">{it.source}</span>}
-            </p>
+            <p>{it.meta}</p>
           </li>
         ))}
       </ul>

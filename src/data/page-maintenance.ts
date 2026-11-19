@@ -2,9 +2,9 @@ import type { PageId } from "@/lib/paths";
 
 // Update only pages whose visible content or meaningful metadata changed.
 // 16 November: monthly-stay route, guide booking blocks and monthly enquiry link in every footer.
-// 12 November: Booking.com and Trip.com links sit in every footer, so every page changed. Home seasons, Teine, Snow Festival, review scores and TripAdvisor figures updated.
+// 12 November: outbound booking links sat in every footer, so every page changed. Home seasons, Teine, Snow Festival, review scores and TripAdvisor figures updated.
 // 4 November: Upopoy winter hours/closures and the airport-bus timetable re-checked (day-trips, access).
-// 22 October: lodging and apartment JSON-LD gained localized amenities, house rules and Airbnb reserve actions.
+// 22 October: lodging and apartment JSON-LD gained localized amenities, house rules and reserve actions.
 export const PAGE_MODIFIED: Record<PageId, string> = {
   home: "2026-11-16", a: "2026-11-16", b: "2026-11-16",
   neighborhood: "2026-11-16", "day-trips": "2026-11-16", arrival: "2026-11-16",

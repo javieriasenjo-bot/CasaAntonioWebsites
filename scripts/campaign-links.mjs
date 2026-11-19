@@ -55,7 +55,7 @@ async function main() {
     console.log(JSON.stringify(links, null, 2));
     return;
   }
-  const text = `# Casa Antonio campaign links\n\nCampaign: ${options.campaign}. Content: ${options.content}.\n\nUse these links on external profiles/posts only. Apartment posts go to A/B; long-stay posts go to Long stay; language should match the post. Do not tag internal navigation or Airbnb links. These are prepared links, not published profile changes. Use a distinct content name for each linked post. A shared bio link cannot attribute individual video views to a particular post.\n\n[Google campaign guidance](https://support.google.com/analytics/answer/10917952?hl=en)\n\n| Source | Language | Destination | URL |\n| --- | --- | --- | --- |\n${links.map(l => `| ${l.source} | ${l.language} | ${l.destination} | [Open link](${l.url}) |`).join('\n')}\n`;
+  const text = `# Casa Antonio campaign links\n\nCampaign: ${options.campaign}. Content: ${options.content}.\n\nUse these links on external profiles/posts only. Apartment posts go to A/B; long-stay posts go to Long stay; language should match the post. Do not tag internal navigation or booking links. These are prepared links, not published profile changes. Use a distinct content name for each linked post. A shared bio link cannot attribute individual video views to a particular post.\n\n[Google campaign guidance](https://support.google.com/analytics/answer/10917952?hl=en)\n\n| Source | Language | Destination | URL |\n| --- | --- | --- | --- |\n${links.map(l => `| ${l.source} | ${l.language} | ${l.destination} | [Open link](${l.url}) |`).join('\n')}\n`;
   await writeFile(options.out, text, 'utf8');
   console.log(`Prepared ${links.length} links: ${options.out}. Nothing published.`);
 }

@@ -1,16 +1,16 @@
-// Guest quotes cross-checked against the public Airbnb review dialogs on 2026-10-16; scores and counts re-read on 2026-11-12.
+// Guest quotes cross-checked against the public review pages on 2026-10-16; scores and counts re-read on 2026-11-12.
 // Order matters: the home page shows the first two per apartment, so the strongest
 // quote leads. Nothing is edited, trimmed or hidden — the qualified reviews follow.
 // Excerpts are labelled explicitly; preserve original wording and material qualifications.
-// Quotes marked `translated: true` are Airbnb's own English translation of the original.
-// Update rating/count when they change on Airbnb. Never invent or edit a quote.
-// validUntil: "2027-02-10" — recheck ratings, counts and quotes against Airbnb (90 days from recordedOn).
+// Quotes marked `translated: true` are the review platform's own English translation of the original.
+// Update rating/count when they change on the review platform. Never invent or edit a quote.
+// validUntil: "2027-02-10" — recheck ratings, counts and quotes against the review platform (90 days from recordedOn).
 
 export type ReviewQuote = {
   sourceUrl?: string;
   name: string;
-  when: string; // "YYYY-MM": month and year as shown on Airbnb; formatted per page language
-  country: string; // guest location as shown on Airbnb; "" when Airbnb shows none
+  when: string; // "YYYY-MM": month and year as shown on the review page; formatted per page language
+  country: string; // guest location as shown on the review page; "" when none is shown
   text: string;
   translated?: boolean;
   excerpt?: boolean;
@@ -98,10 +98,10 @@ export function reviewReady(stay: StayReviews) {
   return stay.rating != null && stay.count != null && stay.quotes.length >= 3 && stay.quotes.every((quote) => quote.text && quote.name);
 }
 
-// Booking.com: real scores and guest comments copied from the two Booking.com listings (scores re-read 2026-11-12; quotes cross-checked 2026-10-16).
+// Second review source: real scores and guest comments copied from the two listings (scores re-read 2026-11-12; quotes cross-checked 2026-10-16).
 // Scores are out of 10. Comments are shown in the guest's own language (`lang`); some are the opening lines of
-// a longer review (Booking.com truncates them) and are marked `excerpt`. Never invent or edit a quote.
-// validUntil: "2027-02-10" — recheck scores, counts and quotes against Booking.com (90 days from recordedOn).
+// a longer review (the source truncates them) and are marked `excerpt`. Never invent or edit a quote.
+// validUntil: "2027-02-10" — recheck scores, counts and quotes against the review source (90 days from recordedOn).
 export type BookingQuote = { name: string; country: string; lang: "en" | "ja" | "zh"; text: string; excerpt?: boolean; sourceUrl?: string; reviewDate?: string };
 export type BookingReviews = { recordedOn: string; score: number; count: number; label: string; quotes: BookingQuote[] };
 

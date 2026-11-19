@@ -1829,7 +1829,7 @@ body.lightbox-open .quick-reserve {
   }
 }
 
-/* Guest reviews (real Airbnb quotes from src/data/reviews.ts) */
+/* Guest reviews (real guest quotes from src/data/reviews.ts) */
 .reviews {
   padding: 2.5rem 0 3rem;
 }

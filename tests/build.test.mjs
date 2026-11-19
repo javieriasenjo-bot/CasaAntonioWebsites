@@ -183,10 +183,9 @@ test("llms.txt review scores match src/data/reviews.ts", () => {
   const bookingB = section(bookingBlock, "b");
   for (const { recordedOn } of [airbnbA, airbnbB, bookingA, bookingB]) assert.equal(recordedOn, "2026-11-12");
   assert.match(llms, /12 November 2026/);
-  assert.match(llms, new RegExp(`Airbnb A ${airbnbA.score} from ${airbnbA.count} reviews`));
-  assert.match(llms, new RegExp(`Airbnb B ${airbnbB.score} from ${airbnbB.count} reviews`));
-  assert.match(llms, new RegExp(`Booking\\.com A ${bookingA.score} from ${bookingA.count} reviews`));
-  assert.match(llms, new RegExp(`Booking\\.com B ${bookingB.score} from ${bookingB.count} reviews`));
+  assert.match(llms, new RegExp(`A ${airbnbA.score} out of 5 from ${airbnbA.count} reviews and ${bookingA.score} out of 10 from ${bookingA.count} reviews`));
+  assert.match(llms, new RegExp(`B ${airbnbB.score} out of 5 from ${airbnbB.count} reviews and ${bookingB.score} out of 10 from ${bookingB.count} reviews`));
+  assert.doesNotMatch(llms, /Airbnb|Booking\.com|Trip\.com/);
 });
 
 test("discovery funnels preserve guides and monthly pages are discoverable in every language", () => {
