@@ -1,5 +1,5 @@
 import { MAP } from "@/data/facts";
-import { ADDRESS, AIRBNB, BOOKING_COM, GUEST_EMAIL, TRIP_COM_EN, airhostUrl } from "@/data/links";
+import { ADDRESS, GUEST_EMAIL, airhostUrl } from "@/data/links";
 import { DAMAGE_POLICY, PROPERTY_FACTS, preparationFaq } from "@/data/property-facts";
 import { photoFile, photoMeta } from "@/lib/photo-manifest";
 import { FONT_STYLESHEET } from "@/lib/fonts";
@@ -304,21 +304,21 @@ const META: Record<PageId, Record<Lang, Meta>> = {
     en: {
       title: "Privacy · Casa Antonio",
       description:
-        "How Casa Antonio uses language storage and Google Analytics, including booking, Airbnb and Booking.com review links, long-stay enquiries and maps.",
+        "How Casa Antonio uses language storage and Google Analytics, including booking links, long-stay enquiries and maps.",
     },
     ja: {
       title: "プライバシー｜Casa Antonio",
       description:
-        "言語設定の保存とGoogleアナリティクスの利用について。予約、Airbnb・Booking.comのレビュー、長期滞在の問い合わせ、地図などのクリック計測をご説明します。",
+        "言語設定の保存とGoogleアナリティクスの利用について。予約、長期滞在の問い合わせ、地図などのクリック計測をご説明します。",
     },
     zh: {
       title: "隐私｜Casa Antonio",
-      description: "了解Casa Antonio如何保存语言设置并使用Google Analytics，统计预订、Airbnb和Booking.com评价、长住咨询及地图链接的点击。",
+      description: "了解Casa Antonio如何保存语言设置并使用Google Analytics，统计预订、长住咨询及地图链接的点击。",
     },
     ko: {
       title: "개인정보｜Casa Antonio",
       description:
-        "언어 설정 저장과 Google 애널리틱스 이용 안내입니다. 예약 링크, Airbnb·Booking.com 후기 링크 클릭, 장기 숙박 문의와 지도 링크의 클릭 측정을 설명합니다.",
+        "언어 설정 저장과 Google 애널리틱스 이용 안내입니다. 예약 링크, 장기 숙박 문의와 지도 링크의 클릭 측정을 설명합니다.",
     },
   },
 };
@@ -602,7 +602,6 @@ function lodging(lang: Lang) {
     },
     potentialAction: [reserveAction("a", lang), reserveAction("b", lang)],
     containsPlace: [{ "@id": `${ORIGIN}/#apartment-a` }, { "@id": `${ORIGIN}/#apartment-b` }],
-    sameAs: [AIRBNB.a, AIRBNB.b, BOOKING_COM, TRIP_COM_EN],
   };
 }
 
@@ -707,7 +706,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "How do long stays work?",
-      a: "Contact us through our booking page (kagamiplanning.airhost.co/en) or at admin@kagami-planning.com with your dates, preferred apartment and guest count. Confirm availability, terms and the total before paying. This website does not take reservations or payments.",
+      a: "Contact us through our booking page (kagamiplanning.airhost.co) or at admin@kagami-planning.com with your dates, preferred apartment and guest count. Confirm availability, terms and the total before paying. This website does not take reservations or payments.",
     },
     {
       q: "Is there Wi-Fi?",
@@ -749,7 +748,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "長期滞在はどうしますか？",
-      a: "ご希望の日程、お部屋、人数を添えて、予約ページ（kagamiplanning.airhost.co/ja）またはadmin@kagami-planning.comまでご連絡ください。空室、条件、合計金額は、お支払いの前にご確認ください。このサイトでは予約や決済は行っていません。",
+      a: "ご希望の日程、お部屋、人数を添えて、予約ページ（kagamiplanning.airhost.co）またはadmin@kagami-planning.comまでご連絡ください。空室、条件、合計金額は、お支払いの前にご確認ください。このサイトでは予約や決済は行っていません。",
     },
     {
       q: "Wi-Fiはありますか？",
@@ -791,7 +790,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "长期住怎么订？",
-      a: "请通过预订页面（kagamiplanning.airhost.co/zh）或admin@kagami-planning.com联系我们，并提供入住日期、希望入住的公寓和人数。付款前请确认空房、入住条件和总金额。本站不接受预订或付款。",
+      a: "请通过预订页面（kagamiplanning.airhost.co）或admin@kagami-planning.com联系我们，并提供入住日期、希望入住的公寓和人数。付款前请确认空房、入住条件和总金额。本站不接受预订或付款。",
     },
     {
       q: "有 Wi-Fi 吗？",
@@ -833,7 +832,7 @@ export const FAQ: Record<Lang, { q: string; a: string }[]> = {
     },
     {
       q: "장기 숙박은 어떻게 하나요?",
-      a: "숙박 날짜, 원하는 아파트, 인원을 적어 예약 페이지(kagamiplanning.airhost.co/en) 또는 admin@kagami-planning.com으로 문의해 주세요. 결제하기 전에 예약 가능 여부, 숙박 조건, 총금액을 꼭 확인하세요. 이 사이트에서는 예약이나 결제를 받지 않습니다.",
+      a: "숙박 날짜, 원하는 아파트, 인원을 적어 예약 페이지(kagamiplanning.airhost.co) 또는 admin@kagami-planning.com으로 문의해 주세요. 결제하기 전에 예약 가능 여부, 숙박 조건, 총금액을 꼭 확인하세요. 이 사이트에서는 예약이나 결제를 받지 않습니다.",
     },
     {
       q: "Wi-Fi가 있나요?",

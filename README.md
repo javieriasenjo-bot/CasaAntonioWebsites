@@ -35,9 +35,9 @@ Optional simplification (needs one dashboard change): set **Workers & Pages → 
 
 - **Text, all languages:** `src/data/packs/{en,ja,zh,ko}.ts`, including UI labels under `copy.ui`. `src/data/copy-check.ts` makes TypeScript fail if a language pack's shape differs from English.
 - **Property facts** (beds, parking, damage policy): `src/data/property-facts.ts`. Confirmed facts are listed in the tracker.
-- **Address, Airbnb and Kojohama links:** `src/data/links.ts`. Airbnb buttons open Airbnb's own site for the page language (airbnb.com / airbnb.jp / zh.airbnb.com / airbnb.co.kr). Kojohama links carry UTM tags.
+- **Address, booking and Kojohama links:** `src/data/links.ts`. The only booking link is https://kagamiplanning.airhost.co/ (no Airbnb, Booking.com or Trip.com links anywhere on the site, decided 19 Nov 2026). Kojohama links carry UTM tags.
 - **Reviews:** `src/data/reviews.ts`. Never invent or edit a quote. `when` is `YYYY-MM` and is formatted per language. Quotes in the page's language are shown first.
-- **SEO:** `src/lib/seo.ts` (titles, descriptions, hreflang, Open Graph, JSON-LD with localized amenities and Airbnb reserve actions). `public/llms.txt` is the plain-text summary for answer engines. `src/data/page-maintenance.ts` sets each page's `dateModified`/sitemap `lastmod`. Update it only when visible content or meaningful metadata changes.
+- **SEO:** `src/lib/seo.ts` (titles, descriptions, hreflang, Open Graph, JSON-LD with localized amenities and reserve actions pointing to the booking page). `public/llms.txt` is the plain-text summary for answer engines. `src/data/page-maintenance.ts` sets each page's `dateModified`/sitemap `lastmod`. Update it only when visible content or meaningful metadata changes.
 - **Styles:** plain CSS in `src/styles.css`. Tailwind was removed on 19 Oct 2026, and a small reset sits at the top. Older rules are desktop-first (`max-width` queries); write new rules mobile-first.
 
 ## Photos
@@ -56,7 +56,7 @@ Implementation, release checks and remaining account actions: [docs/DISCOVERABIL
 
 - `apartment_click`: internal guide-to-apartment navigation; GA4 forwarding requires the GTM setup in the November handover.
 - `airbnb_click`: booking intent (legacy event name, now provider `airhost`). Not a completed booking.
-- `review_click`: Airbnb or Booking.com review links.
+- `review_click`: no longer fires (the review links to Airbnb and Booking.com were removed on 19 Nov 2026).
 - `inquiry_click`: long-stay requests.
 - `contact_click`: email links.
 - `map_click` and `language_change` are also tracked.

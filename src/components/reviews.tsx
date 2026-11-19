@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { house } from "@/data/active";
-import { airbnbUrl } from "@/data/links";
 import { bookingReviews, reviewReady, reviews, type BookingReviews, type StayReviews } from "@/data/reviews";
 import { formatDay, formatMonth } from "@/lib/dates";
 import { useLang, type Lang } from "@/lib/i18n";
@@ -87,16 +86,6 @@ function Block({ id, title, lang, initial }: { id: "a" | "b"; title: string; lan
           </button>
         </p>
       ) : null}
-      <p className="review-links">
-        {airOk ? (
-          <a className="text-link" href={airbnbUrl(id, lang)} target="_blank" rel="noreferrer" data-intent="reviews" data-property={id} data-placement="reviews">
-            {l.all}
-          </a>
-        ) : null}
-        <a className="text-link" href={book.href} target="_blank" rel="noreferrer" data-intent="reviews" data-property={id} data-placement="reviews">
-          {l.bookingAll}
-        </a>
-      </p>
     </div>
   );
 }

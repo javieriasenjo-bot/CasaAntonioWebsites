@@ -5,7 +5,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
   en: {
     eyebrow: "This site",
     title: "What the site keeps.",
-    lede: "Casa Antonio does not take the booking or the payment. Dates, the total and payment are handled on our booking page (kagamiplanning.airhost.co/en).",
+    lede: "Casa Antonio does not take the booking or the payment. Dates, the total and payment are handled on our booking page (kagamiplanning.airhost.co).",
     blocks: [
       {
         h: "Language",
@@ -16,7 +16,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "Measurement",
         p: [
-          "We use Google Analytics through Google Tag Manager to understand how visitors use this website. Google Analytics may set cookies. We measure apartment-detail links, booking-link clicks, Airbnb and Booking.com review-link clicks, long-stay enquiries, map links and language changes, including the apartment, page language and link destination. These clicks and enquiries are not completed reservations. No booking or payment details are collected through a form here.",
+          "We use Google Analytics through Google Tag Manager to understand how visitors use this website. Google Analytics may set cookies. We measure apartment-detail links, booking-link clicks, long-stay enquiries, map links and language changes, including the apartment, page language and link destination. These clicks and enquiries are not completed reservations. No booking or payment details are collected through a form here.",
           "We also use Metricool to measure website visits. Its visit tracker uses no cookies and sends the page URL, referring page when available, and browser window size to Metricool. This is separate from our booking-link measurements and does not confirm a reservation.",
           "Email enquiry links open your email app. We measure the link click, not whether you send a message. Email enquiries are handled at admin@kagami-planning.com; this website has no message form.",
         ],
@@ -24,7 +24,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "Maps, and leaving the site",
         p: [
-          "The neighborhood page embeds a map from OpenStreetMap. Other map links open Google Maps. Our booking page (Airhost), Airbnb, Booking.com and Kojohama Cabins are other sites, with their own policies.",
+          "The neighborhood page embeds a map from OpenStreetMap. Other map links open Google Maps. Our booking page (Airhost) and Kojohama Cabins are other sites, with their own policies.",
         ],
       },
       {
@@ -38,7 +38,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
   ja: {
     eyebrow: "このサイト",
     title: "サイトが覚えること。",
-    lede: "Casa Antonio では予約も支払いも受けません。日程、合計、支払いは予約ページ（kagamiplanning.airhost.co/ja）で行います。",
+    lede: "Casa Antonio では予約も支払いも受けません。日程、合計、支払いは予約ページ（kagamiplanning.airhost.co）で行います。",
     blocks: [
       {
         h: "言語",
@@ -49,7 +49,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "計測",
         p: [
-          "Googleタグマネージャーを通じてGoogleアナリティクスを利用し、サイトの使われ方を確認しています。GoogleアナリティクスはCookieを使用することがあります。部屋の詳細ページへのリンク、予約リンク、Airbnb・Booking.comのレビュー、長期滞在の問い合わせ、地図、言語変更のクリックを、部屋・ページの言語・リンク先などとともに計測します。クリックや問い合わせは予約成立を意味しません。このサイトのフォームで予約情報や決済情報を収集することはありません。",
+          "Googleタグマネージャーを通じてGoogleアナリティクスを利用し、サイトの使われ方を確認しています。GoogleアナリティクスはCookieを使用することがあります。部屋の詳細ページへのリンク、予約リンク、長期滞在の問い合わせ、地図、言語変更のクリックを、部屋・ページの言語・リンク先などとともに計測します。クリックや問い合わせは予約成立を意味しません。このサイトのフォームで予約情報や決済情報を収集することはありません。",
           "サイトの訪問数を把握するため、Metricoolも利用しています。この訪問トラッカーはCookieを使わず、ページのURL、取得できる場合は参照元のページ、ブラウザの表示領域の大きさをMetricoolに送信します。予約リンクの計測とは別で、予約成立を確認するものではありません。",
           "メールのお問い合わせリンクは、ご利用のメールアプリを開きます。計測するのはリンクのクリックで、メールの送信を確認するものではありません。メールでのお問い合わせ先はadmin@kagami-planning.comです。このサイトにメッセージフォームはありません。",
         ],
@@ -57,7 +57,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "地図と、サイトの外",
         p: [
-          "周辺のページにはOpenStreetMapの地図があります。ほかの地図リンクはGoogleマップを開きます。予約ページ（Airhost）、Airbnb、Booking.com、Kojohama Cabinsは別のサイトで、それぞれの方針があります。",
+          "周辺のページにはOpenStreetMapの地図があります。ほかの地図リンクはGoogleマップを開きます。予約ページ（Airhost）とKojohama Cabinsは別のサイトで、それぞれの方針があります。",
         ],
       },
       {
@@ -69,7 +69,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
   zh: {
     eyebrow: "本站",
     title: "网站记住什么。",
-    lede: "Casa Antonio 不接受预订，也不收款。日期、总价和付款都在预订页面（kagamiplanning.airhost.co/zh）办理。",
+    lede: "Casa Antonio 不接受预订，也不收款。日期、总价和付款都在预订页面（kagamiplanning.airhost.co）办理。",
     blocks: [
       {
         h: "语言",
@@ -80,14 +80,14 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "统计",
         p: [
-          "我们通过 Google Tag Manager 使用 Google Analytics，了解访客如何使用网站。Google Analytics 可能使用 Cookie。统计包括公寓详情链接、预订链接、Airbnb 和 Booking.com 评价链接、长住咨询、地图和语言切换的点击，以及公寓、页面语言和链接目标。这些点击和咨询不代表已完成预订。本站不通过表单收集预订或付款信息。",
+          "我们通过 Google Tag Manager 使用 Google Analytics，了解访客如何使用网站。Google Analytics 可能使用 Cookie。统计包括公寓详情链接、预订链接、长住咨询、地图和语言切换的点击，以及公寓、页面语言和链接目标。这些点击和咨询不代表已完成预订。本站不通过表单收集预订或付款信息。",
           "我们也使用 Metricool 统计网站访问。其访问追踪器不使用 Cookie，会向 Metricool 发送页面网址、可获取的来源页面及浏览器窗口大小。这项统计与预订链接点击统计分开，不代表预订已确认。",
           "邮件咨询链接会打开您的邮件应用。我们统计链接点击，不确认邮件是否发送。咨询邮箱为 admin@kagami-planning.com，本站没有留言表单。",
         ],
       },
       {
         h: "地图，以及离开本站",
-        p: ["家附近的页面嵌入 OpenStreetMap。其他地图链接打开 Google 地图。预订页面（Airhost）、Airbnb、Booking.com 和 Kojohama Cabins 是别的网站，各有自己的规则。"],
+        p: ["家附近的页面嵌入 OpenStreetMap。其他地图链接打开 Google 地图。预订页面（Airhost）和 Kojohama Cabins 是别的网站，各有自己的规则。"],
       },
       {
         h: "这里没有的",
@@ -98,7 +98,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
   ko: {
     eyebrow: "이 사이트",
     title: "사이트가 기억하는 것.",
-    lede: "Casa Antonio는 예약도 결제도 받지 않습니다. 날짜, 합계, 결제는 예약 페이지(kagamiplanning.airhost.co/en)에서 이루어집니다.",
+    lede: "Casa Antonio는 예약도 결제도 받지 않습니다. 날짜, 합계, 결제는 예약 페이지(kagamiplanning.airhost.co)에서 이루어집니다.",
     blocks: [
       {
         h: "언어",
@@ -109,7 +109,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "측정",
         p: [
-          "Google 태그 매니저를 통해 Google 애널리틱스를 사용하여 방문자의 사이트 이용을 파악합니다. Google 애널리틱스는 쿠키를 사용할 수 있습니다. 아파트 상세 페이지 링크, 예약 링크, Airbnb 및 Booking.com 후기 링크, 장기 숙박 문의, 지도와 언어 변경 클릭을 아파트, 페이지 언어, 링크 목적지 등의 정보와 함께 측정합니다. 클릭이나 문의는 예약 완료를 의미하지 않습니다. 이 사이트의 양식으로 예약 또는 결제 정보를 수집하지 않습니다.",
+          "Google 태그 매니저를 통해 Google 애널리틱스를 사용하여 방문자의 사이트 이용을 파악합니다. Google 애널리틱스는 쿠키를 사용할 수 있습니다. 아파트 상세 페이지 링크, 예약 링크, 장기 숙박 문의, 지도와 언어 변경 클릭을 아파트, 페이지 언어, 링크 목적지 등의 정보와 함께 측정합니다. 클릭이나 문의는 예약 완료를 의미하지 않습니다. 이 사이트의 양식으로 예약 또는 결제 정보를 수집하지 않습니다.",
           "웹사이트 방문을 측정하기 위해 Metricool도 사용합니다. 방문 추적기는 쿠키를 사용하지 않으며 페이지 URL, 확인 가능한 유입 페이지와 브라우저 창 크기를 Metricool에 전송합니다. 이는 예약 링크 클릭 측정과 별개이며 예약 확정을 의미하지 않습니다.",
           "이메일 문의 링크는 사용자의 이메일 앱을 엽니다. 링크 클릭을 측정하며 실제 이메일 발송 여부는 확인하지 않습니다. 문의 주소는 admin@kagami-planning.com이며 이 사이트에는 메시지 양식이 없습니다.",
         ],
@@ -117,7 +117,7 @@ const PRIVACY: Record<Lang, { eyebrow: string; title: string; lede: string; bloc
       {
         h: "지도, 그리고 사이트 밖",
         p: [
-          "집 근처 페이지에는 OpenStreetMap이 있습니다. 다른 지도 링크는 Google 지도를 엽니다. 예약 페이지(Airhost), Airbnb, Booking.com, Kojohama Cabins는 다른 사이트이고, 각자의 방침이 있습니다.",
+          "집 근처 페이지에는 OpenStreetMap이 있습니다. 다른 지도 링크는 Google 지도를 엽니다. 예약 페이지(Airhost)와 Kojohama Cabins는 다른 사이트이고, 각자의 방침이 있습니다.",
         ],
       },
       {

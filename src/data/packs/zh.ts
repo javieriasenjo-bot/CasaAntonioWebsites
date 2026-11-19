@@ -145,7 +145,7 @@ export const copy = {
     lede: "两套公寓都可以住得比一次假期更长。向主人询问你这些日期的价格。这一页不承诺折扣。",
     body: [
       "Casa Antonio A 和 B 是同一栋房子，门是分开的。长住是把其中一套当成家：自己做饭，工作，把车停在门前的免费车位，想进城就乘地铁。适合在札幌工作一个季节、一个学期、一次住得比较久的家庭探访，或者围绕手稻安排的一个冬天。",
-      "请通过预订页面（kagamiplanning.airhost.co/zh）或邮件联系我们，并提供入住日期、希望入住的公寓和人数。付款前请确认包含的服务和总金额。本站不接受预订或付款。",
+      "请通过预订页面（kagamiplanning.airhost.co）或邮件联系我们，并提供入住日期、希望入住的公寓和人数。付款前请确认包含的服务和总金额。本站不接受预订或付款。",
       "住得再久，规则也不放宽。不能吸烟，不能带宠物，不能办聚会。天黑以后，这条街要安静。入住仍是下午四点以后，退房仍是上午十点以前。能住的只有预订上的人。",
     ],
     points: [
@@ -532,7 +532,7 @@ neighborhood: {
     licenseTitle: "备案号",
     licenseBody: "这里是日本住宅宿泊事业的民营住宿。Casa Antonio A 为 M010045173。Casa Antonio B 为 M010045174。",
     payTitle: "怎么预订",
-    payBody: `日期、价格和空房请在预订页面（kagamiplanning.airhost.co/zh）查看。这个网站不收款。${DAMAGE_POLICY.zh}`,
+    payBody: `日期、价格和空房请在预订页面（kagamiplanning.airhost.co）查看。这个网站不收款。${DAMAGE_POLICY.zh}`,
   },
   lightbox: { close: "关闭", prev: "上一张", next: "下一张" },
   ui: {

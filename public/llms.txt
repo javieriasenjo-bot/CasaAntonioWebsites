@@ -1,6 +1,6 @@
 # Casa Antonio
 
-> Two private apartments in one house in Kita-ku, Sapporo, about five minutes on foot from Asabu Station on the Namboku subway line. Book Casa Antonio A or B on our booking page: https://kagamiplanning.airhost.co/en (Japanese: https://kagamiplanning.airhost.co/ja, Chinese: https://kagamiplanning.airhost.co/zh); both apartments are also listed on Airbnb, Booking.com and Trip.com. This website does not take reservations or payments, and it does not publish a phone number or nightly prices.
+> Two private apartments in one house in Kita-ku, Sapporo, about five minutes on foot from Asabu Station on the Namboku subway line. Book Casa Antonio A or B on our booking page: https://kagamiplanning.airhost.co; both apartments are also listed on Airbnb, Booking.com and Trip.com. This website does not take reservations or payments, and it does not publish a phone number or nightly prices.
 
 Casa Antonio is operated by Kagami Planning LLC. The public contact email is admin@kagami-planning.com. Pages are in English, 日本語, 简体中文 and 한국어.
 
@@ -25,7 +25,6 @@ Casa Antonio is operated by Kagami Planning LLC. The public contact email is adm
 - 日本語: https://casaantonio.jp/ja/casa-antonio-a/
 - 中文: https://casaantonio.jp/zh-cn/casa-antonio-a/
 - 한국어: https://casaantonio.jp/ko/casa-antonio-a/
-- Airbnb: https://www.airbnb.com/rooms/1810204332727383544
 
 ## Casa Antonio B
 
@@ -36,11 +35,10 @@ Casa Antonio is operated by Kagami Planning LLC. The public contact email is adm
 - 日本語: https://casaantonio.jp/ja/casa-antonio-b/
 - 中文: https://casaantonio.jp/zh-cn/casa-antonio-b/
 - 한국어: https://casaantonio.jp/ko/casa-antonio-b/
-- Airbnb: https://www.airbnb.com/rooms/1810193700504259008
 
 ## 日本語の要点
 
-札幌市北区、地下鉄南北線・麻生駅から徒歩約5分の一棟に、専用入口のある貸切アパートメントが2室あります。予約と決済はこのサイトでは受け付けず、予約ページ（https://kagamiplanning.airhost.co/ja）で行います。電話番号と1泊料金は掲載していません。
+札幌市北区、地下鉄南北線・麻生駅から徒歩約5分の一棟に、専用入口のある貸切アパートメントが2室あります。予約と決済はこのサイトでは受け付けず、予約ページ（https://kagamiplanning.airhost.co）で行います。電話番号と1泊料金は掲載していません。
 
 - 所在地: 〒001-0038 北海道札幌市北区北38条西3丁目1-7
 - セルフチェックイン 16:00–23:00。チェックアウトは10:00まで。

@@ -103,7 +103,7 @@ export function reviewReady(stay: StayReviews) {
 // a longer review (Booking.com truncates them) and are marked `excerpt`. Never invent or edit a quote.
 // validUntil: "2027-02-10" — recheck scores, counts and quotes against Booking.com (90 days from recordedOn).
 export type BookingQuote = { name: string; country: string; lang: "en" | "ja" | "zh"; text: string; excerpt?: boolean; sourceUrl?: string; reviewDate?: string };
-export type BookingReviews = { recordedOn: string; score: number; count: number; label: string; quotes: BookingQuote[]; href: string };
+export type BookingReviews = { recordedOn: string; score: number; count: number; label: string; quotes: BookingQuote[] };
 
 export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
   a: {
@@ -111,7 +111,6 @@ export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
     score: 9.1,
     count: 25,
     label: "Superb",
-    href: "https://www.booking.com/hotel/jp/casa-antonio-a.html",
     quotes: [
       { name: "Aloysius", country: "Singapore", lang: "en", text: "Really comfortable and nice space. Message and concerns were addressed fast" },
       { name: "Danny", country: "Hong Kong", lang: "en", excerpt: true, text: "The apartment is very clean and tidy. It appears to us a newly renovated and equipped apartment, great value for money." },
@@ -125,7 +124,6 @@ export const bookingReviews: { a: BookingReviews; b: BookingReviews } = {
     score: 9.8,
     count: 27,
     label: "Exceptional",
-    href: "https://www.booking.com/hotel/jp/casa-antonio-b.html",
     quotes: [
       { name: "Fletcher", country: "Australia", lang: "en", text: "Very clean, has a fantastic projector and close enough to everything you need" },
       { name: "Katerina", country: "Singapore", lang: "en", text: "The house is tidy and spacious. the kitchen is well equipped. it is located 7 minutes walk from asabu station and aeon mall.\nthere is a direct bus to new chitose airport at asabu station." },
